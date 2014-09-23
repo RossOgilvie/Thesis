@@ -1,0 +1,178 @@
+\documentclass{article}
+
+\usepackage{ross}
+\newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
+\usepackage{tikz}
+\fancyhdr
+
+\begin{document}
+\makeheading{Elliptic Spectral Curve}
+\section{Elliptic Integrals}
+Elliptic integrals are ones that arise as the integrals of differentials on elliptic curves (curves of genus one). There are several sets of standard elliptic integrals, with the idea being that every elliptic integral can be reduced to a combination of the standard ones in a particular set. The most prevalent set, the Jacobi elliptic integrals, is used here. Note however that there are several variations in nototation about these integrals; the main difference is the use of the modulus $k$ versus the parameter $m = k^2$. We will us the former. There are three standard integrals, and they come in {\it incomplete} and {\it complete} varities. The complete elliptic integral of first kind is denoted $K$ and is defined as
+\[
+K = K(k) = \int_0^1 \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}} .
+\]
+The complete elliptic integral of second kind is denoted $E$ and is defined as
+\[
+E = E(k) = \int_0^1 \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt = \int_0^1 \frac{1-k^2 t^2}{\sqrt{(1-t^2)(1-k^2 t^2)}}\;dt .
+\]
+We will not have need of the others. Elliptic integrals of the first kind correspond to holomorphic forms, so one can see from the form above that the curve is given by the equation
+\[
+y^2 = (1-t^2)(1-k^2 t^2).
+\]
+This highly symmetric form is known as {\it Lagrange form}. By M\"obius transformation (or by Landen's transformations), one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obiviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'. But what about the other period, the one about $1$ and $k^{-1}$? The trick is called {\it Jacobi's imaginary transformation}, and involves a quadratic substitution \cite{whittaker02}. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
+\begin{align*}
+\sqrt{t^2 - 1} &= \frac{k's}{\sqrt{1-k'^2 s^2}} \\
+\sqrt{1 - k^2 t^2} &= \frac{k' \sqrt{1-s^2}}{\sqrt{1-k'^2 s^2}} \\
+dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds,
+\end{align*}
+so that
+\begin{align*}
+\int_1^{k^{-1}} \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}
+&= -\iu \int_1^{k^{-1}} \frac{dt}{\sqrt{(t^2-1)(1-k^2 t^2)}}\\
+&= -\iu \int_1^0 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
+&= \iu K(k')
+\end{align*}
+Often $K(k')$ is abreviated to simply $K'$, and this should not be confused with the derivative of $K$. $k'$ is called the complementary modulus. A similiar substitution is needed for $E$. Let this time $k^2 t^2 = 1-k'^2 s^2$, then
+\begin{align*}
+\sqrt{t^2 - 1} &= \frac{k'}{k}\sqrt{1-s^2} \\
+\sqrt{1 - k^2 t^2} &= k's\\
+dt &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
+\end{align*}
+\begin{align*}
+\int_1^{k^{-1}} \sqrt{\frac{1-k^2 t^2}{1-t^2}}\;dt
+&= -\iu \int_1^{k^{-1}} \sqrt{\frac{1-k^2 t^2}{t^2 -1}}\;dt \\
+&= -\iu \int_0^1 \frac{k'^2 s^2}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
+&= \iu \int_0^1 \frac{1-k'^2 s^2 -1}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
+&= \iu \int_0^1 \sqrt{\frac{1-k'^2 s^2}{1-s^2}}\;ds - \iu \int_0^1 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
+&= iE(k') - iK(k').
+\end{align*}
+Again, we introduce the notation that $E' = E(k')$.
+
+\aside{I am unhappy about the sign here. It is the opposite of what I have seen elsewhere, and what I deduce from KSS. With square roots and branch cuts floating around, it's so easy to loss or gain a sign, but I don't see why I would need one doing $E$ but not when doing the very similiar thing for $K$. Another possibility is to fix it by changing the sign of the corresponding period latter on.}
+
+\aside{I don't really understand geometrically how these quadratic transformations are working, specifically how they are not introducing new branch points. Trying other quadratic transformations introduced extra branch points when I was playing around. What I think may be happening is that if you think of the equation $k^2 t^2 = 1 - k'^2 s^2$ as defining a curve, this curve is $C=\CP^1$. There are projections from this curve to both the $s$ and $t$ planes. I think that the curve $y^2 = (1-t^2)(1-k^2t^2)$ has an extra symmetry that let's one think of it as a degree two curve branched over $C$, which is itself degree 2 over either the $s$ or $t$ planes. There are no branch extra points because you are really changing coordinates on the intermediary curve $C$.}
+
+\section{Genus One Spectral Curve - Symmetric Case}
+\subsection{Find the differentials}
+
+We first look at the case of spectral genus one where there is an additional symmetry. The spectral curve has the form
+\begin{align*}
+η ^2 = P( ζ  )
+&= (-\bar{α}  ζ ^2 + (1 + α  \bar{α} )ζ  - α )(\bar{α} ζ ^2 + (1 + α  \bar{α} )ζ  +  α  )\\
+&= (1+ α \bar{α} )^2  ζ ^2 - (α  +\bar{α} ζ ^2)^2\\
+&= ( ζ  - α  )(1-\bar{α}   ζ  )( ζ  + α  )(1+\bar{α}   ζ  )
+\end{align*}
+which has branch points at $\pm α  , \pm\bar{α}  ^{-1}$. In this spectral genus, the degrees are such that $ η  / ζ  $ has simple poles at $0$ and $\infty$, so that its differential is a form with double poles and no residues at those points. Moreover, any purely imaginary multiple of it satifies the correct reality condition, so for some $a\in\R$, let $Θ^1 = ia\,d( η  / ζ  )$. For now we will take $a=1$. Being exact it has no periods, and hence we have automatically one of our required meromorphic differentials.
+
+To find the other differential is more involved. First note that meromorphic forms with the double poles at zero and infinity can be written as 
+\[
+	\frac{d ζ  }{ ζ  ^2 η  }b( ζ  )
+\]
+for some real degree four polynomial $b$. Further, to be residue free in general requires (using subscripts to denote coefficents of polynomials) that
+\[
+	b_1 = \frac{1}{2}\frac{P'(0)}{P(0)}b_0
+\]
+but in this particular case, that implies that $b_1=0$ and therefore $b_3=0$ also. Thus the space of potential $b$'s is reduced to three real parameters. We now give a basis for this space. An obivous place to start is with $Θ^1$.
+\[
+Θ^1 = \frac{d ζ  }{ ζ  ^2 η  }(\iu α  ^2-\iu\bar{α}  ^2 ζ  ^4)
+\]
+Another obvious candidate is the holomorphic differential
+\[
+\omega = \frac{d ζ  }{ η  } = \frac{d ζ  }{ ζ  ^2 η  } ζ  ^2
+\]
+This leaves just one basis vector to choose. A not-completely-terrible choice is
+\[
+\lambda = \frac{d ζ  }{ ζ  ^2 η  } ( α  ^2 + \bar{α}  ^2 ζ  ^4)
+\]
+Within this space we need to find another differential (linearly independent of $Θ^1$) with periods in $2\pi\Z$. We will do this by computing the periods of these basis vectors, and solving the reulting linear algebra problem. Let $A$ be the lift of the unit circle, passing through the point $(1, \abs{1- α  ^2})$ and let $B$ be the anticlockwise path around $ α  $ and $\bar{α}  ^{-1}$. Then we introduce the change of coordinates $ ζ  = α   z$ to bring things to Lagrange form.
+\begin{align*}
+ ζ  ^2 -  α  ^2 &=  α  ^2 (z^2-1) \\
+1 - \bar{α}  ^2 ζ  ^2 &= 1 - \abs{ α  }^4 ζ  ^2 \\
+k &:= \abs{ α  }^2
+\end{align*}
+Thus the periods of $\omega$ are
+\begin{align*}
+\int_A \omega
+&= 4 \int_0^1 \frac{ α   dz}{\sqrt{- α  ^2 (1-z^2)(1-k^2 z^2)}} \\
+&= -4 \iu K\\
+\int_B \omega
+&= -2\iu\int_1^{k^{-1}} \frac{dz}{\sqrt{(1-z^2)(1-k^2 z^2)}} \\
+&= 2K'
+\end{align*}
+Recall that $Θ^1$ is exact and so has zero periods. To do the periods of $\lambda$ we introduce another differential form
+\[
+e = \sqrt{\frac{1-k^2 z^2}{1-z^2}}\;dz
+\]
+which is just the integrand of $E$. Note that we can write
+\begin{align*}
+\lambda &= 2\iu e + 2\omega - iΘ^1 \\
+\int_A \lambda &= 8\iu (E - K) \\
+\int_B \lambda &= 4E'
+\end{align*}
+We now set $Θ^2 = A \lambda + B \omega$ and solve.
+\[
+\int_B = 4AE' + 2 BK' = 0 \implies A = K' C,\quad B = -2E' C
+\]
+If we solve the A-period to be just $2\pi\iu$ then the differentials will be integer multiples of this one. Also recall Lagrange's formula for elliptic integrals, namely
+\[
+KE' + K'E - KK' = \frac{\pi}{2}
+\]
+from which
+\begin{align*}
+2\pi\iu &= \int_A Θ^2 = 8\iu K'E C - 8\iu K'K C + 8\iu KE' C \\
+&= 8\iu C (K'E - K'K + KE')\\
+&= 4\pi\iu C \\
+C  &= 1/2 \\
+\implies Θ^2 &= \frac{1}{2}K' \lambda - E' \omega.
+\end{align*}
+
+\aside{It's a little strange to have K' and E' in the formula, as opposed to their un-prime-d counterparts. Perhaps this could be fixed by choosing a different basis for holomogy, a different $\lambda$ or a different coordinate change $z$.}
+
+Having found a pair of suitable differentials, any other pair will take the form, for $n,m\in\Z$ and $a,b\in\R$ with $an-bm\neq 0$,
+\[
+\{aΘ^1 + m Θ^2, bΘ^1 + n Θ^2 \}
+\]
+
+\subsection{Deformations}
+Before we tackle the full problem of deformations, consider the case when we take $Θ^1$ as above. We may ask whether there is a deformation that scales $Θ^1$ without changing the spectral curve, as we have seen any real scalar multiple of it will suffice for a good differential. However, for the spectral data to yield a harmonic map, we need that the half periods over $1$ and $-1$ are in $\pi\iu\Z$.
+\[
+\int_{\gamma_1}aΘ^1 = \left . \iu a\frac{ η  }{ ζ  }\right|_{(1, η  (1)^-)}^{(1, η  (1)^+)} = 2\iu a \abs{1- α  ^2}
+\]
+This shows such a deformation is not possible.
+
+Because it is exact, $q^1$ is well-defined and $\dot q^1$ is computable. Indeed
+\[
+\dot q^1 = i\frac{1}{ζ}\dot{η} = \frac{i}{ζη}\frac{1}{2}\dot P.
+\]
+
+\aside{Actually this is not the case, because the multiple of $Θ^1$ is only a constant on the curve, ie independent of $ ζ  $ not of $t$. Therefore the product rule must be applied.}
+
+Now we have been discussing the special symmetric case, but the derivation of $Θ^1$ doesn't acutally require it. Therefore for a moment consider an arbitrary genus one spectral curve, $P = (-\bar{α}    ζ  ^2 + (1 +  α  \bar{α}  ) ζ   -  α  )(-\bar{β}  ζ  ^2 + (1 + β\bar{β}) ζ   - β)$. A deformation preserves the half period condition precisely when $\dot q(1)=\dot q(-1) = 0$. This translates to
+\begin{align*}
+\Re\left[ \frac{\dot{α}  }{1- α  } + \frac{\dot{β}}{1-β} \right] &= 0 \\
+\Re\left[ \frac{\dot{α}  }{1+ α  } + \frac{\dot{β}}{1+β} \right] &= 0
+\end{align*}
+respectively. There are four degrees of freedom in choosing $\dot{α}  $ and $\dot{β}$, but here are two conditions. This gives the expected two degrees of freedom. Notice that if the deformation preserves the symmetric case, then we have $\dot{β} = - \dot{α}  $, as well as $β=- α  $, so the above two conditions collapse to the single condition
+\[
+0 = \Re \frac{2 α  \dot{α}  }{1- α  ^2}
+\]
+If we take the interpretation of quotienting out by the symmetry, so we have a rational curve over the coordinate $z= α  ^2$, then this condition becomes
+\[
+0 = \Re \frac{\dot z}{1-z}
+\]
+which can be interpretted geometrically for $z$ in the unit disc as saying that $z$ must move perpendicularly to $1-z$, ie along circles centered at 1. So it seems as if there is one direction of deformation that preserves the symmetry, and one direction that breaks it. One should note however that the above reasoning is entirely huersitic, as these a neccessary but not sufficent conditions on the deformations. It remains to be shown that there are no further restrictions arising.
+
+\aside{Just recording some formula now.}
+\begin{align*}
+-i \hat c^1 = - α  \dot{α}   + ( α  \dot{α}  \bar{α}  ^2 +  α  ^2\bar{α}  \dot{\bar{α}  }) ζ  ^2 - \bar{α}  \dot{\bar{α}  } ζ  ^4
+\end{align*}
+
+\begin{thebibliography}{9}
+
+\bibitem{whittaker02}
+  Whittaker,
+  \emph{Modern Analysis}, 1902. Page 352
+
+\end{thebibliography}
+\end{document}

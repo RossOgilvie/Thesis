@@ -1,0 +1,232 @@
+\documentclass{article}
+
+\usepackage{ross}
+\newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
+\usepackage{tikz}
+\fancyhdr
+
+\begin{document}
+\makeheading{summary of deformation}
+\section{Divisors and Degrees} % (fold)
+\label{sec:divisors}
+A quick summary of the divisors of various sections. On the curve $\eta^2 = P(\zeta)$, where $P$ is a real polynomial of degree $2g+2$ (so it has genus $g$). Let the roots of $P$ be $\alpha_i$
+\begin{align*}
+(\zeta - a) &= \pi^-a - \pi^-\infty \\
+(\zeta - \alpha_i) &= 2\cdot\alpha_i - \pi^-\infty \\
+(P) &= \sum 2\cdot\alpha_i - (2g+2)\cdot\pi^-\infty \\
+(\eta) &= \sum \alpha_i - (g+1)\cdot\pi^-\infty \\
+(d\zeta) &= \sum \alpha_i - 2\cdot\pi^-\infty \\
+\eta &\sim \sqrt{P_0}\left(1 + \frac{1}{2}\frac{P_1}{P_0}\zeta + \dots\right)\\
+1/\eta &\sim \frac{1}{\sqrt{P_0}}\left(1 - \frac{1}{2}\frac{P_1}{P_0}\zeta + \dots\right)
+\end{align*}
+
+Let $q^i = \log \mu^i$ be defined locally up to a constant. We require that it has single poles above $0$ and $\infty$. We also need $\sigma^* q^i = - q^i$, which means that we can write about $0$ as $1/\zeta\eta$ multiplied by a power series in $\zeta$. We use the convention that a lower index on a polynomial/power series denotes its coefficents. eg $P = P_0 + P_1\zeta + P_2\zeta^2 + \dots$. Dashes denote differentiation with respect to $\zeta$ and dot for differentiation with respect to $t$, the deformation parameter.
+
+The meromorphic differentials $\Theta^i$ have double poles above $0$ and $\infty$, and so can be written as
+\[
+dq^i = \frac{1}{\zeta^2\eta}b^i(\zeta) d\zeta
+\]
+for a polynomial $b^i$ of degree $g+3$. Further, the reality condition of $\Theta^i$ means that $b^i$ is a real polynomial. $q^i$ is locally defined up to periods and a constant. If the deformation flow preserves the periods, then the integrality of the periods means that their $t$-derivative is zero. Thus $\dot q^i$ is a well defined meromorphic function. At $0$ (or $\infty$), we can differentiate the power series expansion for $q^i$ to obtain (letting $f$ be a holomorphic function)
+
+\begin{align*}
+q^i &= \frac{1}{\zeta\eta}f(\zeta) \\
+\dot q^i &= \frac{1}{\zeta\eta} \left(-\frac{1}{2}\frac{\dot P}{P}f + \dot f\right),
+\end{align*}
+
+showing that $\dot q^i$ has a simple pole at $0$, and similiarly showing that is has simple poles at the roots of $P$ and thus is of the form
+\[
+\dot{q}^i = \frac{1}{\zeta\eta}\hat c^i(\zeta)
+\]
+for some degree $g+3$ polynomial $\hat c^i$. The reality condition on $q^i$ implies that this is an imaginary polynomial (ie that $i \hat c^i$ is a real polynmomial).
+
+The condition to have an actual harmonic map, that $\mu^i(\pi^{-1}(\pm 1)) = 1$, can be expressed as a period-type condition. Let $\gamma^i$ be a path in the spectral curve connecting the two points above $i=1,-1$
+\begin{align*}
+\int_{\gamma^i} dq^i = q^i(1^+) - q^i(1^-) \in \pi i \Z
+\end{align*}
+Hence the t-derivative of this integral is 0. Applying this to the middle term means that $\dot q^i(1^+) = \dot q^i(1^-)$. Thus $\hat c^i$ must have a fator of $\zeta^2-1$. Let $\hat c^i(\zeta) = (\zeta^2 - 1) c^i(\zeta)$, with $c^i$ a polynomial of degree $g+1$.
+% section divisors (end)
+
+
+
+
+
+
+
+
+
+\section{To the $Q$-equation} % (fold)
+\label{sec:more_stuff}
+From the equality of mixed partial derivatives
+\begin{align*}
+\dot{(dq^i)} &= \frac{d\zeta}{\zeta^2\eta}\left( -\frac{1}{2}\frac{\dot P}{P}b^i + \dot b^i \right) \\
+d\dot q^i & = \frac{1}{\zeta^2\eta}\left( -\hat c^i -\frac{1}{2}\frac{P'}{P}\zeta\hat c^i + \zeta\hat {c^i}'\right)d\zeta \\
+-\dot P b^i + 2P \dot b^i & = -2P \hat c^i -P'\zeta\hat c^i + 2P\zeta\hat {c^i}' \\
+-\dot P b^i &= -2P\left( \dot b^i + \hat c^i - \zeta\hat {c^i}'\right) -P'\zeta\hat c^i \labelthis{eq:EMPDi}
+\end{align*}
+This gives two equations. If we multiply by alternatively by $\hat c^2$ and $\hat c^1$ and subtracting
+\begin{align*}
+-\dot P b^1\hat c^2 + 2P \dot b^1\hat c^2 & = -2P \hat c^1\hat c^2 -P'\zeta\hat c^1\hat c^2 + 2P\zeta\hat {c^1}'\hat c^2 \\
+-\dot P b^2\hat c^1 + 2P \dot b^2\hat c^1 & = -2P \hat c^2\hat c^1 -P'\zeta\hat c^2\hat c^1 + 2P\zeta\hat {c^2}'\hat c^1 \\
+-\dot P (b^1\hat c^2 - b^2\hat c^1) + 2P (\dot b^1\hat c^2 - \dot b^2\hat c^1) & =  2P\zeta(\hat {c^1}'\hat c^2 - \hat {c^2}'\hat c^1) \\
+-\dot P (b^1\hat c^2 - b^2\hat c^1) & =  2P(-\dot b^1\hat c^2 + \dot b^2\hat c^1 + \zeta\hat {c^1}'\hat c^2 - \zeta\hat {c^2}'\hat c^1)\labelthis{eq:diffed}
+\end{align*}
+
+We now make the assumption that the spectral curve is nonsingular. This is to say that $P$ has only simple roots, or in terms of the factorisation of polynomials (which we shall shortly care about), we assume that $gcd(P,P') = 1$.
+
+From \eqref{eq:diffed} we can conclude that $P$ divides $b^1\hat c^2 - b^2\hat c^1$ in the following way. If $P$ and $\dot P$ have a common root $\alpha$, then from \eqref{eq:EMPDi} we get that
+\begin{align*}
+-\dot P(\alpha) b^i(\alpha) &= -2P(\alpha)\left( \dot b^i(\alpha) + \hat c^i(\alpha) - \alpha\hat {c^i}'(\alpha)\right) -P'(\alpha)\alpha\hat c^i(\alpha) \\
+0 &= 0 - P'(\alpha)\alpha\hat c^i(\alpha)
+\end{align*}
+As $P(0)\neq 0$, we cannot have $\alpha=0$. And by the assumption of nonsingularity, $P'(\alpha)\neq 0$. Thus we can conclude that $c^i(\alpha)=0$. We note that any other roots of $P$ must be roots of $b^1\hat c^2 - b^2 \hat c^1$ directly from \eqref{eq:diffed}. Hence $P$ divides $b^1\hat c^2 - b^2 \hat c^1$ and we can conclude that there is some degree 4 polynomial $\hat Q$ such that
+\[
+b^1 \hat c^2 - b^2 \hat c^1 = \hat Q P
+\]
+As $\zeta^2-1$ is a factor of both $c$'s, and $P$ has no zeroes on the unit circle, it must also be a factor of $\hat Q$. Define $\hat Q = (\zeta^2-1)Q$ to give
+\[
+b^1 c^2 - b^2 c^1 = Q P \labelthis{eq:Q}
+\]
+for some real quadratic polynomial $Q$.
+
+
+
+
+
+
+
+
+
+
+
+\section{Relation of $Q$ to $\tau$}
+We will now expand the lowest order of this equation. But first, we know from Hitchin that the ratio of the strengths of the poles of $\Theta^i$ is the conformal factor $\tau$.
+\begin{align*}
+\tau &= \frac{\frac{1}{\sqrt{P_0}} b^2_0}{\frac{1}{\sqrt{P_0}} b^1_0} = \frac{b^2_0}{b^1_0} \Rightarrow b^2_0 = \tau b^1_0 \\
+\dot b^2_0 &= \dot\tau b^1_0 + \tau \dot b^1_0
+\end{align*}
+Then from \eqref{eq:EMPDi} we get that
+\begin{align*}
+-\dot P_0 b^i_0 &= -2P_0\left( \dot b^i_0 + \hat c^i_0 \right) \\
+\hat c^i_0 &= \frac{1}{2}\frac{\dot P_0}{P_0}b^i_0 - \dot b^i_0
+\end{align*}
+and putting this into \eqref{eq:diffed} yields
+\begin{align*}
+-\dot P_0 \hat Q_0 P_0 &=  2P_0(-\dot b^1_0\hat c^2_0 + \dot b^2_0\hat c^1_0) \\
+-\dot P_0 \hat Q_0 &=  \frac{\dot P_0}{P_0}(-b^2_0\dot b^1_0 + b^1_0\dot b^2_0) \\
+\hat Q_0 &=  \frac{1}{P_0}(\tau b^1_0\dot b^1_0 - b^1_0\dot\tau b^1_0 - \tau b^1_0\dot b^1_0) \\
+&=  -\frac{1}{P_0}b^1_0\dot\tau b^1_0 \\
+Q_0 &=  \frac{1}{P_0}b^1_0\dot\tau b^1_0 \\
+&= \frac{1}{P_0} \frac{\dot \tau}{\tau} b^1_0 b^2_0
+\end{align*}
+This shows that $Q_0$ determines the deformation of the conformal parameter.
+% section more_stuff (end)
+
+
+
+
+
+
+
+
+
+\section{Spectral genus 0} % (fold)
+\label{sec:spectral_genus_0}
+In this case there are no periods to consider, so the differentials are exact. We can be super explicit.
+\begin{align*}
+\eta^2 &= -\bar\alpha \zeta^2 + (1+\alpha\bar\alpha)\zeta - \alpha \\
+q^i &= (a^i - \bar a^i \zeta^{-1})\eta + \pi i k \\
+a^i &= \frac{\pi}{2}\left( \frac{n^i}{r} + i \frac{m^i}{s} \right) \\
+r &= \sqrt{1 + \alpha\bar\alpha + \alpha + \bar\alpha} \\
+s &= \sqrt{1 + \alpha\bar\alpha - \alpha - \bar\alpha} \\
+dq^i &= \frac{d\zeta}{\zeta^2\eta} \left( -a^i\bar\alpha\zeta^3 + \frac{1}{2}a^i(1+\alpha\bar\alpha)\zeta^2 + \frac{1}{2}\bar a^i(1+\alpha\bar\alpha)\zeta  - \alpha\bar a^i\right) \\
+\dot q^i &= \frac{1}{\zeta\eta}(\zeta^2-1)\left[ \zeta(-\bar\alpha\dot a^i - \frac{1}{2} a^i \dot{\bar\alpha}) + (-\alpha\dot {\bar a}^i - \frac{1}{2} \bar a^i \dot\alpha) \right]\\
+Q &= i \frac{\pi^2}{4}\frac{1}{rs}(n^1m^2-n^2m^1) \left[ \bar\alpha 2\Re \frac{\dot\alpha}{1-\alpha^2}\zeta^2 - \frac{1}{2}(1-\alpha\bar\alpha)2i\Im \frac{\dot\alpha}{1-\alpha^2} \zeta - \alpha 2\Re \frac{\dot\alpha}{1-\alpha^2}\right]
+\end{align*}
+
+In the genus zero case, there is only one plane of meromorphic differentials, and the map condition restricts the integral lattice generated by
+\begin{align*}
+-\frac{\pi}{2r}\bar\alpha\zeta^3 + \frac{1}{2}\frac{\pi}{2r}(1+\alpha\bar\alpha)\zeta^2 +& \frac{1}{2}\frac{\pi}{2r}(1+\alpha\bar\alpha)\zeta  - \alpha\frac{\pi}{2r} \\
+-i\frac{\pi}{2s}\bar\alpha\zeta^3 + \frac{1}{2}i\frac{\pi}{2s}(1+\alpha\bar\alpha)\zeta^2 +& \frac{1}{2}\bar i\frac{\pi}{2s}(1+\alpha\bar\alpha)\zeta  - \alpha\bar i\frac{\pi}{2s}
+\end{align*}
+
+It appears prima facia that there is more than one plane of differentials, since a real cubic polynomial has 4 real parameters, but the restiction of having no residues gives the relation
+\[
+b^i_1 = \frac{1}{2}\frac{P_1}{P_0}b^i_0
+\]
+which cuts out 2 real parameters leaving the single plane available. So we could instead think of the plane generated by the lowest order terms in the Taylor expansion, that correspond to the coefficents of the second order poles at zero, namely
+\[
+\Z\{\frac{\pi}{2r}, \frac{\pi}{2s}\}
+\]
+
+Because this is a lattice, it is discrete, so there is no possible variation of $b^i$ without varying $\alpha$. Indeed as you can see, everything is given ultimately in terms of $\alpha$ and the four integers $n^1,m^1,n^2,m^2$. So a variation in this case is exactly a variation of $\alpha$. Looking at $Q$ we see that is essentially contains the information of $\dot\alpha$. In particular, we know that as $\alpha$ is varied, $\tau$ moves on a geodesic in the hyperbolic plane, and it approaches infinity as $\alpha$ approaches $1$ or $-1$, which explains the scale factor. At a fixed $\alpha$, we see from the form of $Q$ that $Q_0$ can only take values on a real line, which comes from the fact $\tau$ is restricted to an arc.
+% section spectral_genus_0 (end)
+
+\section{Junk} % (fold)
+\label{sec:junk}
+\[
+Q_1 = \frac{1}{P_0}q^1_0(\dot q^2_1 - \tau \dot q^1_1)
+-\frac{1}{2}\frac{\dot P_0}{(P_0)^2}(q^2_1 - \tau q^1_1)
+-\frac{1}{2}\dot\tau(q^1_0)^2\frac{P_1}{(P_0)^2}
+\]
+It's not even clear that this is real, though we know it should be.
+% section junk (end)
+
+\section{Reversing.}
+Take an intial $(b^1,b^2,P)$, with all roots distinct, and any real quadratic polynomial $Q$. Let the roots of $b^i$ be denoted as $\{\beta^i_j\}$ and let
+\[
+R^i = \sum_{j=1}^{g+3} \frac{Q(\beta^i_j) P(\beta^i_j)}{b^{\star i}(\beta^i_j) {b^i}'(\beta^i_j)}.
+\]
+Then for every such $Q$ with $R^i = 0$ for $i=1,2$, there is a flow of the spectral data $(\dot b^1, \dot b^2, \dot P)$.
+
+Proof
+
+We first attempt to solve \eqref{eq:Q} for $c^i$. But if we consider this as a linear system on the coefficents of $c^i$, then it is overdetermined, but nicely seaprates into two indepenedent subsystems by considering it at the values at the roots of the $b$'s. Suppose then for a moment that the degree of each $c^i$ was $g+2$. Then the matrix is the Vandemonde matrix, and is nonzero exactly when the roots of the $b$'s are distinct. Thus since we have distinct roots, there is a unique solution for the $c$'s. This solution is given by a linear combination the Legrende polynomials. The $j$-th Legrende polynomial $L^i_j(\zeta)$ is the unique polynomial that takes the value $1$ at $\beta^i_j$ and is zero at the other roots. We can write
+\[
+c^i(\zeta) = - \sum_{j=1}^{g+3} \left( \frac{QP\zeta}{b^{*i}(b^i)'}\right)(\beta^i_j) \frac{b^i(\zeta)}{\zeta-\beta^i_j}
+\]
+The $g+2$ degree coeffient of $c^i$ is therefore $-b^2_{g+3}R^i$. But under the assumptions, this is zero, therefore we have found a unique solution for $c^i$ of degree $g+1$.
+
+Moving on to \eqref{eq:EMPDi}, we now attempt to solve for the dotted quantities. Using Bezout's Lemma, it has a solution if and only if $\gcd(P,b^i)$ divides the right hand side. But under our asusmptions, this is one and so there is always a solution. The first concern is that the two equations for $i=1,2$ may give different solutions for $\dot P$. But this cannot be, since $\dot P$ is determined by the value of the equation at the roots of $P$, namely
+\[
+-\dot P(\alpha) b^i(\alpha) = -P'(\alpha)\alpha\hat c^i(\alpha)
+\]
+The polynomials $\hat c^i$ are determined by \eqref{eq:Q} and so if $\dot P^1$ and $\dot P^2$ are the two solutions arrising from the two equations then
+\begin{align*}
+b^1(\alpha) c^2(\alpha) - b^2(\alpha) c^1(\alpha) &= Q(\alpha) P(\alpha) = 0 \\
+\dot P^1(\alpha)
+&= -P'(\alpha)\alpha \frac{\hat c^1(\alpha)}{b^1(\alpha)} \\
+&= -P'(\alpha)\alpha \frac{\hat c^2(\alpha)}{b^2(\alpha)} \\
+&= \dot P^1(\alpha).
+\end{align*}
+
+The second consideration is that this solution may not be unique. Indeed it is not. Let $\dot {\bf P}, \dot {\bf b}^1, \dot {\bf b}^2$ be a solution. Then the other solutions are given by, for $r\in \R$,
+\begin{align*}
+\dot P &= \dot {\bf P} + 2rP \\
+\dot b^i &= \dot {\bf b}^i + rP \\
+\end{align*}
+But if we fix a scaling of $P$, say $\abs{P_0} = const$, then differentiating we obtain
+\[
+\arg \dot P_0 = \pm \arg i P_0
+\]
+which it leads to a picture
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Draw axes
+    \draw[<->] (-3,0) -- (3,0) node[right] {$z\in\C$};
+	  \draw[<->] (0,-2) -- (0,2);
+    % Draw P_0
+    \draw [style=help lines] (0,0) -- (2,1) ;
+		\fill (2,1) circle (1pt) node[right]{$P_0$};
+		% draw the lines
+    \draw (-2,0) -- (2,2) node[right]{$\{z=\dot {\bf P}_0 + 2rP_0\}$};
+		\fill (1,1.5) circle (1pt) node[above]{$\dot {\bf P}_0$};
+
+    \draw (-1,2)  -- (1,-2) node[right]{$\{\arg z = \pm i \frac{P_0}{const}\}$};
+
+		\fill (-0.4,0.8) circle (2pt) node[above left=2pt]{$\dot P_0$};
+\end{tikzpicture}
+\end{center}
+And so we see if we fix a scaling of the spectral curve, then there is a unique solution to \eqref{eq:EMPDi}, and hence a unique infinitesimal deformation. This data then amounts to a first order linear ODE, which can be solved to give a unique deformation of the spectral data.\qed
+
+\end{document}
