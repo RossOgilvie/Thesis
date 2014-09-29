@@ -1,0 +1,34 @@
+def r_minor 1
+def r_major 1.5
+
+def a {
+def n_segs 60
+sweep [draw=red,style=ultra thick] { n_segs, rotate(360 / n_segs, (0,0,0), [0,0,1]) } (r_major - r_minor, 0,0)
+}
+def b {
+def n_segs 60
+sweep [draw=blue,style=ultra thick] { n_segs, rotate(360 / n_segs, (r_major,0,0), [0,1,0]) } (r_major + r_minor, 0,0)
+}
+
+def torus {
+def n_toroid_segs 20
+def n_circle_segs 16
+sweep [draw=black, style=ultra thin, cull=false, fill=gray, fill opacity=0.7] { n_toroid_segs, rotate(360 / n_toroid_segs, (0,0,0), [0,0,1]) }
+  sweep { n_circle_segs, rotate(360 / n_circle_segs, (r_major,0,0), [0,1,0]) }
+    (r_major + r_minor, 0,0)
+}
+
+def special_pts {
+%% points on the blue cycle
+dots [draw=purple] (r_major - r_minor,0,0) (r_major,0,r_minor) (r_major,0,-r_minor) (r_major + r_minor,0,0)
+%% points on the -1, -k^-1 cycle
+dots [draw=purple] (r_minor - r_major,0,0) (-r_major,0,r_minor) (-r_major,0,-r_minor) (-r_minor - r_major,0,0)
+%% points on the upper unit circle
+dots [draw=purple] (0,r_major-r_minor,0) (0,r_major,r_minor) (0,r_major,-r_minor) (0,r_major+r_minor,0)
+%% points on the lower unit circle
+dots [draw=purple] (0,-r_major+r_minor,0) (0,-r_major,r_minor) (0,-r_major,-r_minor) (0,-r_major-r_minor,0)
+}
+
+put { view((-0.3,0.3,2)) } {{special_pts} {a} {b} {torus}}
+
+global { language tikz }

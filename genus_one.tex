@@ -20,52 +20,54 @@ We will not have need of the others. Elliptic integrals of the first kind corres
 \[
 y^2 = (1-t^2)(1-k^2 t^2).
 \]
-This highly symmetric form is known as {\it Lagrange form}. By M\"obius transformation (or by Landen's transformations), one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obiviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'. But what about the other period, the one about $1$ and $k^{-1}$? The trick is called {\it Jacobi's imaginary transformation}, and involves a quadratic substitution \cite{whittaker02}. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
+This highly symmetric form is known as {\it Lagrange form}. By M\"obius transformation (or by Landen's transformations), when $k$ is real one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obiviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'.
+
+\begin{center}
+\input{torus_lagrange.sk.tex}
+\end{center}
+
+In the picture, the red cycle is the real $A$-cycle and has the clockwise orientation as shown, whereas the blue cycle is the imaginary $B$-cycle and has orientation from left to right as shown. $B$ is divided into two pieces, $B^+$ on which $y$ is in $i\R$ (the occluded piece) and $B^-$ on which $y$ is in $-i\R$ (the front piece).
+
+But what about the other period, the one about $1$ and $k^{-1}$? The trick is called {\it Jacobi's imaginary transformation}, and involves a quadratic substitution \cite{whittaker02}. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
 \begin{align*}
+dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
 \sqrt{t^2 - 1} &= \frac{k's}{\sqrt{1-k'^2 s^2}} \\
 \sqrt{1 - k^2 t^2} &= \frac{k' \sqrt{1-s^2}}{\sqrt{1-k'^2 s^2}} \\
-dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds,
+y &= \pm \frac{i k'^2 s \sqrt {1-s^2}}{1-k'^2 s^2}
 \end{align*}
 so that
 \begin{align*}
-\int_1^{k^{-1}} \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}
-&= -\iu \int_1^{k^{-1}} \frac{dt}{\sqrt{(t^2-1)(1-k^2 t^2)}}\\
-&= -\iu \int_1^0 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
-&= \iu K(k')
+\int_B \frac{dt}{y}
+&= \int_{B^+} \frac{dt}{y^+} + \int_{B^-} \frac{dt}{y^-} \\
+&= \int_1^0 (-\iu) \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} + \int_0^1 \iu \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
+&= 2\iu K(k')
 \end{align*}
 Often $K(k')$ is abreviated to simply $K'$, and this should not be confused with the derivative of $K$. $k'$ is called the complementary modulus. A similiar substitution is needed for $E$. Let this time $k^2 t^2 = 1-k'^2 s^2$, then
 \begin{align*}
+dt &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
 \sqrt{t^2 - 1} &= \frac{k'}{k}\sqrt{1-s^2} \\
 \sqrt{1 - k^2 t^2} &= k's\\
-dt &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
+y &= \pm \iu \frac{k'^2}{k}s\sqrt{1-s^2}
 \end{align*}
 \begin{align*}
-\int_1^{k^{-1}} \sqrt{\frac{1-k^2 t^2}{1-t^2}}\;dt
-&= -\iu \int_1^{k^{-1}} \sqrt{\frac{1-k^2 t^2}{t^2 -1}}\;dt \\
-&= -\iu \int_0^1 \frac{k'^2 s^2}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
-&= \iu \int_0^1 \frac{1-k'^2 s^2 -1}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
-&= \iu \int_0^1 \sqrt{\frac{1-k'^2 s^2}{1-s^2}}\;ds - \iu \int_0^1 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
-&= iE(k') - iK(k').
+\int_B \frac{dt}{y}(1-k^2t^2)
+&= 2\iu \int_0^1 \frac{k'^2 s^2}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
+&= 2\iu \int_0^1 \frac{1-(1-k'^2 s^2)}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
+&= 2\iu \int_0^1 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} - 2\iu \int_0^1 \sqrt{\frac{1-k'^2 s^2}{1-s^2}}\;ds\\
+&= 2iK(k') - 2iE(k').
 \end{align*}
 Again, we introduce the notation that $E' = E(k')$.
-
-\aside{I am unhappy about the sign here. It is the opposite of what I have seen elsewhere, and what I deduce from KSS. With square roots and branch cuts floating around, it's so easy to loss or gain a sign, but I don't see why I would need one doing $E$ but not when doing the very similiar thing for $K$. Another possibility is to fix it by changing the sign of the corresponding period latter on.}
-
-\aside{I don't really understand geometrically how these quadratic transformations are working, specifically how they are not introducing new branch points. Trying other quadratic transformations introduced extra branch points when I was playing around. What I think may be happening is that if you think of the equation $k^2 t^2 = 1 - k'^2 s^2$ as defining a curve, this curve is $C=\CP^1$. There are projections from this curve to both the $s$ and $t$ planes. I think that the curve $y^2 = (1-t^2)(1-k^2t^2)$ has an extra symmetry that let's one think of it as a degree two curve branched over $C$, which is itself degree 2 over either the $s$ or $t$ planes. There are no branch extra points because you are really changing coordinates on the intermediary curve $C$.}
 
 \section{Genus One Spectral Curve - Symmetric Case}
 \subsection{Find the differentials}
 
 We first look at the case of spectral genus one where there is an additional symmetry. The spectral curve has the form
-\begin{align*}
-η ^2 = P( ζ  )
-&= (-\bar{α}  ζ ^2 + (1 + α  \bar{α} )ζ  - α )(\bar{α} ζ ^2 + (1 + α  \bar{α} )ζ  +  α  )\\
-&= (1+ α \bar{α} )^2  ζ ^2 - (α  +\bar{α} ζ ^2)^2\\
-&= ( ζ  - α  )(1-\bar{α}   ζ  )( ζ  + α  )(1+\bar{α}   ζ  )
-\end{align*}
+\[
+η ^2 = P( ζ  ) = ( ζ  - α  )(1-\bar{α}   ζ  )( ζ  + α  )(1+\bar{α}   ζ  )
+\]
 which has branch points at $\pm α  , \pm\bar{α}  ^{-1}$. In this spectral genus, the degrees are such that $ η  / ζ  $ has simple poles at $0$ and $\infty$, so that its differential is a form with double poles and no residues at those points. Moreover, any purely imaginary multiple of it satifies the correct reality condition, so for some $a\in\R$, let $Θ^1 = ia\,d( η  / ζ  )$. For now we will take $a=1$. Being exact it has no periods, and hence we have automatically one of our required meromorphic differentials.
 
-To find the other differential is more involved. First note that meromorphic forms with the double poles at zero and infinity can be written as 
+To find the other differential is more involved. First note that meromorphic forms with the double poles at zero and infinity can be written as
 \[
 	\frac{d ζ  }{ ζ  ^2 η  }b( ζ  )
 \]
@@ -85,34 +87,35 @@ This leaves just one basis vector to choose. A not-completely-terrible choice is
 \[
 \lambda = \frac{d ζ  }{ ζ  ^2 η  } ( α  ^2 + \bar{α}  ^2 ζ  ^4)
 \]
-Within this space we need to find another differential (linearly independent of $Θ^1$) with periods in $2\pi\Z$. We will do this by computing the periods of these basis vectors, and solving the reulting linear algebra problem. Let $A$ be the lift of the unit circle, passing through the point $(1, \abs{1- α  ^2})$ and let $B$ be the anticlockwise path around $ α  $ and $\bar{α}  ^{-1}$. Then we introduce the change of coordinates $ ζ  = α   z$ to bring things to Lagrange form.
+Within this space we need to find another differential (real linearly independent of $Θ^1$) with periods in $2\pi\Z$. We will do this by computing the periods of these basis vectors, and solving the reulting linear algebra problem. Let $B$ be the lift of the unit circle, passing through the point $(1, \abs{1- α  ^2})$ and let $A$ be the anticlockwise path around $ α  $ and $\bar{α}  ^{-1}$. Then we introduce the change of coordinates such that $α$ and $\bar{α}^{-1}$ are mapped to $1$ and $-1$ and $-α,-\bar{α}^{-1}$ to $k^{-1},-k^{-1}$. This will map the A and B cycles as defined here to the cycles defined earlier. Ordinarily one can only specify three points when making a Mobi\"us transformation, but because we are are permitting ourselves to vary $k$, we have sufficent degrees of freedom. Computing the formula of this transformation with the use of the cross ratio yields
+\[
+ζ = \frac{tα(R-1) + α(R+1)}{tR(1-R) + R(R+1)},\;\; k = \left(\frac{1-R}{1+R}\right)^2
+\]
+using the shorthand $R := \abs{α}$. Then we have that
 \begin{align*}
- ζ  ^2 -  α  ^2 &=  α  ^2 (z^2-1) \\
-1 - \bar{α}  ^2 ζ  ^2 &= 1 - \abs{ α  }^4 ζ  ^2 \\
-k &:= \abs{ α  }^2
+η^2 &= \frac{α^2 R^2 (1-R^2)^2(1+R)^4}{(tR(1-R) + R(R+1))^4}(1-t^2)(1-k^2t^2) \\
+η &= \pm \frac{α R (1-R^2)(1+R)^2}{(tR(1-R) + R(R+1))^2}y
 \end{align*}
-Thus the periods of $\omega$ are
+The ambiguity in the sign is simply due to the fact that there are two maps between Riemann surfaces that are compatible with this change of coordinates, and they differ by composition with the holomorphic involution, which is just a change in the sign of the fibre coordinate. We choose the minus sign for reasons that will become clear. We first compute the periods of $ω$.
 \begin{align*}
-\int_A \omega
-&= 4 \int_0^1 \frac{ α   dz}{\sqrt{- α  ^2 (1-z^2)(1-k^2 z^2)}} \\
-&= -4 \iu K\\
-\int_B \omega
-&= -2\iu\int_1^{k^{-1}} \frac{dz}{\sqrt{(1-z^2)(1-k^2 z^2)}} \\
-&= 2K'
+dζ &= \frac{2αR(R-1)(R+1)}{(tR(1-R) + R(R+1))^2} dt \\
+ω = \frac{dζ}{η} &= \frac{2}{(1+R)^2} \frac{dt}{y} \\
+\int_A \omega &= \frac{8}{(1+R)^2} K \\
+\int_B \omega &= \frac{4i}{(1+R)^2} K'
 \end{align*}
 Recall that $Θ^1$ is exact and so has zero periods. To do the periods of $\lambda$ we introduce another differential form
 \[
-e = \sqrt{\frac{1-k^2 z^2}{1-z^2}}\;dz
+e = \sqrt{\frac{1-k^2 t^2}{1-t^2}}\;dt = \frac{dt}{y}(1-k^2t^2) = 2αR \frac{dζ}{η}\frac{(ζ+α)(1+\bar{α}ζ)}{(Rζ + α)^2}
 \]
-which is just the integrand of $E$. Note that we can write
+which is differential corresponding to integrals of the second kind. Note that we can write
 \begin{align*}
-\lambda &= 2\iu e + 2\omega - iΘ^1 \\
-\int_A \lambda &= 8\iu (E - K) \\
-\int_B \lambda &= 4E'
+\lambda - d\left(\frac{η}{ζ}\right) = 2\bar{α}^2 \frac{dζ}{η}ζ^2 &= (1+R)^2 e - 2R(1+R+R^2) \omega - 2R d\left(\frac{η}{Rζ+α}\right) \\
+\int_A \lambda &= 4(1+R)^2 E(k) - \frac{16R(1+R+R^2)}{(1+R)^2}K(k) \\
+\int_B \lambda &= 2\iu(1+R)^2 \left[K(k') - E(k')\right] - \frac{8\iu R(1+R+R^2)}{(1+R)^2}K(k')
 \end{align*}
-We now set $Θ^2 = A \lambda + B \omega$ and solve.
+The first line was computed by computing which exact differential was needed to cancel the poles in $λ$ and $e$ and then scaling to balance the poles at infinity. The remainder is therefore holomorphic and so a multiple of $ω$. We now set $Θ^2 = C λ + D ω = Ae + Bω$ and solve.
 \[
-\int_B = 4AE' + 2 BK' = 0 \implies A = K' C,\quad B = -2E' C
+\int_B Θ^2 = 4AE + 8 \frac{BK}{(1+R)^2} = 0 \implies A = \frac{2K}{(1+R)^2} F,\quad B = -EF
 \]
 If we solve the A-period to be just $2\pi\iu$ then the differentials will be integer multiples of this one. Also recall Lagrange's formula for elliptic integrals, namely
 \[
@@ -120,14 +123,11 @@ KE' + K'E - KK' = \frac{\pi}{2}
 \]
 from which
 \begin{align*}
-2\pi\iu &= \int_A Θ^2 = 8\iu K'E C - 8\iu K'K C + 8\iu KE' C \\
-&= 8\iu C (K'E - K'K + KE')\\
-&= 4\pi\iu C \\
-C  &= 1/2 \\
-\implies Θ^2 &= \frac{1}{2}K' \lambda - E' \omega.
+2\pi\iu &= \int_A Θ^2 = F\left[\frac{4\iu}{(1+R)^2} K (K' - E') - \frac{4\iu}{(1+R)^2}K'E\right] \\
+&= \frac{4\iu}{(1+R)^2} F (K'K -KE' - K'E)\\
+F &= -(1+R)^2,\; A = -2k,\; B=(1+R)^2 E \\
+\implies Θ^2 &= -\frac{2}{(1+R)^2}K λ + \left[ (1+R)^2 E - 4\frac{R(1+R+R^2)}{(1+R)^2}K \right]ω
 \end{align*}
-
-\aside{It's a little strange to have K' and E' in the formula, as opposed to their un-prime-d counterparts. Perhaps this could be fixed by choosing a different basis for holomogy, a different $\lambda$ or a different coordinate change $z$.}
 
 Having found a pair of suitable differentials, any other pair will take the form, for $n,m\in\Z$ and $a,b\in\R$ with $an-bm\neq 0$,
 \[
