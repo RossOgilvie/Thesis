@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage{ross}
+\newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
+\usepackage{tikz}
+\fancyhdr
+
+\begin{document}
+\makeheading{Elliptic Spectral Curve and Differentials}
+\section{General Case}
+Previously dealt with the special case of an elliptic spectral curve where there was an additional reflection symmetry of the branch points. Here however we will do the calculation in full generality. Consider the curve
+\[
+η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
+\]
+and the Legendre standard form
+\[
+w^2 = (1-z^2)(1-k^2z^2)
+\]
+where $k$ is the elliptic modulus. The transformation to pass between these two curves can be written as follows
+\begin{align}
+A &:= (α-β)\abs{1-\bar{α}β} \\
+B &:= (1-\bar{α}β)\abs{α-β} \\
+f(ζ) &= \frac{ζ(αB-A) + (αB+A)}{ζ(B-\bar{α}A) + (B + \bar{α}A)} \\
+den &:= ζ(B-\bar{α}A) + (B + \bar{α}A)
+\end{align}
+From this follows a sequence of computations. Firstly, how do the holomorphic differential of each coordinate compare (ie what si the scaling factor)? And what about the standard differential of the second kind?
+\begin{align}
+\tilde{ω} &:= \frac{dz}{w} \\
+ω := \frac{dζ}{η} &= \frac{2}{\abs{α-β} + \abs{1-\bar{α}β}}\tilde{ω} \\
+e := (1-k^2z^2)\frac{dz}{w} &= \frac{2AB(1-\abs{α}^2)^2}{\abs{α-β} + \abs{1-\bar{α}β}}\cdot\frac{(ζ-β)(1-\bar{β}ζ)}{den^2}\frac{dζ}{η}
+\end{align}
+We construct the desired differentials in two stages. First, we narrow the space to a 3 dimensional one, and then compute the periods of its basis. This then allows us to find the differentials inside that space with the correct periods. The holomorphic differential is real (in the sense that $ρ^*ω = -\bar{ω}$), is it make an obvious first basis vector. In genus one, there is also an exact differential with the correct pole behaviour, namely
+\[
+d\left( \iu\frac{η}{ζ} \right)
+= \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+\]
+The restriction that the differentials have double poles at $α=0,\infty$ means that the polynomial part must be degree four. The restiction that these poles have no residues means that the bottom and top terms determine the linear and third order terms. And finally the reality condition mean that the middle term must be real and the top term is the conjugate of the bottom term. In effect, we only have a complex number of choice in the bottom term and a real scalr in the middle term. Given the two differentials we have already choosen, an obvious way to complete the basis would be to take
+\[
+λ = \left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ + \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 - \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+\]
+This is a differential of the second kind, so we can express it as the sum of the standard differential of the second kind $e$ and a holomorphic differential. The latter can further be written as a multiple of the non-vanishing holomorphic differential $ω$ and something exact. We assemble several pieces. In the $ζ$-plane, $e$ has a pole not at zero or infinity, so we add an exact differential to cancel this.
+\[
+e - Nd\left(\frac{η}{den}\right) := e - \frac {2(\bar{α}A-B)} {\abs{α-β}+\abs{1-\bar{α}β}} d\left(\frac{η}{den}\right)
+\]
+is holomorphic on $\C$. Likewise, so is
+\[
+λ - d\left(\frac{η}{ζ}\right) = \left[ \left(\bar{α}(1+\abs{β}^2)+β(1+\abs{α}^2)\right)ζ^3 - 2\bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+\]
+Next we cancel the scale things so the poles at infinity of these two differentials are equal.
+\begin{align}
+λ - d\left(\frac{η}{ζ}\right) &\sim M \left( e - Nd\left(\frac{η}{den}\right) \right) \\
+\implies M &= \abs{α-β}+\abs{1-\bar{α}β}
+\end{align}
+So the difference of the two sides above is holomorphic on the whole spectral curve, a compact Riemann surface of genus one, and therefore a multiple of $ω$.
+\[
+Lω := λ - d\left(\frac{η}{ζ}\right) - M \left( e - Nd\left(\frac{η}{den}\right) \right)
+\]
+Evaluating both sides at $ζ=0$ yields
+\[
+(αB-A)^2L = 2AB(1-\abs{α}^2)^2β + (\bar{α}A-B)(αB-A)P'(0) - 2αβ(\bar{α}A-B)^2
+\]
+At this point, we have computed the coefficents $L,M,N$ and can write
+\[
+    λ = Lω + Me + exact
+\]
+which is sufficent to be able to compute its periods in terms of the standard elliptic integrals. In the $z$-plane, let $γ_R, γ_I$ denote the real and imaginary periods respectively, which are from $-1$ to $1$ and from $1$ to $k^{-1}$. To summarise the standrad elliptic integrals
+\begin{align}
+\int_{γ_R}\tilde{ω} &= 4K(k) \\
+\int_{γ_I}\tilde{ω} &= 2\iu K' \\
+\int_{γ_R}e &= 4E(k) \\
+\int_{γ_I}e &= 2\iu(K'-E')
+\end{align}
+where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denote not the derivative but instead the complement. By definition $k' = \sqrt{1-k^2}$ and $K'(k) = K(k')$ and ditto for $E'$. The periods for our basis are
+\begin{align}
+\int_{γ_R} λ &= 8\frac{L}{M}K + 4 ME \\
+\int_{γ_I} λ &= 2\iu(2\frac{L}{M}+M)K' - 2\iu M E'\\
+\end{align}
+Let $Θ = Ωω + Λλ$ and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
+\begin{align}
+K(\frac{2}{M}Ω + \frac{2}{M}LΛ) + MΛE &= 0 \\
+K'(\frac{2}{M}Ω + \frac{2}{M}LΛ + MΛ) -MΛE' &= \pi
+\end{align}
+From the first equation, we can write $ MΛ = - ΓK$ and the multiple of the $K$ as $ΓE$. Substituting this into the second equation gives
+\begin{align}
+\pi
+&= K'(ΓE - ΓK) + ΓKE' \\
+&= Γ(K'E + KE' - KK') \\
+&= \frac{\pi}{2}Γ \\
+Γ &= 2 \\
+Λ &= -\frac{2}{M}K \\
+Ω &= 2\frac{L}{M}K + ME
+\end{align}
+
+NOTES:
+This changes the subsequent working. The calculation of L should be intact, thank goodness, but the rest will be off. I wonder how this changes things.
+\end{document}

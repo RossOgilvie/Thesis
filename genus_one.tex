@@ -23,7 +23,7 @@ y^2 = (1-t^2)(1-k^2 t^2).
 This highly symmetric form is known as {\it Lagrange form}. By M\"obius transformation (or by Landen's transformations), when $k$ is real one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obiviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'.
 
 \begin{center}
-\input{torus_lagrange.sk.tex}
+\includegraphics{{torus_lagrange.sk}.pdf}
 \end{center}
 
 In the picture, the red cycle is the real $A$-cycle and has the clockwise orientation as shown, whereas the blue cycle is the imaginary $B$-cycle and has orientation from left to right as shown. $B$ is divided into two pieces, $B^+$ on which $y$ is in $i\R$ (the occluded piece) and $B^-$ on which $y$ is in $-i\R$ (the front piece).
@@ -87,7 +87,7 @@ This leaves just one basis vector to choose. A not-completely-terrible choice is
 \[
 \lambda = \frac{d ζ  }{ ζ  ^2 η  } ( α  ^2 + \bar{α}  ^2 ζ  ^4)
 \]
-Within this space we need to find another differential (real linearly independent of $Θ^1$) with periods in $2\pi\Z$. We will do this by computing the periods of these basis vectors, and solving the reulting linear algebra problem. Let $B$ be the lift of the unit circle, passing through the point $(1, \abs{1- α  ^2})$ and let $A$ be the anticlockwise path around $ α  $ and $\bar{α}  ^{-1}$. Then we introduce the change of coordinates such that $α$ and $\bar{α}^{-1}$ are mapped to $1$ and $-1$ and $-α,-\bar{α}^{-1}$ to $k^{-1},-k^{-1}$. This will map the A and B cycles as defined here to the cycles defined earlier. Ordinarily one can only specify three points when making a Mobi\"us transformation, but because we are are permitting ourselves to vary $k$, we have sufficent degrees of freedom. Computing the formula of this transformation with the use of the cross ratio yields
+Within this space we need to find another differential (real linearly independent of $Θ^1$) with periods in $2\pi\Z$. We will do this by computing the periods of these basis vectors, and solving the resulting linear algebra problem. Let $B$ be the lift of the unit circle, passing through the point $(1, \abs{1- α  ^2})$ and let $A$ be the anticlockwise path around $ α  $ and $\bar{α}  ^{-1}$. Then we introduce the change of coordinates such that $α$ and $\bar{α}^{-1}$ are mapped to $1$ and $-1$ and $-α,-\bar{α}^{-1}$ to $k^{-1},-k^{-1}$. This will map the A and B cycles as defined here to the cycles defined earlier. Ordinarily one can only specify three points when making a Mobi\"us transformation, but because we are are permitting ourselves to vary $k$, we have sufficent degrees of freedom. Computing the formula of this transformation with the use of the cross ratio yields
 \[
 ζ = \frac{tα(R-1) + α(R+1)}{tR(1-R) + R(R+1)},\;\; k = \left(\frac{1-R}{1+R}\right)^2
 \]
@@ -97,6 +97,8 @@ using the shorthand $R := \abs{α}$. Then we have that
 η &= \pm \frac{α R (1-R^2)(1+R)^2}{(tR(1-R) + R(R+1))^2}y
 \end{align*}
 The ambiguity in the sign is simply due to the fact that there are two maps between Riemann surfaces that are compatible with this change of coordinates, and they differ by composition with the holomorphic involution, which is just a change in the sign of the fibre coordinate. We choose the minus sign for reasons that will become clear. We first compute the periods of $ω$.
+
+\aside{actually the sign thing I just said is not correct, it will show up in the orientation of one of the cycles being reversed. Will actually have to do the work required to show that this is the correct choice. Or not. Whateva Trevor.}
 \begin{align*}
 dζ &= \frac{2αR(R-1)(R+1)}{(tR(1-R) + R(R+1))^2} dt \\
 ω = \frac{dζ}{η} &= \frac{2}{(1+R)^2} \frac{dt}{y} \\
