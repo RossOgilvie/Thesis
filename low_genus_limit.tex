@@ -6,8 +6,8 @@
 \fancyhdr
 
 \begin{document}
-\makeheading{Elliptic Spectral Curve and Differentials}
-\section{General Case}
+\makeheading{Computations}
+\section{Elliptic Spectral Curve and Differentials}
 Previously dealt with the special case of an elliptic spectral curve where there was an additional reflection symmetry of the branch points. Here however we will do the calculation in full generality. Consider the curve
 \[
 η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
@@ -20,10 +20,10 @@ where $k$ is the elliptic modulus. The transformation to pass between these two 
 \begin{align}
 A &:= (α-β)\abs{1-\bar{α}β} \\
 B &:= (1-\bar{α}β)\abs{α-β} \\
-f(ζ) &= \frac{ζ(αB-A) + (αB+A)}{ζ(B-\bar{α}A) + (B + \bar{α}A)} \\
-den &:= ζ(B-\bar{α}A) + (B + \bar{α}A)
+ζ = f(z) &= \frac{z(αB-A) + (αB+A)}{z(B-\bar{α}A) + (B + \bar{α}A)} \\
+den &:= ζ(\bar{α}A-B) + (αB - A)
 \end{align}
-From this follows a sequence of computations. Firstly, how do the holomorphic differential of each coordinate compare (ie what si the scaling factor)? And what about the standard differential of the second kind?
+From this follows a sequence of computations. Firstly, how do the holomorphic differential of each coordinate compare (ie what is the scaling factor)? And what about the standard differential of the second kind?
 \begin{align}
 \tilde{ω} &:= \frac{dz}{w} \\
 ω := \frac{dζ}{η} &= \frac{2}{\abs{α-β} + \abs{1-\bar{α}β}}\tilde{ω} \\
@@ -31,7 +31,7 @@ e := (1-k^2z^2)\frac{dz}{w} &= \frac{2AB(1-\abs{α}^2)^2}{\abs{α-β} + \abs{1-\
 \end{align}
 We construct the desired differentials in two stages. First, we narrow the space to a 3 dimensional one, and then compute the periods of its basis. This then allows us to find the differentials inside that space with the correct periods. The holomorphic differential is real (in the sense that $ρ^*ω = -\bar{ω}$), is it make an obvious first basis vector. In genus one, there is also an exact differential with the correct pole behaviour, namely
 \[
-d\left( \iu\frac{η}{ζ} \right)
+Θ_1^1 := d\left( \iu\frac{η}{ζ} \right)
 = \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
 \]
 The restriction that the differentials have double poles at $α=0,\infty$ means that the polynomial part must be degree four. The restiction that these poles have no residues means that the bottom and top terms determine the linear and third order terms. And finally the reality condition mean that the middle term must be real and the top term is the conjugate of the bottom term. In effect, we only have a complex number of choice in the bottom term and a real scalr in the middle term. Given the two differentials we have already choosen, an obvious way to complete the basis would be to take
@@ -75,7 +75,7 @@ where $K$ and $E$ are the complete elliptic integrals of the first and second ki
 \int_{γ_R} λ &= 8\frac{L}{M}K + 4 ME \\
 \int_{γ_I} λ &= 2\iu(2\frac{L}{M}+M)K' - 2\iu M E'\\
 \end{align}
-Let $Θ = Ωω + Λλ$ and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
+Let $Θ_1^2 = Ωω + Λλ$ and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
 \begin{align}
 K(\frac{2}{M}Ω + \frac{2}{M}LΛ) + MΛE &= 0 \\
 K'(\frac{2}{M}Ω + \frac{2}{M}LΛ + MΛ) -MΛE' &= \pi
@@ -84,13 +84,62 @@ From the first equation, we can write $ MΛ = - ΓK$ and the multiple of the $K$
 \begin{align}
 \pi
 &= K'(ΓE - ΓK) + ΓKE' \\
-&= Γ(K'E + KE' - KK') \\
+&= Γ(K'E + KE' - KK') \label{eq:legendre_relation}\\
 &= \frac{\pi}{2}Γ \\
 Γ &= 2 \\
 Λ &= -\frac{2}{M}K \\
 Ω &= 2\frac{L}{M}K + ME
 \end{align}
+where \eqref{eq:legendre_relation} uses Legendre's relation.
 
-NOTES:
-This changes the subsequent working. The calculation of L should be intact, thank goodness, but the rest will be off. I wonder how this changes things.
+\section{Taking the limit}
+\label{sec:Taking the limit}
+Having now computed a basis for the differentials, we consider how these basis elements behave under the process of moving one of the branch points onto the unit circle. Because of the reality condition, this measn it is fusing with its partner branch point and creating a curve with a double point. Normalising this double pointed curve results in a rational curve. Our aim is to view the spectral genus zero case as the limit of spectral genus one.
+
+For convience we will ignore Sym points for a while. This allows us to take the limit as the point $α$ goes to $1$ which is computationally the simplest case. The broader case of $α$ going to another point of the circle is obtained as a rotation of this one. Firstly we compute the limits of the various scale factors we have accumulated.
+\begin{align}
+Θ_1^1 &\to \iu\frac{dζ}{ζ^2η}(ζ-1)\left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)ζ^2 + \bar{β}ζ^3 \right]\\
+M &= \abs{α-β} + \abs{1-\bar{α}β}
+\to 2\abs{1-β}\\
+k &= \frac{-\abs{α-β} + \abs{1-\bar{α}β}}{\abs{α-β} + \abs{1-\bar{α}β}}
+\to 0 \\
+K(k) &\sim \frac{π}{4}\left[ 1 + \frac{1}{4}k^2 + \dots \right]
+\to \frac{π}{4} \\
+E(k) &\sim \frac{π}{4}\left[ 1 - \frac{1}{4}k^2 + \dots \right]
+\to \frac{π}{4} \\
+L &\to 4\Re β - \abs{β}^2 - 1 = 1 + \abs{β}^2 \\
+Ω &\to \frac{π}{4}\frac{1 + \abs{β}^2}{\abs{1-β}} \\
+Λ &\to -\frac{π}{4}\frac{1}{\abs{1-β}} \\
+λ &\to \frac{dζ}{ζ^2η}\left[ -β + \frac{1}{2}(1+\abs{β}^2 + 2β)ζ + \frac{1}{2}(1+\abs{β}^2 - 2\bar{β})ζ^3 - \bar{β}ζ^4 \right] \\
+Θ_1^2 &\to \frac{π}{2}\frac{1}{\abs{1-β}^2}\frac{dζ}{ζ^2η}(ζ-1)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)ζ^2 + \bar{β}ζ^3 \right]
+\end{align}
+Having found the limits, rotate the limit point to $ν=e^{iφ}$ by making the substitution $ζ\mapsto ν^{-1}ζ, η\mapsto ν^{-1}η, β \mapsto ν^{-1}β$
+\begin{align}
+Θ_L^1 &:= \iu\frac{dζ}{ζ^2η}(ζ-ν)\left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}\bar{ν}(1+\abs{β}^2)ζ^2 + \bar{ν}\bar{β}ζ^3 \right]\\
+Θ_L^2 &:= \frac{π}{2}\frac{1}{\abs{ν-β}^2}\frac{dζ}{ζ^2η}(ζ-ν)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
+\end{align}
+The two limit differentials $Θ_L^i$ both have zeroes at the double point $ν$. The significance of this will shortly become apparent. Consider the normalisation map
+\begin{align}
+π : Σ_0(β) &\to Σ_1(1,β) \\
+π : (ζ,η) &\to (ζ, s\iu e^{-\iu φ/2}(ζ-ν)η)
+\end{align}
+where $s=\pm 1$ is a sign coming from the square root to be determined. This equation comes simply from the extra factor that the equation for $Σ_1(ν,β)$ has compared to $Σ_0(β)$. Because the spectral curves have involutions, composition with the involution gives `another' normalisation map, which differs only in the sign of the $η$ fibre. But clearly we want to make the positive values of $η$ map to positive values. In particular, above $ζ=1$ if we consider the case that $ν=i$, then we have
+\begin{align}
+η_0(1) &= \pm\abs{1-β} \\
+η_1(1) &= \pm\abs{1-\iu}\abs{1-β} = \pm\sqrt{2}\abs{1-β} \\
+s\iu e^{-\iu π/4}(1-\iu)η_0(1)
+&= \pm s \iu \frac{1-\iu}{\sqrt{2}}(1-\iu)\abs{1-β} \\
+&= \pm s \iu (-\iu\sqrt{2})\abs{1-β} \\
+&= \pm s \sqrt{2}\abs{1-β}
+\end{align}
+From this we can see that we should chose $s=1$ to be the correct sign for the square root. The pull back of the tautilogical section is then by definition $π^* η = \iu e^{-\iu φ/2}(ζ-ν)η$. And the limit differentials are
+\begin{align}
+\pi^* Θ_L^1 &:= \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}\bar{ν}(1+\abs{β}^2)ζ^2 + \bar{ν}\bar{β}ζ^3 \right]\\
+\pi^* Θ_L^2 &:= -\iu \frac{π}{2} \frac{1}{\abs{ν-β}^2} \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
+\end{align}
+These lie squarely in the plane of genus 0 differentials, as we would hope. We can now see the significance of the development of a zero at the double point. When we pull back regular differentials on a curve with a double point, the result is differentials with simple poles at the two preimages of the double point, with opposite residues at those points. But by having a zero at the double point, the pole is neutralised and we again have regular differentials.
+
+\section{Matching the limit differentials to the lattice}
+\label{sec:Matching the limit differentials to the lattice}
+
 \end{document}
