@@ -92,9 +92,27 @@ From the first equation, we can write $ MΛ = - ΓK$ and the multiple of the $K$
 \end{align}
 where \eqref{eq:legendre_relation} uses Legendre's relation.
 
+\section{The Sym Lattice}
+\label{sec:The Sym Lattice}
+We have computed two differentials that satisfy the period conditions and are real linearly independent. Though obviously there is nothing `natural' about this choice, many other combinations are possible. We also have not applied the Sym point conditions. For general $α,β$, there are not enough degrees of freedom to satisfy the condition at both points, only enough for one. With these two ideas in mind, we make the following definitions.
+
+Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle anticlockwise to the point $(α/\norm{α},-η(α/\norm{α}))$, follows the ray $\R^+ α$ to $α$, circles this branch point, goes back along the ray $\R^+ α$ (though on a different branch now) to the unit circle, and continues to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by constuction will be in $2\pi \iu \Z$, and so the Sym point conditions are well defined. Let
+\[
+b^{-1} = \frac{1}{2\pi\iu}\int_{γ_+} Θ_1^1
+\]
+So we may define $Θ_1^S = b Θ_1^1$, the unique differential with no periods and $\int_{γ_+} Θ_1^S = 2\pi\iu$. Likewise we define $Θ_1^P$ to be the unique differential with periods $0$ and $2\pi\iu$ and $\int_{γ_+} Θ_1^P = 0$. Writing $Θ_1^P = a Θ_1^1 + Θ_1^2$ we compute that
+\[
+a = - \frac{\int_{γ_+} Θ_1^2}{\int_{γ_+} Θ_1^1}.
+\]
+These again form a basis of the plane of differentials, and also satisfy the Sym condition at $ζ=1$, but only for certain values of $α,β$ do they also satify the condition at $ζ=-1$. I claim that if $α,β$ are such that the Sym point conditions are able to be satified by some differentials, then these differentials form a sublattice of $\Z\langle Θ_1^P, Θ_1^S\rangle$. To see this, suppose $Θ$ is such that it has periods $0$ and $2\pi\iu n$ and
+\[
+\frac{1}{2\pi\iu}\int_{γ_+} Θ = 2\pi\iu k,\;\; \frac{1}{2\pi\iu}\int_{γ_-} Θ = 2\pi\iu l.
+\]
+Then by considering periods $Θ - n Θ_1^P$ is exact so a multiple of $Θ_1^S$. It is easy to see what the multiple is, it much be $k$ from the first half period above. Therefore $Θ = n Θ_1^P + k Θ_1^S$, which is in the lattice as claimed. Note however that the half period integrals are extremely difficult to compute and so in practice we cannot write explicit formulas for our basis $\Z\langle Θ_1^P, Θ_1^S\rangle$. We will need some other method to find which $α,β$ are admissible.
+
 \section{Taking the limit}
 \label{sec:Taking the limit}
-Having now computed a basis for the differentials, we consider how these basis elements behave under the process of moving one of the branch points onto the unit circle. Because of the reality condition, this measn it is fusing with its partner branch point and creating a curve with a double point. Normalising this double pointed curve results in a rational curve. Our aim is to view the spectral genus zero case as the limit of spectral genus one.
+Having now computed a basis for the differentials, we consider how these basis elements behave under the process of moving one of the branch points onto the unit circle. Because of the reality condition, this means it is fusing with its partner branch point and creating a curve with a double point. Normalising this double pointed curve results in a rational curve. Our aim is to view the spectral genus zero case as the limit of spectral genus one.
 
 For convience we will ignore Sym points for a while. This allows us to take the limit as the point $α$ goes to $1$ which is computationally the simplest case. The broader case of $α$ going to another point of the circle is obtained as a rotation of this one. Firstly we compute the limits of the various scale factors we have accumulated.
 \begin{align}
@@ -111,12 +129,12 @@ L &\to 4\Re β - \abs{β}^2 - 1 = 1 + \abs{β}^2 \\
 Ω &\to \frac{π}{4}\frac{1 + \abs{β}^2}{\abs{1-β}} \\
 Λ &\to -\frac{π}{4}\frac{1}{\abs{1-β}} \\
 λ &\to \frac{dζ}{ζ^2η}\left[ -β + \frac{1}{2}(1+\abs{β}^2 + 2β)ζ + \frac{1}{2}(1+\abs{β}^2 - 2\bar{β})ζ^3 - \bar{β}ζ^4 \right] \\
-Θ_1^2 &\to \frac{π}{2}\frac{1}{\abs{1-β}^2}\frac{dζ}{ζ^2η}(ζ-1)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)ζ^2 + \bar{β}ζ^3 \right]
+Θ_1^2 &\to \frac{π}{2}\frac{1}{\abs{1-β}}\frac{dζ}{ζ^2η}(ζ-1)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)ζ^2 + \bar{β}ζ^3 \right]
 \end{align}
 Having found the limits, rotate the limit point to $ν=e^{iφ}$ by making the substitution $ζ\mapsto ν^{-1}ζ, η\mapsto ν^{-1}η, β \mapsto ν^{-1}β$
 \begin{align}
 Θ_L^1 &:= \iu\frac{dζ}{ζ^2η}(ζ-ν)\left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}\bar{ν}(1+\abs{β}^2)ζ^2 + \bar{ν}\bar{β}ζ^3 \right]\\
-Θ_L^2 &:= \frac{π}{2}\frac{1}{\abs{ν-β}^2}\frac{dζ}{ζ^2η}(ζ-ν)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
+Θ_L^2 &:= \frac{π}{2}\frac{1}{\abs{ν-β}}\frac{dζ}{ζ^2η}(ζ-ν)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
 \end{align}
 The two limit differentials $Θ_L^i$ both have zeroes at the double point $ν$. The significance of this will shortly become apparent. Consider the normalisation map
 \begin{align}
@@ -135,11 +153,74 @@ s\iu e^{-\iu π/4}(1-\iu)η_0(1)
 From this we can see that we should chose $s=1$ to be the correct sign for the square root. The pull back of the tautilogical section is then by definition $π^* η = \iu e^{-\iu φ/2}(ζ-ν)η$. And the limit differentials are
 \begin{align}
 \pi^* Θ_L^1 &:= \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}\bar{ν}(1+\abs{β}^2)ζ^2 + \bar{ν}\bar{β}ζ^3 \right]\\
-\pi^* Θ_L^2 &:= -\iu \frac{π}{2} \frac{1}{\abs{ν-β}^2} \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
+\pi^* Θ_L^2 &:= -\iu \frac{π}{2} \frac{1}{\abs{ν-β}} \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
 \end{align}
 These lie squarely in the plane of genus 0 differentials, as we would hope. We can now see the significance of the development of a zero at the double point. When we pull back regular differentials on a curve with a double point, the result is differentials with simple poles at the two preimages of the double point, with opposite residues at those points. But by having a zero at the double point, the pole is neutralised and we again have regular differentials.
 
 \section{Matching the limit differentials to the lattice}
 \label{sec:Matching the limit differentials to the lattice}
+
+Consider the isomorphism/ change of coordinates for the plane of genus zero differentials that makes the following indentificaiton
+\[
+Θ = \frac{dζ}{ζ^2η}(b_0 + b_1 + \dots) \sim \frac{b_0}{\frac{\pi}{2}β},
+\]
+so that
+\[
+\frac{\pi}{2}a \pi^*Θ_1^1 + k \pi^*Θ_1^2 \sim e^{\iu φ/2} \left( a + k\iu \frac{1}{\abs{ν-β}} \right)
+\]
+where $ν = e^{\iu φ}$ and an element of the lattice of Sym condition satisfying differentials is
+\[
+\frac{n}{\abs{1+β}} + \iu \frac{m}{1-β}
+\]
+We must satisfy this condition for two differentials, which we will denote distinguish with tildes, so as a first step we multiply both sides but $e^{-\iu φ/2}$ and consider real parts. This is always possible to solve, because we can simply set $a$ (or $\tilde a$) to be what ever the right hand side is. If the differential on the right satisfies the Sym point condition, so does the one on the left, and $a$ is allowed to be any real value subject to this qualification.
+
+Therefore we only need to be concerned with the imaginary parts of the equation, which are restrictions on the choice of three integers. Namely
+\begin{align}
+k \frac{1}{\abs{ν-β}} &= - \frac{n}{\abs{1+β}}\sin \frac{φ}{2} + \frac{m}{\abs{1-β}}\cos \frac{φ}{2} \\
+\tilde{k} \frac{1}{\abs{ν-β}} &= - \frac{\tilde n}{\abs{1+β}}\sin \frac{φ}{2} + \frac{\tilde m}{\abs{1-β}}\cos \frac{φ}{2}
+\end{align}
+Dividing both sides by $k$ (resp $\tilde k$) and subtracting yields
+\begin{align}
+\left(\frac{m}{k} - \frac{\tilde m}{\tilde k} \right) \frac{1}{\abs{1-β}}\cos \frac{φ}{2} &= \left(\frac{n}{k} - \frac{\tilde n}{\tilde k} \right) \frac{1}{\abs{1+β}}\sin \frac{φ}{2} \\
+\frac{\abs{1+β}}{\abs{1-β}} &=  \frac{n\tilde k - \tilde n k}{m \tilde k - \tilde m k} \tan \frac{φ}{2} =: p \tan \frac{φ}{2}
+\end{align}
+for a rational number $p$. Similarly dividing by $n$ and eliminating $\sin$ yeilds
+\[
+\frac{\abs{ν-β}}{\abs{1-β}} = \frac{m\tilde n - \tilde m n}{k \tilde n - \tilde k n} \sec \frac{φ}{2} =: q \sec \frac{φ}{2}
+\]
+For another rational number $q$. If we have a solution for a particular $p$ and $q$, then as these two equations have three real degrees of freedom ($ν\in\S^1$ and $β\in \C$), and the Jacobian of this as a map $F : (ν,β) \mapsto (p,q)$ is generically maximal rank, we expect that there is a path of solutions. Also note the general fact that if $μ,\tilde μ \in \S^1$, $R\in\R$, and
+\[
+\frac{\abs{μ-β}}{\abs{\tilde μ - β}} = R,
+\]
+then also
+\[
+\frac{\abs{μ-\bar{β}^{-1}}}{\abs{\tilde{μ}-\bar{β}^{-1}}}
+= \frac{\abs{μ}\abs{\bar{β}^{-1}}\abs{\bar{β} - μ^{-1}}}{\abs{\tilde{μ}}\abs{\bar{β}^{-1}}\abs{\bar{β} - \tilde{μ}^{-1}}} = \frac{\abs{μ-β}}{\abs{\tilde μ - β}} = R.
+\]
+The two equations above are both of this form, so if $(ν,β)$ is a solution, so too is $(ν,\bar{β}^{-1})$. This is expected, as there is nothing really distinguishing the root inside the unit circle from the one outside. Also note that the left hand sides are both positive numbers, so if $p>0$ then $ν$ is confined to the upper half circle, and if $p<0$ it is confined to the lower half.
+
+The general solution to these equations is ugly and unilluminating. The projection of the solution space onto the $β$-plane is a real curve of degree 8 in the real and imaginary parts of $β$. There is however a nice solution to the question of when are both $ν$ and $β$ on the unit circle. Square both equations and make the t-substituion $t = \tan φ/2$. Also let $β= x + \iu y$. Then the equations are
+\begin{align}
+(x+1)^2 + y^2 &= p^2t^2 \left((x-1)^2 + y^2\right) \\
+\left(x- \frac{1-t^2}{1+t^2} \right)^2 + \left(y - \frac{2t}{1+t^2}\right)^2 &= q^2(1+t^2) \left((x-1)^2 + y^2\right) \\
+x^2 + y^2 &= 1.
+\end{align}
+Using the third equations to eliminate the $x^2 + y^2$ from both sides of the first equation, and rearranging to solve for $x$ gives
+\[
+x = \frac{p^2t^2 - 1}{p^2t^2 + 1}.
+\]
+Applying the same trick to make the second equation linear in $y$ gives
+\[
+y = \frac{2pt}{p^2t^2 + 1}.
+\]
+Finally then can we solve for $t$ in terms of $p$ and $q$ alone to give the neat formula
+\[
+t^2 = \operatorname{sgn} p \frac{1\pm q}{p \mp q}
+\]
+From the constraint that the left hand side is a nonnegative number, we know that $q$ must lie in the range $\abs{q}< \min\{\abs{p},1\}.
+
+
+
+
 
 \end{document}
