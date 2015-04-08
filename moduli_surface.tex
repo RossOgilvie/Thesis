@@ -1,0 +1,118 @@
+\documentclass{article}
+
+\usepackage{ross}
+\usepackage{tikz}
+\usepackage{todonotes}
+
+\DeclareMathOperator{\pp}{pp.}
+\DeclareMathOperator{\sign}{sign}
+\fancyhdr
+
+\begin{document}
+\makeheading{The genus one moduli surface}
+\section{Definition}
+\label{sec:Definition}
+Consider the spectral data associated to a harmonic map. It consists of three objects, and those objects have a litany of special properties. To be precise, there is a genus $g$ hyperelliptic curve $Σ$ specified by the equation $η^2=P(ζ)$ and two meromorphic differentials $Θ, \tilde{Θ}$ on this curve. If we consider only spectral genus 1, then we may specify the curve by its branch points over $\CP^1$. And because of the reality of the spectral curve, these four points much be in conjugate inverse pairs, so we are reduced to choosing two complex numbers $α,β$ inside the unit disc. Not all choices are allowed however, we must exclude the diagonal $α=β$ as the spectral curve cannot have singularities in low genus. Notate this space $\mathcal{A} := D^2 \setminus \{α=β\}$. It will form the base of our bundle of parameters.
+
+Consider next the space of permitted differentials. On any given spectral curve, a meromorphic differential with double poles above $ζ=0,\infty$ and the hyperellitpic symmetry $σ^* Θ = - Θ$ is necessarily of the form
+\begin{align}
+\frac{dζ}{ζ^2η}\left( b_0 + b_1ζ + \ldots + b_{g+3}ζ^{g+3} \right)
+\end{align}
+The reality condition then forces the polynomial part to be a real polynomial (with respect to $ρ(ζ,η) = (\bar{ζ}^{-1}, \bar{ζ}^{g+1}\bar{η})$) and the condition that it is residue free gives a formula for $b_1$ in terms of $b_0$. Thus there are $2(g+4)/2-2 = g+2=3$ real degrees of freedom remaining. If we choose a basis for the homology of the spectral curve in the right way, the loop around $α,\bar{α}^1$ and the unit circle being such a choice, then the periods of elements of this $3$-space are purely real and imaginary on the two loops respectively. Take the subspace whose real periods vanish; it is a real $2$-plane. Thus for each point in $\mathcal{A}$ we have a plane, thus we consider the rank 2 vector bundle $\mathcal{B}\to\mathcal{A}$.
+
+In the genus one case, there are several global frames we can choose for this bundle. The first and least difficult to compute is $\{Θ^1,Θ^2\}$ where $Θ^1 = \iu d(ζ/η)$ is an exact differential, and $Θ^2$ is differential whose principal part satisifies $\pp Θ^2 = \iu \pp Θ^1$ and whose imaginary period is $2π\iu$. If we take as our basis for the $3$-space of differentials with the correct symmetries $Θ^1$, $ω = dζ/η$ the holomorphic differential and
+\[
+λ = \left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ + \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 - \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+\]
+a differential with $\pp λ = \iu \pp Θ^1$, then we can express $Θ^2$ as
+$Ωω + Λλ$ for
+\begin{align*}
+Λ &= -\frac{2}{M}K \\
+Ω &= 2\frac{L}{M}K + ME \\
+(αB-A)^2L &= 2AB(1-\abs{α}^2)^2β + (\bar{α}A-B)(αB-A)P'(0) - 2αβ(\bar{α}A-B)^2 \\
+M &= \abs{α-β}+\abs{1-\bar{α}β} \\
+A &:= (α-β)\abs{1-\bar{α}β} \\
+B &:= (1-\bar{α}β)\abs{α-β}
+\end{align*}
+
+Differentials that fulfill all the requirements to be spectral data must lie somewhere within the space spanned pointwise by $\R Θ^1 + \Z Θ^2$. But where within this space exactly? To answer that requires consideration of the Sym point condition. Let $γ_+$ be a path through $Σ$ from $(1,-\abs{1-α}\abs{1-β})$ to $(1,+\abs{1-α}\abs{1-β})$ and similarly $γ_-$ is a path connecting the two points over $ζ=-1$. A better framing for the problem (excuse the pun) is then to make the following unique choice
+\begin{align}
+\int_{\S^1} Θ^S = 0, &\qquad 2π\iu Γ^S_+ := \int_{γ_+} Θ^S = 2π\iu \\
+\int_{\S^1} Θ^P = 2π\iu, &\qquad 2π\iu Γ^P_+ := \int_{γ_+} Θ^P = 0.
+\end{align}
+One can remember the superscripts with the mnenomic P for period and S for exact. If $Θ$ is a differential with integral Sym half-periods $2π\iu Γ_-$ and $2π\iu Γ_+$ and imaginary period $2π\iu n$, then $Θ-nΘ^P$ is exact and so must be a real mulitple of $Θ^S$; precisely, $Θ=nΘ^P + Γ_+ Θ^S$. Thus we can see that any differential with all the conditions meet must be an element of $\Z \langle Θ^S, Θ^P \rangle$.
+
+It is not possible to find such differentials for every elliptic spectral curve, but by making our choice of $Θ^S, Θ^P$ we have fully exhausted all degrees of freedom toward that end. Moreover, both of those differentials are defined for every $(α,β)\in\mathcal{A}$, so we may consider the $\Z^2$ lattice bundle $Λ\to\mathcal{A}$. And any differential that does meet all the conditions lies within this space. To have a complete spectral datum, we need to take two such differentials, which are an element of $Λ^2$ (product taken fibrewise). If we denote the space of spectral data as $\mathcal{X}$, then $\mathcal{X}\subset Λ^2 = \Z^4\times\mathcal{A}$. We can make this identification because by giving a global frame we have shown the bundle to be trivial. Thus we can divide $\mathcal{X}$ into various pieces indexed by four integers, though some of those pieces may be empty. For example $\mathcal{X}(1,1,2,2)$, which corresponds to the space of spectral data with differentials taken to be $Θ^S + Θ^P$ and $2Θ^S + 2Θ^P$, is empty because the differentials should be lineary independent.
+
+In terms of the explicit basis, this new one can be writen as $Θ^P = a Θ^1 + Θ^2$ and $Θ^S = b Θ^1$ where the coefficents are
+\[
+a = -\frac{\int_{γ_+}Θ^2}{\int_{γ_+}Θ^1}, \quad
+b = \frac{2π\iu}{\int_{γ_+}Θ^1}
+\]
+
+\section{Deformation Lemma}
+\label{sec:Deformation Lemma}
+Refer to the deformation lemma section to see the many variations that all show for at every point in $\mathcal{X}$ there is a $2$-space of tangent vectors. Therefore it is a two dimensional space \todo{manifold? How to show smoothness?}.
+
+\section{On the boundary}
+In general it is difficult to be explicit about this space, because the Sym conditions are transcendental. However, over the boundary of $\mathcal{A}$ the conditions degenerate to simple trigonometry and can be solved. The first step is to treat each piece of $\mathcal{X}$ seperately, that is, fix four integers $m,n,\tilde m, \tilde n$. Then we can identify $\mathcal{X}(n,m,\tilde n,\tilde m)$ as lying within $\mathcal{A}$. With this view point adopted, the question of finding the moduli space is reduced to finding conditions on $(α,β)$ such that the Sym point conditions can be satisfied.
+
+The coeffecient of the principal part provides a coordinate for the plane of differentials. We can further normalise these cooordinates by dividing by $β$. If we take the limit as $α \to \S^1$, then the polynomial part of both basis differentials develops a simple zero at $α$, as does the fibre coordinate $η$. These therefore cancel each other, so that the resulting differential could be considered as either having a zero at the double point, or as a differential on the normalisation with again poles only above $ζ=0,\infty$. (In general, a differential on the nodal curve pulled back to the normalisation will have two simple poles of opposite residues.)
+
+INSERT JUSTIFICATION FOR INTERCHANGING LIMITS AND INTEGRALS AS JOHN POINTED OUT.
+
+The half-periods of the limit can then be computed via the pull back to the normalisation, which as a genus zero curve the differentials are exact. If we denote the normalisation map as $π$ and the limits of the differentials as $Θ^1_L, Θ^2_L$ then
+\begin{align*}
+\int_{γ_+} Θ^1_L = \int_{π^{-1}(γ_+)} \pi^* Θ^1_L
+&= 4\iu \abs{1-β} \sin \frac{φ}{2} \\
+\int_{π^{-1}(γ_-)} \pi^* Θ^1_L &= -4\iu \abs{1+β} \cos \frac{φ}{2} \\
+\int_{π^{-1}(γ_+)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1-β}}{\abs{α-β}} \cos \frac{φ}{2} \\
+\int_{π^{-1}(γ_-)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}} \sin \frac{φ}{2} \\
+\end{align*}
+where $α = \exp \iu φ$. \todo{double check signs here vis-à-vis correct square root sign choice in $η(\pm 1)$} From this we can computer the previous incomputable coefficents $a$ and $b$; they are simply ratios of the above. This gives us the half-periods in the better frame
+\begin{align*}
+2π\iu Γ^S_- := \int_{γ_-} Θ^S &= -2π\iu \frac{\abs{1+β}}{\abs{1-β}}\cot\frac{φ}{2} \\
+2π\iu Γ^P_- := \int_{γ_-} Θ^P &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}}\csc\frac{φ}{2}
+\end{align*}
+The condition $Γ_+, \tilde{Γ}_+$, the half-periods of $Θ, \tilde{Θ}$ respectively, is assured by this choice of basis, but we still require that $Γ_-, \tilde{Γ}_- \in\Z$. Indeed, based on our selection to focus on $\mathcal{X}(m,n,\tilde m, \tilde n)$ (a choice of two elements of the lattice $Λ$) we require that there be integers $k,\tilde k$ such that
+\begin{align*}
+k = Γ_- &= m Γ^S_- + n Γ^P_- \\
+\tilde{k} = Γ_- &= \tilde{m} \tilde{Γ}^S_- + \tilde{n} \tilde{Γ}^P_-
+\end{align*}
+Elimination of the left hand sides of both equations leads to
+\[
+\frac{\abs{α-β}}{\abs{1-β}} = -\left( \frac{n\tilde{k} - \tilde{n}k}{m\tilde{k}-\tilde{m}k} \right) \sec\frac{φ}{2} =: q \sec\frac{φ}{2}
+\]
+whereas elimination of the rightmost term leads to
+\[
+\frac{\abs{1+β}}{\abs{1-β}} = \left( \frac{k\tilde{n} - \tilde{k}n}{\tilde{m}n - m \tilde{n}} \right) \tan\frac{φ}{2} =: p \tan\frac{φ}{2}
+\]
+
+These equations can be solved exactly, but the exact form of the solutions are not particularly insightful. None-the-less, the method is to make the $t$-subsitution $t=\tan φ/2$ and sqaure everything, which results in two polynomial equations in three real variables ($t$ and the real and imaginary components of $β$). The solution, when it exists, is an arc.
+
+INSERT COMPUTER GRAPHICS
+
+Projection onto the $β$-plane yields a degree 8 polynomial. It is interesting to consider the endpoints of this arc, which occur in the limit that $β\to\S^1$ also.
+
+OFF TOPIC: If we take the alternative definition of $\mathcal{A}$ that includes $\C^2$ outside $D\times D$ also, then there is a symmetry of this arc under inversion in the unit circle. That makes it a nice egg shape. Is there anything to be gained by doing this, for example can I show that it must lie within the sector formed of the origin, the two points corresponding to $β\in\S^1$ and the unit circle?
+
+The two points are given by
+\begin{align*}
+t^2 &= (\sign p) \frac{1 \pm q}{p \mp q} \\
+β &= \frac{p^2t^2 - 1}{p^2t^2 + 1} + \iu \frac{2pt}{p^2t^2+1}
+\end{align*}
+So you can see that there are two solutions (or a double solution) only when $\abs{q} < 1, \abs{p}$ \todo{What forbids only one solution?}. The condition that it be less than 1 forces the $k/\tilde{k}$ to lie in a certain range ....
+
+INVESTIGATE how many $(k,\tilde{k})$ there are that satisfy the inequalities on $q,p$ for given $m,n,\tilde m, \tilde n$?
+
+Since there is nothing particularly special about $α\to\S^1$ compared to $β\to\S^1$, and simliar analysis yields that the intersection of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$ with $D\times\S^1$ is also a colection of arcs. These arcs join along the points where both $α,β$ lie in the unit circle to form closed cycles. UNPROVEN CLAIM \todo{verify this claim}. These are the boundary components of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$.
+
+BROAD STROKES PICTURE. There is some 2d surface in this 4-space $\mathcal{A}$. The exterior boundary is a three space topologically $S^3$. To see this, note that it is $S^1 \times D \cup D \times \S^1$. The intersection of the two pieces is $\S^1\times\S^1$, a torus. The two components of the union are the inside and outside of the torus. Putting it another way, in $\C^2$ the intersection is given by $\abs{α}=\abs{β}=1$, a scaled up version of the Clifford torus and you can project $\{(α,β) \mid α\in\S^1, β\in D\}$ onto the 3-sphere of radius $\sqrt{2}$ by rescaling by $\sqrt{2}/\sqrt{1+\abs{β}^2}$ and ditto for the other component.
+
+The forbidden diagonal bit, ie where $α=β$ is a complex plane inside $\C^2$ that intersect this boundary in a real curve, the line on the torus where the toroidal angle is equal to the poloidal angle.
+
+The moduli space $\mathcal{X}$ is also a surface, so we would expect it to intercect the boundary in arcs. Further, since we know that it has this symmetry that means we can consider its mirror on the of the boundary, we expect those arcs to be closed loops. The only way they could be otherwise (I think) is if the moduli space was tangent to the boundary somewhere.
+
+Away from the boundary I don't know what the moduli space is doing. I don't know if separate boundary arc correspond to separate components of the moduli space, or if it's connected, or in between. I don't know if there are handles sitting inside. I don't know if several components come together on the forbidden diagonal.
+
+\end{document}

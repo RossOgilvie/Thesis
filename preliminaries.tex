@@ -1,0 +1,51 @@
+\section{Preliminaries}
+\label{sec:Preliminaries}
+
+Hitchin's theorem 8.1 \cite{Hitchin1990} provides conditions on the spectral data for it to correspond to a solution to the set of equations
+\[
+d_A''Φ = 0,\, F_A = [Φ,Φ^*], \labelthis{HME}
+\]
+a theorem 8.20 gives an addtional condition for this data to correspond to an actual harmonic map from the torus into $\S^3$. The conditions are reporduced here and labelled. Let $ρ$ be the real structure induced from $ζ\mapsto \cji{ζ}$ on $\CP^1$ and $σ$ the hyperelliptic involution given by $η\mapsto -η$. Given a hyperelliptic curve $Σ$ in the total space of $\mathcal{O}(p+1)\to^π \CP^1$ defined by the equation $η^2 = P(ζ)$ and meromorphic differentials $Θ,\tilde Θ$ on $Σ$ the following properties must be satisfied.
+\begin{enumerate}
+\item Real spectral curve: $P(ζ)$ is a real section of $\mathcal{O}$ with respect to $ρ$.
+\item No real zeroes: $P(ζ)$ has no zeroes on the unit circle $\S^1\subset\CP^1$.
+\item Simple zeroes: $P(ζ)$ has at most simple zeroes at $ζ=0,\infty$.
+\item Poles: The differentials have double poles with no residues at $π^{-1}\{0,\infty\}$ where $π$ is the projection $π: Σ \to \CP^1$, but are otherwise holomorphic.
+\item Symmetry: The differentials both satisfy $σ^* Θ = - Θ$.
+\item Real differentials: The differentials both satisfy $ρ^* Θ = - \bar{Θ}$
+\item Periods: The periods of the differentials lie in $2π\iu\Z$
+\item Linear independence: The principal parts of the two differentials are real linearly independent.
+\item Closing conditions: $μ$ has value $1$ at $π^{-1}\{\pm 1\}$, where $Θ = d\log μ$, $μσ^*μ = 1$.
+\end{enumerate}
+
+Reformulate a bit. The holomorphic differential is $dζ/η$, so meromorphic differentials on $Σ$ are of the form $dζ/η (f(ζ) + η g(ζ))$ for $f,g$ meromorphic functions on $\CP^1$ (ie they are rational functions). The symmetry constraint requires that $g\equiv 0$. To have double poles above $ζ=0,\infty$, $f$ must be of the form $ζ^{-2}b(ζ)$ for a polynomial $b$ of degree $p+3$. Reality of the differential means that this polynomial is real, that is $\overline{b(ζ)}=\bar{ζ}^{p+3}b(\cji{ζ})$. To handle the residue condition, expand as a series at zero to get that the residue is
+\[
+b_1 - \frac{1}{2}\frac{P_1}{P_0}b_0,
+\]
+where subscripts denote coefficents of the polynomials. Thus is determines $b_1$ in terms of $b_0$. The period condition is difficult to calculate explicitly, but we can consider a linearization of it. So counting real degrees of freedom, we have $2\times(p+4)/2 - 2 = p+2$ in choosing $b$. We may choose a basis of homology such that the $A$ periods are all real, and the $B$ periods are purely imaginary. Then a necessary condition is that the $A$ periods must vanish: $p$ linear constraints. Thus there is a real 2-plane of differentials with purely imaginary periods that otherwise satisfy the conditions.
+
+The closing condition can be reformulated as a period type constraint also. Consider if we had such a $μ$ for $Θ$. Then suppose that $γ_1$ was a path connecting the two points of $π^{-1}(1)$.
+\[
+\int_{γ_1} Θ = \log μ(1^+) - \log μ(1^-) \in 2π\iu\Z
+\]
+and likewise for the two points over $-1$. Conversely, suppose that
+\[
+\int_{γ_1} Θ, \int_{γ_{-1}} Θ \in 2π\iu\Z
+\]
+Then we could define $μ$ to be $\exp(\int θ)$. The integral of $Θ$ is defined up to a constant, periods and residues. The latter are zero, the constant of integration is fixed by the condition $μσ^*μ = 1$, and the periods are all in $2π\iu\Z$ so do not change $μ$. These integrals then imply that
+\[
+μ(1^+)/μ(1^-) = \exp \left(\int_{γ_1} Θ \right) = 1.
+\]
+Together with $μ(1^+)μ(1^-) = μ(1^+)σ^*μ(1^+) = 1$, this implies that $μ(1^\pm) = \pm 1$. Looking at the construction of solutions of \eqref{HME}, we are free to tensor with an element of $H^1(M,\Z_2)$, which we can use to fix the signs to be just $+1$ in a unique way. Thus for all $Θ$ that satisfy these `half-period' integral conditions, there is one $μ$ that satisfies Hitchin's closing condition.
+
+Thus we have found a form of the differentials that satisfies most of the conditions, and the conditions not yet fulfilled are all the integrality of certain integrals.
+
+Given a set of spectral data, we can detect certain features of the corresponding map directly. For example, if $P$ is an even polynomial, then the image of the map is a geodesic sphere. Of particular interest is the case where $P(0)=0$; in this case the map is conformal. Why this is of interest is because it changes the form of $θ$ given above. Because $P$ can have at most a simple zero at $ζ=0$, $P_1 \neq 0$. Let a local coordinate by $ξ =\sqrt{ζ}$ and expand
+\[
+θ = \frac{dζ}{ζ^2η}b(ζ) \sim \frac{2ξdξ}{ξ^4ξ} \frac{1}{\sqrt{P_1}} \bra{1-\frac{1}{2}\frac{P_2}{P_1}ξ^2+O(ξ^4)} \bra{b_0 + b_1 ξ^2 + O(ξ^4)} = \frac{2dξ}{ξ^4} \frac{1}{\sqrt{P_1}} \bra{b_0 + ξ^2 \bra{b_1-\frac{1}{2}\frac{P_2}{P_1}b_0} + O(ξ^4)}
+\]
+So to have a double pole requires that $b_0$ must also vanish for a conformal map, and note that this is automatically residue free. In light of this, we may rephrase the equation to be residue free in the nonconformal case as
+\[
+P_1b_0 - 2P_0b_1 = 0
+\]
+and observe the relation continues to hold in the conformal case, even though it now is needed to produce the desired cancellation as the two double poles `collide'.
