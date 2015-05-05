@@ -90,20 +90,33 @@ for a polynomial $b^i$ of degree $p+3$. If the deformation flow preserves the pe
 q^i &= \frac{1}{\zeta\eta}f(\zeta) \\
 \dot q^i &= \frac{1}{\zeta\eta} \left(-\frac{1}{2}\frac{\dot P}{P}f + \dot f\right),
 \end{align*}
-showing that $\dot q^i$ has a simple pole at $0$. In a similiar manner, it has a simple zero at $\infty$. At a $k^{th}$ order root $α$ of $P$, $Θ^i$ is holomorphic hence $q^i$ is too, so letting $ξ^2 = ζ-α$ be a local coordinate
+showing that $\dot q^i$ has a simple pole at $0$. In a similiar manner, it has a simple zero at $\infty$. At a simple root $α$ of $P$, $Θ^i$ is holomorphic hence $q^i$ is too, so letting $ξ^2 = ζ-α$ be a local coordinate
 \begin{align*}
 q^i &= \frac{1}{η}ξf(ξ) \\
 2ξ\dot{ξ} &= - \dot{α} \\
-P(α) &\sim ξ^{2k} P_{2p+2}\prod_{α_i\neq α} (α-α_i) \\
-\dot P(α) &\sim -\dot{α} ξ^{2k-2} P_{2p+2} \prod_{α_i\neq α} (α-α_i) \\
+P(ζ) &= ξ^{2} P_{2p+2}\prod_{α_i\neq α} (ζ-α_i) \\
+P(ζ=α) &\sim ξ^{2} P_{2p+2}\prod_{α_i\neq α} (α-α_i) \\
+\dot P(ζ) &= -\dot{α} P_{2p+2} \prod_{α_i\neq α} (α-α_i) + O(ξ^2)\\
+\dot P(ζ=α) &\sim -\dot{α} P_{2p+2} \prod_{α_i\neq α} (α-α_i) \\
 \dot{q}^i &= \frac{1}{η}\bra{-\frac{1}{2}\frac{\dot P}{P}ξf(ξ) + \dot{ξ}f(ξ) + ξf'(ξ)\dot{ξ}} \\
-&\sim \frac{1}{ξ^k}\bra{\frac{1}{2}\frac{\dot{α}}{ξ^2}ξf(0) - \frac{1}{2}\frac{\dot{α}}{ξ}f(0) - \frac{1}{2}\dot{α} f'(0)}
+&\sim \frac{1}{ξ}\bra{\frac{1}{2}\frac{\dot{α}}{ξ^2}ξf(0) - \frac{1}{2}\frac{\dot{α}}{ξ}f(0) - \frac{1}{2}\dot{α} f'(0)}
 \end{align*}
-Which shows that $\dot{q}^i$ may have a pole at the roots of $P$ of order equal to the order of the zero. At all other points it must be holomorphic, so we can deduce that
+Which shows that $\dot{q}^i$ may have a simple pole at the simple roots of $P$. Likewise at a higher, but still odd, order root $α$ of $P$, neighbouring spectral curves along the path may not have a zero to the same order as it may be formed by several roots coming together, but at least one of those other roots must be odd order; if a sum is odd, at least one summand is odd. Let $α_i(t)$ be the roots that collide (ie $α_i(0)=α$) and $α_1(t)$ be an odd order root. Write $P(t,ζ) = \prod_i^{2k+1} (ζ-α_i) \tilde{P}$, and make a change of coordinate $ξ^2=ζ-α_1$. As $dq^i$ is holomorphic near $α$, so must be $q^i$ and so for some holomorphic function $f$
+\begin{align*}
+q(t,ξ) &= \frac{1}{\sqrt{\tilde{P}}}f(ξ) \\
+\dot q(t,ξ) &= -\frac{1}{2}\frac{1}{\sqrt{\tilde{P}}^3}f(ξ) + \frac{1}{\sqrt{\tilde{P}}}\frac{d}{dt}f(ξ)\\
+\dot q(0,ξ) &= -\frac{1}{ξ}\frac{\dot{α}}{\sqrt{\tilde{P}}}f'(ξ) +\bra{ -\frac{1}{2}\frac{1}{\sqrt{\tilde{P}}^3}f(ξ) + \frac{1}{\sqrt{\tilde{P}}}\dot{f}(ξ)}
+\end{align*}
+Again showing that it may have a simple pole at a (general) branch point. For zeroes of $P$ that are not branch points (ie are even order zeroes), and other non-branch points more general, one does not need to be concerned with finding a local coordinate on the curve as $ζ$ already fills this role. Let $α$ be a non-branch point where $P$ vanishes to order $2k$. Then again we split $P(t,ζ) = \prod_i^{2k} (ζ-α_i) \tilde{P}$ into vanishing and nonvanishing factors. Simply
+\begin{align}
+q(t,ξ) &= \frac{1}{\sqrt{\tilde{P}}}f(ξ) \\
+\dot q &= \frac{1}{\sqrt{\tilde{P}}}\bra{-\frac{1}{2}\frac{\dot{\tilde{P}}}{\tilde{P}} f + \dot f},
+\end{align}
+which is just holomorphic. Hence we can deduce that
 \[
 \dot{q}^i = \frac{1}{\zeta\eta}\hat c^i(\zeta)
 \]
-for some degree $p+3$ polynomial $\hat c^i$. The reality condition on $q^i$ implies that this is an imaginary polynomial (ie that $i \hat c^i$ is a real polynmomial). These polynomials encode somehow the infinitesimal deformations of the differentials that preserve the periods.
+for some degree $p+3$ polynomial $\hat c^i$, which will have zeroes at singular points of the spectral curve. The reality condition on $q^i$ implies that this is an imaginary polynomial (ie that $i \hat c^i$ is a real polynmomial). These polynomials encode somehow the infinitesimal deformations of the differentials that preserve the periods.
 
 Consider the closing condition in its integral form. Recall that it is
 \begin{align*}
@@ -184,7 +197,7 @@ The construction of the $\hat{c}$'s baked into it the preservation of the poles,
 \[
 \dot{P}_1 b_0 + P_1 \dot{b}_0 - 2 \dot{P}_0 b_1 - 2 P_0 \dot{b}_1 = 0 \labelthis{eq:residueTangent}
 \]
-holds at every point of the curve.
+holds at every point of the path.
 
 
 
@@ -335,7 +348,7 @@ The next question that arises is whether at a given point $(P,b^1,b^2)$ the $\ha
 \]
 and the assumption of a nonsingular spectral curve means that $P$ and $P'$ have no common factors and by evaluation at the roots of $P$ implies that $\hat c^i=0$. This immediately implies that $Q=0$ also. So every real quadratic $Q$ is associated to at most one tangent vector to the space of spectral data.
 
-The moral of these two lemmata is that at any point of spectral data there is a plane of deformation directions. Note that the condition on $Q$ linear on its coefficents, so there is a plane of such $Q$ and each can then be used to first find a pair $C^1,c^2$ and then further a unique tangent vector. Thus, given a section of $Q$'s and an intial piece of spectral data, this data of tangent vectors then amounts to a first order linear ODE, which can be solved to give a deformation of the spectral data. (One may be concerned there is a catch-22 at play here: how is one to apply the condition on $Q$ without already having knowledge of the moduli of spectral data? Fear not. There are frames of meromorphic differentials defined for every hyperelliptic curve such that if the curve is actually a spectral curve, any admissible differentials are in the lattice generated by this frame. Thus we can use this frame to apply the condition and chose a section of $Q$'s, and if we start at a point in the moduli we will never flow outside it accidentally. )
+The moral of these two lemmata is that at any point of spectral data there is a plane of deformation directions. Note that the condition on $Q$ linear on its coefficents NOT PROVEN\todo{provide proof}, so there is a plane of such $Q$ and each can then be used to first find a pair $C^1,c^2$ and then further a unique tangent vector. Thus, given a section of $Q$'s and an intial piece of spectral data, this data of tangent vectors then amounts to a first order linear ODE, which can be solved to give a deformation of the spectral data. (One may be concerned there is a catch-22 at play here: how is one to apply the condition on $Q$ without already having knowledge of the moduli of spectral data? Fear not. There are frames of meromorphic differentials defined for every hyperelliptic curve such that if the curve is actually a spectral curve, any admissible differentials are in the lattice generated by this frame. Thus we can use this frame to apply the condition and chose a section of $Q$'s, and if we start at a point in the moduli we will never flow outside it accidentally. )
 
 IDEA: Can we say some sort of foliation result/ Frobenius theorem here to show the space of spectral data is an integral submanifold? \todo{this}
 
@@ -394,7 +407,7 @@ Conformal spectral data is distinguished by $P(0)=0$. From the residue condition
 
 Factoring the common root, consider the necessary condition
 \[
-\tilde{b}^1 c^2 - \tilde{b}^2 c^1 = Q\tidle{P}.\labelthis{eq:QConformal}
+\tilde{b}^1 c^2 - \tilde{b}^2 c^1 = Q\tilde{P}.\labelthis{eq:QConformal}
 \]
 There is a unique solution to this where both $c^i$ polynomials are degree $p$. The space of solutions of at most degree $p+1$ is therefore the same with an arbitrary multiple of $\tilde{b}^i$ added. Within this space, by consideration of degrees, there must be a real solution $(\bf c^1, \bf c^2)$ and all other real solutions are given by
 \[
@@ -404,7 +417,7 @@ This is naturally an affine space, so there is no `correct' choice for the origi
 
 Moving on, we attempt to solve a factored version of \eqref{eq:EMPDi}, namely
 \[
-\dot P \tilde{b}^i - 2\tilde{P}\dot b^i &= 2\tilde{P}\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\hat c^i. \labelthis{eq:EMPDiConformal}
+\dot P \tilde{b}^i - 2\tilde{P}\dot b^i = 2\tilde{P}\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\hat c^i. \labelthis{eq:EMPDiConformal}
 \]
 For the dotted quatities $\dot P$ and $\dot b^1$ there are unique solutions of degree $2p-1$ and $p$ respectively. Mulitplying the whole equation by $ζ$ gives back \eqref{eq:EMPDi}, so the right hand side is real and there are real solutions of degree $2p+2$ and $p+3$. The space of solutions is therefore
 \[
@@ -480,7 +493,7 @@ The proof of this is a hybrid of the previous two proofs. Necessarily $c^i = F^i
 \label{sub:Singular cases}
 These are incomplete. But there are no singular spectral curves in genus zero, one or two; hence it's a nice to have but not of consequence to later sections which focus on these genii (genuses?).
 
-Also, I wrote some of these on a purely algebraic basis, without considering if such a triple is permissible as spectral data. For example, by construction of the spectral curve if $Θ_1, Θ^2$ have a common root of order $k$, then $P$ must have a root of order $k-1$ there. This eliminates some of the cases below. Should probably lead with a recap of such conditions and why they come about.
+Also, I wrote some of these on a purely algebraic basis, without considering if such a triple is permissible as spectral data. For example, by construction of the spectral curve if $Θ_1, Θ^2$ have a common root of order $k$, then $P$ must gains a root of order $2k$ there (it is at a branch point, then $2k+1$). This eliminates some of the cases below. Should probably lead with a recap of such conditions and why they come about.
 
 
 \begin{lem}[$b^1$ and $b^2$, on the unit circle]
@@ -521,7 +534,7 @@ Proof.
 
 First observe, similiar to the previous case, that because $Q$ is quadratic and $P$ does not share the common root of the $b$'s, $β$ and $\cji{β}$ are first order zeroes. Write $b^i = (ζ-β)(1-\bar{β}ζ) \tilde b^i$ and consider the equation
 \[
-\tilde b^1 c^2 - \tidlde b^2 c^1 = \tilde Q P.
+\tilde b^1 c^2 - \tilde b^2 c^1 = \tilde Q P.
 \]
 In this situation, Bezout's identity says that there is a family of solutions
 \[

@@ -2,31 +2,24 @@
 % \documentclass{memoir}
 
 \usepackage{ross}
-% \usepackage{tikz}
+\usepackage{tikz}
+\usepackage{pgfplots}
 \usepackage{todonotes}
 
 \fancyhdr
 
-
 \begin{document}
-\section{Introduction}
-\label{sec:Introduction}
+\tableofcontents
 
 \include{preliminaries}
 \include{deform_lemma_redux}
-
-
-
-\section{Genus Zero}
-\label{sec:Genus Zero}
-    
-\section{Genus One}
-\label{sec:Genus One}
+\include{genus_zero}
+\include{genus_one}
 
 
 
 
-
-\bibliography{library}
+% \bibliography{library}
+\bibliography{library,manual_entered}
 \bibliographystyle{alpha}
 \end{document}

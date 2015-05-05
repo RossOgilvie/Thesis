@@ -1,13 +1,5 @@
-\documentclass{article}
-
-\usepackage{ross}
-\newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
-\usepackage{tikz}
-\fancyhdr
-
-\begin{document}
-\makeheading{Elliptic Spectral Curve}
-\section{Elliptic Integrals}
+\section{Genus One}
+\subsection{Elliptic Integrals}
 Elliptic integrals are ones that arise as the integrals of differentials on elliptic curves (curves of genus one). There are several sets of standard elliptic integrals, with the idea being that every elliptic integral can be reduced to a combination of the standard ones in a particular set. The most prevalent set, the Jacobi elliptic integrals, is used here. Note however that there are several variations in nototation about these integrals; the main difference is the use of the modulus $k$ versus the parameter $m = k^2$. We will us the former. There are three standard integrals, and they come in {\it incomplete} and {\it complete} varities. The complete elliptic integral of first kind is denoted $K$ and is defined as
 \[
 K = K(k) = \int_0^1 \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}} .
@@ -20,7 +12,7 @@ We will not have need of the others. Elliptic integrals of the first kind corres
 \[
 y^2 = (1-t^2)(1-k^2 t^2).
 \]
-This highly symmetric form is known as {\it Lagrange form}. By M\"obius transformation (or by Landen's transformations), when $k$ is real one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obiviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'.
+This highly symmetric form is known as {\it Lagendre form}\todo{Make sure to use the right french guy}. By M\"obius transformation (or by Landen's transformations), when $k$ is real one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obiviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'.
 
 \begin{center}
 \includegraphics{{torus_lagrange.sk}.pdf}
@@ -28,7 +20,7 @@ This highly symmetric form is known as {\it Lagrange form}. By M\"obius transfor
 
 In the picture, the red cycle is the real $A$-cycle and has the clockwise orientation as shown, whereas the blue cycle is the imaginary $B$-cycle and has orientation from left to right as shown. $B$ is divided into two pieces, $B^+$ on which $y$ is in $i\R$ (the occluded piece) and $B^-$ on which $y$ is in $-i\R$ (the front piece).
 
-But what about the other period, the one about $1$ and $k^{-1}$? The trick is called {\it Jacobi's imaginary transformation}, and involves a quadratic substitution \cite{whittaker02}. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
+But what about the other period, the one about $1$ and $k^{-1}$? The trick is called {\it Jacobi's imaginary transformation}, and involves a quadratic substitution \cite{Whittaker2000}. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
 \begin{align*}
 dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
 \sqrt{t^2 - 1} &= \frac{k's}{\sqrt{1-k'^2 s^2}} \\
@@ -58,8 +50,25 @@ y &= \pm \iu \frac{k'^2}{k}s\sqrt{1-s^2}
 \end{align*}
 Again, we introduce the notation that $E' = E(k')$.
 
-\section{Genus One Spectral Curve - Symmetric Case}
-\subsection{Find the differentials}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Genus One Spectral Curve - Symmetric Case}
+
+NOTE: THIS CALCULATION IS ENTIRELY SUPLANTED BY THE GENERAL ONE LATER. \todo{this}
 
 We first look at the case of spectral genus one where there is an additional symmetry. The spectral curve has the form
 \[
@@ -98,7 +107,8 @@ using the shorthand $R := \abs{α}$. Then we have that
 \end{align*}
 The ambiguity in the sign is simply due to the fact that there are two maps between Riemann surfaces that are compatible with this change of coordinates, and they differ by composition with the holomorphic involution, which is just a change in the sign of the fibre coordinate. We choose the minus sign for reasons that will become clear. We first compute the periods of $ω$.
 
-\aside{actually the sign thing I just said is not correct, it will show up in the orientation of one of the cycles being reversed. Will actually have to do the work required to show that this is the correct choice. Or not. Whateva Trevor.}
+ACTUALLY the sign thing I just said is not correct, it will show up in the orientation of one of the cycles being reversed. Will actually have to do the work required to show that this is the correct choice. Or not. Whateva Trevor.\todo{this}
+
 \begin{align*}
 dζ &= \frac{2αR(R-1)(R+1)}{(tR(1-R) + R(R+1))^2} dt \\
 ω = \frac{dζ}{η} &= \frac{2}{(1+R)^2} \frac{dt}{y} \\
@@ -136,24 +146,206 @@ Having found a pair of suitable differentials, any other pair will take the form
 \{aΘ^1 + m Θ^2, bΘ^1 + n Θ^2 \}
 \]
 
-\subsection{Deformations}
-Before we tackle the full problem of deformations, consider the case when we take $Θ^1$ as above. We may ask whether there is a deformation that scales $Θ^1$ without changing the spectral curve, as we have seen any real scalar multiple of it will suffice for a good differential. However, for the spectral data to yield a harmonic map, we need that the half periods over $1$ and $-1$ are in $\pi\iu\Z$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{General Elliptic Spectral Curve}
+Previously dealt with the special case of an elliptic spectral curve where there was an additional reflection symmetry of the branch points. Here however we will do the calculation in full generality. Consider the curve
 \[
-\int_{\gamma_1}aΘ^1 = \left . \iu a\frac{ η  }{ ζ  }\right|_{(1, η  (1)^-)}^{(1, η  (1)^+)} = 2\iu a \abs{1- α  ^2}
+η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
 \]
-This shows such a deformation is not possible.
+and the Legendre standard form
+\[
+w^2 = (1-z^2)(1-k^2z^2)
+\]
+where $k$ is the elliptic modulus. The transformation to pass between these two curves can be written as follows
+\begin{align}
+A &:= (α-β)\abs{1-\bar{α}β} \\
+B &:= (1-\bar{α}β)\abs{α-β} \\
+ζ = f(z) &= \frac{z(αB-A) + (αB+A)}{z(B-\bar{α}A) + (B + \bar{α}A)} \\
+den &:= ζ(\bar{α}A-B) + (αB - A)
+\end{align}
+From this follows a sequence of computations. Firstly, how do the holomorphic differential of each coordinate compare (ie what is the scaling factor)? And what about the standard differential of the second kind?
+\begin{align}
+\tilde{ω} &:= \frac{dz}{w} \\
+ω := \frac{dζ}{η} &= \frac{2}{\abs{α-β} + \abs{1-\bar{α}β}}\tilde{ω} \\
+e := (1-k^2z^2)\frac{dz}{w} &= \frac{2AB(1-\abs{α}^2)^2}{\abs{α-β} + \abs{1-\bar{α}β}}\cdot\frac{(ζ-β)(1-\bar{β}ζ)}{den^2}\frac{dζ}{η}
+\end{align}
+We construct the desired differentials in two stages. First, we narrow the space to a 3 dimensional one, and then compute the periods of its basis. This then allows us to find the differentials inside that space with the correct periods. The holomorphic differential is real (in the sense that $ρ^*ω = -\bar{ω}$), is it make an obvious first basis vector. In genus one, there is also an exact differential with the correct pole behaviour, namely
+\[
+Θ_1^1 := d\left( \iu\frac{η}{ζ} \right)
+= \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+\]
+The restriction that the differentials have double poles at $α=0,\infty$ means that the polynomial part must be degree four. The restiction that these poles have no residues means that the bottom and top terms determine the linear and third order terms. And finally the reality condition mean that the middle term must be real and the top term is the conjugate of the bottom term. In effect, we only have a complex number of choice in the bottom term and a real scalr in the middle term. Given the two differentials we have already choosen, an obvious way to complete the basis would be to take
+\[
+λ = \left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ + \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 - \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+\]
+This is a differential of the second kind, so we can express it as the sum of the standard differential of the second kind $e$ and a holomorphic differential. The latter can further be written as a multiple of the non-vanishing holomorphic differential $ω$ and something exact. We assemble several pieces. In the $ζ$-plane, $e$ has a pole not at zero or infinity, so we add an exact differential to cancel this.
+\[
+e - Nd\left(\frac{η}{den}\right) := e - \frac {2(\bar{α}A-B)} {\abs{α-β}+\abs{1-\bar{α}β}} d\left(\frac{η}{den}\right)
+\]
+is holomorphic on $\C$. Likewise, so is
+\[
+λ - d\left(\frac{η}{ζ}\right) = \left[ \left(\bar{α}(1+\abs{β}^2)+β(1+\abs{α}^2)\right)ζ^3 - 2\bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+\]
+Next we cancel the scale things so the poles at infinity of these two differentials are equal.
+\begin{align}
+λ - d\left(\frac{η}{ζ}\right) &\sim M \left( e - Nd\left(\frac{η}{den}\right) \right) \\
+\implies M &= \abs{α-β}+\abs{1-\bar{α}β}
+\end{align}
+So the difference of the two sides above is holomorphic on the whole spectral curve, a compact Riemann surface of genus one, and therefore a multiple of $ω$.
+\[
+Lω := λ - d\left(\frac{η}{ζ}\right) - M \left( e - Nd\left(\frac{η}{den}\right) \right)
+\]
+Evaluating both sides at $ζ=0$ yields
+\[
+(αB-A)^2L = 2AB(1-\abs{α}^2)^2β + (\bar{α}A-B)(αB-A)P'(0) - 2αβ(\bar{α}A-B)^2
+\]
+At this point, we have computed the coefficents $L,M,N$ and can write
+\[
+    λ = Lω + Me + exact
+\]
+which is sufficent to be able to compute its periods in terms of the standard elliptic integrals. In the $z$-plane, let $γ_R, γ_I$ denote the real and imaginary periods respectively, which are from $-1$ to $1$ and from $1$ to $k^{-1}$. To summarise the standrad elliptic integrals
+\begin{align}
+\int_{γ_R}\tilde{ω} &= 4K(k) \\
+\int_{γ_I}\tilde{ω} &= 2\iu K' \\
+\int_{γ_R}e &= 4E(k) \\
+\int_{γ_I}e &= 2\iu(K'-E')
+\end{align}
+where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denote not the derivative but instead the complement. By definition $k' = \sqrt{1-k^2}$ and $K'(k) = K(k')$ and ditto for $E'$. The periods for our basis are
+\begin{align}
+\int_{γ_R} λ &= 8\frac{L}{M}K + 4 ME \\
+\int_{γ_I} λ &= 2\iu(2\frac{L}{M}+M)K' - 2\iu M E'\\
+\end{align}
+Let $Θ_1^2 = Ωω + Λλ$ and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
+\begin{align}
+K(\frac{2}{M}Ω + \frac{2}{M}LΛ) + MΛE &= 0 \\
+K'(\frac{2}{M}Ω + \frac{2}{M}LΛ + MΛ) -MΛE' &= \pi
+\end{align}
+From the first equation, we can write $ MΛ = - ΓK$ and the multiple of the $K$ as $ΓE$. Substituting this into the second equation gives
+\begin{align}
+\pi
+&= K'(ΓE - ΓK) + ΓKE' \\
+&= Γ(K'E + KE' - KK') \label{eq:legendre_relation}\\
+&= \frac{\pi}{2}Γ \\
+Γ &= 2 \\
+Λ &= -\frac{2}{M}K \\
+Ω &= 2\frac{L}{M}K + ME
+\end{align}
+where \eqref{eq:legendre_relation} uses Legendre's relation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{The Sym Lattice}
+\label{sec:The Sym Lattice}
+We have computed two differentials that satisfy the period conditions and are real linearly independent. Though obviously there is nothing `natural' about this choice, many other combinations are possible. We also have not applied the Sym point conditions. For general $α,β$, there are not enough degrees of freedom to satisfy the condition at both points, only enough for one. With these two ideas in mind, we make the following definitions.
+
+Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle anticlockwise to the point $(α/\norm{α},-η(α/\norm{α}))$, follows the ray $\R^+ α$ to $α$, circles this branch point, goes back along the ray $\R^+ α$ (though on a different branch now) to the unit circle, and continues to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by constuction will be in $2\pi \iu \Z$, and so the Sym point conditions are well defined. Let
+\[
+b^{-1} = \frac{1}{2\pi\iu}\int_{γ_+} Θ_1^1
+\]
+So we may define $Θ_1^S = b Θ_1^1$, the unique differential with no periods and $\int_{γ_+} Θ_1^S = 2\pi\iu$. Likewise we define $Θ_1^P$ to be the unique differential with periods $0$ and $2\pi\iu$ and $\int_{γ_+} Θ_1^P = 0$. Writing $Θ_1^P = a Θ_1^1 + Θ_1^2$ we compute that
+\[
+a = - \frac{\int_{γ_+} Θ_1^2}{\int_{γ_+} Θ_1^1}.
+\]
+These again form a basis of the plane of differentials, and also satisfy the Sym condition at $ζ=1$, but only for certain values of $α,β$ do they also satify the condition at $ζ=-1$. I claim that if $α,β$ are such that the Sym point conditions are able to be satified by some differentials, then these differentials form a sublattice of $\Z\langle Θ_1^P, Θ_1^S\rangle$. To see this, suppose $Θ$ is such that it has periods $0$ and $2\pi\iu n$ and
+\[
+\frac{1}{2\pi\iu}\int_{γ_+} Θ = 2\pi\iu k,\;\; \frac{1}{2\pi\iu}\int_{γ_-} Θ = 2\pi\iu l.
+\]
+Then by considering periods $Θ - n Θ_1^P$ is exact so a multiple of $Θ_1^S$. It is easy to see what the multiple is, it much be $k$ from the first half period above. Therefore $Θ = n Θ_1^P + k Θ_1^S$, which is in the lattice as claimed. Note however that the half period integrals are extremely difficult to compute and so in practice we cannot write explicit formulas for our basis $\Z\langle Θ_1^P, Θ_1^S\rangle$. We will need some other method to find which $α,β$ are admissible.
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Deformations}
+TO FIX \todo{this}
+
+The full problem of deformations is hard, but consider the case of just $Θ^S$.
+\begin{align*}
+\int_{\gamma_1}aΘ^1 &= \left . a\iu\frac{η}{ζ}\right|_{(1, η(1)^-)}^{(1, η(1)^+)} = 2\iu a \abs{1-α}\abs{1-β} = 2π\iu Γ^S_+ \in 2π\iu\Z \\
+a &= \frac{πΓ^S_+}{\abs{1-α}\abs{1-β}}
+\end{align*}
 
 Because it is exact, $q^1$ is well-defined and $\dot q^1$ is computable. Indeed
 \[
-\dot q^1 = i\frac{1}{ζ}\dot{η} = \frac{i}{ζη}\frac{1}{2}\dot P.
+\dot q^1 = \frac{d}{dt}\frac{a\iu}{ζ}\dot{η} = \frac{i}{ζη}\bra{\iu \dot{a}P +\frac{1}{2}\iu a\dot{P}}.
 \]
-
-\aside{Actually this is not the case, because the multiple of $Θ^1$ is only a constant on the curve, ie independent of $ ζ  $ not of $t$. Therefore the product rule must be applied.}
-
-Now we have been discussing the special symmetric case, but the derivation of $Θ^1$ doesn't acutally require it. Therefore for a moment consider an arbitrary genus one spectral curve, $P = (-\bar{α}    ζ  ^2 + (1 +  α  \bar{α}  ) ζ   -  α  )(-\bar{β}  ζ  ^2 + (1 + β\bar{β}) ζ   - β)$. A deformation preserves the half period condition precisely when $\dot q(1)=\dot q(-1) = 0$. This translates to
+A deformation preserves the half period condition precisely when $\dot q(1)=\dot q(-1) = 0$. The first is automatic by the choice of $a$. The second translates to
 \begin{align*}
-\Re\left[ \frac{\dot{α}  }{1- α  } + \frac{\dot{β}}{1-β} \right] &= 0 \\
-\Re\left[ \frac{\dot{α}  }{1+ α  } + \frac{\dot{β}}{1+β} \right] &= 0
+\dot{a} &= a\left[ \Re\bra{\frac{\dot{α}}{1-α}} + \Re\bra{\frac{\dot{β}}{1-β}} \right] \\
+% \dot{P}(-1) &= 2P(-1) \left\[\Re\bra{\frac{\dot{α}}{1+α}} + \Re\bra{\frac{\dot{β}}{1+β}} \right\] \\
+% 0 &= \dot{a}P(1) + \frac{1}{2}a\dot{P}(1) =0\\
+% 0 &= 2aP(1) \left\[\Re\bra{\frac{\dot{α}}{1-α}} + \Re\bra{\frac{\dot{β}}{1-β}} \right\] \\
+% 0 &= \dot{a}P(-1) + \frac{1}{2}a\dot{P}(-1)\\
 \end{align*}
 respectively. There are four degrees of freedom in choosing $\dot{α}  $ and $\dot{β}$, but here are two conditions. This gives the expected two degrees of freedom. Notice that if the deformation preserves the symmetric case, then we have $\dot{β} = - \dot{α}  $, as well as $β=- α  $, so the above two conditions collapse to the single condition
 \[
@@ -165,16 +357,206 @@ If we take the interpretation of quotienting out by the symmetry, so we have a r
 \]
 which can be interpretted geometrically for $z$ in the unit disc as saying that $z$ must move perpendicularly to $1-z$, ie along circles centered at 1. So it seems as if there is one direction of deformation that preserves the symmetry, and one direction that breaks it. One should note however that the above reasoning is entirely huersitic, as these a neccessary but not sufficent conditions on the deformations. It remains to be shown that there are no further restrictions arising.
 
-\aside{Just recording some formula now.}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{The genus one moduli surface}
+Let us pause to consider the spectral data associated to a harmonic map. It consists of three objects, and those objects have a litany of special properties. If we consider only spectral genus 1, then we may specify the curve by its branch points over $\CP^1$. And because of the reality of the spectral curve, these four points much be in conjugate inverse pairs, so we are reduced to choosing two complex numbers $α,β$ inside the unit disc. Not all choices are allowed however, we must exclude the diagonal $α=β$ as the spectral curve cannot have singularities in low genus. Notate this space $\mathcal{A} := D^2 \setminus \{α=β\}$. It will form the base of our bundle of parameters.
+
+Consider next the real $2$-plane that contains all of the permitted differentials: the subspace of differentials whose real periods vanish. Thus for each point in $\mathcal{A}$ we have a plane, thus we consider the rank 2 vector bundle $\mathcal{B}\to\mathcal{A}$.
+
+In the genus one case, there are several global frames we can choose for this bundle. The first and least difficult to compute is $\{Θ^1,Θ^2\}$ where $Θ^1 = \iu d(ζ/η)$ is an exact differential, and $Θ^2$ is a differential whose principal part satisifies $\pp Θ^2 = \iu \pp Θ^1$ and whose imaginary period is $2π\iu$, as defined above. Differentials that fulfill all the requirements to be spectral data must lie somewhere within the space spanned pointwise by $\R Θ^1 + \Z Θ^2$. But where within this space exactly? To answer that requires consideration of the Sym point condition. Let $γ_+$ be a path through $Σ$ from $(1,-\abs{1-α}\abs{1-β})$ to $(1,+\abs{1-α}\abs{1-β})$ and similarly $γ_-$ is a path connecting the two points over $ζ=-1$. A better framing for the problem (excuse the pun) is then to make the following unique choice
+\begin{align}
+\int_{\S^1} Θ^S = 0, &\qquad 2π\iu Γ^S_+ := \int_{γ_+} Θ^S = 2π\iu \\
+\int_{\S^1} Θ^P = 2π\iu, &\qquad 2π\iu Γ^P_+ := \int_{γ_+} Θ^P = 0.
+\end{align}
+One can remember the superscripts with the mnenomic P for period and S for exact. If $Θ$ is a differential with integral Sym half-periods $2π\iu Γ_-$ and $2π\iu Γ_+$ and imaginary period $2π\iu n$, then $Θ-nΘ^P$ is exact and so must be a real mulitple of $Θ^S$; precisely, $Θ=nΘ^P + Γ_+ Θ^S$. Thus we can see that any differential with all the conditions meet must be an element of $\Z \langle Θ^S, Θ^P \rangle$.
+
+It is not possible to find such differentials for every elliptic spectral curve, but by making our choice of $Θ^S, Θ^P$ we have fully exhausted all degrees of freedom toward that end. Moreover, both of those differentials are defined for every $(α,β)\in\mathcal{A}$, so we may consider the $\Z^2$ lattice bundle $Λ\to\mathcal{A}$. And any differential that does meet all the conditions lies within this space. To have a complete spectral data triple, we need to take two such differentials, which are an element of $Λ^2$ (product taken fibrewise). If we denote the space of spectral data as $\mathcal{X}$, then $\mathcal{X}\subset Λ^2 = \Z^4\times\mathcal{A}$. We can make this identification because by giving a global frame we have shown the bundle to be trivial. Thus we can divide $\mathcal{X}$ into various pieces indexed by four integers, though some of those pieces may be empty. For example $\mathcal{X}(1,1,2,2)$, which corresponds to the space of spectral data with differentials taken to be $Θ^S + Θ^P$ and $2Θ^S + 2Θ^P$, is empty because the differentials should be lineary independent.
+
+In terms of the explicit basis, this new one can be writen as $Θ^P = a Θ^1 + Θ^2$ and $Θ^S = b Θ^1$ where the coefficents are
+\[
+a = -\frac{\int_{γ_+}Θ^2}{\int_{γ_+}Θ^1}, \quad
+b = \frac{2π\iu}{\int_{γ_+}Θ^1}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Taking the limit}
+\label{sec:Taking the limit}
+Having now computed a basis for the differentials, we consider how these basis elements behave under the process of moving one of the branch points onto the unit circle. Because of the reality condition, this means it is fusing with its partner branch point and creating a curve with a double point. Normalising this double pointed curve results in a rational curve. Our aim is to view the spectral genus zero case as the limit of spectral genus one.
+
+For convience we will ignore Sym points for a while. This allows us to take the limit as the point $α$ goes to $1$ which is computationally the simplest case. The broader case of $α$ going to another point of the circle is obtained as a rotation of this one. Firstly we compute the limits of the various scale factors we have accumulated.
+\begin{align}
+Θ_1^1 &\to \iu\frac{dζ}{ζ^2η}(ζ-1)\left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)ζ^2 + \bar{β}ζ^3 \right]\\
+M &= \abs{α-β} + \abs{1-\bar{α}β}
+\to 2\abs{1-β}\\
+k &= \frac{-\abs{α-β} + \abs{1-\bar{α}β}}{\abs{α-β} + \abs{1-\bar{α}β}}
+\to 0 \\
+K(k) &\sim \frac{π}{4}\left[ 1 + \frac{1}{4}k^2 + \dots \right]
+\to \frac{π}{4} \\
+E(k) &\sim \frac{π}{4}\left[ 1 - \frac{1}{4}k^2 + \dots \right]
+\to \frac{π}{4} \\
+L &\to 4\Re β - \abs{β}^2 - 1 = 1 + \abs{β}^2 \\
+Ω &\to \frac{π}{4}\frac{1 + \abs{β}^2}{\abs{1-β}} \\
+Λ &\to -\frac{π}{4}\frac{1}{\abs{1-β}} \\
+λ &\to \frac{dζ}{ζ^2η}\left[ -β + \frac{1}{2}(1+\abs{β}^2 + 2β)ζ + \frac{1}{2}(1+\abs{β}^2 - 2\bar{β})ζ^3 - \bar{β}ζ^4 \right] \\
+Θ_1^2 &\to \frac{π}{2}\frac{1}{\abs{1-β}}\frac{dζ}{ζ^2η}(ζ-1)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)ζ^2 + \bar{β}ζ^3 \right]
+\end{align}
+Having found the limits, rotate the limit point to $ν=e^{iφ}$ by making the substitution $ζ\mapsto ν^{-1}ζ, η\mapsto ν^{-1}η, β \mapsto ν^{-1}β$
+\begin{align}
+Θ_L^1 &:= \iu\frac{dζ}{ζ^2η}(ζ-ν)\left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}\bar{ν}(1+\abs{β}^2)ζ^2 + \bar{ν}\bar{β}ζ^3 \right]\\
+Θ_L^2 &:= \frac{π}{2}\frac{1}{\abs{ν-β}}\frac{dζ}{ζ^2η}(ζ-ν)\left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
+\end{align}
+The two limit differentials $Θ_L^i$ both have zeroes at the double point $ν$. The significance of this will shortly become apparent. Consider the normalisation map
+\begin{align}
+π : Σ_0(β) &\to Σ_1(1,β) \\
+π : (ζ,η) &\to (ζ, s\iu e^{-\iu φ/2}(ζ-ν)η)
+\end{align}
+where $s=\pm 1$ is a sign coming from the square root to be determined. This equation comes simply from the extra factor that the equation for $Σ_1(ν,β)$ has compared to $Σ_0(β)$. Because the spectral curves have involutions, composition with the involution gives `another' normalisation map, which differs only in the sign of the $η$ fibre. But clearly we want to make the positive values of $η$ map to positive values. In particular, above $ζ=1$ if we consider the case that $ν=i$, then we have
+\begin{align}
+η_0(1) &= \pm\abs{1-β} \\
+η_1(1) &= \pm\abs{1-\iu}\abs{1-β} = \pm\sqrt{2}\abs{1-β} \\
+s\iu e^{-\iu π/4}(1-\iu)η_0(1)
+&= \pm s \iu \frac{1-\iu}{\sqrt{2}}(1-\iu)\abs{1-β} \\
+&= \pm s \iu (-\iu\sqrt{2})\abs{1-β} \\
+&= \pm s \sqrt{2}\abs{1-β}
+\end{align}
+From this we can see that we should chose $s=1$ to be the correct sign for the square root. The pull back of the tautilogical section is then by definition $π^* η = \iu e^{-\iu φ/2}(ζ-ν)η$. And the limit differentials are
+\begin{align}
+\pi^* Θ_L^1 &:= \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ β - \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}\bar{ν}(1+\abs{β}^2)ζ^2 + \bar{ν}\bar{β}ζ^3 \right]\\
+\pi^* Θ_L^2 &:= -\iu \frac{π}{2} \frac{1}{\abs{ν-β}} \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ -β + \frac{1}{2}(1+\abs{β})ζ - \frac{1}{2}(1+\abs{β}^2)\bar{ν}ζ^2 + \bar{β}\bar{ν}ζ^3 \right]
+\end{align}
+These lie squarely in the plane of genus 0 differentials, as we would hope. We can now see the significance of the development of a zero at the double point. When we pull back regular differentials on a curve with a double point, the result is differentials with simple poles at the two preimages of the double point, with opposite residues at those points. But by having a zero at the double point, the pole is neutralised and we again have regular differentials.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Matching the limit differentials to the lattice}
+\label{sec:Matching the limit differentials to the lattice}
+
+INSERT JUSTIFICATION FOR INTERCHANGING LIMITS AND INTEGRALS AS JOHN POINTED OUT.\todo{this}
+
+In general it is difficult to be explicit about the space $\mathcal{X}$, because the Sym conditions are transcendental. However, over the boundary of $\mathcal{A}$ the conditions degenerate to simple trigonometry and can be solved. The first step is to treat each piece of $\mathcal{X}$ seperately, that is, fix four integers $m,n,\tilde m, \tilde n$. Then we can identify $\mathcal{X}(n,m,\tilde n,\tilde m)$ as lying within $\mathcal{A}$. With this view point adopted, the question of finding the moduli space is reduced to finding conditions on $(α,β)$ such that the Sym point conditions can be satisfied.
+
+
+The half-periods of the limit can then be computed via the pull back to the normalisation, which as a genus zero curve the differentials are exact. If we denote the normalisation map as $π$ and the limits of the differentials as $Θ^1_L, Θ^2_L$ then
 \begin{align*}
--i \hat c^1 = - α  \dot{α}   + ( α  \dot{α}  \bar{α}  ^2 +  α  ^2\bar{α}  \dot{\bar{α}  }) ζ  ^2 - \bar{α}  \dot{\bar{α}  } ζ  ^4
+\int_{γ_+} Θ^1_L = \int_{π^{-1}(γ_+)} \pi^* Θ^1_L
+&= 4\iu \abs{1-β} \sin \frac{φ}{2} \\
+\int_{π^{-1}(γ_-)} \pi^* Θ^1_L &= -4\iu \abs{1+β} \cos \frac{φ}{2} \\
+\int_{π^{-1}(γ_+)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1-β}}{\abs{α-β}} \cos \frac{φ}{2} \\
+\int_{π^{-1}(γ_-)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}} \sin \frac{φ}{2} \\
 \end{align*}
+where $α = \exp \iu φ$. \todo{double check signs here vis-à-vis correct square root sign choice in $η(\pm 1)$} From this we can computer the previous incomputable coefficents $a$ and $b$; they are simply ratios of the above. This gives us the half-periods in the better frame
+\begin{align*}
+2π\iu Γ^S_- := \int_{γ_-} Θ^S &= -2π\iu \frac{\abs{1+β}}{\abs{1-β}}\cot\frac{φ}{2} \\
+2π\iu Γ^P_- := \int_{γ_-} Θ^P &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}}\csc\frac{φ}{2}
+\end{align*}
+The condition $Γ_+, \tilde{Γ}_+$, the half-periods of $Θ, \tilde{Θ}$ respectively, is assured by this choice of basis, but we still require that $Γ_-, \tilde{Γ}_- \in\Z$. Indeed, based on our selection to focus on $\mathcal{X}(m,n,\tilde m, \tilde n)$ (a choice of two elements of the lattice $Λ$) we require that there be integers $k,\tilde k$ such that
+\begin{align*}
+k = Γ_- &= m Γ^S_- + n Γ^P_- \\
+\tilde{k} = Γ_- &= \tilde{m} \tilde{Γ}^S_- + \tilde{n} \tilde{Γ}^P_-
+\end{align*}
+Elimination of the left hand sides of both equations leads to
+\[
+\frac{\abs{α-β}}{\abs{1-β}} = -\left( \frac{n\tilde{k} - \tilde{n}k}{m\tilde{k}-\tilde{m}k} \right) \sec\frac{φ}{2} =: q \sec\frac{φ}{2}
+\]
+whereas elimination of the rightmost term leads to
+\[
+\frac{\abs{1+β}}{\abs{1-β}} = \left( \frac{k\tilde{n} - \tilde{k}n}{\tilde{m}n - m \tilde{n}} \right) \tan\frac{φ}{2} =: p \tan\frac{φ}{2}
+\]
 
-\begin{thebibliography}{9}
+For rational numbers $p,q$. If we have a solution for a particular $p$ and $q$, then as these two equations have three real degrees of freedom ($α\in\S^1$ and $β\in \C$), and the Jacobian of this as a map $F : (α,β) \mapsto (p,q)$ \todo{prove this} is generically maximal rank, we expect that there is a path of solutions. Also note the general fact that if $μ,\tilde{μ} \in \S^1$, $R\in\R$, and
+\[
+\frac{\abs{μ-β}}{\abs{\tilde{μ} - β}} = R,
+\]
+then also
+\[
+\frac{\abs{μ-\bar{β}^{-1}}}{\abs{\tilde{μ}-\bar{β}^{-1}}}
+= \frac{\abs{μ}\abs{\bar{β}^{-1}}\abs{\bar{β} - μ^{-1}}}{\abs{\tilde{μ}}\abs{\bar{β}^{-1}}\abs{\bar{β} - \tilde{μ}^{-1}}} = \frac{\abs{μ-β}}{\abs{\tilde{μ} - β}} = R.
+\]
+The two equations above are both of this form, so if $(α,β)$ is a solution, so too is $(α,\bar{β}^{-1})$. This is expected, as there is nothing really distinguishing the root inside the unit circle from the one outside. Also note that the left hand sides are both positive numbers, so if $p>0$ then $ν$ is confined to the upper half circle, and if $p<0$ it is confined to the lower half.
 
-\bibitem{whittaker02}
-  Whittaker,
-  \emph{Modern Analysis}, 1902. Page 352
+The general solution to these equations is ugly and unilluminating. The projection of the solution space onto the $β$-plane is a real curve of degree 8 in the real and imaginary parts of $β$. There is however a nice solution to the question of when are both $ν$ and $β$ on the unit circle. Square both equations and make the t-substituion $t = \tan φ/2$. Also let $β= x + \iu y$. Then the equations are
+\begin{align}
+(x+1)^2 + y^2 &= p^2t^2 \left((x-1)^2 + y^2\right) \\
+\left(x- \frac{1-t^2}{1+t^2} \right)^2 + \left(y - \frac{2t}{1+t^2}\right)^2 &= q^2(1+t^2) \left((x-1)^2 + y^2\right) \\
+x^2 + y^2 &= 1.
+\end{align}
+Using the third equation to eliminate the $x^2 + y^2$ from both sides of the first equation, and rearranging to solve for $x$ gives
+\[
+x = \frac{p^2t^2 - 1}{p^2t^2 + 1}.
+\]
+Applying the same trick to make the second equation linear in $y$ gives
+\[
+y = \frac{2pt}{p^2t^2 + 1}.
+\]
+Finally then can we solve for $t$ in terms of $p$ and $q$ alone to give the neat formula
+\[
+t^2 = \operatorname{sgn} p \frac{1\pm q}{p \mp q}
+\]
+From the constraint that the left hand side is a nonnegative number, we know that $q$ must lie in the range $\abs{q}< \min\{\abs{p},1\}$.
 
-\end{thebibliography}
-\end{document}
+
+
+
+OFF TOPIC: If we take the alternative definition of $\mathcal{A}$ that includes $\C^2$ outside $D\times D$ also, then there is a symmetry of this arc under inversion in the unit circle. That makes it a nice egg shape. Is there anything to be gained by doing this, for example can I show that it must lie within the sector formed of the origin, the two points corresponding to $β\in\S^1$ and the unit circle?
+
+The two points are given by
+\begin{align*}
+t^2 &= (\sign p) \frac{1 \pm q}{p \mp q} \\
+β &= \frac{p^2t^2 - 1}{p^2t^2 + 1} + \iu \frac{2pt}{p^2t^2+1}
+\end{align*}
+So you can see that there are two solutions (or a double solution) only when $\abs{q} < 1, \abs{p}$ \todo{What forbids only one solution?}. The condition that it be less than 1 forces the $k/\tilde{k}$ to lie in a certain range ....
+
+INVESTIGATE how many $(k,\tilde{k})$ there are that satisfy the inequalities on $q,p$ for given $m,n,\tilde m, \tilde n$?
+
+Since there is nothing particularly special about $α\to\S^1$ compared to $β\to\S^1$, and simliar analysis yields that the intersection of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$ with $D\times\S^1$ is also a colection of arcs. These arcs join along the points where both $α,β$ lie in the unit circle to form closed cycles. UNPROVEN CLAIM \todo{verify this claim}. These are the boundary components of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$.
+
+BROAD STROKES PICTURE. There is some 2d surface in this 4-space $\mathcal{A}$. The exterior boundary is a three space topologically $S^3$. To see this, note that it is $S^1 \times D \cup D \times \S^1$. The intersection of the two pieces is $\S^1\times\S^1$, a torus. The two components of the union are the inside and outside of the torus. Putting it another way, in $\C^2$ the intersection is given by $\abs{α}=\abs{β}=1$, a scaled up version of the Clifford torus and you can project $\{(α,β) \mid α\in\S^1, β\in D\}$ onto the 3-sphere of radius $\sqrt{2}$ by rescaling by $\sqrt{2}/\sqrt{1+\abs{β}^2}$ and ditto for the other component.
+
+The forbidden diagonal bit, ie where $α=β$ is a complex plane inside $\C^2$ that intersect this boundary in a real curve, the line on the torus where the toroidal angle is equal to the poloidal angle.
+
+The moduli space $\mathcal{X}$ is also a surface, so we would expect it to intercect the boundary in arcs. Further, since we know that it has this symmetry that means we can consider its mirror on the of the boundary, we expect those arcs to be closed loops. The only way they could be otherwise (I think) is if the moduli space was tangent to the boundary somewhere.
+
+Away from the boundary I don't know what the moduli space is doing. I don't know if separate boundary arc correspond to separate components of the moduli space, or if it's connected, or in between. I don't know if there are handles sitting inside. I don't know if several components come together on the forbidden diagonal.
