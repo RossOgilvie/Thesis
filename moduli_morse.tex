@@ -1,0 +1,194 @@
+\section{Moduli Space}
+\label{sec:Moduli Space}
+
+Having computed the boundary of the moduli space, we know turn our attention to the full surface. The parallel to the previous section is strong; again there are two conditions that must be satisfied by a spectral curve to admit differentials, and if a spectral curve admits differentials then it admits a $\Z^2$ lattice of them. The first condition is the same as before. The exact differential leads to the condition that
+\[
+p := \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q.
+\]
+In other words that $p$ is rational. The other condition, concerning the differential with period $2π\iu g$, now cannot be evaluated with elementary functions. If instead we keep the integrals in the equations, we arrive at the condition
+\[
+2π\iu q := 2π\iu \bra{\frac{p\tilde{Γ}^- - \tilde{Γ}}{g}} = p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2
+\]
+for some rational $q$. This however is only a locally defined expression because of the multivaluedness of the integrals. But as $q$ is rational, it must be locally constant and so serves as a constraint. Recall the expression for the integrals.
+\begin{align}
+\int_{γ_+} Θ^2 &= 4 E(k) \tilde{F}(f(1);k) - 4 K(k) \tilde{E}(f(1);k) - 4K(k) \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \\
+\int_{γ_-} Θ^2 &= 4 E(k) \tilde{F}(f(-1);k) - 4 K(k) \tilde{E}(f(-1);k) - 4K(k) \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν}.
+\end{align}
+From this we define
+\begin{align}
+T &:=  p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 \\
+&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) - 4K \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} \right] \\
+&\qquad\qquad   - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right] \\
+&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) \right] - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) \right] \\
+&\qquad\qquad    - 4K\left[ p\frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} - \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right]  \\
+&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) \right] - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) \right] \\
+&\qquad\qquad    - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \left[ \frac{1-ν}{1+ν} - \frac{1+ν}{1-ν} \right]  \\
+&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) \right] - \left[ 4 E \tilde{F}(f(1)) + 4 K \tilde{E}(f(1)) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2} \\
+\end{align}
+
+One supposes that the boundary of the moduli surface shows one its shape, that of a helix around the diagonal axis. We will prove this by showing that the surface retracts onto its boundary. The strategy is to introduce a height function and to show that there are no critical points. Then it follows by a lemma of Morse theory. Finding (potential) critical points involves essentially differentiating the above expressions. It is therefore prudent to adopt coordinates on the space of spectral curves more suited that $(α,β)$ more adapted to that task. An obvious first coordinate is $p$ itself, as then we can enforce the first condition simply by holding it constant. Elliptic integrals are the most difficult part of the above to differentiate, so to minimise our labour we choose the other three (real) coordinates to be $k$, $\iu σ = f(1)$ and $\iu τ = f(-1)$ for $σ,τ \in \R^\infty$. First we must show these do indeed parameterise the space of spectral curves. We proceed by exhibiting $α,β$ as a function of these.
+
+Denote $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. This is an important point, because the new parameters all lie in the $z$-plane so we must construct the inverse transformation $f^{-1}$, which is a scalar multiple of
+\[
+\frac{z-z_0}{z + \conj{z_0}}
+\]
+using the real structure to locate $f(\infty) = - \conj{z_0}$. Note the following trick using cross ratios.
+\[
+\abs{\frac{α-1}{α+1}}
+= \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
+= \abs{ \cross{α}{0}{1}{-1} }
+= \abs{ \cross{1}{z_0}{\iu σ}{\iu τ} }
+= \abs{\frac{1-\iu σ}{1 - \iu τ}} \abs{\frac{z_0 - \iu τ}{z_0 - \iu σ}}
+\]
+Substituting $β$ for $α$ changes the $1$ to $k^{-1}$. Together these give the equation of a circle
+\begin{align}
+p &= \abs{\frac{1-\iu σ}{1 - \iu τ}}\abs{\frac{1 - k\iu σ}{1 - k\iu τ}} \abs{\frac{z_0 - \iu τ}{z_0 - \iu σ}}^2 \\
+\abs{\frac{z_0 - \iu τ}{z_0 - \iu σ}} ^2
+&= p \frac{\sqrt{1+τ^2}}{\sqrt{1+σ^2}}\frac{\sqrt{1+k^2τ^2}}{\sqrt{1+k^2σ^2}} \\
+&= p \frac{w(\iu τ)}{w(\iu σ)} \\
+&=: R^2
+\end{align}
+In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu τ, z_0, \iu σ$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Let $z_0 = x+\iu y$. Then $z_0$ lies on the circle
+\[
+x^2 + \bra{ y - \frac{σ+τ}{2} }^2 = \frac{(σ-τ)^2}{4},
+\]
+which simplifies to the relation
+\[
+x^2 + y^2 = y(σ+τ) - στ.
+\]
+The circle previously computed that $z_0$ lies on gives the relation
+\[
+x^2 + y^2 + 2y \frac{R^2 σ - τ}{1-R^2} + \frac{τ^2 - R^2 σ^2}{1-R^2}.
+\]
+Together they have the solution
+\[
+x = \frac{R}{1 + R^2} \abs{σ-τ},\; y = \frac{R^2σ + τ}{1+R^2}
+\]
+where the sign of $x$ is chosen to make lie in the right half of the $z$-plane. Choosing the opposite sign corresponds to $f(\infty) = -\conj{z_0}$, which also lies on both circles, whereas this choice amounts to choosing branch points \emph{inside} the unit circle. Having found $z_0$ in terms of $p,k,σ,τ$ it remains to find the correct scaling of $f^{-1}$. From there, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$. We use the fact that $f^{-1}(\iu σ) = 1$.
+\begin{align}
+f^{-1}(z) &= C \frac{z-z_0}{z + \conj{z_0}} \\
+1 = f^{-1}(\iu σ) &= C \frac{\iu σ - z_0}{\iu σ + \conj{z_0}} \\
+f^{-1}(z) &=  \frac{\iu σ + \conj{z_0}}{\iu σ - z_0} \frac{z-z_0}{z + \conj{z_0}}
+\end{align}
+We can now compute the factors in the third term of $T$. Particularly, $ν = f^{-1}(\infty)$ and
+\[
+\abs{\frac{\iu σ + \conj{z_0}}{\iu σ - z_0}} = 1
+\]
+so that
+\[
+T(p,k,σ,τ) = p \left[ 4 E \tilde{F}(\iu τ) - 4 K \tilde{E}(\iu τ) \right] - \left[ 4 E \tilde{F}(\iu σ) - 4 K \tilde{E}(\iu σ) \right] - 4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ}.
+\]
+In the parameter space $\{(p,k,σ,τ)\mid p>0, 0 < k <1\}$, the moduli space is defined implicitly by the two conditions that $p$ is constant, as is $T$.
+
+\subsection{Morse Theory}
+\label{sub:Morse Theory}
+
+\begin{lem}
+Given functions $F, h: U \subset \R^n \to \R$. Suppose that $c$ is a regular value of $F$. $h$ has a critical point on $F^{-1}(c)$ at $p$ exactly when $\nabla h(p) || \nabla F(p)$.
+\begin{proof}
+First note that $\nabla F(p)$ is nonzero and $F^{-1}(c)$ is a manifold by the implicit function theorem. This provides the existence of $n-1$ local coordinates $u^j$ on $F^{-1}(c)$ near $p$. Let $\mathbf x = (x^i)$ be the standard coordinates of $\R^n$. By the chain rule
+\[
+\Partial{F}{x^i} \Partial{x^i}{u^j} = \nabla F \cdot \Partial{\mathbf{x}}{u^j} = 0
+\]
+So in one direction, if $\nabla h (p) = λ \nabla F(p)$, then immediately we have that
+\[
+0 = λ \nabla F \cdot \Partial{\mathbf{x}}{u^j} = \nabla h(p) \cdot \Partial{\mathbf{x}}{u^j} = \Partial{h}{x^i} \Partial{x^i}{u^j}(p) = \frac{d h}{d u^j}(p)
+\]
+so $h$ has a critical point at $p$. Conversely, suppose that $h$ has a critical point at $p$. Then consider the matrix $A$,
+\[
+A = \begin{pmatrix}
+\nabla h \\
+\nabla F
+\end{pmatrix}
+\]
+with the two gradients as rows. By assumption, this matrix acting on the tangent vectors $\partial \mathbf{x} / \partial u^j$ yields zero. Hence the dimension of the kernel is at least $n-1$ (the number of tangent vectors). On the other hand, $\nabla F$ is non-zero so it has an image of dimension one or greater. As we are mapping from $\R^n$, it must be that $A$ is exactly rank $1$ and its rows have a linear dependence. Therefore $\nabla h(p) || \nabla F(p)$.
+\end{proof}
+\end{lem}
+
+Note that the above lemma is a local condition, so we may use it to find critical points of the moduli space even though its defining equation is not globally defined. We choose as our height function the variable $k$. $\nabla h(k,σ,τ) = (1,0,0)$ so to find critical points the problem is reduced to finding simultaneous zeroes of $\partial T/\partial σ$ and $\partial T/\partial τ$.
+
+\begin{lem}
+There are no solutions to the equations
+\[
+\Partial{T}{σ} = \Partial{T}{τ} = 0
+\]
+\begin{proof}
+We begin by computing the derivatives. As $\tilde F(z;k)$ and $\tilde E(z;k)$ are parameter integrals in $z$, we have that
+\[
+\Partial{}{σ}\tilde F(\iu σ; k) = \frac{\iu}{w(\iu σ)},\;\;\;
+\Partial{}{σ}\tilde E(\iu σ; k) = \iu\frac{1+k^2 σ^2}{w(\iu σ)},
+\]
+and
+\[
+\Partial{}{σ} w(\iu σ)
+= \Partial{}{σ} \sqrt{1+σ^2}\sqrt{1+k^2 σ^2}
+= \frac{(1+k^2)σ + 2k^2 σ^3}{w(\iu σ)}.
+\]
+One then computes that
+\begin{align}
+0 =& \Partial{T}{σ}
+= \frac{-4\iu E}{w(\iu σ)} + \frac{4\iu K (1+k^2σ^2)}{w(\iu σ)} - 4\iu K\left[ -p\frac{w(\iu τ)}{(σ-τ)^2} + \frac{(1+k^2)σ + 2k^2 σ^3}{w(\iu σ)(σ-τ)} - \frac{w(\iu σ)}{(σ-τ)^2} \right] \\
+=& -(σ-τ)^2 E + K (1+k^2σ^2)(σ-τ)^2 + pKw(\iu σ)w(\iu τ) \\
+&\qquad - K((1+k^2)σ + 2k^2 σ^3)(σ-τ) + K(1+σ^2)(1+k^2σ^2) \\
+=& -(σ-τ)^2 E + pKw(\iu σ)w(\iu τ) + K\left[ 1 + σ^2 - στ + k^2 στ + τ^2 + k^2 σ^2 τ^2 \right] .
+\end{align}
+And in a similar manner
+\[
+\Partial{T}{τ} = 0 \Rightarrow
+-(σ-τ)^2 E + \tfrac{1}{p}Kw(\iu σ)w(\iu τ) + K\left[ 1 + σ^2 - στ + k^2 στ + τ^2 + k^2 σ^2 τ^2 \right] = 0.
+\]
+By subtracting the two equations, these can be only simultaneously zero if $p=1$ (as $K$, $w(\iu σ)$ and $w(\iu τ)$ are nonzero functions). Taking $p=1$ then, the equation left to solve is
+\[
+U := -(σ-τ)^2 E + Kw(\iu σ)w(\iu τ) + K\left[ 1 + σ^2 - στ + k^2 στ + τ^2 + k^2 σ^2 τ^2 \right] = 0.
+\]
+We will now employ various estimates to show that $U>1$. From \cite{Anderson}, we have the inequality $E < k^2 + (1-k^2)K$ and we will also make use of the crude estimate $K>1$ (in fact $K > π/2$).
+\begin{align}
+U
+&= -(σ-τ)^2 E + Kw(\iu σ)w(\iu τ) + K\left[ 1 + σ^2 - στ + k^2 στ + τ^2 + k^2 σ^2 τ^2 \right] \\
+&> -k^2 (σ-τ)^2 + Kk^2(σ-τ)^2 + Kw(\iu σ)w(\iu τ) + K\left[ 1 + σ^2 - στ + k^2 στ + τ^2 + k^2 σ^2 τ^2 - (σ-τ)^2 \right] \\
+&> Kw(\iu σ)w(\iu τ) + K\left[ 1 + στ + k^2 στ  \right] \\
+&> w(\iu σ)w(\iu τ) + 1 + στ + k^2 στ
+\end{align}
+Finally, a lower bound for the square root terms is
+\[
+w(\iu σ) = \sqrt{1 + (1+k^2)σ^2 + k^2σ^4} \geq \sqrt{(1+k^2)σ^2} = \sqrt{(1+k^2)}\abs{σ},
+\]
+so
+\[
+U > (1+k^2)\abs{σ}\abs{τ} + 1 + στ + k^2 στ > 1.
+\]
+Thus there are no common solutions to those equations for finite $σ,τ$ and any $k$ in $(0,1)$. Moreover, even in the case where one of $σ,τ$ are infinite (where to check directly we would need a change of coordinates) we can be sure there are still no zeroes as $U$ is bounded away from $0$ and so cannot become $0$ in the limit.
+\end{proof}
+\end{lem}
+
+As a corollary, we can conclude that the moduli space is everywhere smooth, as the defining function $T$ cannot have any critical points. And then by the previous lemma, the height function $h = k$ has no critical points on the moduli space either. Na\"ively we should expect this to translate into the fact that the moduli space has unchanging topology on the level sets of $h$. Together with our previous knowledge of the boundary of the moduli space, this exhibits it as topologically the product of an interval with the boundary.
+
+\subsection{Cigars}
+\label{sub:Cigars}
+
+What can be said about the coordinates $k,σ,τ$ as the parameterise a space of constant $p$? Fix a value of $p$. This is a `ball' in the space $(α,β)\in D^2$, as for any particular value of
+\[
+u = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
+\]
+$α$ ranges over an arc of a circle, and likewise does $β$ as constrained by the equation
+\[
+\frac{\abs{1-β}}{\abs{1+β}} = \frac{\sqrt{p}}{u},
+\]
+where the product of these two equations is just the definition of $p$. Hence for any $u$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. This split also shows however that the diagonal $Δ=\{(α,α)\}$ intersects each ball in an line, with $u=1$ and both $α$ and $β$ at the same point in their respective arcs.
+
+Now turn to how $k$ varies across this space. On the outside, we have one of $α$ or $β$ in $\S^1$, so $k = 0$. On the diagonal, $α=β$, so $k=1$. How then does $k$ behave at the `poles' where the diagonal and the exterior intersect? To answer this, let the point of intersection be $(μ,μ)$, and for small $ε$ let
+\[
+α = μ(1-ε), \qquad β = μ(1-mε)
+\]
+where $m$ is to be thought of as the angle of approach. For illustrative purposes, take $1>m>0$ so we may ignore absolute value signs.
+\begin{align}
+\abs{α-β} &= ε(1-m), \\
+\abs{1-\conj{α}β} &\sim ε (m+1), \\
+k = \frac{\abs{1-\conj{α}β} - \abs{α-β}}{\abs{1-\conj{α}β} + \abs{α-β}} &\sim m
+\end{align}
+The cases for other $m$ and even when $α,β$ do not lie on a ray are similar. So depending on the angle of approach, at the poles $k$ may assume any value. What we conclude then is that surfaces of constant $k$ are cigar shapes with ends at the poles. They surround the diagonal, which is the limit as $k\to 1$. Another way to see this is to note that $σ$ and $τ$ must parameterise the space of constant $k$. The are each defined on a circle ($\R^\infty$), but the correspondence with $(α,β)$ derived before does not hold when $σ=τ$. Thus the space of $(σ,τ)$ is $\S^1\times\S^1 \setminus \{σ=τ\}$, which is a cylinder. And moreover, the two ends of the cylinder correspond to the two poles. To see this, let $τ=σ+ε$. Then
+\begin{align}
+z_0 &\sim \frac{\sqrt{p}\abs{ε}}{p+1} + \iu \left(σ + \frac{ε}{p+1}\right) \\
+α,β &\sim \frac{\iu σ + \conj{z_0}}{\iu σ - z_0} \sim  \frac{1-p}{1+p} + \iu \frac{2\sqrt{p}}{1+p} \sign{ε}
+\end{align}
+which are exactly the two polar points.

@@ -1,0 +1,56 @@
+\section{Branch Cut Problem}
+\label{sec:Branch Cut Problem}
+This is a write up of a problem I am having/ struggling to get my head around. Let $D$ be the open unit disc in $\C$. Let $Δ = \{(α,α) \in D\times D\}$ be the diagonal. The choice of a nonsingular real elliptic curve is the choice of $(α,β) \in \mathcal{A} := D\times D - Δ$ for branch points. The curve is then given by
+\[
+Σ = \set{(ζ,η)}{ η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)}
+\]
+As discussed previously, for every point in $a\in\mathcal{A}$ there are two differentials $Θ^1(a),Θ^2(a)$, such that every differential with the correct pole, symmetries and periods is pointwise a combination of $\R Θ^1(a) + \Z Θ^2(a)$. Moreover, by explicit computation, the assignment $a \mapsto Θ^i(a)$ is smooth. Therefore we can think of having a trivial bundle $\mathcal{B} = \mathcal{A}\times\R\times\Z \to \mathcal{A}$. To simplify things here, we think of only having one differential, not a pair. We say that sections over a path in $\mathcal{A}$ are a family of spectral data. Concretely, if $δ$ is a path in $\mathcal{A}$, then $t\in (0,1) \mapsto (α(t),β(t),Θ(t)), δ(t) = (α(t),β(t))$ is the family of data.
+
+So far so good. We wish next to consider differentials that satisfy the Sym conditions, that certain integrals of them lie in $2π\iu\Z$. Note that for a point $ν\in\S^1$, $η(ν) = \pm ν \abs{ν-α}\abs{ν-β}$, so we can distinguish and upper and a lower unit circle in $Σ$. Let $γ_+$ be a path on $Σ$ that goes from $ζ=1$ on the lower unit circle to $ζ=1$ on the upper unit circle. There are many such choices of a path, but they will differ in homotopy by a certain number of periods. And since all the differentials we are considering have periods in $2π\iu\Z$, the condition $\int_{γ_+}Θ \in 2π\iu\Z$ is well defined. Ditto we can say for $γ_-$ which connects the two points of $Σ$ over $ζ=-1$.
+
+Because we are considering real tori, the four branch points $α,\cji{α},β,\cji{β}$ lie on a circle (or line). This `branch circle' is perpendicular to the unit circle, cutting it in two places. Let the point of intersection that lies between $β$ and $\cji{β}$ be called $ζ_\infty$; likewise $ζ_0$ for the point between $α$ and $\cji{α}$. Fix an $α$. There is a unique circle that is perpendicular to the unit circle and passes through $1$, $α$ and $\cji{α}$. Let the arc of this circle from $1$ to $α$ be called $C_+(α)$. For all $β\in D-C_+(α)$, there is a unique path $γ_+$ that traverses the unit circle to $ζ_0$ without passing $ζ_\infty$, then along the branch circle, around $α$ anticlockwise and back the way it came (though now on the top sheet). If $β\in C_+(α)$ then $ζ_\infty = 1$ so there is no way to decide which direction to go around the unit circle.
+
+Unfix $α$ now. Let $C_1 = \cup_{α\in D} C_+(α)$. What we have done is effectively made a branch cut so that for any section $Θ$ of the bundle $\mathcal{B}$, $\int_{γ_+} Θ$ is single valued on $D\times D - C_+$. In particular, we can define a new frame of differentials by the following
+\begin{align}
+\int_{S^1} Θ^S_+ = 0 &\qquad \int_{γ_+} Θ^S_+ = 2π\iu \\
+\int_{S^1} Θ^P_+ = 2π\iu &\qquad \int_{γ_+} Θ^P_+ = 0
+\end{align}
+(The other period, the loop around $α$ and $β$, is $0$ for both). On this simply connected domain $D\times D - C_+$, we can write this new frame as a combination of the old frame. In particular, the period of any differential is well defined and so it must be that $Θ^S_+ = f Θ^1$ and $Θ^P_+ = g Θ^1 + Θ^2$ for real valued smooth functions $f$ and $g$ on the domain.
+
+We can make very similiar definitions for the Sym point at $ζ=-1$. Let $C_-$ be the branch cut that makes $\int_{γ_-}$ single valued. $C_+ \cap C_-$ is exactly the diagonal $Δ$. $D\times D - C_+ \cup C_-$ is two blobs. To see these facts, again return to the picture with $α$ a fixed point in the disc. Then $C_+(α) \cup C_-(α)$ is the arc that eminates from $1$, across to $α$ and then along another arc that termiantes at $-1$. The disc is therefore divided into an upper and lower region. Let $β$ be in the upper region and suppose we vary $α$. Then the size of the upper section expands or shrinks, but is never disconnected. Therefore the union over $α\in D$ of these upper sections is a simply connected 4-space. Ditto for the lower section. Also note that $α$ is the only point common to both arcs, so $β\in C_+(α)\cap C_-(α)$ implies that $β=α$.
+
+We have come indirectly to the topology of $\mathcal{A}$. We see that is homotopic to $S^1$; it is made of two blobs (upper and lower regions) joined along two 3-spaces. Alternatively see it as made of the two spaces $D\times D - C_+$ and $D\times D - C_-$ which have an overlap of two connected components. To consider an analogy to this where all the dimensions have been reduced by one, consider the unit cylinder $[-1,1]\times D$ in $\R\times\C$ centered at the origin. This plays the role of $D\times D$, except $α\in [-1,1]$, $b\in D$. Let $Δ$ be the line $(t,t+0\iu)$. $C_+(α)$ is just the arc in the disc $[α,1]$ and $C_-(α) = [-1,α]$. Therefore $C_+$ and $C_-$ are just triangles meeting on the diagonal $Δ$ that together form a rectangular cross section of the cylinder. $\mathcal{A}$ is the tubular space around $Δ$.
+
+Finally we come to my problem. Suppose there is a loop $δ :[0,1] \to \mathcal{A}$ that surrounds $Δ$. A fancier way would be to say that $δ([0,1])$ is a generator for the homology of $\mathcal{A}$. And suppose that we have a family of spectral data defined on our loop that satisfy the Sym conditions. Again because the periods are constant for some integer $n$ and real periodic function $h$ we have
+\[
+Θ(t) = h(t)Θ^1(δ(t)) + n Θ^2(δ(t))
+\]
+This is all well and good, but how do things look in the basis we designed to make the Sym conditions look nice? Well, we can't say on the whole loop, but we can say on part of it $δ^+ := δ([0,1]) \cap (D\times D - C_+)$. We make reasonable assumptions that $δ(0)=δ(1)\in C_+$ and that $δ$ crosses $C_+$ no other times. On this part $δ^+$, it makes sense to ask what the value of its Sym integrals are (remember in general they are only defined up to periods) because we can choose consistently a prefered path. Hence
+\[
+2π\iu k = \int_{γ_+(δ(t))} Θ(t) = h(t) \int_{γ_+(δ(t))} Θ^1 + n \int_{γ_+(δ(t))} Θ^2
+\]
+Rearranging
+\[
+h(t) = \bra{ \int_{γ_+(δ(t))} Θ^1}^{-1}\bra{ 2π\iu k - n \int_{γ_+(δ(t))} Θ^2}
+\]
+And here we see the problem. Take the limits as $t$ goes to $0$ and $1$. $Θ^1$ is exact, so there is no problem there, but
+\[
+\int_{γ_+(δ(1))} Θ^2 = \int_{γ_+(δ(0))} Θ^2 + 4π\iu
+\]
+because $γ_+(δ(1)) \cong γ_+(δ(0)) + 2 S^1$. So
+\[
+h(1) = h(0) - 4π\iu n \bra{ \int_{γ_+(δ(t))} Θ^1}^{-1}
+\]
+(I had orginally thought of using the basis I had put work into making, but this gets to the heart of matter even better). So there is only a periodic function if $n=0$, but in the full case where there are two differentials, both can't be preiod free because then there would be a real relationship between them (which is forbidden).
+
+WAYS OUT:
+
+These are ways that might get us out of the bind. I'm leaning towards two.
+
+- Is $Θ^2$ well defined? I think it is. The elliptic modulus is real, and $K,E$ are functions of it, moreover $k$ is not equal to $0,1$ on $\mathcal{A}$, so $K,E$ are always finite and real on $\mathcal{A}$. Similiarly, $M,N$ are just ordinary functions of $α,β$. And $ω,e$ are functions of $k$ and $z,w$. But if it were to have some branch cut problem as well, then it could offet the multivalued-ness of $γ_+(δ(t))$.
+
+- There are no loops around $Δ$, my confusion about how to make this work is because it is simply not possible to make it work, and the above working is the world's crappiest proof. If so, how does one see it clearly.
+
+- Something else.
+
+Another reason it might be two is because of computer graphics showing the moduli surface (of which $δ$ above would be a part of) seems to start on the exterior boundary of $\mathcal{A}$ and terminate on $Δ$; and in particular, not wrap around. On the other hand, they were 3-d projections of an essentially 4-d space so it's very difficult to see both wrapping around and intersection (something may appear to intersect in 3-d while being miles apart in 4-d).
