@@ -1,0 +1,120 @@
+\section{Exponential Blowup}
+\label{sec:Exponential Blowup}
+
+\subsection{Regular blow-up}
+\label{sub:Regular blow-up}
+
+The most familiar blowup is where a point in a space is removed and a copy of projective space is sewn in its place. More generally, a blowup is an operation where a subspace is replaced with the normal directions to that space. However, this is not the only way to generalise. One of the reasons to use a blowup is to remove singularities, and we face the situation where the function takes the same values when approached along every ray, but when approached along a family of exponential curves it takes a variety of values. Therefore, we will endeavor to find a space that such a function may have well defined limits.
+
+First, recall the definition of a blowup of $R^n$ at the origin. The blowup is a subspace defined by $\{ (q, l) \in \R^n \times \RP^{n-1} \mid q \in l \}$. This is in fact a submanifold, which can be seen with the implicit function theorem. At a point $(q,l) = ((x^1,\dots,x^n),[Y^1:Y^n])$, we may assume without loss of generality that $Y^n \neq 0$, and so introduce coordinates $y^i = Y^i / Y^n, 1\leq i < n$ on the projective space component. The condition that $q$ lie in $l$ is that there is some constant $λ$ such that $x^i = λ Y^i$. Solve $λ = x^n / Y^n$ we get $n-1$ defining equations $F^i := x^i - x^n y^i = 0$. The Jacobian of this system is
+\[
+dF =
+\left(\begin{array}{ccc|c|ccc}
+    &           &   & -y^1      &   &               & \\
+    & I_{n-1}   &   & \vdots    &   & -x^n I_{n-1}  & \\
+    &           &   & -y^{n-1}  &   &               &
+\end{array}\right).
+\]
+This is clearly full rank and so the blowup $Bl_0 \R^n$ is a submanifold of $\R^n \times \RP^{n-1}$. The interesting part is that $π$, the natural projection to the first factor restricted to $Bl$, is a bijection away from $0$. And $π^{-1}(0)$ is a copy of projective space. It is in this sense that we say the origin has been replace by a copy of projective space.
+
+\subsection{Defining $\R E$ (Old)}
+
+To adapt this construction, we need to replace the factor of $\RP^{n-1}$ in the product space with another space of curves. Let square brackets around an equation denote the curve defined by that equation in the right half plane $R^2_+$. We define $\R E$ be be the following collection of curves
+\[
+\{ y = xe^{-C/x} | C \in \R \} \cup \{ y=0 \} \cup \{ y = -xe^{-D/x} | D \in \R \}.
+\]
+We define a manifold structure on it by means of three charts. On the first ($U$) and third ($W$) components, there is a natural identification with $\R$ via the constant in the exponential. Call these charts $φ_U$ and $φ_W$ respectively. Then we need only glue the point component in between them. Let $V = \{ y = xe^{-C/x} | C > 0 \} \cup \{ y=0 \} \cup \{ y = -xe^{-D/x} | D > 0 \}$ and define
+\[
+φ_V(l) =
+\begin{cases}
+1/C    & \quad \text{if } l = \{y = xe^{-C/x}\} \\
+0      & \quad \text{if } l = \{y = 0\} \\
+-1/D    & \quad \text{if } l = \{y = -xe^{-D/x}\}
+\end{cases}
+\]
+Note, $φ_V(V) = \R$. $U$ and $W$ are disjoint, so one only needs to check the two remaining pairings, where the transition functions are of the form $1/x$. This definition is similar to the one point compactification of the real line if you were to write down the charts explicitly, except gluing two lines together instead of one line to itself.
+
+
+We are now in a position to create an exponential blowup. By total analogy $EBl := \{ (p, l) \in \R^2_+ \times \R E \mid p \in l \}$. We must check that this is a submanifold. We have global coordinates for $\R^2$, $(x,y)$, but to cover $\R E$ we will need to check in the various charts. If we check every point in $U$ and $W$, then we can just check the line $y=0$ in $V$ to cover the whole space.
+
+First, take a point $(p,l) \in \R^2\times U$. It has coordinates $(x,y,C)$. The point is in the blowup if and only if $f := y - x e^{-C/x} = 0$. $f_y = 1$, so the differential is always full rank. A near identical calculation shows the same over $W$. This leaves just one line. Near $\{y=0\}$ in $V$, we have a local coordinate $z$. The defining equation is given by
+\[
+g(x,y,z) =
+\begin{cases}
+y - xe^{-\tfrac{1}{xz}}    & \quad \text{if } z>0 \\
+y      & \quad \text{if } z = 0 \\
+y + xe^{-\tfrac{1}{xz}}    & \quad \text{if } z<0
+\end{cases}
+\]
+It is not clear that this is a continuously differentiable function, but it is. Observe
+\[
+\Partial{g}{x} =
+\begin{cases}
+-e^{-\tfrac{1}{xz}}\bra{1 + \frac{1}{xz}}    & \quad \text{if } z>0 \\
+0      & \quad \text{if } z = 0 \\
+e^{-\tfrac{1}{xz}}\bra{1 + \frac{1}{xz}}    & \quad \text{if } z<0
+\end{cases}
+\]
+which is continuous at $z=0$ for all $(x,y) \in \R^2_+$. Likewise for the other partial derivatives. Finally, it is full rank because the $y$-derivative is always $1$. There are some differences to the regular blowup. Note, we have only blown up half the real plane at the origin, which is not even a point of that half plane! This seems to be an unavoidable obstruction, as the two classes of curves for $C<1$ and $C\geq 1$ behave very differently near the line $x=0$. This means that the points in our blowup and the points in the half plane are in bijection, and there is no analogue of the exceptional divisor. This can be partly corrected, however, by including $\R^2_+\times\R E$ into $\R^2\times\R E$ and taking the closure of the blowup.
+
+Let $\tilde{π} : \R^2\times\R E \to \R^2$ be projection to the first component, $X = \overline{EBl}$ the closure of the blowup in $\R^2\times\R E$ and $π = \tilde{π}|_X$. $X$ is a subspace of a $3$-manifold that can be plotted with a little bit of scaling. Topologically, $\R E$ is a line, so imagine it as a vertical line with the following marked points on it: $y = xe^{1/x}$, $y=x$, $y = xe^{-1/x}$, $y=0$, $y = -xe^{-1/x}$, $y = -x$, $y = -xe^{1/x}$. The boundary of $X$ has three parts. It has a horizontal ray of the form $(0,y,\{y=x\})$ for $y>0$ that arises as the limit of the sequence $(x,y,C = x \ln (x/y))$ as $x \to 0$ in $\R^2\times U$. Likewise, there is a ray $(0,y,\{y=-x\})$ for $y<0$. The final piece is a vertical segment over $(0,0)$ that runs from $\{y=-x\}$ to $\{y=x\}$. This last piece is the preimage $π^{-1}((0,0))$.
+
+\subsection{Defining $\R E$ (New)}
+
+To adapt this construction, we need to replace the factor of $\RP^{n-1}$ in the product space with another space of curves. Let square brackets around an equation denote the curve defined by that equation in the right half plane $R^2_+$. As a set, let $\R E$ be be the following collection of curves
+\[
+\{ [y = xe^{C/x}] | C \in \R \} \cup \{ y=0 \} \cup \{ [y = -xe^{D/x}] | D \in \R \}.
+\]
+We define a manifold structure on it by means of a single chart $φ$. Let
+\begin{align*}
+f :& \;(0,\infty) \to \R, \\
+z &\mapsto -\frac{1}{z} + z
+\end{align*}
+be a bijective scaling function and for $z\in\R$ define
+\[
+φ^{-1}(z) =
+\begin{cases}
+[y = xe^{f(z)/x}]    & \quad \text{if } z>0 \\
+[y = 0]    & \quad \text{if } z=0 \\
+[y = -xe^{f(-z)/x}]    & \quad \text{if } z<0
+\end{cases}
+\]
+
+We are now in a position to create an exponential blowup. By analogy, set $EBl := \{ (p, l) \in \R^2_+ \times \R E \mid p \in l \}$. We must check that this is a submanifold. We have global coordinates $(x,y,z)$ on the ambient space. The defining equation is
+\[
+g(x,y,z) =
+\begin{cases}
+y - xe^{f(z)/x}    & \quad \text{if } z>0 \\
+y      & \quad \text{if } z = 0 \\
+y + xe^{f(-z)/x}    & \quad \text{if } z<0
+\end{cases}
+\]
+It is not clear that this is a smooth function, but it is. Observe
+\[
+\Partial{g}{z} =
+\begin{cases}
+-f'(z)e^{f(z)/x}    & \quad \text{if } z>0 \\
+0      & \quad \text{if } z = 0 \\
+-f'(-z)e^{f(-z)/x}    & \quad \text{if } z<0
+\end{cases}
+\]
+which is continuous at $z=0$ for all $(x,y) \in \R^2_+$. This is because the $\exp 1/z$ term dominates all the other terms of finite order $z^{-k}$. To spell it out
+\[
+-f'(z)e^{f(z)/x}
+= -\bra{\frac{1}{z^2} + 1} \exp\bra{-\frac{1}{xz} + \frac{z}{x}}
+= -\bra{\frac{1}{z^2} + 1} e^{z/x}\exp\bra{-\frac{1}{xz}}
+\to - \lim_{z\to 0} z^{-2} \exp\bra{-\frac{1}{xz}} = 0
+\]
+Higher derivatives are also continuous, and the computation for other partial derivatives are easier. Finally, it is full rank because the $y$-derivative is always $1$. To reiterate, by the implicit function theorem, this shows that $EBl$ is a smooth submanifold of $\R^2_+\times\R E$.
+
+There are some differences to the regular blowup. Note, we have only blown up half the real plane at the origin, which is not even a point of that half plane! Unfortunately, it seems to be an unavoidable obstruction, as near the line $x=0$ the exponential functions are not well behaved. This means that the points in our blowup and the points in the half plane are in bijection, and there is no analogue of the exceptional divisor. This can be partly corrected, however, by including $\R^2_+\times\R E$ into $\R^2\times\R E$ and taking the closure of the blowup.
+
+Let $\tilde{π} : \R^2\times\R E \to \R^2$ be projection to the first component, $X = \overline{EBl}$ the closure of the blowup in $\R^2\times\R E$ and $π = \tilde{π}|_X$. $X$ is a subspace of a $3$-manifold that can be plotted with a little bit of scaling. Topologically, $\R E$ is a line, so imagine it as a vertical line with the following marked points on it: $y = xe^{1/x}$, $y=x$, $y = xe^{-1/x}$, $y=0$, $y = -xe^{-1/x}$, $y = -x$, $y = -xe^{1/x}$. The boundary of $X$ has three parts. It has a horizontal ray of the form $(0,y,\{y=x\})$ for $y>0$ that arises as the limit of the sequence $(x,y,C = x \ln (x/y))$ as $x \to 0$ in $\R^2\times U$. Likewise, there is a ray $(0,y,\{y=-x\})$ for $y<0$. The final piece is a vertical segment over $(0,0)$ that runs from $\{y=-x\}$ to $\{y=x\}$. This last piece is the preimage $π^{-1}((0,0))$.
+
+
+
+
+
+\begin{center}
+\includegraphics{thesis_graphics/Exponential_Blowup_pic.pdf}
+\end{center}

@@ -1,0 +1,94 @@
+\section{Stratified Morse Theory}
+\label{sec:Stratified Morse Theory}
+
+Summary of the definitions and results of stratified Morse Theory.
+
+\subsection{Stratified Spaces}
+\label{sub:Stratified Spaces}
+A stratified space $Z$ is a subset of a manifold $M$ that is covered by pairwise disjoint smooth submanifolds of $M$. Each submanifold is called a stratum of the space. Some examples include all manifolds with boundary, which have two strata. The interior is a submanifold of the same dimension as $M$, and the boundary is one of dimension one lower. Similarly for manifolds with corners. The nodal cubic (and more generally algebraic varieties with singularities) is also an example with two strata. The smooth part of the curve is a one dimensional submanifold, and the singular point is taken to be a stratum on its own. Every submanifold is trivially a stratified space with one strata.
+
+In the following, let $p$ lie in the stratum $S$ in the stratified space $Z$ in the manifold $M$.
+
+Whitney stratifications are a class of well behaved stratified space. They are ones that meet the following conditions.
+\begin{enumerate}
+\item
+Locally finite - each point of $M$ has a neighborhood meeting only finitely many strata.
+
+\item
+Condition on the Boundary - for each stratum $S$, its boundary $(\overline{S} - S) \cap Z$ is the union of strata. Something that fails this condition is a two strata space of a plane with a ray emanating from it. The boundary of the ray is a point in the plane, and cannot be written as the union of strata. To `fix' this, one would have to decompose the space as a plane minus a point, the point, and the ray emanating from that point.
+
+\item
+Condition b - Whitney's condition b is a condition on how the tangent spaces of different strata fit together along joins. It is a local condition independent of coordinate chart, and so we formulate it for submanifolds of $\R^n$. Define the secant of two points as the line through the origin parallel to the line joining those two points. Take a pair $(X,Y)$ of submanifolds of $\R^n$, a point $y\in Y$ and let $m = \dim X$. Consider two sequences $\{x_i\}$ in $X$ and $\{y_i\}$ in $Y$, both converging to $y$ with $x_i \neq y_i$ for all $i$. Suppose that $T_{x_i}X$ converges to an $m$-plane $τ \subset \R^n$ and that the secants converge to some line $l$. The pair $(X,Y)$ satisfies condition b at $y$ if $l \subseteq τ$ for all such sequences. The pair is said to satisfy the condition if it does so at every point of $Y$.
+\end{enumerate}
+
+Mather\cite[Example 2.5]{Mather1970} gives a counterexample (though gives the wrong equation) of the logarithmic spiral as $X$ and the origin as $Y$. This spiral is defined as the one where the tangent line makes a constant angle with a radial line. Fix a line through the origin $l$ and take $l\cap X$ for the sequence of points $x_i$ converging to the origin. They all have the same tangent line $τ$. The secants are also all the same; they are just $l$. But $l$ and $τ$ are at an angle, and so there is no containment.
+
+One may guess that there is also a condition a, but it turned out that condition b implies condition a, so we may focus on the latter.
+
+A Whitney stratified space must be locally finite, meet the condition on the boundary and have condition b hold for every pair of strata. As the boundary of a stratum must be the union of strata, we need only check condition b for pairs where one is in the boundary of the other (otherwise there is are no sequences of points with a common limit). Whitney stratified spaces are well behaved in that they are all triangulable and the transverse intersection of two Whitney stratified spaces is again a Whitney stratified space.
+
+The first result we wish to use is Thom's first isotopy lemma. Let $M$ and $P$ be smooth manifolds, $f: M \to P$ a smooth map, and $Z$ a Whitney stratified space. Suppose that $f|_Z : Z \to P$ is proper and for each stratum $S$, $f|_S$ is a submersion, then it is called a proper stratified submersion. The bundle $(Z,P,f)$ is locally trivial \cite[Prop 11.1]{Mather1970}. Another version\cite[p41]{Goresky1989} of the lemma, where $P=\R^n$, says there is a stratum preserving homeomorphism
+\[
+h : Z \to \R^n\times(f^{-1}(0) \cap Z)
+\]
+which is smooth on each stratum. In particular, the fibres of $f|_Z$ are homeomorphic.
+
+Two submanifolds are transverse to one another if the direct sum of their tangent spaces span the tangent space of the ambient space. Two stratified spaces are transverse if every pair of their strata are transverse.  Let $N'$ be a smooth submanifold of $M$ such that it is transverse to $Z$, intersects $S$ at only $p$ and $\dim N' + \dim S = \dim M$. The normal slice $N(p$ of $p$ is the intersection $ N' \cap Z \cap B_δ(p)$, where $B_δ(p)$ is a small ball. By condition b, it is possible to choose $δ$ small enough that the sphere $\partial B_δ(p)$ is transverse to $Z$.
+
+The link of a point is similar. It is defined to be $L(p) = N' \cap Z \cap \partial B_δ(p)$. Both of these spaces have a canonical Whitney stratification. Further, if one stratifies the cone of $L(p)$ in the obvious way, then there is a stratum preserving homeomorphism between the cone and the normal slice. For sufficiently small $δ$, the topological types of the normal slice and the link are independent of choice of $δ$, the metric used for the ball, the transverse submanifold $N'$ or even the point $p$ within the same connected component of the stratum $S$.
+
+A generalised tangent space at $p$ is any subspace of $T_pM$ that is the limit of $T_{p_i}S'$ for a sequence $p_i$ in a stratum $S'$, such that $p_i \to p$.
+
+A smooth function on $Z$ is one which is the restriction of a smooth function $\tilde f$ on $M$. A critical point $p$ of $f$ is one where $d\tilde f_p (T_p S) = 0$. That is, the differential annihilates the tangent space of the stratum. A Morse function is a smooth function on $Z$ such that
+\begin{enumerate}
+\item it is proper, and has distinct critical values.
+\item for each stratum $S$, the critical points of $f|_S$ are nondegenerate.
+\item for each generalised tangent space $Q$ at $p$, with the possible exception of $Q=T_pS$, we have $d\tilde f _p (Q) \neq 0$.
+\end{enumerate}
+
+The first two conditions are familiar from regular Morse theory. The third condition is a type of nondegeneracy between strata. Note in particular the special case of a zero-dimensional stratum. Then all its tangent spaces are the trivial vector space, and so every point in this strata is a critical point. We now suppose that $f$ is a Morse function with critical point $p$ and $v = f(p)$. The sublevel set $Z_{\leq a}$ is the space $Z \cap f^{-1}((-\infty,a])$. Likewise $Z_{[a,b]} = Z \cap f^{-1}([a,b])$ and $Z_a = Z \cap f^{-1}(a)$.
+
+A pair $(A,B)$ is Morse data for $f$ at $p$ if there is an embedding $h : B \to Z_{\leq v-ε}$ such that $Z_{\leq v+ε}$ is homeomorphic to $Z_{\leq v-ε} \cup_B A$. There are two immediate candidates for Morse data, namely coarse and local Morse data, which are respectively $(Z_{[v-ε,v+ε]}, Z_{v-ε})$ and the intersection of these with a small ball centered at $p$. The local Morse data is well defined \cite[Prop 3.5.3]{Goresky1989} and is Morse data \cite[Thm 3.5.4]{Goresky1989}. It turns out though that the local Morse data can be computed in two parts; from a tangential and a normal component. Tangential Morse data is local Morse data for $f|_S$. And from regular Morse theory, this is homotopic to a disk and its boundary of dimension $λ$, $(D^λ, \partial D^{λ-1})$, where $λ$ is the index of the critical point (the number of negative eigenvalues of the Hessian).
+
+The Normal Morse data comes from the normal slice, it is the local Morse data for $f|_{N(p)}$. It does not fall out of a computation as nice as Tangential Morse data, but can be described in terms of the half link. The half link $\ell$ is $L(p) \cap f^{-1}(v-ε)$. The Normal Morse data is homotopic to the pair $({\rm cone} (\ell), \ell)$.
+
+Finally, the local Morse data of $f$ at $p$ is product of the Tangential and Normal Morse data. By product, we mean in the sense of pairs of spaces,
+\[
+(A,B) \times (C,D) = (A \times C, A \times D \cup B \times C).
+\]
+
+
+
+
+
+
+\subsection{Implicit Function Theorems}
+\label{sub:Implicit Function Theorems}
+
+The space we are interested in is not simply the open ball of potential spectral data, but instead the subset of this meeting a condition. To see that this space is, for example, smooth, one must use the implicit function theorem. Further, one needs to be able to do this at the boundary.
+
+
+\subsection{Morse Theory}
+\label{sub:Morse Theory}
+
+\begin{lem}
+Given functions $F, h: U \subset \R^n \to \R$. Suppose that $c$ is a regular value of $F$. $h$ has a critical point on $F^{-1}(c)$ at $p$ exactly when $\nabla h(p) || \nabla F(p)$.
+\begin{proof}
+First note that $\nabla F(p)$ is nonzero and $F^{-1}(c)$ is a manifold by the implicit function theorem. This provides the existence of $n-1$ local coordinates $u^j$ on $F^{-1}(c)$ near $p$. Let $\mathbf x = (x^i)$ be the standard coordinates of $\R^n$. By the chain rule
+\[
+\Partial{F}{x^i} \Partial{x^i}{u^j} = \nabla F \cdot \Partial{\mathbf{x}}{u^j} = 0
+\]
+So in one direction, if $\nabla h (p) = λ \nabla F(p)$, then immediately we have that
+\[
+0 = λ \nabla F \cdot \Partial{\mathbf{x}}{u^j} = \nabla h(p) \cdot \Partial{\mathbf{x}}{u^j} = \Partial{h}{x^i} \Partial{x^i}{u^j}(p) = \frac{d h}{d u^j}(p)
+\]
+so $h$ has a critical point at $p$. Conversely, suppose that $h$ has a critical point at $p$. Then consider the matrix $A$,
+\[
+A = \begin{pmatrix}
+\nabla h \\
+\nabla F
+\end{pmatrix}
+\]
+with the two gradients as rows. By assumption, this matrix acting on the tangent vectors $\partial \mathbf{x} / \partial u^j$ yields zero. Hence the dimension of the kernel is at least $n-1$ (the number of tangent vectors). On the other hand, $\nabla F$ is non-zero so it has an image of dimension one or greater. As we are mapping from $\R^n$, it must be that $A$ is exactly rank $1$ and its rows have a linear dependence. Therefore $\nabla h(p) || \nabla F(p)$.
+\end{proof}
+\end{lem}

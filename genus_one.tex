@@ -1,6 +1,6 @@
 \section{Genus One}
 \subsection{Elliptic Integrals}
-Elliptic integrals are ones that arise as the integrals of differentials on elliptic curves (curves of genus one). There are several sets of standard elliptic integrals, with the idea being that every elliptic integral can be reduced to a combination of the standard ones in a particular set. The most prevalent set, the Jacobi elliptic integrals, is used here. Note however that there are several variations in nototation about these integrals; the main difference is the use of the modulus $k$ versus the parameter $m = k^2$. We will us the former. There are three standard integrals, and they come in {\it incomplete} and {\it complete} varities. The incomplete and complete elliptic integrals of first kind are denoted $F$ and $K$ respectively and are defined as
+Elliptic integrals are ones that arise as the integrals of differentials on elliptic curves (curves of genus one). There are several sets of standard elliptic integrals, with the idea being that every elliptic integral can be reduced to a combination of the standard ones in a particular set. The most prevalent set, the Jacobi elliptic integrals, is used here. Note however that there are several variations in notation about these integrals; the main difference is the use of the modulus $k$ versus the parameter $m = k^2$. We will us the former. There are three standard integrals, and they come in {\it incomplete} and {\it complete} varieties. The incomplete and complete elliptic integrals of first kind are denoted $F$ and $K$ respectively and are defined as
 \[
 F = F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}
 \]
@@ -18,9 +18,9 @@ y^2 = (1-t^2)(1-k^2 t^2).
 \]
 This highly symmetric form is known as {\it Legendre form}\todo{Make sure to use the right french guy}. The branch cuts are usually made along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. By M\"obius transformation (or by Landen's transformations), when $k$ is real one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obiviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'.
 
-\begin{center}
-\includegraphics{{torus_lagrange.sk}.pdf}
-\end{center}
+% \begin{center}
+% \includegraphics{{torus_lagrange.sk}.pdf}
+% \end{center}
 
 In the picture, the red cycle is the real $A$-cycle and has the clockwise orientation as shown, whereas the blue cycle is the imaginary $B$-cycle and has orientation from left to right as shown. $B$ is divided into two pieces, $B^+$ on which $y$ is in $i\R$ (the occluded piece) and $B^-$ on which $y$ is in $-i\R$ (the front piece).
 
@@ -53,113 +53,6 @@ y &= \pm \iu \frac{k'^2}{k}s\sqrt{1-s^2}
 &= 2iK(k') - 2iE(k').
 \end{align*}
 Again, we introduce the notation that $E' = E(k')$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Genus One Spectral Curve - Symmetric Case}
-
-NOTE: THIS CALCULATION IS ENTIRELY SUPLANTED BY THE GENERAL ONE LATER. \todo{this}
-
-We first look at the case of spectral genus one where there is an additional symmetry. The spectral curve has the form
-\[
-η ^2 = P( ζ  ) = ( ζ  - α  )(1-\bar{α}   ζ  )( ζ  + α  )(1+\bar{α}   ζ  )
-\]
-which has branch points at $\pm α  , \pm\bar{α}  ^{-1}$. In this spectral genus, the degrees are such that $ η  / ζ  $ has simple poles at $0$ and $\infty$, so that its differential is a form with double poles and no residues at those points. Moreover, any purely imaginary multiple of it satifies the correct reality condition, so for some $a\in\R$, let $Θ^1 = ia\,d( η  / ζ  )$. For now we will take $a=1$. Being exact it has no periods, and hence we have automatically one of our required meromorphic differentials.
-
-To find the other differential is more involved. First note that meromorphic forms with the double poles at zero and infinity can be written as
-\[
-	\frac{d ζ  }{ ζ  ^2 η  }b( ζ  )
-\]
-for some real degree four polynomial $b$. Further, to be residue free in general requires (using subscripts to denote coefficents of polynomials) that
-\[
-	b_1 = \frac{1}{2}\frac{P'(0)}{P(0)}b_0
-\]
-but in this particular case, that implies that $b_1=0$ and therefore $b_3=0$ also. Thus the space of potential $b$'s is reduced to three real parameters. We now give a basis for this space. An obivous place to start is with $Θ^1$.
-\[
-Θ^1 = \frac{d ζ  }{ ζ  ^2 η  }(\iu α  ^2-\iu\bar{α}  ^2 ζ  ^4)
-\]
-Another obvious candidate is the holomorphic differential
-\[
-\omega = \frac{d ζ  }{ η  } = \frac{d ζ  }{ ζ  ^2 η  } ζ  ^2
-\]
-This leaves just one basis vector to choose. A not-completely-terrible choice is
-\[
-\lambda = \frac{d ζ  }{ ζ  ^2 η  } ( α  ^2 + \bar{α}  ^2 ζ  ^4)
-\]
-Within this space we need to find another differential (real linearly independent of $Θ^1$) with periods in $2\pi\Z$. We will do this by computing the periods of these basis vectors, and solving the resulting linear algebra problem. Let $B$ be the lift of the unit circle, passing through the point $(1, \abs{1- α  ^2})$ and let $A$ be the anticlockwise path around $ α  $ and $\bar{α}  ^{-1}$. Then we introduce the change of coordinates such that $α$ and $\bar{α}^{-1}$ are mapped to $1$ and $-1$ and $-α,-\bar{α}^{-1}$ to $k^{-1},-k^{-1}$. This will map the A and B cycles as defined here to the cycles defined earlier. Ordinarily one can only specify three points when making a Mobi\"us transformation, but because we are are permitting ourselves to vary $k$, we have sufficent degrees of freedom. Computing the formula of this transformation with the use of the cross ratio yields
-\[
-ζ = \frac{tα(R-1) + α(R+1)}{tR(1-R) + R(R+1)},\;\; k = \left(\frac{1-R}{1+R}\right)^2
-\]
-using the shorthand $R := \abs{α}$. Then we have that
-\begin{align*}
-η^2 &= \frac{α^2 R^2 (1-R^2)^2(1+R)^4}{(tR(1-R) + R(R+1))^4}(1-t^2)(1-k^2t^2) \\
-η &= \pm \frac{α R (1-R^2)(1+R)^2}{(tR(1-R) + R(R+1))^2}y
-\end{align*}
-The ambiguity in the sign is simply due to the fact that there are two maps between Riemann surfaces that are compatible with this change of coordinates, and they differ by composition with the holomorphic involution, which is just a change in the sign of the fibre coordinate. We choose the minus sign for reasons that will become clear. We first compute the periods of $ω$.
-
-ACTUALLY the sign thing I just said is not correct, it will show up in the orientation of one of the cycles being reversed. Will actually have to do the work required to show that this is the correct choice. Or not. Whateva Trevor.\todo{this}
-
-\begin{align*}
-dζ &= \frac{2αR(R-1)(R+1)}{(tR(1-R) + R(R+1))^2} dt \\
-ω = \frac{dζ}{η} &= \frac{2}{(1+R)^2} \frac{dt}{y} \\
-\int_A \omega &= \frac{8}{(1+R)^2} K \\
-\int_B \omega &= \frac{4i}{(1+R)^2} K'
-\end{align*}
-Recall that $Θ^1$ is exact and so has zero periods. To do the periods of $\lambda$ we introduce another differential form
-\[
-e = \sqrt{\frac{1-k^2 t^2}{1-t^2}}\;dt = \frac{dt}{y}(1-k^2t^2) = 2αR \frac{dζ}{η}\frac{(ζ+α)(1+\bar{α}ζ)}{(Rζ + α)^2}
-\]
-which is differential corresponding to integrals of the second kind. Note that we can write
-\begin{align*}
-\lambda - d\left(\frac{η}{ζ}\right) = 2\bar{α}^2 \frac{dζ}{η}ζ^2 &= (1+R)^2 e - 2R(1+R+R^2) \omega - 2R d\left(\frac{η}{Rζ+α}\right) \\
-\int_A \lambda &= 4(1+R)^2 E(k) - \frac{16R(1+R+R^2)}{(1+R)^2}K(k) \\
-\int_B \lambda &= 2\iu(1+R)^2 \left[K(k') - E(k')\right] - \frac{8\iu R(1+R+R^2)}{(1+R)^2}K(k')
-\end{align*}
-The first line was computed by computing which exact differential was needed to cancel the poles in $λ$ and $e$ and then scaling to balance the poles at infinity. The remainder is therefore holomorphic and so a multiple of $ω$. We now set $Θ^2 = C λ + D ω = Ae + Bω$ and solve.
-\[
-\int_B Θ^2 = 4AE + 8 \frac{BK}{(1+R)^2} = 0 \implies A = \frac{2K}{(1+R)^2} F,\quad B = -EF
-\]
-If we solve the A-period to be just $2\pi\iu$ then the differentials will be integer multiples of this one. Also recall Lagrange's formula for elliptic integrals, namely
-\[
-KE' + K'E - KK' = \frac{\pi}{2}
-\]
-from which
-\begin{align*}
-2\pi\iu &= \int_A Θ^2 = F\left[\frac{4\iu}{(1+R)^2} K (K' - E') - \frac{4\iu}{(1+R)^2}K'E\right] \\
-&= \frac{4\iu}{(1+R)^2} F (K'K -KE' - K'E)\\
-F &= -(1+R)^2,\; A = -2k,\; B=(1+R)^2 E \\
-\implies Θ^2 &= -\frac{2}{(1+R)^2}K λ + \left[ (1+R)^2 E - 4\frac{R(1+R+R^2)}{(1+R)^2}K \right]ω
-\end{align*}
-
-Having found a pair of suitable differentials, any other pair will take the form, for $n,m\in\Z$ and $a,b\in\R$ with $an-bm\neq 0$,
-\[
-\{aΘ^1 + m Θ^2, bΘ^1 + n Θ^2 \}
-\]
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -310,12 +203,13 @@ so that each term is holomorphic on at least $ζ\in\C^*$. With this differential
 
 
 
-\subsection{The Sym Conditions}
-In general the Sym point conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with, for example, $Θ_1^1$ leads to an algebraic expression, but $Θ_1^2$ leads to a transcendental one, one involving incomplete elliptic integrals. Let us examine these conditions.
 
-Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $z=0$ not crossing $z=\infty$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different branch now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by constuction will be in $2\pi \iu \Z$, and so the Sym point conditions are well defined.
+\subsection{The Closing Conditions}
+In general the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with, for example, $Θ_1^1$ leads to an algebraic expression, but $Θ_1^2$ leads to a transcendental one, one involving incomplete elliptic integrals. Let us examine these conditions.
 
-In $(z,w)$ coordinates these paths are similiarly easy to describe. In short, start from the point $f(1)$ on the imaginary axis, go to the real axis, along and around $z=1$ (which corresponds to $ζ=α$) and back again. By taking the path that avoids $z=\infty$, we never need worry about going the long way around. Actually, for the exact differential the precise path doesn't matter at all.
+Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $z=0$ not crossing $z=\infty$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different branch now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by construction will be in $2\pi \iu \Z$, and so the closing conditions are well defined.
+
+In $(z,w)$ coordinates these paths are similarly easy to describe. In short, start from the point $f(1)$ on the imaginary axis, go to the real axis, along and around $z=1$ (which corresponds to $ζ=α$) and back again. By taking the path that avoids $z=\infty$, we never need worry about going the long way around. Actually, for the exact differential the precise path doesn't matter at all.
 \[
 \int_{γ_{+}}Θ_1^1 = i \left. d\bra{\frac{η}{ζ}} \right|_{(1, η(1)^-)}^{(1, η(1)^+)} = 2i η(1)^+ = 2i \abs{1-α}\abs{1-β}
 \]
@@ -330,7 +224,7 @@ But for the differential with periods
 &= \int_{γ_+} (2E \tilde{ω} - 2Ke) - \frac{2}{M}K \int_{γ_+} \left[ d\bra{\frac{η}{ζ}} - MNd\bra{\frac{η}{den}} \right] \\
 &= 4EF(f(1)) - 4K\tilde{E}(f(1)) - \frac{4K}{M} η(1)^+\left[ 1 - \frac{MN}{den(1)} \right]
 \end{align}
-where we have made an implicit coordinate in $\tilde{ω}$ and $e$ when we pull back via $f^{-1}$. For the Sym condition at $ζ=-1$
+where we have made an implicit coordinate in $\tilde{ω}$ and $e$ when we pull back via $f^{-1}$. For the closing condition at $ζ=-1$
 \begin{align}
 \int_{γ_{-}}Θ_1^1 &= 2i \abs{1+α}\abs{1+β} \\
 \int_{γ_-} Θ_1^2
@@ -357,7 +251,7 @@ A &\to (α-β)\abs{α-β} \\
 B &\to -β(\bar{α}-\bar{β})\abs{α-β} \\
 k &\to \frac{\abs{α-β} - \abs{α-β}}{\abs{α-β} + \abs{α-β}} = 0
 \end{align}
-so we expect the elliptic integrals present to reduce to circular integrals. To see this, note that for $β$ close to the unit circle $f(1)$ and $f(-1)$ are finite. Let us focus on the limit for the $ζ=1$ Sym point, as the $ζ=-1$ point will be entirely similiar. Let $\lim f(1) = \iu σ$ and $t=\iu s$. Assume $σ\geq 0$, the case of $σ<0$ simply requires a sign change in the following argument. For $β$ sufficently close to the unit circle, $\abs{\lim f(1) - f(1)} < ε$ for any small $ε$ (in particular, we wish for $ε< σ$). Then
+so we expect the elliptic integrals present to reduce to circular integrals. To see this, note that for $β$ close to the unit circle $f(1)$ and $f(-1)$ are finite. Let us focus on the limit for the $ζ=1$ marked point, as the $ζ=-1$ point will be entirely similiar. Let $\lim f(1) = \iu σ$ and $t=\iu s$. Assume $σ\geq 0$, the case of $σ<0$ simply requires a sign change in the following argument. For $β$ sufficently close to the unit circle, $\abs{\lim f(1) - f(1)} < ε$ for any small $ε$ (in particular, we wish for $ε< σ$). Then
 \begin{align}
 \abs{\int_{\lim f(1)}^{f(1)} \tilde{ω} }
 &= \abs{ \int_σ^{σ-ε} \frac{ds}{\sqrt{(1+s^2)(1+k^2s^2)}} } \\
@@ -375,7 +269,7 @@ So this integral is dominated by $1$. Hence by the dominated convergence thereom
 \[
 \lim \int_0^{f(1)} \tilde{ω} = \lim \left[ \int_0^{\lim f(1)} + \int_{\lim f(1)}^{f(1)} \tilde{ω} \right] = \int_0^{\lim f(1)} \lim \tilde{ω}
 \]
-The analysis of the limit of $\int e$ is much the same. The dominating function this time is $\sqrt{1+k^2s^2} \leq \sqrt{1+s^2}$, as $k<1$. The upshot of this is that we can, for the purposes of the Sym condition, interchange limits and integrals. We will use this later to consider the limit of genus one differentials as genus zero differentials. As $k\to 0$ both $K$ and $E$ tend to $π/4$. $M$ clearly trends to $-2\abs{α-β}$ and
+The analysis of the limit of $\int e$ is much the same. The dominating function this time is $\sqrt{1+k^2s^2} \leq \sqrt{1+s^2}$, as $k<1$. The upshot of this is that we can, for the purposes of the closing condition, interchange limits and integrals. We will use this later to consider the limit of genus one differentials as genus zero differentials. As $k\to 0$ both $K$ and $E$ tend to $π/4$. $M$ clearly trends to $-2\abs{α-β}$ and
 \[
 N \to -\left[ \abs{α}^2 - 2\bar{α}β + 1 \right]
 \]
@@ -420,11 +314,13 @@ These lie squarely in the plane of genus 0 differentials, as we would hope. We c
 
 
 
-\subsection{The Sym Lattice}
-\label{sec:The Sym Lattice}
-We have computed two differentials that satisfy the period conditions and are real linearly independent. Though obviously there is nothing `natural' about this choice, many other combinations are possible. We also have not applied the Sym point conditions. For general $α,β$, there are not enough degrees of freedom to satisfy the condition at both points, only enough for one. With these two ideas in mind, we make the following definitions.
+\subsection{The Lattice of Differentials}
+\label{sec:The Lattice of Differentials}
 
-Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $z=0$ not crossing $z=\infty$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different branch now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by constuction will be in $2\pi \iu \Z$, and so the Sym point conditions are well defined. Let
+\todo{TODO: reformulate this in a local only way, with the Bezout argument}
+We have computed two differentials that satisfy the period conditions and are real linearly independent. Though obviously there is nothing `natural' about this choice, many other combinations are possible. We also have not applied the closing conditions. For general $α,β$, there are not enough degrees of freedom to satisfy the condition at both points, only enough for one. With these two ideas in mind, we make the following definitions.
+
+Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $z=0$ not crossing $z=\infty$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different branch now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by constuction will be in $2\pi \iu \Z$, and so the closing point conditions are well defined. Let
 \[
 b^{-1} = \frac{1}{2\pi\iu}\int_{γ_+} Θ_1^1
 \]
@@ -432,7 +328,7 @@ So we may define $Θ_1^S = b Θ_1^1$, the unique differential with no periods an
 \[
 a = - \frac{\int_{γ_+} Θ_1^2}{\int_{γ_+} Θ_1^1}.
 \]
-These again form a basis of the plane of differentials, and also satisfy the Sym condition at $ζ=1$, but only for certain values of $α,β$ do they also satify the condition at $ζ=-1$. I claim that if $α,β$ are such that the Sym point conditions are able to be satified by some differentials, then these differentials form a sublattice of $\Z\langle Θ_1^P, Θ_1^S\rangle$. To see this, suppose $Θ$ is such that it has periods $0$ and $2\pi\iu n$ and
+These again form a basis of the plane of differentials, and also satisfy the closing condition at $ζ=1$, but only for certain values of $α,β$ do they also satify the condition at $ζ=-1$. I claim that if $α,β$ are such that the closing conditions are able to be satified by some differentials, then these differentials form a sublattice of $\Z\langle Θ_1^P, Θ_1^S\rangle$. To see this, suppose $Θ$ is such that it has periods $0$ and $2\pi\iu n$ and
 \[
 \frac{1}{2\pi\iu}\int_{γ_+} Θ = 2\pi\iu k,\;\; \frac{1}{2\pi\iu}\int_{γ_-} Θ = 2\pi\iu l.
 \]
@@ -496,12 +392,12 @@ Let us pause to consider the spectral data associated to a harmonic map. It cons
 
 Consider next the real $2$-plane that contains all of the permitted differentials: the subspace of differentials whose real periods vanish. Thus for each point in $\mathcal{A}$ we have a plane, thus we consider the rank 2 vector bundle $\mathcal{B}\to\mathcal{A}$.
 
-In the genus one case, there are several global frames we can choose for this bundle. The first and least difficult to compute is $\{Θ^1,Θ^2\}$ where $Θ^1 = \iu d(ζ/η)$ is an exact differential, and $Θ^2$ is a differential whose principal part satisifies $\pp Θ^2 = \iu \pp Θ^1$ and whose imaginary period is $2π\iu$, as defined above. Differentials that fulfill all the requirements to be spectral data must lie somewhere within the space spanned pointwise by $\R Θ^1 + \Z Θ^2$. But where within this space exactly? To answer that requires consideration of the Sym point condition. A better framing for the problem (excuse the pun) is the following unique choice
+In the genus one case, there are several global frames we can choose for this bundle. The first and least difficult to compute is $\{Θ^1,Θ^2\}$ where $Θ^1 = \iu d(ζ/η)$ is an exact differential, and $Θ^2$ is a differential whose principal part satisifies $\pp Θ^2 = \iu \pp Θ^1$ and whose imaginary period is $2π\iu$, as defined above. Differentials that fulfill all the requirements to be spectral data must lie somewhere within the space spanned pointwise by $\R Θ^1 + \Z Θ^2$. But where within this space exactly? To answer that requires consideration of the closing condition. A better framing for the problem (excuse the pun) is the following unique choice
 \begin{align}
 \int_{\S^1} Θ^S = 0, &\qquad 2π\iu Γ^S_+ := \int_{γ_+} Θ^S = 2π\iu \\
 \int_{\S^1} Θ^P = 2π\iu, &\qquad 2π\iu Γ^P_+ := \int_{γ_+} Θ^P = 0.
 \end{align}
-One can remember the superscripts with the mnenomic P for period and S for exact. If $Θ$ is a differential with integral Sym half-periods $2π\iu Γ_-$ and $2π\iu Γ_+$ and imaginary period $2π\iu n$, then $Θ-nΘ^P$ is exact and so must be a real mulitple of $Θ^S$; precisely, $Θ=nΘ^P + Γ_+ Θ^S$. Thus we can see that any differential with all the conditions meet must be an element of $\Z \langle Θ^S, Θ^P \rangle$.
+One can remember the superscripts with the mnenomic P for period and S for exact. If $Θ$ is a differential with integral half-periods $2π\iu Γ_-$ and $2π\iu Γ_+$ and imaginary period $2π\iu n$, then $Θ-nΘ^P$ is exact and so must be a real mulitple of $Θ^S$; precisely, $Θ=nΘ^P + Γ_+ Θ^S$. Thus we can see that any differential with all the conditions meet must be an element of $\Z \langle Θ^S, Θ^P \rangle$.
 
 It is not possible to find such differentials for every elliptic spectral curve, but by making our choice of $Θ^S, Θ^P$ we have fully exhausted all degrees of freedom toward that end. Moreover, both of those differentials are defined for every $(α,β)\in\mathcal{A}$, so we may consider the $\Z^2$ lattice bundle $Λ\to\mathcal{A}$. And any differential that does meet all the conditions lies within this space. To have a complete spectral data triple, we need to take two such differentials, which are an element of $Λ^2$ (product taken fibrewise). If we denote the space of spectral data as $\mathcal{X}$, then $\mathcal{X}\subset Λ^2 = \Z^4\times\mathcal{A}$. We can make this identification because by giving a global frame we have shown the bundle to be trivial. Thus we can divide $\mathcal{X}$ into various pieces indexed by four integers, though some of those pieces may be empty. For example $\mathcal{X}(1,1,2,2)$, which corresponds to the space of spectral data with differentials taken to be $Θ^S + Θ^P$ and $2Θ^S + 2Θ^P$, is empty because the differentials should be lineary independent.
 
@@ -546,7 +442,7 @@ b = \frac{2π\iu}{\int_{γ_+}Θ^1}
 
 INSERT JUSTIFICATION FOR INTERCHANGING LIMITS AND INTEGRALS AS JOHN POINTED OUT.\todo{this}
 
-In general it is difficult to be explicit about the space $\mathcal{X}$, because the Sym conditions are transcendental. However, over the boundary of $\mathcal{A}$ the conditions degenerate to simple trigonometry and can be solved. The first step is to treat each piece of $\mathcal{X}$ seperately, that is, fix four integers $m,n,\tilde m, \tilde n$. Then we can identify $\mathcal{X}(n,m,\tilde n,\tilde m)$ as lying within $\mathcal{A}$. With this view point adopted, the question of finding the moduli space is reduced to finding conditions on $(α,β)$ such that the Sym point conditions can be satisfied.
+In general it is difficult to be explicit about the space $\mathcal{X}$, because the closing conditions are transcendental. However, over the boundary of $\mathcal{A}$ the conditions degenerate to simple trigonometry and can be solved. The first step is to treat each piece of $\mathcal{X}$ seperately, that is, fix four integers $m,n,\tilde m, \tilde n$. Then we can identify $\mathcal{X}(n,m,\tilde n,\tilde m)$ as lying within $\mathcal{A}$. With this view point adopted, the question of finding the moduli space is reduced to finding conditions on $(α,β)$ such that the closing conditions can be satisfied.
 
 
 The half-periods of the limit can then be computed via the pull back to the normalisation, which as a genus zero curve the differentials are exact. If we denote the normalisation map as $π$ and the limits of the differentials as $Θ^1_L, Θ^2_L$ then
