@@ -196,69 +196,14 @@ describes the transition between the two patches. It is useful to note the how t
 \end{align}
 We will work towards giving $T$ a smooth extension to the manifold $M$. The theorem we intend to use is due to Seeley \cite{Seeley1964}: a smooth function in a half space where it and all its derivatives have continuous limits to the boundary can be extended to the whole space. First we establish the limits of certain classes of functions.
 
-\begin{lem}
-For any integral $k$,
-\[
-\lim_{k\to 1^-} [\ln (1-k)]^n (1-k) = 0, \;\; \lim_{k\to 1^-} K(k)[\ln (1-k)]^n (1-k) = 0
-\]
-where $K(k)$ is the complete elliptic integral of the first kind.
-\begin{proof}
-Firstly note that for $k \in (0,1)$, $K$ is bounded by the inequality \[
-\ln 4 - \frac{1}{2}\ln (1-k) - \frac{1}{2}\ln (1+k)
-\leq
-K
-\leq
-\frac{π}{2} - \frac{1}{2}\ln (1-k) - \frac{1}{2}\ln (1+k),
-\]
-so that the second limit follows from the first by an application of the squeeze rule. The first limit is similarly dealt with by the use of first year calculus. In particular if $n$ is positive, then by applying L'H\^opital's rule repeatedly we see that
-\begin{align}
-\lim_{k\to 1^-} [\ln (1-k)]^n (1-k)
-&= \lim_{k\to 1^-} \frac{[\ln (1-k)]^n} {(1-k)^{-1}} \\
-&= \lim_{k\to 1^-} \frac{n[\ln (1-k)]^{n-1}\frac{-1}{1-k}} {(1-k)^{-2}} \\
-&= -n \lim_{k\to 1^-} \frac{[\ln (1-k)]^{n-1}} {(1-k)^{-1}} \\
-&= \dots \\
-&= (-1)^n n! \lim_{k\to 1^-} (1-k) \\
-&= 0.
-\end{align}
-If $n$ is negative, then both factors tend to zero and the result is trivial.
-\end{proof}
-\end{lem}
 
-
-\begin{lem}
-Suppose that $f(k,σ,z)$ is a continuously differentiable function defined on $B$ such that it and all of its derivatives have continuous limits as $k \to 1^-$. Then
-\[
-g := f [\ln(1-k)]^n (1-k),\:
-h := f K [\ln(1-k)]^n (1-k)
-\text{ and }
-j := f E [\ln(1-k)]^n (1-k)
-\]
-and their first derivatives with respect to $(ε,σ',C)$ have limits as $k \to 1^-$ as well.
-\begin{proof}
-The fact that the three functions have limits is the content of the previous lemma. We explicitly compute
-\begin{align}
-\Partial{g}{ε} &= \bra{f - (1-k)f_k} [\ln(1-k)]^{n+2} (1-k) +  (nf - zf_z) [\ln(1-k)]^{n+1} (1-k)\\
-\Partial{g}{σ'} &= f_σ [\ln(1-k)]^n (1-k) \\
-\Partial{g}{C} &= -f_z [\ln(1-k)]^{n-1} (1-k) \\
-\Partial{h}{ε} &= -\frac{fE}{k(1+k)}[\ln(1-k)]^{n+2} (1-k) + \bra{\frac{1}{k}f - (1-k)f_k} K [\ln(1-k)]^{n+2} (1-k) \\
-    &\qquad\qquad+ (nf - zf_z) K [\ln(1-k)]^{n+1} (1-k) \\
-\Partial{h}{σ'} &= f_σ K [\ln(1-k)]^n (1-k) \\
-\Partial{h}{C} &= -f_z K [\ln(1-k)]^{n-1} (1-k) \\
-\Partial{j}{ε} &= \bra{f - (1-k)f_k - \frac{1}{k}f}E [\ln(1-k)]^{n+2} (1-k) + (nf - zf_z) E [\ln(1-k)]^{n+1} (1-k) \\
-    &\qquad\qquad+  \frac{1}{k}f K [\ln(1-k)]^{n+2} (1-k) \\
-\Partial{j}{σ'} &= f_σ E [\ln(1-k)]^n (1-k) \\
-\Partial{j}{C} &= -f_z E [\ln(1-k)]^{n-1} (1-k)
-\end{align}
-Every term on the right is of the form of a function with a limit multiplied by a function of the form in the previous lemma. Hence all the derivatives have limits as $k\to 1^-$.
-\end{proof}
-\end{lem}
-
-Further, if we assume $f$ to be a smooth function with limits at all orders, it follows inductively that functions with the forms of $g$, $h$ or $j$ are likewise smooth on the interior of the box, and all their derivatives have limits as $ε \to 0^+$.
 
 The function $T$ is not of this form, but its limit was computed previously and indeed the coordinate system $(ε,σ',C)$ was purposely designed for that it would have a limit. We now check that its derivatives fall into this paradigm.
 \begin{align}
 \Partial{T}{σ'}
 &= -\frac{E}{w(\iu σ)} + \frac{σ(1+k)}{w(\iu σ)(σ-τ)}K(1-k) + p \frac{E}{w(\iu τ)}\frac{1+τ^2}{1+σ^2} + p \frac{τ(1+τ^2)(1+k)}{w(\iu τ)(σ-τ)(1+σ^2)}K(1-k)
+\Partial{T}{ε}
+&= -C p \sqrt{\frac{1+τ^2}{1+k^2τ^2}}\frac{σCε(σCε-1)}{(C^2ε^2+1)(σ+Cε)}
 \end{align}
 
 
