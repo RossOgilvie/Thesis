@@ -1,3 +1,5 @@
+%!TEX root = thesis_single.tex
+
 \section{Stratified Morse Theory}
 \label{sec:Stratified Morse Theory}
 
@@ -5,7 +7,7 @@ Summary of the definitions and results of stratified Morse Theory.
 
 \subsection{Stratified Spaces}
 \label{sub:Stratified Spaces}
-A stratified space $Z$ is a subset of a manifold $M$ that is covered by pairwise disjoint smooth submanifolds of $M$. Each submanifold is called a stratum of the space. Some examples include all manifolds with boundary, which have two strata. The interior is a submanifold of the same dimension as $M$, and the boundary is one of dimension one lower. Similarly for manifolds with corners. The nodal cubic (and more generally algebraic varieties with singularities) is also an example with two strata. The smooth part of the curve is a one dimensional submanifold, and the singular point is taken to be a stratum on its own. Every submanifold is trivially a stratified space with one strata.
+A decomposition of a topological space is a locally finite collection of disjoint locally closed subsets called pieces, such that the space is the union of its pieces and whenever the intersection of a piece $X$ with the closure of a piece $\overline{Y}$ is nonempty then $X$ is a subset of $Y$. A stratified space $Z$ is a subset of a manifold $M$ that is a subset that is decomposed into pieces which are pairwise disjoint smooth submanifolds of $M$. Each submanifold is called a stratum of the space. Some examples include all manifolds with boundary, which have two strata. The interior is a submanifold of the same dimension as $M$, and the boundary is one of dimension one lower. Similarly for manifolds with corners. The nodal cubic is also an example with two strata. The smooth part of the curve is a one dimensional submanifold, and the singular point is taken to be a stratum on its own. More generally algebraic varieties with singularities are stratified spaces. Every submanifold is trivially a stratified space with one strata.
 
 In the following, let $p$ lie in the stratum $S$ in the stratified space $Z$ in the manifold $M$.
 
@@ -59,14 +61,112 @@ Finally, the local Morse data of $f$ at $p$ is product of the Tangential and Nor
 
 
 
+\begin{lem}
+    \label{lem:cond_b_pair}
+Suppose that $Z$ is a stratified space. Suppose that $Z$ is an (embedded) submanifold of $M$. Then $(X,Y)$ satisfies Whitney's condition b at $y$ whenever $X$ is open in $Z$.
+\begin{proof}
+Denote the dimension of $Z$ by $n$ and the dimension of $M$ by $m$. By the local immersion theorem, there is a coordinate neighbourhood $U'$ of $y$ in $Z$ and a coordinate neighbourhood $V$ of $y$ in $M$ such that the natural inclusion takes the form
+\[
+i : U' \to V, \;\; (x_1, \dots, x_n) \mapsto (x_1, \dots, x_n, 0, \dots, 0)
+\]
+and $y=0$ in both charts.
 
+We now use the embedded submanifold assumption. To be embedded entails that the manifold topology of the submanifold is the same as subspace topology. For $U'$ to be open in $Z$, there must be an open set $U$ in $M$ such that $U' = U \cap Z$. Recall a sequence $(x_n)$ converges to a point, if for every open set containing that point there is a cutoff $N$ so that the tail sequence with $n>N$ lies in the open set. Suppose there is a sequence of points of $Z$ that converges to $y$ in the topology of $M$, then consider the open set $U$. It contains $y$ and so eventually the sequence must come to lie in $U$. As the sequence lies in $Z$ by hypothesis, it comes to lie in $U'$. Therefore, for sequences in $Z$ converging to $y$, we need only check sequences with points from $U'$.
+
+We use the previously found coordinates to identify $V$ as an open subset in $\R^m$ and $U'$ is contained in $\{x_{n+1}=\dots = x_{m} = 0\} = \R^n \subset \R^m$; an open subset of $\R^n$.
+
+Suppose we have the setup for condition b; two strata $X,Y$ of $Z$ with sequences $x_i, y_i$ converging to $0\in Y$. By earlier remarks, points of $X$ can only converge to $y$ if they eventually lie in $U'$ also. We can now assume that $x_i \in X\cap U'$. As $X$ and $U'$ are open in $Z$, so $T_{x_i} X = T_{x_i} Z = T_{x_i} U' = \text{span}_\R \{ \partial_{u_1}, \dots, \partial_{u_n} \} = \R^n \subset \R^m$. Further, $U'$ is contained in $u_{n+1}=\dots = u_{N} = 0$, so all secants are contained in $\R^n$. Hence if a limiting secant exists, it must be contained in the tangent planes, and so Whitney's condition b is fulfilled.
+
+Note the necessity of the condition the submanifold has the subspace topology. In particular, \emph{immersed} submanifolds may fail the condition. Such a counterexample is the space $M = \R^2$, $X = \bigcup_{n\in \N} \{1/n\} \times \R$, $Y = \{0\}\times \R$, $y=(0,0)$. The sequence of points $x_n = (1/n, 0)$ converges to $y$, but the limit of the tangent planes does not contain the limit of the secant. The proof fails in this case because is to no longer true that a sequence of points of $Z$ converging to $y$ need lie in $U'$. Here $U'$ is the line $Y$, and there is no set $U\subset \R^2$ with $U' = U \cap Z$.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+
+\begin{lem}
+    \label{lem:startified_pair}
+Suppose that $Z$ is a closed submanifold of $M$. Let $Y$ be a closed submanifold of $Z$ and $X := Z \setminus Y$. Then $X\cup Y$ is a Whitney stratification of $Z$.
+
+\begin{proof}
+Because $Z$ is closed in $M$, $\overline{X} = Z$ and so its boundary is $Y$. Also $X$ is open in $Z$ and so by the previous lemma $Z$ satisfies Whitney's condition b.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+
+\begin{lem}
+    \label{lem:stratified_split}
+Suppose that a stratum $X$ is decomposed into the finite disjoint union of pieces $X_i$, each of which is open and closed in $X$ and have the same boundary as $X$. Then the stratified space formed where each is considered as a separate stratum is Whitney stratified.
+
+\begin{proof}
+We have turned one stratum into a finite number of strata, so the result is still locally finite. If a stratum had $X$ in its boundary, now it has $\bigcup X_i$ in its boundary, and so continues to be a union of strata. And the boundary of each $X_i$ is the same as the boundary of $X$, which was a union of strata already. Finally, we no not need to check Condition b for pairs $X_i,X_j$ as no sequence in one can have a limit in another, as they are closed in $X$. As for pairs where one of the members is an $X_i$, consider the same sequence in $X$, for which condition b is known to hold.
+\end{proof}
+\end{lem}
+
+
+
+
+
+\begin{lem}
+    \label{lem:stratified_remove}
+If one takes a Whitney stratifies space and removes a stratum that is not the boundary of any other, then the result is again a Whitney stratified space.
+
+\begin{proof}
+The result is clearly locally finite, as we have only removed strata. Condition b still holds between all remaining pairs. Finally, the condition on the boundary holds for the remaining strata, as the stratum removed is not in the boundary of any remaining piece.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+\begin{lem}
+Suppose $\overline B = B \cup \partial B$ is a closed half space in $M$. That is, $B$ is an open submanifold of $M$, $\partial B$ (the boundary of $B$) is a closed submanifold and both $B$ and $M\setminus \overline{B}$ are simply connected. If $q$ is a regular value of $T$ and $T^{-1}(q)$ is transverse to $\partial B$, then $Z = T^{-1}(q) \cap \overline B$ is a Whitney stratified space.
+
+\begin{proof}
+Let $Z = T^{-1}(q)$. It is a closed submanifold of $M$. By the transverse assumption, $Y = Z\cap \partial B$ is a closed submanifold of $Z$. Hence we are in the situation of Lemma \ref{lem:startified_pair} and letting $X = Z\setminus Y$, we have that $Z = X \cup Y$ is a Whitney stratified space. Now split $X$ into the two pieces $X_1 = X \cap B$ and $X_2 = X \cap (M \setminus \overline{B})$. Then by Lemma \ref{lem:stratified_split}, $Z = X_1 \cup X_2 \cup Y$ is a Whitney stratified space and by Lemma \ref{lem:stratified_remove}, $Z \cap \overline{B} = X_1 \cup Y$ is too.
+\end{proof}
+\end{lem}
 
 
 \subsection{Implicit Function Theorems}
 \label{sub:Implicit Function Theorems}
 
-The space we are interested in is not simply the open ball of potential spectral data, but instead the subset of this meeting a condition. To see that this space is, for example, smooth, one must use the implicit function theorem. Further, one needs to be able to do this at the boundary.
 
+
+\begin{lem}
+Suppose, as for the implicit function theorem, that $c$ is a regular value of $F : \R^{n+m} \to \R^n$. Let $p \in \R^{n+m}$ be a point in the level set $Z = F^{-1}(c)$. Then every open neighbourhood of $p$ in $Z$ has an open subset containing $p$ such that this subset is the intersection of $Z$ and an open set in $\R^{n+m}$.
+
+\begin{proof}
+We start by using the implicit function theorem at $p$. After possibly reordering the coordinates, there exists open sets $U \subset \R^n$ and $V \subset \R^m$ and a smooth function $g : U \to V$ such that $p \in U\times V$ and
+\[
+\Set{(x,g(x))}{x \in U} = \Set{ (x,y) \in U\times V}{F(x,y) = c}.
+\]
+If we rephrase this into a chart for $Z$ at $p$, let $W = Z \cap (U\times V)$ be the coordinate neighbourhood and define the chart $φ$ by
+\begin{align*}
+φ : W &\to U            &          φ^{-1} : U &\to W \\
+(x,y) &\mapsto x        &                   x &\mapsto (x, g(x)).
+\end{align*}
+Now take any open neighbourhood $A$ of $p$ in $Z$. By intersecting it with $W$ we have subset, $A' := A \cap W$, that fits inside the coordinate chart. We will show that $A'$ is the restriction of an open subset of ambient space $\R^{n+m}$. Symbolically, we will show that
+\[
+A' = Z \cap (φ(A') \times V).
+\]
+Take any point $q$ in $A'$. By the definition of $A$ as a subset of $Z$, $q$ lies in $Z$, so must show it lies in the product. As $q$ lies in $W$,  we may apply the chart map to it to conclude that $q = φ^{-1} \circ φ(q) = (φ(q), g(φ(x)))$, which plainly lies in $φ(A') \times V$.
+
+To see the reverse inclusion, now suppose that $q \in Z \cap (φ(A') \times V)$. Initially, we can say $q$ is in $W$, as is seen from the progression $A' \subset W$, $φ(A') \subset φ(W) = U$, $φ(A') \times V \subset U \times V$ and finally $Z \cap (φ(A') \times V) \subset Z \cap (U\times V) = W $. Let $q = (x,y)$ for some $x \in φ(A')$ and $x = φ(q)$ as $φ$ acts by projection onto the first component. Let $q' \in A' \subset W$ be the preimage of $x$, ie $x = φ(q')$. $φ$ is a bijection on $W$ so $q=q'$ and the equality is proved.
+
+This exhibits $A'$, an open subset of $A$, as the intersection of $Z$ and an open set $φ(A') \times V$ in $\R^{n+m}$.
+\end{proof}
+\end{lem}
 
 \subsection{Morse Theory}
 \label{sub:Morse Theory}
