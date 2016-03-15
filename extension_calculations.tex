@@ -1,0 +1,262 @@
+%!TEX root = thesis_single.tex
+
+\section{Extension Calculations}
+\label{sec:Extension Calculations}
+
+In REF \todo{ref} we aim to extend a certain function $T$ past a boundary plane. In order to do this, we employ a theorem about the existence of a smooth extension of a function. The theorem, due to Seeley \cite{Seeley1964}, gives conditions that ensure a given function has an extension to the full space. Given a function $f$ on the half space $x_n > 0$ in $\R^n$, one could try to extend it to the boundary plane $x_n = 0$ by taking the limit $x_n \to 0^+$ if it exists. If the function so defined on the closed half space $x_n \geq 0$ is a continuous function we say that $f$ has a continuous limit as $x_n \to 0$. If a function and its partial derivatives to all orders in all variables have continuous limits as $x_n \to 0$, then the theorem states there is a smooth extension of $f$ to the whole space. We call a function that meets these conditions extensible.
+
+\begin{defn}
+Let $\R^n_{>0} := \{ (x_1, \dots, x_n) \in \R^n \mid x_n > 0\}$ and similarly for $\R^n_{\geq 0}$. A continuous function on $\R^n_{>0}$ is said to have a \emph{continuous limit} as $x_n \to 0^+$ if it is the restriction of a continuous function on $\R^n_{\geq 0}$. A smooth function on $\R^n_{>0}$ is called \emph{extensible} if it and its partial derivatives to all orders have continuous limits as $x_n \to 0^+$.
+\end{defn}
+
+Our situation is somewhat complicated by the presence of multiple coordinate systems. Recall, REF \todo{ref} the coordinates $(ε,s,c)$ on $\R^3$. In our problem we will have functions defined for $ε>0$ and we wish to extend past the boundary $ε=0$. However most of the functions are defined in a nearby coordinate system $(k,σ,τ')$ defined on $\{k\in (0,1), σ\in\R, τ'\in\R, στ' \neq 1\}$. They are related by the transition
+\begin{align}
+k &= 1 - \exp\bra{-\frac{1}{ε}},
+    & ε &= -1/ \ln (1-k), \\
+σ &= s,
+    & s &= σ, \\
+τ' &= \frac{s+cε}{cεs - 1},
+    & c &= -\ln (1-k) \frac{σ+τ'}{στ'-1}.
+\end{align}
+The overlap between these coordinates is precisely the half space $ε>0$. So by pulling back functions of $(k,σ,τ')$ we get functions on the half space that we would like to extend. This is not necessarily straightforward because the coordinate transformation degenerates as $ε \to 0^+$; as $ε\to 0^+$, $k \to 1^-$ but also $τ' \to -s = -σ$. Hence extending a function across $ε=0$ is not simply extending a function across $k=1$. There are two broad classes of functions that are straightforward to show they are extensible. Let $\mathcal{F}_\text{good}$ be smooth functions of $(ε,s,c)$ on a neighbourhood of $ε=0$, restricted to $ε>0$. These functions have the best possible behaviour; by definition they have continuous limits as $ε\to 0^+$, and their derivatives to all orders also lie in $F_ε$, so they are trivially extensible.
+
+Likewise, consider smooth functions of $(k,σ,τ')$ on a neighbourhood of $k=1$, restricted to $k<1$. Define $\mathcal{F}_\text{bad}$ to be the pullbacks of these function to $(ε,s,c)$. We can see that any $f \in \mathcal{F}_k$ has a continuous limit as $ε\to 0^+$ by the following trick. Let
+\[
+\tilde{k}(ε) =
+\begin{cases}
+k(ε) & \text{ for } ε > 0, \\
+1 & \text{ for } ε = 0, \\
+k(-ε) & \text{ for } ε < 0.
+\end{cases}
+\]
+It is well known that $\tilde{k}$ is a smooth function, though we will demonstrate it explicitly momentarily REF\todo{ref}. If $f$ is the pullback of $g$, then we may write
+\[
+f(ε,s,c) = g(k(ε), σ(s), τ'(ε,s,c)) = g(\tilde{k}(ε), σ(s), τ'(ε,s,c))
+\]
+where the second equality holds on the domain $ε>0$. However unlike $k$, $\tilde{k}$ is a smooth function at $ε=0$ and so we can see that $f$ extends to a smooth function at $ε=0$ because we have written it as the composite of smooth functions. In particular, it has a continuous limit. In subsequent calculations we may use this trick to treat these functions as well defined $ε=0$ even though strictly speaking $k(0)$ is not well defined. Note that the same argument applies to the pullbacks of the derivatives of $g$ with respect to $(k,σ,τ')$, but we have not yet established that the derivatives of $f$ with respect to $(ε,s,c)$ have continuous limits and so we have not yet shown that $f$ is extensible.
+
+We now introduce the third class of functions. This is collection of specific functions that arise either in the formulae of derivatives of $T$ or more generally the derivatives of functions of $(k,σ,τ')$ with respect to the coordinates $(ε,s,c)$, and that need to be dealt with on a case by case basis. We set
+\[
+\mathcal{F}_\text{ugly} := \left\{ E(k),\;\; εK(k),\;\; ε^{-n}\exp(-1/ε),\;\; ε^{-n}K(k)\exp(-1/ε) \text{ and, } \frac{1}{ε}\frac{1}{k(1+k)} E - K \right\},
+\]
+and to begin we will demonstrate that they each have a well defined limiting value as $ε\to 0^+$
+
+\begin{lem}\label{lem:limit_ugly_1}
+For $k(ε) = 1 - \exp(-1/ε)$, as $ε\to 0^+$ the following is true
+\[
+\lim_{ε\to 0^+} E(k) = 1 \text{ and, } \lim_{ε\to 0^+} εK(k) = \frac{1}{2}.
+\]
+In particular, considered as functions of $(ε,s,c)$, the functions $E(k(ε))$ and $εK(k(ε))$ have continuous limits as $ε \to 0^+$.
+
+\begin{proof}
+The first limit, of $E(k)$, is trivial because the function is continuous on $[0,1]$ and at $k=1$ it takes the value $1$. For the next function, we recall a fact about the growth of $K(k)$ near $k=1$. In \cite{Anderson} they demonstrate that
+\[
+\lim_{k \to 1^-} K + \ln\sqrt{1-k^2} = \ln 4,
+\]
+which may be rearranged to
+\[
+\lim_{k \to 1^-} K + \frac{1}{2}\ln(1-k) = \frac{3}{2} \ln 2.
+\]
+This motivates us to define $\rem_K(k) := K(k) + \tfrac{1}{2} \ln (1-k)$. One should consider $- \tfrac{1}{2}\ln(1-k)$ to be the dominant behaviour of $K$ near $k=1$, and $\rem_K$ is a bounded remainder term. We can then express the logarithm explicitly as a function of $ε$, yielding
+\begin{align*}
+K(k(ε)) &= \frac{1}{2ε} + \rem_K(k(ε)), \\
+εK(k(ε)) &= ε \times \frac{1}{2ε} + ε\rem_K \\
+&\to \frac{1}{2} + 0 \times \frac{3}{2} \ln 2 \\
+&= \frac{1}{2}.
+\end{align*}
+\end{proof}
+\end{lem}
+
+We proceed now to the next two (classes of) functions in $\mathcal{F}_\text{ugly}$. One is familiar and its properties already mentioned. The limit of the other can be reduced to the limit of the first without significant difficulty.
+\begin{lem}\label{lem:limit_ugly_2}
+For $k(ε) = 1 - \exp(-1/ε)$ and for all $n \in \N$, as $ε\to 0^+$ the following is true
+\[
+\lim_{ε\to 0^+} ε^{-n}\exp(-1/ε) = \lim_{ε\to 0^+} ε^{-n}K(k)\exp(-1/ε) = 0.
+\]
+In particular, considered as functions of $(ε,s,c)$, these functions have continuous limits as $ε \to 0^+$.
+
+\begin{proof}
+First let us show how to reduce the second limit to the first. For $k \in (0,1)$, $K$ is bounded by the inequality \todo{ref}
+\[
+\ln 4 \leq K + \ln\sqrt{1-k^2} \leq \frac{π}{2},
+\]
+which may be rearranged to
+\[
+\frac{1}{2}\frac{1}{ε} + \ln 4 - \frac{1}{2}\ln (1+k)
+\leq
+K
+\leq
+\frac{1}{2}\frac{1}{ε} + \frac{π}{2} - \frac{1}{2}\ln (1+k).
+\]
+Multiplying through by $ε^{-n}\exp(-1/ε)$ gives
+\begin{align*}
+\frac{1}{2}ε^{-n-1}\exp(-1/ε) +& \bra{\ln 4 - \frac{1}{2}\ln (1+k)} ε^{-n}\exp(-1/ε)\\
+\leq ε^{-n}&K(k)\exp(-1/ε) \leq \\
+\frac{1}{2}ε^{-n-1}\exp(-1/ε) +& \bra{\frac{π}{2} - \frac{1}{2}\ln (1+k)}ε^{-n}\exp(-1/ε).
+\end{align*}
+Assuming the first result, both the lower and upper bounds tend to zero, demonstrating the second limit. It remains therefore to show the first result.
+
+Fix $n\in\N$. For positive values of $x$, comparing $\exp x$ to its Taylor series shows that
+\[
+\exp x \geq \frac{x^{n+1}}{(n+1)!}.
+\]
+We can therefore manipulate the limit thus
+\begin{align*}
+\lim_{ε\to 0^+} ε^{-n}\exp(-1/ε)
+&= \lim_{x \to \infty} \frac{x^n}{\exp x} \\
+&\leq \lim_{x \to \infty} x^n\frac{(n+1)!}{x^{n+1}} \\
+&= \lim_{x \to \infty} (n+1)! \; x^{-1} \\
+&= 0.
+\end{align*}
+As it was a positive expression, the limit is forced to be zero.
+\end{proof}
+\end{lem}
+
+The final function of $\mathcal{F}_\text{ugly}$ is the most difficult to deal with. Both terms are divergent, and one must not only show that they cancel one another but show it with enough finesse to extract the value of the limit.
+\begin{lem} \label{lem:limit_ugly_3}
+For $k(ε) = 1 - \exp(-1/ε)$,
+\[
+\lim_{ε\to 0^+} \frac{1}{ε}\frac{1}{k(1+k)} E - K = -\frac{3}{2}\ln 2.
+\]
+In particular, it has a continuous limit as $ε \to 0^+$.
+
+\begin{proof}
+We have previously seen that $K$ diverges as $(2ε)^{-1}$. Substituting $k=1$ to the first term gives
+\[
+\frac{1}{ε}\frac{1}{1\times 2} E(1) = \frac{1}{2ε},
+\]
+so we can see heuristically that the first term has the same order of divergence. We will resuse the notation $\rem_K$ from REF \todo{ref}, and introduce a similar notation for $k^2$:
+\[
+\rem_{k^2}(ε) := k^2 - 1 = - \bra{2-\exp\bra{-1/ε}}\exp\bra{-1/ε}.
+\]
+Recall the inequality \todo{ref}
+\[
+E \leq k^2 + (1-k^2)K = 1 + \rem_{k^2} - \rem_{k^2}K.
+\]
+We wish to bound the first term in such a way that the upper and lower bounds are a sum of $(2ε)^{-1}$ together with terms that tend to zero as $ε\to 0^+$. For $k\in (0,1)$, recall that $E(k)$ is a decreasing function, and that $E(1) = 1$. Thus
+\[
+1 \leq E \leq 1 + \rem_{k^2} - \rem_{k^2}K.
+\]
+For small positive $x$ (to be precise, $0 \leq x \leq 1$)
+\[
+1 \leq \frac{1}{1-x} \leq 1 + 2x,
+\]
+which leads to
+\[
+1 \leq \frac{1}{k} = \frac{1}{1-\exp (-1/ε)} \leq 1 + 2\exp (-1/ε),
+\]
+and
+\[
+\frac{1}{2} \leq \frac{1}{1+k} = \frac{1}{2} \times \frac{1}{1-0.5\exp (-1/ε)} \leq \frac{1}{2} + \exp (-1/ε).
+\]
+Combining these bounds
+\[
+\frac{1}{2ε}
+\leq
+\frac{1}{ε}\frac{1}{k}\frac{1}{1+k} E
+\leq
+\frac{1}{ε}(1+2\exp(-1/ε))\bra{\frac{1}{2} + \exp(-1/ε)}\left( 1 + \rem_{k^2} - \rem_{k^2}K \right).
+\]
+Expanding on the right hand side, every term except for $(2ε)^{-1}$ has a factor of $\exp(-1/ε)$ (note that $\rem_{k^2}$ has such a factor). As previously shown, these expontential factors dominate both $K$ and $ε^{-1}$, and hence all other terms tend to zero. Hence, subtracting off $K$ and taking the limit, we arrive at
+\begin{align*}
+\lim_{ε\to 0^+} \frac{1}{2ε} - K
+\leq \lim_{ε\to 0^+} \bra{\frac{1}{ε}\frac{1}{k(1+k)} E - K}&
+\leq \lim_{ε\to 0^+} \frac{1}{2ε} + O(\exp(-1/ε)) - K, \\
+%%%%%
+\lim_{ε\to 0^+} - \rem_K
+\leq \lim_{ε\to 0^+} \bra{\frac{1}{ε}\frac{1}{k(1+k)} E - K}&
+\leq \lim_{ε\to 0^+} - \rem_K + O(\exp(-1/ε)), \\
+%%%%%
+\lim_{ε\to 0^+} \bra{\frac{1}{ε}\frac{1}{k(1+k)} E - K} = - \lim_{ε\to 0^+} &\rem (K) = -\frac{3}{2}\ln 2.
+\end{align*}
+\end{proof}
+\end{lem}
+
+We have now examined each function of $\mathcal{F}_\text{ugly}$ in turn and shown that they each have a continuous limit as $ε\to 0^+$. This is a first step towards showing that they are in fact extensible. Logically, the next step is to repeat this process with their derivatives. In practice however, the derivatives of functions in $\mathcal{F}_\text{ugly}$ are combinations of well behaved functions and other functions of $\mathcal{F}_\text{ugly}$, so no further limit calculations are required.
+
+\begin{lem} \label{lem:limit_ugly_deriv}
+The first derivatives of the functions in $\mathcal{F}_\text{ugly}$ with respect to $(ε,s,c)$ have continuous limits as $ε \to 0^+$.
+
+\begin{proof}
+As discussed will prove this lemma by computing the derivatives of each function and showing that it is a combination of known functions. Note that the functions in $\mathcal{F}_\text{ugly}$ are functions of $ε$ alone, though perhaps mediated via $k$. It is therefore useful to note the total derivative is given by
+\[
+\frac{d}{dε} = \Partial{}{ε} +\Partial{k}{ε}\Partial{}{k} =\Partial{}{ε} - ε^{-2}\exp(-1/ε)\Partial{}{k}.
+\]
+It is also worth recalling \todo{ref} the derivatives of the elliptic integrals
+\[
+\frac{d}{dk}K = \frac{1}{k(1-k^2)}E - \frac{1}{k}K,
+\;\;\;
+\frac{d}{dk}E = \frac{1}{k}(E-K).
+\]
+It remains to do the computation. The first three are routine.
+\begin{align*}
+\frac{d}{dε}E
+&= -ε^{-2}\exp(-1/ε)\frac{1}{k}(E-K) \\
+&= -\frac{1}{k}E ε^{-2}\exp(-1/ε) + \frac{1}{k} ε^{-2} K \exp(-1/ε).
+\end{align*}
+And
+\begin{align*}
+\frac{d}{dε}(εK)
+&= K - ε^{-2}\exp(-1/ε) \times ε \bra{ \frac{1}{k(1-k^2)} E - \frac{1}{k} } \\
+&= - \bra{ \frac{1}{ε} \frac{1}{k(1+k)} E - K } + \frac{1}{k} ε^{-1} K \exp(-1/ε).
+\end{align*}
+And
+\begin{align*}
+\frac{d}{dε}(ε^{-n}\exp(-1/ε)) &= -n ε^{-n-1}\exp(-1/ε) + ε^{-n-2}\exp(-1/ε).
+\end{align*}
+Each of these derivatives is exhibited as a combination of functions from $\mathcal{F}_\text{bad}$ or $\mathcal{F}_\text{ugly}$ and so have a continuous limit. The limiting values are respectively $0$, $1.5\ln 2$ and $0$. Proceeding, the formulae grow a little larger but hold no surprises.
+\begin{align*}
+\frac{d}{dε}(ε^{-n}K\exp(-1/ε))
+&= -n ε^{-n-1}K\exp(-1/ε) + ε^{-n-2}K\exp(-1/ε)
+\\ &
+- ε^{-2}\exp(-1/ε) \bra{ \frac{1}{k(1-k^2)} E - \frac{1}{k} K} ε^{-n}\exp(-1/ε) \\
+&= -n ε^{-n-1}K\exp(-1/ε) + ε^{-n-2}K\exp(-1/ε)
+\\ &
+- \frac{1}{k(1+k)} E ε^{-n-2}\exp(-1/ε) + \frac{1}{k} ε^{-n-2} K \exp(-1/ε) \exp(-1/ε) .
+\end{align*}
+Notice that the appearance of a factor of $1-k$ in the denominator in the derivative of $K$ is countered by the factor of $\exp(-1/ε)$ that arises from the chain rule. By itself, the derivative of $K$ is unbounded near $k=1$ (as one may expect, since $K$ itself is unbounded there). The limit of this expression as $ε \to 0^+$ is $0$. The final derivative we must compute is
+\begin{align*}
+\frac{d}{dε} \bra {\frac{1}{ε}\frac{1}{k(1+k)} E - K}
+&= -ε^{-2}\frac{1}{k(1+k)}E - ε^{-3}\exp(-1/ε)\bra{ - \frac{1}{k^2(1+k)}E - \frac{1}{k(1+k)^2}E + \frac{1}{k^2(1+k)}E - \frac{1}{k^2(1+k)}K }
+\\ &
++ ε^{-2}\exp(-1/ε) \bra{ \frac{1}{k(1-k^2)}E - \frac{1}{k} K  } \\
+&= \frac{1}{k(1+k)^2}E ε^{-3}\exp(-1/ε) + \frac{1}{k^2(1+k)}ε^{-3} K \exp(-1/ε)
+- \frac{1}{k} ε^{-2}K\exp(-1/ε)
+\end{align*}
+This has a limit of $0$ as well. This concludes the check for the $ε$-derivatives. The derivatives with respect to the other variables are simply $0$, and so obviously have a continuous limit of $0$.
+\end{proof}
+\end{lem}
+
+At this stage, we have shown that all functions in $\mathcal{F}_\text{good}$, $\mathcal{F}_\text{bad}$ and $\mathcal{F}_\text{ugly}$ have continuous limits, and that further the derivatives of functions in the first and third sets do as well. We previously commented that we had not shown that the derivatives of $\mathcal{F}_\text{bad}$ had continuous limits, but we rectify that omission now.
+
+\begin{lem} \label{lem:limit_bad_deriv}
+Suppose that $f \in \mathcal{F}_\text{bad}$  is the pullback of $g$. Then the derivatives of $f$ with respect to $ε$, $s$ and $c$ have continuous limits as $ε \to 0^+$.
+
+\begin{proof}
+We begin by computing derivatives en masse.
+\begin{align*}
+\Partial{f}{ε}
+&= \Partial{k}{ε}\Partial{g}{k} + \Partial{τ'}{ε}\Partial{g}{τ'} \\
+&= -ε^{-2} \exp(-1/ε) \Partial{g}{k} - c \frac{s^2 + 1}{(cεs-1)^2} \Partial{g}{τ'}, \\
+%%%%%%%%%
+\Partial{f}{s}
+&= \Partial{σ}{s}\Partial{g}{σ} + \Partial{τ'}{s}\Partial{g}{τ'} \\
+&= \Partial{g}{σ} - \frac{1 + c^2ε^2}{(cεs-1)^2} \Partial{g}{τ'}, \\
+%%%%%%%%%
+\Partial{f}{c}
+&= \Partial{τ'}{c}\Partial{g}{τ'} \\
+&= - ε \frac{s^2 + 1}{(cεs-1)^2} \Partial{g}{τ'}.
+\end{align*}
+By an earlier comment \todo{ref} , the pullbacks of the partial derivatives of $g$ with respect to $(k, σ, τ')$ all have continuous limits. And note that the coefficient functions above are smooth functions on a neighbourhood of $ε = 0$, that is they lie in $\mathcal{F}_\text{good}$, with the exception of $ε^{-2}\exp(-1/ε)$ which lies in $\mathcal{F}_\text{ugly}$. Hence the derivatives of $f$ have continuous limits.
+\end{proof}
+\end{lem}
+
+At this point we have shown that functions in all three classes and their derivatives have continuous limits as $ε \to 0^+$. Therefore we are ready to make an induction argument to generalise this property to their all derivatives (of any order) and thus conclude that these functions are extensible.
+
+\begin{lem}
+Consider the algebra of functions $\mathcal{F}$ generated by $\mathcal{F}_\text{good} \cup \mathcal{F}_\text{bad} \cup \mathcal{F}_{\text{ugly}}$. The functions in $\mathcal{F}$, and their derivatives to all orders, have continuous limits as $ε \to 0^+$. Hence fucntion in $\mathcal{F}$ are extensible.
+
+\begin{proof}
+We have already seen that all functions in $\mathcal{F}$ have continuous limits as $ε \to 0^+$ (Lemmata \ref{lem:limit_ugly_1}, \ref{lem:limit_ugly_2}, \ref{lem:limit_ugly_3}). We have also seen that their first derivatives are contained within this algebra (Lemmata \ref{lem:limit_ugly_deriv}, \ref{lem:limit_bad_deriv}). Inductively then, all derivatives to all orders are contained in the algebra, proving the lemma.
+\end{proof}
+\end{lem}

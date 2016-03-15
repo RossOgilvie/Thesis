@@ -51,11 +51,11 @@ From this we define
 T &:=  p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 \\
 &=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) - 4K \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} \right] \\
 &\qquad\qquad   - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right] \\
-&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) \right] - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) \right] \\
+&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
 &\qquad\qquad    - 4K\left[ p\frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} - \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right]  \\
-&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) \right] - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) \right] \\
+&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
 &\qquad\qquad    - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \left[ \frac{1-ν}{1+ν} - \frac{1+ν}{1-ν} \right]  \\
-&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) \right] - \left[ 4 E \tilde{F}(f(1)) + 4 K \tilde{E}(f(1)) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2} \labelthis{Teqn} \\
+&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2} \labelthis{Teqn} \\
 \end{align*}
 
 
@@ -120,13 +120,50 @@ Now, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$. We can comp
 so that
 \begin{align*}
 \labelthis{Teqn2}
-T(p,k,σ,τ) = p \left[ 4 E \tilde{F}(\iu τ) - 4 K \tilde{E}(\iu τ) \right] - \left[ 4 E \tilde{F}(\iu σ) - 4 K \tilde{E}(\iu σ) \right] - 4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ}.
+T(p,k,σ,τ) = 4p \left[ E \tilde{F}(\iu τ) - K \tilde{E}(\iu τ) \right] - 4\left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right] - 4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ}.
 \end{align*}
 In the parameter space $P = \{(p,k,σ,τ)\mid p>0, 0 < k <1, σ,τ \in\RInf, σ \neq τ\}$, the moduli space is defined implicitly by the two conditions that $p$ is constant, as is $T$.
 
+It is not fully clear prima facie that $T$ is well defined everywhere on this space. Certainly, we have excluded the singularity that could arise from dividing by $σ-τ$ by not allowing those two coordinates to be equal. But $σ$ and $τ$ are allowed to take the value $\infty$, and $\tilde E$ has a pole there. More technically, one could draw a distinction between $σ$ as a parameter, simply labeling a point, and $σ$ as a coordinate, an assignment of a value to a point. $σ$ is a parameter when it is $\infty$ but not a coordinate. A coordinate for this point would be something like $σ' := 1/σ$. Philosophically, a formula of a function at a point uses a coordinate to get a value, and then uses that value in a computation. The point being made here is that we must check that the formula is well-defined when one of $σ$ or $τ$ is infinite. We now rectify that situation.
 
+First though, note that strictly speaking $T$ is not a function. It is only locally defined function, up to a constant. To see this phenomenon explicitly, let us consider the limit of $T$ as $τ$ goes to infinity.
+\begin{align}
+\lim_{τ\to+\infty} T
+&= 4pE \lim_{τ\to\infty} \tilde{F}(\iu τ) - 4pK \lim_{τ\to\infty} \bra{ \tilde{E}(\iu τ) + \iu \frac{w(\iu τ)}{σ-τ} }
+- 4 \left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right] - \lim_{τ\to\infty} 4\iu K \frac{ w(\iu σ)}{σ-τ} \\
+&= 4\iu pEK' - 4pK \lim_{τ\to\infty} \bra{ \tilde{E}(\iu τ) - \iu k τ + \iu k τ + \iu \frac{w(\iu τ)}{σ-τ} }
+- 4\left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right]\\
+&= 4\iu pEK' -4\iu pK(K' - E') - 4pK \lim_{τ\to\infty} \bra{\iu k τ + \iu \frac{w(\iu τ)}{σ-τ} }
+- 4\left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right]\\
+&= 2π\iu p - 4\iu pK \lim_{τ\to\infty} \frac{kστ - kτ^2 + w(\iu τ)}{σ-τ}
+- 4\left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right]\\
+&= 2π\iu p + 4\iu pK kσ - 4\left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right]
+\end{align}
+And from the other side of $τ=\infty$,
+\begin{align}
+\lim_{τ\to-\infty} T
+&= -2π\iu p + 4\iu pK kσ - 4 \left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right]
+\end{align}
+We see that the two limits of $T$ differ by a value of $4π\iu p$. This is acceptable because $T$ is defined up to multiples of $2π\iu p$. It shows us that $τ = \infty$ is a branch cut of this formula for $T$. Geometrically this is because of how we have standardised the open paths. Recall that the $\iu τ$ is the image of $-1$ under $f$, and $\infty$ corresponds to the point $ν$. The path $γ_-$ is specified to tranverse part of the unit circle from $-1$ but avoid $ν$. Hence when $ν$ crosses past $-1$, the direction of tranversal reverses. This is equivalent to adding a period (actually two periods because we traverse the arc on the unit circle twice, once before and once after going around the branch point). And in the original definition of $T$, we see this integral that is affected has a coefficient of $p$, perfectly matching what this calculation has shown. The same is true for $σ$.
 
-
+So what can be done about this? It turns out that in a neighbourhood of infinity, we can find a function that is analytic in the local coordinate and on the restrictions to $τ\in\R$ differs locally from $T$ by a constant. We shall show this for a neighbourhood of $τ=\infty$; the case for $σ=\infty$ is entirely similar. Let $τ' = 1/τ$ be a coordinate on $τ \in \R\cup\{\infty\}\setminus \{0\}$. Define a function $T'(k,σ,τ')$ to be equal to $T(k,s,τ)$ on $τ'\in\R^+$, on $τ' = 0$ let it be equal to $\lim_{τ\to +\infty}T$ as computed above, and on $τ'\in\R^-$ let it be $T + 4π\iu p$. Looking specifically at this last bit, where $τ'\in\R^-$
+\begin{align}
+T + 4π\iu p
+&= 4p \left[ E \tilde{F}(\iu τ) - K \tilde{E}(\iu τ) \right] - 4 \left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right] - 4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ} + 8\iu p \bra{EK' + K(E' - K')} \\
+&= 4p \left[ E (2\iu K' + \tilde{F}(\iu τ)) - K (2\iu (K'-E') + \tilde{E}(\iu τ)) \right] - 4 \left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right] - 4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ} \\
+&= 4p \left[ E \left\{2\iu K' + \tilde{F}(\iu τ)\right\} - K \left\{ 2\iu (K'-E') + \tilde{E}(\iu τ)) - ikτ\right\} \right] - 4 \left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right] - 4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ} - 4p\iu k K τ
+\end{align}
+Compare this to $T'$ for $τ' > 0$
+\[
+T' = T = 4p \left[ E \left\{\tilde{F}(\iu τ)\right\} - K \left\{ \tilde{E}(\iu τ)) - ikτ\right\} \right] - 4 \left[ E \tilde{F}(\iu σ) - K \tilde{E}(\iu σ) \right] - 4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ} - 4p\iu k K τ
+\]
+In APPENDIX \todo{add ref} it was shown that the functions appearing in the braces of these equations defined above peicewise on each of $τ' >0$ and $τ' < 0$ were in fact an analytic in $τ'$ when taken together. The second term is independent of $τ$ and so passes muster as well. It therefore remains to show that the leftovers form an analytic function. More precisely, that the following is an analytic function of $τ'$.
+\begin{align}
+4\iu K \frac{p w(\iu τ) + w(\iu σ)}{σ-τ} + 4p \iu k K τ
+&= 4\iu p K \frac{kστ - kτ^2 + w(\iu τ)}{σ-τ} + 4\iu K \frac{w(\iu σ)}{σ-τ} \\
+&= 4\iu p K \frac{1}{τ'}\frac{\sqrt{(1+(τ')^2)(k^2 + (τ')^2)} - k }{στ'-1} + 4\iu p K \frac{kσ}{στ'-1} + 4\iu K \frac{τ' w(\iu σ)}{στ'-1} \\
+\end{align}
+Which is analytic as the difference of the square root and $k$ vanishes quadratically in $τ'$ near $τ'=0$. In summary we have shown that $T$ is a function defined locally up to a constant on the entire parameter space, and moreover that locally it is analytic everywhere on that space as well, by which we mean on a neighbourhood of every point that there is a single analytic function we can speak of as representing $T$.
 
 
 
@@ -136,77 +173,179 @@ In the parameter space $P = \{(p,k,σ,τ)\mid p>0, 0 < k <1, σ,τ \in\RInf, σ 
 
 
 \subsection{The Cut space}
-Consider the parameter space $P$, defined previously, for a fixed value of $p \leq 1$. Topologically it is a fatten annulus. Suppose we make a cut along the plane $σ=\infty$. Now we have a box $B = \{(k,σ,τ)\mid 0 < k <1, σ \in \R , τ \in\RInf, σ \neq τ\}$. We will soon introduce an auxillary coordinate to compensate for the fact that $τ$ is not a coordinate on the plane $τ=\infty$. Our aim will be to examine the moduli space within this box, given as the level surfaces $T=q$ for rational $q$, by sweeping through it with a height function $σ$. To apply Morse theory, we require a proper map and so we will need to compactify this space. First we shall examine the behaviour of the function as we approach the boundary of the box.
 
-For $k\in(0,1)$ as $τ$ approaches $σ$ from either above or below, the $1/(σ-τ)$ factor causes $T \to \pm\infty$. If $k \to 0$ then the period terms dissapear and $T$ limits to an elementary function, namely
+Fix a value of $p \leq 1$.
+
+Consider the parameter space $P$ for this fixed value of $p$. Topologically it is a fattened annulus. Suppose we make a cut along the plane $σ=\infty$. Now we have a box $B = \{(k,σ,τ)\mid 0 < k <1, σ \in \R , τ \in\RInf, σ \neq τ\}$. Our aim will be to examine the moduli space within this box, given as the level surfaces $T=q$ for rational $q$, by sweeping through it with a height function $σ$. To apply Morse theory, we require the height function to be proper map and so we will need to compactify this space. The preimage of a compact range $V$ of $σ$ is just $(0,1)\times \R\cup\{\infty\}\times V \setminus \{σ=τ\} $, so we need to close in the $k$ and $τ$ directions but not as $σ\to\pm\infty$. Define $\overline{B} = \bigcup_{σ\in\R} \{(k,σ,τ)\mid 0 \leq k \leq 1, τ \in [σ^+, \infty] \cup [\infty, σ^-] \}$ where the range of $τ$ is constructed by the following process: take $\R\cup\{\infty\}$, cut out $σ$ to make an open interval, and then take the two point compactification where we add $σ^+$ and $σ^-$ on the ends. Let us now examine the behaviour of the function as we approach the boundary of the box.
+\todo{diagram this weird ass thing}
+
+\todo{talk about how we can do level sets of a function only locally defined. talk about how because the box is simply connected, we can specify a value at a point and its level set is a well defined object even if we have to switch formulas for $T$ and `change' the value as we move around}
+
+For $k\in(0,1)$ as $τ$ approaches $σ$ from either above or below, the $1/(σ-τ)$ factor causes $T \to \pm\infty$. If $k \to 0$ then the period terms disappear and $T$ limits to an elementary function, namely
 \[
 T(0,σ,τ) = - 2π\iu \frac{p \sqrt{1+τ^2} + \sqrt{1+σ^2}}{σ-τ}.
 \]
-That leaves only the limit $k \to 1$ (we needn't consider $σ\to \infty$). This one is more interesting.
+That leaves only the limit $k \to 1$. This one is more interesting.
 \begin{align}
 T
 &= 4p E \tilde{F}(\iu τ) - 4 E \tilde{F}(\iu σ) + 4 K \left[ - p\tilde{E}(\iu τ) + \tilde{E}(\iu σ) - \iu\frac{p w(\iu τ) + w(\iu σ)}{σ-τ} \right] \\
 &\to 4\iu p \atan τ - 4 \iu \atan σ - \lim_{k\to 1} 4\iu K \frac{(1+p)(στ+1)}{σ-τ}.
 \end{align}
-In the limit, $K$ has a logarithmic singularity. This could be canceled out if simultaneously $στ \to -1$ (or if $σ \equiv 0$, then $τ \to \infty$), but otherwise it causes $T$ to tend to infinity. At this point, let us normalise the $τ$ coordinate thusly
+In the limit, $K$ has a logarithmic singularity. This could be canceled out if simultaneously $στ \to -1$ (or if $σ \equiv 0$, then $τ \to \infty$), but otherwise it causes $T$ to tend to positive of negative infinity. This line $\{k=1, τ = -1/σ\}$ where the limit is not well defined is therefore of particular interest. We shall change coordinates to examine this limit closely. Note at $σ=0$ that $τ$ is not a coordinate on a neighbourhood of this line. Let us change to $τ'$ then and as above consider $T'$ which analytic in this coordinate.
+\begin{align}
+\lim_{k\to1} T' =
+2π\iu p - 4\iu p \atan τ' - 4 \iu \atan σ - \lim_{k\to 1} 4\iu K (1+p)\frac{σ+τ'}{στ'-1}.
+\end{align}
+Consider for small positive $ε$ the family of surfaces indexed by a real number $C$ defined parametrically in $(s,ε)$ by
 \[
-τ' = \frac{στ+1}{σ-τ},
+k = 1 - \exp \bra{-1/ε},\; σ = s,\; τ' = \frac{s+Cε}{Cεs - 1}.
 \]
-so that the surface $στ = -1$ is normalised to $τ'=0$ and the boundaries $τ \to σ^-$ and $τ \to σ^+$ become $τ' \to -\infty$ and $τ' \to \infty$ respectively.
-Consider, for small positive $ε$ the family of surfaces defined parametrically in $(σ,ε)$ by
+Along such a surface, $ε\to 0$ as $k\to 1$ and the limiting value of $T'$ is
 \[
-τ' = Cε,\; k = 1 - \exp \bra{-1/ε}.
+T' \to
+2π\iu p + 4\iu (p-1) \atan s - 2\iu (1+p)C.
 \]
-Along such a surface, $ε\to 0$ as $k\to 1$ and the limiting value of $T$ is
-\[
-T \to 2 π \iu - 4\iu (1+p) \atan σ + 4\iu (1+p)C.
-\]
-Before we compactify the box $B$, we should `blowup' the line $\{k=0,τ'=0\}$ so these surfaces do not have a common intersection and so that $T$ has a well defined limit on the boundary. Focus on a particular value of $T$, say $q$. We aim to show that the moduli surface $\M = T^{-1}(q) \subset B$ compactifies in $\overline{B}$ to $\overline{\M} = \M \cup \{(k=1,σ,τ'=0)\} \cup \ell$, where $\ell$ is a curve in the plane $k=0$ that we will describe subsequently.
-
-
-
-
-
-
-
-
-
-
-\subsection{Extension}
-It is clear from the above that $B$ is not suitable on its own to be the ambient space when doing Morse theory because $T$ is badly behaved on the boundary. Instead, we will think of $B$ as one coordinate patch of a larger manifold $M$ on which $T$ is well defined. A second coordinate patch shall be given in terms of $(ε,σ',C)$ for $ε\in (-1,1)$, $σ' \in \R$ and $C\in \R$. For $ε>0$,
+So by adjusting the direction of approach by varying $C$, $T'$ obtains every value in a neighbourhood of this line. It is clear from the above that $B$ is not suitable on its own to be the ambient space when doing Morse theory because $T$ is badly behaved on the boundary. To properly understand the behaviour of level sets of $T$, we should `blowup' the line $\{k=1, τ' = -σ\}$ so these surfaces do not have a common intersection and so that $T$ has a well defined limit on this boundary.  Instead, we will think of $B$ as one coordinate patch of a larger manifold $M$ on which $T$ is well defined. A second coordinate patch shall be given in terms of $(ε,s,C)$ for $ε\in (-1,1)$, $s \in \R$ and $C\in \R$. For $ε>0$,
 \begin{align}
 k &= 1 - \exp\bra{-\frac{1}{ε}}
-& ε &= -1/ \ln (1-k) \\
-σ &= σ'
-& σ' &= σ \\
-τ' &= Cε
-& C &= -\ln (1-k) τ'
+    & ε &= -1/ \ln (1-k) \\
+σ &= s
+    & s &= σ \\
+τ' &= \frac{s+Cε}{Cεs - 1}
+    & C &= -\ln (1-k) \frac{σ+τ'}{στ'-1}
 \end{align}
 describes the transition between the two patches. It is useful to note the how the derivative operators can be related between the two coordinate systems.
 \begin{align}
 \Partial{}{ε}
 &= \Partial{k}{ε}\Partial{}{k} + \Partial{τ'}{ε}\Partial{}{τ'} \\
-&= -[\ln(1-k)]^2 (1-k) \Partial{}{k} - \ln(1-k) τ' \Partial{}{τ'} \\
-\Partial{}{σ'}
-&= \Partial{σ}{σ'}\Partial{}{σ} \\
-&= \Partial{}{σ} \\
+&= -ε^{-2} \exp(-1/ε) \Partial{}{k} - C \frac{s^2 + 1}{(Cεs-1)^2} \Partial{}{τ'} \\
+\Partial{}{s}
+&= \Partial{σ}{s}\Partial{}{σ} + \Partial{τ'}{s}\Partial{}{τ'} \\
+&= \Partial{}{σ} - \frac{1 + C^2ε^2}{(Cεs-1)^2} \Partial{}{τ'} \\
 \Partial{}{C}
 &= \Partial{τ'}{C}\Partial{}{τ'} \\
-&= - [\ln(1-k)]^{-1} \Partial{}{τ'}
+&= - ε \frac{s^2 + 1}{(Cεs-1)^2} \Partial{}{τ'}
 \end{align}
-We will work towards giving $T$ a smooth extension to the manifold $M$. The theorem we intend to use is due to Seeley \cite{Seeley1964}: a smooth function in a half space where it and all its derivatives have continuous limits to the boundary can be extended to the whole space. First we establish the limits of certain classes of functions.
+We will work towards giving $T'$ a smooth extension to the manifold $M$. The theorem we intend to use is due to Seeley \cite{Seeley1964}: a smooth function in a half space where it and all its derivatives have continuous limits to the boundary can be extended to the whole space. The half space and boundary for us is $\{(ε,s,C) | ε > 0\}$ and $\{ε = 0\}$ respectively. We shall call a function \emph{extendable} if it meets these conditions with respect to the $(ε,s,C)$ coordinates; it and it's derivatives have continuous limits as $ε\to 0^+$. We have previously seen that $T'$ has a well defined limit as $ε \to 0$. We now check that its derivatives do as well.
 
+Results in Appendix \ref{app:Extension} demonstrated a large class of functions that are extendable, so we can now apply those to the real thing. The calculations of the derivatives of $T$ are relatively mechanical though fairly long. There is only one point of that calculation that is worth elaborating upon. In the formula for $T$ one can conceptualise it into three groupings. There are two groupings, dubbed the `period terms' that arise from the parts of the differentials that generate the periods, one group coming from the integration over $γ_+$ and the other from $γ_-$. Each group is a function $k$ and either $σ$ or $τ$. The third group is an elementary term, and is made of leftovers that give the differentials in the correct symmetries. The period terms have an interesting derivative with respect to $k$, because there is a lot of cancellation that completely remove incomplete integrals.
 
+Let $f(k,σ) = E(k)\tilde{F}(z; k) - K(k)\tilde{E}(z; k)$. Then
+\begin{align*}
+\Partial{f}{k}
+&= E_k \tilde{F} - K_k \tilde{E} + E\tilde{F}_k - K\tilde{E}_k \\
+&= \frac{1}{k}E \tilde{F} - \frac{1}{k}K \tilde{F} - \frac{1}{k(1-k^2)}E \tilde{E} + \frac{1}{k}K \tilde{E} + \frac{1}{k(1-k^2)}E \tilde{E} - \frac{1}{k}E \tilde{F} - \frac{kz}{1-k^2}\sqrt{\frac{1-z^2}{1-k^2z^2}}E - \frac{1}{k}K\tilde{E} + \frac{1}{k}K\tilde{F} \\
+&= - \frac{kz}{1-k^2}\sqrt{\frac{1-z^2}{1-k^2z^2}}E
+\end{align*}
 
-The function $T$ is not of this form, but its limit was computed previously and indeed the coordinate system $(ε,σ',C)$ was purposely designed for that it would have a limit. We now check that its derivatives fall into this paradigm.
+In the interest of having manageable formulae, we recall the definition of $w(z)^2 = (1-z^2)(1-k^2 z^2)$. Using primes to indicate coordinates at infinity, ie $z' = 1/z$, not derivatives, we introduce $w'(z)^2 = (1- z^2)(k^2 - z^2)$. As $\tilde F(z;k)$ and $\tilde E(z;k)$ are parameter integrals in $z$, we have that
+\[
+\Partial{}{σ}\tilde F(\iu σ; k) = \frac{\iu}{w(\iu σ)},\;\;\;
+\Partial{}{σ}\tilde E(\iu σ; k) = \iu\frac{1+k^2 σ^2}{w(\iu σ)},
+\]
+and
+\[
+\Partial{}{σ} w(\iu σ)
+= \Partial{}{σ} \sqrt{1+σ^2}\sqrt{1+k^2 σ^2}
+= \frac{(1+k^2)σ + 2k^2 σ^3}{w(\iu σ)}.
+\]
+The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}.
+\begin{align*}\label{dTdk}
+\frac{1}{4\iu}\Partial{T}{k}
+&= \frac{1}{k(1-k^2)}\frac{1}{σ-τ} \left[ p \sqrt { \frac{1+τ^2}{1+k^2τ^2}} + \sqrt { \frac{1+σ^2}{1+k^2σ^2} } \right] \left[ -(1+k^2στ) E + (1-k^2)K \right]
+\end{align*}
+\begin{equation}\label{dTds}
+\frac{1}{4\iu}\Partial{T}{σ}
+= -\frac{E}{w(\iu σ)} + \frac{pK w(\iu τ)}{(σ-τ)^2} + \frac{K}{w(\iu σ)(σ-τ)^2}\left[1 + σ^2 - στ + τ^2 + k^2 στ + k^2 σ^2τ^2 \right]
+\end{equation}
+\begin{equation}\label{dTdt}
+\frac{1}{4\iu}\Partial{T}{τ}
+= \frac{pE}{w(\iu τ)} - \frac{K w(\iu σ)}{(σ-τ)^2} - \frac{pK}{w(\iu τ)(σ-τ)^2}\left[1 + σ^2 - στ + τ^2 + k^2 στ + k^2 σ^2τ^2 \right]
+\end{equation}
+\begin{equation}\label{dTdt'}
+\frac{1}{4\iu}\Partial{T}{τ'}
+= -\frac{pE}{w'(\iu τ')} + \frac{K w(\iu σ)}{(στ'-1)^2} + \frac{pK}{w'(\iu τ')(στ'-1)^2}\left[1 + k^2σ^2 - στ' + k^2στ' + (τ')^2 + σ^2(τ')^2 \right]
+\end{equation}
+
+Let us focus on the polynomials in the square brackets. We reuse the idea of a dominant and remainder for $k^2$. Define $\rem(k^2) = k^2 - 1$. Unlike for $\rem(K)$, we can be very explicit about $\rem(k^2)$, namely it is $(2-\exp(-1/ε))\exp(-1/ε)$, and so because of the $\exp(-1/ε)$ factor both $ε^{-n}\rem(k^2)$ and $ε^{-n}K\rem(k^2)$ are in $\mathcal{F}$ (a set of extendable functions, see Appendix \ref{sec:Extension Calculations}).
+
+Plugging in the $(k,σ,τ')$-derivatives to the chain rule and ripping apart and rearranging pieces as necessary to get into a well behaved terms, we arrive at
+\begin{align*}
+\Partial{T'}{ε}
+&=
+C \bra{p\sqrt{\frac{1+(τ')^2}{k^2 + (τ')^2}} + \sqrt{\frac{1+s^2}{1 + k^2s^2}}}\bra{\frac{1}{ε}\frac{E}{k(1+k)} - K}
++ Cp\frac{s^2+1}{(Cεs-1)^2}\frac{1}{w'(\iu τ')}E
+\\&
+- \frac{1}{k}\frac{τ'}{στ'-1}\bra{p\sqrt{\frac{1+(τ')^2}{k^2 + (τ')^2}} + \sqrt{\frac{1+s^2}{1 + k^2s^2}}}\frac{1}{ε^2}K\exp(-1/ε)
+\\&
++ \frac{1}{k(1+k)}\frac{1}{στ'-1}\bra{p\sqrt{\frac{1+(τ')^2}{k^2 + (τ')^2}} + \sqrt{\frac{1+s^2}{1 + k^2s^2}}}σEε^{-2}\rem(k^2)
+\\&
+- Cp \frac{s^2+1}{(Cεs-1)^2}\frac{1}{w'(\iu τ')}\frac{στ'+σ^2}{στ'-1}K\rem(k^2)
+- C \frac{s^2}{w(\iu σ)}K\rem(k^2)
+\end{align*}
+
+\begin{align*}
+\Partial{T'}{s}
+&=
+-\frac{1}{w(\iu σ)} E + p \frac{1+C^2ε^2}{(Cεs-1)^2}\frac{1}{w'(\iu τ')}E
+\\&
+- p\sqrt{\frac{1+(τ')^2}{k^2 + (τ')^2}} \frac{Cεs-1}{(1+s^2)^2}Cεs K\rem(k^2)
+- p\sqrt{\frac{1+(τ')^2}{k^2 + (τ')^2}} \frac{(Cεs-1)^2}{(1+s^2)^2}(1+k) K \exp(-1/ε)
+\\&
++ \sqrt{\frac{1+s^2}{1 + k^2s^2}} \frac{Cεs-1}{(1+s^2)^2}Cεs K\rem(k^2)
++ \sqrt{\frac{1+s^2}{1 + k^2s^2}} \frac{1+C^2ε^2}{(1+s^2)^2}s^2(1+k) K \exp(-1/ε)
+\end{align*}
+
+\begin{align*}
+\Partial{T'}{C}
+&=
+\frac{s^2+1}{(Cεs-1)^2}\left[ \frac{p}{w'(\iu τ')}εE - \frac{w(\iu σ)}{(στ'-1)^2}εK - p\frac{1+k^2σ^2 -στ' + k^2στ' + (τ')^2 + σ^2(τ')^2}{w'(\iu τ')(στ'-1)^2}εK \right]
+\end{align*}
+
+We can see that each of these derivatives is a combination of extendable functions. Thus $T'$ meets the conditions and so has a smooth extension to $ε<0$. Having extended past this plane of $ε=0$, we now wish to chop it off. We check that level sets of $T'$ are transverse to the plane. Once we have established this, then we can apply the sequence of lemmas culminating in \ref{lem:stratified_level_set} to conclude that the level sets are a Whitney stratified space. We can determine whether or not the level surfaces are transverse by checking that the $τ'$ derivative of $T'$ is non-zero. And what have we just done if not calculated the limits of the derivatives of $T'$?
+
+In particular, look at the limit of the $C$ derivative as $ε\to 0^+$.
+\[
+\lim_{ε\to 0^+}\Partial{T'}{C}
+=
+\frac{s^2+1}{1}\left[ \frac{p}{1+s^2}\times 0 - \frac{1+s^2}{(1+s^2)^2}\times \frac{1}{2} - p\frac{(1+s^2)^2}{(1+s^2)^3}\times\frac{1}{2} \right] = -\frac{1}{2}(p+1)
+\]
+which is never zero and so the level sets are always transverse to the plane $ε=0$. This derivative also matches up with the $C$ derivative of the limit of $T'$, as we would expect, providing a check of our calculations. \todo{tell Emma and John that I found a mistake via this check!} By continuity there is a neighbourhood $U$ of $ε=0$ such that the derivative is non-zero. And so this also provides that every level set of $T'$ in this neighbourhood is a manifold by the implicit function theorem. The space $ε\geq 0$ is a closed half space of $U$. We are now in the situation of Lemma \ref{lem:stratified_level_set} and so we can conclude that for any value of $q$, $T^{-1}(q) \cap \{ε \geq 0\}$ is a Whitney stratified space.
+
+Having dealt with the poorly behaved $k=1$, we now turn to the opposite side of the box $B$. Looking at the formulas of the derivatives of $T$, only the $k$ is not clearly defined at $k=0$. This time we have the advantage that both $K$ and $E$ are analytic functions of $k$ near 0, so we may simply look at the relevant factors and do a series expansion.
+\begin{align*}
+\frac{1}{k}\bra{ - (1+k^2 στ) E + (1-k^2)K }
+&= \frac{1}{k}\frac{π}{2}\bra{ - (1+k^2 στ)\bra{ 1 - \frac{1}{4}k^2 + O(k^4)}  + (1-k^2)\bra{ 1+\frac{1}{4}k^2 + O(k^4) } } \\
+&= \frac{1}{k}\frac{π}{2}\bra{ - k^2(1+στ) + O(k^4) }
+\end{align*}
+All the formulas are well defined for $k<0$, so extension beyond $B$ is easy in this direction. We need to check that the level sets are transverse to this face also. Looking at the $τ$ derivative
+\begin{align*}
+\left. \frac{1}{4\iu}\Partial{T}{τ} \right|_{k=0}
+&= \frac{pπ/2}{\sqrt{1+τ^2}} - \frac{π/2 \sqrt{1+σ^2}}{(σ-τ)^2} - \frac{pπ/2}{\sqrt{1+τ^2}(σ-τ)^2}\left[1 + σ^2 - στ + τ^2\right] \\
+&= - \frac{π}{2}\frac{1}{\sqrt{1+τ^2}(σ-τ)^2}\bra{\sqrt{1+σ^2}\sqrt{1+τ^2} + p\left[1 + στ \right] } \\
+\end{align*}
+If $1+στ$ is positive, then this is negative. It could only be zero if $1+στ$ were negative and cancelled the square root terms. However, recalling that $p \leq 1$, we have the following estimates
+\begin{align*}
+\left. \frac{1}{4\iu}\Partial{T}{τ} \right|_{k=0}
+&\leq - \frac{π}{2}\frac{1}{\sqrt{1+τ^2}(σ-τ)^2}\bra{\sqrt{1+σ^2}\sqrt{1+τ^2} + \left[1 + στ \right] } \\
+&\leq - \frac{π}{2}\frac{1}{\sqrt{1+τ^2}(σ-τ)^2}\bra{\abs{σ}\abs{τ} + 1 + στ } \\
+&\leq - \frac{π}{2}\frac{1}{\sqrt{1+τ^2}(σ-τ)^2}
+\end{align*}
+So this derivative is always negative. Similarly, checking at $τ=\infty$
 \begin{align}
-\Partial{T}{σ'}
-&= -\frac{E}{w(\iu σ)} + \frac{σ(1+k)}{w(\iu σ)(σ-τ)}K(1-k) + p \frac{E}{w(\iu τ)}\frac{1+τ^2}{1+σ^2} + p \frac{τ(1+τ^2)(1+k)}{w(\iu τ)(σ-τ)(1+σ^2)}K(1-k)
-\Partial{T}{ε}
-&= -C p \sqrt{\frac{1+τ^2}{1+k^2τ^2}}\frac{σCε(σCε-1)}{(C^2ε^2+1)(σ+Cε)}
+\left. \frac{1}{4\iu}\Partial{T}{τ'} \right|_{k=0,τ'=0}
+= \frac{π}{2} \sqrt{1+σ^2}
 \end{align}
+So the level surfaces are transverse here as well. Hence we have checked the entire $k=0$ plane, and so entirely analogously to the $ε=0$ end, we can say in some neighbourhood of this plane that the level surfaces are genuine submanifolds by the implicit function theorem and we can apply Lemma \ref{lem:stratified_level_set} to say the truncated level surface for $k \geq 0$ is a Whitney stratified space.
 
-
+Next we shall show that no where else does a level set approach the boundary of $B$. Let us consider the boundary where $0 < σ - τ < δ$. On this boundary, the dominant term is $1/(σ-τ)$ so we expect $T$ to be large and negative and that is exactly what we will show. In particular, let us consider a small neighbourhood of a strip $σ_0 < σ < S_1$, $k\in (0,1)$, $τ=σ^-$.
+\begin{align*}
+T
+& \leq 2πp τ - 4pK\asinh τ - 4 \atan σ + 4K σ - 4K \frac{1+p}{δ} \\
+& \leq 2πp τ + 4K σ - 4K \frac{1+p}{δ} \\
+& \leq 4K \bra{ p σ_1 + σ_1 - \frac{1+p}{δ}}.
+\end{align*}
+So if $δ$ is chosen small enough, then the bracketed term is negative. One could choose it so as to make the bracket more negative than $- \abs{q} / 2π$. Thus no part of the level set $T^{-1}(q)$ lies in the volume $\Set{ (k,σ,τ) }{ k \in (0,1), σ \in (σ_0,σ_1), σ-δ < τ < σ }$. As $σ_0$ and $σ_1$ were arbitrary, for any given level set there is a neighbourhood of the face $τ = σ^-$ of $\overline{B}$ that excludes that level set, namely this neighbourhood is the union of this process over different ranges of $σ$. An identical argument for $τ=σ^+$ show that in a neighbourhood of that face $T$ is arbitrarily large and any level set is likewise excluded on that side. This leaves only the face $k=1$ away from the exceptional line $τ = -1/σ$. And we have already computed the limit on this face. At every point on the face away from this line $T$ blowups. So every point has a neighborhood that on which $T$ takes value above (or below) any level. So these points too cannot be in the closure of any given level set. Taken together, these results shows what the closure of a level set is composed of. It is the level set in $B$ together with the intersection of the level set with the planes $ε=0$ and $k=0$. Moreover, subject to showing that the level set on the inside of $B$ is a submanifold, we have shown it to be a Whitney stratified space and a closed space in $\overline{B}$.
 
 
 
@@ -243,284 +382,18 @@ This is positive, so we are done.
 \end{proof}
 \end{lem}
 
-\begin{lem}
-The function
+This result is of interest because it shows that the $τ$ derivative of $T$ is nonzero on $B$:
 \[
-V(x,k,τ) := - E + xkKw(\iu τ) + K\left[ 1 + k^2 τ^2 \right]
+\Partial{T}{τ}
+= \frac{-p}{w(\iu τ)(σ-τ)^2} U\bra{ \frac{1}{p},k,σ,τ }.
 \]
-has no zeroes for $x \geq 0$, $k\in (0,1)$, $τ \in \R$.
-\begin{proof}
-The estimates are easier than before, as the potentially large and negative $στ$ terms have disappeared. Again, use $E < K$ to immediately arrive at
-\[
-V(x,k,τ) \geq xkKw(\iu τ) + K k^2 τ^2.
-\]
-Note that each term is positive.
-\end{proof}
-\end{lem}
+And so the level sets are submanifolds. Thus we have closed the level sets in such way that they are Whitney stratified spaces, and that $σ$ is a proper function on them as it is a proper function on $\overline{B}$ and so too on the closure of a level set in $\overline{B}$. \todo{pats on the back everyone.}
 
 
 
 
 
 
-
-
-
-We now compute the partial derivatives of $T$. As $\tilde F(z;k)$ and $\tilde E(z;k)$ are parameter integrals in $z$, we have that
-\[
-\Partial{}{σ}\tilde F(\iu σ; k) = \frac{\iu}{w(\iu σ)},\;\;\;
-\Partial{}{σ}\tilde E(\iu σ; k) = \iu\frac{1+k^2 σ^2}{w(\iu σ)},
-\]
-and
-\[
-\Partial{}{σ} w(\iu σ)
-= \Partial{}{σ} \sqrt{1+σ^2}\sqrt{1+k^2 σ^2}
-= \frac{(1+k^2)σ + 2k^2 σ^3}{w(\iu σ)}.
-\]
-One then computes that
-\begin{equation}\label{dTds}
-\frac{1}{4\iu}\Partial{T}{σ}
-= \frac{-E}{w(\iu σ)} + \frac{pK w(\iu τ)}{(σ-τ)^2} + \frac{K}{w(\iu σ)(σ-τ)^2}\left[1 + σ^2 - στ + τ^2 + k^2 στ + k^2 σ^2τ^2 \right] = \frac{1}{w(\iu σ) (σ-τ)^2} U (p,k,σ,τ).
-\end{equation}
-And in a similar manner
-\begin{equation}\label{dTdt}
-\frac{1}{4\iu}\Partial{T}{τ}
-= \frac{pE}{w(\iu τ)} - \frac{K w(\iu σ)}{(σ-τ)^2} + \frac{pK}{w(\iu τ)(σ-τ)^2}\left[1 + σ^2 - στ + τ^2 + k^2 στ + k^2 σ^2τ^2 \right] = \frac{-p}{w(\iu τ) (σ-τ)^2} U (1/p,k,σ,τ).
-\end{equation}
-If we introduce coordinates at infinity for $σ,τ$, say $σ' = σ^{-1}$ and $τ' = τ^{-1}$, we get the expressions
-\begin{align*}
-\label{derivesInf}
-\frac{1}{4\iu}\left.\Partial{T}{σ'} \right|_{σ' = 0} &= \frac{-1}{k} V (p,k,τ), &\qquad
-\frac{1}{4\iu}\left.\Partial{T}{τ} \right|_{σ' = 0} &= 0, \\
-\frac{1}{4\iu}\left.\Partial{T}{σ} \right|_{τ' = 0} &= 0, &\qquad
-\frac{1}{4\iu}\left.\Partial{T}{τ'} \right|_{τ'=0} &= \frac{-p}{k} V (1/p,k,σ).
-\end{align*}
-
-As one of $p$ and $1/p$ must be greater than or equal to one, at least one of these derivatives is nonzero. For example, if $p \geq 1$, then the $σ$ derivatives are nonzero everywhere except the plane $τ=\infty$.
-
-It remains to compute the $k$ partial derivative. We refer to the appendix \todo{add reference} for the derivatives of incomplete elliptic functions.
-\[
-\Partial{}{k}\tilde F(\iu σ; k) = \frac{\tilde E}{k(1-k^2)} - \frac{\tilde F}{k} - \frac{k}{1-k^2} \iu σ \sqrt { \frac{1+σ^2}{1+k^2σ^2} },\;\;\;
-\Partial{}{k}\tilde E(\iu σ; k) = \frac{\tilde E}{k} - \frac{\tilde F}{k},
-\]
-and
-\[
-\Partial{}{k}w(\iu σ) = \frac{1}{w(\iu σ)}(1+σ^2)kσ^2.
-\]
-Somewhat remarkably, the period generating terms have a simple derivative (comparatively so; all the incomplete elliptic integrals cancel)
-\[
-\Partial{}{k} (E\tilde F - K\tilde E) = - \frac{k}{1-k^2} \iu σ \sqrt { \frac{1+σ^2}{1+k^2σ^2} } E
-\]
-The full partial derivative is therefore
-\begin{align*}
-\frac{1}{4\iu}\Partial{T}{k}
-&= -\frac{pk}{1-k^2} τ \sqrt { \frac{1+τ^2}{1+k^2τ^2} } E + \frac{k}{1-k^2} σ \sqrt { \frac{1+σ^2}{1+k^2σ^2} } E\\
-&\qquad - \frac{1}{σ-τ} \left\{ \frac{E}{k(1-k^2)}\left[ pw(\iu τ) + w(\iu σ) \right] - \frac{p(1+τ^2)}{w(\iu τ)}\frac{K}{k} - \frac{1+σ^2}{w(\iu σ)}\frac{K}{k} \right\} \\
-&= \frac{1}{k(1-k^2)}\frac{1}{σ-τ} \left[ p \sqrt { \frac{1+τ^2}{1+k^2τ^2}} + \sqrt { \frac{1+σ^2}{1+k^2σ^2} } \right] \left[ -(1+k^2στ) E + (1-k^2)K \right] \labelthis{dTdk}
-\end{align*}
-
-
-
-
-
-
-\subsection{Slice}
-\label{sub:Slice}
-We now wish to sweep most of the interior with the height function $h=σ$. So suppose that $p\leq1$, which from the previous section means that $\partial T / \partial τ$ is nonzero everywhere off $σ=\infty$. Let us begin by analysing the slice $σ = 0$. $T$ restricted to this slice becomes
-\[
-\tilde T := \frac{1}{4\iu}T|_{σ=0} = -\iu p (E\tilde F(\iu τ) - K \tilde E(\iu τ))
-+ K \frac{pw(\iu τ) + 1}{τ}.
-\]
-To begin, we note the limit of this function on the boundaries of our slice, when $τ\to0^+,0^-$ or $k\to0,1$.
-\begin{align*}
-\tilde T|_{k \to 0} &= \frac{π}{2}\frac{p\sqrt{1+τ^2} + 1}{τ} \\
-\tilde T|_{k \to 1} &\to (\sign τ) \infty \text{ if } τ \neq \infty \\
-\tilde T|_{τ \to 0^+} &\to \infty \\
-\tilde T|_{τ \to 0^-} &\to -\infty \\
-\end{align*}
-There are some other peculiarities that are worth noting. If both $k \to 1$ and $τ \to \infty$, then the value of $\tilde T$ depends on the path of approach. We will address this explicitly shortly. Also, as $τ \to \infty$  for values of $k\in(0,1)$, $\tilde T \to (\sign τ) \frac{π}{2}p$. This is not a genuine discontinuity in $T$, but instead we are seeing that $τ=\infty$ is the branch cut we have made.
-
-Using $k$ as a height function for this rectangle, we can see that level sets with a endpoint on the edge $k=0$ (and these points can be found explicitly for any particular value of $T$ you'd like to choose), we can see that these lines have no critical points, and sense the other edges are mostly infinite, which provides a `barrier' that level set cannot approach, these lines converge to the point $τ=\infty, k=1$ on the opposite edge. Further, for precisely the reason that $\tilde T$ is infinite at all other places, these can be the only endpoints for levelsets, and there can be no closed-loop levelsets inside the slice. So the levelsets are a family of curves spanning between these two sides.
-
-Let this box be called $B$. $B = \Set { (k,σ,τ) }{ k \in (0,1), σ \in \R, τ \in \RInf, τ\neq σ\} }$. Its partial closure is $\overline B = \Set { (k,σ,τ) }{ k \in [0,1], σ \in \R, τ \in \RInf, τ\neq σ\} }$. Fix a value $c$ of $T$. We will compute the level set $M := T^{-1}(c)$ within the cut space $σ\neq\infty$. Let $Z$ be the closure of $M$ in $\overline B$. Practically speaking, it is $T^{-1}(c)$ with the $k=0$ and $k=1$ boundary limits included. We will show that it is a Whitney stratified space.
-
-
-
-
-\subsection{Boundary}
-\label{sub:Boundary}
-We have two coordinate systems for the parameter space of spectral curves. And having proved that it has no handles, its topology is entirely determined by the behaviour on the boundary. However, `the boundary' is not a particularly well defined thing. Just as an open disc can be seen to be the interior of a closed disc, it can equally be seen as the complement of a point on the sphere. And the two coordinate systems we have available to us given different pictures for the shape of the boundary. In essence, the different coordinates suggest different compactifications of the parameter space, and unfortunately neither is entirely satisfactory. In some ways though, the $α,β$ version is easier to understand and nicer, so we begin there.
-
-Fix a value of $p$. This is a `ball' in the space $(α,β)\in D^2$, as for any particular value of
-\[
-u = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
-\]
-$α$ ranges over an arc of a circle, and likewise does $β$ as constrained by the equation
-\[
-\frac{\abs{1-β}}{\abs{1+β}} = \frac{\sqrt{p}}{u},
-\]
-where the product of these two equations is just the definition of $p$. Hence for any $u$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. As $u$ approaches $0$, this forces the branch points to $S_0 := (1,-1)$, and likewise at $u \to \infty$, $S_\infty := (-1,1)$. In the reverse direction, $α = \pm 1$ if and only if $β = \mp 1$. Hence, these two points divide the unit circle into disconnected upper and lower halves: $\S^1_+$ and $\S^1_-$ respectively.
-
-This ball is an (Australian) football shape; an elongated ball with sharp points at either end, joined by four `\emph{edges}' where both $α$ and $β$ lie in one of $\S^1_\pm$ and four `\emph{faces}' where only one does. The four edges are labelled by two signs, for example $\edge{+-}$ where $α\in \S^1_+$ and $β \in \S^1_-$. The faces are labelled by a letter and a sign, for example $\face{α+}$ denotes $α\in\S^1_+$ and $β\in D$. $\face{α+}$ is bounded by $S_0, S_\infty$ as all the faces are, and by $\edge{++}$ and $\edge{+-}$.
-
-\todo{picture}
-
-This split also shows that the diagonal $Δ=\{(α,α)\}$ intersects each ball in an line, with $u=1$ and both $α$ and $β$ at the same point in their respective arcs. It runs from the middle of $\edge{++}$ to the middle of the opposite edge $\edge{--}$. We will denote the two `polar' points where the diagonal intersects the edges as $P_+$ and $P_-$.
-
-We now turn to how the boundary looks for the $στ$ coordinates. We may proceed more directly. $(σ,τ)$ lie in $\RP^1\times\RP^1\setminus \{σ=τ\}$, which is a torus minus a $(1,1)$-loop. This results in a cylinder. The parameter $k$ may vary in $(0,1)$, and $p$ is fixed so we end up with a fattened cylinder. To make this line up with the previous picture, imagine the cylinder with $k=0$ on the outside, and $k=1$ on the inside. The tube $k=1$ is a blowup of the diagonal.
-
-\todo{picture}
-
-The two ends of the cylinder are the two sides of the line $σ=τ$, for different values of $k$. They correspond to blowups of the two poles $P_\pm$. To see this, let $τ=σ+ε$. Then
-\begin{align*}
-z_0 &\sim \frac{\sqrt{p}\abs{ε}}{p+1} + \iu \left(σ + \frac{ε}{p+1}\right) \\
-α,β &\sim \frac{\iu σ + \conj{z_0}}{\iu σ - z_0} \sim  \frac{1-p}{1+p} + \iu \frac{2\sqrt{p}}{1+p} \sign{ε}
-\end{align*}
-which are exactly the two polar points.
-
-To understand the exterior boundary is a little more difficult. First note that the $στ$ coordinates cannot express that $α\in\S^1$, for the map $f$ takes $α,\cji{α}$ to $\pm 1$. So there is no sequence of $στ$ parameters that have these two points coming together. The effect is that the faces $\face{α+}$ and $\face{α-}$ and all the edges are crushed in this version of the boundary. The lines $σ=\infty$ and $τ=\infty$ correspond to the points $S_\infty$ and $S_0$ respectively. If we view $(0, σ,τ) \in \RP^1\times\RP^1\setminus \{σ=τ\}$ as a parallelogram, it is cut into two triangles, one with $σ<τ$ and one with $σ>τ$. The two triangles correspond to the two remaining faces $\face{β+}$ and $\face{β-}$ respectively.
-
-\todo{picture}
-
-
-
-
-
-Now turn to how $k$ varies across the parameter space. On the outside, we have one of $α$ or $β$ in $\S^1$, so $k = 0$. On the diagonal, $α=β$, so $k=1$. How then does $k$ behave at the poles where the diagonal and the exterior intersect? To answer this, let the point of intersection be $(μ,μ)$, and for small $ε$ let
-\[
-α = μ(1-ε), \qquad β = μ(1-mε)
-\]
-where $m$ is to be thought of as the angle of approach. For illustrative purposes, take $1>m>0$ so we may ignore absolute value signs.
-\begin{align*}
-\abs{α-β} &= ε(1-m), \\
-\abs{1-\conj{α}β} &\sim ε (m+1), \\
-k = \frac{\abs{1-\conj{α}β} - \abs{α-β}}{\abs{1-\conj{α}β} + \abs{α-β}} &\sim m
-\end{align*}
-The cases for other $m$ and even when $α,β$ do not lie on a ray are similar. So depending on the angle of approach, at the poles $k$ may assume any value. What we conclude then is that surfaces of constant $k$ are cigar shapes with ends at the poles. They surround the diagonal, which is the limit as $k\to 1$.
-
-TODO: explain about $\tilde{f}$ the map which is life $f$ but fixes $β$ instead.
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Faces and Edges}
-\label{sub:Faces and Edges}
-
-TODO: Cleanup this section into a cleaner narative.
-
-We wish to compute the boundary of the moduli space. To do this we must extend the function $T$ to the boundary. Suppose that $β\to\S^1_\pm$. The period terms of $T$ go to zero, leaving only the rational term. \todo{justify/ insert calc}
-\[
-T|_{\face{β\pm}} = - 2\pi\iu \frac{\abs{1-α}\abs{1-β}}{\abs{α-β}} \frac{2β}{1-β^2}.
-\]
-
-\todo{clean up this cut}
-
-Together with the equation for $p$, this defines a curve on the faces. These two conditions are somewhat messy to solve exactly for $α$ as a function of $β$. However, we can get a handle on what is going on by considering the border case that $α$ is also in the unit circle. Let $α=e^{\iu ψ}$, $β=e^{\iu φ}$. Also, we can rationalise everything by setting $s= \tan ψ/2$ and $t= \tan φ/2$. The $p$-condition then becomes
-\[
-\abs{st} = p
-\]
-whereas the other can be expanded to
-\[
-\abs{1-α}^2\abs{1-β}^2 = q^2 \abs{α-β}^2 \sin^2 φ
-\]
-Solving
-\begin{align*}
-\bra{2-2\frac{1-s^2}{1+s^2}} \bra{2-2\frac{1-t^2}{1+t^2}}
-&= q^2 \frac{4t^2}{(1+t^2)^2}\bra{2-2\frac{1-s^2}{1+s^2}\frac{1-t^2}{1+t^2} - 2\frac{2s}{1+s^2}\frac{2t}{1+t^2}} \\
-\bra{(1+s^2)-(1-s^2)} \bra{(1+t^2)-(1-t^2)}
-&= q^2 \frac{t^2}{(1+t^2)^2}\bra{2(1+s^2)(1+t^2)-2(1-s^2)(1-t^2) - 2(2s)(2t)} \\
-4s^2 t^2
-&= q^2 \frac{t^2}{(1+t^2)^2}2\bra{2(s^2+t^2) - 4st} \\
-&= q^2 \frac{t^2}{(1+t^2)^2}4(s-t)^2 \\
-s^2 (1+t^2)^2 &= q^2 (s-t)^2
-\end{align*}
-To eliminate $s$ requires using $\abs{st}=p$ which itself requires a choice of sign. Let $ε=\pm 1$ and $s = εp/t$.
-\begin{align*}
-\frac{p^2}{t^2}(1+t^2)^2 &= q^2 \bra{ε\frac{p}{t}-t}^2 \\
-p^2(1+t^2)^2 &= q^2 (εp-t^2)^2 \\
-0 &= t^4 (p^2-q^2) + 2t^2 p(p+εq^2) + p^2(1-q^2)\\
-t^2 &= \frac{-(p^2+εpq^2) \pm pq(p+ε)}{p^2-q^2} \\
-&= p \frac{q-1}{εq+p},\; p \frac{q+1}{εq-p} \\
-s^2 &= p \frac{εq+p}{q-1},\; p \frac{εq-p}{q+1}
-\end{align*}
-One could transform the solution back to the unit circle, but instead visualise the unit circle by its stereographic projection. This projected line is precisely parameterised by $s$ (or $t$), with $α=1$ at the origin and $α=-1$ at infinity, so we consider the solutions as lying the $st$-plane. To extend the visualisation further, the exterior boundary is composed of two pieces $D\times\S^1 \cup \S^1\times D$, which intersect in a torus $\S^1\times\S^1$. The boundary therefore is topologically $\S^3$, with the intersection as an (untwisted) torus and the two pieces being respectively the inside and outsides of that torus. In our planar visualisation, the torus has been stretched out to a plane, so the two pieces of the boundary would correspond to the two sides of the plane in $3$-space (with some points missing). The solutions, which are arcs, with $β\in\S^1$ would be on one side, and the arcs with $α\in\S^1$ would be on the other.
-
-What are the endpoints of the arcs for a fixed value of $p$ or $q$? When we take the square root of $s^2,t^2$, we must use $σ$ to determine the correct pairing of signs. This gives eight possibilities. However, $q\sin φ$ is positive, so $q$ and $t$ have the same sign. These two conditions, and the fact we cannot take the square root of a negative in this situation, mean that there are either two solutions or none. So the arcs have two endpoints on the dividing plane, and what we have found is the coordinates of endpoints of arcs with $β\in\S^1$. The coordinates of the endpoints of arcs from the other side can be found by interchanging the role of $α, β$, which practically means the swapping of $s$ and $t$.
-
-Consider first the case when $p>1$. We write a solution $(s,t)$. For $q>p$ the two points are
-\[
-\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
-\bra{\sqrt{p \frac{q-p}{q+1}}, \sqrt{p \frac{q+1}{q-p}}}
-\]
-For $p>q>1$
-\[
-\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
-\bra{-\sqrt{p \frac{-q+p}{q-1}}, \sqrt{p \frac{q-1}{-q+p}}}
-\]
-For $1>q>-1$ there are no solutions. For $-1>q>-p$
-\[
-\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
-\bra{\sqrt{p \frac{-q-p}{q+1}}, -\sqrt{p \frac{q+1}{-q-p}}}
-\]
-And for $-p>q$
-\[
-\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
-\bra{-\sqrt{p \frac{q+p}{q-1}}, -\sqrt{p \frac{q-1}{q+p}}}
-\]
-Note that as $p>1$ then by the previous discussion the region $1>q>-1$ is precisely the region that does not occur. These arcs all join up; an arc with $β\in\S^1$ connects on either end to an arc with $α\in\S^1$ and this alternating continues. Adjacent arcs have the same $p$ but differ in $q$ by $p-1$, except the arc that `jumps' the forbidden middle, where the $q$ value differs by $p+1$. Thus, the arcs link up to form a spiral type shape, wrapping around the diagonal and converging as $q \to \infty$ to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$ at the two ends respectively.
-\begin{center}
-\includegraphics{thesis_graphics/extboundary.png}
-^^ Make this a proper caption: The orange line is a boundary link, the red dots are the limit points. The scale is actually radians of arguments of $α,β$.
-\end{center}
-
-In the other case that $p<1$, an entirely similar analysis gives another set of spirals that again converge to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$. This is the typical situation. There are exceptional cases however, a pair for each $p\neq 1$ and separately when $p=1$. The pair comes from when subtracting $p-1$ reduces $q$ to $\max{1,p}$ or when adding $p-1$ increases $q$ to $-\max{1,p}$. In these cases, there is no arc that spans over the excluded region of $q$ from positive to negative values, instead it trails off to $α=1,β=-1$ or vice versa. \todo{TODO: WRONG!} It then connects to the exceptional arc with `$p$ value' $1/p$ and $q$ of the same sign. That is, if you start on an exceptional link with $p>1$, $q>0$, then $q$ decreases by $p-1$ until $q=p$. Then the next link goes to marked points, where it meets a link coming from $1/p$ and $q$ also positive. Likewise for $p$ and $1/p$ with $q<0$.
-\begin{center}
-\includegraphics{thesis_graphics/extboundary_sym.png}
-^^ Make this a proper caption
-\end{center}
-
-The final case is when $p=1$. In this case, there are no spiral links. Instead $p-1$ is $0$ so the $q$ parameter is not changed, meaning that the arcs close up into disjoint loops.
-\begin{center}
-\includegraphics{thesis_graphics/extboundary_loop.png}
-^^ Make this a proper caption
-\end{center}
-
-
-
-Not to take the computer's word for it, can we prove that these are arcs which begin and end on the edges? It proceeds much like for finding critical points in the interior. We remember that $σ,τ$, with $k=0$, parameterise two of the faces. In these coordinates, $T$ is given by
-\[
-\tilde{T} := \frac{1}{- 2\pi\iu} T|_{\face{β\pm}} = \frac{p\sqrt{1+τ^2} + \sqrt{1+σ^2}}{σ-τ}
-\]
-from which we compute the two partial derivatives
-\begin{align*}
-\Partial{\tilde{T}}{σ} &= \frac{-1}{\sqrt{1+σ^2}(σ-τ)^2} \bra{1 + στ + p\sqrt{1+σ^2}\sqrt{1+τ^2}} \\
-\Partial{\tilde{T}}{τ} &= \frac{p}{\sqrt{1+σ^2}(σ-τ)^2} \bra{1 + στ + \frac{1}{p}\sqrt{1+τ^2}\sqrt{1+τ^2}}
-\end{align*}
-If $x \geq 1$, we can apply the following familiar estimate
-\[
-1 + στ + x\sqrt{1+σ^2}\sqrt{1+τ^2} \geq 1 + στ + x\abs{στ} \geq 1 + στ + \abs{στ} > 0.
-\]
-And since one of $p$ or $1/p$ is greater than or equal to $1$, one of these partial derivatives is always non-zero on the face. Hence that the height function to be the other coordinate and we have shown that there are no critical points with respect to that coordinate. This is also sufficient to establish that the level sets are smooth arcs.
-\todo{go full stratified morse theory on its arse to finish off the proof. Probably have to swap back to $αβ$ coords to get the `critical points' on the edges are good/isolated/simple normal data.}
-
-
-
-
-\subsection{Marked Points}
-\label{sub:Marked Points}
-
-\subsection{Polar Points}
-\label{sub:Polar Points}
-
-\subsection{Diagonal}
-\label{sub:Diagonal}
-
-TODO: Not strictly necessary for the proof of topology, but include for completeness?
+\subsection{Critical Points}
+\label{sub:Critical Points}
+There are none. \qed

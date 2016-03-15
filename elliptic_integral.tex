@@ -1,0 +1,203 @@
+%!TEX root = thesis_single.tex
+
+\section{Elliptic Integrals}
+\label{sec:Elliptic Integrals}
+
+\subsection{Definitions and Periods}
+Elliptic integrals are ones that arise as the integrals of differentials on elliptic curves (curves of genus one). There are several sets of standard elliptic integrals, with the idea being that every elliptic integral can be reduced to a combination of the standard ones in a particular set. The most prevalent set, the Jacobi elliptic integrals, is used here. Note however that there are several variations in notation about these integrals; the main difference is the use of the modulus $k$ versus the parameter $m = k^2$. We will us the former. There are three standard integrals, and they come in {\it incomplete} and {\it complete} varieties. The incomplete and complete elliptic integral of second kind are traditionally both denoted $E$ to much confusion. I have therefore elected to denote incomplete elliptic integral with a tilde: $\tilde E$ compared to $E$. They are defined as
+\[
+\tilde E = \tilde E(z;k) = \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt = \int_0^z \frac{1-k^2 t^2}{\sqrt{(1-t^2)(1-k^2 t^2)}}\;dt,
+\qquad E(k) = \tilde E(1;k)
+\]
+The incomplete and complete elliptic integrals of first kind shall be denoted $\tilde F$ and $K$ respectively and are defined as
+\[
+\tilde F = \tilde F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}},
+\qquad K = K(k) = \tilde F(1;k).
+\]
+Note that a tilde has also been added to $\tilde F$ for consistency and solidarity, even though there is not a naming conflict in the usual notation of integrals of the first kind. We will not have need of integrals of the third kind. Elliptic integrals of the first kind integrals are of holomorphic forms on an elliptic curve (a torus), so one can see from the form above that the curve is given by the equation
+\[
+y^2 = (1-t^2)(1-k^2 t^2).
+\]
+This highly symmetric form is known as {\it Legendre form}. The branch cuts are usually made along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. By M\"obius transformation (or by Landen's transformations), when $k$ is real one can arrange for $0< k < 1$, where the extremes of $k=0$ and $k=1$ reduces things to regular circle trigonomtry. The period of this curve around the branch points $-1$ and $1$ is obviously related to the definitions above. For example, this period of the holomorphic differential is precisely $4K$, which earns $K$ the nickname of `quarter-period'.
+
+\begin{center}
+\includegraphics{{torus_lagrange.sk}.pdf}
+\end{center}
+\todo{enable picture here}
+
+In the picture, the red cycle is the real $A$-cycle and has the clockwise orientation as shown, whereas the blue cycle is the imaginary $B$-cycle and has orientation from left to right as shown. $B$ is divided into two pieces, $B^+$ on which $y$ is in $i\R$ (the occluded piece) and $B^-$ on which $y$ is in $-i\R$ (the front piece).
+
+But what about the other period, the one about $1$ and $k^{-1}$? It's computation involves a trick called {\it Jacobi's imaginary transformation}, and makes use of a quadratic substitution \cite{Whittaker2000}. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
+\begin{align*}
+dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
+\sqrt{t^2 - 1} &= \frac{k's}{\sqrt{1-k'^2 s^2}} \\
+\sqrt{1 - k^2 t^2} &= \frac{k' \sqrt{1-s^2}}{\sqrt{1-k'^2 s^2}} \\
+y &= \pm \frac{i k'^2 s \sqrt {1-s^2}}{1-k'^2 s^2}
+\end{align*}
+so that
+\begin{align*}
+\int_B \frac{dt}{y}
+&= \int_{B^+} \frac{dt}{y^+} + \int_{B^-} \frac{dt}{y^-} \\
+&= \int_1^0 (-\iu) \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} + \int_0^1 \iu \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
+&= 2\iu K(k')
+\end{align*}
+Often $K(k')$ is abreviated to simply $K'$, and this should not be confused with the derivative of $K$. $k'$ is called the complementary modulus. A similar substitution is needed for $E$. Let this time $k^2 t^2 = 1-k'^2 s^2$, then
+\begin{align*}
+dt &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
+\sqrt{t^2 - 1} &= \frac{k'}{k}\sqrt{1-s^2} \\
+\sqrt{1 - k^2 t^2} &= k's\\
+y &= \pm \iu \frac{k'^2}{k}s\sqrt{1-s^2}
+\end{align*}
+\begin{align*}
+\int_B \frac{dt}{y}(1-k^2t^2)
+&= 2\iu \int_0^1 \frac{k'^2 s^2}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
+&= 2\iu \int_0^1 \frac{1-(1-k'^2 s^2)}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
+&= 2\iu \int_0^1 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} - 2\iu \int_0^1 \sqrt{\frac{1-k'^2 s^2}{1-s^2}}\;ds\\
+&= 2iK(k') - 2iE(k').
+\end{align*}
+Again, we introduce the notation that $E' = E(k')$.
+
+\subsection{Derivatives}
+\label{sub:Derivatives}
+The derivatives of complete elliptic integrals are well known. The derivatives of the incomplete integrals with respect to the variable $z$ are trivial because they are simply parameter integrals. The derivatives of the incomplete integrals with respect to $k$ are calculated below, guided by the knowledge of the derivatives of the complete integrals.
+\begin{align}
+\frac{d}{dk}K &= \frac{1}{k(1-k^2)}E - \frac{1}{k}K, \\
+\frac{d}{dk}E &= \frac{1}{k}E - \frac{1}{k} K.
+\end{align}
+\begin{align}
+\Partial{}{z}\tilde F &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \\
+\Partial{}{z}\tilde E &= \sqrt{\frac{1-k^2 z^2}{1-z^2}}.
+\end{align}
+\begin{align}
+g &:= t\sqrt{\frac{1-t^2}{1-k^2t^2}} \\
+g_t &= \frac{1-2t^2 + k^2 t^4}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3} \\
+\Partial{}{k}\bra{\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}} -& \frac{1}{k(1-k^2)}\sqrt{\frac{1-k^2 t^2}{1-t^2}} + \frac{1}{k}\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
+&= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ k^2t^2(1-k^2) - (1-k^2t^2)^2 + (1-k^2)(1-k^2t^2) } \\
+&= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ -k^2 + 2k^2t^2 -k^4t^4} \\
+&= \frac{-k}{1-k^2}g_t \\
+\Partial{\tilde F}{k} - \frac{1}{k(1-k^2)}\tilde E + \frac{1}{k} &= \frac{-k}{1-k^2}\int_0^z g_t\; dt \\
+\Partial{\tilde F}{k} &= \frac{1}{k(1-k^2)}\tilde E - \frac{1}{k}\tilde F - \frac{k}{1-k^2}z\sqrt{\frac{1-z^2}{1-k^2z^2}}.
+\end{align}
+\begin{align}
+k\Partial{}{k}\bra{\sqrt{\frac{1-k^2t^2}{1-t^2}}} -& \sqrt{\frac{1-k^2t^2}{1-t^2}} + \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
+&= \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}\bra{-k^2t^2 - (1-k^2t^2) + 1} \\
+&= 0\\
+\Partial{}{k}\tilde E &= \frac{1}{k}\tilde E - \frac{1}{k}\tilde F
+\end{align}
+
+\subsection{Inequalities and Limits}
+\label{sub:Inequalities}
+The inequalities we use are found in \cite{Anderson}. Their inequality (2) contains only $K$ and confines its behaviour to within a strip-like region of known width.
+\[
+\ln 4 \leq K + \frac{1}{2}\ln (1-k^2) \leq \frac{π}{2}.
+\labelthis{K_bound}
+\]
+In particular, as $k \to 1$, the complete elliptic integral of the first kind has a logarithmic singularity. A stronger and more precise statement is
+\[
+\lim_{k \to 1} \left\{ K + \frac{1}{2}\ln(1-k) \right\} = \frac{3}{2}\ln 2.
+\]
+A similar result, (1), ties the integral of the second kind to that of the first type:
+\[
+\frac{π}{4}k^2 \leq E - (1-k^2)K \leq k^2.
+\labelthis{E_bound}
+\]
+Cruder bounds that are sometimes useful to clear out complicated expression come from noting that $K$ is an increasing function and $E$ is a decreasing one. The exact values
+\[
+K(0) = E(0) = \frac{π}{2}, \;\; E(1) = 1
+\]
+give a lower bound for $K$ and a narrow range of values for $E$.
+
+For the incomplete integrals, we look at limits for fixed modulus $k$ for an imaginary argument. Apply the standard technique of complex analysis of using a closed semicircular contour. Let the contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc from $\iu R$ to $R$ back down to $-\iu R$. This contour is homologous to a standard period around $[1,k^{-1}]$ and so is a fixed quantity. The contribution coming from the semicircular arc is neglible in the limit, as can be seen below.
+\begin{align}
+\abs{\int_{C_R}\frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}}}
+&= \abs{\int_{π/2}^{-π/2} \frac{Re^{\iu θ} dθ}{\sqrt{(1-R^2e^{2\iu θ}) (1-k^2R^2e^{2\iu θ})}}} \\
+&\leq \int_{-π/2}^{π/2} \frac{R}{\sqrt{(1-R^2) (1-k^2R^2)}} \;dθ \\
+&= \frac{π R}{\sqrt{(1-R^2) (1-k^2R^2)}} \\
+&\to 0.
+\end{align}
+And since $F(z;k)$ is an odd function of $z$, we can conclude that
+\[
+\lim_{τ\to +\infty} \tilde F(\iu τ; k) = \iu K',
+\qquad \lim_{τ\to -\infty} \tilde F(\iu τ; k) = -\iu K'
+\]
+We shall shortly perform a similar calculation for $\tilde E$, however it comes with the complication that it has a pole at $\infty$. Consequently, we subtract off that divergent term and deal with the rest.
+\begin{align}
+\abs{\int_{C_R}\sqrt{\frac{1-k^2z^2}{1-z^2}} - k \;\;dz}
+&= \abs{\int_{C_R}\frac{ \sqrt{1-k^2z^2} - k \sqrt{1-z^2}}{\sqrt{1-z^2}} \;dz} \\
+&= \abs{\int_{π/2}^{-π/2} \frac{ \sqrt{1-k^2R^2e^{2\iu θ}} - k \sqrt{1-R^2e^{2\iu θ}}}{\sqrt{1-R^2e^{2\iu θ}}} \;Re^{\iu θ}\;dθ} \\
+&\leq \int_{-π/2}^{π/2} \frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \;R\;dθ \\
+&= π R\frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \\
+&= π R\frac{ \sqrt{1+k^2R^2} - kR}{\sqrt{R^2-1}} + π R\frac{ kR - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \\
+&\to 0.
+\end{align}
+We have used the limit below, which can be computed by multiplying by a fraction with the quadratic conjugate as both numerator and denominator.
+\[
+\lim_{x\to \infty} \sqrt{a^2 x^2 + bx + c} - ax = b/2a.
+\]
+So
+\begin{align}
+\lim_{τ\to+\infty} [\tilde E(\iu τ; k) - \iu k τ] = \iu \bra{K' - E'},
+\qquad \lim_{τ\to-\infty} [\tilde E(\iu τ; k) - \iu k τ ]= -\iu \bra{K' - E'}.
+\end{align}
+
+
+It is also necessary to bound the growth of incomplete elliptic integrals of an imaginary parameter specifically. Very simply
+\begin{align*}\labelthis{incomplete bounds}
+\frac{1}{1+t^2} &\leq \frac{1}{\sqrt{1+t^2)(1+k^2t^2)}} &\leq 1 \\
+\atan τ &\leq \Im \tilde{F}(\iu τ; k) &\leq τ \\
+\frac{1}{\sqrt{1+t^2}} &\leq \sqrt{\frac{1+k^2t^2}{1+t^2}} &\leq 1 \\
+\asinh τ &\leq \Im \tilde{E}(\iu τ; k) &\leq τ \\
+\end{align*}
+
+
+It is a standard fact that the elliptic integrals are analytic functions on the plane away from the branch points. The relevant theorem is the Cauchy–Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic. However, because of the periods of integrals, it is not possible to extend $\tilde F, \tilde E$ to the whole complex plane. Indeed we have seen that the two limits to infinity along the imaginary axis are different. Consider then the following function
+\[
+f(y, k) :=
+\begin{cases}
+\tilde F(\iu y^{-1}; k)             & \text{ for } y > 0 \\
+\iu K'                              & \text{ for } y = 0 \\
+2\iu K' + \tilde F(\iu y^{-1}; k)   & \text{ for } y < 0
+\end{cases}
+\]
+We claim that it is analytic on $(y,k) \in \R\times (0,1)$. To see this, first transform the integrals so that their base point is at $y=0$ rather than $y=\infty$. For $y>0$
+\begin{align}
+\tilde F(\iu y^{-1}; k)
+&= \iu \int_0^{y^{-1}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
+&= -\iu \int_{+\infty}^{y} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+&= \iu \left(\int_0^{+\infty} - \int_0^y \right) \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+&= \iu K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
+\end{align}
+and for $y < 0$
+\begin{align}
+2\iu K' + \tilde F(\iu y^{-1}; k)
+&= 2\iu K' + \iu \int_y^{-\infty} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+&= \iu K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}}.
+\end{align}
+So we have arived at a single formula for $f$, namely
+\[
+f = \iu K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
+\]
+and since the integrand is analytic, the integral is too and we are done. In an entirely similar way, define the function
+\[
+g(y;k) :=
+\begin{cases}
+\tilde E(\iu y^{-1}; k) - \iu ky^{-1}             & \text{ for } y > 0 \\
+\iu (K'-E')                                       & \text{ for } y = 0 \\
+2\iu (K'-E') + \tilde F(\iu y^{-1}; k)  - \iu ky^{-1}  & \text{ for } y < 0
+\end{cases}
+\]
+After transforming the integrals in the same way, we find ourselves faced with the formula, for all $y$,
+\[
+g = \iu (K'-E') - \iu \int_0^y s^{-2}\bra{ \sqrt{\frac{s^2 + k^2}{1 + s^2}} - k }\;ds.
+\]
+The part of the integrand in the bracket is analytic, but because of the $s^{-2}$, the integrand as a whole may not be analytic at $s=0$. Fortunately though, it is. To see this, use the square root estimate
+\[
+1 \leq \sqrt {1 + x^2} \leq 1 + \frac{1}{2}x^2,
+\]
+To obtain the bound
+\[
+-\frac{1}{2}k s^2 \leq \sqrt{k^2 + s^2} - k \sqrt{1+s^2} \leq \frac{1}{2}\frac{1}{k} s^2,
+\]
+which shows that the part in the bracket vanishes to order $s^2$ and so the integrand, and therefore $g$, is analytic.
+
+\todo{remove me}

@@ -77,11 +77,11 @@ We use the previously found coordinates to identify $V$ as an open subset in $\R
 
 Suppose we have the setup for condition b; two strata $X,Y$ of $Z$ with sequences $x_i, y_i$ converging to $0\in Y$. By earlier remarks, points of $X$ can only converge to $y$ if they eventually lie in $U'$ also. We can now assume that $x_i \in X\cap U'$. As $X$ and $U'$ are open in $Z$, so $T_{x_i} X = T_{x_i} Z = T_{x_i} U' = \text{span}_\R \{ \partial_{u_1}, \dots, \partial_{u_n} \} = \R^n \subset \R^m$. Further, $U'$ is contained in $u_{n+1}=\dots = u_{N} = 0$, so all secants are contained in $\R^n$. Hence if a limiting secant exists, it must be contained in the tangent planes, and so Whitney's condition b is fulfilled.
 
-Note the necessity of the condition the submanifold has the subspace topology. In particular, \emph{immersed} submanifolds may fail the condition. Such a counterexample is the space $M = \R^2$, $X = \bigcup_{n\in \N} \{1/n\} \times \R$, $Y = \{0\}\times \R$, $y=(0,0)$. The sequence of points $x_n = (1/n, 0)$ converges to $y$, but the limit of the tangent planes does not contain the limit of the secant. The proof fails in this case because is to no longer true that a sequence of points of $Z$ converging to $y$ need lie in $U'$. Here $U'$ is the line $Y$, and there is no set $U\subset \R^2$ with $U' = U \cap Z$.
 \end{proof}
 \end{lem}
 
 
+Note the necessity of the condition the submanifold has the subspace topology. In particular, \emph{immersed} submanifolds may fail the condition. Such a counterexample is the space $M = \R^2$, $X = \bigcup_{n\in \N} \{1/n\} \times \R$, $Y = \{0\}\times \R$, $y=(0,0)$. This is a collection of parallel lines spaced at the reciprocal integers. The sequence of points $x_n = (1/n, 0)$ in $X$ converges to $y$, but the limit of the tangent planes ($\{0\}\times\R$) does not contain the limit of the secant ($ \R\times\{0\} $). The proof fails in this case because it is no longer true that a sequence of points of $Z$ converging to $y$ need lie in $U'$. Here $U'$ is the line $Y$, and there is no open set $U\subset \R^2$ with $U' = U \cap Z$.
 
 
 
@@ -130,6 +130,7 @@ The result is clearly locally finite, as we have only removed strata. Condition 
 
 
 \begin{lem}
+    \label{lem:stratified_level_set}
 Suppose $\overline B = B \cup \partial B$ is a closed half space in $M$. That is, $B$ is an open submanifold of $M$, $\partial B$ (the boundary of $B$) is a closed submanifold and both $B$ and $M\setminus \overline{B}$ are simply connected. If $q$ is a regular value of $T$ and $T^{-1}(q)$ is transverse to $\partial B$, then $Z = T^{-1}(q) \cap \overline B$ is a Whitney stratified space.
 
 \begin{proof}
@@ -138,35 +139,35 @@ Let $Z = T^{-1}(q)$. It is a closed submanifold of $M$. By the transverse assump
 \end{lem}
 
 
-\subsection{Implicit Function Theorems}
-\label{sub:Implicit Function Theorems}
-
-
-
-\begin{lem}
-Suppose, as for the implicit function theorem, that $c$ is a regular value of $F : \R^{n+m} \to \R^n$. Let $p \in \R^{n+m}$ be a point in the level set $Z = F^{-1}(c)$. Then every open neighbourhood of $p$ in $Z$ has an open subset containing $p$ such that this subset is the intersection of $Z$ and an open set in $\R^{n+m}$.
-
-\begin{proof}
-We start by using the implicit function theorem at $p$. After possibly reordering the coordinates, there exists open sets $U \subset \R^n$ and $V \subset \R^m$ and a smooth function $g : U \to V$ such that $p \in U\times V$ and
-\[
-\Set{(x,g(x))}{x \in U} = \Set{ (x,y) \in U\times V}{F(x,y) = c}.
-\]
-If we rephrase this into a chart for $Z$ at $p$, let $W = Z \cap (U\times V)$ be the coordinate neighbourhood and define the chart $φ$ by
-\begin{align*}
-φ : W &\to U            &          φ^{-1} : U &\to W \\
-(x,y) &\mapsto x        &                   x &\mapsto (x, g(x)).
-\end{align*}
-Now take any open neighbourhood $A$ of $p$ in $Z$. By intersecting it with $W$ we have subset, $A' := A \cap W$, that fits inside the coordinate chart. We will show that $A'$ is the restriction of an open subset of ambient space $\R^{n+m}$. Symbolically, we will show that
-\[
-A' = Z \cap (φ(A') \times V).
-\]
-Take any point $q$ in $A'$. By the definition of $A$ as a subset of $Z$, $q$ lies in $Z$, so must show it lies in the product. As $q$ lies in $W$,  we may apply the chart map to it to conclude that $q = φ^{-1} \circ φ(q) = (φ(q), g(φ(x)))$, which plainly lies in $φ(A') \times V$.
-
-To see the reverse inclusion, now suppose that $q \in Z \cap (φ(A') \times V)$. Initially, we can say $q$ is in $W$, as is seen from the progression $A' \subset W$, $φ(A') \subset φ(W) = U$, $φ(A') \times V \subset U \times V$ and finally $Z \cap (φ(A') \times V) \subset Z \cap (U\times V) = W $. Let $q = (x,y)$ for some $x \in φ(A')$ and $x = φ(q)$ as $φ$ acts by projection onto the first component. Let $q' \in A' \subset W$ be the preimage of $x$, ie $x = φ(q')$. $φ$ is a bijection on $W$ so $q=q'$ and the equality is proved.
-
-This exhibits $A'$, an open subset of $A$, as the intersection of $Z$ and an open set $φ(A') \times V$ in $\R^{n+m}$.
-\end{proof}
-\end{lem}
+% \subsection{Implicit Function Theorems}
+% \label{sub:Implicit Function Theorems}
+%
+%
+%
+% \begin{lem}
+% Suppose, as for the implicit function theorem, that $c$ is a regular value of $F : \R^{n+m} \to \R^n$. Let $p \in \R^{n+m}$ be a point in the level set $Z = F^{-1}(c)$. Then every open neighbourhood of $p$ in $Z$ has an open subset containing $p$ such that this subset is the intersection of $Z$ and an open set in $\R^{n+m}$.
+%
+% \begin{proof}
+% We start by using the implicit function theorem at $p$. After possibly reordering the coordinates, there exists open sets $U \subset \R^n$ and $V \subset \R^m$ and a smooth function $g : U \to V$ such that $p \in U\times V$ and
+% \[
+% \Set{(x,g(x))}{x \in U} = \Set{ (x,y) \in U\times V}{F(x,y) = c}.
+% \]
+% If we rephrase this into a chart for $Z$ at $p$, let $W = Z \cap (U\times V)$ be the coordinate neighbourhood and define the chart $φ$ by
+% \begin{align*}
+% φ : W &\to U            &          φ^{-1} : U &\to W \\
+% (x,y) &\mapsto x        &                   x &\mapsto (x, g(x)).
+% \end{align*}
+% Now take any open neighbourhood $A$ of $p$ in $Z$. By intersecting it with $W$ we have subset, $A' := A \cap W$, that fits inside the coordinate chart. We will show that $A'$ is the restriction of an open subset of ambient space $\R^{n+m}$. Symbolically, we will show that
+% \[
+% A' = Z \cap (φ(A') \times V).
+% \]
+% Take any point $q$ in $A'$. By the definition of $A$ as a subset of $Z$, $q$ lies in $Z$, so must show it lies in the product. As $q$ lies in $W$,  we may apply the chart map to it to conclude that $q = φ^{-1} \circ φ(q) = (φ(q), g(φ(x)))$, which plainly lies in $φ(A') \times V$.
+%
+% To see the reverse inclusion, now suppose that $q \in Z \cap (φ(A') \times V)$. Initially, we can say $q$ is in $W$, as is seen from the progression $A' \subset W$, $φ(A') \subset φ(W) = U$, $φ(A') \times V \subset U \times V$ and finally $Z \cap (φ(A') \times V) \subset Z \cap (U\times V) = W $. Let $q = (x,y)$ for some $x \in φ(A')$ and $x = φ(q)$ as $φ$ acts by projection onto the first component. Let $q' \in A' \subset W$ be the preimage of $x$, ie $x = φ(q')$. $φ$ is a bijection on $W$ so $q=q'$ and the equality is proved.
+%
+% This exhibits $A'$, an open subset of $A$, as the intersection of $Z$ and an open set $φ(A') \times V$ in $\R^{n+m}$.
+% \end{proof}
+% \end{lem}
 
 \subsection{Morse Theory}
 \label{sub:Morse Theory}

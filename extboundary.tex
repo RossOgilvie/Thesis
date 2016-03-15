@@ -155,3 +155,190 @@ The final case is when $p=1$. In this case, there are no spiral links. Instead $
 \includegraphics{thesis_graphics/extboundary_loop.png}
 ^^ Make this a proper caption
 \end{center}
+
+
+
+
+
+
+
+
+
+
+\subsection{Boundary}
+\label{sub:Boundary}
+We have two coordinate systems for the parameter space of spectral curves. And having proved that it has no handles, its topology is entirely determined by the behaviour on the boundary. However, `the boundary' is not a particularly well defined thing. Just as an open disc can be seen to be the interior of a closed disc, it can equally be seen as the complement of a point on the sphere. And the two coordinate systems we have available to us given different pictures for the shape of the boundary. In essence, the different coordinates suggest different compactifications of the parameter space, and unfortunately neither is entirely satisfactory. In some ways though, the $α,β$ version is easier to understand and nicer, so we begin there.
+
+Fix a value of $p$. This is a `ball' in the space $(α,β)\in D^2$, as for any particular value of
+\[
+u = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
+\]
+$α$ ranges over an arc of a circle, and likewise does $β$ as constrained by the equation
+\[
+\frac{\abs{1-β}}{\abs{1+β}} = \frac{\sqrt{p}}{u},
+\]
+where the product of these two equations is just the definition of $p$. Hence for any $u$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. As $u$ approaches $0$, this forces the branch points to $S_0 := (1,-1)$, and likewise at $u \to \infty$, $S_\infty := (-1,1)$. In the reverse direction, $α = \pm 1$ if and only if $β = \mp 1$. Hence, these two points divide the unit circle into disconnected upper and lower halves: $\S^1_+$ and $\S^1_-$ respectively.
+
+This ball is an (Australian) football shape; an elongated ball with sharp points at either end, joined by four `\emph{edges}' where both $α$ and $β$ lie in one of $\S^1_\pm$ and four `\emph{faces}' where only one does. The four edges are labelled by two signs, for example $\edge{+-}$ where $α\in \S^1_+$ and $β \in \S^1_-$. The faces are labelled by a letter and a sign, for example $\face{α+}$ denotes $α\in\S^1_+$ and $β\in D$. $\face{α+}$ is bounded by $S_0, S_\infty$ as all the faces are, and by $\edge{++}$ and $\edge{+-}$.
+
+\todo{picture}
+
+This split also shows that the diagonal $Δ=\{(α,α)\}$ intersects each ball in an line, with $u=1$ and both $α$ and $β$ at the same point in their respective arcs. It runs from the middle of $\edge{++}$ to the middle of the opposite edge $\edge{--}$. We will denote the two `polar' points where the diagonal intersects the edges as $P_+$ and $P_-$.
+
+We now turn to how the boundary looks for the $στ$ coordinates. We may proceed more directly. $(σ,τ)$ lie in $\RP^1\times\RP^1\setminus \{σ=τ\}$, which is a torus minus a $(1,1)$-loop. This results in a cylinder. The parameter $k$ may vary in $(0,1)$, and $p$ is fixed so we end up with a fattened cylinder. To make this line up with the previous picture, imagine the cylinder with $k=0$ on the outside, and $k=1$ on the inside. The tube $k=1$ is a blowup of the diagonal.
+
+\todo{picture}
+
+The two ends of the cylinder are the two sides of the line $σ=τ$, for different values of $k$. They correspond to blowups of the two poles $P_\pm$. To see this, let $τ=σ+ε$. Then
+\begin{align*}
+z_0 &\sim \frac{\sqrt{p}\abs{ε}}{p+1} + \iu \left(σ + \frac{ε}{p+1}\right) \\
+α,β &\sim \frac{\iu σ + \conj{z_0}}{\iu σ - z_0} \sim  \frac{1-p}{1+p} + \iu \frac{2\sqrt{p}}{1+p} \sign{ε}
+\end{align*}
+which are exactly the two polar points.
+
+To understand the exterior boundary is a little more difficult. First note that the $στ$ coordinates cannot express that $α\in\S^1$, for the map $f$ takes $α,\cji{α}$ to $\pm 1$. So there is no sequence of $στ$ parameters that have these two points coming together. The effect is that the faces $\face{α+}$ and $\face{α-}$ and all the edges are crushed in this version of the boundary. The lines $σ=\infty$ and $τ=\infty$ correspond to the points $S_\infty$ and $S_0$ respectively. If we view $(0, σ,τ) \in \RP^1\times\RP^1\setminus \{σ=τ\}$ as a parallelogram, it is cut into two triangles, one with $σ<τ$ and one with $σ>τ$. The two triangles correspond to the two remaining faces $\face{β+}$ and $\face{β-}$ respectively.
+
+\todo{picture}
+
+
+
+
+
+Now turn to how $k$ varies across the parameter space. On the outside, we have one of $α$ or $β$ in $\S^1$, so $k = 0$. On the diagonal, $α=β$, so $k=1$. How then does $k$ behave at the poles where the diagonal and the exterior intersect? To answer this, let the point of intersection be $(μ,μ)$, and for small $ε$ let
+\[
+α = μ(1-ε), \qquad β = μ(1-mε)
+\]
+where $m$ is to be thought of as the angle of approach. For illustrative purposes, take $1>m>0$ so we may ignore absolute value signs.
+\begin{align*}
+\abs{α-β} &= ε(1-m), \\
+\abs{1-\conj{α}β} &\sim ε (m+1), \\
+k = \frac{\abs{1-\conj{α}β} - \abs{α-β}}{\abs{1-\conj{α}β} + \abs{α-β}} &\sim m
+\end{align*}
+The cases for other $m$ and even when $α,β$ do not lie on a ray are similar. So depending on the angle of approach, at the poles $k$ may assume any value. What we conclude then is that surfaces of constant $k$ are cigar shapes with ends at the poles. They surround the diagonal, which is the limit as $k\to 1$.
+
+TODO: explain about $\tilde{f}$ the map which is life $f$ but fixes $β$ instead.
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Faces and Edges}
+\label{sub:Faces and Edges}
+
+TODO: Cleanup this section into a cleaner narative.
+
+We wish to compute the boundary of the moduli space. To do this we must extend the function $T$ to the boundary. Suppose that $β\to\S^1_\pm$. The period terms of $T$ go to zero, leaving only the rational term. \todo{justify/ insert calc}
+\[
+T|_{\face{β\pm}} = - 2\pi\iu \frac{\abs{1-α}\abs{1-β}}{\abs{α-β}} \frac{2β}{1-β^2}.
+\]
+
+\todo{clean up this cut}
+
+Together with the equation for $p$, this defines a curve on the faces. These two conditions are somewhat messy to solve exactly for $α$ as a function of $β$. However, we can get a handle on what is going on by considering the border case that $α$ is also in the unit circle. Let $α=e^{\iu ψ}$, $β=e^{\iu φ}$. Also, we can rationalise everything by setting $s= \tan ψ/2$ and $t= \tan φ/2$. The $p$-condition then becomes
+\[
+\abs{st} = p
+\]
+whereas the other can be expanded to
+\[
+\abs{1-α}^2\abs{1-β}^2 = q^2 \abs{α-β}^2 \sin^2 φ
+\]
+Solving
+\begin{align*}
+\bra{2-2\frac{1-s^2}{1+s^2}} \bra{2-2\frac{1-t^2}{1+t^2}}
+&= q^2 \frac{4t^2}{(1+t^2)^2}\bra{2-2\frac{1-s^2}{1+s^2}\frac{1-t^2}{1+t^2} - 2\frac{2s}{1+s^2}\frac{2t}{1+t^2}} \\
+\bra{(1+s^2)-(1-s^2)} \bra{(1+t^2)-(1-t^2)}
+&= q^2 \frac{t^2}{(1+t^2)^2}\bra{2(1+s^2)(1+t^2)-2(1-s^2)(1-t^2) - 2(2s)(2t)} \\
+4s^2 t^2
+&= q^2 \frac{t^2}{(1+t^2)^2}2\bra{2(s^2+t^2) - 4st} \\
+&= q^2 \frac{t^2}{(1+t^2)^2}4(s-t)^2 \\
+s^2 (1+t^2)^2 &= q^2 (s-t)^2
+\end{align*}
+To eliminate $s$ requires using $\abs{st}=p$ which itself requires a choice of sign. Let $ε=\pm 1$ and $s = εp/t$.
+\begin{align*}
+\frac{p^2}{t^2}(1+t^2)^2 &= q^2 \bra{ε\frac{p}{t}-t}^2 \\
+p^2(1+t^2)^2 &= q^2 (εp-t^2)^2 \\
+0 &= t^4 (p^2-q^2) + 2t^2 p(p+εq^2) + p^2(1-q^2)\\
+t^2 &= \frac{-(p^2+εpq^2) \pm pq(p+ε)}{p^2-q^2} \\
+&= p \frac{q-1}{εq+p},\; p \frac{q+1}{εq-p} \\
+s^2 &= p \frac{εq+p}{q-1},\; p \frac{εq-p}{q+1}
+\end{align*}
+One could transform the solution back to the unit circle, but instead visualise the unit circle by its stereographic projection. This projected line is precisely parameterised by $s$ (or $t$), with $α=1$ at the origin and $α=-1$ at infinity, so we consider the solutions as lying the $st$-plane. To extend the visualisation further, the exterior boundary is composed of two pieces $D\times\S^1 \cup \S^1\times D$, which intersect in a torus $\S^1\times\S^1$. The boundary therefore is topologically $\S^3$, with the intersection as an (untwisted) torus and the two pieces being respectively the inside and outsides of that torus. In our planar visualisation, the torus has been stretched out to a plane, so the two pieces of the boundary would correspond to the two sides of the plane in $3$-space (with some points missing). The solutions, which are arcs, with $β\in\S^1$ would be on one side, and the arcs with $α\in\S^1$ would be on the other.
+
+What are the endpoints of the arcs for a fixed value of $p$ or $q$? When we take the square root of $s^2,t^2$, we must use $σ$ to determine the correct pairing of signs. This gives eight possibilities. However, $q\sin φ$ is positive, so $q$ and $t$ have the same sign. These two conditions, and the fact we cannot take the square root of a negative in this situation, mean that there are either two solutions or none. So the arcs have two endpoints on the dividing plane, and what we have found is the coordinates of endpoints of arcs with $β\in\S^1$. The coordinates of the endpoints of arcs from the other side can be found by interchanging the role of $α, β$, which practically means the swapping of $s$ and $t$.
+
+Consider first the case when $p>1$. We write a solution $(s,t)$. For $q>p$ the two points are
+\[
+\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
+\bra{\sqrt{p \frac{q-p}{q+1}}, \sqrt{p \frac{q+1}{q-p}}}
+\]
+For $p>q>1$
+\[
+\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
+\bra{-\sqrt{p \frac{-q+p}{q-1}}, \sqrt{p \frac{q-1}{-q+p}}}
+\]
+For $1>q>-1$ there are no solutions. For $-1>q>-p$
+\[
+\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
+\bra{\sqrt{p \frac{-q-p}{q+1}}, -\sqrt{p \frac{q+1}{-q-p}}}
+\]
+And for $-p>q$
+\[
+\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
+\bra{-\sqrt{p \frac{q+p}{q-1}}, -\sqrt{p \frac{q-1}{q+p}}}
+\]
+Note that as $p>1$ then by the previous discussion the region $1>q>-1$ is precisely the region that does not occur. These arcs all join up; an arc with $β\in\S^1$ connects on either end to an arc with $α\in\S^1$ and this alternating continues. Adjacent arcs have the same $p$ but differ in $q$ by $p-1$, except the arc that `jumps' the forbidden middle, where the $q$ value differs by $p+1$. Thus, the arcs link up to form a spiral type shape, wrapping around the diagonal and converging as $q \to \infty$ to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$ at the two ends respectively.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary.png}
+^^ Make this a proper caption: The orange line is a boundary link, the red dots are the limit points. The scale is actually radians of arguments of $α,β$.
+\end{center}
+
+In the other case that $p<1$, an entirely similar analysis gives another set of spirals that again converge to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$. This is the typical situation. There are exceptional cases however, a pair for each $p\neq 1$ and separately when $p=1$. The pair comes from when subtracting $p-1$ reduces $q$ to $\max{1,p}$ or when adding $p-1$ increases $q$ to $-\max{1,p}$. In these cases, there is no arc that spans over the excluded region of $q$ from positive to negative values, instead it trails off to $α=1,β=-1$ or vice versa. \todo{TODO: WRONG!} It then connects to the exceptional arc with `$p$ value' $1/p$ and $q$ of the same sign. That is, if you start on an exceptional link with $p>1$, $q>0$, then $q$ decreases by $p-1$ until $q=p$. Then the next link goes to marked points, where it meets a link coming from $1/p$ and $q$ also positive. Likewise for $p$ and $1/p$ with $q<0$.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary_sym.png}
+^^ Make this a proper caption
+\end{center}
+
+The final case is when $p=1$. In this case, there are no spiral links. Instead $p-1$ is $0$ so the $q$ parameter is not changed, meaning that the arcs close up into disjoint loops.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary_loop.png}
+^^ Make this a proper caption
+\end{center}
+
+
+
+Not to take the computer's word for it, can we prove that these are arcs which begin and end on the edges? It proceeds much like for finding critical points in the interior. We remember that $σ,τ$, with $k=0$, parameterise two of the faces. In these coordinates, $T$ is given by
+\[
+\tilde{T} := \frac{1}{- 2\pi\iu} T|_{\face{β\pm}} = \frac{p\sqrt{1+τ^2} + \sqrt{1+σ^2}}{σ-τ}
+\]
+from which we compute the two partial derivatives
+\begin{align*}
+\Partial{\tilde{T}}{σ} &= \frac{-1}{\sqrt{1+σ^2}(σ-τ)^2} \bra{1 + στ + p\sqrt{1+σ^2}\sqrt{1+τ^2}} \\
+\Partial{\tilde{T}}{τ} &= \frac{p}{\sqrt{1+σ^2}(σ-τ)^2} \bra{1 + στ + \frac{1}{p}\sqrt{1+τ^2}\sqrt{1+τ^2}}
+\end{align*}
+If $x \geq 1$, we can apply the following familiar estimate
+\[
+1 + στ + x\sqrt{1+σ^2}\sqrt{1+τ^2} \geq 1 + στ + x\abs{στ} \geq 1 + στ + \abs{στ} > 0.
+\]
+And since one of $p$ or $1/p$ is greater than or equal to $1$, one of these partial derivatives is always non-zero on the face. Hence that the height function to be the other coordinate and we have shown that there are no critical points with respect to that coordinate. This is also sufficient to establish that the level sets are smooth arcs.
+\todo{go full stratified morse theory on its arse to finish off the proof. Probably have to swap back to $αβ$ coords to get the `critical points' on the edges are good/isolated/simple normal data.}
+
+
+
+
+\subsection{Marked Points}
+\label{sub:Marked Points}
+
+\subsection{Polar Points}
+\label{sub:Polar Points}
+
+\subsection{Diagonal}
+\label{sub:Diagonal}
+
+TODO: Not strictly necessary for the proof of topology, but include for completeness?
