@@ -450,6 +450,43 @@ BROAD STROKES PICTURE. There is some 2d surface in this 4-space $\mathcal{A}$. T
 
 The forbidden diagonal bit, ie where $α=β$ is a complex plane inside $\C^2$ that intersect this boundary in a real curve, the line on the torus where the toroidal angle is equal to the poloidal angle.
 
-The moduli space $\mathcal{X}$ is also a surface, so we would expect it to intercect the boundary in arcs. Further, since we know that it has this symmetry that means we can consider its mirror on the of the boundary, we expect those arcs to be closed loops. The only way they could be otherwise (I think) is if the moduli space was tangent to the boundary somewhere.
+The moduli space $\mathcal{X}$ is also a surface, so we would expect it to intersect the boundary in arcs. Further, since we know that it has this symmetry that means we can consider its mirror on the of the boundary, we expect those arcs to be closed loops. The only way they could be otherwise (I think) is if the moduli space was tangent to the boundary somewhere.
 
 Away from the boundary I don't know what the moduli space is doing. I don't know if separate boundary arc correspond to separate components of the moduli space, or if it's connected, or in between. I don't know if there are handles sitting inside. I don't know if several components come together on the forbidden diagonal.
+
+
+
+
+
+
+
+
+
+\subsection{The Conditions}
+
+There are two conditions that must be satisfied by a spectral curve to admit differentials, and if a spectral curve admits differentials then it admits a $\Z^2$ lattice of them. The first condition is the same as before. The exact differential leads to the condition that
+\[
+p := \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q.
+\]
+In other words that $p$ is rational. The other condition, concerning the differential with period $2π\iu g$, cannot be evaluated with elementary functions. If instead we keep the integrals in the equations, we arrive at the condition
+\[
+2π\iu q := 2π\iu \bra{\frac{p\tilde{Γ}^- - \tilde{Γ}}{g}} = p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2
+\]
+for some rational $q$. This however is only a locally defined expression because of the multivaluedness of the integrals. But as $q$ is rational, it must be locally constant and so serves as a constraint. Recall the expression for the integrals.
+\begin{align*}
+\int_{γ_+} Θ^2 &= 4 E(k) \tilde{F}(f(1);k) - 4 K(k) \tilde{E}(f(1);k) - 4K(k) \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \\
+\int_{γ_-} Θ^2 &= 4 E(k) \tilde{F}(f(-1);k) - 4 K(k) \tilde{E}(f(-1);k) - 4K(k) \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν}.
+\end{align*}
+From this we define
+\begin{align*}
+T &:=  p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 \\
+&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) - 4K \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} \right] \\
+&\qquad\qquad   - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right] \\
+&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
+&\qquad\qquad    - 4K\left[ p\frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} - \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right]  \\
+&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
+&\qquad\qquad    - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \left[ \frac{1-ν}{1+ν} - \frac{1+ν}{1-ν} \right]  \\
+&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2} \labelthis{Teqn} \\
+\end{align*}
+
+TODO change the normalisation $1/2π\iu$ and comment that this is real.

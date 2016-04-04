@@ -3,18 +3,18 @@
 \section{Extension Calculations}
 \label{sec:Extension Calculations}
 
-REMOVE:\todo{remove} Expectations of things a reader should have in their head when they read this section. They should have an idea of where the $ε$ coordinate comes from, and how the plane $ε=0$ `corresponds' to the line $k=1, τ' = -σ$. So that extending to $ε=0$ is essentially blowing-up that line. Should know which parts of each coordinate system map to one another, and in particular how we are avoiding $τ'=\infty$, and how it sufficient even though we avoid this plane.
+REMOVE:\todo{remove} Expectations of things a reader should have in their head when they read this section. They should have an idea of where the $ε$ coordinate comes from, and how the plane $ε=0$ `corresponds' to the line $k=1, v' = -u$. So that extending to $ε=0$ is essentially blowing-up that line. Should know which parts of each coordinate system map to one another, and in particular how we are avoiding $v'=\infty$, and how it sufficient even though we avoid this plane.
 
-The purpose of this appendix is to demonstrate the smooth extension of a class of functions. This is used in section REF \todo{ref}. These functions are defined initially on the coordinates chart $V := \{(k,σ,τ') \in \R^3 \mid k\in (0,1), σ\in\R, τ'\in\R, στ' \neq 1\}$. Consider a second coordinate chart $U := \{(ε,s,c) \in \R^3 \mid ε>0, cεs \neq 1 \}$, with the change of coordinates given by
+The purpose of this appendix is to demonstrate the smooth extension of a class of functions. This is used in section REF \todo{ref}. These functions are defined initially on the coordinates chart $U := \{(k,u,v') \in \R^3 \mid k\in (0,1), u\in\R, v'\in\R, uv' \neq 1\}$. Consider a second coordinate chart $V := \{(ε,ψ,λ) \in \R^3 \mid ε>0, εψλ \neq 1 \}$, with the change of coordinates given by
 \begin{align*}
 k &= 1 - \exp\bra{-\frac{1}{ε}},
     & ε &= -1/ \ln (1-k), \\
-σ &= s,
-    & s &= σ, \\
-τ' &= \frac{s+cε}{cεs - 1},
-    & c &= -\ln (1-k) \frac{σ+τ'}{στ'-1}.
+u &= ψ,
+    & ψ &= u, \\
+v' &= \frac{ψ+λε}{εψλ - 1},
+    & λ &= -\ln (1-k) \frac{u+v'}{uv'-1}.
 \end{align*}
-A geometric explanation of these coordinates can also be found in section REF \todo{ref}. For our purposes, one need only note that as $ε\to 0^+$, $k \to 1^-$ and vice versa. We are interested in extending the pullbacks of functions of $(k,σ,τ')$, which are defined for $ε>0$, to all values of $ε$. Abstractly, we may consider functions on an open half space $\R^n_{>0} := \{ (x_1, \dots, x_n) \in \R^n \mid x_n > 0\}$ and ask when they can be extended to the whole space $\R^n$. A first step in extending a smooth function on the open half space $\R^n_{>0}$ is to extend it to the closed half space $\R^n_{\geq 0} := \{ (x_1, \dots, x_n) \in \R^n \mid x_n \geq 0\}$. This motivates the following definition.
+A geometric explanation of these coordinates can also be found in section REF \todo{ref}. For our purposes, one need only note that as $ε\to 0^+$, $k \to 1^-$ and vice versa. We are interested in extending the pullbacks of functions of $(k,u,v')$, which are defined for $ε>0$, to all values of $ε$. Abstractly, we may consider functions on an open half space $\R^n_{>0} := \{ (x_1, \dots, x_n) \in \R^n \mid x_n > 0\}$ and ask when they can be extended to the whole space $\R^n$. A first step in extending a smooth function on the open half space $\R^n_{>0}$ is to extend it to the closed half space $\R^n_{\geq 0} := \{ (x_1, \dots, x_n) \in \R^n \mid x_n \geq 0\}$. This motivates the following definition.
 
 \begin{defn}
 A continuous function on $\R^n_{>0}$ is said to have a \emph{continuous limit} as $x_n \to 0^+$ if it is the restriction of a continuous function on $\R^n_{\geq 0}$.
@@ -22,7 +22,7 @@ A continuous function on $\R^n_{>0}$ is said to have a \emph{continuous limit} a
 
 Given a smooth function on $\R^n_{>0}$ with a continuous limit and whose derivatives to all orders also have continuous limits, there is a theorem due to Seeley \cite{Seeley1964} that states it has a smooth extension to $\R^n$. Moreover, the theorem is local in nature, so that one needs only a function on a neighbourhood of $x_n=0$. Returning to our specific context, there are three classes of functions that we will show are extensible. Our approach will be to first show that all the functions have continuous limits as $ε\to 0^+$ and then that the classes taken together are closed under differentiation. Inductively then, it will follow that the functions are have continuous limit to all orders and so by Seeley will have smooth extensions.
 
-For two of the three classes of functions is it straightforward to show extensibility. Let $\mathcal{F}_\text{good}$ be smooth functions of $(ε,s,c)$ on a neighbourhood of $ε=0$, restricted to $U$. These functions have the best possible behaviour; by definition they have continuous limits as $ε\to 0^+$, and their derivatives to all orders also lie in $\mathcal{F}_\text{good}$.
+For two of the three classes of functions is it straightforward to show extensibility. Let $\mathcal{F}_\text{good}$ be smooth functions of $(ε,ψ,λ)$ on a neighbourhood of $ε=0$, restricted to $V$. These functions have the best possible behaviour; by definition they have continuous limits as $ε\to 0^+$, and their derivatives to all orders also lie in $\mathcal{F}_\text{good}$.
 
 Let us take a moment to refresh our familiarity a particular family of functions in $\mathcal{F}_\text{good}$, namely $ε^{-n}\exp(-1/ε)$. It is well known that one can extend any of these functions to $ε\leq 0$ by defining it to be $0$ and that the result a smooth function. Regardless, we reproduce this result below.
 \begin{lem}\label{lem:limit_exp}
@@ -61,7 +61,7 @@ The derivative of $ε^{-n}\exp(-1/ε)$ is $-n ε^{-n-1}\exp(-1/ε) + ε^{-n-2} \
 
 
 
-Similar to $\mathcal{F}_\text{good}$, consider smooth functions $g$ of $(x,y,z) \in \R^3$ defined on a neighbourhood of $x=1$, restricted to $x<1$. Consider the function on $V$ given by $g(k,σ,τ')$. Define $\mathcal{F}_\text{bad}$ to be the pullbacks of such functions to $U$. We can see that any $f \in \mathcal{F}_\text{bad}$ has a continuous limit as $ε\to 0^+$ by the following trick. Let
+Similar to $\mathcal{F}_\text{good}$, consider smooth functions $g$ of $(x,y,z) \in \R^3$ defined on a neighbourhood of $x=1$, restricted to $x<1$. Consider the function on $U$ given by $g(k,u,v')$. Define $\mathcal{F}_\text{bad}$ to be the pullbacks of such functions to $V$. We can see that any $f \in \mathcal{F}_\text{bad}$ has a continuous limit as $ε\to 0^+$ by the following trick. Let
 \[
 \tilde{k}(ε) =
 \begin{cases}
@@ -71,31 +71,31 @@ k(ε) & \text{ for } ε > 0, \\
 \]
 Noting that $\tilde k = 1 - \tilde f$, by \ref{lem:limit_exp} it is a smooth function of $ε\in\R$. If $f$ is the pullback of $g$, then we may write
 \[
-f(ε,s,c) = g(k(ε), σ(s), τ'(ε,s,c)) = g(\tilde{k}(ε), σ(s), τ'(ε,s,c))
+f(ε,ψ,λ) = g(k(ε), u(s), v'(ε,ψ,λ)) = g(\tilde{k}(ε), u(s), v'(ε,ψ,λ))
 \]
 where the second equality holds on the domain $ε>0$. However unlike $k$, $\tilde{k}$ is a smooth function at $ε=0$ and so we can see that $f$ extends to a smooth function that is well defined at $ε=0$ because we have written it as the composite of smooth functions. In particular, it has a continuous limit. In subsequent calculations we may use this trick to treat these functions as well defined at $ε=0$ even though strictly speaking $k(0)$ is not well defined.
 
-The derivatives of these functions with respect to $(k,σ,τ')$ have also smooth functions and so lie in $\mathcal{F}_\text{bad}$. However, we are interested their derivatives with respect to $(ε,s,c)$.
+The derivatives of these functions with respect to $(k,u,v')$ have also smooth functions and so lie in $\mathcal{F}_\text{bad}$. However, we are interested their derivatives with respect to $(ε,ψ,λ)$.
 
 \begin{lem}\label{lem:bad_deriv}
-Consider the algebra generated by $\mathcal{F}_\text{good} \cup \mathcal{F}_\text{bad}$. This algebra is closed under differentiation with respect to $(ε,s,c)$.
+Consider the algebra generated by $\mathcal{F}_\text{good} \cup \mathcal{F}_\text{bad}$. This algebra is closed under differentiation with respect to $(ε,ψ,λ)$.
 
 \begin{proof}
-By the product rule it is sufficient to check this on the generators, and we have already shown it for $\mathcal{F}_\text{good}$. This is easily demonstrated for $\mathcal{F}_\text{bad}$ by expressing the $(ε,s,c)$ derivatives in terms of their $(k,σ,τ')$ counterparts.
+By the product rule it is sufficient to check this on the generators, and we have already shown it for $\mathcal{F}_\text{good}$. This is easily demonstrated for $\mathcal{F}_\text{bad}$ by expressing the $(ε,ψ,λ)$ derivatives in terms of their $(k,u,v')$ counterparts.
 \begin{align*}
     \Partial{}{ε}
-    &= \Partial{k}{ε}\Partial{}{k} + \Partial{τ'}{ε}\Partial{}{τ'} \\
-    &= -ε^{-2} \exp(-1/ε) \Partial{}{k} - c \frac{s^2 + 1}{(cεs-1)^2} \Partial{}{τ'}, \\
+    &= \Partial{k}{ε}\Partial{}{k} + \Partial{v'}{ε}\Partial{}{v'} \\
+    &= -ε^{-2} \exp(-1/ε) \Partial{}{k} - λ \frac{ψ^2 + 1}{(εψλ-1)^2} \Partial{}{v'}, \\
     %%%%%%%%%
     \Partial{}{s}
-    &= \Partial{σ}{s}\Partial{}{σ} + \Partial{τ'}{s}\Partial{}{τ'} \\
-    &= \Partial{}{σ} - \frac{1 + c^2ε^2}{(cεs-1)^2} \Partial{}{τ'}, \\
+    &= \Partial{u}{s}\Partial{}{u} + \Partial{v'}{s}\Partial{}{v'} \\
+    &= \Partial{}{u} - \frac{1 + ε^2λ^2}{(εψλ-1)^2} \Partial{}{v'}, \\
     %%%%%%%%%
     \Partial{}{c}
-    &= \Partial{τ'}{c}\Partial{}{τ'} \\
-    &= - ε \frac{s^2 + 1}{(cεs-1)^2} \Partial{}{τ'}.
+    &= \Partial{v'}{c}\Partial{}{v'} \\
+    &= - ε \frac{ψ^2 + 1}{(εψλ-1)^2} \Partial{}{v'}.
 \end{align*}
-Note that the coefficient functions above lie in $\mathcal{F}_\text{good}$ and we have already explained that the partial derivatives with respect to $(k, σ, τ')$ lie in $\mathcal{F}_\text{bad}$. Hence the derivatives of $\mathcal{F}_\text{good} \cup \mathcal{F}_\text{bad}$ are contained in the algebra as claimed.
+Note that the coefficient functions above lie in $\mathcal{F}_\text{good}$ and we have already explained that the partial derivatives with respect to $(k, u, v')$ lie in $\mathcal{F}_\text{bad}$. Hence the derivatives of $\mathcal{F}_\text{good} \cup \mathcal{F}_\text{bad}$ are contained in the algebra as claimed.
 \end{proof}
 \end{lem}
 
@@ -110,7 +110,7 @@ For $k(ε) = 1 - \exp(-1/ε)$, as $ε\to 0^+$ the following is true
 \[
 \lim_{ε\to 0^+} E(k) = 1 \text{ and, } \lim_{ε\to 0^+} εK(k) = \frac{1}{2}.
 \]
-In particular, considered as functions of $(ε,s,c)$, the functions $E(k(ε))$ and $εK(k(ε))$ have continuous limits as $ε \to 0^+$.
+In particular, considered as functions of $(ε,ψ,λ)$, the functions $E(k(ε))$ and $εK(k(ε))$ have continuous limits as $ε \to 0^+$.
 
 \begin{proof}
 $E(k)$ is continuous on $[0,1]$ and at $k=1$ it takes the value $1$. Using the trick whereby we extend $k$, the limit is established. For the next function, we recall a fact about the growth of $K(k)$ near $k=1$. In \cite{Anderson} they demonstrate that
@@ -207,7 +207,7 @@ We have now examined each function of $\mathcal{F}_\text{ugly}$ in turn and show
 
 
 \begin{lem} \label{lem:ugly_deriv}
-The first derivatives of the functions in $\mathcal{F}_\text{ugly}$ with respect to $(ε,s,c)$ are in the algebra generated by $\mathcal{F}_\text{bad}\cup\mathcal{F}_\text{ugly}$.
+The first derivatives of the functions in $\mathcal{F}_\text{ugly}$ with respect to $(ε,ψ,λ)$ are in the algebra generated by $\mathcal{F}_\text{bad}\cup\mathcal{F}_\text{ugly}$.
 
 \begin{proof}
 We will prove this lemma by direct computation. Note that the functions in $\mathcal{F}_\text{ugly}$ are functions of $ε$ alone, though perhaps mediated via $k$. It is therefore useful to note the total derivative is given by
