@@ -55,11 +55,11 @@ T &:=  \frac{1}{2π\iu} \bra{p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2} \in \Q,
 \end{align}
 and recall the explicit expression for $T$ in terms of the branch points $α$ and $β$
 \[
-T = \frac{2p}{π\iu} \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - \frac{2}{π \iu}\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] + \frac{2}{π\iu}K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}, \labelthis{Teqn}
+T = \frac{2p}{π\iu} \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - \frac{2}{π \iu}\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] + \frac{2}{π\iu}K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}, \labelthis{Teqn1}
 \]
-where $f$ is the map normalises the branch points of the spectral curve (it takes $α$ to $1$, $β$ to $k$, etc) and $ν$ is the point of intersection between the branch point circle and the unit circle.
+where $f$ is the map normalises the branch points of the spectral curve (it takes $α$ to $1$, $β$ to $k$, etc) and $ν$ is the point of intersection between the branch point circle and the unit circle. $T$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary and $\tilde F, \tilde E$ take the imaginary axis to itself, and because $ν$ is on the unit circle so $ν/(1-ν^2)$ is purely imaginary as well.
 
-It is our ultimate aim to examine the surfaces defined by the two conditions and in particular use a height function and find (potential) critical points of those surfaces. The task of finding critical points essentially involves differentiating the above expressions. It is therefore prudent to adopt a parameterisation of the space of spectral curves more suited to the task than $(α,β)$. An obvious first coordinate is $p$ itself, as then we can enforce the first condition simply by holding it constant. Elliptic integrals are the most difficult part of the above to differentiate, so to minimise our labour we choose the other three (real) coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$ for $u,v \in \R^\infty$. First we must show these do indeed parameterise the space of spectral curves. We proceed by exhibiting $α,β$ as a function of these.
+It is our ultimate aim to examine the surfaces defined by the two conditions and in particular use a height function and find (potential) critical points of those surfaces. The task of finding critical points essentially involves differentiating the above expressions. It is therefore prudent to adopt a parameterisation of the space of spectral curves more suited to that task than $(α,β)$. An obvious first coordinate is $p$ itself, as then we can enforce the first condition simply by holding it constant. Elliptic integrals are the most difficult part of the above to differentiate, so to minimise our labour we choose the other three (real) coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$ for $u,v \in \R^\infty$. First we must show these do indeed parameterise the space of spectral curves. We proceed by exhibiting $α,β$ as a function of these.
 
 Denote $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. This is an important point, because the new parameters all lie in the $z$-plane so we must construct the inverse transformation $f^{-1}$, which is a scalar multiple of
 \[
@@ -91,32 +91,89 @@ x^2 + y^2 = y(u+v) - uv.
 \]
 The circle previously computed that $z_0$ lies on gives the relation
 \[
-x^2 + y^2 + 2y \frac{R^2 u - v}{1-R^2} + \frac{v^2 - R^2 u^2}{1-R^2}.
+x^2 + y^2 + 2y \frac{R^2 u - v}{1-R^2} + \frac{v^2 - R^2 u^2}{1-R^2} = 0.
 \]
 Together they have the solution
 \[
 x = \frac{R}{1 + R^2} \abs{u-v},\; y = \frac{R^2u + v}{1+R^2}
 \]
-where the sign of $x$ is chosen to make lie in the right half of the $z$-plane. Choosing the opposite sign corresponds to $f(\infty) = -\conj{z_0}$, which also lies on both circles, whereas this choice amounts to choosing the branch points $α,β$ \emph{inside} the unit circle. Having found $z_0$ in terms of $p,k,u,v$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$.
+where the sign of $x$ is chosen to make lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ \emph{inside} the unit circle. The point with the opposite sign corresponds to $f(\infty) = -\conj{z_0}$, which also lies on both circles. Having found $z_0$ in terms of $p,k,u,v$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$.
 \begin{align*}
 f^{-1}(z) &= C \frac{z-z_0}{z + \conj{z_0}} \\
 1 = f^{-1}(\iu u) &= C \frac{\iu u - z_0}{\iu u + \conj{z_0}} \\
 f^{-1}(z) &=  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}
 \end{align*}
-Now, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$. We can compute the factors in the third term of $T$. Particularly, $ν = f^{-1}(\infty)$ and
+Now, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of $(p,k,u,v)$. The formula is not well defined when $z_0$ is $\iu u$, but this could only occur if $x=0$, which itself only occurs if $u=v$. The correspondence therefore excludes these values.
+
+In the case that one of $u$ or $v$ is infinity, the formula continues to hold after taking the suitable limit. One could alternatively apply the same geometrical reasoning to above to verify this limit calculation, which we shall do now. Suppose that $u=\infty$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly. Considering next $p$, the special case of the cross ratio gives that
+\begin{align}
+p
+&= \frac{\abs{z_0 -\iu v}^2}{\abs{1-\iu v}\abs{k^{-1}-\iu v}} \\
+&= \frac{x^2}{k^{-1}\sqrt{1+v^2}\sqrt{1+k^2 v^2}} \\
+x &= \sqrt{\frac{p w(\iu v)}{k}}.
+\end{align}
+This are the same formulas that one arrives at by taking $u \to \infty$ in the previous formula for $x$ and $y$. The rest of the formula for $f^{-1}$ is as before. The calculation for $v \to \infty$ is similar.
+
+In summary, we have found a new set of parameters $\{(p,k,u,v) \mid p \in \R^+, k \in (0,1), u,v \in\RInf, u \neq v\}$, that are in correspondence with pairs of branch points $α,β$ in the unit disc with $α\neq β$. The moduli space is a subspace of this parameter space defined implicitly by the two conditions that $p$ and $T$ are constant.
+
+From now on we will only consider the parameter space for fixed values of $p$. Topologically it is an interval cross an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider the set $\{ (u,v) \in \RInf \times \RInf \mid u \neq v \}$. Topologically, $\RInf$ is just a circle $\S^1$, so this set is a subset of a torus $\S^1 \times S^1$. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
+
+A more instructive way of visualising this space is to think of it as a solid cylinder with a line along the central axis removed. One should think of the radius of point being given by $1-k$, so that the central axis is identified with the value $k=1$. Shells of a fixed radius (slices of fixed $k$) are topologically a annulus, as one should expect. This model is useful because loops around the central axis, which is to say certain paths in the space of spectral curves, correspond to the branch points $α$ and $β$ circling one another, a correspondence which can be seen if one considers the degenerate case of $α\to β$. In this limit $k$ tends to $1$, the central axis, and the branch point circle tends to a straight line. As we move around the axis, the values of $u,v$ are moving through the values of $\RInf$. Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Hence we infer that the branch point circle (which is a line in this degenerate case) is rotating about the point $α\sim β$, which in turn means that $α$ and $β$ are circling one another.
+
+
+
+
+
+
+Having consider the benefits of these new coordinates, it is time to rewrite $T$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the third term of $T$. By direct computation
+\begin{align}
+\abs{1-α} &= \abs{\frac{(z_0 + \conj{z_0}) (\iu u - 1) }{ (\iu u - z_0) (1 + z_0) }} \\
+\abs{1-β} &= \abs{\frac{(z_0 + \conj{z_0}) (k \iu u - 1) }{ (\iu u - z_0) (1 + k z_0) }} \\
+%%%%%%%%%%%%%%%%
+\abs{α-β} &= \abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }} \\
+&= \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }} \\
+%%%%%%%%%%%%%%%%
+\abs{1-\conj{α}β} &= \abs{\frac{(z_0 + \conj{z_0}) (k + 1) }{ (1 + z_0) (1 + k z_0) }},
+\end{align}
+using the observation that
 \[
-\abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} = 1
+\abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} = 1,
 \]
-so that
+because the denominator is the conjugate of the numerator. Next $ν = f^{-1}(\infty)$ and
+so
+\begin{align}
+ν &= \frac{\iu u + \conj{z_0}}{\iu u - z_0} \\
+\frac{1+ν}{1-ν} &= -\iu \frac{1}{R}\sign{(u-v)} \\
+\frac{1-ν}{1+ν} &= \iu R\sign{(u-v)} \\
+\frac{4ν}{1-ν^2} &= \frac{1+ν}{1-ν} - \frac{1-ν}{1+ν} \\
+&= -\iu \frac{1+R^2}{R} \sign{(u-v)}.
+\end{align}
+These expressions combine to give
+\begin{align}
+\frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}
+&= \frac{1}{2}\abs{\frac{ (z_0 + \conj{z_0}) (1 - \iu u) (1-k\iu u) }{ (\iu u - z_0)^2 }}
+\times -\iu \frac{1+R^2}{R} \sign{(u-v)} \\
+&= \frac{ R w(\iu u) }{ \abs{u - v}} \times -\iu \frac{1+R^2}{R} \sign{(u-v)} \\
+&= -\iu \frac{ w(\iu u) }{ u - v} (1+R^2)  \\
+&= -\iu \frac{ pw(\iu v) + w(\iu u) }{ u - v},
+\end{align}
+and hence that
 \begin{align*}
-\labelthis{Teqn2}
+\labelthis{eqn:Teqn2}
 T(p,k,u,v) = \frac{2p}{π\iu} \left[ E \tilde{F}(\iu v) - K \tilde{E}(\iu v) \right] - \frac{2}{π\iu}\left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] - \frac{2}{π} K \frac{p w(\iu v) + w(\iu u)}{u-v}.
 \end{align*}
-In the parameter space $P = \{(p,k,u,v)\mid p>0, 0 < k <1, u,v \in\RInf, u \neq v\}$, the moduli space is defined implicitly by the two conditions that $p$ is constant, as is $T$.
 
-It is not fully clear prima facie that $T$ is well defined everywhere on this space. Certainly, we have excluded the singularity that could arise from dividing by $u-v$ by not allowing those two coordinates to be equal. But $u$ and $v$ are allowed to take the value $\infty$, and $\tilde E$ has a pole there. More technically, one could draw a distinction between $u$ as a parameter, simply labeling a point, and $u$ as a coordinate, an assignment of a value to a point. $u$ is a parameter when it is $\infty$ but not a coordinate. A coordinate for this point would be something like $u' := 1/u$. Philosophically, a formula of a function at a point uses a coordinate to get a value, and then uses that value in a computation. The point being made here is that we must check that the formula is well-defined when one of $u$ or $v$ is infinite. We now rectify that situation.
+This formula is essentially correct, but there are some subtleties that must be dealt with. Particularly, this formula for $T$ is not well defined everywhere on the parameter space. This is actually a problem for the formula for $T$ in terms of $α, β$ as well and perhaps even clearer in that form. Note that when $ν = \pm 1$ that the third term of \ref{eqn:Teqn1} is infinite. The corresponding point of \ref{eqn:Teqn2} is when one of $u$ or $v$ is infinite. But it is not the case that $T$ is badly behaved near these points, instead these are branch cuts of the function implicit in the method we used to specify the paths of integration $γ_+, γ_-$.
 
-First though, note that strictly speaking $T$ is not a function. It is only locally defined , and even then only up to a constant. To see this phenomenon explicitly, let us consider the limit of $T$ as $v$ goes to infinity.
+DIGRESSION TO EXPLAIN THE PERIODS, THE TRUE NATURE OF T PERHAPS LINK BACK TO THE REMARKS ABOUT THE CENTRAL AXIS. Should this go way earlier, like in the integral definition of T?
+COPIED IN FROM ELSE WHERE: Geometrically this is because of how we have standardised the open paths. Recall that the $\iu v$ is the image of $-1$ under $f$, and $\infty$ corresponds to the point $ν$. The path $γ_-$ is specified to tranverse part of the unit circle from $-1$ but avoid $ν$. Hence when $ν$ crosses past $-1$, the direction of tranversal reverses. This is equivalent to adding a period (actually two periods because we traverse the arc on the unit circle twice, once before and once after going around the branch point). And in the original definition of $T$, we see this integral that is affected has a coefficient of $p$, perfectly matching what this calculation has shown. The same is true for $u$. \todo{major fix needed}
+
+
+
+
+Returning to the specific form of the equation, one could draw a distinction between $u$ as a parameter, simply labeling a point, and $u$ as a coordinate, an assignment of a value to a point. $u$ is a parameter when it is $\infty$ but not a coordinate. A coordinate for this point would be $u' := 1/u$. To give a complete definition of $T$, it is necessary to give a formula in neighbourhoods of both $u=\infty$ and $v=\infty$. But because of the periods, it is impossible to give one that agrees with the formula above everywhere they are both defined. Instead, we shall define functions $T'$ and $T''$ that differ locally from $T$ by a multiple of the periods
+
+To see explicitly how to do make this definition, let us consider the limit of $T$ as $v$ goes to infinity.
 \begin{align}
 \lim_{v\to+\infty} 2π\iu T
 &= 4pE \lim_{v\to\infty} \tilde{F}(\iu v) - 4pK \lim_{v\to\infty} \bra{ \tilde{E}(\iu v) + \iu \frac{w(\iu v)}{u-v} }
@@ -134,26 +191,57 @@ And from the other side of $v=\infty$,
 \lim_{v\to-\infty} 2π\iu T
 &= -2π\iu p + 4\iu pK ku - 4 \left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right]
 \end{align}
-We see that the two limits of $T$ differ by a value of $2 p$. This is acceptable because $T$ is defined up to multiples of $1$ and $p$. It shows us that $v = \infty$ is a branch cut of this formula for $T$. Geometrically this is because of how we have standardised the open paths. Recall that the $\iu v$ is the image of $-1$ under $f$, and $\infty$ corresponds to the point $ν$. The path $γ_-$ is specified to tranverse part of the unit circle from $-1$ but avoid $ν$. Hence when $ν$ crosses past $-1$, the direction of tranversal reverses. This is equivalent to adding a period (actually two periods because we traverse the arc on the unit circle twice, once before and once after going around the branch point). And in the original definition of $T$, we see this integral that is affected has a coefficient of $p$, perfectly matching what this calculation has shown. The same is true for $u$.
-
-So what can be done about this? It turns out that in a neighbourhood of infinity, we can find a function that is analytic in the local coordinate and on the restrictions to $v\in\R$ differs locally from $T$ by a constant. We shall show this for a neighbourhood of $v=\infty$; the case for $u=\infty$ is entirely similar. Let $v' = 1/v$ be a coordinate on $v \in \R\cup\{\infty\}\setminus \{0\}$. Define a function $T'(k,u,v')$ to be equal to $T(k,s,v)$ on $v'\in\R^+$, on $v' = 0$ let it be equal to $\lim_{v\to +\infty}T$ as computed above, and on $v'\in\R^-$ let it be $T + 4π\iu p$. Looking specifically at this last bit, where $v'\in\R^-$
+We see that the two limits of $T$ differ by a value of $2 p$, twice the period $p$. On this neighbourhood of $v=\infty$, let $v' = 1/v$ be a coordinate on $\RInf\setminus \{0\}$. Therefore define
+\[
+T'(k,u,v') =
+\begin{cases}
+T(k,u, v) & \text{ for } v' > 0 \\
+\lim_{v\to +\infty} T(k,u,v) & \text{ for } v' = 0 \\
+2p + T(k,u, v) & \text{ for } v' < 0
+\end{cases}.
+\]
+Looking specifically at this last formula, where $v' < 0$, we can rearrange it in the following way.
 \begin{align}
-T + 4π\iu p
+2π\iu& (2p + T)\\
 &= 4p \left[ E \tilde{F}(\iu v) - K \tilde{E}(\iu v) \right] - 4 \left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} + 8\iu p \bra{EK' + K(E' - K')} \\
 &= 4p \left[ E (2\iu K' + \tilde{F}(\iu v)) - K (2\iu (K'-E') + \tilde{E}(\iu v)) \right] - 4 \left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} \\
 &= 4p \left[ E \left\{2\iu K' + \tilde{F}(\iu v)\right\} - K \left\{ 2\iu (K'-E') + \tilde{E}(\iu v)) - ikv\right\} \right] - 4 \left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} - 4p\iu k K v
 \end{align}
-Compare this to $T'$ for $v' > 0$
-\[
-T' = T = 4p \left[ E \left\{\tilde{F}(\iu v)\right\} - K \left\{ \tilde{E}(\iu v)) - ikv\right\} \right] - 4 \left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} - 4p\iu k K v
-\]
-In APPENDIX \todo{add ref} it was shown that the functions appearing in the braces of these equations defined above peicewise on each of $v' >0$ and $v' < 0$ were in fact an analytic in $v'$ when taken together. The second term is independent of $v$ and so passes muster as well. It therefore remains to show that the leftovers form an analytic function. More precisely, that the following is an analytic function of $v'$.
+Compare this to $T'$ for $v' = 0$
 \begin{align}
-4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} + 4p \iu k K v
-&= 4\iu p K \frac{kuv - kv^2 + w(\iu v)}{u-v} + 4\iu K \frac{w(\iu u)}{u-v} \\
-&= 4\iu p K \frac{1}{v'}\frac{\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k }{uv'-1} + 4\iu p K \frac{ku}{uv'-1} + 4\iu K \frac{v' w(\iu u)}{uv'-1} \\
+2π\iu T'
+&= 2π\iu p + 4\iu pK ku - 4\left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] \\
+&= 4p \left[ E \left\{\iu K'\right\} - K \left\{ \iu (K'-E')\right\} \right] - 4 \left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] + 4\iu pK ku
 \end{align}
-Which is analytic as the difference of the square root and $k$ vanishes quadratically in $v'$ near $v'=0$. In summary we have shown that $T$ is a function defined locally up to a constant on the entire parameter space, and moreover that locally it is analytic everywhere on that space as well, by which we mean on a neighbourhood of every point that there is a single analytic function we can speak of as representing $T$.
+and for $v' > 0$
+\[
+2π\iu T' = 4p \left[ E \left\{\tilde{F}(\iu v)\right\} - K \left\{ \tilde{E}(\iu v)) - ikv\right\} \right] - 4 \left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} - 4p\iu k K v
+\]
+In APPENDIX \todo{add ref} it was shown that the functions appearing in the braces of these equations defined above piecewise on each of $v' >0$, $v' = 0$ and $v' < 0$ were in fact  analytic in $v'$ when taken together. The second term is independent of $v'$ and so passes muster as well. It therefore remains to show that the leftovers form an analytic function. More precisely, that the following is an analytic function of $v'$.
+\[
+g :=
+\begin{cases}
+\frac{p w(\iu v) + w(\iu u)}{u-v} + p k v & \text{ for } v' \neq 0 \\
+pku & \text{ for } v' = 0} \\
+\end{cases}.
+\]
+
+\begin{align}
+\frac{p w(\iu v) + w(\iu u)}{u-v} + p k v
+&= \frac{pw(\iu v) + w(\iu u) + pkuv - pkv^2}{u-v} \\
+&= p \frac{w(\iu v) - kv^2}{u-v} + p \frac{kuv}{u-v} + \frac{w(\iu u)}{u-v} \\
+&= p \frac{1}{v'}\frac{\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k }{uv'-1} + p \frac{ku}{uv'-1} + \frac{v' w(\iu u)}{uv'-1},
+\end{align}
+which is analytic as the difference $\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k$ vanishes quadratically in $v'$ near $v'=0$, and so too does the third term. In summary we have shown that $T'$ is an analytic function on the part of the parameter space with $v=\infty$ (in particular a neighbourhood of this point), and by its definition it differs from $T$ locally up to a constant where they are both defined ($v' \neq 0$). We may also define $T''$ on a neighbourhood of $u = \infty$ with local coordinate $u' = 1/u$ in an alike manner.
+\[
+T''(k,u',v) =
+\begin{cases}
+T(k,u, v) & \text{ for } u' > 0 \\
+\lim_{u\to +\infty} T(k,u,v) & \text{ for } u' = 0 \\
+-2 + T(k,u, v) & \text{ for } v' < 0
+\end{cases}.
+\]
+Due to the symmetry between $u$ and $v$ inherent in the definition of $T$, the the same argument applies to this case too. There is no need to consider the possibility of both $u=v=\infty$ because on the parameter space $u\neq v$. In practical terms, it does not really matter which version of the function we use, as for our purposes they will be mostly equivalent. For example, their derivatives are identical. One needs only to be careful when talking about a particular level set that one adjusts for the different values.
 
 
 
