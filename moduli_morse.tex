@@ -24,11 +24,11 @@ BEGIN ARGUMENT
 \item
 Cut open this space.
 \item
-Bound away from other edges.
+Deal with blowup. the limit at this point, the new coordinates
 \item
-Compactify.
+Extend past boundary, on both sides. Evoke SMT lemmata recipe
 \item
-Extend past boundary.
+prove properness, and in doing so find the strata at infinity (ie show it's bounded sway from the other edges)
 \item
 Morse theory - interior and edges.
 \item
@@ -263,13 +263,46 @@ For $k\in(0,1)$ as $v$ approaches $u$ from either above or below, the $1/(u-v)$ 
 \[
 T(0,u,v) = - 2π\iu \frac{p \sqrt{1+v^2} + \sqrt{1+u^2}}{u-v}.
 \]
-That leaves only the limit $k \to 1$. This one is more interesting.
+That leaves only the limit $k \to 1$. This one is more interesting. We arrange the terms into the $p$ and non-$p$ parts.
+\[
+2π\iu T
+= p \left\{ 4E \tilde{F}(\iu v) - 4 K \left[ \tilde{E}(\iu v) + \iu\frac{ w(\iu v)}{u-v} \right] \right\}  - \left\{ 4 E \tilde{F}(\iu u) - 4 K \left[ \tilde{E}(\iu u) + \iu\frac{ w(\iu u)}{v-u} \right] \right\}.
+\]
+The braced expressions only differ by interchanging $u$ and $v$, so we may treat just one. The limit of $4E \tilde{F}(\iu v)$ is $4 \times 1 \times i\atan v$, but the presence of the $K$ makes the other part difficult, as $K$ tends to $\infty$ as $k\to 1$. We divide it in the following way to compute the limit.
 \begin{align}
-T
-&= 4p E \tilde{F}(\iu v) - 4 E \tilde{F}(\iu u) + 4 K \left[ - p\tilde{E}(\iu v) + \tilde{E}(\iu u) - \iu\frac{p w(\iu v) + w(\iu u)}{u-v} \right] \\
-&\to 4\iu p \atan v - 4 \iu \atan u - \lim_{k\to 1} 4\iu K \frac{(1+p)(uv+1)}{u-v}.
+4 K \left[ \tilde{E}(\iu v) + \iu\frac{ w(\iu v)}{u-v} \right]
+&= 4 K \left[ \tilde{E}(\iu v) - \iu k v + \iu k v - \iu v + \iu v +\iu \frac{1+v^2}{u-v} - \iu \frac{1+v^2}{u-v} + \iu\frac{ w(\iu v)}{u-v} \right] \\
+&= 4 K \left[ \tilde{E}(\iu v) - \iu k v \right] + 4 \iu v K (k - 1) + 4\iu K \left[\frac{uv + 1}{u-v} \right] - 4\iu K \left[ \frac{1+v^2 - w(\iu v)}{u-v} \right]
 \end{align}
-In the limit, $K$ has a logarithmic singularity. This could be canceled out if simultaneously $uv \to -1$ (or if $u \equiv 0$, then $v \to \infty$), but otherwise it causes $T$ to tend to positive of negative infinity. This line $\{k=1, v = -1/u\}$ where the limit is not well defined is therefore of particular interest. We shall change coordinates to examine this limit closely. Note at $u=0$ that $v$ is not a coordinate on a neighbourhood of this line. Let us change to $v'$ then and as above consider $T'$ which analytic in this coordinate.
+We shall treat each term in turn. $K (-\iv \tilde{E}(\iu v) - kv)$ tends to $0$, independent of $v$. This comes from the inequality \ref{eqn:tildeEatInf} derived in the first appendix:
+\[
+-(K'-E') \leq -\iu \tilde{E}(\iu u) - ku \leq K' - E'.
+\]
+If we multiply this by $K$, then the upper bound is $K(K' - E')$ and using Legendre's \todo{name?} relation
+\[
+\lim_{k\to 1} K (K'-E')
+= \lim_{k\to 1} KK'- KE' -K'E + K'E
+= \lim_{k\to 1} -\frac{π}{2} + K'E
+= -\frac{π}{2} + K(0)E(1) = 0.
+\]
+The same calculation shows the lower bound tends to zero as well. The next term, $K (k - 1)$, is also zero by Lemma \ref{lem:lim(1-k)K}. We shall leave the third term momentarily, and proceed to the forth.
+\begin{align*}
+K \left[\frac{1+v^2 - w(\iu v)}{u-v} \right]
+&= K \frac{1+v^2 - \sqrt{1 + (1+k^2)v^2 + k^2v^4}}{u-v} \\
+&= K \frac{(1+v^2)^2 - (1 + (1+k^2)v^2 + k^2v^4)}{(u-v)\bra{1+v^2 + \sqrt{1 + (1+k^2)v^2 + k^2v^4}}} \\
+&= K \frac{(1-k^2) v^2 (1+v^2)}{(u-v)\bra{1+v^2 + \sqrt{1 + (1+k^2)v^2 + k^2v^4}}} \\
+&= (1-k)K \frac{(1+k) v^2 (1+v^2)}{(u-v)\bra{1+v^2 + \sqrt{1 + (1+k^2)v^2 + k^2v^4}}},
+\end{align*}
+which also goes to zero by Lemma \ref{lem:lim(1-k)K}. Hence the limit of $T$ is
+\begin{align*}
+\lim_{k\to 1} 2π\iu T
+&= p \left\{ 4\iu \atan v - \lim_{k\to 1} 4\iu K \frac{uv+1}{u-v} \right\}
+- \left\{ 4 \iu \atan u - \lim_{k\to 1} 4\iu K \frac{uv+1}{v-u} \right\} \\
+&= 4\iu p \atan v - 4 \iu \atan u - 4\iu(1+p) \lim_{k\to 1} K \frac{uv+1}{u-v}.
+\end{align*}
+
+
+In the limit, $K$ has a logarithmic singularity. This could be canceled out if simultaneously $uv \to -1$, but otherwise it causes $T$ to tend to either positive or negative infinity. This line $\{k=1, v = -1/u\}$ where the limit is not well defined is therefore of particular interest. We shall change coordinates to examine this limit closely. Note at $u=0$ that $v$ is not a coordinate on a neighbourhood of this line. Let us change to $v'$ then and as above consider $T'$ which analytic in this coordinate.
 \begin{align}
 \lim_{k\to1} T' =
 2π\iu p - 4\iu p \atan v' - 4 \iu \atan u - \lim_{k\to 1} 4\iu K (1+p)\frac{u+v'}{uv'-1}.

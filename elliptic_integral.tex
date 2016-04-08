@@ -107,48 +107,91 @@ K(0) = E(0) = \frac{π}{2}, \;\; E(1) = 1
 \]
 give a lower bound for $K$ and a narrow range of values for $E$.
 
-For the incomplete integrals, we look at limits for fixed modulus $k$ for an imaginary argument. Apply the standard technique of complex analysis of using a closed semicircular contour. Let the contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc from $\iu R$ to $R$ back down to $-\iu R$. This contour is homologous to a standard period around $[1,k^{-1}]$ and so is a fixed quantity. The contribution coming from the semicircular arc is neglible in the limit, as can be seen below.
-\begin{align}
+For the incomplete integrals, we need only investigate their properties on the imaginary axis. Both $\tilde{F}$ and $\tilde{E}$ take purely imaginary values on the imaginary axis, and we shall see that $\tilde{E}$ has a pole at infinity, so let us consider the functions $-\iu \tilde{F}(\iu x; k)$ and $-\iu \tilde{E}(\iu x; k) - k x$, both real valued functions of $x \in \R$ and $k\in (0,1)$.
+
+First note that these are both increasing functions of $x$. In the case of
+\[
+-\iu \tilde{F}(\iu x;k) = \int_0^x \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}}
+\]
+this is obvious. For the second function,
+\begin{align*}
+k <& 1 \\
+k^2 + k^2 t^2 <& 1 + k^2t^2 \\
+k \sqrt{1 + t^2} <& \sqrt{1 + k^2t^2},
+\end{align*}
+from which is follows that
+\begin{align*}
+-\iu \tilde{E}(\iu x; k) - k x
+&= \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}} - k \;\;dt\\
+&= \int_0^x \frac{\sqrt{1+k^2t^2} - k\sqrt{1+t^2}}{\sqrt{1+t^2}}\;dt
+\end{align*}
+is increasing as well.
+
+Naturally, one next asks to what value do these functions increase. We shall compute this by applying the standard technique of complex analysis of using a closed semicircular contour. Let the contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc from $\iu R$ to $R$ back down to $-\iu R$. This contour is homologous to a standard period around $[1,k^{-1}]$ and so is a fixed quantity. The contribution coming from the semicircular arc is neglible in the limit, as can be seen below.
+\begin{align*}
 \abs{\int_{C_R}\frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}}}
 &= \abs{\int_{π/2}^{-π/2} \frac{Re^{\iu θ} dθ}{\sqrt{(1-R^2e^{2\iu θ}) (1-k^2R^2e^{2\iu θ})}}} \\
 &\leq \int_{-π/2}^{π/2} \frac{R}{\sqrt{(1-R^2) (1-k^2R^2)}} \;dθ \\
 &= \frac{π R}{\sqrt{(1-R^2) (1-k^2R^2)}} \\
 &\to 0.
-\end{align}
-And since $F(z;k)$ is an odd function of $z$, we can conclude that
+\end{align*}
+And since $\tilde{F}(z;k)$ is an odd function of $z$, we can conclude that
+\begin{align*}
+2K'
+&= -\iu\; \lim_{R\to\infty} \oint \frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}} \\
+&= -\iu\; \lim_{R\to\infty} \bra{\int_{-\iu R}^{\iu R} + \int_{C_R}}  \frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}} \\
+&= -2\iu\; \lim_{R\to\infty}  \tilde{F}(\iu R;k),
+\end{align*}
+so
 \[
-\lim_{τ\to +\infty} \tilde F(\iu τ; k) = \iu K',
-\qquad \lim_{τ\to -\infty} \tilde F(\iu τ; k) = -\iu K'
+\lim_{x\to\infty} -\iu \tilde{F}(\iu x;k) = K' ,
+\qquad \lim_{x\to -\infty} -\iu \tilde F(\iu x; k) = - K' .
 \]
-We shall shortly perform a similar calculation for $\tilde E$, however it comes with the complication that it has a pole at $\infty$. Consequently, we subtract off that divergent term and deal with the rest.
-\begin{align}
+The analysis of the other function proceeds much the same, however there is some delicate work to make the poles cancel. Using the same contour as before, we again show that the contribution from the semicircular arc is vanishing.
+\begin{align*}
 \abs{\int_{C_R}\sqrt{\frac{1-k^2z^2}{1-z^2}} - k \;\;dz}
 &= \abs{\int_{C_R}\frac{ \sqrt{1-k^2z^2} - k \sqrt{1-z^2}}{\sqrt{1-z^2}} \;dz} \\
 &= \abs{\int_{π/2}^{-π/2} \frac{ \sqrt{1-k^2R^2e^{2\iu θ}} - k \sqrt{1-R^2e^{2\iu θ}}}{\sqrt{1-R^2e^{2\iu θ}}} \;Re^{\iu θ}\;dθ} \\
 &\leq \int_{-π/2}^{π/2} \frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \;R\;dθ \\
 &= π R\frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \\
-&= π R\frac{ \sqrt{1+k^2R^2} - kR}{\sqrt{R^2-1}} + π R\frac{ kR - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \\
-&\to 0.
-\end{align}
-We have used the limit below, which can be computed by multiplying by a fraction with the quadratic conjugate as both numerator and denominator.
-\[
-\lim_{x\to \infty} \sqrt{a^2 x^2 + bx + c} - ax = b/2a.
-\]
-So
-\begin{align}
-\lim_{τ\to+\infty} [\tilde E(\iu τ; k) - \iu k τ] = \iu \bra{K' - E'},
-\qquad \lim_{τ\to-\infty} [\tilde E(\iu τ; k) - \iu k τ ]= -\iu \bra{K' - E'}.
-\end{align}
-
-
-It is also necessary to bound the growth of incomplete elliptic integrals of an imaginary parameter specifically. Very simply
-\begin{align*}\labelthis{incomplete bounds}
-\frac{1}{1+t^2} &\leq \frac{1}{\sqrt{1+t^2)(1+k^2t^2)}} &\leq 1 \\
-\atan τ &\leq \Im \tilde{F}(\iu τ; k) &\leq τ \\
-\frac{1}{\sqrt{1+t^2}} &\leq \sqrt{\frac{1+k^2t^2}{1+t^2}} &\leq 1 \\
-\asinh τ &\leq \Im \tilde{E}(\iu τ; k) &\leq τ \\
+&= π R\frac{ (1+k^2R^2) - k^2 (R^2-1)}{\sqrt{R^2-1}(\sqrt{1+k^2R^2} + k \sqrt{R^2-1})} \\
+&= π R\frac{ 1 + k^2 }{\sqrt{R^2-1}(\sqrt{1+k^2R^2} + k \sqrt{R^2-1})} \\
+&\to 0,
 \end{align*}
+as $R \to \infty$. As before, we are dealing with an odd function of $x$ and hence
+\begin{align}
+\lim_{x\to+\infty} [-\iu \tilde E(\iu x; k) - k x] = K' - E',
+\qquad \lim_{x\to-\infty} [-\iu \tilde E(\iu x; k) - k x ]= - \bra{K' - E'}.
+\end{align}
 
+A consequence of these limits is that we have bound the functions independently of $x$.
+\begin{align}
+-K' \leq -\iu &\tilde{F}(\iu x;k) \leq K' \\
+- (K' - E') \leq -\iu &\tilde E(\iu x; k) - k x \leq K' - E'. \label{eqn:tildeEatInf}
+\end{align}
+It can also be useful to bound their growth independently of $k$. As the integrands are monotone functions of $k$, assuming $x>0$ one has
+\[
+\atan {x} = \int_0 ^x \frac{dt}{1+t^2} \leq -\iu \tilde{F}(\iu x;k) \leq \int_0 ^x \frac{dt}{\sqrt{1+t^2}} = \asinh x
+\]
+and
+\[
+0 \leq -\iu \tilde E(\iu x; k) - k x \leq
+\int_0^x \frac{(1+kt) - kt}{\sqrt{1+t^2}}\;dt = \asinh x.
+\]
+It may seem disappointing that we only have a lower bound of $0$ for the second function, but by considering that function at $k=1$ we see that it is identically zero and so no better bound, independent of $k$, is possible. If one is willing to consider non uniform bounds, then the observation that both integrands (and so both functions) are decreasing functions of $k$ allows one to bound a range of $k$ by the value at infimum of the range.
+
+These inequalities also serve to show that the integrals are dominated by functions independent of $k$, so one can compute the limits as $k \to 1$ (for any value of $x$) and $k \to 0$ (for finite values of $x$, as $\asinh x$ is not finite for $x=\infty$). Explicitly,
+\begin{align}
+\lim_{k\to 1} -\iu \tilde{F}(\iu x; k) &= \atan {x} \\
+\lim_{k\to 1} -\iu \tilde{E}(\iu x; k) &= x \\
+\lim_{k\to 0} -\iu \tilde{F}(\iu x; k) &= \asinh {x} \\
+\lim_{k\to 0} -\iu \tilde{E}(\iu x; k) &= \asinh {x}.
+\end{align}
+
+\subsection{Analyticity}
+\label{sub:Analyticity}
+
+RELEVANCE ON NEXT BIT IF I GO WITH A UNIVERSAL COVER APPROACH?\todo{this} Perhaps should rewrite to be about universal cover instead.
 
 It is a standard fact that the elliptic integrals are analytic functions on the plane away from the branch points. The relevant theorem is the Cauchy–Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic. However, because of the periods of integrals, it is not possible to extend $\tilde F, \tilde E$ to the whole complex plane. Indeed we have seen that the two limits to infinity along the imaginary axis are different. Consider then the following function
 \[
