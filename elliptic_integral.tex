@@ -6,50 +6,48 @@
 The purpose of this appendix is to provide background information about elliptic integrals. It contains their definitions and the basic properties, as well as some results that are used in the body of the thesis. It is not a comprehensive treatment, specifically elliptic integrals of the third kind are not treated, and incomplete integrals are only treated for an imaginary argument.
 
 \subsection{Definitions and Periods}
-Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor 'elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. There is a classical division of elliptic integrals into \emph{kinds}. Integrals of the first kind are integrals of holomorphic differentials, the second kind are integrals of meromorphic differentials with double poles but no residues, and the third kind have a pair of simple poles with opposite residues. All integrals on an elliptic curve may be written as the sum of rational functions and an integral of each kind. Moreover one may choose a basis, one integral of each kind, and all other integrals may be written in terms of this basis. The most prevalent choice of basis, the Jacobi elliptic integrals, is used in this thesis.
-
-This topic has a long history, at least two hundred years, and consequently there are several quirks and variations in notation for the standard integrals; the main difference is the use of the modulus $k$ versus the parameter $m = k^2$. Conventionally, one uses a semicolon to indicate the use of the modulus and a vertical bar to indicate the parameter. We will us the modulus with the customary semicolon. The standard integrals come in {\it incomplete} and {\it complete} varieties. Incomplete elliptic integrals are functions of two variables, known as the argument $z$ and the aforementioned modulus $k$. Complete integrals are special cases of incomplete integrals where the parameter is $1$ and have special significance.
-
-The incomplete and complete elliptic integral of second kind are traditionally both denoted $E$, and the number of function arguments is used to distinguish the two. Unfortunately, but understandably, it is common to omit the modulus (which we will do often), which has the potential to create confusion. I have therefore elected to denote incomplete elliptic integrals with a tilde; I will use $\tilde E$ or $\tilde{E}(z)$ to mean $\tilde E(z;k)$ whereas $E$ shall exclusively refer to $E(k)$. They are defined as
+Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor 'elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. This topic has a long history, at least two hundred years, and consequently there are several competing conventions. In this thesis we shall use the Jacobi elliptic integrals, of a modulus $k$. The incomplete elliptic integral of the first kind is defined as
 \[
-\tilde E(z;k) = \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt = \int_0^z \frac{1-k^2 t^2}{\sqrt{(1-t^2)(1-k^2 t^2)}}\;dt,
-\qquad E(k) = \tilde E(1;k)
+F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}},
 \]
-The incomplete and complete elliptic integrals of first kind shall be denoted $\tilde F$ and $K$ respectively and are defined as
+and the incomplete elliptic integral of the second kind is
 \[
-\tilde F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}},
-\qquad K(k) = \tilde F(1;k).
+E(z;k) = \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt = \int_0^z \frac{1-k^2 t^2}{\sqrt{(1-t^2)(1-k^2 t^2)}}\;dt.
 \]
-Note that a tilde has also been added to $\tilde F$ for consistency and solidarity, even though there is not a naming conflict in the usual notation of integrals of the first kind. We will not have need of integrals of the third kind. Elliptic integrals of the first kind integrals are of holomorphic forms on an elliptic curve (a torus), so one can see from the form above that the curve is given by the equation
+We will not have need of integrals of the third kind. Of particular interest are the \emph{complete} elliptic integrals, where $z=1$. The complete first and second integrals are respectively denoted $K(k)$ and $E(k)$, and we shall often omit their arguments. The complete integrals are used to compute the periods of the elliptic curve
 \[
-w^2 = (1-z^2)(1-k^2 z^2).
+y^2 = (1-t^2)(1-k^2 t^2).
 \]
-Every elliptic curve may be brought to this highly symmetric form, known as {\it Legendre's form}. The branch cuts are made along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. If the curve carries a reality structure (if it admits an antiholomorphic involution) then $k$ must be real, and by a  M\"obius transformation one can arrange for $0< k < 1$. At the endpoints of this range, $k=0$ and $k=1$, the curve degenerates and the integrals may be computed by regular circle trigonometry.
+Every elliptic curve may be brought to this highly symmetric form, known as {\it Legendre's form}. If the curve carries a reality structure (if it admits an antiholomorphic involution) then $k$ must be real and by a further M\"obius transformation one can arrange for $0 < k < 1$. We may choose to take branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. Consider the period of the holomorphic differential $dt / y $ around the branch points $-1$ and $1$. This is known as the $A$-period. One can see that this period integral is twice the integral of $dt/ y$ from $-1$ to $1$, which itself is twice the integral from $0$ to $1$. Thus this period of the holomorphic differential is $4K$, which earns $K$ the nickname of `quarter-period'.
 
-The period of this curve around the branch points $-1$ and $1$ is directly related to the definitions above. Consider the holomorphic differential $dz / w $ and the loop that traverses from $-1$ along the real axis to $1$ on the positive sheet (where $w = +\sqrt{(1-z^2)(1-k^2z^2)}$), and then back along the negative sheet. On can see that this period integral is twice the integral of $dz/ w$ from $-1$ to $1$, which itself is twice the integral from $0$ to $1$. Thus this period of the holomorphic differential is $4K$, which earns $K$ the nickname of `quarter-period'.
-
+\begin{figure}
 \begin{center}
-\includegraphics{{torus_lagrange.sk}.pdf}
+    \includegraphics{{torus_lagrange.sk}.pdf}
 \end{center}
-\todo{make a better picture}
+\caption{The torus $y^2 = (1-t^2)(1-k^2 t^2)$ with $A$-period in red (in the center) and $B$-period in blue.  The upper and lower halves of the torus correspond to the two sheets of $\C$. The two points over complex infinity are the highest and lowest points, where as the two points over the origin are the two points on the vertical line between them.}
+\end{figure}
 
-HAVE A BETTER EXPLANATION OF THIS PICTURE \todo{fix} In the picture, the red cycle is the real $A$-cycle and has the clockwise orientation as shown, whereas the blue cycle is the imaginary $B$-cycle and has orientation from left to right as shown. $B$ is divided into two pieces, $B^+$ on which $y$ is in $i\R$ (the occluded piece) and $B^-$ on which $y$ is in $-i\R$ (the front piece).
-
-But what about the other period, the one around $1$ and $k^{-1}$? Its computation involves a trick called {\it Jacobi's imaginary transformation}, and makes use of a quadratic substitution \cite{Whittaker2000}. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
+To compute the other period, the one around $1$ and $k^{-1}$ known as the $B$-period, one employs a trick called {\it Jacobi's imaginary transformation} that makes use of a quadratic substitution \cite{Whittaker2000}. Divide the loop $B$ into two pieces $B^+$ and $B^-$ on which $y$ is repesctively valued in $\iu\R$ and $-\iu\R$. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
 \begin{align*}
 dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
 \sqrt{t^2 - 1} &= \frac{k's}{\sqrt{1-k'^2 s^2}} \\
 \sqrt{1 - k^2 t^2} &= \frac{k' \sqrt{1-s^2}}{\sqrt{1-k'^2 s^2}} \\
-w &= \pm \frac{i k'^2 s \sqrt {1-s^2}}{1-k'^2 s^2}
+y &= \pm \frac{i k'^2 s \sqrt {1-s^2}}{1-k'^2 s^2}
 \end{align*}
 so that
 \begin{align*}
 \int_B \frac{dt}{y}
-&= \int_{B^+} \frac{dt}{w^+} + \int_{B^-} \frac{dt}{w^-} \\
+&= \int_{B^+} \frac{dt}{y} + \int_{B^-} \frac{dt}{y} \\
 &= \int_1^0 (-\iu) \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} + \int_0^1 \iu \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
 &= 2\iu K(k')
 \end{align*}
-Often $K(k')$ is abreviated to simply $K'$, and this should not be confused with the derivative of $K$. $k'$ is called the complementary modulus. A similar substitution is needed for $E$. Let this time $k^2 t^2 = 1-k'^2 s^2$. Then
+Often $K(k')$ is abreviated to simply $K'$, and this should not be confused with the derivative of $K$. $k'$ is called the complementary modulus.
+
+We need also in this these to consider periods of differentials of the second kind. The standard differential of the second kind has a double pole at $t=\infty$ with no residue and is given by
+\[
+(1 - k^2 t^2)\frac{dt}{y} = \sqrt{\frac{1-k^2 t^2}{1-t^2}} \,dt.
+\]
+By design, the $A$-period of this differential is $4E$. To compute the $B$-period requires a similar substitution. Let this time $k^2 t^2 = 1-k'^2 s^2$. Then
 \begin{align*}
 dt &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
 \sqrt{t^2 - 1} &= \frac{k'}{k}\sqrt{1-s^2} \\
@@ -57,71 +55,37 @@ dt &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
 y &= \pm \iu \frac{k'^2}{k}s\sqrt{1-s^2}
 \end{align*}
 \begin{align*}
-\int_B \frac{dt}{y}(1-k^2t^2)
+\int_B (1-k^2t^2) \frac{dt}{y}
 &= 2\iu \int_0^1 \frac{k'^2 s^2}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
 &= 2\iu \int_0^1 \frac{1-(1-k'^2 s^2)}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
 &= 2\iu \int_0^1 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} - 2\iu \int_0^1 \sqrt{\frac{1-k'^2 s^2}{1-s^2}}\;ds\\
 &= 2iK(k') - 2iE(k').
 \end{align*}
-Again, we introduce the notation that $E' = E(k')$. In this way, the two periods of an elliptic curve are expressed in terms of complete elliptic integrals. This explains what is 'complete' about complete elliptic integrals; the fact that $z=1$ is a branch point of the curve means that they are the ones that form a basis for the periods of differentials.
+Again, we introduce the notation that $E' = E(k')$.
 
 
 
 
 
-\subsection{Derivatives}
-\label{sub:Derivatives}
-The aim of this section is to compute the derivatives of the elliptic integrals. These results are not difficult, but are scattered through the literature. The derivatives of the incomplete integrals with respect to the variable $z$ are trivial because they are simply parameter integrals
-\begin{align}
-    \Partial{}{z}\tilde F &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \label{eqn:dtildeFdz} \\
-    \Partial{}{z}\tilde E &= \sqrt{\frac{1-k^2 z^2}{1-z^2}}. \label{eqn:dtildeEdz}
-\end{align}
-The derivatives of elliptic integrals with respect to the modulus are again elliptic integrals. The derivatives of complete elliptic integrals are well known and are simply presented below without proof. \todo{add reference} A motivated reader may proceed with the computation by differentiating under the integral sign, and rearranging the result into the a combination of standard forms.
-\begin{align}
-\frac{d}{dk}K &= \frac{1}{k(1-k^2)}E - \frac{1}{k}K, \label{eqn:dKdk}\\
-\frac{d}{dk}E &= \frac{1}{k}E - \frac{1}{k} K. \label{eqn:dEdk}
-\end{align}
-To compute the derivatives of the incomplete versions, one employs the same approach. For the incomplete integral of the second kind there is essentially no difference compared to the complete version. Directly computing the following combination  \todo{I couldn't find a reference for this, should I mention that?}
-\begin{align}
-k\Partial{}{k}\bra{\sqrt{\frac{1-k^2t^2}{1-t^2}}} -& \sqrt{\frac{1-k^2t^2}{1-t^2}} + \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
-&= \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}\bra{-k^2t^2 - (1-k^2t^2) + 1} \\
-&= 0.
-\end{align}
-Now dividing by $k$ and integrating from $0$ to $z$ gives
-\[
-\Partial{}{k}\tilde E &= \frac{1}{k}\tilde E - \frac{1}{k}\tilde F, \labelthis{eqn:dtildeEdk}
-\]
-as desired.
 
-TODO should I mention about being dominated and so being able to interchange integration and differentiation? \todo{this}
 
-The derivative of the integral of the first kind is more difficult because an additional term is required. Let
-\begin{align*}
-    g &:= t\sqrt{\frac{1-t^2}{1-k^2t^2}} \\
-    \Partial{}{t} g &= \frac{1-2t^2 + k^2 t^4}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}.
-\end{align*}
-Then similiar to before, we examine the difference between the $k$ derivative of the integrand and the expected combination of elliptic integrand terms.
-\begin{align*}
-    \Partial{}{k}\bra{\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}} -& \frac{1}{k(1-k^2)}\sqrt{\frac{1-k^2 t^2}{1-t^2}} + \frac{1}{k}\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
-    &= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ k^2t^2(1-k^2) - (1-k^2t^2)^2 + (1-k^2)(1-k^2t^2) } \\
-    &= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ -k^2 + 2k^2t^2 -k^4t^4} \\
-    &= \frac{-k}{1-k^2}g_t.
-\end{align*}
-Thus we can integrate to obtain
-\begin{align*}
-\Partial{}{k} \tilde F
-&= \frac{1}{k(1-k^2)} \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \; dt
-- \frac{1}{k} \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}
-- \frac{k}{1-k^2} \int_0^z g_t \; dt \\
-&= \frac{1}{k(1-k^2)}\tilde E - \frac{1}{k}\tilde F - \frac{k}{1-k^2}z\sqrt{\frac{1-z^2}{1-k^2z^2}}. \labelthis{eqn:dtildeFdk}
-\end{align*}
-We note that the extra term vanishes at $z=1$ so this agree with the derivative of $K$.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 \subsection{Inequalities and Limits}
 \label{sub:Inequalities}
-The inequalities we use are found in \cite{Anderson}. Their inequality (2) contains only $K$ and confines its behaviour to within a strip-like region of known width.
+Throughout this thesis, we use inequalities to bound the behaviour of elliptic integrals. The inequalities we use are found in \cite{Anderson}. Their inequality (2) contains only $K$ and confines its behaviour to within a strip-like region of known width.
 \[
 \ln 4 \leq K + \frac{1}{2}\ln (1-k^2) \leq \frac{π}{2}.
 \labelthis{K_bound}
@@ -141,86 +105,169 @@ K(0) = E(0) = \frac{π}{2}, \;\; E(1) = 1,
 \]
 therefore give a lower bound for $K$ and a narrow range of values for $E$.
 
-For the incomplete integrals, in this thesis we need only investigate their properties on the imaginary axis. Both $\tilde{F}$ and $\tilde{E}$ take purely imaginary values on the imaginary axis, and we shall see that $\tilde{E}$ has a pole at infinity, so let us consider the functions $-\iu \tilde{F}(\iu x; k)$ and $-\iu \tilde{E}(\iu x; k) - k x$, both real valued functions of $x \in \R$ and $k\in (0,1)$.
 
-First note that these are both increasing functions of $x$. In the case of
-\[
--\iu \tilde{F}(\iu x;k) = \int_0^x \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}}
-\]
-this is obvious as the integrand is positive. For the other function,
+
+For the incomplete integrals, in this thesis we need only investigate their properties on the imaginary axis. Both $F(z;k)$ and $E(z;k)$ take purely imaginary values on the imaginary axis, and so we make the definitions
+\begin{align}
+\tilde F(x) &= \tilde F (x ; k) := \Im F(\iu x; k)
+= \int_0^x \frac{dt}{\sqrt{(1+t^2)(1+k^2 t^2)}}, \\
+%%%%%%%
+\tilde E(x) &= \tilde E (x ; k) := \Im E(\iu x; k)
+= \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}}\;dt,
+\end{align}
+where the $k$ is implicit if it is omitted. Both are real valued functions of $x \in \R$ and $k\in (0,1)$. We shall see that $\tilde{E}$ has a pole at infinity, so we shall concentrate instead on $\tilde{E}(x) - k x$ which is well behaved everywhere.
+
+We begin with the simple observation that both $\tilde{F}$ and $\tilde{E}(x) - kx$ are odd functions of $x$.
+
+Next note that both functions are increasing functions of $x$. In the case of $\tilde{F}$ this is obvious as the integrand is positive. For the other function $k \sqrt{1 + t^2} < \sqrt{1 + k^2t^2}$ from which it follows that
 \begin{align*}
-k <& 1 \\
-k^2 + k^2 t^2 <& 1 + k^2t^2 \\
-k \sqrt{1 + t^2} <& \sqrt{1 + k^2t^2},
-\end{align*}
-from which it follows that
-\begin{align*}
--\iu \tilde{E}(\iu x; k) - k x
+\tilde{E}(x) - k x
 &= \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}} - k \;\;dt\\
 &= \int_0^x \frac{\sqrt{1+k^2t^2} - k\sqrt{1+t^2}}{\sqrt{1+t^2}}\;dt
 \end{align*}
-is increasing as well.
+is increasing as well. For increasing functions it is natural to wonder whether they increase towards a limit. In our case they do, and we shall compute the value of the limit by a standard technique of complex analysis: integration around a closed semicircular contour.
 
-Naturally, one next asks "to what value do these functions increase?". We shall compute this by a standard technique of complex analysis: integration around a closed semicircular contour. Let the contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc in the right half plane from $\iu R$ back down to $-\iu R$. This contour is homologous to a standard period around $[1,k^{-1}]$ and so is a fixed quantity. The contribution coming from the semicircular arc is neglible in the limit, as can be seen below.
+\begin{lem}
+The functions $\tilde{F}$ and $\tilde{E} - kx$ are increasing functions, with the following limits as $x$ tends to infinity.
+\[
+\lim_{x\to\infty} \tilde{F}(x; k) = K',
+\qquad
+\lim_{x\to+\infty} [\tilde E(x; k) - k x] = K' - E'.
+\]
+
+\begin{proof}
+Consider once again the standard incomplete elliptic integrals. Let the aforementioned semicircular contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc in the right half plane from $\iu R$ back down to $-\iu R$. This contour is homologous to a standard period around $[1,k^{-1}]$ and so is a fixed quantity. We shall be considering the limit as $R$ tends to infinity.
+
+We deal first with the integral of the first kind. The contribution coming from the semicircular arc is neglible in the limit, as can be seen below.
 \begin{align*}
-\abs{\int_{C_R}\frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}}}
+\abs{\int_{C_R}\frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}}}
 &= \abs{\int_{π/2}^{-π/2} \frac{Re^{\iu θ} dθ}{\sqrt{(1-R^2e^{2\iu θ}) (1-k^2R^2e^{2\iu θ})}}} \\
-&\leq \int_{-π/2}^{π/2} \frac{R}{\sqrt{(1-R^2) (1-k^2R^2)}} \;dθ \\
-&= \frac{π R}{\sqrt{(1-R^2) (1-k^2R^2)}} \\
+&\leq \int_{-π/2}^{π/2} \frac{R}{\sqrt{(R^2-1) (k^2R^2-1)}} \;dθ \\
+&= \frac{π R}{\sqrt{(R^2 - 1) (k^2R^2 - 1)}} \\
 &\to 0.
 \end{align*}
-And since $\tilde{F}(z;k)$ is an odd function of $z$, we can conclude that
+And since $\tilde{F}$ is an odd function of $x$, we can conclude that
 \begin{align*}
-2K'
-&= -\iu\; \lim_{R\to\infty} \oint \frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}} \\
-&= -\iu\; \lim_{R\to\infty} \bra{\int_{-\iu R}^{\iu R} + \int_{C_R}}  \frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}} \\
-&= -2\iu\; \lim_{R\to\infty}  \tilde{F}(\iu R;k),
+2\iu K'
+&= \lim_{R\to\infty} \oint \frac{dz}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
+&= \lim_{R\to\infty} \bra{\int_{-\iu R}^{\iu R} + \int_{C_R}}  \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
+&= 2\lim_{R\to\infty} \int_{0}^{\iu R} \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} + \lim_{R\to\infty} \int_{C_R} \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
+&= 2 \lim_{R\to\infty} \iu\, \tilde{F}(R),
 \end{align*}
-so
-\[
-\lim_{x\to\infty} -\iu \tilde{F}(\iu x;k) = K' ,
-\qquad \lim_{x\to -\infty} -\iu \tilde F(\iu x; k) = - K' .
-\]
-The analysis of the other function proceeds much the same, however there is an extra step to make the poles cancel. Using the same contour as before, we again show that the contribution from the semicircular arc is vanishing.
+which establishes the first half of the result.
+
+The analysis of the second limit proceeds much the same, however there is an extra step to make the poles of $\tilde E$ and $kx$ cancel, namely rationalising the numerator. Using the same contour as before, we again show that the contribution from the semicircular arc is vanishing as $R \to \infty$.
 \begin{align*}
-\abs{\int_{C_R}\sqrt{\frac{1-k^2z^2}{1-z^2}} - k \;\;dz}
-&= \abs{\int_{C_R}\frac{ \sqrt{1-k^2z^2} - k \sqrt{1-z^2}}{\sqrt{1-z^2}} \;dz} \\
+\abs{\int_{C_R}\sqrt{\frac{1-k^2t^2}{1-t^2}} - k \;\;dt}
+&= \abs{\int_{C_R}\frac{ \sqrt{1-k^2t^2} - k \sqrt{1-t^2}}{\sqrt{1-t^2}} \;dt} \\
 &= \abs{\int_{π/2}^{-π/2} \frac{ \sqrt{1-k^2R^2e^{2\iu θ}} - k \sqrt{1-R^2e^{2\iu θ}}}{\sqrt{1-R^2e^{2\iu θ}}} \;Re^{\iu θ}\;dθ} \\
 &\leq \int_{-π/2}^{π/2} \frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \;R\;dθ \\
 &= π R\frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \\
 &= π \frac{R}{\sqrt{R^2-1}}  \frac{ (1+k^2R^2) - k^2 (R^2-1)}{\sqrt{1+k^2R^2} + k \sqrt{R^2-1}} \\
 &= π \frac{R}{\sqrt{R^2-1}} \frac{ 1 + k^2 }{\sqrt{1+k^2R^2} + k \sqrt{R^2-1}} \\
-&\to 0,
+&\to 0.
 \end{align*}
-as $R \to \infty$. As before, we are dealing with an odd function of $x$ and hence
-\begin{align}
-\lim_{x\to+\infty} [-\iu \tilde E(\iu x; k) - k x] = K' - E',
-\qquad \lim_{x\to-\infty} [-\iu \tilde E(\iu x; k) - k x ]= - \bra{K' - E'}.
-\end{align}
+As before, we are dealing with an odd function of $x$ and hence
+\begin{align*}
+\lim_{x\to \infty} [\tilde E(x; k) - k x] = K' - E'.
+\end{align*}
 
-A consequence of these limits is that we have bound the functions independently of $x$.
-\begin{align}
--K' \leq -\iu &\tilde{F}(\iu x;k) \leq K' \\
-- (K' - E') \leq -\iu &\tilde E(\iu x; k) - k x \leq K' - E'. \label{eqn:tildeEatInf}
-\end{align}
+\end{proof}
+\end{lem}
+
+It immediately follows from this lemma that we have the following bounds on the functions that are independent of $x$.
+\begin{align*}
+-K' \leq &\tilde{F}(x;k) \leq K' \\
+- (K' - E') \leq &\tilde E(x; k) - k x \leq K' - E'. \label{eqn:tildeEatInf}
+\end{align*}
 It can also be useful to bound their growth independently of $k$. As the integrands are monotone functions of $k$, assuming $x>0$ one has
 \[
-\atan {x} = \int_0 ^x \frac{dt}{1+t^2} \leq -\iu \tilde{F}(\iu x;k) \leq \int_0 ^x \frac{dt}{\sqrt{1+t^2}} = \asinh x
+\atan {x} = \int_0 ^x \frac{dt}{1+t^2} \leq \tilde{F}(x;k) \leq \int_0 ^x \frac{dt}{\sqrt{1+t^2}} = \asinh x
 \]
 and
 \[
-0 \leq -\iu \tilde E(\iu x; k) - k x \leq
+0 \leq \tilde E(x; k) - k x \leq
 \int_0^x \frac{(1+kt) - kt}{\sqrt{1+t^2}}\;dt = \asinh x.
 \]
-It may seem disappointing that we only have a lower bound of $0$ for the second function, but at $k=1$ we see that it is identically zero there and so no better bound independent of $k$ is possible. Of course, if one is willing to consider non uniform bounds, then the observation that both integrands (and so both functions) are decreasing functions of $k$ allows one to bound a range of $k$ by the value at infimum of the range.
+(If $x<0$ then all these inequalities are reversed.) Of course, if one is willing to consider non uniform bounds, then the observation that both integrands are decreasing functions of $k$ allows one to bound a range of $k$ by the value at infimum of the range. Symbolically, if $k > k_0$ then $\tilde{F}(x;k) < \tilde{F}(x;k_0)$.
 
-These inequalities also serve to show that the integrals are dominated by functions independent of $k$, so one can compute the limits as $k \to 1$ (for any value of $x$) and $k \to 0$ (for finite values of $x$, as $\asinh x$ is not finite for $x=\infty$). Explicitly,
+\begin{lem} \label{lem:klimit}
+The elliptic integrals degenerate to the following ellementary functions as $k$ approaches $0$ or $1$.
+\begin{align*}
+    \lim_{k\to 0} \tilde{F}(x; k) &= \asinh {x} \\
+    \lim_{k\to 0} \tilde{E}(x; k) &= \asinh {x} \\
+    \lim_{k\to 1} \tilde{F}(x; k) &= \atan {x} \\
+    \lim_{k\to 1} \tilde{E}(x; k) &= x.
+\end{align*}
+\begin{proof}
+The above inequalities serve to show that the integrals are dominated by functions independent of $k$, so by the dominated convergence theorem one can compute the limits as $k \to 1$ (for any value of $x$) and $k \to 0$ (for finite values of $x$, as $\asinh x$ is not finite for $x=\infty$) by passing the limit under the integrand sign. Doing so results in exactly the two extremes presented in those inequalities.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Derivatives}
+\label{sub:Derivatives}
+The aim of this section is to compute the derivatives of the elliptic integrals. The derivatives of the incomplete integrals with respect to the variable $z$ are trivial because they are simply parameter integrals
 \begin{align}
-\lim_{k\to 1} -\iu \tilde{F}(\iu x; k) &= \atan {x} \\
-\lim_{k\to 1} -\iu \tilde{E}(\iu x; k) &= x \\
-\lim_{k\to 0} -\iu \tilde{F}(\iu x; k) &= \asinh {x} \\
-\lim_{k\to 0} -\iu \tilde{E}(\iu x; k) &= \asinh {x}.
+    \Partial{}{z} F(z;k) &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \label{eqn:dFdz} \\
+    \Partial{}{z} E(z;k) &= \sqrt{\frac{1-k^2 z^2}{1-z^2}}. \label{eqn:dEdz}
 \end{align}
+The derivatives of elliptic integrals with respect to the modulus are again elliptic integrals. One may do the computation from stratch by first differentiating the differential, and then attempting to cancel off the poles and zeroes until only an exact differential remains. This differentiation under the integral sign is premitted because the integrals are dominated, as established in lemma \ref{lem:klimit}. \todo{reference} In the interest of being concise, the correct combinations are presented ex nihilo. For the integral of first kind, let the exact differential be
+\begin{align*}
+g &:= t\sqrt{\frac{1-t^2}{1-k^2t^2}} \\
+\Partial{}{t} g &= \frac{1-2t^2 + k^2 t^4}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}.
+\end{align*}
+We now compute the difference between the $k$ derivative of $dt/y$ and a certain combination of elliptic integrand terms.
+\begin{align*}
+\Partial{}{k}\bra{\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}} -& \frac{1}{k(1-k^2)}\sqrt{\frac{1-k^2 t^2}{1-t^2}} + \frac{1}{k}\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
+&= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ k^2t^2(1-k^2) - (1-k^2t^2)^2 + (1-k^2)(1-k^2t^2) } \\
+&= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ -k^2 + 2k^2t^2 -k^4t^4} \\
+&= \frac{-k}{1-k^2} \Partial{}{t} g.
+\end{align*}
+Now integrating from $0$ to $z$ gives
+\begin{align*}
+\Partial{}{k} F(z;k)
+&= \frac{1}{k(1-k^2)} \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \; dt
+- \frac{1}{k} \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}
+- \frac{k}{1-k^2} \int_0^z g_t \; dt \\
+&= \frac{1}{k(1-k^2)} E(z;k) - \frac{1}{k} F(z;k) - \frac{k}{1-k^2}z\sqrt{\frac{1-z^2}{1-k^2z^2}}. \labelthis{eqn:dtildeFdk}
+\end{align*}
+In a simliar way, consider that
+\begin{align*}
+k\Partial{}{k}\bra{\sqrt{\frac{1-k^2t^2}{1-t^2}}} -& \sqrt{\frac{1-k^2t^2}{1-t^2}} + \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
+&= \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}\bra{-k^2t^2 - (1-k^2t^2) + 1} \\
+&= 0.
+\end{align*}
+Thus we can integrate to obtain
+\[
+\Partial{}{k}E(z;k) = \frac{1}{k}E(z;k) - \frac{1}{k}F(z;k). \labelthis{eqn:dtildeEdk}
+\]
+We can recover the well known formula for the derivatives of the complete elliptic integrals by making the substitution $z=1$.
+\begin{align}
+\frac{d}{dk}K &= \frac{1}{k(1-k^2)}E - \frac{1}{k}K, \label{eqn:dKdk}\\
+\frac{d}{dk}E &= \frac{1}{k}E - \frac{1}{k} K. \label{eqn:dEdk}
+\end{align}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -228,29 +275,32 @@ These inequalities also serve to show that the integrals are dominated by functi
 
 \subsection{Legendre's Relation}
 \label{sub:Legendre's Relation}
-One way to prove Legendre's relation,
+There is a suprising relation between the complete elliptic integrals. The standard proof is reproduced below \todo{find citation}.
+
+\begin{lem}[Legendre's relation]
 \[
-\labelthis{eqn:Legendre}
 KE' + K'E - KK' = \frac{π}{2},
 \]
-is by differentiation. Recall that the primes refer to the complementary modulus $k' = \sqrt{1-k^2}$.
+
+\begin{proof}
+We shall prove Legendre's relation in two stages. First we shall differentiate to show that it is constant. Then we will compute the constant by taking the limit as $k$ tends to $0$. Recall that the primes refer to the complementary modulus $k' = \sqrt{1-k^2}$. Its derivative is
 \[
 \frac{dk'}{dk} = -\frac{k}{k'},
 \]
 so
 \begin{align*}
-\frac{d}{dk}\bra{ KE' + K'E - KK'}
-&= \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}E' -\frac{k}{k'}K\bra{\frac{1}{k'}E' - \frac{1}{k'} K'} \\
-& -\frac{k}{k'}\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'}E + K'\bra{\frac{1}{k}E - \frac{1}{k} K} \\
-& - \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}K' +  \frac{k}{k'}K\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'} \\
-%%%%%%%%%%%%%%%%%%%%%%
-&= \frac{1}{k k'^2}EE' - \frac{1}{k}KE' - \frac{k}{k'^2}KE' + \frac{k}{k'^2} KK' \\
-&-\frac{1}{k'^2 k}EE' + \frac{k}{k'^2}K'E + \frac{1}{k}K'E - \frac{1}{k} KK' \\
-& -\frac{1}{k k'^2}K'E + \frac{1}{k}KK' +  \frac{1}{k'^2 k}KE' - \frac{k}{k'^2}KK' \\
-%%%%%%%%%%%%%%%%%%%%%%
-&= 0.
+    \frac{d}{dk}\bra{ KE' + K'E - KK'}
+    &= \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}E' -\frac{k}{k'}K\bra{\frac{1}{k'}E' - \frac{1}{k'} K'} \\
+    & -\frac{k}{k'}\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'}E + K'\bra{\frac{1}{k}E - \frac{1}{k} K} \\
+    & - \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}K' +  \frac{k}{k'}K\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'} \\
+    %%%%%%%%%%%%%%%%%%%%%%
+    &= \frac{1}{k k'^2}EE' - \frac{1}{k}KE' - \frac{k}{k'^2}KE' + \frac{k}{k'^2} KK' \\
+    &-\frac{1}{k'^2 k}EE' + \frac{k}{k'^2}K'E + \frac{1}{k}K'E - \frac{1}{k} KK' \\
+    & -\frac{1}{k k'^2}K'E + \frac{1}{k}KK' +  \frac{1}{k'^2 k}KE' - \frac{k}{k'^2}KK' \\
+    %%%%%%%%%%%%%%%%%%%%%%
+    &= 0.
 \end{align*}
-Thus we have shown that it is a constant. Determining the value of the constant is somewhat delicate. On could na\"ively attempt to set $k=0$, but then $k'=1$ and $K'$ is infinite. Instead, let us take the limit as $k \to 0$,
+Thus we have shown that the relation is a constant. Determining the value of the constant is somewhat delicate. One could na\"ively attempt to set $k=0$, but then $k'=1$ and $K'$ is infinite. And conversely, if we were to set $k=1$, then $K$ would be infinite. Instead, let us take the limit as $k \to 0$,
 \[
 \lim_{k \to 0} KE' + K'E - KK' = \frac{π}{2} + \lim_{k \to 0} (E - K) K'.
 \]
@@ -263,6 +313,14 @@ And substituting the complementary modulus, \ref{K_bound} becomes
 \ln 4 \leq K' + \ln k \leq \frac{π}{2}.
 \]
 Since $k^2 \ln k$ goes to $0$ as $k$ does, the limit is established. Hence the constant in Legendre's relation is $π/2$.
+
+\end{proof}
+\end{lem}
+
+This relation is useful in two ways. First, it can be used to construct a basis of differentials with normalised periods. And secondly, it links the behaviour of the elliptic integrals at $k=0$ and $k=1$. In the computation of certain limits one could directly apply bounds, but it can often be more expendient to use Lengendre's relation to transform the limiting term into a well behaved function and extract the constant at the same time.
+
+
+
 
 
 \subsection{Analyticity}
