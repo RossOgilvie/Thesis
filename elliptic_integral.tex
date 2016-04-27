@@ -224,7 +224,8 @@ The aim of this section is to compute the derivatives of the elliptic integrals.
     \Partial{}{z} F(z;k) &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \label{eqn:dFdz} \\
     \Partial{}{z} E(z;k) &= \sqrt{\frac{1-k^2 z^2}{1-z^2}}. \label{eqn:dEdz}
 \end{align}
-The derivatives of elliptic integrals with respect to the modulus are again elliptic integrals. One may do the computation from stratch by first differentiating the differential, and then attempting to cancel off the poles and zeroes until only an exact differential remains. This differentiation under the integral sign is premitted because the integrals are dominated, as established in lemma \ref{lem:klimit}. \todo{reference} In the interest of being concise, the correct combinations are presented ex nihilo. For the integral of first kind, let the exact differential be
+The derivatives of elliptic integrals with respect to the modulus are again elliptic integrals. In the interest of being concise, the correct combinations are presented ex nihilo. One may do the computation from stratch by differentiating the integrand and then subtracting terms to cancel off the poles and zeroes until only an exact differential remains. Differentiation under the integral sign is premitted because the integrals are dominated, as established in lemma \ref{lem:klimit}. \todo{reference}
+For the integral of first kind, let the exact differential be
 \begin{align*}
 g &:= t\sqrt{\frac{1-t^2}{1-k^2t^2}} \\
 \Partial{}{t} g &= \frac{1-2t^2 + k^2 t^4}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}.
@@ -323,50 +324,56 @@ This relation is useful in two ways. First, it can be used to construct a basis 
 
 
 
-\subsection{Analyticity}
-\label{sub:Analyticity}
+\subsection{Continuation and Analyticity}
+\label{sub:EllipticContinuation}
 
-RELEVANCE ON NEXT BIT IF I GO WITH A UNIVERSAL COVER APPROACH? \todo{this} Perhaps should rewrite to be about universal cover instead.
+If we consider that the natural domain of the elliptic integrals is the torus, then one should seek to define the elliptic integrals for $z=\tilde\infty$. In the special case of $\tilde{F}(x;k)$ and $\tilde{E}(x;k) - kx$ that we have been considering, we have already computed the limit as $\x \ to \infty$, but because both functions are odd, there is no way to extend these functions to $x \in \RInf$. Instead, mirroring the approach in the body of the thesis, we shall instead extend these functions analytically to the universal cover of $\RInf$, namely $\R$.
 
-It is a standard fact that the elliptic integrals are analytic functions on the plane away from the branch points. The relevant theorem is the Cauchy–Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic. However, because of the periods of integrals, it is not possible to extend $\tilde F, \tilde E$ to the whole complex plane. Indeed we have seen that the two limits to infinity along the imaginary axis are different. Consider then the following function
+It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy–Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic. \todo{cleaner linkage}
+
+HOW MUCH TO SAY ABOUT THE COORDINATES OF A UNIVERSAL COVER? Is there a standard way to write them? For a circle?
+
+The universal cover of the circle can be described succiently as a point on the circle and a winding number, with covering map $(θ,n) \to θ \in \S^1$ and any chart on the circle lifts to a countable collection of charts of the cover, one for each winding number. Let $x \in \R \subset \RInf$ be one coordinate on $\RInf$ and $x' = x^{-1}$ be another. Recall that the period of $\tilde{F}(x)$ is $2K'$ and that for $\tilde{E}(x) - kx$ it is $2(K' - E')$. Hence it is sufficent to give expression of each of these functions on just a single lift of each coordinate chart. \todo{very poorly explained}
+
+Because we have computed the limit of $\tilde{F}$ already, we can immediately give the definition of $\tilde{F}$ in the coordinate $x'$ on $(0,\infty)\times\{0\} \cup (-\infty,0)\times \{1\}$.
 \[
-f(y, k) :=
+\tilde{F} =
 \begin{cases}
-\tilde F(\iu y^{-1}; k)             & \text{ for } y > 0 \\
-\iu K'                              & \text{ for } y = 0 \\
-2\iu K' + \tilde F(\iu y^{-1}; k)   & \text{ for } y < 0
+\tilde F((x')^{-1}; k)             & \text{ for } x' > 0 \\
+K'                              & \text{ for } x' = 0 \\
+2\iu K' + \tilde F((x')^{-1}; k)   & \text{ for } x' < 0
 \end{cases}
 \]
-We claim that it is analytic on $(y,k) \in \R\times (0,1)$. To see this, first transform the integrals so that their base point is at $y=0$ rather than $y=\infty$. For $y>0$
+The only thing to check is that it is analytic at $x'=0$. We transform the integrals so that their base point is at $x'=0$ rather than $x=0$. For $x'>0$
 \begin{align*}
-\tilde F(\iu y^{-1}; k)
-&= \iu \int_0^{y^{-1}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&= -\iu \int_{+\infty}^{y} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
-&= \iu \left(\int_0^{+\infty} - \int_0^y \right) \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
-&= \iu K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
+\tilde F( (x')^{-1}; k)
+&= \int_0^{(x')^{-1}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
+&= - \int_{+\infty}^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+&= \left(\int_0^{+\infty} - \int_0^{x'} \right) \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+&= K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
 \end{align*}
-and for $y < 0$
+and for $x' < 0$
 \begin{align*}
-2\iu K' + \tilde F(\iu y^{-1}; k)
-&= 2\iu K' + \iu \int_y^{-\infty} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
-&= \iu K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}}.
+2 K' + \tilde F((x')^{-1}; k)
+&= 2 K' + \int_{x'}^{-\infty} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+&=  K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}}.
 \end{align*}
-So we have arived at a single formula for $f$, namely
+So we have arived at a single formula for all values of $x'$, namely
 \[
-f = \iu K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
+\tilde{F} = K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
 \]
-and since the integrand is analytic, the integral is too and we are done. In an entirely similar way, define the function
+and since the integrand is analytic, the integral is too and we are done. The defintion and check for the integral of the second kind is entirely similar.
 \[
-g(y;k) :=
+\tilde{E} - k(x')^{-1} :=
 \begin{cases}
-\tilde E(\iu y^{-1}; k) - \iu ky^{-1}             & \text{ for } y > 0 \\
-\iu (K'-E')                                       & \text{ for } y = 0 \\
-2\iu (K'-E') + \tilde E(\iu y^{-1}; k)  - \iu ky^{-1}  & \text{ for } y < 0
+\tilde E((x')^{-1}; k) - \iu k(x')^{-1}                 & \text{ for } x' > 0 \\
+K'-E'                                                   & \text{ for } x' = 0 \\
+2(K'-E') + \tilde E((x')^{-1}; k)  - \iu k(x')^{-1}     & \text{ for } x' < 0
 \end{cases}
 \]
-After transforming the integrals in the same way, we find ourselves faced with the formula, for all $y$,
+After transforming the integrals in the same way, we find ourselves faced with the formula, for all $x'$,
 \[
-g = \iu (K'-E') - \iu \int_0^y s^{-2}\bra{ \sqrt{\frac{s^2 + k^2}{1 + s^2}} - k }\;ds.
+\tilde{E} - k(x')^{-1} = (K'-E') - \int_0^{x'} s^{-2}\bra{ \sqrt{\frac{s^2 + k^2}{1 + s^2}} - k }\;ds.
 \]
 The part of the integrand in the bracket is analytic, but because of the $s^{-2}$, the integrand as a whole may not be analytic at $s=0$. Fortunately though, it is. To see this, use the square root estimate
 \[
@@ -376,6 +383,4 @@ To obtain the bound
 \[
 -\frac{1}{2}k s^2 \leq \sqrt{k^2 + s^2} - k \sqrt{1+s^2} \leq \frac{1}{2}\frac{1}{k} s^2,
 \]
-which shows that the part in the bracket vanishes to order $s^2$ and so the integrand, and therefore $g$, is analytic.
-
-\todo{remove me}
+which shows that the part in the bracket vanishes to order $s^2$ and so the integrand is analytic, and therefore the integral is also.
