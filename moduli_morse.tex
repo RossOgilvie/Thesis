@@ -41,19 +41,28 @@ Recall the two rationality conditions that must be satisfied for a genus one spe
 p &:= \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q, \\
 T &:=  \frac{1}{2π\iu} \bra{p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2} \in \Q,
 \end{align}
-and recall the explicit expression for $T$ in terms of the branch points $α$ and $β$
+Using the formula for the differentials, we can explicitly give an expression for $T$ in terms of the branch points $α$ and $β$
 \[
 T = \frac{2p}{π\iu} \left[ E F(f(-1);k) - K E(f(-1);k) \right] - \frac{2}{π \iu}\left[ E F(f(1);k) - K E(f(1);k) \right] + \frac{2}{π\iu}K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}, \labelthis{Teqn1}
 \]
-where $f$ is the map normalises the branch points of the spectral curve (it takes $α$ to $1$, $β$ to $k$, etc) and $ν$ is the point of intersection between the branch point circle and the unit circle. $T$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary and $\tilde F, \tilde E$ take the imaginary axis to itself, and because $ν$ is on the unit circle so $ν/(1-ν^2)$ is purely imaginary as well.
+where $f$ is the map normalises the branch points of the spectral curve (it takes $α$ to $1$, $β$ to $k$, etc) and $ν$ is the point of intersection between the branch point circle and the unit circle. $T$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary and $F, E$ take the imaginary axis to itself, and because $ν$ is on the unit circle, $ν/(1-ν^2)$ is purely imaginary as well.
 
-It is our ultimate aim to examine the surfaces defined by the two conditions and ultimately we will find coordinates on those surfaces. This involves applying the implicit function theorem, the necessary computation involves differentiating the above expressions. It is therefore prudent to adopt a parameterisation of the space of spectral curves more suited to that task than $(α,β)$. An obvious first coordinate is $p$ itself, as then we can enforce the first condition simply by holding it constant. Elliptic integrals are the most difficult part of the above to differentiate, so to minimise our labour we choose the other three (real) coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$ for $u,v \in \RInf$. First we must show these do indeed parameterise the space of spectral curves. We proceed by determining a formula for the change of parameters.
+It is our ultimate aim to examine the surfaces defined by the two conditions and our examination will result in coordinates for those surfaces. This involves applying the implicit function theorem and the necessary computation for that theorem requires differentiating the above expressions. It is therefore prudent to adopt a parameterisation of the space of spectral curves more suited to that task than $(α,β)$. An obvious first coordinate is $p$ itself, as then we can enforce the first condition simply by holding it constant. Elliptic integrals are the most difficult part of the above to differentiate, so to minimise our labour we choose the other three (real) coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$.
 
-Denote $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. This is an important point, because the new parameters all represent points in the $z$-plane so we must construct the inverse transformation $f^{-1}$, which is a scalar multiple of
+This motivation misses some of the subtleties of the situation however. For example, $f$ is a M\"obius transformation of $\CP^1$, so may take the value infinity. We therefore make the following definition.
+
+\begin{defn}\label{defn:parameter space}
+Consider the product space $\R_{>0} \times (0,1) \times \RP^1 \times \RP^1$. Let $p \in \R_{>0}$ and $k \in (0,1)$ be coordinates on the first two factors. Let $u, u' \in \R$, with $u' = u^{-1}$, be coordinates covering the third factor, and likewise let $v, v' \in\R$, with $v' = v^{-1}$ be coordinates covering the fourth factor. Together, the four coordinate patches $(p,k,u,v)$, $(p,k,u',v)$, $(p,k,u,v')$ and $(p,k,u',v')$ to $\R_{>0} \times (0,1) \times \R^2$ cover $\R_{>0} \times (0,1) \times \RP^1 \times \RP^1$.
+
+Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the four coordinate patches it is given by the equations $u=v$, $(u')^{-1} = v$, $u = (v')^{-1}$, $u' = v'$. Define $P$ to be the complement of $H$.
+\end{defn}
+
+First we must show that $P$ does indeed parameterise the space of spectral curves. We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. The map $f$ is written in terms of $(α,β)$ \todo{ref} and the new parameters are the images of points under this map (except for $p$, which has its own formula in terms of $α$ and $β$). As the new parameters all respresent point in the $z$-plane, one method to derive the reverse change in parameters is to express the inverse transformation $f^{-1}(z)$ in term of our new parameters. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to to forward direction. Denote $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. The real structure of the $z$-plane then forces $f(\infty) = - \conj{z_0}$. As a M\"obius transformation is described up to a scalar by the points sent to $0$ and $\infty$, $f^{-1}$ is a scalar multiple of
 \[
 \frac{z-z_0}{z + \conj{z_0}},
 \]
-where we have used the real structure to locate $f(\infty) = - \conj{z_0}$. Note the following trick using cross ratios.
+
+Note the following trick using cross ratios.
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -61,15 +70,22 @@ where we have used the real structure to locate $f(\infty) = - \conj{z_0}$. Note
 = \abs{ \cross{1}{z_0}{\iu u}{\iu v} }
 = \abs{\frac{1-\iu u}{1 - \iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}
 \]
-Together with a similar formula for $β$, this shows that $z_0$ lies on a particular circle
+The same trick gives a similar formula for $β$.
+\[
+\abs{\frac{α-1}{α+1}}
+= \abs{\frac{1-k\iu u}{1 - k\iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}
+\]
+The terms on the left are the two halves of the expression for $p$. Multiplying and expanding shows that for fixed values of the parameters $(p,k,u,v)$, $z_0$ lies on a particular circle. Let $z_0 = x+\iu y$.
 \begin{align*}
 p &= \abs{\frac{1-\iu u}{1 - \iu v}}\abs{\frac{1 - k\iu u}{1 - k\iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}^2 \\
 \abs{\frac{z_0 - \iu v}{z_0 - \iu u}} ^2
 &= p \frac{\sqrt{1+v^2}}{\sqrt{1+u^2}}\frac{\sqrt{1+k^2v^2}}{\sqrt{1+k^2u^2}} \\
-&= p \frac{w(\iu v)}{w(\iu u)} \\
-&=: R^2 \labelthis{eqn:z_0 circle}
+&= p \frac{w(v)}{w(u)} \\
+\abs{z_0 - \iu v} ^2 &= p \frac{w(v)}{w(u)} \abs{z_0 - \iu u}^2 \\
+x^2 + y^2 &+ 2y \frac{puw(v) - vw(u)}{w(u)-pw(v)} + \frac{v^2w(u) - pu^2w(v)}{w(u)-pw(v)} = 0.
 \end{align*}
-In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0, \iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Let $z_0 = x+\iu y$. Then $z_0$ lies on the circle
+
+In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0, \iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Then $z_0$ lies on the circle
 \[
 x^2 + \bra{ y - \frac{u+v}{2} }^2 = \frac{(u-v)^2}{4},
 \]
@@ -77,36 +93,42 @@ which simplifies to the relation
 \[
 x^2 + y^2 = y(u+v) - uv.
 \]
-The circle in equation \ref{eqn:z_0 circle} gives that $z_0$ satisfies the relation
+These two circles intersect in two points: $z_0$ and $-\conj{z_0}$. The precise formulas are
 \[
-x^2 + y^2 + 2y \frac{R^2 u - v}{1-R^2} + \frac{v^2 - R^2 u^2}{1-R^2} = 0.
+x = \frac{\sqrt{pw(u)w(v)}}{pw(v) + w(u)} \abs{u-v},\; y = \frac{puw(v) + vw(u)}{pw(v) + w(u)}
 \]
-The solution of these two equations, the intersection of the two circles, is
-\[
-x = \frac{R}{1 + R^2} \abs{u-v},\; y = \frac{R^2u + v}{1+R^2}
-\]
-where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ \emph{inside} the unit circle. The point with the opposite sign corresponds to $f(\infty) = -\conj{z_0}$. Having found $z_0$ in terms of $p,k,u,v$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$.
+where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ inside the unit circle, as opposed to choicing their conjugate-inverse partners. Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$.
 \begin{align*}
 f^{-1}(z) &= C \frac{z-z_0}{z + \conj{z_0}} \\
 1 = f^{-1}(\iu u) &= C \frac{\iu u - z_0}{\iu u + \conj{z_0}} \\
 f^{-1}(z) &=  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}
 \end{align*}
-Now, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of $(p,k,u,v)$. The formula is not well defined when $z_0$ is $\iu u$, but this could only occur if $x=0$, which itself only occurs if $u=v$. The correspondence therefore excludes these values.
+As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of the new parameters. This correspondence fails when the formula is not well defined, which could potentially occur if $z_0$ were to equal $\iu u$, $-1$ or $-k^{-1}$. The latter two are excluded by the choice of sign of $x$, whereas the first could only occur if $x=0$, which itself only occurs if $u=v$. The correspondence therefore excludes these values.
 
-In the case that one of $u$ or $v$ is infinity, the formula continues to hold after taking the suitable limit. One could alternatively apply the same geometrical reasoning to above to verify this limit calculation, which we shall do now. Suppose that $u=\infty$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly. Considering next $p$, the special case of the cross ratio gives that
+In the case that one of $f(1)$ or $f(-1)$ is infinite, one needs to transistion to the coordinates $u'$ or $v'$ to maintain valid formulae. Though standard, it is perhaps still of some interest to consider the above geometrical argument in this limit. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly. Considering next $p$, the special case of the cross ratio gives that
 \begin{align}
 p
 &= \frac{\abs{z_0 -\iu v}^2}{\abs{1-\iu v}\abs{k^{-1}-\iu v}} \\
 &= \frac{x^2}{k^{-1}\sqrt{1+v^2}\sqrt{1+k^2 v^2}} \\
 x &= \sqrt{\frac{p w(\iu v)}{k}}.
 \end{align}
-This are the same formulas that one arrives at by taking $u \to \infty$ in the previous formula for $x$ and $y$. The rest of the formula for $f^{-1}$ is as before. The calculation for $v \to \infty$ is similar.
+These are the same formulas for $x$ and $y$ that one arrives by substituting $u = (u')^{-1}$ in the previous formulas and taking a limit $u' \to 0$. Given this modification of $z_0$, the rest of the formula for $f^{-1}$ is as before. The geometry for $f(-1) = \infty$ is similar.
 
-In summary, we have found a new set of parameters $\{(p,k,u,v) \mid p \in \R^+, k \in (0,1), u,v \in\RInf, u \neq v\}$, that are in correspondence with pairs of branch points $α,β$ in the unit disc with $α\neq β$. The moduli space is a subspace of this parameter space defined implicitly by the two conditions that $p$ and $T$ are constant.
+In summary, we have found a new parameter space for the space of spectral curves. Formerly we had considered $\{ (α,β) \in D\times D | α \neq β \}$, whereas the new space is $P$ (defined above \ref{defn:parameter space}). The moduli space is a subspace of this parameter space defined implicitly by the two conditions that $p$ and $T$ are constant.
 
-From now on we will only consider the parameter space for fixed values of $p$. Topologically it is an interval cross an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider the set $\{ (u,v) \in \RInf \times \RInf \mid u \neq v \}$. Topologically, $\RInf$ is just a circle $\S^1$, so this set is a subset of a torus $\S^1 \times S^1$. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
+From now on we will only consider the parameter space for a fixed value of $p$. \todo{change the definition of $P$?} Topologically it is an interval cross an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RP^1 \times \RP^1$. Topologically $\RP^1$ is just a circle, so this is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
 
-A more instructive way of visualising this space is to think of it as a solid cylinder with a line along the central axis removed. One should think of the radius of point being given by $1-k$, so that the central axis is identified with the value $k=1$. Shells of a fixed radius (slices of fixed $k$) are topologically a annulus, as one should expect. This model is useful because loops around the central axis, which is to say certain paths in the space of spectral curves, correspond to the branch points $α$ and $β$ circling one another, a correspondence which can be seen if one considers the degenerate case of $α\to β$. In this limit $k$ tends to $1$, the central axis, and the branch point circle tends to a straight line. As we move around the axis, the values of $u,v$ are moving through the values of $\RInf$. Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Hence we infer that the branch point circle (which is a line in this degenerate case) is rotating about the point $α\sim β$, which in turn means that $α$ and $β$ are circling one another.
+A more instructive way of visualising this space is to think of it as a solid cylinder with a line along the central axis removed. One should think of the radius of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider the formula for $k$.
+\[
+k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
+\]
+In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $p$, for a fixed value of $p$, the subspace $α=β$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In latter chapters, the interesting structure of the moduli space in this limit will be investigated.
+
+Another way that this model is useful is it allows us to see the twisting in the space of spectral curve and the essential appearence of the period behaviour. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line.
+As we move around the axis, the values of $f(1),f(-1)$ are moving through the values of $\RP^1$.
+Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut, and an extra period term appears in our formulas.
+We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another.
+After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$. Though you have returned to your original spectral curve, you are now in a different point in the space of spectral data.
 
 
 
@@ -120,12 +142,11 @@ Having considered the benefits of these new coordinates, it is time to rewrite $
 %%%%%%%%%%%%%%%%
 \abs{α-β} &= \abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }} \\
 &= \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }}
-\labelthis{eqn:a-b in u}
 \\
 %%%%%%%%%%%%%%%%
 \abs{1-\conj{α}β} &= \abs{\frac{(z_0 + \conj{z_0}) (k + 1) }{ (1 + z_0) (1 + k z_0) }}.
 \end{align*}
-where the expressions were simplified (such as in \ref{eqn:a-b in u}) using the observation that
+where the expressions were simplified using the observation that
 \[
 \abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} = 1,
 \]
@@ -133,32 +154,30 @@ because the denominator is the conjugate of the numerator. Next $ν = f^{-1}(\in
 so
 \begin{align*}
 ν &= \frac{\iu u + \conj{z_0}}{\iu u - z_0} \\
-\frac{1+ν}{1-ν} &= -\iu \frac{1}{R}\sign{(u-v)} \\
-\frac{1-ν}{1+ν} &= \iu R\sign{(u-v)} \\
+\frac{1+ν}{1-ν} &= -\iu \sqrt{\frac{w(u)}{pw(v)}}\sign{(u-v)} \\
+\frac{1-ν}{1+ν} &= \iu \sqrt{\frac{pw(v)}{w(u)}}\sign{(u-v)} \\
 \frac{4ν}{1-ν^2} &= \frac{1+ν}{1-ν} - \frac{1-ν}{1+ν} \\
-&= -\iu \frac{1+R^2}{R} \sign{(u-v)}.
+&= -\iu \frac{pw(v) + w(u)}{\sqrt{pw(u)w(v)}} \sign{(u-v)}.
 \end{align*}
 These expressions combine to give
 \begin{align*}
 \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}
 &= \frac{1}{2}\abs{\frac{ (z_0 + \conj{z_0}) (1 - \iu u) (1-k\iu u) }{ (\iu u - z_0)^2 }}
-\times -\iu \frac{1+R^2}{R} \sign{(u-v)} \\
-&= \frac{ R w(\iu u) }{ \abs{u - v}} \times -\iu \frac{1+R^2}{R} \sign{(u-v)} \\
+    \times -\iu \frac{pw(v) + w(u)}{\sqrt{pw(u)w(v)}} \sign{(u-v)} \\
+&= \frac{ \sqrt{pw(u)w(v)} }{ \abs{u - v}}
+    \times -\iu \frac{pw(\iu v) + w(\iu u)}{\sqrt{pw(u)w(v)}} \sign{(u-v)} \\
 &= -\iu \frac{ w(\iu u) }{ u - v} (1+R^2)  \\
 &= -\iu \frac{ pw(\iu v) + w(\iu u) }{ u - v},
 \end{align*}
 and hence that
 \begin{align*}
 \labelthis{eqn:Teqn2}
-T(p,k,u,v) = \frac{2p}{π\iu} \left[ E \tilde{F}(\iu v) - K \tilde{E}(\iu v) \right] - \frac{2}{π\iu}\left[ E \tilde{F}(\iu u) - K \tilde{E}(\iu u) \right] - \frac{2}{π} K \frac{p w(\iu v) + w(\iu u)}{u-v}.
+T(p,k,u,v) = \frac{2p}{π\iu} \left[ E \tilde{F}(v) - K \tilde{E}(v) \right] - \frac{2}{π\iu}\left[ E \tilde{F}(u) - K \tilde{E}(u) \right] - \frac{2}{π} K \frac{p w(v) + w(u)}{u-v}.
 \end{align*}
 
+
+CUT THIS. IT'S NOW HANDLED BETTER EARLIER. NEEDS SOMETHING TO CLOSE OUT THIS SECTION THOUGH, MAYBE MOVE DISCUSSION FROM MIDDLE TO END. OR ADD DISCUSSION OF ANALYTICITY AT U=INFTY.
 This formula is essentially correct, but there are some subtleties that must be dealt with. Particularly, this formula for $T$ is not well defined everywhere on the parameter space. This is actually a problem for the formula for $T$ in terms of $α, β$ as well and perhaps even clearer in that form. Note that when $ν = \pm 1$ the third term of \ref{eqn:Teqn1} is infinite. The corresponding point of \ref{eqn:Teqn2} is when one of $u$ or $v$ is infinite. But it is not the case that $T$ is badly behaved near these points, instead these are branch cuts of the function implicit in the method we used to specify the paths of integration $γ_+, γ_-$.
-
-DIGRESSION TO EXPLAIN THE PERIODS, THE TRUE NATURE OF T PERHAPS LINK BACK TO THE REMARKS ABOUT THE CENTRAL AXIS. Should this go way earlier, like in the integral definition of T?
-COPIED IN FROM ELSE WHERE: Geometrically this is because of how we have standardised the open paths. Recall that the $\iu v$ is the image of $-1$ under $f$, and $\infty$ corresponds to the point $ν$. The path $γ_-$ is specified to tranverse part of the unit circle from $-1$ but avoid $ν$. Hence when $ν$ crosses past $-1$, the direction of tranversal reverses. This is equivalent to adding a period (actually two periods because we traverse the arc on the unit circle twice, once before and once after going around the branch point). And in the original definition of $T$, we see this integral that is affected has a coefficient of $p$, perfectly matching what this calculation has shown. The same is true for $u$. \todo{major fix needed}
-
-
 
 
 
