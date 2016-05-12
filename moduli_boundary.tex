@@ -1,0 +1,344 @@
+\section{Exterior Boundary}
+\label{sec:Exterior Boundary}
+
+We know turn out attention to the case where one of the branch points moves onto the unit circle. Throughout we will assume unless otherwise stated that $β\in\S^1$. The resulting curve is not a valid genus one spectral curve, but it is still interesting to consider as in the limit many elliptic integrals become computable by elementary means. We will see that these curves actually correspond to genus zero spectral curves.
+
+We have an explicit computation that shows the space of differentials that have the correct periods. If a differential has period $n$ then is lies in the space $\mathcal{B}_n = \set{a Θ_1 + n Θ_2}{a \in \R}$. The difficult part is finding differentials that further satisfy the Sym conditions. The Sym conditions may be visualised as the lattice of differentials in the plane $\R\langle Θ_1,Θ_2 \rangle$ whose values under integration $\int_{γ_+}, \int_{γ_-}$ lie in $2π\iu\Z$. This is somewhat complicated that the fact that these integrals are not well defined; only up to periods of the differential. However, even if the value is not well defined, the condition is well defined on $\mathcal{B} = \coprod \mathcal{B}_n$ where the periods are themselves multiples of $2π\iu$.
+
+First we reduce the problem to a standard form. Suppose that one has a path of spectral data satisfying all the conditions required, $t \mapsto (α(t),β(t),Θ(t),\tilde{Θ}(t))$ for a pair of differential with periods respectively $2π\iu n, 2π\iu \tilde{n}$ for $n,\tilde{n}\in\Z$. Let $g$ be the positive greatest common denominator of two periods. There exist coprime integers $r,s$ such that $nr + s\tilde{n} = g$. Thus define two other differentials
+\[
+Θ_0 := \tfrac{\tilde{n}}{g}Θ - \tfrac{n}{g}\tilde{Θ} \;\; Θ_g := r Θ + s \tilde{Θ}
+\]
+These differentials have periods respectively $0, 2π\iu g$. More over, the transition matrix has determinant one, so each pair is an integral linear combinations of the other.
+\[
+\det \begin{pmatrix}
+\tfrac{\tilde{n}}{g} & - \tfrac{n}{g} \\
+r & s
+\end{pmatrix}
+=  \frac{\tilde{n}s + nr}{g} = 1
+\]
+Thus it is the case that $Θ,\tilde{Θ}$ satisfy the Sym conditions if and only if $Θ_0,Θ_g$ do. Henceforth we will attempt to find all pairs of differentials in $\mathcal{B}_0\times\mathcal{B}_g$ with integral Sym values. Note that in the special case of $\mathcal{B}_0$, the differentials are exact and so do have a well defined value. Let
+\[
+\int_{γ_+} Θ_0 = 2π\iu Γ_0^+, \;\; \int_{γ_-} Θ_0 = 2π\iu Γ_0^-, \;\; p = Γ_0^+ / Γ_0^-
+\]
+We make the assumption that $\gcd(Γ_0^+,Γ_0^-)=1$, as if not one could divide $Θ_0$ by the common factor and still have a valid differential. And if we can find all differentials where the Sym values are coprime, then the general case is recovered simply by taking integral multiples.
+
+We can imagine $\mathcal{B}_0$ as a line through the origin with slope $p$, where all the integral points of the line are lattice points. Effectively we have introduced a metric such that the plane of differentials so that the Sym lattice is normalised to $\Z^2$. The line $\mathcal{B}_1$ is then parallel to this and also intersects the lattice. Choose any differential $Θ$ on $\mathcal{B}_1$ and note that the area of the parallelogram spanned by $Θ_0$ and $Θ$ is independent of the choice; it is determined entirely by $Θ_0$ (the length of the base) and the distance between $\mathcal{B}_0$ and $\mathcal{B}_1$. This is an important point, because off of $\mathcal{B}_0$ one cannot actually say which values which lattice points represent. A natural question to ask is what is the smallest area possible. There are two cases to consider.
+
+If $p<1$, then the closest $\mathcal{B}_1$ can be is to pass through a lattice point horizontally adjacent to a lattice point that lies on $\mathcal{B}_0$. The length $\abs{Θ_0}$ is $\sqrt{(Γ_0^+)^2+(Γ_0^-)^2}$ and the distance between the lines is $Γ_0^+ / \abs{Θ_0}$. Therefore the minimum area is simply $Γ_0^+$. Likewise, when $p>1$, the closest line to $\mathcal{B}_0$ passes through the point vertically adjacent to a lattice point on the line, leading to a distance between the lines of $Γ_0^- / \abs{Θ_0}$ and a minimal area of $Γ_0^+$. The differential $Θ_g$ is required to be on $\mathcal{B}_g$, so the minimum area of it spans must be atleast $g$ times the area of a differential from $\mathcal{B}_1$. Hence the area satisfies
+\[
+\abs{Γ_g^+ Γ_0^- - Γ_g^- Γ_0^+} \geq \min\{\abs{gΓ_0^+},\abs{gΓ_0^-}\}.
+\]
+We will shortly see the significance of this inequality. Let us briefly remark on what it means for $\mathcal{B}_1$ to pass through a point adjacent to a point on $\mathcal{B}_0$, given that the points on the former can not be labeled. To calculate the Sym integrals requires a noncanonical choice of path, and different choices of paths will call the integrals to differ by $2π\iu\Z$. However both integral will change by the same amount. If the values are $(Γ^-,Γ^+)$, then one really has an equivalence class $\set{(Γ^- + kΓ_0^-, Γ_+ + kΓ_0^+)}{k\in\Z}$. To say that $\mathcal{B}_1$ is horizontally adjacent to $\mathcal{B}_0$ is then to say that $(-1,0)$ or $(1,0)$ lies in this equivalence class.
+
+TODO: For the lines to be parallel they all need to be slope $p$. But the changing the path of integration can be done independently and change the value by $2π\iu$. Except the change of path doesn't affect the exact things, so can't we just change the paths so a differential in $\mathcal{B}_1$ has the same Sym value as $Θ_0$? Then how on earth do we label the lattice at all?
+
+
+Now we focus our attention to the exterior boundary of the parameter space of spectral curves. The subspace of spectral data $\mathcal{M}(0,g)$ is naturally a subset of $\mathcal{B}_0\times\mathcal{B}_g$. Using the fact that $Θ_0 = a Θ_1$, we could have already computed
+\begin{align}
+2π\iu Γ_0^+ &= 2\iu \abs{1-α}\abs{1-β} a \\
+2π\iu Γ_0^- &= 2\iu \abs{1+α}\abs{1+β} a
+\end{align}
+for some $a\in\R$. We can rearrange these equations into one constraint and one solution.
+\begin{align}
+p &:= Γ_0^+ / Γ_0^- = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \\
+a &= \frac{π Γ_0^+}{\abs{1-α}\abs{1-β}}
+\end{align}
+This is the same $p$ as previous and the integrality of the two integrals is the requirement that $p$ be a rational number and the two integrals clearly share a sign, so $p$ is positive. Given this constraint there will exist an $a$, and hence a differential, that has two integrals in $2π\iu\Z$.
+
+Now to tackle the more difficult differential with a nonzero period. We now need to take the limit as $β \to e^{iφ} \in \S^1$ to produce elementary formulae. As this happens the elliptic modulus of the spectral curve, $k$, tends to $0$. $E(k),K(k) \to π/2$. (These are coefficents that were previously used to describe $Θ_2$ TODO flesh out, reintroduce them)
+\begin{align}
+M &:= - \abs{α-β} - \abs{1-\bar{α}β} = - \abs{α-β} - \abs{β}\abs{{β}^{-1}-\bar{α}} \\
+&\to - \abs{α-β} - \abs{\bar{β}-\bar{α}}  = - 2 \abs{α-β}\\
+\frac{A-αB}{\bar{α}A-B} &\to β \\
+Nd(η/den) &\to \frac{-2(\bar{α}A-β)}{2\abs{α-β}} d \bra{\frac{η}{(\bar{α}A-B)\bra{ζ-\frac{A-αB}{\bar{α}A-B}}}} \\
+&= -\frac{1}{\abs{α-β}} d \bra{\frac{η}{ζ-β}} \\
+Θ^2 &= 2E\tilde{ω} - 2Ke - \frac{2}{M}K\left[ d\bra{\frac{η}{ζ}} - MN d\bra{\frac{η}{den}} \right] \\
+&\to π\tilde{ω} - π\tilde{ω} - \frac{2}{-2\abs{α-β}}\frac{π}{2}\left[ d\bra{\frac{η}{ζ}} - \frac{2\abs{α-β}}{\abs{α-β}} d\bra{\frac{η}{ζ-β}} \right] \\
+&= \frac{π}{2}\frac{1}{\abs{α-β}}\left[ d\bra{\frac{η}{ζ}} - 2 d\bra{\frac{η}{ζ-β}} \right]
+\end{align}
+At last therefore we can write down the Sym conditions on the exterior boundary of $\mathcal{A}$. Let $Θ_g = bΘ^1 + gΘ^2$ for $b\in\R$. Recall for $ζ\in\S^1$ that $η(ζ)^{\pm} = ζ \abs{ζ-α}\abs{ζ-β}$. We require that
+\begin{align}
+2π\iu Γ_g^+ = \int_{γ_+} Θ_g &= 2\iu \abs{1-α}\abs{1-β} b + g\frac{π}{2}\frac{1}{\abs{α-β}}\left[ 2η(1)^+ - 2 \frac{2η(1)^+}{1-β} \right] \\
+&= 2\iu \abs{1-α}\abs{1-β} b - gπ\frac{\abs{1-α}\abs{1-β}}{\abs{α-β}}\frac{1+β}{1-β} \\
+&= 2\iu \abs{1-α}\abs{1-β} b - gπ\iu\frac{\abs{1-α}\abs{1-β}}{\abs{α-β}}\frac{1}{\tan\frac{φ}{2}} \\
+2π\iu Γ_g^- = \int_{γ_-} Θ_g &= 2\iu \abs{1+α}\abs{1+β} b + g\frac{π}{2}\frac{1}{\abs{α-β}}\left[ -2η(-1)^+ - 2 \frac{2η(-1)^+}{-1-β} \right] \\
+&= 2\iu \abs{1+α}\abs{1+β} b - gπ\frac{\abs{1+α}\abs{1+β}}{\abs{α-β}}\frac{1-β}{1+β} \\
+&= 2\iu \abs{1+α}\abs{1+β} b + gπ\iu\frac{\abs{1+α}\abs{1+β}}{\abs{α-β}}\tan\frac{φ}{2}
+\end{align}
+Though $Θ^2$ has become exact in the limit, thereby seemingly eliminating the ambiguity, there has been a subtle choice of the path of integration that is forced by avoiding the resulting double point. This is essentially hidden away by taking the limit of $2E\tilde{ω} - 2Ke$ to be $0$. We still consider the Sym values to be defined up to adding multiples of $2π\iu g$  Similiar to previously, we solve for $b$ and substitute into the other equation to yield a condition that must be satisfied if both equations are to be solved simultaneously.
+\begin{align}
+\frac{2\iu \abs{1+α}\abs{1+β}}{2\iu \abs{1-α}\abs{1-β}}\left[2π\iu Γ_g^+ + gπ\iu\frac{\abs{1-α}\abs{1-β}}{\abs{α-β}}\frac{1}{\tan\frac{φ}{2}}\right] + gπ\iu\frac{\abs{1+α}\abs{1+β}}{\abs{α-β}}\tan\frac{φ}{2} &=  2π\iu Γ_g^- \\
+\frac{2π\iu Γ_g^+}{p} + \frac{gπ\iu}{p}\frac{\abs{1-α}\abs{1-β}}{\abs{α-β}}\frac{1}{\tan\frac{φ}{2}} + gπ\iu\frac{\abs{1+α}\abs{1+β}}{\abs{α-β}}\tan\frac{φ}{2} &=  2π\iu Γ_g^- \\
+\frac{\abs{1-α}\abs{1-β}}{\abs{α-β}} \frac{g}{p}\left[ \frac{1}{\tan\frac{φ}{2}} + \tan\frac{φ}{2} \right] &=  2 Γ_g^- - \frac{2 Γ_g^+}{p} \\
+\frac{\abs{1-α}\abs{1-β}}{\abs{α-β}} \frac{1}{\sin φ} &= \frac{Γ_g^- p - Γ_g^+}{g} \\
+ q := \frac{Γ_g^- p - Γ_g^+}{g} &
+\end{align}
+To summarise, we have two restrictions.
+\begin{align}
+\frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} &= p \\
+\frac{\abs{1-α}\abs{1-β}}{\abs{α-β}} \frac{1}{\sin φ} &= q
+\end{align}
+A closer look at $q$ reveals an old friend.
+\begin{align}
+q = \frac{Γ_g^- p - Γ_g^+}{g} &= \frac{Γ_g^- Γ_0^+ - Γ_g^+ Γ_0^-}{gΓ_0^-} \\
+\abs{q} &= \frac{\abs{Γ_g^- Γ_0^+ - Γ_g^+ Γ_0^-}}{\abs{gΓ_0^-}} \\
+&\geq \min \left\{ \frac{\abs{g Γ_0^+}}{\abs{gΓ_0^-}}, \frac{\abs{g Γ_0^-}}{\abs{gΓ_0^-}} \right\}\\
+&= \min\{ p,1 \}
+\end{align}
+Further to this, what values can $q$ take?
+TODO: the permissable values are all multiples of $1/Γ_0^-$
+
+Even these two conditions are somewhat messy to solve exactly for $α$ as a function of $β$. However, we can get a handle on what is going on by considering the border case that $α$ is also in the unit circle. Let $α=e^{\iu ψ}$. Also, we can rationalise everything by setting $s= \tan ψ/2$ and $t= \tan φ/2$. The first condition then becomes
+\[
+\abs{st} = p
+\]
+whereas the second can be expanded to
+\begin{align}
+\abs{1-α}^2\abs{1-β}^2 &= q^2 \abs{α-β}^2 \sin^2 φ \\
+\bra{2-2\frac{1-s^2}{1+s^2}} \bra{2-2\frac{1-t^2}{1+t^2}}
+&= q^2 \frac{4t^2}{(1+t^2)^2}\bra{2-2\frac{1-s^2}{1+s^2}\frac{1-t^2}{1+t^2} - 2\frac{2s}{1+s^2}\frac{2t}{1+t^2}} \\
+\bra{(1+s^2)-(1-s^2)} \bra{(1+t^2)-(1-t^2)}
+&= q^2 \frac{t^2}{(1+t^2)^2}\bra{2(1+s^2)(1+t^2)-2(1-s^2)(1-t^2) - 2(2s)(2t)} \\
+4s^2 t^2
+&= q^2 \frac{t^2}{(1+t^2)^2}2\bra{2(s^2+t^2) - 4st} \\
+&= q^2 \frac{t^2}{(1+t^2)^2}4(s-t)^2 \\
+s^2 (1+t^2)^2 &= q^2 (s-t)^2
+\end{align}
+To eliminate $s$ requires using $\abs{st}=p$ which itself requires a choice of sign. Let $σ=\pm 1$ and $s = σp/t$.
+\begin{align}
+\frac{p^2}{t^2}(1+t^2)^2 &= q^2 \bra{σ\frac{p}{t}-t}^2 \\
+p^2(1+t^2)^2 &= q^2 (σp-t^2)^2 \\
+0 &= t^4 (p^2-q^2) + 2t^2 p(p+σq^2) + p^2(1-q^2)\\
+t^2 &= \frac{-(p^2+σpq^2) \pm pq(p+σ)}{p^2-q^2} \\
+&= p \frac{q-1}{σq+p},\; p \frac{q+1}{σq-p} \\
+s^2 &= p \frac{σq+p}{q-1},\; p \frac{σq-p}{q+1}
+\end{align}
+One could transform the solution back to the unit circle, but instead visualise the unit circle by its stereographic projection. This projected line is precisely parameterised by $s$ (or $t$), with $α=1$ at the origin and $α=-1$ at infinity, so we consider the solutions as lying the $st$-plane. To extend the visualisation further, the exterior boundary is composed of two pieces $D\times\S^1 \cup \S^1\times D$, which intersect in a torus $\S^1\times\S^1$. The boundary therefore is topologically $\S^3$, with the intersection as an (untwisted) torus and the two pieces being respectively the inside and outsides of that torus. In our planar visulisation, the torus has been stretched out to a plane, so the two pieces of the boundary would correspond to the two sides of the plane in $3$-space (with some points missing). The solutions, which are arcs, with $β\in\S^1$ would be on one side, and the arcs with $α\in\S^1$ would be on the other.
+
+What are the endpoints of the arcs for a fixed value of $p$ or $q$? When we take the square root of $s^2,t^2$, we must use $σ$ to determine the correct pairing of signs. This gives eight possibilies. However, $q\sin φ$ is positive, so $q$ and $t$ have the same sign. These two conditions, and the fact we cannot take the square root of a negative in this situation, mean that there are either two solutions or none. So the arcs have two endpoints on the dividing plane, and what we have found is the coordinates of endpoints of arcs with $β\in\S^1$. The coordinates of the endpoints of arcs from the other side can be found by interchanging the role of $α, β$, which practically means the swapping of $s$ and $t$.
+
+Consider first the case when $p>1$. We write a solution $(s,t)$. For $q>p$ the two points are
+\[
+\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
+\bra{\sqrt{p \frac{q-p}{q+1}}, \sqrt{p \frac{q+1}{q-p}}}
+\]
+For $p>q>1$
+\[
+\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
+\bra{-\sqrt{p \frac{-q+p}{q-1}}, \sqrt{p \frac{q-1}{-q+p}}}
+\]
+For $1>q>-1$ there are no solutions. For $-1>q>-p$
+\[
+\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
+\bra{\sqrt{p \frac{-q-p}{q+1}}, -\sqrt{p \frac{q+1}{-q-p}}}
+\]
+And for $-p>q$
+\[
+\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
+\bra{-\sqrt{p \frac{q+p}{q-1}}, -\sqrt{p \frac{q-1}{q+p}}}
+\]
+Note that as $p>1$ then by the previous discussion the region $1>q>-1$ is precisely the region that does not occur. These arcs all join up; an arc with $β\in\S^1$ connects on either end to an arc with $α\in\S^1$ and this alternating continues. Adjacent arcs have the same $p$ but differ in $q$ by $p-1$, except the arc that `jumps' the forbidden middle, where the $q$ value differs by $p+1$. Thus, the arcs link up to form a spiral type shape, wrapping around the diagonal and converging as $q \to \infty$ to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$ at the two ends respectively.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary.png}
+^^ Make this a proper caption: The orange line is a boundary link, the red dots are the limit points. The scale is actually radians of arguments of $α,β$.
+\end{center}
+
+In the other case that $p<1$, an entirely similiar analysis gives another set of spirals that again converge to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$. This is the typical situation. There are exceptional cases however, a pair for each $p\neq 1$ and separately when $p=1$. The pair comes from when subtracting $p-1$ reduces $q$ to $\max{1,p}$ or when adding $p-1$ increases $q$ to $-\max{1,p}$. In these cases, there is no arc that spans over the excluded region of $q$ from positive to negative values, instead it trails off to $α=1,β=-1$ or vice versa. It then connects to the exceptional arc with `$p$ value' $1/p$ and $q$ of the same sign. That is, if you start on an exceptional link with $p>1$, $q>0$, then $q$ decreases by $p-1$ until $q=p$. Then the next link goes to Sym points, where it meets a link coming from $1/p$ and $q$ also positive. Likewise for $p$ and $1/p$ with $q<0$.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary_sym.png}
+^^ Make this a proper caption
+\end{center}
+
+The final case is when $p=1$. In this case, there are no spiral links. Instead $p-1$ is $0$ so the $q$ parameter is not changed, meaning that the arcs close up into disjoint loops.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary_loop.png}
+^^ Make this a proper caption
+\end{center}
+
+
+
+
+
+
+
+
+
+
+\subsection{Boundary}
+\label{sub:Boundary}
+We have two coordinate systems for the parameter space of spectral curves. And having proved that it has no handles, its topology is entirely determined by the behaviour on the boundary. However, `the boundary' is not a particularly well defined thing. Just as an open disc can be seen to be the interior of a closed disc, it can equally be seen as the complement of a point on the sphere. And the two coordinate systems we have available to us given different pictures for the shape of the boundary. In essence, the different coordinates suggest different compactifications of the parameter space, and unfortunately neither is entirely satisfactory. In some ways though, the $α,β$ version is easier to understand and nicer, so we begin there.
+
+Fix a value of $p$. This is a `ball' in the space $(α,β)\in D^2$, as for any particular value of
+\[
+u = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
+\]
+$α$ ranges over an arc of a circle, and likewise does $β$ as constrained by the equation
+\[
+\frac{\abs{1-β}}{\abs{1+β}} = \frac{\sqrt{p}}{u},
+\]
+where the product of these two equations is just the definition of $p$. Hence for any $u$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. As $u$ approaches $0$, this forces the branch points to $S_0 := (1,-1)$, and likewise at $u \to \infty$, $S_\infty := (-1,1)$. In the reverse direction, $α = \pm 1$ if and only if $β = \mp 1$. Hence, these two points divide the unit circle into disconnected upper and lower halves: $\S^1_+$ and $\S^1_-$ respectively.
+
+This ball is an (Australian) football shape; an elongated ball with sharp points at either end, joined by four `\emph{edges}' where both $α$ and $β$ lie in one of $\S^1_\pm$ and four `\emph{faces}' where only one does. The four edges are labelled by two signs, for example $\edge{+-}$ where $α\in \S^1_+$ and $β \in \S^1_-$. The faces are labelled by a letter and a sign, for example $\face{α+}$ denotes $α\in\S^1_+$ and $β\in D$. $\face{α+}$ is bounded by $S_0, S_\infty$ as all the faces are, and by $\edge{++}$ and $\edge{+-}$.
+
+\todo{picture}
+
+This split also shows that the diagonal $Δ=\{(α,α)\}$ intersects each ball in an line, with $u=1$ and both $α$ and $β$ at the same point in their respective arcs. It runs from the middle of $\edge{++}$ to the middle of the opposite edge $\edge{--}$. We will denote the two `polar' points where the diagonal intersects the edges as $P_+$ and $P_-$.
+
+We now turn to how the boundary looks for the $στ$ coordinates. We may proceed more directly. $(σ,τ)$ lie in $\RP^1\times\RP^1\setminus \{σ=τ\}$, which is a torus minus a $(1,1)$-loop. This results in a cylinder. The parameter $k$ may vary in $(0,1)$, and $p$ is fixed so we end up with a fattened cylinder. To make this line up with the previous picture, imagine the cylinder with $k=0$ on the outside, and $k=1$ on the inside. The tube $k=1$ is a blowup of the diagonal.
+
+\todo{picture}
+
+The two ends of the cylinder are the two sides of the line $σ=τ$, for different values of $k$. They correspond to blowups of the two poles $P_\pm$. To see this, let $τ=σ+ε$. Then
+\begin{align*}
+z_0 &\sim \frac{\sqrt{p}\abs{ε}}{p+1} + \iu \left(σ + \frac{ε}{p+1}\right) \\
+α,β &\sim \frac{\iu σ + \conj{z_0}}{\iu σ - z_0} \sim  \frac{1-p}{1+p} + \iu \frac{2\sqrt{p}}{1+p} \sign{ε}
+\end{align*}
+which are exactly the two polar points.
+
+To understand the exterior boundary is a little more difficult. First note that the $στ$ coordinates cannot express that $α\in\S^1$, for the map $f$ takes $α,\cji{α}$ to $\pm 1$. So there is no sequence of $στ$ parameters that have these two points coming together. The effect is that the faces $\face{α+}$ and $\face{α-}$ and all the edges are crushed in this version of the boundary. The lines $σ=\infty$ and $τ=\infty$ correspond to the points $S_\infty$ and $S_0$ respectively. If we view $(0, σ,τ) \in \RP^1\times\RP^1\setminus \{σ=τ\}$ as a parallelogram, it is cut into two triangles, one with $σ<τ$ and one with $σ>τ$. The two triangles correspond to the two remaining faces $\face{β+}$ and $\face{β-}$ respectively.
+
+\todo{picture}
+
+
+
+
+
+Now turn to how $k$ varies across the parameter space. On the outside, we have one of $α$ or $β$ in $\S^1$, so $k = 0$. On the diagonal, $α=β$, so $k=1$. How then does $k$ behave at the poles where the diagonal and the exterior intersect? To answer this, let the point of intersection be $(μ,μ)$, and for small $ε$ let
+\[
+α = μ(1-ε), \qquad β = μ(1-mε)
+\]
+where $m$ is to be thought of as the angle of approach. For illustrative purposes, take $1>m>0$ so we may ignore absolute value signs.
+\begin{align*}
+\abs{α-β} &= ε(1-m), \\
+\abs{1-\conj{α}β} &\sim ε (m+1), \\
+k = \frac{\abs{1-\conj{α}β} - \abs{α-β}}{\abs{1-\conj{α}β} + \abs{α-β}} &\sim m
+\end{align*}
+The cases for other $m$ and even when $α,β$ do not lie on a ray are similar. So depending on the angle of approach, at the poles $k$ may assume any value. What we conclude then is that surfaces of constant $k$ are cigar shapes with ends at the poles. They surround the diagonal, which is the limit as $k\to 1$.
+
+TODO: explain about $\tilde{f}$ the map which is life $f$ but fixes $β$ instead.
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Faces and Edges}
+\label{sub:Faces and Edges}
+
+TODO: Cleanup this section into a cleaner narative.
+
+We wish to compute the boundary of the moduli space. To do this we must extend the function $T$ to the boundary. Suppose that $β\to\S^1_\pm$. The period terms of $T$ go to zero, leaving only the rational term. \todo{justify/ insert calc}
+\[
+T|_{\face{β\pm}} = - 2\pi\iu \frac{\abs{1-α}\abs{1-β}}{\abs{α-β}} \frac{2β}{1-β^2}.
+\]
+
+\todo{clean up this cut}
+
+Together with the equation for $p$, this defines a curve on the faces. These two conditions are somewhat messy to solve exactly for $α$ as a function of $β$. However, we can get a handle on what is going on by considering the border case that $α$ is also in the unit circle. Let $α=e^{\iu ψ}$, $β=e^{\iu φ}$. Also, we can rationalise everything by setting $s= \tan ψ/2$ and $t= \tan φ/2$. The $p$-condition then becomes
+\[
+\abs{st} = p
+\]
+whereas the other can be expanded to
+\[
+\abs{1-α}^2\abs{1-β}^2 = q^2 \abs{α-β}^2 \sin^2 φ
+\]
+Solving
+\begin{align*}
+\bra{2-2\frac{1-s^2}{1+s^2}} \bra{2-2\frac{1-t^2}{1+t^2}}
+&= q^2 \frac{4t^2}{(1+t^2)^2}\bra{2-2\frac{1-s^2}{1+s^2}\frac{1-t^2}{1+t^2} - 2\frac{2s}{1+s^2}\frac{2t}{1+t^2}} \\
+\bra{(1+s^2)-(1-s^2)} \bra{(1+t^2)-(1-t^2)}
+&= q^2 \frac{t^2}{(1+t^2)^2}\bra{2(1+s^2)(1+t^2)-2(1-s^2)(1-t^2) - 2(2s)(2t)} \\
+4s^2 t^2
+&= q^2 \frac{t^2}{(1+t^2)^2}2\bra{2(s^2+t^2) - 4st} \\
+&= q^2 \frac{t^2}{(1+t^2)^2}4(s-t)^2 \\
+s^2 (1+t^2)^2 &= q^2 (s-t)^2
+\end{align*}
+To eliminate $s$ requires using $\abs{st}=p$ which itself requires a choice of sign. Let $ε=\pm 1$ and $s = εp/t$.
+\begin{align*}
+\frac{p^2}{t^2}(1+t^2)^2 &= q^2 \bra{ε\frac{p}{t}-t}^2 \\
+p^2(1+t^2)^2 &= q^2 (εp-t^2)^2 \\
+0 &= t^4 (p^2-q^2) + 2t^2 p(p+εq^2) + p^2(1-q^2)\\
+t^2 &= \frac{-(p^2+εpq^2) \pm pq(p+ε)}{p^2-q^2} \\
+&= p \frac{q-1}{εq+p},\; p \frac{q+1}{εq-p} \\
+s^2 &= p \frac{εq+p}{q-1},\; p \frac{εq-p}{q+1}
+\end{align*}
+One could transform the solution back to the unit circle, but instead visualise the unit circle by its stereographic projection. This projected line is precisely parameterised by $s$ (or $t$), with $α=1$ at the origin and $α=-1$ at infinity, so we consider the solutions as lying the $st$-plane. To extend the visualisation further, the exterior boundary is composed of two pieces $D\times\S^1 \cup \S^1\times D$, which intersect in a torus $\S^1\times\S^1$. The boundary therefore is topologically $\S^3$, with the intersection as an (untwisted) torus and the two pieces being respectively the inside and outsides of that torus. In our planar visualisation, the torus has been stretched out to a plane, so the two pieces of the boundary would correspond to the two sides of the plane in $3$-space (with some points missing). The solutions, which are arcs, with $β\in\S^1$ would be on one side, and the arcs with $α\in\S^1$ would be on the other.
+
+What are the endpoints of the arcs for a fixed value of $p$ or $q$? When we take the square root of $s^2,t^2$, we must use $σ$ to determine the correct pairing of signs. This gives eight possibilities. However, $q\sin φ$ is positive, so $q$ and $t$ have the same sign. These two conditions, and the fact we cannot take the square root of a negative in this situation, mean that there are either two solutions or none. So the arcs have two endpoints on the dividing plane, and what we have found is the coordinates of endpoints of arcs with $β\in\S^1$. The coordinates of the endpoints of arcs from the other side can be found by interchanging the role of $α, β$, which practically means the swapping of $s$ and $t$.
+
+Consider first the case when $p>1$. We write a solution $(s,t)$. For $q>p$ the two points are
+\[
+\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
+\bra{\sqrt{p \frac{q-p}{q+1}}, \sqrt{p \frac{q+1}{q-p}}}
+\]
+For $p>q>1$
+\[
+\bra{\sqrt{p \frac{q+p}{q-1}}, \sqrt{p \frac{q-1}{q+p}}},\;\;
+\bra{-\sqrt{p \frac{-q+p}{q-1}}, \sqrt{p \frac{q-1}{-q+p}}}
+\]
+For $1>q>-1$ there are no solutions. For $-1>q>-p$
+\[
+\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
+\bra{\sqrt{p \frac{-q-p}{q+1}}, -\sqrt{p \frac{q+1}{-q-p}}}
+\]
+And for $-p>q$
+\[
+\bra{-\sqrt{p \frac{q-p}{q+1}}, -\sqrt{p \frac{q+1}{q-p}}},\;\;
+\bra{-\sqrt{p \frac{q+p}{q-1}}, -\sqrt{p \frac{q-1}{q+p}}}
+\]
+Note that as $p>1$ then by the previous discussion the region $1>q>-1$ is precisely the region that does not occur. These arcs all join up; an arc with $β\in\S^1$ connects on either end to an arc with $α\in\S^1$ and this alternating continues. Adjacent arcs have the same $p$ but differ in $q$ by $p-1$, except the arc that `jumps' the forbidden middle, where the $q$ value differs by $p+1$. Thus, the arcs link up to form a spiral type shape, wrapping around the diagonal and converging as $q \to \infty$ to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$ at the two ends respectively.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary.png}
+^^ Make this a proper caption: The orange line is a boundary link, the red dots are the limit points. The scale is actually radians of arguments of $α,β$.
+\end{center}
+
+In the other case that $p<1$, an entirely similar analysis gives another set of spirals that again converge to $(\sqrt{p},\sqrt{p})$ and $(-\sqrt{p},-\sqrt{p})$. This is the typical situation. There are exceptional cases however, a pair for each $p\neq 1$ and separately when $p=1$. The pair comes from when subtracting $p-1$ reduces $q$ to $\max{1,p}$ or when adding $p-1$ increases $q$ to $-\max{1,p}$. In these cases, there is no arc that spans over the excluded region of $q$ from positive to negative values, instead it trails off to $α=1,β=-1$ or vice versa. \todo{TODO: WRONG!} It then connects to the exceptional arc with `$p$ value' $1/p$ and $q$ of the same sign. That is, if you start on an exceptional link with $p>1$, $q>0$, then $q$ decreases by $p-1$ until $q=p$. Then the next link goes to marked points, where it meets a link coming from $1/p$ and $q$ also positive. Likewise for $p$ and $1/p$ with $q<0$.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary_sym.png}
+^^ Make this a proper caption
+\end{center}
+
+The final case is when $p=1$. In this case, there are no spiral links. Instead $p-1$ is $0$ so the $q$ parameter is not changed, meaning that the arcs close up into disjoint loops.
+\begin{center}
+\includegraphics{thesis_graphics/extboundary_loop.png}
+^^ Make this a proper caption
+\end{center}
+
+
+
+Not to take the computer's word for it, can we prove that these are arcs which begin and end on the edges? It proceeds much like for finding critical points in the interior. We remember that $σ,τ$, with $k=0$, parameterise two of the faces. In these coordinates, $T$ is given by
+\[
+\tilde{T} := \frac{1}{- 2\pi\iu} T|_{\face{β\pm}} = \frac{p\sqrt{1+τ^2} + \sqrt{1+σ^2}}{σ-τ}
+\]
+from which we compute the two partial derivatives
+\begin{align*}
+\Partial{\tilde{T}}{σ} &= \frac{-1}{\sqrt{1+σ^2}(σ-τ)^2} \bra{1 + στ + p\sqrt{1+σ^2}\sqrt{1+τ^2}} \\
+\Partial{\tilde{T}}{τ} &= \frac{p}{\sqrt{1+σ^2}(σ-τ)^2} \bra{1 + στ + \frac{1}{p}\sqrt{1+τ^2}\sqrt{1+τ^2}}
+\end{align*}
+If $x \geq 1$, we can apply the following familiar estimate
+\[
+1 + στ + x\sqrt{1+σ^2}\sqrt{1+τ^2} \geq 1 + στ + x\abs{στ} \geq 1 + στ + \abs{στ} > 0.
+\]
+And since one of $p$ or $1/p$ is greater than or equal to $1$, one of these partial derivatives is always non-zero on the face. Hence that the height function to be the other coordinate and we have shown that there are no critical points with respect to that coordinate. This is also sufficient to establish that the level sets are smooth arcs.
+\todo{go full stratified morse theory on its arse to finish off the proof. Probably have to swap back to $αβ$ coords to get the `critical points' on the edges are good/isolated/simple normal data.}
+
+
+
+
+\subsection{Marked Points}
+\label{sub:Marked Points}
+
+\subsection{Polar Points}
+\label{sub:Polar Points}
+
+\subsection{Diagonal}
+\label{sub:Diagonal}
+
+TODO: Not strictly necessary for the proof of topology, but include for completeness?
