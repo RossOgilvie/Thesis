@@ -1,4 +1,4 @@
-\subsection{Now Irrelevant stuff}
+\section{Misc Stuff}
 
 COMPUTATION OF T AT U OR V INFINITY
 
@@ -279,6 +279,14 @@ So the level surfaces are transverse here as well. Hence we have checked the ent
 
 
 
+
+
+
+
+
+
+
+BOUNDS ON T NEAR BOUNDARY
 Next we shall show that no where else does a level set approach the boundary of $B$. Let us consider the boundary where $0 < u - v < δ$. On this boundary, the dominant term is $1/(u-v)$ so we expect $T$ to be large and negative and that is exactly what we will show. In particular, let us consider a small neighbourhood of a strip $u_0 < u < S_1$, $k\in (0,1)$, $v=u^-$.
 \begin{align*}
 T
@@ -287,3 +295,253 @@ T
 & \leq 4K \bra{ p u_1 + u_1 - \frac{1+p}{δ}}.
 \end{align*}
 So if $δ$ is chosen small enough, then the bracketed term is negative. One could choose it so as to make the bracket more negative than $- \abs{q} / 2π$. Thus no part of the level set $T^{-1}(q)$ lies in the volume $\Set{ (k,u,v) }{ k \in (0,1), u \in (u_0,u_1), u-δ < v < u }$. As $u_0$ and $u_1$ were arbitrary, for any given level set there is a neighbourhood of the face $v = u^-$ of $\overline{B}$ that excludes that level set, namely this neighbourhood is the union of this process over different ranges of $u$. An identical argument for $v=u^+$ show that in a neighbourhood of that face $T$ is arbitrarily large and any level set is likewise excluded on that side. This leaves only the face $k=1$ away from the exceptional line $v = -1/u$. And we have already computed the limit on this face. At every point on the face away from this line $T$ blowups. So every point has a neighborhood that on which $T$ takes value above (or below) any level. So these points too cannot be in the closure of any given level set. Taken together, these results shows what the closure of a level set is composed of. It is the level set in $B$ together with the intersection of the level set with the planes $ε=0$ and $k=0$. Moreover, subject to showing that the level set on the inside of $B$ is a submanifold, we have shown it to be a Whitney stratified space and a closed space in $\overline{B}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIMIT OF DIFFERENTIALS FOR BRANCH POINTS ON THE UNIT CIRCLE
+\subsection{Boundary Limit}
+Consider the behaviour of the differentials in the limit as $β$ tends to a point on the unit circle that is not $ζ=1,-1$. Such a point is on the boundary of the space of branch points $(α,β)$. Firstly note that
+\begin{align}
+A &\to (α-β)\abs{α-β} \\
+B &\to -β(\bar{α}-\bar{β})\abs{α-β} \\
+k &\to \frac{\abs{α-β} - \abs{α-β}}{\abs{α-β} + \abs{α-β}} = 0
+\end{align}
+so we expect the elliptic integrals present to reduce to circular integrals. To see this, note that for $β$ close to the unit circle $f(1)$ and $f(-1)$ are finite. Let us focus on the limit for the $ζ=1$ marked point, as the $ζ=-1$ point will be entirely similiar. Let $\lim f(1) = \iu σ$ and $t=\iu s$. Assume $σ\geq 0$, the case of $σ<0$ simply requires a sign change in the following argument. For $β$ sufficently close to the unit circle, $\abs{\lim f(1) - f(1)} < ε$ for any small $ε$ (in particular, we wish for $ε< σ$). Then
+\begin{align}
+\abs{\int_{\lim f(1)}^{f(1)} \tilde{ω} }
+&= \abs{ \int_σ^{σ-ε} \frac{ds}{\sqrt{(1+s^2)(1+k^2s^2)}} } \\
+&\leq \int_{σ-ε}^σ \frac{ds}{\sqrt{(1+(σ-ε)^2)(1+k^2(σ-ε)^2)}} \\
+&= \frac{ε}{\sqrt{(1+(σ-ε)^2)(1+k^2(σ-ε)^2)}} \\
+&\to 0
+\end{align}
+so this integral is neglible in the limit. Also consider
+\begin{align}
+\abs{ \int_0^{\lim f(1)} \tilde{ω}}
+&= \int_0^σ \frac{ds}{\sqrt{(1+s^2)(1+k^2s^2)}} \\
+&\leq \int_0^σ ds = σ
+\end{align}
+So this integral is dominated by $1$. Hence by the dominated convergence thereom
+\[
+\lim \int_0^{f(1)} \tilde{ω} = \lim \left[ \int_0^{\lim f(1)} + \int_{\lim f(1)}^{f(1)} \tilde{ω} \right] = \int_0^{\lim f(1)} \lim \tilde{ω}
+\]
+The analysis of the limit of $\int e$ is much the same. The dominating function this time is $\sqrt{1+k^2s^2} \leq \sqrt{1+s^2}$, as $k<1$. The upshot of this is that we can, for the purposes of the closing condition, interchange limits and integrals. We will use this later to consider the limit of genus one differentials as genus zero differentials. As $k\to 0$ both $K$ and $E$ tend to $π/4$. $M$ clearly trends to $-2\abs{α-β}$ and
+\[
+N \to -\left[ \abs{α}^2 - 2\bar{α}β + 1 \right]
+\]
+Hence
+\begin{align}
+Θ_L^2 &:= \lim Θ_1^2 \\
+&= \frac{π}{2}\tilde{ω}-\frac{π}{2}\tilde{ω} - \frac{2}{M}\frac{π}{4}\left[ d\bra{\frac{η}{ζ}} - \frac{M}{\abs{α-β}}d\bra{\frac{η}{ζ-β}} \right] \\
+&= \frac{1}{\abs{α-β}}\frac{π}{4}d\bra{\frac{η}{ζ}} - \frac{1}{\abs{α-β}}\frac{π}{2}d\bra{\frac{η}{ζ-β}}\\
+&= \frac{1}{\abs{α-β}}\frac{π}{4} \frac{dζ}{ζ^2η}\left[ -αβ + \frac{1}{2}(2α + β(1+\abs{α}^2))ζ + (1+\abs{α}^2)ζ^2 + \frac{1}{2}(2\bar{α} + \bar{β}(1+\abs{α}^2))ζ^3 - \bar{α}\bar{β}ζ^4 \right] \\
+&= \frac{1}{\abs{α-β}}\frac{π}{4}(ζ-β) \frac{dζ}{ζ^2η}\left[ α - \frac{1}{2}(1+\abs{α}^2)ζ + \frac{1}{2}\bar{β}(1+\abs{α}^2)ζ^2 - \bar{α}\bar{β}ζ^3 \right]
+\end{align}
+It is easier to see that
+\[
+Θ_L^1 := \iu\frac{dζ}{ζ^2η}(ζ-β)\left[ α - \frac{1}{2}(1+\abs{α}^2)ζ - \frac{1}{2}\bar{β}(1+\abs{α}^2)ζ^2 + \bar{α}\bar{β}ζ^3 \right]\\
+\]
+The two limit differentials $Θ_L^i$ both have zeroes at the double point $β$. The significance of this will shortly become apparent. Let $β=e^{iφ}$ and consider the normalisation map
+\begin{align}
+π : Σ_0(α) &\to Σ_1(α,β) \\
+π : (ζ,η) &\to (ζ, s\iu e^{-\iu φ/2}(ζ-β)η)
+\end{align}
+where $s=\pm 1$ is a sign coming from the square root to be determined. This equation comes simply from the extra factor that the equation for $Σ_1(α,β)$ has compared to $Σ_0(β)$. Because the spectral curves have involutions, composition with the involution gives `another' normalisation map, which differs only in the sign of the $η$ fibre. But clearly we want to make the positive values of $η$ map to positive values. In particular, above $ζ=1$ if we consider the case that $β=i$, then we have
+\begin{align}
+η_0(1) &= \pm\abs{1-α} \\
+η_1(1) &= \pm\abs{1-\iu}\abs{1-α} = \pm\sqrt{2}\abs{1-α} \\
+s\iu e^{-\iu π/4}(1-\iu)η_0(1)
+&= \pm s \iu \frac{1-\iu}{\sqrt{2}}(1-\iu)\abs{1-α} \\
+&= \pm s \iu (-\iu\sqrt{2})\abs{1-α} \\
+&= \pm s \sqrt{2}\abs{1-α}
+\end{align}
+From this we can see that we should chose $s=1$ to be the correct sign for the square root. The pull back of the tautilogical section is then by definition $π^* η = \iu e^{-\iu φ/2}(ζ-β)η$. And the limit differentials are
+\begin{align}
+\pi^* Θ_L^1 &= \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ α - \frac{1}{2}(1+\abs{α}^2)ζ - \frac{1}{2}\bar{β}(1+\abs{a}^2)ζ^2 + \bar{α}\bar{β}ζ^3 \right]\\
+\pi^* Θ_L^2 &= \iu \frac{π}{4} \frac{1}{\abs{α-β}} \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ α - \frac{1}{2}(1+\abs{α}^2)ζ + \frac{1}{2}(1+\abs{α}^2)\bar{β}ζ^2 - \bar{α}\bar{β}ζ^3 \right]
+\end{align}
+These lie squarely in the plane of genus 0 differentials, as we would hope. We can now see the significance of the development of a zero at the double point. When we pull back regular differentials on a curve with a double point, the result is differentials with simple poles at the two preimages of the double point, with opposite residues at those points. But by having a zero at the double point, the pole is neutralised and we again have regular differentials.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SHIT. AN ATTEMPT TO DO DEFORMATIONS DIRECTLY
+\subsection{Deformations}
+TO FIX \todo{this}
+
+The full problem of deformations is hard, but consider the case of just $Θ^S$.
+\begin{align*}
+\int_{\gamma_1}aΘ^1 &= \left . a\iu\frac{η}{ζ}\right|_{(1, η(1)^-)}^{(1, η(1)^+)} = 2\iu a \abs{1-α}\abs{1-β} = 2π\iu Γ^S_+ \in 2π\iu\Z \\
+a &= \frac{πΓ^S_+}{\abs{1-α}\abs{1-β}}
+\end{align*}
+
+Because it is exact, $q^1$ is well-defined and $\dot q^1$ is computable. Indeed
+\[
+\dot q^1 = \frac{d}{dt}\frac{a\iu}{ζ}\dot{η} = \frac{i}{ζη}\bra{\iu \dot{a}P +\frac{1}{2}\iu a\dot{P}}.
+\]
+A deformation preserves the half period condition precisely when $\dot q(1)=\dot q(-1) = 0$. The first is automatic by the choice of $a$. The second translates to
+\begin{align*}
+\dot{a} &= a\left[ \Re\bra{\frac{\dot{α}}{1-α}} + \Re\bra{\frac{\dot{β}}{1-β}} \right] \\
+% \dot{P}(-1) &= 2P(-1) \left\[\Re\bra{\frac{\dot{α}}{1+α}} + \Re\bra{\frac{\dot{β}}{1+β}} \right\] \\
+% 0 &= \dot{a}P(1) + \frac{1}{2}a\dot{P}(1) =0\\
+% 0 &= 2aP(1) \left\[\Re\bra{\frac{\dot{α}}{1-α}} + \Re\bra{\frac{\dot{β}}{1-β}} \right\] \\
+% 0 &= \dot{a}P(-1) + \frac{1}{2}a\dot{P}(-1)\\
+\end{align*}
+respectively. There are four degrees of freedom in choosing $\dot{α}  $ and $\dot{β}$, but here are two conditions. This gives the expected two degrees of freedom. Notice that if the deformation preserves the symmetric case, then we have $\dot{β} = - \dot{α}  $, as well as $β=- α  $, so the above two conditions collapse to the single condition
+\[
+0 = \Re \frac{2 α  \dot{α}  }{1- α  ^2}
+\]
+If we take the interpretation of quotienting out by the symmetry, so we have a rational curve over the coordinate $z= α  ^2$, then this condition becomes
+\[
+0 = \Re \frac{\dot z}{1-z}
+\]
+which can be interpretted geometrically for $z$ in the unit disc as saying that $z$ must move perpendicularly to $1-z$, ie along circles centered at 1. So it seems as if there is one direction of deformation that preserves the symmetry, and one direction that breaks it. One should note however that the above reasoning is entirely huersitic, as these a neccessary but not sufficent conditions on the deformations. It remains to be shown that there are no further restrictions arising.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Matching the limit differentials to the lattice}
+\label{sec:Matching the limit differentials to the lattice}
+
+INSERT JUSTIFICATION FOR INTERCHANGING LIMITS AND INTEGRALS AS JOHN POINTED OUT.\todo{this}
+
+In general it is difficult to be explicit about the space $\mathcal{X}$, because the closing conditions are transcendental. However, over the boundary of $\mathcal{A}$ the conditions degenerate to simple trigonometry and can be solved. The first step is to treat each piece of $\mathcal{X}$ seperately, that is, fix four integers $m,n,\tilde m, \tilde n$. Then we can identify $\mathcal{X}(n,m,\tilde n,\tilde m)$ as lying within $\mathcal{A}$. With this view point adopted, the question of finding the moduli space is reduced to finding conditions on $(α,β)$ such that the closing conditions can be satisfied.
+
+
+The half-periods of the limit can then be computed via the pull back to the normalisation, which as a genus zero curve the differentials are exact. If we denote the normalisation map as $π$ and the limits of the differentials as $Θ^1_L, Θ^2_L$ then
+\begin{align*}
+\int_{γ_+} Θ^1_L = \int_{π^{-1}(γ_+)} \pi^* Θ^1_L
+&= 4\iu \abs{1-β} \sin \frac{φ}{2} \\
+\int_{π^{-1}(γ_-)} \pi^* Θ^1_L &= -4\iu \abs{1+β} \cos \frac{φ}{2} \\
+\int_{π^{-1}(γ_+)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1-β}}{\abs{α-β}} \cos \frac{φ}{2} \\
+\int_{π^{-1}(γ_-)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}} \sin \frac{φ}{2} \\
+\end{align*}
+where $α = \exp \iu φ$. \todo{double check signs here vis-à-vis correct square root sign choice in $η(\pm 1)$} From this we can computer the previous incomputable coefficents $a$ and $b$; they are simply ratios of the above. This gives us the half-periods in the better frame
+\begin{align*}
+2π\iu Γ^S_- := \int_{γ_-} Θ^S &= -2π\iu \frac{\abs{1+β}}{\abs{1-β}}\cot\frac{φ}{2} \\
+2π\iu Γ^P_- := \int_{γ_-} Θ^P &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}}\csc\frac{φ}{2}
+\end{align*}
+The condition $Γ_+, \tilde{Γ}_+$, the half-periods of $Θ, \tilde{Θ}$ respectively, is assured by this choice of basis, but we still require that $Γ_-, \tilde{Γ}_- \in\Z$. Indeed, based on our selection to focus on $\mathcal{X}(m,n,\tilde m, \tilde n)$ (a choice of two elements of the lattice $Λ$) we require that there be integers $k,\tilde k$ such that
+\begin{align*}
+k = Γ_- &= m Γ^S_- + n Γ^P_- \\
+\tilde{k} = Γ_- &= \tilde{m} \tilde{Γ}^S_- + \tilde{n} \tilde{Γ}^P_-
+\end{align*}
+Elimination of the left hand sides of both equations leads to
+\[
+\frac{\abs{α-β}}{\abs{1-β}} = -\left( \frac{n\tilde{k} - \tilde{n}k}{m\tilde{k}-\tilde{m}k} \right) \sec\frac{φ}{2} =: q \sec\frac{φ}{2}
+\]
+whereas elimination of the rightmost term leads to
+\[
+\frac{\abs{1+β}}{\abs{1-β}} = \left( \frac{k\tilde{n} - \tilde{k}n}{\tilde{m}n - m \tilde{n}} \right) \tan\frac{φ}{2} =: p \tan\frac{φ}{2}
+\]
+
+For rational numbers $p,q$. If we have a solution for a particular $p$ and $q$, then as these two equations have three real degrees of freedom ($α\in\S^1$ and $β\in \C$), and the Jacobian of this as a map $F : (α,β) \mapsto (p,q)$ \todo{prove this} is generically maximal rank, we expect that there is a path of solutions. Also note the general fact that if $μ,\tilde{μ} \in \S^1$, $R\in\R$, and
+\[
+\frac{\abs{μ-β}}{\abs{\tilde{μ} - β}} = R,
+\]
+then also
+\[
+\frac{\abs{μ-\bar{β}^{-1}}}{\abs{\tilde{μ}-\bar{β}^{-1}}}
+= \frac{\abs{μ}\abs{\bar{β}^{-1}}\abs{\bar{β} - μ^{-1}}}{\abs{\tilde{μ}}\abs{\bar{β}^{-1}}\abs{\bar{β} - \tilde{μ}^{-1}}} = \frac{\abs{μ-β}}{\abs{\tilde{μ} - β}} = R.
+\]
+The two equations above are both of this form, so if $(α,β)$ is a solution, so too is $(α,\bar{β}^{-1})$. This is expected, as there is nothing really distinguishing the root inside the unit circle from the one outside. Also note that the left hand sides are both positive numbers, so if $p>0$ then $ν$ is confined to the upper half circle, and if $p<0$ it is confined to the lower half.
+
+The general solution to these equations is ugly and unilluminating. The projection of the solution space onto the $β$-plane is a real curve of degree 8 in the real and imaginary parts of $β$. There is however a nice solution to the question of when are both $ν$ and $β$ on the unit circle. Square both equations and make the t-substituion $t = \tan φ/2$. Also let $β= x + \iu y$. Then the equations are
+\begin{align}
+(x+1)^2 + y^2 &= p^2t^2 \left((x-1)^2 + y^2\right) \\
+\left(x- \frac{1-t^2}{1+t^2} \right)^2 + \left(y - \frac{2t}{1+t^2}\right)^2 &= q^2(1+t^2) \left((x-1)^2 + y^2\right) \\
+x^2 + y^2 &= 1.
+\end{align}
+Using the third equation to eliminate the $x^2 + y^2$ from both sides of the first equation, and rearranging to solve for $x$ gives
+\[
+x = \frac{p^2t^2 - 1}{p^2t^2 + 1}.
+\]
+Applying the same trick to make the second equation linear in $y$ gives
+\[
+y = \frac{2pt}{p^2t^2 + 1}.
+\]
+Finally then can we solve for $t$ in terms of $p$ and $q$ alone to give the neat formula
+\[
+t^2 = \operatorname{sgn} p \frac{1\pm q}{p \mp q}
+\]
+From the constraint that the left hand side is a nonnegative number, we know that $q$ must lie in the range $\abs{q}< \min\{\abs{p},1\}$.
+
+
+
+
+OFF TOPIC: If we take the alternative definition of $\mathcal{A}$ that includes $\C^2$ outside $D\times D$ also, then there is a symmetry of this arc under inversion in the unit circle. That makes it a nice egg shape. Is there anything to be gained by doing this, for example can I show that it must lie within the sector formed of the origin, the two points corresponding to $β\in\S^1$ and the unit circle?
+
+The two points are given by
+\begin{align*}
+t^2 &= (\sign p) \frac{1 \pm q}{p \mp q} \\
+β &= \frac{p^2t^2 - 1}{p^2t^2 + 1} + \iu \frac{2pt}{p^2t^2+1}
+\end{align*}
+So you can see that there are two solutions (or a double solution) only when $\abs{q} < 1, \abs{p}$ \todo{What forbids only one solution?}. The condition that it be less than 1 forces the $k/\tilde{k}$ to lie in a certain range ....
+
+INVESTIGATE how many $(k,\tilde{k})$ there are that satisfy the inequalities on $q,p$ for given $m,n,\tilde m, \tilde n$?
+
+Since there is nothing particularly special about $α\to\S^1$ compared to $β\to\S^1$, and simliar analysis yields that the intersection of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$ with $D\times\S^1$ is also a colection of arcs. These arcs join along the points where both $α,β$ lie in the unit circle to form closed cycles. UNPROVEN CLAIM \todo{verify this claim}. These are the boundary components of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$.
+
+BROAD STROKES PICTURE. There is some 2d surface in this 4-space $\mathcal{A}$. The exterior boundary is a three space topologically $S^3$. To see this, note that it is $S^1 \times D \cup D \times \S^1$. The intersection of the two pieces is $\S^1\times\S^1$, a torus. The two components of the union are the inside and outside of the torus. Putting it another way, in $\C^2$ the intersection is given by $\abs{α}=\abs{β}=1$, a scaled up version of the Clifford torus and you can project $\{(α,β) \mid α\in\S^1, β\in D\}$ onto the 3-sphere of radius $\sqrt{2}$ by rescaling by $\sqrt{2}/\sqrt{1+\abs{β}^2}$ and ditto for the other component.
+
+The forbidden diagonal bit, ie where $α=β$ is a complex plane inside $\C^2$ that intersect this boundary in a real curve, the line on the torus where the toroidal angle is equal to the poloidal angle.
+
+The moduli space $\mathcal{X}$ is also a surface, so we would expect it to intersect the boundary in arcs. Further, since we know that it has this symmetry that means we can consider its mirror on the of the boundary, we expect those arcs to be closed loops. The only way they could be otherwise (I think) is if the moduli space was tangent to the boundary somewhere.
+
+Away from the boundary I don't know what the moduli space is doing. I don't know if separate boundary arc correspond to separate components of the moduli space, or if it's connected, or in between. I don't know if there are handles sitting inside. I don't know if several components come together on the forbidden diagonal.

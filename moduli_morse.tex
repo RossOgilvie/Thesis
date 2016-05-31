@@ -28,7 +28,7 @@ Go to the Winchester, have a pint, and wait for this to blow over.
 \end{enumerate}
 
 
-
+In the previous section, we performed two important calculations. For any genus one spectral curve, we computed the differentials on it that meet the spectral data conditions. We further computed the closing conditions for these differentials. A spectral curve and pair of differentials is only periodic spectral data if the closing conditions are rational. This section furthers this line of investigation with a shift to consideration of the space of periodic spectral data as a whole. In the genus one case, every spectral curve admits spectral data but not every one admits periodic spectral data. The rationality of the closing conditions therefore can be viewed as defining equations for $\mathcal{M}_1$, the moduli space of spectral curves admiting periodic spectral data. Our aim is to investigate the topology of this space. In doing so we will actually parameterise all of $\tilde{\mathcal{M}}_1$, the bundle of periodic spectral data.
 
 
 
@@ -114,28 +114,17 @@ x &= \sqrt{\frac{p w(\iu v)}{k}}.
 \end{align}
 These are the same formulas for $x$ and $y$ that one arrives by substituting $u = (u')^{-1}$ in the previous formulas and taking a limit $u' \to 0$. Given this modification of $z_0$, the rest of the formula for $f^{-1}$ is as before. The geometry for $f(-1) = \infty$ is similar.
 
-In summary, we have found a new parameter space for the space of spectral curves. Formerly we had considered $\{ (α,β) \in D\times D | α \neq β \}$, whereas the new space is $P$ (defined above \ref{defn:parameter space}). The moduli space is a subspace of this parameter space defined implicitly by the two conditions that $p$ and $T$ are constant.
+In summary, we have found a new parameter space for the space of spectral curves. Formerly we had considered $\{ (α,β) \in D\times D | α \neq β \}$, whereas the new space is $P$ (defined above \ref{defn:parameter space}). The moduli space $\mathcal{M}$ is a subspace of this parameter space defined implicitly by the two conditions that $p$ and $T$ are constant.
 
-From now on we will only consider the parameter space for a fixed value of $p$. \todo{change the definition of $P$?} Topologically it is an interval cross an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RP^1 \times \RP^1$. Topologically $\RP^1$ is just a circle, so this is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
-
-A more instructive way of visualising this space is to think of it as a solid cylinder with a line along the central axis removed. One should think of the radius of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider the formula for $k$.
-\[
-k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
-\]
-In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $p$, for a fixed value of $p$, the subspace $α=β$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In latter chapters, the interesting structure of the moduli space in this limit will be investigated.
-
-Another way that this model is useful is it allows us to see the twisting in the space of spectral curve and the essential appearence of the period behaviour. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line.
-As we move around the axis, the values of $f(1),f(-1)$ are moving through the values of $\RP^1$.
-Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut, and an extra period term appears in our formulas.
-We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another.
-After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$. Though you have returned to your original spectral curve, you are now in a different point in the space of spectral data.
+FORMULATE THIS RESULT AS A LEMMA ABOUT DIFFEOMORPHISM? OR IS THAT OVERWROUGHT \todo{this}
 
 
 
 
 
 
-Having considered the benefits of these new coordinates, it is time to rewrite $T$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the third term of $T$. By direct computation
+
+Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the third term of $T$. By direct computation
 \begin{align*}
 \abs{1-α} &= \abs{\frac{(z_0 + \conj{z_0}) (\iu u - 1) }{ (\iu u - z_0) (1 + z_0) }} \\
 \abs{1-β} &= \abs{\frac{(z_0 + \conj{z_0}) (k \iu u - 1) }{ (\iu u - z_0) (1 + k z_0) }} \\
@@ -176,11 +165,25 @@ T(p,k,u,v) = \frac{2p}{π\iu} \left[ E \tilde{F}(v) - K \tilde{E}(v) \right] - \
 \end{align*}
 
 
-CUT THIS. IT'S NOW HANDLED BETTER EARLIER. NEEDS SOMETHING TO CLOSE OUT THIS SECTION THOUGH, MAYBE MOVE DISCUSSION FROM MIDDLE TO END. OR ADD DISCUSSION OF ANALYTICITY AT U=INFTY.
-This formula is essentially correct, but there are some subtleties that must be dealt with. Particularly, this formula for $T$ is not well defined everywhere on the parameter space. This is actually a problem for the formula for $T$ in terms of $α, β$ as well and perhaps even clearer in that form. Note that when $ν = \pm 1$ the third term of \ref{eqn:Teqn1} is infinite. The corresponding point of \ref{eqn:Teqn2} is when one of $u$ or $v$ is infinite. But it is not the case that $T$ is badly behaved near these points, instead these are branch cuts of the function implicit in the method we used to specify the paths of integration $γ_+, γ_-$.
+NEEDS SOMETHING TO CLOSE OUT THIS SECTION, MAYBE MOVE DISCUSSION FROM MIDDLE TO END. OR ADD DISCUSSION OF ANALYTICITY AT U=INFTY.\todo{this}
 
 
 
+
+
+From now on we will only consider the parameter space for a fixed value of $p$. \todo{change the definition of $P$?} Topologically it is the product of an interval cross and an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RP^1 \times \RP^1$. Topologically $\RP^1$ is just a circle, so this is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
+
+A more instructive way of visualising $P$ is to think of it as a solid cylinder with a line along the central axis removed. One should think of the `radius' of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider the formula for $k$.
+\[
+k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
+\]
+In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $p$, for a fixed value of $p$, the subspace $α=β$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In latter chapters, the interesting structure of the moduli space in this limit will be investigated.
+
+Another way that this model is useful is it allows us to see the twisting in the space of spectral curve and the essential appearence of the period behaviour. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line.
+As we move around the axis, the values of $f(1),f(-1)$ are moving through the values of $\RP^1$.
+Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut, and an extra period term appears in our formulas.
+We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another.
+After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$. Though you have returned to your original spectral curve, you are now in a different point in the space of spectral data.
 
 
 
@@ -196,16 +199,16 @@ To deal with the multivaluedness of $T$ on the parameter space $P$, we shall mov
 \]
 The projection map $p : \tilde{P} \to P$ is given by
 \begin{align*}
-u &= \tan \frac{\tilde{u}}{2},   \quad  u' = \tan \frac{π - \tilde{u}}{2}, \\
-v &= \tan \frac{\tilde{v}}{2},   \quad  v' = \tan \frac{π - \tilde{v}}{2}, \\
+u &= \tan \frac{\tilde{u}}{2},
+\quad  u' = \tan \frac{π - \tilde{u}}{2} = \cot \frac{\tilde{u}}{2}, \\
+v &= \tan \frac{\tilde{v}}{2},
+\quad  v' = \tan \frac{π - \tilde{v}}{2} = \cot \frac{\tilde{v}}{2}, \\
 k &= k.
 \end{align*}
 Define the winding number $N : \R \to \Z$ of a number $x$ to be the integer $N(x)$ such that $-π < x - 2πN(x) \leq π$.
 \[
-\tilde{T}(k,\tilde{u},\tilde{v}) = 2pN(v) - 2N(u) + T(k,u,v).
+\tilde{T}(k,\tilde{u},\tilde{v}) = 2pN(\tilde{v}) - 2N(\tilde{u}) + T(k,u,v).\tidle
 \]
-
-
 
 
 
@@ -250,7 +253,7 @@ and
 = \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
 = \frac{(1+k^2)u + 2k^2 u^3}{w(u)}.
 \]
-The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}.
+The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T$ is elementary if tedious.
 \begin{align*}\label{dTdk}
 \frac{π}{2}\Partial{T}{k}
 &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
@@ -267,9 +270,10 @@ The other derivatives of elliptic integrals are calculated in appendix \ref{sec:
 \frac{π}{2}\Partial{T}{v'}
 = -\frac{pE}{w'(v')} + \frac{K w(u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
 \end{equation}
-
+While $T$ may be multivalued on $P$, its derivatives are not. The ambiguous constant is removed by differentiation.
 
 \begin{lem}
+    \label{lem:deriv no zeroes}
 The functions
 \[
 U(x,k,u,v) := -(u-v)^2 E + xKw(u)w(v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right]
@@ -322,3 +326,30 @@ This result is of interest because it shows that the $v$ and $v'$ derivatives of
 \frac{π}{2}\Partial{T}{v} &= \frac{-p}{w(v)(u-v)^2} U\bra{ \frac{1}{p},k,u,v }, \\
 \frac{π}{2}\Partial{T}{v'} &= \frac{p}{w'(v')(uv'-1)^2} V\bra{ \frac{1}{p},k,u,v' }.
 \end{align*}
+
+
+
+
+
+
+\subsection{Coordinates on $\mathcal{M}$}
+\begin{lem}
+$(k, \tilde{u})$ are coordinates on $\mathcal{M}$.
+\begin{proof}
+We prove this by direct application of the implict function theorem. Consider the function $\tilde{T}(k,\tidle{u},\tilde{v})$ on $\tilde{P}$. Consider the two formula of the its derivatives
+\[
+\Partial{\tilde{T}}{\tilde{v}}
+= \Partial{T}{v}\frac{dv}{d\tilde{v}}
+= \frac{1}{2}\sec^2\bfrac{\tilde{v}}{2} \Partial{T}{v},
+\]
+for $\tilde{v} \not\in π + 2π\Z$ and
+\[
+\Partial{\tilde{T}}{\tilde{v}}
+= \Partial{T}{v'}\frac{dv'}{d\tilde{v}}
+= -\frac{1}{2}\csc^2\bfrac{\tilde{v}}{2} \Partial{T}{v'},
+\]
+for $\tilde{v} \not\in 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, neither of the partial derivatives of $T$ with respect to $v$ or $v'$ are every zero, and neither are $\sec$ or $\csc$. Hence $\parital \tilde{T} / \partial \tilde{v}$ is never zero. By the implicit function theorem therefore, there is a function $g$ such that the level set $\tilde{T}=q$ is a graph of the form $(k, \tilde{u}, g(k,\tilde{u}))$.
+\end{proof}
+\end{lem}
+
+The topological implication of this is that the moduli space $\mathcal{M}$ is diffeomorphic to a product of $(0,1)$ and $\R$.

@@ -1,4 +1,53 @@
-\section{Genus One}
+%!TEX root = thesis.tex
+
+\section{Genus One Moduli Space}
+% \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
+
+\subsection{Intro}
+\label{sub:Intro}
+
+An outline:
+\begin{enumerate}
+\item
+Give the outline
+\item
+Compute a basis of differentials with the correct symmetries
+\item
+Compute their periods and a basis of differentials
+\item
+Introduce the various moduli spaces we will consider
+\item
+Formulate the conditions
+\item
+Reformulate in coordindates more suited to calculation.
+\item
+Talk about shape of this parameter space.
+\item
+Talk about $T$ and its multi-defined-ness. Universal cover
+\item
+Uniform coordinate
+\item
+Show derivative is nonzero
+\item
+Apply Implicit Function theorem in uniform coord and k
+\item
+Go to the Winchester, have a pint, and wait for this to blow over.
+\end{enumerate}
+
+The different moduli spaces we could be interested in
+
+There are several interrelated moduli spaces of spectral data that we could be interested in. Spectral data is a triple $(Σ,Θ,\tilde{Θ})$ of a spectral curve $Σ$ and a pair of differentials on it. We know that every spectral curve has many differentials with with correct poles and symmetries. Spectral curves are parameterised by their branch points, and by symmetries we need only track branch points inside the unit circle. By counting degrees, we know there is a plane of such differentials with purely imaginary periods, but in general not every spectral curve will satisfy the further condition that there is a rank two lattice of differentials within this plane that have integral periods. Let the space of spectral curves that have \emph{integral} differentials be denoted $\mathcal{A}$. Within this space we could impose the further condition, the closing condition, on the differentials that requires their integrals over the marked points to also be integral. We shall call such differentials \emph{closing}, and the space of spectral curves with closing differentials $\mathcal{A}'$.
+
+One can note that the plane of differentials with imaginary periods is naturally thought of as a rank two vector bundle over the space of spectral curves. Thus the moduli of spectral data can be thought of as bundles over $\mathcal{A}$ or $\mathcal{A'}$, depending on exactly whihc conditions one is imposing. Our ultimate aim will be to describe $\mathcal{M}$, the moduli of closing differentials, which is a rank two lattice bundle over $\mathcal{A'}$.
+
+If we are considering only spectral curves of a fixed genus, we will use a subscript on the moduli space to denote this.
+
+In the genus one case, every spectral curve admits integral differentials but not every one admits closing differentials. The closing conditions therefore can be viewed as defining equations for $\mathcal{A'}_1$ within $\mathcal{A}_1 = D^2 \setminus \{α=β\}$. We will investigate the topology of this space and show it to be simply connected. In doing so we will develop an explicit parameterisation of this space. The moduli space $\mathcal{M}_1$ will therefore be the trivial bundle.
+
+In the calculations that follow, we will actually work with a cover of the space of spectral curves. A spectral curve is determined by its branch points, but we will consider instead ordered pairs of branch points. This introduces no complications in the genus one case, as both spaces are smooth and the ordered version is a degree two cover of the unordered version.
+
+
+
 
 
 
@@ -132,361 +181,533 @@ so that each term is holomorphic on at least $ζ\in\C^*$. With this differential
 
 
 \subsection{The Closing Conditions}
-In general the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with, for example, $Θ_1^1$ leads to an algebraic expression, but $Θ_1^2$ leads to a transcendental one, one involving incomplete elliptic integrals. Let us examine these conditions.
+Recall the closing conditions. These are the conditions that spectral data must meet in order that they correspond to a harmonic map from the torus, rather than a harmonic map of the plane (of finite type). If $(Σ,Θ,\tilde{Θ})$ is a triple of spectral data, $Θ$ satisfies the closing condition at $ζ=1$ if
+\[
+\int_{γ_{+}} Θ \in 2π\iu \Z,
+\]
+where $γ_+$ is a path that begins at $(1,η(1)^-)$ and ends at $(1,η(1)^+)$, the two points on the spectral curve lying over $ζ=1$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination of periods $aγ_R + bγ_I$. The difference in the values of the integrals is therefore
+\[
+\int_{γ} Θ - \int_{γ'} Θ
+= \int_{γ - γ'} Θ
+= a\int_{γ_R} Θ + b\int_{γ_I} Θ
+= 2π\iu nb,
+\]
+because by the period conditions, the real period of $Θ$ is zero and its imaginary period is a multiple of $2π\iu$. So although the value of the integral is dependent on the path, the condition that the value must lie in $π\iu \Z$ is not. Likewise, the closing condition at $ζ=-1$ is defined by taking $γ_-$, a path from $(-1,η(-1)^-)$ to $(-1,η(-1)^+)$, and requiring the integral of $Θ$ over this path to lie in $2π\iu \Z$ also.
 
-Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $z=0$ not crossing $z=\infty$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different branch now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by construction will be in $2\pi \iu \Z$, and so the closing conditions are well defined.
-
-In $(z,w)$ coordinates these paths are similarly easy to describe. In short, start from the point $f(1)$ on the imaginary axis, go to the real axis, along and around $z=1$ (which corresponds to $ζ=α$) and back again. By taking the path that avoids $z=\infty$, we never need worry about going the long way around. Actually, for the exact differential the precise path doesn't matter at all.
+For an exact differential, the particular path of integration is irrelevant and the value of the integral is well defined.
 \[
 \int_{γ_{+}}Θ_1^1 = i \left. d\bra{\frac{η}{ζ}} \right|_{(1, η(1)^-)}^{(1, η(1)^+)} = 2i η(1)^+ = 2i \abs{1-α}\abs{1-β}
 \]
-But for the differential with periods
+And similiarly for the other path
+\[
+\int_{γ_{-}} Θ_1^1 = 2i η(-1)^+ = -2i \abs{1+α}\abs{1+β}.
+\]
+One can use these formulae to define an explicit condition for a spectral curve to admit an exact closing differential. An exact closing differential must be a real multiple of $Θ^1$. Let the scaling factor be $a$. The two closing conditions applied to $a Θ^1$ are then
+\begin{align*}
+2\iu η(1)^+ a &\in 2π\iu \Z, \\
+-2\iu η(-1)^- a &\in 2π\iu \Z.
+\end{align*}
+Eliminating $a$ from the two equations, there is a common solution for $a$ if and only if
+\[
+p := \frac{η(1)^+}{-η(-1)^-} = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q^+.
+\]
+In other words, if and only if $p(α,β)$ is a positive rational. This gives the flavour of what we are aiming to achieve. We would like to give conditions on a spectral curve that ensures it admits closing spectral data, and we would like to give such conditions explicitly so we can give results on the subspace of such spectral curves within the space of all spectral curves.
+
+Before we plow ahead to differentials with periods, there is a simplification we can make. Suppose that a spectral curve admits a pair of closing differentials $Θ,\tilde{Θ}$ with periods $2π\iu n, 2π\iu \tilde{n}$ respectively. Let $g$ be the greatest common denominator of $n$ and $\tilde{n}$ (choosen to be a positive number), and by Bezout's identity let $x,y$ be the integers that satisfy
+\[
+xn + y\tilde{n} = g.
+\]
+Then consider the differentials $Ψ,\tilde{Ψ}$ defined by the following integer combination
+\[
+\vt{Ψ}{\tilde{Ψ}} =
+\begin{pmatrix}
+\tfrac{\tilde{n}}{g}    &   -\tfrac{\tilde{n}}{g} \\
+x                       &   y
+\end{pmatrix}
+\vt{Θ}{\tilde{Θ}}
+\]
+The new pair of differentials are simpler in the sense that their periods are $0$ and $2π\iu g$ respectively. They are also closing, because they are an integer combination of closing differentials. And the integer matrix has determinant one, so is invertible over the integers. Further, the two differentials are linearly dependent exactly when $Ψ$ is zero. Hence a curve admits linearly independent closing differentials if and only if it admits nonzero closing differentials with periods $0$ and $2π\iu g$, for some positive integer $g$.
+
+Thus the condition above, $p\in\Q^+$, is one conditon a spectral curve must satify. To find the other condition, concerning the differential with period $2π\iu g$, we follow the same line of reasoning. For some real number $b$, we may write $\tilde{Ψ} = b Θ^1 + g Θ^2$. The two closing conditions applied to this are then
+\begin{align*}
+2η(1)^+ \iu b + g\int_{γ_+} Θ^2 &= 2π\iu Γ^+ \in 2π\iu \Z, \\
+-2η(-1)^+ \iu b + g\int_{γ_-} Θ^2 &= 2π\iu Γ^- \in 2π\iu \Z.
+\end{align*}
+Again, elimination of $b$ yields the condition for a common solution to exist. This equation can be written as
+\[
+2π\iu T := p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 = 2π \iu \frac{p Γ^- - Γ^+}{g}.
+\]
+The right hand side is made up of constants, and may take any value that is an integer multiple of $2π\iu / g\,\text{denom}(p)$.
+
+\begin{lem}
+A spectral curve admits a pair of nonzero closing differentials, one exact and one inexact, if and only if $p\in\Q^+$ and $T\in\Q$.
+
+\begin{proof}
+From the above, this is a necessary condition.
+
+For the converse suppose that the are both rational, say $p = n/m$ and $T = n'/m'$ in lowest terms. Then we may write
+\[
+T = \frac{n'}{m'} = \frac{n'm}{m'm} = \frac{n Γ^- - mΓ^+}{gm}.
+\]
+And so we can see that we should take $g$ to be $m'$. Let $x,y$ be integers such that $xm-ny = 1$. Then we may take
+\[
+Γ^+ = n'mx,\;\; Γ^- = n'my,
+\]
+to obtain equality of the numerator. Hence the condition for the existence of a consistent solution for $b$ is met. The rationality of $p$ ensures the existence of an $a$. Having found $a,b$ and $g$ such that $Ψ = aΘ^1, \tilde{Ψ} = bΘ^1 + gΘ^2$ solve the closing conditions, we have demonstrated that the spectral curve admits closing differentials.
+\end{proof}
+\end{lem}
+
+Thus the space $\mathcal{A'}_1$, the space of genus one spectral curves that admit closing spectral data is defined by the equations $p(α,β) \in \Q^+, T(α,β) \in \Q$. In general the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with for example, $Θ_1^1$ leads to an algebraic expression but $Θ_1^2$ leads to a transcendental conditions involving incomplete elliptic integrals.
+
+To close this section, we shall write out a formula for $T$. The essential computation is that of the integral of $Θ^2$ over the paths $γ_+,γ_-$, but the value of the integral is dependent on the particular paths chosen. Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different branch now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. This choice is not globally well defined; when $ν=\pm 1$ it is impossible to `avoid' $ν$. For the moment, suppose this is not the case.
+
+In $(z,w)$ coordinates these paths are easy to describe (deliberately so). Start from the point $f(1)$ on the imaginary axis, go to the origin and out along the real axis, around $z=1$ (which corresponds to $ζ=α$) and back again. By taking the path that avoids $ν$, which corresponds to $z=\infty$, we keep to the realm of path integrals in the plane. We can derive explicit formula for the value of the integrals on these particular paths.
 \begin{align}
-\int_{f(γ_+)} \tilde {ω}
+\int_{γ_+} \tilde {ω}
 &= \bra{2\int_0^{f(1)} - 2\int_0^1} \tilde {ω} \\
 &= 2 F(f(1);k) - 2 K(k) \\
-\int_{f(γ_+)} e
+\int_{γ_+} e
 &= 2 \tilde E(f(1);k) - 2 E(k) \\
 \int_{γ_+} Θ_1^2
 &= \int_{γ_+} (2E \tilde{ω} - 2Ke) - \frac{2}{M}K \int_{γ_+} \left[ d\bra{\frac{η}{ζ}} - MNd\bra{\frac{η}{den}} \right] \\
-&= 4EF(f(1)) - 4K\tilde{E}(f(1)) - \frac{4K}{M} η(1)^+\left[ 1 - \frac{MN}{den(1)} \right]
+&= 4E F(f(1)) - 4K E(f(1)) - \frac{4K}{M} η(1)^+\left[ 1 - \frac{MN}{den(1)} \right] \\
+&= 4 E(k) \tilde{F}(f(1);k) - 4 K(k) \tilde{E}(f(1);k) - 4K(k) \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν}.
 \end{align}
-where we have made an implicit coordinate in $\tilde{ω}$ and $e$ when we pull back via $f^{-1}$. For the closing condition at $ζ=-1$
+
+For the closing condition at $ζ=-1$
 \begin{align}
-\int_{γ_{-}}Θ_1^1 &= 2i \abs{1+α}\abs{1+β} \\
 \int_{γ_-} Θ_1^2
-&= 4EF(f(-1)) - 4K\tilde{E}(f(-1)) - \frac{4K}{M} η(-1)^+\left[ 1 - \frac{MN}{den(-1)} \right]
+&= 4EF(f(-1)) - 4K\tilde{E}(f(-1)) - \frac{4K}{M} η(-1)^+\left[ 1 - \frac{MN}{den(-1)} \right] \\
+&= 4 E(k) \tilde{F}(f(-1);k) - 4 K(k) \tilde{E}(f(-1);k) - 4K(k) \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν}.
 \end{align}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Boundary Limit}
-Consider the behaviour of the differentials in the limit as $β$ tends to a point on the unit circle that is not $ζ=1,-1$. Such a point is on the boundary of the space of branch points $(α,β)$. Firstly note that
-\begin{align}
-A &\to (α-β)\abs{α-β} \\
-B &\to -β(\bar{α}-\bar{β})\abs{α-β} \\
-k &\to \frac{\abs{α-β} - \abs{α-β}}{\abs{α-β} + \abs{α-β}} = 0
-\end{align}
-so we expect the elliptic integrals present to reduce to circular integrals. To see this, note that for $β$ close to the unit circle $f(1)$ and $f(-1)$ are finite. Let us focus on the limit for the $ζ=1$ marked point, as the $ζ=-1$ point will be entirely similiar. Let $\lim f(1) = \iu σ$ and $t=\iu s$. Assume $σ\geq 0$, the case of $σ<0$ simply requires a sign change in the following argument. For $β$ sufficently close to the unit circle, $\abs{\lim f(1) - f(1)} < ε$ for any small $ε$ (in particular, we wish for $ε< σ$). Then
-\begin{align}
-\abs{\int_{\lim f(1)}^{f(1)} \tilde{ω} }
-&= \abs{ \int_σ^{σ-ε} \frac{ds}{\sqrt{(1+s^2)(1+k^2s^2)}} } \\
-&\leq \int_{σ-ε}^σ \frac{ds}{\sqrt{(1+(σ-ε)^2)(1+k^2(σ-ε)^2)}} \\
-&= \frac{ε}{\sqrt{(1+(σ-ε)^2)(1+k^2(σ-ε)^2)}} \\
-&\to 0
-\end{align}
-so this integral is neglible in the limit. Also consider
-\begin{align}
-\abs{ \int_0^{\lim f(1)} \tilde{ω}}
-&= \int_0^σ \frac{ds}{\sqrt{(1+s^2)(1+k^2s^2)}} \\
-&\leq \int_0^σ ds = σ
-\end{align}
-So this integral is dominated by $1$. Hence by the dominated convergence thereom
-\[
-\lim \int_0^{f(1)} \tilde{ω} = \lim \left[ \int_0^{\lim f(1)} + \int_{\lim f(1)}^{f(1)} \tilde{ω} \right] = \int_0^{\lim f(1)} \lim \tilde{ω}
-\]
-The analysis of the limit of $\int e$ is much the same. The dominating function this time is $\sqrt{1+k^2s^2} \leq \sqrt{1+s^2}$, as $k<1$. The upshot of this is that we can, for the purposes of the closing condition, interchange limits and integrals. We will use this later to consider the limit of genus one differentials as genus zero differentials. As $k\to 0$ both $K$ and $E$ tend to $π/4$. $M$ clearly trends to $-2\abs{α-β}$ and
-\[
-N \to -\left[ \abs{α}^2 - 2\bar{α}β + 1 \right]
-\]
-Hence
-\begin{align}
-Θ_L^2 &:= \lim Θ_1^2 \\
-&= \frac{π}{2}\tilde{ω}-\frac{π}{2}\tilde{ω} - \frac{2}{M}\frac{π}{4}\left[ d\bra{\frac{η}{ζ}} - \frac{M}{\abs{α-β}}d\bra{\frac{η}{ζ-β}} \right] \\
-&= \frac{1}{\abs{α-β}}\frac{π}{4}d\bra{\frac{η}{ζ}} - \frac{1}{\abs{α-β}}\frac{π}{2}d\bra{\frac{η}{ζ-β}}\\
-&= \frac{1}{\abs{α-β}}\frac{π}{4} \frac{dζ}{ζ^2η}\left[ -αβ + \frac{1}{2}(2α + β(1+\abs{α}^2))ζ + (1+\abs{α}^2)ζ^2 + \frac{1}{2}(2\bar{α} + \bar{β}(1+\abs{α}^2))ζ^3 - \bar{α}\bar{β}ζ^4 \right] \\
-&= \frac{1}{\abs{α-β}}\frac{π}{4}(ζ-β) \frac{dζ}{ζ^2η}\left[ α - \frac{1}{2}(1+\abs{α}^2)ζ + \frac{1}{2}\bar{β}(1+\abs{α}^2)ζ^2 - \bar{α}\bar{β}ζ^3 \right]
-\end{align}
-It is easier to see that
-\[
-Θ_L^1 := \iu\frac{dζ}{ζ^2η}(ζ-β)\left[ α - \frac{1}{2}(1+\abs{α}^2)ζ - \frac{1}{2}\bar{β}(1+\abs{α}^2)ζ^2 + \bar{α}\bar{β}ζ^3 \right]\\
-\]
-The two limit differentials $Θ_L^i$ both have zeroes at the double point $β$. The significance of this will shortly become apparent. Let $β=e^{iφ}$ and consider the normalisation map
-\begin{align}
-π : Σ_0(α) &\to Σ_1(α,β) \\
-π : (ζ,η) &\to (ζ, s\iu e^{-\iu φ/2}(ζ-β)η)
-\end{align}
-where $s=\pm 1$ is a sign coming from the square root to be determined. This equation comes simply from the extra factor that the equation for $Σ_1(α,β)$ has compared to $Σ_0(β)$. Because the spectral curves have involutions, composition with the involution gives `another' normalisation map, which differs only in the sign of the $η$ fibre. But clearly we want to make the positive values of $η$ map to positive values. In particular, above $ζ=1$ if we consider the case that $β=i$, then we have
-\begin{align}
-η_0(1) &= \pm\abs{1-α} \\
-η_1(1) &= \pm\abs{1-\iu}\abs{1-α} = \pm\sqrt{2}\abs{1-α} \\
-s\iu e^{-\iu π/4}(1-\iu)η_0(1)
-&= \pm s \iu \frac{1-\iu}{\sqrt{2}}(1-\iu)\abs{1-α} \\
-&= \pm s \iu (-\iu\sqrt{2})\abs{1-α} \\
-&= \pm s \sqrt{2}\abs{1-α}
-\end{align}
-From this we can see that we should chose $s=1$ to be the correct sign for the square root. The pull back of the tautilogical section is then by definition $π^* η = \iu e^{-\iu φ/2}(ζ-β)η$. And the limit differentials are
-\begin{align}
-\pi^* Θ_L^1 &= \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ α - \frac{1}{2}(1+\abs{α}^2)ζ - \frac{1}{2}\bar{β}(1+\abs{a}^2)ζ^2 + \bar{α}\bar{β}ζ^3 \right]\\
-\pi^* Θ_L^2 &= \iu \frac{π}{4} \frac{1}{\abs{α-β}} \frac{dζ}{ζ^2η} e^{\iu φ/2} \left[ α - \frac{1}{2}(1+\abs{α}^2)ζ + \frac{1}{2}(1+\abs{α}^2)\bar{β}ζ^2 - \bar{α}\bar{β}ζ^3 \right]
-\end{align}
-These lie squarely in the plane of genus 0 differentials, as we would hope. We can now see the significance of the development of a zero at the double point. When we pull back regular differentials on a curve with a double point, the result is differentials with simple poles at the two preimages of the double point, with opposite residues at those points. But by having a zero at the double point, the pole is neutralised and we again have regular differentials.
-
-
-
-
-
-
-
-
-
-\subsection{The Lattice of Differentials}
-\label{sec:The Lattice of Differentials}
-
-\todo{TODO: reformulate this in a local only way, with the Bezout argument}
-We have computed two differentials that satisfy the period conditions and are real linearly independent. Though obviously there is nothing `natural' about this choice, many other combinations are possible. We also have not applied the closing conditions. For general $α,β$, there are not enough degrees of freedom to satisfy the condition at both points, only enough for one. With these two ideas in mind, we make the following definitions.
-
-Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $z=0$ not crossing $z=\infty$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different branch now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by constuction will be in $2\pi \iu \Z$, and so the closing point conditions are well defined. Let
-\[
-b^{-1} = \frac{1}{2\pi\iu}\int_{γ_+} Θ_1^1
-\]
-So we may define $Θ_1^S = b Θ_1^1$, the unique differential with no periods and $\int_{γ_+} Θ_1^S = 2\pi\iu$. Likewise we define $Θ_1^P$ to be the unique differential with periods $0$ and $2\pi\iu$ and $\int_{γ_+} Θ_1^P = 0$. Writing $Θ_1^P = a Θ_1^1 + Θ_1^2$ we compute that
-\[
-a = - \frac{\int_{γ_+} Θ_1^2}{\int_{γ_+} Θ_1^1}.
-\]
-These again form a basis of the plane of differentials, and also satisfy the closing condition at $ζ=1$, but only for certain values of $α,β$ do they also satify the condition at $ζ=-1$. I claim that if $α,β$ are such that the closing conditions are able to be satified by some differentials, then these differentials form a sublattice of $\Z\langle Θ_1^P, Θ_1^S\rangle$. To see this, suppose $Θ$ is such that it has periods $0$ and $2\pi\iu n$ and
-\[
-\frac{1}{2\pi\iu}\int_{γ_+} Θ = 2\pi\iu k,\;\; \frac{1}{2\pi\iu}\int_{γ_-} Θ = 2\pi\iu l.
-\]
-Then by considering periods $Θ - n Θ_1^P$ is exact so a multiple of $Θ_1^S$. It is easy to see what the multiple is, it much be $k$ from the first half period above. Therefore $Θ = n Θ_1^P + k Θ_1^S$, which is in the lattice as claimed. Note however that the half period integrals are extremely difficult to compute and so in practice we cannot write explicit formulas for our basis $\Z\langle Θ_1^P, Θ_1^S\rangle$. We will need some other method to find which $α,β$ are admissible.
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Deformations}
-TO FIX \todo{this}
-
-The full problem of deformations is hard, but consider the case of just $Θ^S$.
+From these we explictly compute
 \begin{align*}
-\int_{\gamma_1}aΘ^1 &= \left . a\iu\frac{η}{ζ}\right|_{(1, η(1)^-)}^{(1, η(1)^+)} = 2\iu a \abs{1-α}\abs{1-β} = 2π\iu Γ^S_+ \in 2π\iu\Z \\
-a &= \frac{πΓ^S_+}{\abs{1-α}\abs{1-β}}
-\end{align*}
-
-Because it is exact, $q^1$ is well-defined and $\dot q^1$ is computable. Indeed
-\[
-\dot q^1 = \frac{d}{dt}\frac{a\iu}{ζ}\dot{η} = \frac{i}{ζη}\bra{\iu \dot{a}P +\frac{1}{2}\iu a\dot{P}}.
-\]
-A deformation preserves the half period condition precisely when $\dot q(1)=\dot q(-1) = 0$. The first is automatic by the choice of $a$. The second translates to
-\begin{align*}
-\dot{a} &= a\left[ \Re\bra{\frac{\dot{α}}{1-α}} + \Re\bra{\frac{\dot{β}}{1-β}} \right] \\
-% \dot{P}(-1) &= 2P(-1) \left\[\Re\bra{\frac{\dot{α}}{1+α}} + \Re\bra{\frac{\dot{β}}{1+β}} \right\] \\
-% 0 &= \dot{a}P(1) + \frac{1}{2}a\dot{P}(1) =0\\
-% 0 &= 2aP(1) \left\[\Re\bra{\frac{\dot{α}}{1-α}} + \Re\bra{\frac{\dot{β}}{1-β}} \right\] \\
-% 0 &= \dot{a}P(-1) + \frac{1}{2}a\dot{P}(-1)\\
-\end{align*}
-respectively. There are four degrees of freedom in choosing $\dot{α}  $ and $\dot{β}$, but here are two conditions. This gives the expected two degrees of freedom. Notice that if the deformation preserves the symmetric case, then we have $\dot{β} = - \dot{α}  $, as well as $β=- α  $, so the above two conditions collapse to the single condition
-\[
-0 = \Re \frac{2 α  \dot{α}  }{1- α  ^2}
-\]
-If we take the interpretation of quotienting out by the symmetry, so we have a rational curve over the coordinate $z= α  ^2$, then this condition becomes
-\[
-0 = \Re \frac{\dot z}{1-z}
-\]
-which can be interpretted geometrically for $z$ in the unit disc as saying that $z$ must move perpendicularly to $1-z$, ie along circles centered at 1. So it seems as if there is one direction of deformation that preserves the symmetry, and one direction that breaks it. One should note however that the above reasoning is entirely huersitic, as these a neccessary but not sufficent conditions on the deformations. It remains to be shown that there are no further restrictions arising.
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{The genus one moduli surface}
-Let us pause to consider the spectral data associated to a harmonic map. It consists of three objects, and those objects have a litany of special properties. If we consider only spectral genus 1, then we may specify the curve by its branch points over $\CP^1$. And because of the reality of the spectral curve, these four points must be in conjugate inverse pairs, so we are reduced to choosing two complex numbers $α,β$ inside the unit disc. Not all choices are allowed however, we must exclude the diagonal $α=β$ as the spectral curve cannot have singularities in low genus. Notate this space $\mathcal{A} := D^2 \setminus \{α=β\}$. It will form the base of our bundle of parameters.
-
-Consider next the real $2$-plane that contains all of the permitted differentials: the subspace of differentials whose real periods vanish. Thus for each point in $\mathcal{A}$ we have a plane, thus we consider the rank 2 vector bundle $\mathcal{B}\to\mathcal{A}$.
-
-In the genus one case, there are several global frames we can choose for this bundle. The first and least difficult to compute is $\{Θ^1,Θ^2\}$ where $Θ^1 = \iu d(ζ/η)$ is an exact differential, and $Θ^2$ is a differential whose principal part satisifies $\pp Θ^2 = \iu \pp Θ^1$ and whose imaginary period is $2π\iu$, as defined above. Differentials that fulfill all the requirements to be spectral data must lie somewhere within the space spanned pointwise by $\R Θ^1 + \Z Θ^2$. But where within this space exactly? To answer that requires consideration of the closing condition. A better framing for the problem (excuse the pun) is the following unique choice
-\begin{align}
-\int_{\S^1} Θ^S = 0, &\qquad 2π\iu Γ^S_+ := \int_{γ_+} Θ^S = 2π\iu \\
-\int_{\S^1} Θ^P = 2π\iu, &\qquad 2π\iu Γ^P_+ := \int_{γ_+} Θ^P = 0.
-\end{align}
-One can remember the superscripts with the mnenomic P for period and S for exact. If $Θ$ is a differential with integral half-periods $2π\iu Γ_-$ and $2π\iu Γ_+$ and imaginary period $2π\iu n$, then $Θ-nΘ^P$ is exact and so must be a real mulitple of $Θ^S$; precisely, $Θ=nΘ^P + Γ_+ Θ^S$. Thus we can see that any differential with all the conditions meet must be an element of $\Z \langle Θ^S, Θ^P \rangle$.
-
-It is not possible to find such differentials for every elliptic spectral curve, but by making our choice of $Θ^S, Θ^P$ we have fully exhausted all degrees of freedom toward that end. Moreover, both of those differentials are defined for every $(α,β)\in\mathcal{A}$, so we may consider the $\Z^2$ lattice bundle $Λ\to\mathcal{A}$. And any differential that does meet all the conditions lies within this space. To have a complete spectral data triple, we need to take two such differentials, which are an element of $Λ^2$ (product taken fibrewise). If we denote the space of spectral data as $\mathcal{X}$, then $\mathcal{X}\subset Λ^2 = \Z^4\times\mathcal{A}$. We can make this identification because by giving a global frame we have shown the bundle to be trivial. Thus we can divide $\mathcal{X}$ into various pieces indexed by four integers, though some of those pieces may be empty. For example $\mathcal{X}(1,1,2,2)$, which corresponds to the space of spectral data with differentials taken to be $Θ^S + Θ^P$ and $2Θ^S + 2Θ^P$, is empty because the differentials should be lineary independent.
-
-In terms of the explicit basis, this new one can be writen as $Θ^P = a Θ^1 + Θ^2$ and $Θ^S = b Θ^1$ where the coefficents are
-\[
-a = -\frac{\int_{γ_+}Θ^2}{\int_{γ_+}Θ^1}, \quad
-b = \frac{2π\iu}{\int_{γ_+}Θ^1}
-\]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Matching the limit differentials to the lattice}
-\label{sec:Matching the limit differentials to the lattice}
-
-INSERT JUSTIFICATION FOR INTERCHANGING LIMITS AND INTEGRALS AS JOHN POINTED OUT.\todo{this}
-
-In general it is difficult to be explicit about the space $\mathcal{X}$, because the closing conditions are transcendental. However, over the boundary of $\mathcal{A}$ the conditions degenerate to simple trigonometry and can be solved. The first step is to treat each piece of $\mathcal{X}$ seperately, that is, fix four integers $m,n,\tilde m, \tilde n$. Then we can identify $\mathcal{X}(n,m,\tilde n,\tilde m)$ as lying within $\mathcal{A}$. With this view point adopted, the question of finding the moduli space is reduced to finding conditions on $(α,β)$ such that the closing conditions can be satisfied.
-
-
-The half-periods of the limit can then be computed via the pull back to the normalisation, which as a genus zero curve the differentials are exact. If we denote the normalisation map as $π$ and the limits of the differentials as $Θ^1_L, Θ^2_L$ then
-\begin{align*}
-\int_{γ_+} Θ^1_L = \int_{π^{-1}(γ_+)} \pi^* Θ^1_L
-&= 4\iu \abs{1-β} \sin \frac{φ}{2} \\
-\int_{π^{-1}(γ_-)} \pi^* Θ^1_L &= -4\iu \abs{1+β} \cos \frac{φ}{2} \\
-\int_{π^{-1}(γ_+)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1-β}}{\abs{α-β}} \cos \frac{φ}{2} \\
-\int_{π^{-1}(γ_-)} \pi^* Θ^2_L &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}} \sin \frac{φ}{2} \\
-\end{align*}
-where $α = \exp \iu φ$. \todo{double check signs here vis-à-vis correct square root sign choice in $η(\pm 1)$} From this we can computer the previous incomputable coefficents $a$ and $b$; they are simply ratios of the above. This gives us the half-periods in the better frame
-\begin{align*}
-2π\iu Γ^S_- := \int_{γ_-} Θ^S &= -2π\iu \frac{\abs{1+β}}{\abs{1-β}}\cot\frac{φ}{2} \\
-2π\iu Γ^P_- := \int_{γ_-} Θ^P &= 2π\iu \frac{\abs{1+β}}{\abs{α-β}}\csc\frac{φ}{2}
-\end{align*}
-The condition $Γ_+, \tilde{Γ}_+$, the half-periods of $Θ, \tilde{Θ}$ respectively, is assured by this choice of basis, but we still require that $Γ_-, \tilde{Γ}_- \in\Z$. Indeed, based on our selection to focus on $\mathcal{X}(m,n,\tilde m, \tilde n)$ (a choice of two elements of the lattice $Λ$) we require that there be integers $k,\tilde k$ such that
-\begin{align*}
-k = Γ_- &= m Γ^S_- + n Γ^P_- \\
-\tilde{k} = Γ_- &= \tilde{m} \tilde{Γ}^S_- + \tilde{n} \tilde{Γ}^P_-
-\end{align*}
-Elimination of the left hand sides of both equations leads to
-\[
-\frac{\abs{α-β}}{\abs{1-β}} = -\left( \frac{n\tilde{k} - \tilde{n}k}{m\tilde{k}-\tilde{m}k} \right) \sec\frac{φ}{2} =: q \sec\frac{φ}{2}
-\]
-whereas elimination of the rightmost term leads to
-\[
-\frac{\abs{1+β}}{\abs{1-β}} = \left( \frac{k\tilde{n} - \tilde{k}n}{\tilde{m}n - m \tilde{n}} \right) \tan\frac{φ}{2} =: p \tan\frac{φ}{2}
-\]
-
-For rational numbers $p,q$. If we have a solution for a particular $p$ and $q$, then as these two equations have three real degrees of freedom ($α\in\S^1$ and $β\in \C$), and the Jacobian of this as a map $F : (α,β) \mapsto (p,q)$ \todo{prove this} is generically maximal rank, we expect that there is a path of solutions. Also note the general fact that if $μ,\tilde{μ} \in \S^1$, $R\in\R$, and
-\[
-\frac{\abs{μ-β}}{\abs{\tilde{μ} - β}} = R,
-\]
-then also
-\[
-\frac{\abs{μ-\bar{β}^{-1}}}{\abs{\tilde{μ}-\bar{β}^{-1}}}
-= \frac{\abs{μ}\abs{\bar{β}^{-1}}\abs{\bar{β} - μ^{-1}}}{\abs{\tilde{μ}}\abs{\bar{β}^{-1}}\abs{\bar{β} - \tilde{μ}^{-1}}} = \frac{\abs{μ-β}}{\abs{\tilde{μ} - β}} = R.
-\]
-The two equations above are both of this form, so if $(α,β)$ is a solution, so too is $(α,\bar{β}^{-1})$. This is expected, as there is nothing really distinguishing the root inside the unit circle from the one outside. Also note that the left hand sides are both positive numbers, so if $p>0$ then $ν$ is confined to the upper half circle, and if $p<0$ it is confined to the lower half.
-
-The general solution to these equations is ugly and unilluminating. The projection of the solution space onto the $β$-plane is a real curve of degree 8 in the real and imaginary parts of $β$. There is however a nice solution to the question of when are both $ν$ and $β$ on the unit circle. Square both equations and make the t-substituion $t = \tan φ/2$. Also let $β= x + \iu y$. Then the equations are
-\begin{align}
-(x+1)^2 + y^2 &= p^2t^2 \left((x-1)^2 + y^2\right) \\
-\left(x- \frac{1-t^2}{1+t^2} \right)^2 + \left(y - \frac{2t}{1+t^2}\right)^2 &= q^2(1+t^2) \left((x-1)^2 + y^2\right) \\
-x^2 + y^2 &= 1.
-\end{align}
-Using the third equation to eliminate the $x^2 + y^2$ from both sides of the first equation, and rearranging to solve for $x$ gives
-\[
-x = \frac{p^2t^2 - 1}{p^2t^2 + 1}.
-\]
-Applying the same trick to make the second equation linear in $y$ gives
-\[
-y = \frac{2pt}{p^2t^2 + 1}.
-\]
-Finally then can we solve for $t$ in terms of $p$ and $q$ alone to give the neat formula
-\[
-t^2 = \operatorname{sgn} p \frac{1\pm q}{p \mp q}
-\]
-From the constraint that the left hand side is a nonnegative number, we know that $q$ must lie in the range $\abs{q}< \min\{\abs{p},1\}$.
-
-
-
-
-OFF TOPIC: If we take the alternative definition of $\mathcal{A}$ that includes $\C^2$ outside $D\times D$ also, then there is a symmetry of this arc under inversion in the unit circle. That makes it a nice egg shape. Is there anything to be gained by doing this, for example can I show that it must lie within the sector formed of the origin, the two points corresponding to $β\in\S^1$ and the unit circle?
-
-The two points are given by
-\begin{align*}
-t^2 &= (\sign p) \frac{1 \pm q}{p \mp q} \\
-β &= \frac{p^2t^2 - 1}{p^2t^2 + 1} + \iu \frac{2pt}{p^2t^2+1}
-\end{align*}
-So you can see that there are two solutions (or a double solution) only when $\abs{q} < 1, \abs{p}$ \todo{What forbids only one solution?}. The condition that it be less than 1 forces the $k/\tilde{k}$ to lie in a certain range ....
-
-INVESTIGATE how many $(k,\tilde{k})$ there are that satisfy the inequalities on $q,p$ for given $m,n,\tilde m, \tilde n$?
-
-Since there is nothing particularly special about $α\to\S^1$ compared to $β\to\S^1$, and simliar analysis yields that the intersection of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$ with $D\times\S^1$ is also a colection of arcs. These arcs join along the points where both $α,β$ lie in the unit circle to form closed cycles. UNPROVEN CLAIM \todo{verify this claim}. These are the boundary components of $\mathcal{X}(m,n,\tilde{m},\tilde{n})$.
-
-BROAD STROKES PICTURE. There is some 2d surface in this 4-space $\mathcal{A}$. The exterior boundary is a three space topologically $S^3$. To see this, note that it is $S^1 \times D \cup D \times \S^1$. The intersection of the two pieces is $\S^1\times\S^1$, a torus. The two components of the union are the inside and outside of the torus. Putting it another way, in $\C^2$ the intersection is given by $\abs{α}=\abs{β}=1$, a scaled up version of the Clifford torus and you can project $\{(α,β) \mid α\in\S^1, β\in D\}$ onto the 3-sphere of radius $\sqrt{2}$ by rescaling by $\sqrt{2}/\sqrt{1+\abs{β}^2}$ and ditto for the other component.
-
-The forbidden diagonal bit, ie where $α=β$ is a complex plane inside $\C^2$ that intersect this boundary in a real curve, the line on the torus where the toroidal angle is equal to the poloidal angle.
-
-The moduli space $\mathcal{X}$ is also a surface, so we would expect it to intersect the boundary in arcs. Further, since we know that it has this symmetry that means we can consider its mirror on the of the boundary, we expect those arcs to be closed loops. The only way they could be otherwise (I think) is if the moduli space was tangent to the boundary somewhere.
-
-Away from the boundary I don't know what the moduli space is doing. I don't know if separate boundary arc correspond to separate components of the moduli space, or if it's connected, or in between. I don't know if there are handles sitting inside. I don't know if several components come together on the forbidden diagonal.
-
-
-
-
-
-
-
-
-
-\subsection{The Conditions}
-
-There are two conditions that must be satisfied by a spectral curve to admit differentials, and if a spectral curve admits differentials then it admits a $\Z^2$ lattice of them. The first condition is the same as before. The exact differential leads to the condition that
-\[
-p := \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q.
-\]
-In other words that $p$ is rational. The other condition, concerning the differential with period $2π\iu g$, cannot be evaluated with elementary functions. If instead we keep the integrals in the equations, we arrive at the condition
-\[
-2π\iu q := 2π\iu \bra{\frac{p\tilde{Γ}^- - \tilde{Γ}}{g}} = p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2
-\]
-for some rational $q$. This however is only a locally defined expression because of the multivaluedness of the integrals. But as $q$ is rational, it must be locally constant and so serves as a constraint. Recall the expression for the integrals.
-\begin{align*}
-\int_{γ_+} Θ^2 &= 4 E(k) \tilde{F}(f(1);k) - 4 K(k) \tilde{E}(f(1);k) - 4K(k) \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \\
-\int_{γ_-} Θ^2 &= 4 E(k) \tilde{F}(f(-1);k) - 4 K(k) \tilde{E}(f(-1);k) - 4K(k) \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν}.
-\end{align*}
-From this we define
-\begin{align*}
-T &:=  p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 \\
+2π\iu T_0 &=  p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 \\
 &=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) - 4K \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} \right] \\
 &\qquad\qquad   - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right] \\
 &=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
 &\qquad\qquad    - 4K\left[ p\frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} - \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right]  \\
 &=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
 &\qquad\qquad    - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \left[ \frac{1-ν}{1+ν} - \frac{1+ν}{1-ν} \right]  \\
-&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2} \labelthis{Teqn} \\
+&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}. \labelthis{Teqn} \\
 \end{align*}
 
-TODO change the normalisation $1/2π\iu$ and comment that this is real.
+Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formula we have derived for $T_0$, which is not defined when $ν$ take either of these values. Properly understood, $T$ is not a function on the space of genus one spectral curves $\mathcal{A}_1$, but rather it is a function on the space of paths $(γ_+, γ_-)$, which we shall call $\mathcal{P}$. To be more precise, let $\mathcal{P}$ be the space $\{(γ_+, γ_-, α)\}$ where $α$ is one of the branch points inside the unit circle of some genus one spectral curve $Σ$ and $γ_+$ and $γ_-$ are paths $(0,1) \to Σ$ defined in the following way. $γ_+$ starts at $(1, η(1)^-)$, tranverses the unit circle to $μ$ (in any manner one pleases), goes along the branch point circle to $α$, encircles it, returns to $μ$ along the branch point circle and retraces its path to $(1, η(1)^+)$. In an analogous way, $γ_-$ starts at $(-1, η(-1)^-)$ and finishes at $(-1, η(-1)^+)$. We consider these paths up to homology.
+
+\todo{worry} It is possible that since this is not the full space of paths, there are spectral curves that admit closing differentials, but the fact they are closing can only be seen on certain paths that are excluded here. I don't think that is the case, because every path is homologous to one of these up to the addition of some number of periods, which do not change the closing condition. On the other hand, the reason that it is not sufficent to consider the principal paths is that they are not defined on every spectral curve.
+
+$\mathcal{P}$ is naturally a $\Z^2$-bundle over the space of spectral curves with a distinguished branch point. The projection map takes a triple $(γ_+, γ_-, α)$ to the underlying spectral curve $Σ$. The fibre over any spectral curve $Σ$ is seen to be $\Z^2$, because if one fixes a point on the upper unit circle, not lying over $1,-1,μ$, the (signed) number of crossings of that point by a path uniquely determines that path. As an aside, the issue with points over $1,-1$ and $μ$ is that the paths may terminate there (in the obvious way for the first two, in the sense that the path may leave the unit circle in the latter case). One could probably introduce a convention to get around this, but it is not necessary to do so for our purposes.
+
+Viewed from this perspective, we consider $T$ to be a multivalued function on $\mathcal{A}_1$ defined locally up the addition of multiples of $p$ and $1$, and $T_0$ is a principal branch cut. We call $\tilde{T}$ the well defined version that is defined on $\mathcal{P}$. $\mathcal{P}$ is actually a cover of the universal cover of $\mathcal{A}_1$ (implying it is disconnected), a fact that will become apparent once we have adopted coordinates on $\mathcal{A}_1$ better adapted to the situation.
+
+
+
+
+
+
+
+\subsection{Marked Point Coordinates}
+\label{sub:Reformulate}
+
+Recall the two rationality conditions that must be satisfied for a genus one spectral curve to admit differentials meeting the closing condition
+\begin{align}
+p &:= \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q^+, \\
+T &:=  \frac{1}{2π\iu} \bra{p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2} \in \Q,
+\end{align}
+Using the formula for the differentials, we can explicitly give an expression for the principal branch of $T$ in terms of the branch points $α$ and $β$
+\[
+T_0 = \frac{2p}{π\iu} \left[ E F(f(-1);k) - K E(f(-1);k) \right] - \frac{2}{π \iu}\left[ E F(f(1);k) - K E(f(1);k) \right] + \frac{2}{π\iu}K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}, \labelthis{Teqn1}
+\]
+where $f$ is the map normalises the branch points of the spectral curve (it takes $α$ to $1$, $β$ to $k$, etc) and $ν$ is the point of intersection between the branch point circle and the unit circle. $T$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary and $F, E$ take the imaginary axis to itself, and because $ν$ is on the unit circle, $ν/(1-ν^2)$ is purely imaginary as well.
+
+It is our ultimate aim to examine the surfaces defined by the two conditions and our examination will result in coordinates for those surfaces. This involves applying the implicit function theorem and the necessary computation for that theorem requires differentiating the above expressions. It is therefore prudent to adopt a parameterisation of the space of spectral curves more suited to that task than $(α,β)$. An obvious first coordinate is $p$ itself, as then we can enforce the first condition simply by holding it constant. Elliptic integrals are the most difficult part of the above to differentiate, so to minimise our labour we choose the other three (real) coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$.
+
+This motivation misses some of the subtleties of the situation however. For example, $f$ is a M\"obius transformation of $\CP^1$, so may take the value infinity. We therefore make the following definition.
+
+\begin{defn}\label{defn:parameter space}
+Consider the product space $\R_{>0} \times (0,1) \times \RP^1 \times \RP^1$. Let $p \in \R_{>0}$ and $k \in (0,1)$ be coordinates on the first two factors. Let $u, u' \in \R$, with $u' = u^{-1}$, be coordinates covering the third factor, and likewise let $v, v' \in\R$, with $v' = v^{-1}$ be coordinates covering the fourth factor. Together, the four coordinate patches $(p,k,u,v)$, $(p,k,u',v)$, $(p,k,u,v')$ and $(p,k,u',v')$ to $\R_{>0} \times (0,1) \times \R^2$ cover $\R_{>0} \times (0,1) \times \RP^1 \times \RP^1$.
+
+Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the four coordinate patches it is given by the equations $u=v$, $(u')^{-1} = v$, $u = (v')^{-1}$, $u' = v'$. Define $P$ to be the complement of $H$.
+\end{defn}
+
+First we must show that $P$ does indeed parameterise the space of spectral curves. We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. The map $f$ is written in terms of $(α,β)$ \todo{ref} and the new parameters are the images of points under this map (except for $p$, which has its own formula in terms of $α$ and $β$). As the new parameters all respresent points in the $z$-plane, one method to derive the reverse change in parameters is to express the inverse transformation $f^{-1}(z)$ in term of our new parameters. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to to forward direction. Denote $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. The real structure of the $z$-plane then forces $f(\infty) = - \conj{z_0}$. As a M\"obius transformation is described up to a scalar by the points sent to $0$ and $\infty$, $f^{-1}$ is a scalar multiple of
+\[
+\frac{z-z_0}{z + \conj{z_0}},
+\]
+
+Note the following trick using cross ratios.
+\[
+\abs{\frac{α-1}{α+1}}
+= \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
+= \abs{ \cross{α}{0}{1}{-1} }
+= \abs{ \cross{1}{z_0}{\iu u}{\iu v} }
+= \abs{\frac{1-\iu u}{1 - \iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}
+\]
+The same trick gives a similar formula for $β$.
+\[
+\abs{\frac{α-1}{α+1}}
+= \abs{\frac{1-k\iu u}{1 - k\iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}
+\]
+The terms on the left are the two halves of the expression for $p$. Multiplying and expanding shows that for fixed values of the parameters $(p,k,u,v)$, $z_0$ lies on a particular circle. Let $z_0 = x+\iu y$.
+\begin{align*}
+p &= \abs{\frac{1-\iu u}{1 - \iu v}}\abs{\frac{1 - k\iu u}{1 - k\iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}^2 \\
+\abs{\frac{z_0 - \iu v}{z_0 - \iu u}} ^2
+&= p \frac{\sqrt{1+v^2}}{\sqrt{1+u^2}}\frac{\sqrt{1+k^2v^2}}{\sqrt{1+k^2u^2}} \\
+&= p \frac{w(v)}{w(u)} \\
+\abs{z_0 - \iu v} ^2 &= p \frac{w(v)}{w(u)} \abs{z_0 - \iu u}^2 \\
+x^2 + y^2 &+ 2y \frac{puw(v) - vw(u)}{w(u)-pw(v)} + \frac{v^2w(u) - pu^2w(v)}{w(u)-pw(v)} = 0.
+\end{align*}
+
+In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0, \iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Then $z_0$ lies on the circle
+\[
+x^2 + \bra{ y - \frac{u+v}{2} }^2 = \frac{(u-v)^2}{4},
+\]
+which simplifies to the relation
+\[
+x^2 + y^2 = y(u+v) - uv.
+\]
+These two circles intersect in two points: $z_0$ and $-\conj{z_0}$. The precise formulas are
+\[
+x = \frac{\sqrt{pw(u)w(v)}}{pw(v) + w(u)} \abs{u-v},\; y = \frac{puw(v) + vw(u)}{pw(v) + w(u)}
+\]
+where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ inside the unit circle, as opposed to choicing their conjugate-inverse partners. Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$.
+\begin{align*}
+f^{-1}(z) &= C \frac{z-z_0}{z + \conj{z_0}} \\
+1 = f^{-1}(\iu u) &= C \frac{\iu u - z_0}{\iu u + \conj{z_0}} \\
+f^{-1}(z) &=  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}
+\end{align*}
+As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of the new parameters.
+
+In the case that one of $f(1)$ or $f(-1)$ is infinite, one needs to transistion to the coordinates $u'$ or $v'$ to maintain valid formulae. Though standard, it is perhaps still of some interest to consider the above geometrical argument in this limit. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly. Considering next $p$, the special case of the cross ratio gives that
+\begin{align}
+p
+&= \frac{\abs{z_0 -\iu v}^2}{\abs{1-\iu v}\abs{k^{-1}-\iu v}} \\
+&= \frac{x^2}{k^{-1}\sqrt{1+v^2}\sqrt{1+k^2 v^2}} \\
+x &= \sqrt{\frac{p w(\iu v)}{k}}.
+\end{align}
+These are the same formulas for $x$ and $y$ that one arrives by substituting $u = (u')^{-1}$ in the previous formulas and taking a limit $u' \to 0$. Given this modification of $z_0$, the rest of the formula for $f^{-1}$ is as before. The geometry for $f(-1) = \infty$ is similar. We summarise this in the following lemma.
+
+\begin{lem}
+The following maps between $\{ (α,β) \in D\times D | α \neq β \}$ and $P$ (def \ref{def:parameter space}) are diffeomorphisms. Recall $A, B$ (ref \todo{ref}), functions of $(α,β)$, and
+\[
+f(ζ) = \frac{ζ(\bar{α}A + B) - (A + αB)}{ζ(\bar{α}A - B) - (A - αB)}.
+\]
+Also recall from above $z_0$, a function of $(p,k,u,v)$ and
+\[
+f^{-1}(z) =  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}.
+\]
+The maps
+\begin{align}
+φ :     & \{ (α,β) \in D\times D | α \neq β \} \to P \\
+        & (α,β) \mapsto (p(α,β), k(α,β), \Im f(1), \Im f(-1)),
+\end{align}
+and
+\begin{align}
+φ' :    & P \to \{ (α,β) \in D\times D | α \neq β \} \\
+        & (p,k,u,v) \mapsto \left( f^{-1}(1), f^{-1}(k^{-1}) \right),
+\end{align}
+with the cases of $u'=0$ or $v'=0$ are dealt with with an appropriate limit, are well-defined mutually inverse diffeomorphisms.
+
+\begin{proof}
+These maps are inverses by construction above. We have not checked if the formulae are well-defined everywhere. For $φ'$ could potentially occur if $z_0$ were to equal $\iu u$, when the scaling factor would be $0/0$. This could only occur if $\Re{z_0}=0$, which itself only occurs if $u=v$. But this is exactly the plane which is excluded from $P$.
+
+In the forward direction, $p$ and $k$ are well behaved functions. The only complicating situation is when $f(1)$ or $f(-1)$ is infinite, but this is exactly when $u'$ or $v'$ is zero. The functions could only fail to be smooth if they contain an expression of the form $\abs{g}$ at a point where $g=0$. Looking through the defintions of the formulae, this occurs when one of the following is the zero:
+\[
+u-v,\;\;    pw(u)w(v),\;\;      α-β,\;\;    1- \conj{α}β.
+\]
+The first is excluded from $P$, the second is never zero, the third is also excluded from the domain, and the last is zero, if and only if $\cji{α} - β =0$ which is impossible if both $α,β$ are inside the unit circle.
+\end{proof}
+\end{lem}
+
+
+
+The moduli space $\mathcal{A}'_1$ is a subspace of this parameter space $P$ defined implicitly by the two conditions that $p$ and $T$ are constant. Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the third term of $T_0$. By direct computation
+\begin{align*}
+\abs{1-α} &= \abs{\frac{(z_0 + \conj{z_0}) (\iu u - 1) }{ (\iu u - z_0) (1 + z_0) }} \\
+\abs{1-β} &= \abs{\frac{(z_0 + \conj{z_0}) (k \iu u - 1) }{ (\iu u - z_0) (1 + k z_0) }} \\
+%%%%%%%%%%%%%%%%
+\abs{α-β} &= \abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }} \\
+&= \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }}
+\\
+%%%%%%%%%%%%%%%%
+\abs{1-\conj{α}β} &= \abs{\frac{(z_0 + \conj{z_0}) (k + 1) }{ (1 + z_0) (1 + k z_0) }}.
+\end{align*}
+where the expressions were simplified using the observation that
+\[
+\abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} = 1,
+\]
+because the denominator is the conjugate of the numerator. Next $ν = f^{-1}(\infty)$ and
+so
+\begin{align*}
+ν &= \frac{\iu u + \conj{z_0}}{\iu u - z_0} \\
+\frac{1+ν}{1-ν} &= -\iu \sqrt{\frac{w(u)}{pw(v)}}\sign{(u-v)} \\
+\frac{1-ν}{1+ν} &= \iu \sqrt{\frac{pw(v)}{w(u)}}\sign{(u-v)} \\
+\frac{4ν}{1-ν^2} &= \frac{1+ν}{1-ν} - \frac{1-ν}{1+ν} \\
+&= -\iu \frac{pw(v) + w(u)}{\sqrt{pw(u)w(v)}} \sign{(u-v)}.
+\end{align*}
+These expressions combine to give
+\begin{align*}
+\frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}
+&= \frac{1}{2}\abs{\frac{ (z_0 + \conj{z_0}) (1 - \iu u) (1-k\iu u) }{ (\iu u - z_0)^2 }}
+    \times -\iu \frac{pw(v) + w(u)}{\sqrt{pw(u)w(v)}} \sign{(u-v)} \\
+&= \frac{ \sqrt{pw(u)w(v)} }{ \abs{u - v}}
+    \times -\iu \frac{pw(\iu v) + w(\iu u)}{\sqrt{pw(u)w(v)}} \sign{(u-v)} \\
+&= -\iu \frac{ pw(\iu v) + w(\iu u) }{ u - v},
+\end{align*}
+and hence that
+\begin{align*}
+\labelthis{eqn:Teqn2}
+2πT_0(p,k,u,v) = 4p \left[ E \tilde{F}(v) - K \tilde{E}(v) \right] - 4\left[ E \tilde{F}(u) - K \tilde{E}(u) \right] - 4K \frac{p w(v) + w(u)}{u-v}.
+\end{align*}
+
+We also need to express branch cuts of $T$ in the other coordinates of $P$, namely $u'$ and $v'$. First though, perhaps it is instructive to see how the locations of the branch cuts in terms of these new coordinates. $f(ν) = ∞$ and $f(1) = \iu u$, hence it follows that when $ν=1$ then $u' = 0$. And for the other marked point, $ν=-1$ when $v'=0$. So the branch cuts of $T_0$ on $P$ are precisely where $u$ and $v$ are not coordinates. Hence, in a sense, by giving branches of $T$ in each coordinate chart of $P$, we are giving a collection of functions on an open cover of $\mathcal{A}_1$ such that localy the function differ by constants.
+
+To derive formulae that work on the other coordinate charts without re-expending the quantity of ink it has taken to get $T_0$, we draw on results from appendix REF \todo{ref} in which we establish how to extend some elliptic integrals analytically at infinity. In particular, let us consider the coordinate patch $(p,k,u,v')$. We rearrange the above to give
+\[
+2π T_0(p,k,u,v) = 4p \left[ E \left\{\tilde{F}(v)\right\} - K \left\{ \tilde{E}(v) - kv\right\} \right]
+- 4 \left[ E \tilde{F}(u) - K \tilde{E}(u) \right]
+- 4 K \left[\frac{p w(v) + w(u)}{u-v} - p k v \right] .
+\]
+Recall that $T$ on is defined up to the addition of mulitples of $1$ and $p$. By Legendre's formula,
+\[
+4π p = 4p\cdot 2\frac{π}{2}
+= 4p \left[  2 E K' - 2 K (K' - E')  \right],
+\]
+so
+\[
+2π \left(T + 2p\right)
+= 4p \left[ E \left\{2 K' + \tilde{F}(v)\right\} - K \left\{ 2(K'-E') + \tilde{E}(v) - kv\right\} \right]
+- 4 \left[ E \tilde{F}(u) - K \tilde{E}(u) \right]
+- 4 K \left[\frac{p w(v) + w(u)}{u-v} - p k v \right] .
+\]
+From lemma REF \todo{ref}, both
+\[
+\tilde{F} =
+\begin{cases}
+\tilde F((v')^{-1})             & \text{ for } v' > 0 \\
+K'                              & \text{ for } v' = 0 \\
+2\iu K' + \tilde F((v')^{-1}; k)   & \text{ for } v' < 0
+\end{cases}
+\]
+and
+\[
+\tilde{E} - k(v')^{-1} :=
+\begin{cases}
+\tilde E((v')^{-1}) - k(x')^{-1}                 & \text{ for } v' > 0 \\
+K'-E'                                            & \text{ for } v' = 0 \\
+2(K'-E') + \tilde E((v')^{-1})  - k(v')^{-1}     & \text{ for } v' < 0
+\end{cases}
+\]
+are analytic. These functions are precisely the forms seen in the braces in the above two expressions, and shows how we can write the first square bracket as a function of $v'$. The second square bracket is independent of $v$, so is trivially a function of $v'$. It remains to show
+\[
+\frac{p w(v) + w(u)}{u-v} - p k v
+\]
+is a smooth function of $v' \in \R$. Explicitly
+\begin{align}
+\frac{p w(v) + w(u)}{u-v} + p k v
+&= \frac{pw(v) + w(u) + pkuv - pkv^2}{u-v} \\
+&= p \frac{w(v) - kv^2}{u-v} + p \frac{kuv}{u-v} + \frac{w(u)}{u-v} \\
+&= p \frac{1}{v'}\frac{\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k }{uv'-1} + p \frac{ku}{uv'-1} + \frac{v' w(u)}{uv'-1},
+\end{align}
+which is analytic as the difference $\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k$ vanishes quadratically in $v'$ near $v'=0$. The same trick in $u$ works if one wishes to write a formula for a branch cut of $T$ that is defined on $(p,k,u',v)$. Given these two tricks, it is automatic that one can apply both of them simultaneously to get a formula on $(p,k,u',v')$; the only point of concern would be the algebraic term in the simultaneous limit that $u',v' \to 0$, but the points where $u'=v'=0$ lie outside $P$. Thus, if we use the principal branch $T_0$ we can easily write formulae for other branches, even at $u'=0$ or $v'=0$, by the addition of constants and specifing the values at $u'=0$ or $v'=0$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Covering the Parameter Space}
+
+Consider the parameter space $P$ for a fixed value of $p$. Topologically it is the product of an interval cross and an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RP^1 \times \RP^1$. Topologically $\RP^1$ is just a circle, so this product is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
+
+A more instructive way of visualising $P$ is to think of it as a solid cylinder with a line along the central axis removed. One should think of the `radius' of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider the formula for $k$.
+\[
+k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
+\]
+In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $p$, for a fixed value of $p$, the subspace $α=β$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In latter chapters, the interesting structure of the moduli space in this limit will be investigated.
+
+Another way that this model is useful is it allows us to see the twisting in the space of spectral curve and the essential appearence of the period behaviour. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line.
+As we move around the axis, the values of $f(1),f(-1)$ are moving through the values of $\RP^1$.
+Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut, and an extra period term appears in our formulas.
+We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another.
+After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$. \todo{think about this}
+
+Having derived local expressions, we shall now return our attention to $\tilde{T}$ defined on $\mathcal{P}$. We can naturally extend the coordinates of $P$ to $\mathcal{P}$ in the following way. Let the coordinates on $\mathcal{P}$ be
+\[
+\{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  \tilde{u} -\tilde{v} \ni 2π\Z  \}.
+\]
+The projection map $p : \tilde{P} \to P$ is given by
+\begin{align*}
+u &= \tan \frac{\tilde{u}}{2},
+\quad  u' = \tan \frac{π - \tilde{u}}{2} = \cot \frac{\tilde{u}}{2}, \\
+v &= \tan \frac{\tilde{v}}{2},
+\quad  v' = \tan \frac{π - \tilde{v}}{2} = \cot \frac{\tilde{v}}{2}, \\
+k &= k.
+\end{align*}
+To see why these coordinates parameterise the space of paths, it is instructive to consider how they can be used to give an expression for $\tilde{T}$. Define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) leq π$. Then
+\[
+\tilde{T}(k,\tilde{u},\tilde{v}) = 2pW(\tilde{v}) - 2W(\tilde{u}) + T_0(k,u,v),
+\]
+where $\tilde{u},\tilde{v} \ni 2π\Z$. Recall an earlier comment about the fibre of the projection of $\mathcal{P}$ over $\mathcal{A}_1$: the paths between the marked points are in bijection with the signed number of crossings of a point. Take the point on the upper unit circle to be over $ν$. The assumptions on $\tilde{u},\tilde{v}$ imply that $ν$ will not be either $1$ or $-1$. The paths which do not cross this point are precisely the principal paths, hence $T_0$ in the formula. Other paths that differ by $n$ from the principal paths, differ in homology by $2n γ_I$. Thus the integrals of $Θ^2$ differ by $4π\iu n$. Putting this into the definition of $T$ gives the above.
+
+The aptitude of $(k,\tilde{u},\tilde{v})$ to the job of parameterisation is in some sense the converse of this. Take some spectral curve such that $ν\neq\pm 1$. Then any path $γ_+$ can be described as a principal path plus some multiple $2n γ_I$. The principal paths themselves are described by $\iu u, \iu v$. We therefore assign $γ_+$ to be the number $\tilde{u} = u + 2π n$. And ditto for paths $γ_-$ vis-\'a-vis $\tilde{v}$. In the case that $ν$ is $1$ or $-1$, then we need to use the coordinates $u'$ or $v'$ and choose a different point to define the winding number with respect to, but the idea is the same. The restriction that $\tilde{u} -\tilde{v} \ni 2π\Z$ is exactly the condition that $u\neq v$.
+
+We can now see that $\mathcal{P}$ is disconnected and how it is a cover of the universal cover of $\mathcal{A}_1$. $\mathcal{P}$ is $(0,1)\times\R^2$ with a family of parallel planes removed. Any connected region would serve as the universal cover of $\mathcal{A}_1$. One can characterise the components as follows. On any component, choose a point where $\tilde{u},\tilde{v} \ni 2π\Z$. Then $W(\tilde{u}) - W(\tilde{v})$ is the same at all such points. Another way to think of this, is if you were trying to put paths $(γ_+,γ_-)$ into a more standard form, given any such pair over $Σ\in\mathcal{A}_1$ one moves through the space $\mathcal{P}$ to another point over $Σ$ such that $γ_+$ is principal. On exactly one component, $γ_-$ would be principal too, and one could order components of $\mathcal{P}$ by how many periods they fell short of this goal.
+
+This all is entirely unsuprising. We already knew that $T$ was defined locally up to a constant, so of course $\tilde{T}$ can be locally described by a branch cut to $T$ and some constants. The useful part of this formula though is that it relates the abstractly defined $\tilde{T}$ to a set of coordinates that cover all of $\mathcal{P}$ in a single chart and to a local expression $T_0$ that is written in coordinates expressly designed for ease of computation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Derivaitves}
+
+In the interest of having manageable formulae, we recall the definition of $w(y)^2 = (1+y^2)(1+k^2 y^2)$. Using primes to indicate coordinates at infinity (ie $y' = 1/y$), not derivatives, we introduce $w'(y')^2 = (1 + (y')^2)(k^2 + (y')^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
+\[
+\Partial{}{u} F(\iu u; k) = \frac{\iu}{w(u)},\;\;\;
+\Partial{}{u} E(\iu u; k) = \iu\frac{1+k^2 u^2}{w(u)},
+\]
+and
+\[
+\Partial{}{u} w(u)
+= \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
+= \frac{(1+k^2)u + 2k^2 u^3}{w(u)}.
+\]
+The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T_0$ is elementary if tedious.
+\begin{align*}\label{dTdk}
+\frac{π}{2}\Partial{T_0}{k}
+&= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
+\end{align*}
+\begin{equation}\label{dTdu}
+\frac{π}{2}\Partial{T_0}{u}
+= -\frac{E}{w(u)} + \frac{pK w(v)}{(u-v)^2} + \frac{K}{w(u)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
+\end{equation}
+\begin{equation}\label{dTdv}
+\frac{π}{2}\Partial{T_0}{v}
+= \frac{pE}{w(v)} - \frac{K w(u)}{(u-v)^2} - \frac{pK}{w(v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
+\end{equation}
+While $T$ may be multivalued on $P$, its derivatives are not: the ambiguity of begin locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
+\begin{equation}\label{dTdv'}
+\frac{π}{2}\Partial{T_0}{v'}
+= -\frac{pE}{w'(v')} + \frac{K w(u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
+\end{equation}
+
+\begin{lem}
+    \label{lem:deriv no zeroes}
+The functions
+\[
+U(x,k,u,v) := -(u-v)^2 E + xKw(u)w(v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right]
+\]
+and
+\[
+V(x,k,u,v') := -(uv'-1)^2 E + xKw(u)w'(v') + K\left[ 1 + k^2u^2 - uv' + k^2 uv' + (v')^2 + u^2 (v')^2 \right]
+\]
+have no zeroes for $x \geq 1$, $k\in (0,1)$, $u,v,v' \in \R$.
+\begin{proof}
+We shall prove this statement by showing that the two functions are in fact always positive. The first step is to eliminate $E$. From \cite{Anderson}, we have the sharp inequality $E < k^2 + (1-k^2)K$. If we apply the crude estimate that $K>1$ (in fact $K > π/2$), we see that
+\[
+E < k^2 + (1-k^2)K = K + k^2 (1-K) < K.
+\]
+Also using the assumption that $x\geq 1$, one can then begin
+\begin{align*}
+U(x,k,u,v)
+&= -(u-v)^2 E + xKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
+&> -(u-v)^2 K + Kw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
+&= K \left[ w(\iu u)w(\iu v) + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right]
+\end{align*}
+This formula is almost sufficent. The only term that could be negative is the one featuring $uv$. However, a lower bound for the square root terms is
+\[
+w(u) = \sqrt{1 + (1+k^2)u^2 + k^2u^4} > \sqrt{(1+k^2)u^2} = \sqrt{(1+k^2)}\abs{u},
+\]
+so
+\begin{align*}
+U(x,k,u,v)
+&> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
+&\geq K \left[ 1 + k^2 u^2 v^2 \right].
+\end{align*}
+This is positive, so $U$ is without zeroes. Taking a similar approach for $V$
+\[
+V(x,k,u,v') > K \left[ w(u) w'(v') + (1+k^2)uv' + k^2u^2 + (v')^2\right].
+\]
+In addition to the above bound for $w(u)$, we also now require a lower bound for $w'(v')$:
+\[
+w(v') = \sqrt{k^2 + (1+k^2)(v')^2 + (v')^4} > \sqrt{(1+k^2)(v')^2} = \sqrt{(1+k^2)}\abs{v'},
+\]
+which can now be applied to show that
+\[
+V(x,k,u,v') > K \left[k^2u^2 + (v')^2\right].
+\]
+This establishes that $V$ has no roots either.
+\end{proof}
+\end{lem}
+
+This result is of interest because it shows that the $v$ and $v'$ derivatives of $T$ are nonzero :
+\begin{align*}
+\frac{π}{2}\Partial{T}{v} &= \frac{-p}{w(v)(u-v)^2} U\bra{ \frac{1}{p},k,u,v }, \\
+\frac{π}{2}\Partial{T}{v'} &= \frac{p}{w'(v')(uv'-1)^2} V\bra{ \frac{1}{p},k,u,v' }.
+\end{align*}
+
+
+
+
+
+
+\subsection{Coordinates on $\mathcal{M}$}
+\begin{lem}
+$(k, \tilde{u})$ are coordinates on $\mathcal{M}$.
+\begin{proof}
+We prove this by direct application of the implict function theorem. Consider the function $\tilde{T}(k,\tilde{u},\tilde{v})$ on $\mathcal{P}$. Consider two formulae for its derivatives with respect to $\tilde{v}$.
+\[
+\Partial{\tilde{T}}{\tilde{v}}
+= \Partial{T}{v}\frac{dv}{d\tilde{v}}
+= \frac{1}{2}\sec^2\bfrac{\tilde{v}}{2} \Partial{T}{v},
+\]
+for $\tilde{v} \not\in π + 2π\Z$ and
+\[
+\Partial{\tilde{T}}{\tilde{v}}
+= \Partial{T}{v'}\frac{dv'}{d\tilde{v}}
+= -\frac{1}{2}\csc^2\bfrac{\tilde{v}}{2} \Partial{T}{v'},
+\]
+for $\tilde{v} \not\in 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, neither of the partial derivatives of $T$ with respect to $v$ or $v'$ are ever zero, and neither are $\sec$ or $\csc$. Hence $\partial \tilde{T} / \partial \tilde{v}$ is never zero. By the implicit function theorem therefore, there is a function $g$ such that the level set $\tilde{T}=q$ is a graph of the form $(k, \tilde{u}, g(k,\tilde{u}))$.
+\end{proof}
+\end{lem}
+
+The topological implication of this is that the moduli space $\mathcal{M}$ is diffeomorphic to a product of $(0,1)$ and $\R$.
