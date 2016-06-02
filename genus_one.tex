@@ -548,7 +548,7 @@ After one full rotation, $α$ and $β$ have returned to their original positions
 
 Having derived local expressions, we shall now return our attention to $\tilde{T}$ defined on $\mathcal{P}$. We can naturally extend the coordinates of $P$ to $\mathcal{P}$ in the following way. Let the coordinates on $\mathcal{P}$ be
 \[
-\{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  \tilde{u} -\tilde{v} \ni 2π\Z  \}.
+\{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  \tilde{v} -\tilde{u} \in 2π\Z  \}.
 \]
 The projection map $p : \tilde{P} \to P$ is given by
 \begin{align*}
@@ -558,17 +558,20 @@ v &= \tan \frac{\tilde{v}}{2},
 \quad  v' = \tan \frac{π - \tilde{v}}{2} = \cot \frac{\tilde{v}}{2}, \\
 k &= k.
 \end{align*}
-To see why these coordinates parameterise the space of paths, it is instructive to consider how they can be used to give an expression for $\tilde{T}$. Define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) leq π$. Then
+To see why these coordinates parameterise the space of paths, it is instructive to consider how they can be used to give an expression for $\tilde{T}$. Define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) \leq π$. Then
 \[
 \tilde{T}(k,\tilde{u},\tilde{v}) = 2pW(\tilde{v}) - 2W(\tilde{u}) + T_0(k,u,v),
 \]
 where $\tilde{u},\tilde{v} \ni 2π\Z$. Recall an earlier comment about the fibre of the projection of $\mathcal{P}$ over $\mathcal{A}_1$: the paths between the marked points are in bijection with the signed number of crossings of a point. Take the point on the upper unit circle to be over $ν$. The assumptions on $\tilde{u},\tilde{v}$ imply that $ν$ will not be either $1$ or $-1$. The paths which do not cross this point are precisely the principal paths, hence $T_0$ in the formula. Other paths that differ by $n$ from the principal paths, differ in homology by $2n γ_I$. Thus the integrals of $Θ^2$ differ by $4π\iu n$. Putting this into the definition of $T$ gives the above.
 
-The aptitude of $(k,\tilde{u},\tilde{v})$ to the job of parameterisation is in some sense the converse of this. Take some spectral curve such that $ν\neq\pm 1$. Then any path $γ_+$ can be described as a principal path plus some multiple $2n γ_I$. The principal paths themselves are described by $\iu u, \iu v$. We therefore assign $γ_+$ to be the number $\tilde{u} = u + 2π n$. And ditto for paths $γ_-$ vis-\'a-vis $\tilde{v}$. In the case that $ν$ is $1$ or $-1$, then we need to use the coordinates $u'$ or $v'$ and choose a different point to define the winding number with respect to, but the idea is the same. The restriction that $\tilde{u} -\tilde{v} \ni 2π\Z$ is exactly the condition that $u\neq v$.
+The aptitude of $(k,\tilde{u},\tilde{v})$ to the job of parameterisation is in some sense the converse of this. Take some spectral curve such that $ν\neq\pm 1$. Then any path $γ_+$ can be described as a principal path plus some multiple $2n γ_I$. The principal paths themselves are described by $\iu u, \iu v$. We therefore assign $γ_+$ to be the number $\tilde{u} = u + 2π n$. And ditto for paths $γ_-$ vis-\`a-vis $\tilde{v}$. In the case that $ν$ is $1$ or $-1$, then we need to use the coordinates $u'$ or $v'$ and choose a different point to define the winding number with respect to, but the idea is the same. The restriction that $\tilde{u} -\tilde{v} \ni 2π\Z$ is exactly the condition that $u\neq v$.
 
-We can now see that $\mathcal{P}$ is disconnected and how it is a cover of the universal cover of $\mathcal{A}_1$. $\mathcal{P}$ is $(0,1)\times\R^2$ with a family of parallel planes removed. Any connected region would serve as the universal cover of $\mathcal{A}_1$. One can characterise the components as follows. On any component, choose a point where $\tilde{u},\tilde{v} \ni 2π\Z$. Then $W(\tilde{u}) - W(\tilde{v})$ is the same at all such points. Another way to think of this, is if you were trying to put paths $(γ_+,γ_-)$ into a more standard form, given any such pair over $Σ\in\mathcal{A}_1$ one moves through the space $\mathcal{P}$ to another point over $Σ$ such that $γ_+$ is principal. On exactly one component, $γ_-$ would be principal too, and one could order components of $\mathcal{P}$ by how many periods they fell short of this goal.
+We can now see that $\mathcal{P}$ is disconnected and how it is a cover of the universal cover of $\mathcal{A}_1$. $\mathcal{P}$ is $(0,1)\times\R^2$ with a family of parallel planes removed. Any connected region would serve as the universal cover of $\mathcal{A}_1$. One can characterise the components as follows. On any component, choose a point where $\tilde{u},\tilde{v} \in 2π\Z$. Then $W(\tilde{u}) - W(\tilde{v})$ is the same at all such points. Another way to think of this, is if you were trying to put paths $(γ_+,γ_-)$ into a more standard form, given any such pair over $Σ\in\mathcal{A}_1$ one moves through the space $\mathcal{P}$ to another point over $Σ$ such that $γ_+$ is principal. On exactly one component, $γ_-$ would be principal too, and one could order components of $\mathcal{P}$ by how many periods they fell short of this goal. As these components are essentially identical, we need only consider one of them. Let $\tilde{P}$ be the universal cover of $P$, identified with the specific component already mentioned, the one which has simultanously principal paths.
+\[
+\tilde{P} = \{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  0 < \tilde{v} -\tilde{u} < 2π  \}.
+\]
 
-This all is entirely unsuprising. We already knew that $T$ was defined locally up to a constant, so of course $\tilde{T}$ can be locally described by a branch cut to $T$ and some constants. The useful part of this formula though is that it relates the abstractly defined $\tilde{T}$ to a set of coordinates that cover all of $\mathcal{P}$ in a single chart and to a local expression $T_0$ that is written in coordinates expressly designed for ease of computation.
+This all is entirely unsuprising. We already knew that $T$ was defined locally up to a constant, so of course $\tilde{T}$ can be locally described by a branch cut to $T$ and some constants. The useful part of this formula though is that it relates the abstractly defined $\tilde{T}$ to a set of coordinates that cover all of $\mathcal{P}$ (and therefore $\tilde{P}$) in a single chart and to a local expression $T_0$ that is written in coordinates expressly designed for ease of computation.
 
 
 
@@ -625,6 +628,11 @@ The other derivatives of elliptic integrals are calculated in appendix \ref{sec:
 = \frac{pE}{w(v)} - \frac{K w(u)}{(u-v)^2} - \frac{pK}{w(v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
 \end{equation}
 While $T$ may be multivalued on $P$, its derivatives are not: the ambiguity of begin locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
+
+\begin{equation}\label{dTdu'}
+\frac{π}{2}\Partial{T_0}{u'}
+= \frac{E}{w'(u')} + \frac{pK w(v)}{(1-u'v)^2} + \frac{K}{w'(u')(1-u'v)^2}\left[1 + k^2v^2 + - u'v + k^2u'v + (u')^2 + (u')^2v^2 \right]
+\end{equation}
 \begin{equation}\label{dTdv'}
 \frac{π}{2}\Partial{T_0}{v'}
 = -\frac{pE}{w'(v')} + \frac{K w(u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
@@ -679,10 +687,15 @@ This establishes that $V$ has no roots either.
 \end{proof}
 \end{lem}
 
-This result is of interest because it shows that the $v$ and $v'$ derivatives of $T$ are nonzero :
+This result is of interest because it shows that if $p \leq 1$, then the $v$ and $v'$ derivatives of $T$ are nonzero:
 \begin{align*}
 \frac{π}{2}\Partial{T}{v} &= \frac{-p}{w(v)(u-v)^2} U\bra{ \frac{1}{p},k,u,v }, \\
 \frac{π}{2}\Partial{T}{v'} &= \frac{p}{w'(v')(uv'-1)^2} V\bra{ \frac{1}{p},k,u,v' }.
+\end{align*}
+And if $p \geq 1$, then the $u$ and $u'$ derivatives of $T$ are nonzero:
+\begin{align*}
+\frac{π}{2}\Partial{T}{u} &= \frac{1}{w(u)(u-v)^2} U\bra{ p,k,u,v }, \\
+\frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
 \end{align*}
 
 
@@ -690,11 +703,14 @@ This result is of interest because it shows that the $v$ and $v'$ derivatives of
 
 
 
-\subsection{Coordinates on $\mathcal{M}$}
+\subsection{Topology of $\mathcal{M}$}
+Recall that $\mathcal{M} \subset \mathcal{A}$ is the set of spectral curves that admit closing spectral data and that $\tilde{\mathcal{M}} \subset \tilde{P}$ is its preimage in the universal cover.
+
 \begin{lem}
-$(k, \tilde{u})$ are coordinates on $\mathcal{M}$.
+If $p \leq 1$ then $(k, \tilde{u})$ are coordinates on $\tilde{\mathcal{M}}$, and if $p \geq 1$ then $(k, \tilde{v})$ are coordinates on $\tilde{\mathcal{M}}$.
+
 \begin{proof}
-We prove this by direct application of the implict function theorem. Consider the function $\tilde{T}(k,\tilde{u},\tilde{v})$ on $\mathcal{P}$. Consider two formulae for its derivatives with respect to $\tilde{v}$.
+We prove this by direct application of the implict function theorem. Suppose first that $p \leq 1$. Consider the function $\tilde{T}(k,\tilde{u},\tilde{v})$ on $\tilde{P}$. Consider two formulae for its derivatives with respect to $\tilde{v}$.
 \[
 \Partial{\tilde{T}}{\tilde{v}}
 = \Partial{T}{v}\frac{dv}{d\tilde{v}}
@@ -707,7 +723,20 @@ for $\tilde{v} \not\in π + 2π\Z$ and
 = -\frac{1}{2}\csc^2\bfrac{\tilde{v}}{2} \Partial{T}{v'},
 \]
 for $\tilde{v} \not\in 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, neither of the partial derivatives of $T$ with respect to $v$ or $v'$ are ever zero, and neither are $\sec$ or $\csc$. Hence $\partial \tilde{T} / \partial \tilde{v}$ is never zero. By the implicit function theorem therefore, there is a function $g$ such that the level set $\tilde{T}=q$ is a graph of the form $(k, \tilde{u}, g(k,\tilde{u}))$.
+
+The same argument holds if $p \geq 1$, as then the $\tilde{u}$ derivative of $\tilde{T}$ is nonvanishing.
 \end{proof}
 \end{lem}
 
-The topological implication of this is that the moduli space $\mathcal{M}$ is diffeomorphic to a product of $(0,1)$ and $\R$.
+The topological implication of this is that each leaf of the moduli space $\tilde{\mathcal{M}}$ is diffeomorphic to a product of $(0,1)$ and $\R$ where $k$ is in the interval and the real parameter is either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$. For brevity, we will refer to it as $x$. As the closing conditions are equivalent to $T$ begin rational, it follows that $\tilde{\mathcal{M}}$ for a fixed $p$ can be parameterised as $\Q\times(0,1)\times\R$. To understand the topology of $\mathcal{M}$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{M}}$. The deck transformations $G$ are generated by the translation
+\[
+(k,\tilde{u},\tilde{v}) \mapsto (k, \tilde{u} + 2π, \tilde{v} + 2π).
+\]
+The corresponding effect on $\tilde{T}$ is
+\[
+\tilde{T}(k,\tilde{u} + 2π,\tilde{v} + 2π) \mapsto \tilde{T}(k, \tilde{u}, \tilde{v}) + 2(p-1).
+\]
+So in terms of the parameters $(q,k,x)$
+\[
+(q,k,x) \mapsto (q + 2(p-1), k, x + 2π).
+\]
