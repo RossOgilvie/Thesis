@@ -1,4 +1,4 @@
-%!TEX root = thesis_single.tex
+%!TEX root = thesis.tex
 
 \section{Elliptic Integrals}
 \label{sec:Elliptic Integrals}
@@ -324,18 +324,20 @@ This relation is useful in two ways. First, it can be used to construct a basis 
 
 
 
+
+
+
+
 \subsection{Continuation and Analyticity}
 \label{sub:EllipticContinuation}
 
-If we consider that the natural domain of the elliptic integrals is the torus, then one should seek to define the elliptic integrals for $z=\tilde\infty$. In the special case of $\tilde{F}(x;k)$ and $\tilde{E}(x;k) - kx$ that we have been considering, we have already computed the limit as $x \ to \infty$, but because both functions are odd, there is no way to extend these functions to $x \in \RInf$. Instead, mirroring the approach in the body of the thesis, we shall instead extend these functions analytically to the universal cover of $\RInf$, namely $\R$.
+It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy-Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic.
 
-It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy–Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic. \todo{cleaner linkage}
+If we consider that the natural domain of the elliptic integrals is the torus, then one should seek to extend analytically the elliptic integrals for $z=\tilde\infty$. In the special case of $\tilde{F}(x;k)$ and $\tilde{E}(x;k) - kx$ that we have been considering, we have already computed the limit as $x \to \infty$, but because both functions are odd, there is no way to extend these functions to $x \in \RInf$. Instead, mirroring the approach in the body of the thesis, we shall instead extend these functions analytically to the universal cover of $\RInf$, namely $\R$.
 
-HOW MUCH TO SAY ABOUT THE COORDINATES OF A UNIVERSAL COVER? Is there a standard way to write them? For a circle?
+Let $x \in \R \subset \RInf$ be one coordinate on $\RInf$ and $x' = x^{-1}$ be another. Recall that the period of $\tilde{F}(x)$ is $2K'$ and that for $\tilde{E}(x) - kx$ it is $2(K' - E')$. To give the extension of either of these functions to the universal cover, it is sufficent to give an expression in each coordinate chart. On the universal cover, the extension will differ from the pullback by some number of periods.
 
-The universal cover of the circle can be described succiently as a point on the circle and a winding number, with covering map $(θ,n) \to θ \in \S^1$ and any chart on the circle lifts to a countable collection of charts of the cover, one for each winding number. Let $x \in \R \subset \RInf$ be one coordinate on $\RInf$ and $x' = x^{-1}$ be another. Recall that the period of $\tilde{F}(x)$ is $2K'$ and that for $\tilde{E}(x) - kx$ it is $2(K' - E')$. Hence it is sufficent to give expression of each of these functions on just a single lift of each coordinate chart. \todo{very poorly explained}
-
-Because we have computed the limit of $\tilde{F}$ already, we can immediately give the definition of $\tilde{F}$ in the coordinate $x'$ on $(0,\infty)\times\{0\} \cup (-\infty,0)\times \{1\}$.
+Because we have computed the limit of $\tilde{F}$ already, we can immediately give the definition of $\tilde{F}$ in the coordinate $x'$.
 \[
 \tilde{F} =
 \begin{cases}
@@ -344,7 +346,7 @@ K'                              & \text{ for } x' = 0 \\
 2\iu K' + \tilde F((x')^{-1}; k)   & \text{ for } x' < 0
 \end{cases}
 \]
-The only thing to check is that it is analytic at $x'=0$. We transform the integrals so that their base point is at $x'=0$ rather than $x=0$. For $x'>0$
+The only thing to check is that it is analytic at $x'=0$. To show this, we transform the integrals so that their base point is at $x'=0$ rather than $x=0$ and apply the Cauchy-Kowalevski. For $x'>0$
 \begin{align*}
 \tilde F( (x')^{-1}; k)
 &= \int_0^{(x')^{-1}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
