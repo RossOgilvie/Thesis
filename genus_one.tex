@@ -351,30 +351,30 @@ In $(z,w)$ coordinates these paths are easy to describe by design. Start from th
 &= 2 \tilde E(f(1);k) - 2 E(k) \\
 \int_{γ_+} Θ_1^2
 &= \int_{γ_+} (2E \tilde{ω} - 2Ke) - \frac{2}{M}K \int_{γ_+} \left[ d\bra{\frac{η}{ζ}} - MNd\bra{\frac{η}{den}} \right] \\
-&= 4E F(f(1)) - 4K E(f(1)) - \frac{4K}{M} η(1)^+\left[ 1 - \frac{MN}{den(1)} \right] \\
-&= 4 E(k) \tilde{F}(f(1);k) - 4 K(k) \tilde{E}(f(1);k) - 4K(k) \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν}.
+&= 4E F(f(1);k) - 4K E(f(1);k) - \frac{4K}{M} η(1)^+\left[ 1 - \frac{MN}{den(1)} \right] \\
+&= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K(k) \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν}.
 \end{align}
 
 For the closing condition at $ζ=-1$
 \begin{align}
 \int_{γ_-} Θ_1^2
-&= 4EF(f(-1)) - 4K\tilde{E}(f(-1)) - \frac{4K}{M} η(-1)^+\left[ 1 - \frac{MN}{den(-1)} \right] \\
-&= 4 E(k) \tilde{F}(f(-1);k) - 4 K(k) \tilde{E}(f(-1);k) - 4K(k) \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν}.
+&= 4EF(f(-1);k) - 4K\tilde{E}(f(-1);k) - \frac{4K}{M} η(-1)^+\left[ 1 - \frac{MN}{den(-1)} \right] \\
+&= 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) - 4K(k) \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν}.
 \end{align}
 
 From these we explictly compute
 \begin{align*}
 2π\iu T_0 &=  p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 \\
-&=  p \left[ 4 E \tilde{F}(f(-1)) - 4 K \tilde{E}(f(-1)) - 4K \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} \right] \\
-&\qquad\qquad   - \left[ 4 E \tilde{F}(f(1)) - 4 K \tilde{E}(f(1)) - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right] \\
-&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
+&=  p \left[ 4 E F(f(-1);k) - 4 K E(f(-1);k) - 4K \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} \right] \\
+&\qquad\qquad   - \left[ 4 E F(f(1);k) - 4 K E(f(1);k) - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right] \\
+&=  4p \left[ E F(f(-1);k) - K E(f(-1);k) \right] - 4\left[ E F(f(1);k) - K E(f(1);k) \right] \\
 &\qquad\qquad    - 4K\left[ p\frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} - \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right]  \\
-&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] \\
+&=  4p \left[ E F(f(-1);k) - K E(f(-1);k) \right] - 4\left[ E F(f(1);k) - K E(f(1);k) \right] \\
 &\qquad\qquad    - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \left[ \frac{1-ν}{1+ν} - \frac{1+ν}{1-ν} \right]  \\
-&=  4p \left[ E \tilde{F}(f(-1)) - K \tilde{E}(f(-1)) \right] - 4\left[ E \tilde{F}(f(1)) - K \tilde{E}(f(1)) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}. \labelthis{Teqn} \\
+&=  4p \left[ E F(f(-1);k) - K E(f(-1);k) \right] - 4\left[ E F(f(1);k) - K E(f(1);k) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}. \labelthis{Teqn} \\
 \end{align*}
 
-Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formula we have derived for $T_0$, which is not defined when $ν$ take either of these values. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F$ and $E$ take the imaginary axis to itself and, because $ν$ is on the unit circle, $ν/(1-ν^2)$ is purely imaginary as well.
+Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formula we have derived for $T_0$, which is not defined when $ν$ take either of these values. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and, because $ν$ is on the unit circle, $ν/(1-ν^2)$ is purely imaginary as well.
 
 % Properly understood, $T$ is not a function on the space of spectral curves $\mathcal{A}$, but rather it is a function on the space of paths $(γ_+, γ_-)$, which we shall call $\mathcal{P}$. To be more precise, let $\mathcal{P}$ be the space $\{(γ_+, γ_-, Σ, α)\}$ where $α$ is one of the branch points inside the unit circle of some genus one spectral curve $Σ$ and $γ_+$ and $γ_-$ are paths $(0,1) \to Σ$ defined in the following way. $γ_+$ starts at $(1, η(1)^-)$, monotonically tranverses the unit circle to $μ$ (that is, it does not pause or reverse direction), goes along the branch point circle to $α$, encircles it, returns to $μ$ along the branch point circle and retraces its path to $(1, η(1)^+)$. In an analogous way, $γ_-$ starts at $(-1, η(-1)^-)$ and finishes at $(-1, η(-1)^+)$. We shall call such paths rigid. Every path on $Σ$ that connects the two points over $1$ or $-1$ is homologous to one of these rigid paths.
 %
@@ -401,7 +401,7 @@ Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the f
 
 Note that $\mathcal{A}'$ does not include the points where $u'=v'=0$, so it is covered by three of the coordinate patches; $(p,k,u,v)$, $(p,k,u',v)$ and $(p,k,u,v')$ are sufficent for example.
 
-First we must show that $\mathcal{A}'$ does indeed parameterise the space of spectral curves. We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. The map $f$ is written in terms of $(α,β)$ \todo{ref} and the new parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map, and both $p$ and $k$ already have their own formulae in terms of $α$ and $β$). As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive the reverse change in parameters is to express the inverse transformation $f^{-1}(z)$ in term of our new parameters. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to to forward direction. Denote $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. The real structure of the $z$-plane then forces $f(\infty) = - \conj{z_0}$. As a M\"obius transformation is described up to a scalar by the points sent to $0$ and $\infty$, $f^{-1}$ is a scalar multiple of
+First we must show that $\mathcal{A}'$ does indeed parameterise the space of spectral curves. We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. The map $f$ is written in terms of $(α,β)$ \todo{ref} and the new parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map, and both $p$ and $k$ already have their own formulae in terms of $α$ and $β$. As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive the reverse change in parameters is to express the inverse transformation $f^{-1}(z)$ in term of our new parameters. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to to forward direction. Denote $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. The real structure of the $z$-plane then forces $f(\infty) = - \conj{z_0}$. As a M\"obius transformation is described up to a scalar by the points sent to $0$ and $\infty$, $f^{-1}$ is a scalar multiple of
 \[
 \frac{z-z_0}{z + \conj{z_0}},
 \]
@@ -431,7 +431,7 @@ p
 x^2 + y^2 &+ 2y \frac{puw(\iu v) - vw(\iu u)}{w(\iu u)-pw(\iu v)} + \frac{v^2w(\iu u) - pu^2w(\iu v)}{w(\iu u)-pw(\iu v)} = 0.
 \end{align*}
 
-In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0, \iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Then $z_0$ lies on the circle
+In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0$ and $\iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Then $z_0$ lies on the circle
 \[
 x^2 + \bra{ y - \frac{u+v}{2} }^2 = \frac{(u-v)^2}{4},
 \]
@@ -501,7 +501,7 @@ The first is excluded from $\mathcal{A}'$, the second is never zero, the third i
 \end{lem}
 
 
-Thus $\mathcal{A}$ and $\mathcal{A}'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$, so that we may find the subspace of this parameter space $\mathcal{A}'$ defined implicitly by the two conditions that $p$ and $T$ are constant. Particularly, we must compute the factors in the third term of $T_0$. By direct computation
+Thus $\mathcal{A}$ and $\mathcal{A}'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$, so that we may find the subspace of this parameter space $\mathcal{A}$ defined implicitly by the two conditions that $p$ and $T$ are constant. Particularly, we must compute the factors in the third term of $T_0$. By direct computation
 \begin{align*}
 \abs{1-α} &= \abs{\frac{(z_0 + \conj{z_0}) (\iu u - 1) }{ (\iu u - z_0) (1 + z_0) }} \\
 \abs{1-β} &= \abs{\frac{(z_0 + \conj{z_0}) (k \iu u - 1) }{ (\iu u - z_0) (1 + k z_0) }} \\
@@ -537,59 +537,68 @@ These expressions combine to give
 and hence that
 \begin{align*}
 \labelthis{eqn:Teqn2}
-2πT_0(p,k,u,v) = 4p \left[ E \tilde{F}(v) - K \tilde{E}(v) \right] - 4\left[ E \tilde{F}(u) - K \tilde{E}(u) \right] - 4K \frac{p w(\iu v) + w(\iu u)}{u-v}.
+2π\iu T_0(p,k,u,v) = 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v}.
 \end{align*}
 
 It is instructive to see the locations of the branch cuts in terms of these new coordinates. $f(ν) = ∞$ and $f(1) = \iu u$, hence it follows that when $ν=1$ then $u' = 0$. And for the other marked point, $ν=-1$ when $v'=0$. So the branch cuts of $T_0$ on $\mathcal{A}$ are precisely where $u'$ and $v'$ are zero. We shall have need of expressions for $T$ in neighbourhoods of these points. These will be other branches of the function $T$, and these different branches of $T$ will differ locally by constants.
 
-To derive formulae that work on the other coordinate charts without re-expending the quantity of ink it has taken to get $T_0$, we draw on results from appendix REF \todo{ref} in which we establish how to extend some elliptic integrals analytically at infinity. In particular, let us consider the coordinate patch $(p,k,u,v')$. We rearrange the above to give
+To derive formulae that work on the other coordinate charts without re-expending the quantity of ink it has taken to get $T_0$, we draw on results from appendix REF \todo{ref} in which we establish how to extend some elliptic integrals analytically at infinity. In particular, we recall the notation $F_0$ and $E_0$ for the imaginary parts of $F$ and $E$ applied to imaginary arguments. We also will be making use of $F_1$ and $E_1$, the analytic extensions of $F_0$ and $E_0$ from $(0,\infty)$ to $(0,\infty)\cup \{\infty\} \cup (-\infty, 0)$.
+
+Let us consider the coordinate patch $(p,k,u,v')$. We rearrange the above to give
 \[
-2π T_0(p,k,u,v) = 4p \left[ E \left\{\tilde{F}(v)\right\} - K \left\{ \tilde{E}(v) - kv\right\} \right]
-- 4 \left[ E \tilde{F}(u) - K \tilde{E}(u) \right]
-- 4 K \left[\frac{p w(\iu v) + w(\iu u)}{u-v} - p k v \right] .
+2π T_0(p,k,u,v) = 4p \left[ E F_0(v) - K \left\{ E_0(v) - kv\right\} \right]
+- 4 \left[ E F_0(u) - K E_0(u) \right]
+- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \frac{w(\iu u)}{u-v} \right] .
 \]
-Recall that $T$ on is defined up to the addition of mulitples of $1$ and $p$. By Legendre's formula,
+The functions in the first square bracket, $F_0(v)$ and $ E_0(v) - kv$ can be extended to $v'=0$. The second square bracket is independent of $v$, so is trivially a function of $v'$. It remains to show
 \[
-4π p = 4p\cdot 2\frac{π}{2}
-= 4p \left[  2 E K' - 2 K (K' - E')  \right],
+\frac{w(\iu v)}{u-v} + k v \text{ and } \frac{w(\iu u)}{u-v}
 \]
-so
-\[
-2π \left(T + 2p\right)
-= 4p \left[ E \left\{2 K' + \tilde{F}(v)\right\} - K \left\{ 2(K'-E') + \tilde{E}(v) - kv\right\} \right]
-- 4 \left[ E \tilde{F}(u) - K \tilde{E}(u) \right]
-- 4 K \left[\frac{p w(\iu v) + w(\iu u)}{u-v} - p k v \right] .
-\]
-From lemma REF \todo{ref}, both
-\[
-\tilde{F} =
-\begin{cases}
-\tilde F((v')^{-1})             & \text{ for } v' > 0 \\
-K'                              & \text{ for } v' = 0 \\
-2\iu K' + \tilde F((v')^{-1}; k)   & \text{ for } v' < 0
-\end{cases}
-\]
-and
-\[
-\tilde{E} - k(v')^{-1} :=
-\begin{cases}
-\tilde E((v')^{-1}) - k(x')^{-1}                 & \text{ for } v' > 0 \\
-K'-E'                                            & \text{ for } v' = 0 \\
-2(K'-E') + \tilde E((v')^{-1})  - k(v')^{-1}     & \text{ for } v' < 0
-\end{cases}
-\]
-are analytic. These functions are precisely the forms seen in the braces in the above two expressions, and shows how we can write the first square bracket as a function of $v'$. The second square bracket is independent of $v$, so is trivially a function of $v'$. It remains to show
-\[
-\frac{p w(\iu v) + w(\iu u)}{u-v} - p k v
-\]
-is a smooth function of $v' \in \R$. Explicitly
+are smooth functions of $v' \in \R$. Explicitly
 \begin{align}
-\frac{p w(\iu v) + w(\iu u)}{u-v} + p k v
-&= \frac{pw(\iu v) + w(\iu u) + pkuv - pkv^2}{u-v} \\
-&= p \frac{w(\iu v) - kv^2}{u-v} + p \frac{kuv}{u-v} + \frac{w(\iu u)}{u-v} \\
-&= p \frac{1}{v'}\frac{\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k }{uv'-1} + p \frac{ku}{uv'-1} + \frac{v' w(\iu u)}{uv'-1},
+\frac{w(\iu v)}{u-v} + k v
+&= \frac{w(\iu v) - kv^2}{u-v} + \frac{kuv}{u-v} \\
+&= \frac{(1+k^2)v' +(v')^3}{(uv'-1)(\sqrt{(1+(v')^2)(k^2 + (v')^2)} + k)} + \frac{ku}{uv'-1} ,
 \end{align}
-which is analytic as the difference $\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k$ vanishes quadratically in $v'$ near $v'=0$. The same trick in $u$ works if one wishes to write a formula for a branch cut of $T$ that is defined on $(p,k,u',v)$. Given these two tricks, it is automatic that one can apply both of them simultaneously to get a formula on $(p,k,u',v')$; the only point of concern would be the algebraic term in the simultaneous limit that $u',v' \to 0$, but the points where $u'=v'=0$ lie outside $\mathcal{A}'$. Thus, if we use the principal branch $T_0$ we can easily write formulae for other branches, even at $u'=0$ or $v'=0$, by the addition of constants and specifing the values at $u'=0$ or $v'=0$.
+and
+\begin{align}
+\frac{w(\iu u)}{u-v}
+&= \frac{v' w(\iu u)}{uv'-1}.
+\end{align}
+As a shorthand, let us introduce the notation $w'(z') := \sqrt{(1-(z')^2)(k^2 - (z')^2)}$. Thus we may define
+\[
+2π T_1(p,k,u,v') = 4p \left[ E F_1(v') - K \left\{ E_1(v') - k(v')^{-1}\right\} \right]
+- 4 \left[ E F_0(u) - K E_0(u) \right]
+- 4 K \left[p\left\{ \frac{(1+k^2)v' +(v')^3}{(uv'-1)(w'(\iu v') + k)} + \frac{ku}{uv'-1} \right\}
++ \frac{v' w(\iu u)}{uv'-1} \right] .
+\]
+When $v' > 0$ then the two formulae $T_0$ and $T_1$ give the same results at the same points, but when $v' < 0$ they differ. By how much though? Suppose that $v' < 0$. Then
+\begin{align}
+2π T_1(p,k,u,v')
+&= 4p \left[ E F_1(v') - K \left\{ E_1(v') - k(v')^{-1}\right\} \right]
+- 4 \left[ E F_0(u) - K E_0(u) \right]
+- 4 K \left[p\left\{ \frac{(1+k^2)v' +(v')^3}{(uv'-1)(w'(\iu v') + k)} + \frac{ku}{uv'-1} \right\}
++ \frac{v' w(\iu u)}{uv'-1} \right] \\
+&= 4p \left[ E \left\{ 2K' + F_0(v) \right\} - K \left\{2(K'-E') + E_0(v) - kv \right\} \right]
+- 4 \left[ E F_0(u) - K E_0(u) \right]
+- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \frac{w(\iu u)}{u-v} \right] \\
+&= 8p \left[ EK' + KE' - KK' )\right] + T_0(p,k,u,v) \\
+&= 4pπ + 2π T_0(p,k,u,v) \\
+T_1(p,k,u,v') &= 2p + T_0(p,k,u,v).
+\end{align}
+Recalling that $T$ is only defined up to multiples of $1$ and $p$, this is entirely in line with our expectations.
+
+The same trick in $u$ works if one wishes to write a formula for a branch cut of $T$ that is defined on $(p,k,u',v)$ or $(p,k,u',v')$. As mentioned, it is sufficient to use three coordinate patches to cover $\mathcal{A}$, so let
+\[
+2π T_2(p,k,u',v) = 4p \left[ E F_0(v) - K E_0(v) \right]
+- 4 \left[ E F_1(u') - K \left\{ E_1(u') - k(u')^{-1}\right\} \right]
+- 4 K \left[p\frac{u' w(\iu v)}{u'v-1}
++ \left\{ \frac{(1+k^2)u' +(u')^3}{(u'v-1)(w'(\iu u') + k)} + \frac{kv}{u'v-1} \right\} \right] .
+\]
+This time, for $u'< 0$, it differs by
+\[
+T_2(p,k,u',v) = -2 + T_0(p,k,u,v).
+\]
 
 
 
@@ -608,50 +617,51 @@ which is analytic as the difference $\sqrt{(1+(v')^2)(k^2 + (v')^2)} - k$ vanish
 
 
 
+\subsection{Universal Cover the Parameter Space}
 
-\subsection{Covering the Parameter Space}
+Consider the parameter space $\mathcal{A}$ for a fixed value of $p$, denoted $\mathcal{A}(p)$. Topologically it is the product of an interval cross and an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RInf \times \RInf$. Topologically $\RInf$ is just a circle, so this product is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
 
-Consider the parameter space $\mathcal{A}'$ for a fixed value of $p$, denoted $\mathcal{A}'(p)$. Topologically it is the product of an interval cross and an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RP^1 \times \RP^1$. Topologically $\RP^1$ is just a circle, so this product is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
-
-A more instructive way of visualising $\mathcal{A}'$ is to think of it as a solid cylinder with a line along the central axis removed. One should think of the `radius' of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider the formula for $k$.
+A more instructive way of visualising $\mathcal{A}$ is to think of it as a solid cylinder with a line along the central axis removed. One should think of the `radius' of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider the formula for $k$.
 \[
 k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \]
-In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $p$, for a fixed value of $p$, the subspace $α=β$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In latter chapters, the interesting structure of the moduli space in this limit will be investigated.
+In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $p$, for a fixed value of $p$, the subspace $α=β$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In later chapters, the interesting structure of the moduli space in this limit will be investigated.
 
-Another way that this model is useful is it allows us to see the twisting in the space of spectral curve and the essential appearence of the period behaviour. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line.
-As we move around the axis, the values of $f(1),f(-1)$ are moving through the values of $\RP^1$.
-Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut, and an extra period term appears in our formulas.
-We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another.
-After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$. \todo{think about this}
+Another way that this model is useful is it allows us to see the twisting in the space of spectral curve and the essential appearence of the period behaviour. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line. As we move around the axis, the values of $f(1),f(-1)$ are moving through the values of $\RInf$.
 
-Having derived local expressions, we shall now return our attention to $\tilde{T}$ defined on $\mathcal{P}$. We can naturally extend the coordinates of $\mathcal{A}'$ to $\mathcal{P}$ in the following way. Let the coordinates on $\mathcal{P}$ be
+Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut, and an extra period term appears in our formulas. We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another. After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$.
+
+The fact that the parameter is not simply connected and that $T$ is not even a single valued function is the source of much misery. The obvious way to correct this is to move the the unversal cover of $\mathcal{A}$, which we shall call $\mathcal{\tilde{A}}$. Let the coordinates on $\mathcal{\tilde{A}}$ be
 \[
-\{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  \tilde{v} -\tilde{u} \in 2π\Z  \}.
+\{(p, k,\tilde{u},\tilde{v}) \in \R^+\times(0,1)\times\R\times\R \mid  \tilde{u} < \tilde{v} < \tilde{u} + 2π \}.
 \]
-The projection map $p : \mathcal{P} \to \mathcal{A}$ is given by
+The projection map $\mathcal{\tilde{A}} \to \mathcal{A}$ is given by
 \begin{align*}
+p &= p, \\
+k &= k, \\
 u &= \tan \frac{\tilde{u}}{2},
-\quad  u' = \tan \frac{π - \tilde{u}}{2} = \cot \frac{\tilde{u}}{2}, \\
+\quad  u' = \cot \frac{\tilde{u}}{2}, \\
 v &= \tan \frac{\tilde{v}}{2},
-\quad  v' = \tan \frac{π - \tilde{v}}{2} = \cot \frac{\tilde{v}}{2}, \\
-k &= k.
+\quad  v' = \cot \frac{\tilde{v}}{2}.
 \end{align*}
-To see why these coordinates parameterise the space of paths, it is instructive to consider how they can be used to give an expression for $\tilde{T}$. Define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) \leq π$. Then
+Building on the definitions in appedix REF \todo{REF}, it is straightforward to lift $T$ to a single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}$. One may simply plug the premade universal covers versions of $F_0,E_0$, etc into the formula to define
 \[
-\tilde{T}(k,\tilde{u},\tilde{v}) = 2pW(\tilde{v}) - 2W(\tilde{u}) + T_0(k,u,v),
+2π \tilde{T}(p,k,\tilde{u},\tilde{v})
+= 4p \left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
+- 4 \left[ E \tilde{F}(\tilde{u}) - K \tilde{E}(\tilde{u}) \right]
+- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
++ \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
 \]
-where $\tilde{u},\tilde{v} \ni 2π\Z$. Recall an earlier comment about the fibre of the projection of $\mathcal{P}$ over $\mathcal{A}_1$: the paths between the marked points are in bijection with the signed number of crossings of a point. Take the point on the upper unit circle to be over $ν$. The assumptions on $\tilde{u},\tilde{v}$ imply that $ν$ will not be either $1$ or $-1$. The paths which do not cross this point are precisely the principal paths, hence $T_0$ in the formula. Other paths that differ by $n$ from the principal paths, differ in homology by $2n γ_I$. Thus the integrals of $Θ^2$ differ by $4π\iu n$. Putting this into the definition of $T$ gives the above.
-
-The aptitude of $(k,\tilde{u},\tilde{v})$ to the job of parameterisation is in some sense the converse of this. Take some spectral curve such that $ν\neq\pm 1$. Then any path $γ_+$ can be described as a principal path plus some multiple $2n γ_I$. The principal paths themselves are described by $\iu u, \iu v$. We therefore assign $γ_+$ to be the number $\tilde{u} = u + 2π n$. And ditto for paths $γ_-$ vis-\`a-vis $\tilde{v}$. In the case that $ν$ is $1$ or $-1$, then we need to use the coordinates $u'$ or $v'$ and choose a different point to define the winding number with respect to, but the idea is the same. The restriction that $\tilde{u} -\tilde{v} \ni 2π\Z$ is exactly the condition that $u\neq v$.
-
-We can now see that $\mathcal{P}$ is disconnected and how it is a cover of the universal cover of $\mathcal{A}_1$. $\mathcal{P}$ is $(0,1)\times\R^2$ with a family of parallel planes removed. Any connected region would serve as the universal cover of $\mathcal{A}_1$. One can characterise the components as follows. On any component, choose a point where $\tilde{u},\tilde{v} \in 2π\Z$. Then $W(\tilde{u}) - W(\tilde{v})$ is the same at all such points. Another way to think of this, is if you were trying to put paths $(γ_+,γ_-)$ into a more standard form, given any such pair over $Σ\in\mathcal{A}_1$ one moves through the space $\mathcal{P}$ to another point over $Σ$ such that $γ_+$ is principal. On exactly one component, $γ_-$ would be principal too, and one could order components of $\mathcal{P}$ by how many periods they fell short of this goal. As these components are essentially identical, we need only consider one of them. Let $$\mathcal{P}$$ be the universal cover of $\mathcal{A}'$, identified with the specific component already mentioned, the one which has simultanously principal paths.
+If we wish to relate this to the specific local expressions we have derived, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$. \todo{ref the formula in the appendix about how to do this.}. In particular, define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Then
 \[
-\mathcal{P} = \{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  0 < \tilde{v} -\tilde{u} < 2π  \}.
+\tilde{T}(p,k,\tilde{u},\tilde{v})
+\begin{cases}
+= T_0(p,k,u,v) + 2pW(\tilde{v}) - 2W(\tilde{u}) \\
+= T_1(p,k,u,v') + 2pW(\tilde{v}-π) - 2W(\tilde{u}) \\
+= T_2(p,k,u',v) + 2pW(\tilde{v}) - 2W(\tilde{u}-π)
+\end{cases}
 \]
-
-This all is entirely unsuprising. We already knew that $T$ was defined locally up to a constant, so of course $\tilde{T}$ can be locally described by a branch cut to $T$ and some constants. The useful part of this formula though is that it relates the abstractly defined $\tilde{T}$ to a set of coordinates that cover all of $\mathcal{P}$ (and therefore $$\mathcal{P}$$) in a single chart and to a local expression $T_0$ that is written in coordinates expressly designed for ease of computation.
-
+where the formulas on the right agree with one another whereever two are both defined. Thus to do computations with the function $\tilde{T}$, one can instead work with a function downstairs on $\mathcal{A}$.
 
 
 
@@ -679,10 +689,9 @@ This all is entirely unsuprising. We already knew that $T$ was defined locally u
 
 
 
+\subsection{The topology of the moduli space}
 
-\subsection{Derivaitves}
-
-In the interest of having manageable formulae, we recall the definition of $w(y)^2 = (1+y^2)(1+k^2 y^2)$. Using primes to indicate coordinates at infinity (ie $y' = 1/y$), not derivatives, we introduce $w'(y')^2 = (1 + (y')^2)(k^2 + (y')^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
+In the interest of having manageable formulae, we recall the definition of $w'(z')^2 = (1 - (z')^2)(k^2 - (z')^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
 \[
 \Partial{}{u} F(\iu u; k) = \frac{\iu}{w(\iu u)},\;\;\;
 \Partial{}{u} E(\iu u; k) = \iu\frac{1+k^2 u^2}{w(\iu u)},
@@ -694,10 +703,10 @@ and
 = \frac{(1+k^2)u + 2k^2 u^3}{w(\iu u)}.
 \]
 The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T_0$ is elementary if tedious.
-\begin{align*}\label{dTdk}
-\frac{π}{2}\Partial{T_0}{k}
-&= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
-\end{align*}
+% \begin{align*}\label{dTdk}
+% \frac{π}{2}\Partial{T_0}{k}
+% &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
+% \end{align*}
 \begin{equation}\label{dTdu}
 \frac{π}{2}\Partial{T_0}{u}
 = -\frac{E}{w(\iu u)} + \frac{pK w(\iu v)}{(u-v)^2} + \frac{K}{w(\iu u)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
@@ -706,15 +715,15 @@ The other derivatives of elliptic integrals are calculated in appendix \ref{sec:
 \frac{π}{2}\Partial{T_0}{v}
 = \frac{pE}{w(\iu v)} - \frac{K w(\iu u)}{(u-v)^2} - \frac{pK}{w(\iu v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
 \end{equation}
-While $T$ may be multivalued on $\mathcal{A}'$, its derivatives are not: the ambiguity of begin locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
+While $T$ may be multivalued on $\mathcal{A}'$, its derivatives are not: the ambiguity of being locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
 
 
 \begin{equation}\label{dTdu'}
-\frac{π}{2}\Partial{T_0}{u'}
+\frac{π}{2}\Partial{T}{u'}
 = \frac{E}{w'(u')} + \frac{pK w(\iu v)}{(1-u'v)^2} + \frac{K}{w'(u')(1-u'v)^2}\left[1 + k^2v^2 + - u'v + k^2u'v + (u')^2 + (u')^2v^2 \right]
 \end{equation}
 \begin{equation}\label{dTdv'}
-\frac{π}{2}\Partial{T_0}{v'}
+\frac{π}{2}\Partial{T}{v'}
 = -\frac{pE}{w'(v')} + \frac{K w(\iu u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
 \end{equation}
 
@@ -722,22 +731,19 @@ While $T$ may be multivalued on $\mathcal{A}'$, its derivatives are not: the amb
     \label{lem:deriv no zeroes}
 The functions
 \[
-U(x,k,u,v) := -(u-v)^2 E + xKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right]
+U(p,k,u,v) := -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right]
 \]
 and
 \[
-V(x,k,u,v') := -(uv'-1)^2 E + xKw(\iu u)w'(v') + K\left[ 1 + k^2u^2 - uv' + k^2 uv' + (v')^2 + u^2 (v')^2 \right]
+V(p,k,u,v') := -(uv'-1)^2 E + pKw(\iu u)w'(v') + K\left[ 1 + k^2u^2 - uv' + k^2 uv' + (v')^2 + u^2 (v')^2 \right]
 \]
-have no zeroes for $x \geq 1$, $k\in (0,1)$, $u,v,v' \in \R$.
+have no zeroes for $p \geq 1$, $k\in (0,1)$, $u,v,v' \in \R$.
 \begin{proof}
-We shall prove this statement by showing that the two functions are in fact always positive. The first step is to eliminate $E$. From \cite{Anderson}, we have the sharp inequality $E < k^2 + (1-k^2)K$. If we apply the crude estimate that $K>1$ (in fact $K > π/2$), we see that
-\[
-E < k^2 + (1-k^2)K = K + k^2 (1-K) < K.
-\]
-Also using the assumption that $x\geq 1$, one can then begin
+We shall prove this statement by showing that the two functions are in fact always positive. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, \todo{reference the appendix}
+and also the assumption that $p\geq 1$, to simplify
 \begin{align*}
-U(x,k,u,v)
-&= -(u-v)^2 E + xKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
+U(p,k,u,v)
+&= -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
 &> -(u-v)^2 K + Kw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
 &= K \left[ w(\iu u)w(\iu v) + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right]
 \end{align*}
@@ -747,7 +753,7 @@ w(\iu u) = \sqrt{1 + (1+k^2)u^2 + k^2u^4} > \sqrt{(1+k^2)u^2} = \sqrt{(1+k^2)}\a
 \]
 so
 \begin{align*}
-U(x,k,u,v)
+U(p,k,u,v)
 &> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
 &\geq K \left[ 1 + k^2 u^2 v^2 \right].
 \end{align*}
@@ -779,18 +785,16 @@ And if $p \geq 1$, then the $u$ and $u'$ derivatives of $T$ are nonzero:
 \end{align*}
 
 
-
-
-
-
-\subsection{Topology of $\mathcal{S}$}
-Recall that $\mathcal{S} \subset \mathcal{A}$ is the set of spectral curves that admit closing spectral data and that $\tilde{\mathcal{S}} \subset \mathcal{P}$ is its preimage in the universal cover.
+Recall that $\mathcal{S} \subset \mathcal{C}$ is the set of spectral curves that admit closing spectral data and that $\mathcal{\tilde{S}} \subset \mathcal{\mathcal{A}}$ is its preimage in the universal cover. Let $\mathcal{\tilde{S}}(p,q)$ denote the subset of $\mathcal{\tilde{A}}$ on which the values of $p$ and $q$ are fixed. As we have show that $\mathcal{S}$ is the space on which $p$ is a positive rational and $q$ is any rational, it follows that
+\[
+\mathcal{\tilde{S}} = \coprod_{p\in \Q^+, q\in \Q} \mathcal{\tilde{S}}(p,q).
+\]
 
 \begin{lem}
-If $p \leq 1$ then $(k, \tilde{u})$ are coordinates on $\tilde{\mathcal{M}}$, and if $p \geq 1$ then $(k, \tilde{v})$ are coordinates on $\tilde{\mathcal{M}}$.
+If $p \leq 1$ then $\tilde{\mathcal{S}}(p,q)$ is a graph over $(k,\tilde{u})$, and if $p \geq 1$ then $\tilde{\mathcal{S}}(p,q)$ is a graph over $(k, \tilde{v})$.
 
 \begin{proof}
-We prove this by direct application of the implict function theorem. Suppose first that $p \leq 1$. Consider the function $\tilde{T}(k,\tilde{u},\tilde{v})$ on $$\mathcal{P}$$. Consider two formulae for its derivatives with respect to $\tilde{v}$.
+We prove this by direct application of the implict function theorem. Suppose first that $p \leq 1$. Consider the function $\tilde{T}(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{A}}$. Consider two formulae for its derivatives with respect to $\tilde{v}$.
 \[
 \Partial{\tilde{T}}{\tilde{v}}
 = \Partial{T}{v}\frac{dv}{d\tilde{v}}
@@ -802,21 +806,32 @@ for $\tilde{v} \not\in π + 2π\Z$ and
 = \Partial{T}{v'}\frac{dv'}{d\tilde{v}}
 = -\frac{1}{2}\csc^2\bfrac{\tilde{v}}{2} \Partial{T}{v'},
 \]
-for $\tilde{v} \not\in 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, neither of the partial derivatives of $T$ with respect to $v$ or $v'$ are ever zero, and neither are $\sec$ or $\csc$. Hence $\partial \tilde{T} / \partial \tilde{v}$ is never zero. By the implicit function theorem therefore, there is a function $g$ such that the level set $\tilde{T}=q$ is a graph of the form $(k, \tilde{u}, g(k,\tilde{u}))$.
+for $\tilde{v} \not\in 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, neither of the partial derivatives of $T$ with respect to $v$ or $v'$ are ever zero, and neither are $\sec$ or $\csc$. Hence $\partial \tilde{T} / \partial \tilde{v}$ is never zero. By the implicit function theorem therefore, there is a function $g$ such that the level set $\tilde{T}=q$ is a graph of the form $(p, k, \tilde{u}, g(p,k,\tilde{u}))$. Fixing a value of $p$ gives $\mathcal{\tilde{S}}(p,q)$ as a graph of the two remaining coordinates $(k,\tilde{u})$.
 
 The same argument holds if $p \geq 1$, as then the $\tilde{u}$ derivative of $\tilde{T}$ is nonvanishing.
 \end{proof}
 \end{lem}
 
-The topological implication of this is that each leaf of the moduli space $\tilde{\mathcal{M}}$ is diffeomorphic to a product of $(0,1)$ and $\R$ where $k$ is in the interval and the real parameter is either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$. For brevity, we will refer to it as $x$. As the closing conditions are equivalent to $T$ begin rational, it follows that $\tilde{\mathcal{M}}$ for a fixed $p$ can be parameterised as $\Q\times(0,1)\times\R$. To understand the topology of $\mathcal{M}$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{M}}$. The deck transformations $G$ are generated by the translation
+The topological implication of this is that each path component of the moduli space $\tilde{\mathcal{S}}$ is diffeomorphic to a product of $(0,1)$ and $\R$ where $k$ is in the interval and the real parameter is either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$. For brevity, we will refer to it as $\tilde{x}$. To understand the topology of $\mathcal{S}$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{S}}$. There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}$ over $\mathcal{A}$ and the transformations of the two fold covering of $\mathcal{A}$ over $\mathcal{C}$.
+
+The first sort are easy to understand; they are generated by the translation
 \[
-(k,\tilde{u},\tilde{v}) \mapsto (k, \tilde{u} + 2π, \tilde{v} + 2π).
+(p, k,\tilde{u},\tilde{v}) \mapsto (p, k, \tilde{u} + 2π, \tilde{v} + 2π).
 \]
-The corresponding effect on $\tilde{T}$ is
+The second sort require a little more effort. On one hand, the deck transformations of $\mathcal{A}$ over $\mathcal{C}$ is simply the involution that swaps $α$ and $β$. The difficulty is what this action looks like when pulled back to the universal cover. By inspection of the defintions of $p$ and $k$, they are unchanged if the labbeling of the branch points is exchanged. We therefore must say what happens to $u$ and $v$. Our construction thus far relies on the standardisation in the definition of $f$ that sends $α$ to $1$ and $β$ to $k^{-1}$. Let $f_s$ be the map which instead standardises the roots of the spectral curve in the other way, taking $β$ to $1$. Consider the composition of $f_s^{-1} \circ f$. It is a M\"obius transformation that excahnges $1$ and $k^{-1}$ and also $-1$ and $-k^{-1}$. It therefore must be the map
 \[
-\tilde{T}(k,\tilde{u} + 2π,\tilde{v} + 2π) \mapsto \tilde{T}(k, \tilde{u}, \tilde{v}) + 2(p-1).
+z \mapsto \frac{1}{kz}.
 \]
-So in terms of the parameters $(q,k,x)$
+Under the composite map $\iu u$ is taken to $-\iu u^{-1}$. Ditto for $\iu v$. Using the map $f_s$ instead of $f$ is equivalent to swapping the labels on the branch points and then applying $f$. Thus, under the label-swapping involution,
 \[
-(q,k,x) \mapsto (q + 2(p-1), k, x + 2π).
+(p,k,u,v) \mapsto \bra{ p,k, -(ku)^{-1}, -(kv)^{-1} }.
 \]
+This then carries on to the universal cover in the following way. For some integer $n$
+\[
+\tilde{u} = 2πn + 2\atan u \mapsto 2πn + 2\atan \bra{ -\frac{1}{ku} } = 2πn + π + 2\atan (ku).
+\]
+Applying the transformation again
+\[
+2πn + π + 2\atan (ku) \mapsto 2πn + π + 2\atan \bra{ -\frac{k}{ku} } = 2π(n+1) + 2\atan u = \tilde{u} + 2π.
+\]
+The same applies to $\tilde{v}$. This shows that deck transformations of $\mathcal{\tilde{A}}$ over $\mathcal{A}$ are actually a subgroup of the group generated by the label-swapping involution. Hence we can focus our attention solely on the latter.

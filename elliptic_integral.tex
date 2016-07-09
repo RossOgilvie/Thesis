@@ -27,7 +27,7 @@ Every elliptic curve may be brought to this highly symmetric form, known as {\it
 \caption{The torus $y^2 = (1-t^2)(1-k^2 t^2)$ with $A$-period in red (in the center) and $B$-period in blue.  The upper and lower halves of the torus correspond to the two sheets of $\C$. The two points over complex infinity are the highest and lowest points, where as the two points over the origin are the two points on the vertical line between them.}
 \end{figure}
 
-To compute the other period, the one around $1$ and $k^{-1}$ known as the $B$-period, one employs a trick called {\it Jacobi's imaginary transformation} that makes use of a quadratic substitution \cite{Whittaker2000}. Divide the loop $B$ into two pieces $B^+$ and $B^-$ on which $y$ is repesctively valued in $\iu\R$ and $-\iu\R$. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
+To compute the other period, the one around $1$ and $k^{-1}$ known as the $B$-period, one employs a trick called {\it Jacobi's imaginary transformation} that makes use of a quadratic substitution \cite{Whittaker2000}. Divide the clockwise loop $B$ into two pieces $B^+$ and $B^-$ on which $y$ is repesctively valued in $\iu\R$ and $-\iu\R$. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
 \begin{align*}
 dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
 \sqrt{t^2 - 1} &= \frac{k's}{\sqrt{1-k'^2 s^2}} \\
@@ -38,6 +38,7 @@ so that
 \begin{align*}
 \int_B \frac{dt}{y}
 &= \int_{B^+} \frac{dt}{y} + \int_{B^-} \frac{dt}{y} \\
+&= \int_{k^{-1}}^1 \frac{dt}{\iu\sqrt{(1-t^2)(1-k^2 t^2)}} + \int_1^{k^{-1}} \frac{dt}{-\iu\sqrt{(1-t^2)(1-k^2 t^2)}}\\
 &= \int_1^0 (-\iu) \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} + \int_0^1 \iu \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
 &= 2\iu K(k')
 \end{align*}
@@ -109,30 +110,30 @@ therefore give a lower bound for $K$ and a narrow range of values for $E$.
 
 For the incomplete integrals, in this thesis we need only investigate their properties on the imaginary axis. Both $F(z;k)$ and $E(z;k)$ take purely imaginary values on the imaginary axis, and so we make the definitions
 \begin{align}
-\tilde F(x) &= \tilde F (x ; k) := \Im F(\iu x; k)
+F_0(x) &= F_0 (x ; k) := \Im F(\iu x; k)
 = \int_0^x \frac{dt}{\sqrt{(1+t^2)(1+k^2 t^2)}}, \\
 %%%%%%%
-\tilde E(x) &= \tilde E (x ; k) := \Im E(\iu x; k)
+E_0(x) &= E_0 (x ; k) := \Im E(\iu x; k)
 = \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}}\;dt,
 \end{align}
-where the $k$ is implicit if it is omitted. Both are real valued functions of $x \in \R$ and $k\in (0,1)$. We shall see that $\tilde{E}$ has a pole at infinity, so we shall concentrate instead on $\tilde{E}(x) - k x$ which is well behaved everywhere.
+where the $k$ is implicit if it is omitted. Both are real valued functions of $x \in \R$ and $k\in (0,1)$. We shall see that $E_0$ has a pole at infinity, so we shall concentrate instead on $E_0(x) - k x$ which is well behaved everywhere.
 
-We begin with the simple observation that both $\tilde{F}$ and $\tilde{E}(x) - kx$ are odd functions of $x$.
+We begin with the simple observation that both $F_0$ and $E_0(x) - kx$ are odd functions of $x$.
 
-Next note that both functions are increasing functions of $x$. In the case of $\tilde{F}$ this is obvious as the integrand is positive. For the other function $k \sqrt{1 + t^2} < \sqrt{1 + k^2t^2}$ from which it follows that
+Next note that both functions are increasing functions of $x$. In the case of $F_0$ this is obvious as the integrand is positive. For the other function $k \sqrt{1 + t^2} < \sqrt{1 + k^2t^2}$ from which it follows that
 \begin{align*}
-\tilde{E}(x) - k x
+E_0(x) - k x
 &= \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}} - k \;\;dt\\
 &= \int_0^x \frac{\sqrt{1+k^2t^2} - k\sqrt{1+t^2}}{\sqrt{1+t^2}}\;dt
 \end{align*}
 is increasing as well. For increasing functions it is natural to wonder whether they increase towards a limit. In our case they do, and we shall compute the value of the limit by a standard technique of complex analysis: integration around a closed semicircular contour.
 
 \begin{lem}
-The functions $\tilde{F}$ and $\tilde{E} - kx$ are increasing functions, with the following limits as $x$ tends to infinity.
+The functions $F_0$ and $E_0 - kx$ are increasing functions, with the following limits as $x$ tends to infinity.
 \[
-\lim_{x\to\infty} \tilde{F}(x; k) = K',
+\lim_{x\to+\infty} F_0(x; k) = K',
 \qquad
-\lim_{x\to+\infty} [\tilde E(x; k) - k x] = K' - E'.
+\lim_{x\to+\infty} [E_0(x; k) - k x] = K' - E'.
 \]
 
 \begin{proof}
@@ -146,17 +147,17 @@ We deal first with the integral of the first kind. The contribution coming from 
 &= \frac{π R}{\sqrt{(R^2 - 1) (k^2R^2 - 1)}} \\
 &\to 0.
 \end{align*}
-And since $\tilde{F}$ is an odd function of $x$, we can conclude that
+And since $F_0$ is an odd function of $x$, we can conclude that
 \begin{align*}
 2\iu K'
 &= \lim_{R\to\infty} \oint \frac{dz}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
 &= \lim_{R\to\infty} \bra{\int_{-\iu R}^{\iu R} + \int_{C_R}}  \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
 &= 2\lim_{R\to\infty} \int_{0}^{\iu R} \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} + \lim_{R\to\infty} \int_{C_R} \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
-&= 2 \lim_{R\to\infty} \iu\, \tilde{F}(R),
+&= 2 \lim_{R\to\infty} F(\iu R;k),
 \end{align*}
 which establishes the first half of the result.
 
-The analysis of the second limit proceeds much the same, however there is an extra step to make the poles of $\tilde E$ and $kx$ cancel, namely rationalising the numerator. Using the same contour as before, we again show that the contribution from the semicircular arc is vanishing as $R \to \infty$.
+The analysis of the second limit proceeds much the same, however there is an extra step to verify that the poles of $E_0$ and $kx$ cancel. Using the same contour as before, we again show that the contribution from the semicircular arc is vanishing as $R \to \infty$.
 \begin{align*}
 \abs{\int_{C_R}\sqrt{\frac{1-k^2t^2}{1-t^2}} - k \;\;dt}
 &= \abs{\int_{C_R}\frac{ \sqrt{1-k^2t^2} - k \sqrt{1-t^2}}{\sqrt{1-t^2}} \;dt} \\
@@ -169,7 +170,7 @@ The analysis of the second limit proceeds much the same, however there is an ext
 \end{align*}
 As before, we are dealing with an odd function of $x$ and hence
 \begin{align*}
-\lim_{x\to \infty} [\tilde E(x; k) - k x] = K' - E'.
+\lim_{x\to \infty} [E_0(x; k) - k x] = K' - E'.
 \end{align*}
 
 \end{proof}
@@ -177,27 +178,27 @@ As before, we are dealing with an odd function of $x$ and hence
 
 It immediately follows from this lemma that we have the following bounds on the functions that are independent of $x$.
 \begin{align*}
--K' \leq &\tilde{F}(x;k) \leq K' \\
-- (K' - E') \leq &\tilde E(x; k) - k x \leq K' - E'. \label{eqn:tildeEatInf}
+-K' \leq &F_0(x;k) \leq K' \\
+- (K' - E') \leq &E_0(x; k) - k x \leq K' - E'. \label{eqn:tildeEatInf}
 \end{align*}
 It can also be useful to bound their growth independently of $k$. As the integrands are monotone functions of $k$, assuming $x>0$ one has
 \[
-\atan {x} = \int_0 ^x \frac{dt}{1+t^2} \leq \tilde{F}(x;k) \leq \int_0 ^x \frac{dt}{\sqrt{1+t^2}} = \asinh x
+\atan {x} = \int_0 ^x \frac{dt}{1+t^2} \leq F_0(x;k) \leq \int_0 ^x \frac{dt}{\sqrt{1+t^2}} = \asinh x
 \]
 and
 \[
-0 \leq \tilde E(x; k) - k x \leq
+0 \leq E_0(x; k) - k x \leq
 \int_0^x \frac{(1+kt) - kt}{\sqrt{1+t^2}}\;dt = \asinh x.
 \]
-(If $x<0$ then all these inequalities are reversed.) Of course, if one is willing to consider non uniform bounds, then the observation that both integrands are decreasing functions of $k$ allows one to bound a range of $k$ by the value at infimum of the range. Symbolically, if $k > k_0$ then $\tilde{F}(x;k) < \tilde{F}(x;k_0)$.
+(If $x<0$ then all these inequalities are reversed.) Of course, if one is willing to consider non uniform bounds, then the observation that both integrands are decreasing functions of $k$ allows one to bound a range of $k$ by the value at infimum of the range. Symbolically, if $k > k_0$ then $F_0(x;k) < F_0(x;k_0)$.
 
 \begin{lem} \label{lem:klimit}
 The elliptic integrals degenerate to the following ellementary functions as $k$ approaches $0$ or $1$.
 \begin{align*}
-    \lim_{k\to 0} \tilde{F}(x; k) &= \asinh {x} \\
-    \lim_{k\to 0} \tilde{E}(x; k) &= \asinh {x} \\
-    \lim_{k\to 1} \tilde{F}(x; k) &= \atan {x} \\
-    \lim_{k\to 1} \tilde{E}(x; k) &= x.
+    \lim_{k\to 0} F_0(x; k) &= \asinh {x} \\
+    \lim_{k\to 0} E_0(x; k) &= \asinh {x} \\
+    \lim_{k\to 1} F_0(x; k) &= \atan {x} \\
+    \lim_{k\to 1} E_0(x; k) &= x.
 \end{align*}
 \begin{proof}
 The above inequalities serve to show that the integrals are dominated by functions independent of $k$, so by the dominated convergence theorem one can compute the limits as $k \to 1$ (for any value of $x$) and $k \to 0$ (for finite values of $x$, as $\asinh x$ is not finite for $x=\infty$) by passing the limit under the integrand sign. Doing so results in exactly the two extremes presented in those inequalities.
@@ -333,49 +334,70 @@ This relation is useful in two ways. First, it can be used to construct a basis 
 
 It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy-Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic.
 
-If we consider that the natural domain of the elliptic integrals is the torus, then one should seek to extend analytically the elliptic integrals for $z=\tilde\infty$. In the special case of $\tilde{F}(x;k)$ and $\tilde{E}(x;k) - kx$ that we have been considering, we have already computed the limit as $x \to \infty$, but because both functions are odd, there is no way to extend these functions to $x \in \RInf$. Instead, mirroring the approach in the body of the thesis, we shall instead extend these functions analytically to the universal cover of $\RInf$, namely $\R$.
+In the body of the thesis, we encounter the situation where a function naturally defined on a circle is given a local expression in terms of the functions $F_0(x;k)$ and $E_0(x;k) - kx$ that we have been considering. The question naturally arises how to extend and express those functions on the full circle. Above, we have already computed the limit as $x \to \infty$, but because both functions are odd, there is no way to extend these functions to $x \in \RInf$. Instead we shall extend these functions analytically to the universal cover of $\RInf$, namely $\R$.
 
-Let $x \in \R \subset \RInf$ be one coordinate on $\RInf$ and $x' = x^{-1}$ be another. Recall that the period of $\tilde{F}(x)$ is $2K'$ and that for $\tilde{E}(x) - kx$ it is $2(K' - E')$. To give the extension of either of these functions to the universal cover, it is sufficent to give an expression in each coordinate chart. On the universal cover, the extension will differ from the pullback by some number of periods.
+Let $x \in \R \subset \RInf$ be one coordinate on $\RInf$ and $x' = x^{-1}$ be another. Let $\tilde{x}$ be the coordinate on the universal cover with covering map
+\begin{align*}
+x &= \tan\frac{\tilde{x}}{2} \text{ for } \tilde{x}\not\in π+2\pi\Z \\
+x' &= \cot\frac{\tilde{x}}{2} \text{ for } \tilde{x}\not\in 2\pi\Z.
+\end{align*}
+Let $\tilde{F}$ and $\tilde{E}$ be the lifts to the universal cover of $F_0$ and $E_0 - kx$ respectively. We will give concrete expressions for these functions below.
 
-Because we have computed the limit of $\tilde{F}$ already, we can immediately give the definition of $\tilde{F}$ in the coordinate $x'$.
+Recall that the period of $F_0(x)$ is $2K'$ and that of $E_0(x) - kx$ it is $2(K' - E')$. To give the extension of either of these functions to the universal cover, it is sufficent to give an expression in each coordinate chart. On the universal cover, the extension will differ from the pullback by some number of periods.
+
+Consider the function $F_1$.
 \[
-\tilde{F} =
+F_1(x';k) =
 \begin{cases}
-\tilde F((x')^{-1}; k)             & \text{ for } x' > 0 \\
+F_0((x')^{-1}; k)             & \text{ for } x' > 0 \\
 K'                              & \text{ for } x' = 0 \\
-2\iu K' + \tilde F((x')^{-1}; k)   & \text{ for } x' < 0
+2K' + F_0((x')^{-1}; k)   & \text{ for } x' < 0
 \end{cases}
 \]
-The only thing to check is that it is analytic at $x'=0$. To show this, we transform the integrals so that their base point is at $x'=0$ rather than $x=0$ and apply the Cauchy-Kowalevski. For $x'>0$
+The only thing to check is that it is analytic at $x'=0$. To show this, we transform the integrals so that their base point is at $x'=0$ rather than $x=0$ and apply the Cauchy-Kowalevski Theorem. For $x'>0$
 \begin{align*}
-\tilde F( (x')^{-1}; k)
+F_0( (x')^{-1}; k)
 &= \int_0^{(x')^{-1}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&= - \int_{+\infty}^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
-&= \left(\int_0^{+\infty} - \int_0^{x'} \right) \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+&= \left(\int_0^{+\infty} - \int_{(x')^{-1}}^{+\infty} \right) \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
 &= K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
 \end{align*}
 and for $x' < 0$
 \begin{align*}
-2 K' + \tilde F((x')^{-1}; k)
-&= 2 K' + \int_{x'}^{-\infty} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}} \\
+2 K' + F_0((x')^{-1}; k)
+&= 2 K' + \left(\int_0^{-\infty} - \int_{(x')^{-1}}^{-\infty} \right) \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
 &=  K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}}.
 \end{align*}
 So we have arived at a single formula for all values of $x'$, namely
 \[
-\tilde{F} = K' - \int_0^y \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
+F_1(x';k) = K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
 \]
-and since the integrand is analytic, the integral is too and we are done. The defintion and check for the integral of the second kind is entirely similar.
+and since the integrand is analytic, the integral is too and we are done.
+
+Notice that $F_1$ differs from $F_0$ by a function of $k$ where ever they are both defined. Thus we can express the function $\tilde{F}$ as follows
 \[
-\tilde{E} - k(x')^{-1} :=
+\tilde F(\tilde{x};k) =
 \begin{cases}
-\tilde E((x')^{-1}; k) - \iu k(x')^{-1}                 & \text{ for } x' > 0 \\
+F_0(x; k) + 2K'n             & \text{ for } \tilde x \in (2πn - π, 2πn + π) \\
+F_1(x'; k) + 2K'n             & \text{ for } \tilde x \in (2πn, 2πn + 2π),
+\end{cases}
+\]
+and this is a well defined analytic function.
+
+
+
+
+The defintion and check for the integral of the second kind is entirely similar.
+\[
+E_1(x';k) - k(x')^{-1} :=
+\begin{cases}
+E_0((x')^{-1}; k) - \iu k(x')^{-1}                 & \text{ for } x' > 0 \\
 K'-E'                                                   & \text{ for } x' = 0 \\
-2(K'-E') + \tilde E((x')^{-1}; k)  - \iu k(x')^{-1}     & \text{ for } x' < 0
+2(K'-E') + E_0((x')^{-1}; k)  - \iu k(x')^{-1}     & \text{ for } x' < 0
 \end{cases}
 \]
 After transforming the integrals in the same way, we find ourselves faced with the formula, for all $x'$,
 \[
-\tilde{E} - k(x')^{-1} = (K'-E') - \int_0^{x'} s^{-2}\bra{ \sqrt{\frac{s^2 + k^2}{1 + s^2}} - k }\;ds.
+E_1(x';k) - k(x')^{-1} = (K'-E') - \int_0^{x'} s^{-2}\bra{ \sqrt{\frac{s^2 + k^2}{1 + s^2}} - k }\;ds.
 \]
 The part of the integrand in the bracket is analytic, but because of the $s^{-2}$, the integrand as a whole may not be analytic at $s=0$. Fortunately though, it is. To see this, use the square root estimate
 \[
@@ -385,4 +407,11 @@ To obtain the bound
 \[
 -\frac{1}{2}k s^2 \leq \sqrt{k^2 + s^2} - k \sqrt{1+s^2} \leq \frac{1}{2}\frac{1}{k} s^2,
 \]
-which shows that the part in the bracket vanishes to order $s^2$ and so the integrand is analytic, and therefore the integral is also.
+which shows that the part in the bracket vanishes to order $s^2$ and so the integrand is analytic, and therefore the integral is also. We can then give an expression for $\tilde{E}$:
+\[
+\tilde E(\tilde{x};k) =
+\begin{cases}
+E_0(x; k) - kx + 2(K'-E')n             & \text{ for } \tilde x \in (2πn - π, 2πn + π) \\
+E_1(x'; k) -k(x')^{-1} + 2(K'-E')n     & \text{ for } \tilde x \in (2πn, 2πn + 2π).
+\end{cases}
+\]
