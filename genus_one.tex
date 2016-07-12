@@ -540,84 +540,7 @@ and hence that
 2π\iu T_0(p,k,u,v) = 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v}.
 \end{align*}
 
-It is instructive to see the locations of the branch cuts in terms of these new coordinates. $f(ν) = ∞$ and $f(1) = \iu u$, hence it follows that when $ν=1$ then $u' = 0$. And for the other marked point, $ν=-1$ when $v'=0$. So the branch cuts of $T_0$ on $\mathcal{A}$ are precisely where $u'$ and $v'$ are zero. We shall have need of expressions for $T$ in neighbourhoods of these points. These will be other branches of the function $T$, and these different branches of $T$ will differ locally by constants.
-
-To derive formulae that work on the other coordinate charts without re-expending the quantity of ink it has taken to get $T_0$, we draw on results from appendix REF \todo{ref} in which we establish how to extend some elliptic integrals analytically at infinity. In particular, we recall the notation $F_0$ and $E_0$ for the imaginary parts of $F$ and $E$ applied to imaginary arguments. We also will be making use of $F_1$ and $E_1$, the analytic extensions of $F_0$ and $E_0$ from $(0,\infty)$ to $(0,\infty)\cup \{\infty\} \cup (-\infty, 0)$.
-
-Let us consider the coordinate patch $(p,k,u,v')$. We rearrange the above to give
-\[
-2π T_0(p,k,u,v) = 4p \left[ E F_0(v) - K \left\{ E_0(v) - kv\right\} \right]
-- 4 \left[ E F_0(u) - K E_0(u) \right]
-- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \frac{w(\iu u)}{u-v} \right] .
-\]
-The functions in the first square bracket, $F_0(v)$ and $ E_0(v) - kv$ can be extended to $v'=0$. The second square bracket is independent of $v$, so is trivially a function of $v'$. It remains to show
-\[
-\frac{w(\iu v)}{u-v} + k v \text{ and } \frac{w(\iu u)}{u-v}
-\]
-are smooth functions of $v' \in \R$. Explicitly
-\begin{align}
-\frac{w(\iu v)}{u-v} + k v
-&= \frac{w(\iu v) - kv^2}{u-v} + \frac{kuv}{u-v} \\
-&= \frac{(1+k^2)v' +(v')^3}{(uv'-1)(\sqrt{(1+(v')^2)(k^2 + (v')^2)} + k)} + \frac{ku}{uv'-1} ,
-\end{align}
-and
-\begin{align}
-\frac{w(\iu u)}{u-v}
-&= \frac{v' w(\iu u)}{uv'-1}.
-\end{align}
-As a shorthand, let us introduce the notation $w'(z') := \sqrt{(1-(z')^2)(k^2 - (z')^2)}$. Thus we may define
-\[
-2π T_1(p,k,u,v') = 4p \left[ E F_1(v') - K \left\{ E_1(v') - k(v')^{-1}\right\} \right]
-- 4 \left[ E F_0(u) - K E_0(u) \right]
-- 4 K \left[p\left\{ \frac{(1+k^2)v' +(v')^3}{(uv'-1)(w'(\iu v') + k)} + \frac{ku}{uv'-1} \right\}
-+ \frac{v' w(\iu u)}{uv'-1} \right] .
-\]
-When $v' > 0$ then the two formulae $T_0$ and $T_1$ give the same results at the same points, but when $v' < 0$ they differ. By how much though? Suppose that $v' < 0$. Then
-\begin{align}
-2π T_1(p,k,u,v')
-&= 4p \left[ E F_1(v') - K \left\{ E_1(v') - k(v')^{-1}\right\} \right]
-- 4 \left[ E F_0(u) - K E_0(u) \right]
-- 4 K \left[p\left\{ \frac{(1+k^2)v' +(v')^3}{(uv'-1)(w'(\iu v') + k)} + \frac{ku}{uv'-1} \right\}
-+ \frac{v' w(\iu u)}{uv'-1} \right] \\
-&= 4p \left[ E \left\{ 2K' + F_0(v) \right\} - K \left\{2(K'-E') + E_0(v) - kv \right\} \right]
-- 4 \left[ E F_0(u) - K E_0(u) \right]
-- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \frac{w(\iu u)}{u-v} \right] \\
-&= 8p \left[ EK' + KE' - KK' )\right] + T_0(p,k,u,v) \\
-&= 4pπ + 2π T_0(p,k,u,v) \\
-T_1(p,k,u,v') &= 2p + T_0(p,k,u,v).
-\end{align}
-Recalling that $T$ is only defined up to multiples of $1$ and $p$, this is entirely in line with our expectations.
-
-The same trick in $u$ works if one wishes to write a formula for a branch cut of $T$ that is defined on $(p,k,u',v)$ or $(p,k,u',v')$. As mentioned, it is sufficient to use three coordinate patches to cover $\mathcal{A}$, so let
-\[
-2π T_2(p,k,u',v) = 4p \left[ E F_0(v) - K E_0(v) \right]
-- 4 \left[ E F_1(u') - K \left\{ E_1(u') - k(u')^{-1}\right\} \right]
-- 4 K \left[p\frac{u' w(\iu v)}{u'v-1}
-+ \left\{ \frac{(1+k^2)u' +(u')^3}{(u'v-1)(w'(\iu u') + k)} + \frac{kv}{u'v-1} \right\} \right] .
-\]
-This time, for $u'< 0$, it differs by
-\[
-T_2(p,k,u',v) = -2 + T_0(p,k,u,v).
-\]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Universal Cover the Parameter Space}
+It is instructive to see the locations of the branch cuts in terms of these new coordinates. $f(ν) = ∞$ and $f(1) = \iu u$, hence it follows that when $ν=1$ then $u' = 0$. And for the other marked point, $ν=-1$ when $v'=0$. So the branch cuts of $T_0$ on $\mathcal{A}$ are precisely where $u'$ and $v'$ are zero.
 
 Consider the parameter space $\mathcal{A}$ for a fixed value of $p$, denoted $\mathcal{A}(p)$. Topologically it is the product of an interval cross and an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RInf \times \RInf$. Topologically $\RInf$ is just a circle, so this product is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
 
@@ -629,7 +552,9 @@ In the limit as $α \to β$, this formula says that $k \to 1$. From the equation
 
 Another way that this model is useful is it allows us to see the twisting in the space of spectral curve and the essential appearence of the period behaviour. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line. As we move around the axis, the values of $f(1),f(-1)$ are moving through the values of $\RInf$.
 
-Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut, and an extra period term appears in our formulas. We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another. After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$.
+Another way to put this is that the points $μ,ν$ on the unit circle in the $ζ$-plane, which define the origin and infinity of the $z$-plane, are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut. We can infer from the rotation of $μ,ν$ that the branch point `line' is rotating about the point $(α, β)$, which in turn means that $α$ and $β$ are circling one another. After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$.
+
+PERIOD BEHAVIOR HASN"T BEEN INTRODUCED YET \todo{reorder this}
 
 The fact that the parameter is not simply connected and that $T$ is not even a single valued function is the source of much misery. The obvious way to correct this is to move the the unversal cover of $\mathcal{A}$, which we shall call $\mathcal{\tilde{A}}$. Let the coordinates on $\mathcal{\tilde{A}}$ be
 \[
@@ -644,7 +569,39 @@ u &= \tan \frac{\tilde{u}}{2},
 v &= \tan \frac{\tilde{v}}{2},
 \quad  v' = \cot \frac{\tilde{v}}{2}.
 \end{align*}
-Building on the definitions in appedix REF \todo{REF}, it is straightforward to lift $T$ to a single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}$. One may simply plug the premade universal covers versions of $F_0,E_0$, etc into the formula to define
+The derivation of $\mathcal{\tilde{A}}$ precedes in two steps. First, the universal cover of $\R_{>0} \times (0,1) \times \RInf\times\RInf$ is $\R_{>0} \times (0,1) \times \R\times\R$, with the two circle components being covered by the line via a standard half-tan mapping as witnessed in the formulae above. The second step is to recall that $\mathcal{A}$ is the complement of the line $u-v = 0$. When pulled back to the universal cover, this becomes a collections of lines $u-v \in 2π\Z$. Only one stripe is needed to cover $\mathcal{A}$, and this is $\mathcal{\tilde{A}}$ above.
+
+It is straightforward to lift $T_0$ to a single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}$. First, rewrite $T_0$ in the follwoing way.
+\[
+2π T_0(p,k,u,v) = 4p \left[ E F_0(v) - K \left\{ E_0(v) - kv\right\} \right]
+- 4 \left[ E F_0(u) - \left\{ K E_0(u) - ku \right\} \right]
+- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
+\]
+
+\begin{lem}
+The function
+\[
+\frac{w(\iu u)}{u-v} - ku
+\]
+is an analytic function on $\mathcal{A}$.
+
+\begin{proof}
+As $u-v \neq 0$ on $\mathcal{A}$, this is an anlytic function of these coordinates. It remains to show that it is simiarly analytic in the other coordinates required to cover $\mathcal{A}$. Firstly, examining this function when using the coordinate $v'$ gives
+\[
+\frac{w(\iu u)}{u-v} - ku = \frac{w(\iu u)v'}{uv'-1} - ku,
+\]
+which is analytic. Next, when using the coordinate $u'$ we have
+\begin{align}
+\frac{w(\iu u)}{u-v} - k u
+&= \frac{w(\iu u) - ku^2}{u-v} + \frac{kuv}{u-v} \\
+&= \frac{1 + (1+k^2)u^2}{(u-v) (w(\iu u) + ku^2)} + \frac{kv}{1-u'v} \\
+&= \frac{u'((u')^2 + (1+k^2)} {(1-u'v) (w'(\iu u') + k)} + \frac{kv}{1-u'v},
+\end{align}
+where we have introduced the shorthand $w'(z')^2 = (1-(z')^2)(k^2 - (z')^2)$ to deal with this function at infinity. This is now an analytic function of $u'$. As these three coordinate patches cover all of $\mathcal{A}$, we are done and there is no need to consider the case using both $u'$ and $v'$, though this case is easy to derive from the last expression, and also clearly analytic.
+\end{proof}
+\end{lem}
+
+In Appendix REF \todo{ref}, extensions of $F_0(v;k)$ and $E_0(v;k) - kv$ to the universal covers of $(k,v)\in (0,1)\times\RInf$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus these functions can be used as a drop-in replacement for those functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation. Therefore we define
 \[
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
 = 4p \left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
@@ -652,16 +609,11 @@ Building on the definitions in appedix REF \todo{REF}, it is straightforward to 
 - 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
 + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
 \]
-If we wish to relate this to the specific local expressions we have derived, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$. \todo{ref the formula in the appendix about how to do this.}. In particular, define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Then
+If we wish to relate this to a specific local expression, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$. \todo{ref the formula in the appendix about how to do this.}. In particular, define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Then
 \[
-\tilde{T}(p,k,\tilde{u},\tilde{v})
-\begin{cases}
-= T_0(p,k,u,v) + 2pW(\tilde{v}) - 2W(\tilde{u}) \\
-= T_1(p,k,u,v') + 2pW(\tilde{v}-π) - 2W(\tilde{u}) \\
-= T_2(p,k,u',v) + 2pW(\tilde{v}) - 2W(\tilde{u}-π)
-\end{cases}
+\tilde{T}(p,k,\tilde{u},\tilde{v}) = T_0(p,k,u,v) + 2\bra{ pW(\tilde{v} - W(\tilde{u} }.
 \]
-where the formulas on the right agree with one another whereever two are both defined. Thus to do computations with the function $\tilde{T}$, one can instead work with a function downstairs on $\mathcal{A}$.
+Thus to do computations with the function $\tilde{T}$, one can continue to work with a function downstairs on $\mathcal{A}$ and make a note of the constants.
 
 
 
@@ -836,9 +788,45 @@ Applying the transformation again
 \]
 The same applies to $\tilde{v}$. This shows that deck transformations of $\mathcal{\tilde{A}}$ over $\mathcal{A}$ are actually a subgroup of the group generated by the label-swapping involution. Hence we can focus our attention solely on the latter.
 
-How does the value of $T$ change when this transformation is precomposed? To see this, it is useful to consider the situation in the $ζ$-plane. Suppose for concreteness that $μ$ is in the upper unit circle and $ν$ is in the lower unit circle.
+How does the value of $T$ change when this transformation is precomposed? To see this, it is useful to consider the situation in the $ζ$-plane. Suppose for concreteness that $μ$ and $ν$ are chosen such that $ν,μ,1$ and $-1$ are arranged clockwise as shown in the following diagram. The principal choice of path $γ_+$ is shown in black, whereas its pullback under the exchange of the roots is shown in red. Let it be denoted $γ'_+$.
 
-PICTURE
+\begin{center}
+\includegraphics[height=50mm]{thesis_graphics_temp/deck_T_1.png}
+\end{center}
+
+The difference between these two paths is homologous to a loop anticlockwise around the upper unit circle. So by the normalisation of $Θ^2$,
+\[
+\int_{γ'_+} Θ^2 - \int_{γ_+} Θ^2 = \int_{\S^1} = -2π\iu.
+\]
+
+Likewise if we consider the difference between the path $γ_-$ and its pullback $γ'_-$ we again have a anticlockwise loop of the upper unit circle.
+\begin{center}
+    \includegraphics[height=50mm]{thesis_graphics_temp/deck_T_1.png}
+\end{center}
+Hence
+\[
+\int_{γ'_-} Θ^2 - \int_{γ_-} Θ^2 = \int_{\S^1} = -2π\iu.
+\]
+Putting these together we conclude that the value of $T_0$ changes by $1-p$ under this transformation.
+\[
+2π\iu (T_0 \circ g - T_0) = \bra{ p\int_{γ'_-} Θ^2 - \int_{γ'_+} Θ^2 } - \bra{ p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 } = p(-2π\iu) - (-2π\iu) = 2π\iu (1-p).
+\]
+
+To infer what the effect of the transformation is on $\tilde{T}$ however, we also must take into acount how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently altered their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$ $\iu v$. In particular, as one tranverses the unit circle clockwise, one traverse the imaginary axis in the $z$-plane from bottom to top. Correspondingly, $-\infty < 0 < u < v$.
+
+As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n,m$. $2\atan(ku)$ will be between $0$ and $π$, so after the transformation $\tilde{u}$ will be in the range $(2πn +π, 2π(n+1))$. In otherwords its winding number has incresed by $1$. The same can be said for $\tilde{v}$. Putting these two parts together
+\[
+\tilde{T} \circ g - \tilde{T}
+= \bra{ T_0 \circ g + 2(p(m+1)-(n+1)) } - \bra{ T_0 + 2(pm-n) }
+= 1-p  +2(p-1) = p-1.
+\]
+This relation is a difference of analytic functions on an open set, so by continuation it applies everywhere. Thus the effect of the deck transformation on $\tilde{T}$ is to increase its value by $p-1$.
+
+
+
+
+
+
 
 Thus, if we consider the surfaces $\mathcal{\tilde{S}}(p,q)$ parameterised by $(p,q,k,\tilde{x})$, where $\tilde{x}$ is mapped to either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$, we see that under the generating deck transformation
 \[
@@ -846,24 +834,24 @@ Thus, if we consider the surfaces $\mathcal{\tilde{S}}(p,q)$ parameterised by $(
 \]
 where $\tilde{x}' = 2πn+ π + 2\atan (k \tan (\tilde{x}/2))$. This provides an identification between $\mathcal{\tilde{S}}(p,q)$ and $\mathcal{\tilde{S}}(p,q + k(p-1))$ for any integral $k$.
 
-\begin{lem}
-For $p\neq 1$, $\mathcal{S}(p)$ is topologically to
+\begin{thm}
+For $p\neq 1$, $\mathcal{S}(p)$ is topologically
 \[
 \bra{\Q/ (p-1)\Z} \times (0,1) \times \R.
 \]
 \begin{proof}
 Fix $p\neq 1$ and consider the part of $\mathcal{S}$ with such a fixed value of $p$. It is the quotient of $\mathcal{\tilde{S}}(p)$ by the covering transformations, which as one can note preserve the value of $p$. We have already shown how different path components $\mathcal{\tilde{S}}(p,q)$ can be indentified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficent to take one representative from each of $\Q/(p-1)\Z$ to cover the image. The diffeomorphism between each path component and $(0,1)\times\R$ has already been noted above.
 \end{proof}
-\end{lem}
+\end{thm}
 
 This leaves just one special case.
 
-\begin{lem}
-For $p = 1$, $\mathcal{S}(p)$ is topologically to
+\begin{thm}
+$\mathcal{S}(1)$ is topologically
 \[
 \Q \times (0,1) \times \bra{\R/2π\Z}.
 \]
-\end{proof}
-In this special case, we see that the action does not identify path components with different values of $q$; in fact $p-1$ is zero, so $q$ is fixed. Consequently, the shifting action identifies values of $\tilde{x}$ that differ by $2π$, resulting in annuli.
 \begin{proof}
-\end{lem}
+In this special case, we see that the action does not identify path components with different values of $q$; in fact $p-1$ is zero, so $q$ is fixed under the deck transformations. Consequently, the shifting action identifies values of $\tilde{x}$ that differ by $2π$ in the same path component, resulting in annuli.
+\end{proof}
+\end{thm}
