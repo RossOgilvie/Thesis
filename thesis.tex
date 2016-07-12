@@ -8,27 +8,30 @@
 \usepackage{todonotes}
 %%%%%%% For aligning lists
 \usepackage{enumitem}
+%%%%%%% For captions beside the figure
+\usepackage{floatrow}
+\usepackage{caption}
+\captionsetup{labelformat=empty}
+
+
 
 \fancyhdr
 
 \begin{document}
 \tableofcontents
 
-\include{preliminaries}
-\include{deform_lemma_redux}
-\include{genus_zero}
-\include{genus_one}
-\include{moduli_boundary}
+% \include{preliminaries}
+% \include{deform_lemma_redux}
+% \include{genus_zero}
+% \include{genus_one}
+% \include{moduli_boundary}
 
 
 % APPENDICES
 \appendix
-\include{glossary}
+% \include{glossary}
 \include{elliptic_integral}
-\include{misc}
-% \include{stratified_morse}
-% \include{extension_calculations}
-
+% \include{misc}
 
 % \bibliography{library}
 \bibliography{library,manual_entered}

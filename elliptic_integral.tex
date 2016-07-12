@@ -6,61 +6,64 @@
 The purpose of this appendix is to provide background information about elliptic integrals. It contains their definitions and the basic properties, as well as some results that are used in the body of the thesis. It is not a comprehensive treatment, specifically elliptic integrals of the third kind are not treated, and incomplete integrals are only treated for an imaginary argument.
 
 \subsection{Definitions and Periods}
-Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor 'elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. This topic has a long history, at least two hundred years, and consequently there are several competing conventions. In this thesis we shall use the Jacobi elliptic integrals, of a modulus $k$. The incomplete elliptic integral of the first kind is defined as
-\[
-F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}},
-\]
-and the incomplete elliptic integral of the second kind is
-\[
-E(z;k) = \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt = \int_0^z \frac{1-k^2 t^2}{\sqrt{(1-t^2)(1-k^2 t^2)}}\;dt.
-\]
-We will not have need of integrals of the third kind. Of particular interest are the \emph{complete} elliptic integrals, where $z=1$. The complete first and second integrals are respectively denoted $K(k)$ and $E(k)$, and we shall often omit their arguments. The complete integrals are used to compute the periods of the elliptic curve
-\[
-y^2 = (1-t^2)(1-k^2 t^2).
-\]
-Every elliptic curve may be brought to this highly symmetric form, known as {\it Legendre's form}. If the curve carries a reality structure (if it admits an antiholomorphic involution) then $k$ must be real and by a further M\"obius transformation one can arrange for $0 < k < 1$. We may choose to take branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. Consider the period of the holomorphic differential $dt / y $ around the branch points $-1$ and $1$. This is known as the $A$-period. One can see that this period integral is twice the integral of $dt/ y$ from $-1$ to $1$, which itself is twice the integral from $0$ to $1$. Thus this period of the holomorphic differential is $4K$, which earns $K$ the nickname of `quarter-period'.
+Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor `elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. This topic has a long history, at least two hundred years, and consequently there are several competing conventions. In this thesis we shall use the Jacobi elliptic integrals, of a modulus $k$.
 
-\begin{figure}
-\begin{center}
-    \includegraphics{{torus_lagrange.sk}.pdf}
-\end{center}
-\caption{The torus $y^2 = (1-t^2)(1-k^2 t^2)$ with $A$-period in red (in the center) and $B$-period in blue.  The upper and lower halves of the torus correspond to the two sheets of $\C$. The two points over complex infinity are the highest and lowest points, where as the two points over the origin are the two points on the vertical line between them.}
-\end{figure}
+\begin{defn}
+The incomplete elliptic integral of the first kind is defined as
+\[
+F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}.
+\]
+\end{defn}
 
-To compute the other period, the one around $1$ and $k^{-1}$ known as the $B$-period, one employs a trick called {\it Jacobi's imaginary transformation} that makes use of a quadratic substitution \cite{Whittaker2000}. Divide the clockwise loop $B$ into two pieces $B^+$ and $B^-$ on which $y$ is repesctively valued in $\iu\R$ and $-\iu\R$. Let $t^2 = (1-k'^2 s^2)^{-1}$, where $k'^2 = 1 - k^2$. Then
+Of particular interest are \emph{complete} elliptic integrals, where $z=1$. The first complete integral is donated denoted $K(k)$. Often the modulus is understood and it is written simply as $K$. The complete integrals are used to compute the periods of the elliptic curve
+\[
+w^2 = (1-z^2)(1-k^2 z^2).
+\]
+Every elliptic curve may be brought to this highly symmetric form, known as {\it Legendre's form}. If the curve carries a reality structure (if it admits an antiholomorphic involution) then $k$ must be real and by a further M\"obius transformation one can arrange for $0 < k < 1$. We may choose to take branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$.
+
+\makefigure{The $z$-plane with branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. The $A$ period is in red and $B$ period is in blue.}{thesis_graphics_temp/branch_cuts.png}
+
+Consider the $A$-period, the anticlockwise loop around the branch points $-1$ and $1$. By the symmetry $w \mapsto -w$, the integral of the holomorphic differential $dz / w $ around this loop is twice the integral from $-1$ to $1$, which itself is twice the integral from $0$ to $1$. Thus this period of the holomorphic differential is $4K$, which earns $K$ the nickname of `quarter-period'.
+
+\makefigure{The torus $w^2 = (1-z^2)(1-k^2 z^2)$ with $A$-period in red (in the center) and $B$-period in blue.  The upper and lower halves of the torus correspond to the two sheets of $\C$.}{{torus_lagrange.sk}.pdf}
+
+To complete a basis of homology, choose the other period, $B$, to be a clockwise loop around $1$ and $k^{-1}$. To compute the integral around this loop, one employs a trick called {\it Jacobi's imaginary transformation} that makes the following a quadratic substitution \cite{Whittaker2000}: let $t^{-2} = 1-k'^2 s^2$, where $k'^2 = 1 - k^2$. Then
 \begin{align*}
-dt &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
-\sqrt{t^2 - 1} &= \frac{k's}{\sqrt{1-k'^2 s^2}} \\
-\sqrt{1 - k^2 t^2} &= \frac{k' \sqrt{1-s^2}}{\sqrt{1-k'^2 s^2}} \\
-y &= \pm \frac{i k'^2 s \sqrt {1-s^2}}{1-k'^2 s^2}
+dz &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
+w &= \pm \frac{i k'^2 s \sqrt {1-s^2}}{1-k'^2 s^2}
 \end{align*}
 so that
 \begin{align*}
-\int_B \frac{dt}{y}
-&= \int_{B^+} \frac{dt}{y} + \int_{B^-} \frac{dt}{y} \\
-&= \int_{k^{-1}}^1 \frac{dt}{\iu\sqrt{(1-t^2)(1-k^2 t^2)}} + \int_1^{k^{-1}} \frac{dt}{-\iu\sqrt{(1-t^2)(1-k^2 t^2)}}\\
-&= \int_1^0 (-\iu) \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} + \int_0^1 \iu \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
+\int_B \frac{dz}{w}
+&= \int_1^0 \frac{ds}{(+\iu)\sqrt{(1-s^2)(1-k'^2 s^2)}} + \int_0^1 \frac{ds}{(-\iu)\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
 &= 2\iu K(k')
 \end{align*}
 Often $K(k')$ is abreviated to simply $K'$, and this should not be confused with the derivative of $K$. $k'$ is called the complementary modulus.
 
-We need also in this these to consider periods of differentials of the second kind. The standard differential of the second kind has a double pole at $t=\infty$ with no residue and is given by
+
+We need also in this thesis to consider periods of differentials of the second kind. The standard differential of the second kind is characterised by having a double pole at $t=\infty$ with no residue. Analogously to the integrals of the first kind,
+
+\begin{defn}
+The incomplete elliptic integral of the second kind is
 \[
-(1 - k^2 t^2)\frac{dt}{y} = \sqrt{\frac{1-k^2 t^2}{1-t^2}} \,dt.
+E(z;k) = \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt = \int_0^z \frac{1-k^2 t^2}{\sqrt{(1-t^2)(1-k^2 t^2)}}\;dt,
 \]
-By design, the $A$-period of this differential is $4E$. To compute the $B$-period requires a similar substitution. Let this time $k^2 t^2 = 1-k'^2 s^2$. Then
+and $E(k) = E(1;k)$ is the complete integral.
+\end{defn}
+
+Unfortunately, it is standard usage to denote both complete and incomplete integrals by $E$, so to avoid confusion we will always show incomplete integrals with two arguments, while we may omit the argument for complete integrals.
+
+The $A$-period of this differential is $4E$. To compute the $B$-period requires another clever substitution. Let this time $k^2 z^2 = 1-k'^2 s^2$. Then
 \begin{align*}
-dt &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
-\sqrt{t^2 - 1} &= \frac{k'}{k}\sqrt{1-s^2} \\
-\sqrt{1 - k^2 t^2} &= k's\\
-y &= \pm \iu \frac{k'^2}{k}s\sqrt{1-s^2}
+dz &= -\frac{k'^2}{k} \frac{s}{\sqrt{1-k'^2 s^2}}\;ds,\\
+w &= \pm \iu \frac{k'^2}{k}s\sqrt{1-s^2}
 \end{align*}
+so that
 \begin{align*}
-\int_B (1-k^2t^2) \frac{dt}{y}
+\int_B (1-k^2z^2) \frac{dz}{w}
 &= 2\iu \int_0^1 \frac{k'^2 s^2}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
-&= 2\iu \int_0^1 \frac{1-(1-k'^2 s^2)}{\sqrt{(1-s^2)(1-k'^2 s^2)}}\;ds \\
 &= 2\iu \int_0^1 \frac{ds}{\sqrt{(1-s^2)(1-k'^2 s^2)}} - 2\iu \int_0^1 \sqrt{\frac{1-k'^2 s^2}{1-s^2}}\;ds\\
-&= 2iK(k') - 2iE(k').
+&= 2i \left[ K(k') - 2iE(k') \right].
 \end{align*}
 Again, we introduce the notation that $E' = E(k')$.
 
@@ -86,124 +89,143 @@ Again, we introduce the notation that $E' = E(k')$.
 
 \subsection{Inequalities and Limits}
 \label{sub:Inequalities}
-Throughout this thesis, we use inequalities to bound the behaviour of elliptic integrals. The inequalities we use are found in \cite{Anderson}. Their inequality (2) contains only $K$ and confines its behaviour to within a strip-like region of known width.
+Throughout this thesis, we use inequalities to bound the behaviour of elliptic integrals. One can obtain a crude bound from the fact that $K$ is an increasing function and $E$ is a decreasing one. The exact values
+\[
+K(0) = E(0) = \frac{π}{2}, \;\; E(1) = 1,
+\labelthis{K_E_values}
+\]
+therefore give a lower bound for $K$ and a narrow range of values for $E$. More precise inqualities may be found in \cite{Anderson}. Their inequality (2) contains only $K$ and confines its behaviour to within a strip-like region of known width.
 \[
 \ln 4 \leq K + \frac{1}{2}\ln (1-k^2) \leq \frac{π}{2}.
 \labelthis{K_bound}
 \]
+
+PLOT OF THIS INEQUALITY \todo{picture}
+
 In particular, as $k \to 1$, the complete elliptic integral of the first kind has a logarithmic singularity. A stronger and more precise statement is
 \[
-\lim_{k \to 1} \left\{ K + \frac{1}{2}\ln(1-k) \right\} = \frac{3}{2}\ln 2.
+\lim_{k \to 1} \left[ K + \frac{1}{2}\ln(1-k) \right] = \frac{3}{2}\ln 2.
 \]
 A similar result, inequality (1), ties the integral of the second kind to that of the first type:
 \[
 \frac{π}{4}k^2 \leq E - (1-k^2)K \leq k^2.
 \labelthis{E_bound}
 \]
-One can obtain a crude bound from the fact that $K$ is an increasing function and $E$ is a decreasing one. The exact values
+PLOT OF THIS INEQUALITY, AND RANGE OF E \todo{picture}
+
+
+
+
+For the incomplete integrals, in this thesis we need only investigate their properties on the imaginary axis. Both $F(z;k)$ and $E(z;k)$ take purely imaginary values on the imaginary axis. We shall see that $E(z;k)$ has a pole at infinity, so we shall concentrate instead on $E(z;k) - kz$ which is well behaved everywhere. We make the following definitions.
+
+\begin{defn}
+Let
 \[
-K(0) = E(0) = \frac{π}{2}, \;\; E(1) = 1,
+F_0(x) = F_0 (x ; k) := \Im F(\iu x; k)
+= \int_0^x \frac{dt}{\sqrt{(1+t^2)(1+k^2 t^2)}},
 \]
-therefore give a lower bound for $K$ and a narrow range of values for $E$.
+and
+\[
+E_0(x) = E_0 (x ; k) := \Im E(\iu x; k) - kx
+= \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}}\;dt \;- kx,
+\]
+where the $k$ is implicit if it is omitted.
+\end{defn}
 
-
-
-For the incomplete integrals, in this thesis we need only investigate their properties on the imaginary axis. Both $F(z;k)$ and $E(z;k)$ take purely imaginary values on the imaginary axis, and so we make the definitions
-\begin{align}
-F_0(x) &= F_0 (x ; k) := \Im F(\iu x; k)
-= \int_0^x \frac{dt}{\sqrt{(1+t^2)(1+k^2 t^2)}}, \\
-%%%%%%%
-E_0(x) &= E_0 (x ; k) := \Im E(\iu x; k)
-= \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}}\;dt,
-\end{align}
-where the $k$ is implicit if it is omitted. Both are real valued functions of $x \in \R$ and $k\in (0,1)$. We shall see that $E_0$ has a pole at infinity, so we shall concentrate instead on $E_0(x) - k x$ which is well behaved everywhere.
-
-We begin with the simple observation that both $F_0$ and $E_0(x) - kx$ are odd functions of $x$.
-
-Next note that both functions are increasing functions of $x$. In the case of $F_0$ this is obvious as the integrand is positive. For the other function $k \sqrt{1 + t^2} < \sqrt{1 + k^2t^2}$ from which it follows that
+Both are real valued functions of $x \in \R$ and $k\in (0,1)$. We begin with the simple observation that both $F_0$ and $E_0$ are odd functions of $x$. Next note that both functions are increasing functions of $x$. In the case of $F_0$ this is obvious as the integrand is positive. For the other function, $k \sqrt{1 + t^2} < \sqrt{1 + k^2t^2}$ from which it follows that
 \begin{align*}
-E_0(x) - k x
+E_0(x)
 &= \int_0^x \sqrt{\frac{1+k^2t^2}{1+t^2}} - k \;\;dt\\
 &= \int_0^x \frac{\sqrt{1+k^2t^2} - k\sqrt{1+t^2}}{\sqrt{1+t^2}}\;dt
 \end{align*}
 is increasing as well. For increasing functions it is natural to wonder whether they increase towards a limit. In our case they do, and we shall compute the value of the limit by a standard technique of complex analysis: integration around a closed semicircular contour.
 
 \begin{lem}
-The functions $F_0$ and $E_0 - kx$ are increasing functions, with the following limits as $x$ tends to infinity.
+The functions $F_0$ and $E_0$ are increasing functions, with the following limits as $x$ tends to infinity.
 \[
 \lim_{x\to+\infty} F_0(x; k) = K',
 \qquad
-\lim_{x\to+\infty} [E_0(x; k) - k x] = K' - E'.
+\lim_{x\to+\infty} E_0(x; k) = K' - E'.
 \]
 
 \begin{proof}
-Consider once again the standard incomplete elliptic integrals. Let the aforementioned semicircular contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc in the right half plane from $\iu R$ back down to $-\iu R$. This contour is homologous to a standard period around $[1,k^{-1}]$ and so is a fixed quantity. We shall be considering the limit as $R$ tends to infinity.
+Consider once again the standard incomplete elliptic integrals. Let the aforementioned semicircular contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc in the right half plane from $\iu R$ back down to $-\iu R$. The contour is homologous to a standard $B$ period around $[1,k^{-1}]$.
 
-We deal first with the integral of the first kind. The contribution coming from the semicircular arc is neglible in the limit, as can be seen below.
+PICTURE OF CONTOUR \todo{picture}
+
+We treat first the integral of the first kind. The contribution coming from the semicircular arc is neglible as $R$ tends to infinity, as can be seen below.
 \begin{align*}
-\abs{\int_{C_R}\frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}}}
+\abs{\int_{C_R}\frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}}}
 &= \abs{\int_{π/2}^{-π/2} \frac{Re^{\iu θ} dθ}{\sqrt{(1-R^2e^{2\iu θ}) (1-k^2R^2e^{2\iu θ})}}} \\
-&\leq \int_{-π/2}^{π/2} \frac{R}{\sqrt{(R^2-1) (k^2R^2-1)}} \;dθ \\
-&= \frac{π R}{\sqrt{(R^2 - 1) (k^2R^2 - 1)}} \\
+&\leq \frac{R}{\sqrt{(R^2 - 1) (k^2R^2 - 1)}} \times π \\
 &\to 0.
 \end{align*}
 And since $F_0$ is an odd function of $x$, we can conclude that
 \begin{align*}
 2\iu K'
-&= \lim_{R\to\infty} \oint \frac{dz}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
-&= \lim_{R\to\infty} \bra{\int_{-\iu R}^{\iu R} + \int_{C_R}}  \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
-&= 2\lim_{R\to\infty} \int_{0}^{\iu R} \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} + \lim_{R\to\infty} \int_{C_R} \frac{dt}{\sqrt{(1-t^2) (1-k^2t^2)}} \\
-&= 2 \lim_{R\to\infty} F(\iu R;k),
+&= \lim_{R\to\infty} \bra{\int_{-\iu R}^{\iu R} + \int_{C_R}}  \frac{dz}{\sqrt{(1-z^2) (1-k^2z^2)}} \\
+&= 2\iu \lim_{R\to\infty} \int_{0}^{R} \frac{dt}{\sqrt{(1+t^2) (1+k^2t^2)}} + 0 \\
+&= 2\iu \lim_{R\to\infty} F_0(R; k),
 \end{align*}
 which establishes the first half of the result.
 
-The analysis of the second limit proceeds much the same, however there is an extra step to verify that the poles of $E_0$ and $kx$ cancel. Using the same contour as before, we again show that the contribution from the semicircular arc is vanishing as $R \to \infty$.
+The analysis of the second limit proceeds in the same manner, however there is an extra step to verify that arising from the cancellation of the pole at infinity. Using the same contour as before, we again show that the contribution from the semicircular arc is vanishing.
 \begin{align*}
-\abs{\int_{C_R}\sqrt{\frac{1-k^2t^2}{1-t^2}} - k \;\;dt}
-&= \abs{\int_{C_R}\frac{ \sqrt{1-k^2t^2} - k \sqrt{1-t^2}}{\sqrt{1-t^2}} \;dt} \\
+\abs{\int_{C_R}\sqrt{\frac{1-k^2z^2}{1-z^2}} - k \;\;dz}
 &= \abs{\int_{π/2}^{-π/2} \frac{ \sqrt{1-k^2R^2e^{2\iu θ}} - k \sqrt{1-R^2e^{2\iu θ}}}{\sqrt{1-R^2e^{2\iu θ}}} \;Re^{\iu θ}\;dθ} \\
-&\leq \int_{-π/2}^{π/2} \frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \;R\;dθ \\
-&= π R\frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}} \\
-&= π \frac{R}{\sqrt{R^2-1}}  \frac{ (1+k^2R^2) - k^2 (R^2-1)}{\sqrt{1+k^2R^2} + k \sqrt{R^2-1}} \\
+&\leq \frac{ \sqrt{1+k^2R^2} - k \sqrt{R^2-1}}{\sqrt{R^2-1}}R \times π \\
 &= π \frac{R}{\sqrt{R^2-1}} \frac{ 1 + k^2 }{\sqrt{1+k^2R^2} + k \sqrt{R^2-1}} \\
 &\to 0.
 \end{align*}
 As before, we are dealing with an odd function of $x$ and hence
 \begin{align*}
-\lim_{x\to \infty} [E_0(x; k) - k x] = K' - E'.
+\lim_{x\to \infty} E_0(x; k) = K' - E'.
 \end{align*}
-
 \end{proof}
 \end{lem}
 
-It immediately follows from this lemma that we have the following bounds on the functions that are independent of $x$.
+It immediately follows from this lemma that we have the following bounds independent of $x$.
 \begin{align*}
 -K' \leq &F_0(x;k) \leq K' \\
-- (K' - E') \leq &E_0(x; k) - k x \leq K' - E'. \label{eqn:tildeEatInf}
+- (K' - E') \leq &E_0(x; k) - k x \leq K' - E'.
+\labelthis{eqn:F0_E0_uniform_bounds}
 \end{align*}
-It can also be useful to bound their growth independently of $k$. As the integrands are monotone functions of $k$, assuming $x>0$ one has
-\[
-\atan {x} = \int_0 ^x \frac{dt}{1+t^2} \leq F_0(x;k) \leq \int_0 ^x \frac{dt}{\sqrt{1+t^2}} = \asinh x
-\]
-and
-\[
-0 \leq E_0(x; k) - k x \leq
-\int_0^x \frac{(1+kt) - kt}{\sqrt{1+t^2}}\;dt = \asinh x.
-\]
-(If $x<0$ then all these inequalities are reversed.) Of course, if one is willing to consider non uniform bounds, then the observation that both integrands are decreasing functions of $k$ allows one to bound a range of $k$ by the value at infimum of the range. Symbolically, if $k > k_0$ then $F_0(x;k) < F_0(x;k_0)$.
+It can also be useful to bound their growth independently of $k$. As the integrands are monotonically decreasing functions of $k$, for $x>0$ so too are $F_0$ and $E_0$. In the extreme cases that $k$ is $0$ or $1$, the following lemma applies.
 
 \begin{lem} \label{lem:klimit}
-The elliptic integrals degenerate to the following ellementary functions as $k$ approaches $0$ or $1$.
+The elliptic integrals degenerate to the following elementary functions as $k$ approaches $0$ or $1$. Uniformly in $x$,
 \begin{align*}
-    \lim_{k\to 0} F_0(x; k) &= \asinh {x} \\
-    \lim_{k\to 0} E_0(x; k) &= \asinh {x} \\
-    \lim_{k\to 1} F_0(x; k) &= \atan {x} \\
-    \lim_{k\to 1} E_0(x; k) &= x.
+\lim_{k\to 1} F_0(x; k) &= \atan {x} \\
+\lim_{k\to 1} E_0(x; k) &= 0.
 \end{align*}
+And uniformly for $x$ in a compact set,
+\begin{align*}
+\lim_{k\to 0} F_0(x; k) &= \asinh {x} \\
+\lim_{k\to 0} E_0(x; k) &= \asinh {x}.
+\end{align*}
+
 \begin{proof}
-The above inequalities serve to show that the integrals are dominated by functions independent of $k$, so by the dominated convergence theorem one can compute the limits as $k \to 1$ (for any value of $x$) and $k \to 0$ (for finite values of $x$, as $\asinh x$ is not finite for $x=\infty$) by passing the limit under the integrand sign. Doing so results in exactly the two extremes presented in those inequalities.
+The limits as $k\to 1$ are straightforward to compute. As these are decreasing functions, for all $k > k_0$ we have
+\begin{align*}
+\abs{ F_0(x;k) } <& \abs{ F_0(x; k_0) } < K'(k_0), \\
+\abs{ E_0(x;k) } <& \abs{ E_0(x; k_0) } < K'(k_0) - E'(k_0),
+\end{align*}
+using the previous lemma. This show that the integrals are dominated, and we may therefore pass the limit under the integral sign.
+\begin{align*}
+\lim_{k\to 1} F_0(x; k) &= \int_0 ^x \frac{dt}{1+t^2} = \atan {x}, \\
+\lim_{k\to 1} E_0(x; k) &= \int_0^x \sqrt{\frac{1+ t^2}{1+t^2}} - 1 \;\;dt = 0.
+\end{align*}
+
+For the limit as $k \to 0$, observe that for positive $x$
+\begin{align*}
+F_0(x;k) &\leq \int_0 ^x \frac{dt}{\sqrt{1+t^2}} = \asinh x, \\
+E_0(x; k) &\leq \int_0^x \frac{1}{\sqrt{1+t^2}} - 0 \;\;dt = \asinh x.
+\end{align*}
+These inequalities serve to show that the integrals are dominated by functions independent of $k$, but not uniformly in $x$ as $\asinh$ is an unbounded function. Thus for only values of $x$ in a compact set does the dominated convergence theorem hold and give the result.
 \end{proof}
 \end{lem}
+
+PLOT OF FUNCTIONS FOR k=0, 0.5, 1
 
 
 
@@ -225,38 +247,28 @@ The aim of this section is to compute the derivatives of the elliptic integrals.
     \Partial{}{z} F(z;k) &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \label{eqn:dFdz} \\
     \Partial{}{z} E(z;k) &= \sqrt{\frac{1-k^2 z^2}{1-z^2}}. \label{eqn:dEdz}
 \end{align}
-The derivatives of elliptic integrals with respect to the modulus are again elliptic integrals. In the interest of being concise, the correct combinations are presented ex nihilo. One may do the computation from stratch by differentiating the integrand and then subtracting terms to cancel off the poles and zeroes until only an exact differential remains. Differentiation under the integral sign is premitted because the integrals are dominated, as established in lemma \ref{lem:klimit}. \todo{reference}
-For the integral of first kind, let the exact differential be
+The derivatives of elliptic integrals with respect to the modulus are again elliptic integrals. In the interest of being concise, the correct combinations are presented ex nihilo. One may do the computation from stratch by differentiating the integrand and then subtracting terms to cancel off the poles and zeroes until only an exact differential remains. Differentiation under the integral sign is premitted because the integrals are dominated, as established in Lemma \ref{lem:klimit}. We compute the difference between the $k$ derivative of $dz/w$ and a certain combination of elliptic integrand terms.
 \begin{align*}
-g &:= t\sqrt{\frac{1-t^2}{1-k^2t^2}} \\
-\Partial{}{t} g &= \frac{1-2t^2 + k^2 t^4}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}.
+\Partial{}{k}\bra{\frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}}
+- \frac{1}{k(1-k^2)}\sqrt{\frac{1-k^2 z^2}{1-z^2}}
++ \frac{1}{k}\frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}
+= \frac{-k}{1-k^2} \Partial{}{z} z\sqrt{\frac{1-z^2}{1 - k^2z^2}}.
 \end{align*}
-We now compute the difference between the $k$ derivative of $dt/y$ and a certain combination of elliptic integrand terms.
-\begin{align*}
-\Partial{}{k}\bra{\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}} -& \frac{1}{k(1-k^2)}\sqrt{\frac{1-k^2 t^2}{1-t^2}} + \frac{1}{k}\frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
-&= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ k^2t^2(1-k^2) - (1-k^2t^2)^2 + (1-k^2)(1-k^2t^2) } \\
-&= \frac{1}{\sqrt{1-t^2}\sqrt{1-k^2t^2}^3}\frac{1}{k(1-k^2)}\bra{ -k^2 + 2k^2t^2 -k^4t^4} \\
-&= \frac{-k}{1-k^2} \Partial{}{t} g.
-\end{align*}
-Now integrating from $0$ to $z$ gives
+Integrating and rearranging gives
 \begin{align*}
 \Partial{}{k} F(z;k)
-&= \frac{1}{k(1-k^2)} \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \; dt
-- \frac{1}{k} \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}
-- \frac{k}{1-k^2} \int_0^z g_t \; dt \\
-&= \frac{1}{k(1-k^2)} E(z;k) - \frac{1}{k} F(z;k) - \frac{k}{1-k^2}z\sqrt{\frac{1-z^2}{1-k^2z^2}}. \labelthis{eqn:dtildeFdk}
+= \frac{1}{k(1-k^2)} E(z;k) - \frac{1}{k} F(z;k) - \frac{k}{1-k^2}z\sqrt{\frac{1-z^2}{1-k^2z^2}}. \labelthis{eqn:dtildeFdk}
 \end{align*}
 In a simliar way, consider that
 \begin{align*}
-k\Partial{}{k}\bra{\sqrt{\frac{1-k^2t^2}{1-t^2}}} -& \sqrt{\frac{1-k^2t^2}{1-t^2}} + \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}} \\
-&= \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}\bra{-k^2t^2 - (1-k^2t^2) + 1} \\
-&= 0.
+k\Partial{}{k}\bra{\sqrt{\frac{1-k^2t^2}{1-t^2}}} -& \sqrt{\frac{1-k^2t^2}{1-t^2}} + \frac{1}{\sqrt{(1-t^2)(1-k^2 t^2)}}
+= 0.
 \end{align*}
 Thus we can integrate to obtain
 \[
 \Partial{}{k}E(z;k) = \frac{1}{k}E(z;k) - \frac{1}{k}F(z;k). \labelthis{eqn:dtildeEdk}
 \]
-We can recover the well known formula for the derivatives of the complete elliptic integrals by making the substitution $z=1$.
+We can recover the well known formulae for the derivatives of the complete elliptic integrals by making the substitution $z=1$.
 \begin{align}
 \frac{d}{dk}K &= \frac{1}{k(1-k^2)}E - \frac{1}{k}K, \label{eqn:dKdk}\\
 \frac{d}{dk}E &= \frac{1}{k}E - \frac{1}{k} K. \label{eqn:dEdk}
@@ -293,13 +305,13 @@ so
 \begin{align*}
     \frac{d}{dk}\bra{ KE' + K'E - KK'}
     &= \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}E' -\frac{k}{k'}K\bra{\frac{1}{k'}E' - \frac{1}{k'} K'} \\
-    & -\frac{k}{k'}\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'}E + K'\bra{\frac{1}{k}E - \frac{1}{k} K} \\
-    & - \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}K' +  \frac{k}{k'}K\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'} \\
+    &\quad -\frac{k}{k'}\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'}E + K'\bra{\frac{1}{k}E - \frac{1}{k} K} \\
+    &\quad - \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}K' +  \frac{k}{k'}K\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'} \\
     %%%%%%%%%%%%%%%%%%%%%%
-    &= \frac{1}{k k'^2}EE' - \frac{1}{k}KE' - \frac{k}{k'^2}KE' + \frac{k}{k'^2} KK' \\
-    &-\frac{1}{k'^2 k}EE' + \frac{k}{k'^2}K'E + \frac{1}{k}K'E - \frac{1}{k} KK' \\
-    & -\frac{1}{k k'^2}K'E + \frac{1}{k}KK' +  \frac{1}{k'^2 k}KE' - \frac{k}{k'^2}KK' \\
-    %%%%%%%%%%%%%%%%%%%%%%
+    % &= \frac{1}{k k'^2}EE' - \frac{1}{k}KE' - \frac{k}{k'^2}KE' + \frac{k}{k'^2} KK' \\
+    % &-\frac{1}{k'^2 k}EE' + \frac{k}{k'^2}K'E + \frac{1}{k}K'E - \frac{1}{k} KK' \\
+    % & -\frac{1}{k k'^2}K'E + \frac{1}{k}KK' +  \frac{1}{k'^2 k}KE' - \frac{k}{k'^2}KK' \\
+    % %%%%%%%%%%%%%%%%%%%%%%
     &= 0.
 \end{align*}
 Thus we have shown that the relation is a constant. Determining the value of the constant is somewhat delicate. One could na\"ively attempt to set $k=0$, but then $k'=1$ and $K'$ is infinite. And conversely, if we were to set $k=1$, then $K$ would be infinite. Instead, let us take the limit as $k \to 0$,
@@ -319,7 +331,7 @@ Since $k^2 \ln k$ goes to $0$ as $k$ does, the limit is established. Hence the c
 \end{proof}
 \end{lem}
 
-This relation is useful in two ways. First, it can be used to construct a basis of differentials with normalised periods. And secondly, it links the behaviour of the elliptic integrals at $k=0$ and $k=1$. In the computation of certain limits one could directly apply bounds, but it can often be more expendient to use Lengendre's relation to transform the limiting term into a well behaved function and extract the constant at the same time.
+This relation is useful in two ways. First, it can be used to construct a basis of differentials with normalised periods. And secondly, it links the behaviour of the elliptic integrals at $k=0$ and $k=1$. In the computation of certain limits one could directly apply bounds, but it can often be more expendient to use Lengendre's relation to transform the limiting term into a well behaved function.
 
 
 
@@ -329,89 +341,41 @@ This relation is useful in two ways. First, it can be used to construct a basis 
 
 
 
-\subsection{Continuation and Analyticity}
+\subsection{Analytic Continuation}
 \label{sub:EllipticContinuation}
 
 It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy-Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic.
 
-In the body of the thesis, we encounter the situation where a function naturally defined on a circle is given a local expression in terms of the functions $F_0(x;k)$ and $E_0(x;k) - kx$ that we have been considering. The question naturally arises how to extend and express those functions on the full circle. Above, we have already computed the limit as $x \to \infty$, but because both functions are odd, there is no way to extend these functions to $x \in \RInf$. Instead we shall extend these functions analytically to the universal cover of $\RInf$, namely $\R$.
+Above, we computed the limits of $F_0(x;k)$ and $E_0(x;k)$ as $x \to \infty$, but because both functions are odd, there is no way to extend them to single valued functions on $\RInf$. Instead we must extend these functions analytically. Let $\tilde{x}\in\R$ and consider the covering map $\R \to \RInf$ given by
+\[
+\tilde{x} \mapsto \tan\frac{\tilde{x}}{2}.
+\]
+We identify $x\in\R$ with $\tilde{x} \in (-π,π)$.
 
-Let $x \in \R \subset \RInf$ be one coordinate on $\RInf$ and $x' = x^{-1}$ be another. Let $\tilde{x}$ be the coordinate on the universal cover with covering map
+Let $\tilde{F}$ and $\tilde{E}$ be the analytic continuations of $F_0$ and $E_0$ respectively. We will show that these continuations exist for all $\tilde{x}$ by explicit construction. Take $\tilde{x}$ in the range $(-π,π)$ and pull back the covering map
 \begin{align*}
-x &= \tan\frac{\tilde{x}}{2} \text{ for } \tilde{x}\not\in π+2\pi\Z \\
-x' &= \cot\frac{\tilde{x}}{2} \text{ for } \tilde{x}\not\in 2\pi\Z.
+\tilde{F}(\tilde{x};k)
+&= \int_0^{2 \atan \tilde{x}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
+&= \int_0^{\tilde{x}} \frac{1}{\sqrt{(1+(\tan s/2)^2)(1+k^2(\tan s/2)^2)}} \times \frac{1}{2}\sec^2\frac{s}{2}\;ds \\
+&= \frac{1}{2} \int_0^{\tilde{x}} \frac{1}{\sqrt{\cos^2 s/2 + k^2 \sin^2 s/2}} \;ds.
 \end{align*}
-Let $\tilde{F}$ and $\tilde{E}$ be the lifts to the universal cover of $F_0$ and $E_0 - kx$ respectively. We will give concrete expressions for these functions below.
-
-Recall that the period of $F_0(x)$ is $2K'$ and that of $E_0(x) - kx$ it is $2(K' - E')$. To give the extension of either of these functions to the universal cover, it is sufficent to give an expression in each coordinate chart. On the universal cover, the extension will differ from the pullback by some number of periods.
-
-Consider the function $F_1$.
-\[
-F_1(x';k) =
-\begin{cases}
-F_0((x')^{-1}; k)             & \text{ for } x' > 0 \\
-K'                              & \text{ for } x' = 0 \\
-2K' + F_0((x')^{-1}; k)   & \text{ for } x' < 0
-\end{cases}
-\]
-The only thing to check is that it is analytic at $x'=0$. To show this, we transform the integrals so that their base point is at $x'=0$ rather than $x=0$ and apply the Cauchy-Kowalevski Theorem. For $x'>0$
+The integrand is analytic, and so $\tilde{F}$ is an analytic function for all values of $\tilde{x}\in\R$. The same approach works for $\tilde{E}$, but requires a little more work.
 \begin{align*}
-F_0( (x')^{-1}; k)
-&= \int_0^{(x')^{-1}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&= \left(\int_0^{+\infty} - \int_{(x')^{-1}}^{+\infty} \right) \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&= K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
+\tilde{E}(\tilde{x}; k)
+&= \int_0^{2\atan \tilde{x}} \frac{\sqrt{1+k^2t^2} - k\sqrt{1+t^2}}{\sqrt{1+t^2}}\;dt \\
+&= \frac{1}{2} \int_0^{\tilde{x}} \frac{\sqrt{\cos^2 s/2 + k^2\sin^2 s/2} - k}{ \cos^2 s/2 } \;ds \\
+&= \frac{1}{2} \int_0^{\tilde{x}} \frac{\bra{\cos^2 s/2 + k^2\sin^2 s/2} - k^2}{ \cos^2 s/2 } \frac{1}{\sqrt{\cos^2 s/2 + k^2\sin^2 s/2} + k}\;ds \\
+&= \frac{1}{2} (1-k^2) \int_0^{\tilde{x}} \frac{1}{\sqrt{\cos^2 s/2 + k^2\sin^2 s/2} + k}\;ds.
 \end{align*}
-and for $x' < 0$
+Manipulating the integrand into a form that is plainly analytic demonstrates that $\tilde{E}$ is as well. One could reasonably ask how to compute the values of these extended functions, but the answer is quite simple. Write $\tilde{x} = 2π n + y$ for $n$ the greatest integer less than $\tilde{x}$. Then
 \begin{align*}
-2 K' + F_0((x')^{-1}; k)
-&= 2 K' + \left(\int_0^{-\infty} - \int_{(x')^{-1}}^{-\infty} \right) \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&=  K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}}.
+\tilde{F}(\tilde{x};k)
+&= \frac{1}{2} \bra{ \int_0^{2πn} + \int_{2πn}^{2πn +y}} \frac{1}{\sqrt{\cos^2 s/2 + k^2 \sin^2 s/2}} \;ds \\
+&= \frac{1}{2} \bra{ n\int_0^{2π} + \int_{0}^{y}} \frac{1}{\sqrt{\cos^2 s/2 + k^2 \sin^2 s/2}} \;ds \\
+&= \bra{ n\oint_{\RInf} + \int_{0}^{x}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
+&= 2nK' + F_0(x;k),
 \end{align*}
-So we have arived at a single formula for all values of $x'$, namely
+where $x = \tan \tilde{x}/2 = \tan y/2$ and recalling the period of $F_0$ from earlier. Likewise
 \[
-F_1(x';k) = K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
-\]
-and since the integrand is analytic, the integral is too and we are done.
-
-Notice that $F_1$ differs from $F_0$ by a function of $k$ where ever they are both defined. Thus we can express the function $\tilde{F}$ as follows
-\[
-\tilde F(\tilde{x};k) =
-\begin{cases}
-F_0(x; k) + 2K'n             & \text{ for } \tilde x \in (2πn - π, 2πn + π) \\
-F_1(x'; k) + 2K'n             & \text{ for } \tilde x \in (2πn, 2πn + 2π),
-\end{cases}
-\]
-and this is a well defined analytic function.
-
-
-
-
-The defintion and check for the integral of the second kind is entirely similar.
-\[
-E_1(x';k) - k(x')^{-1} :=
-\begin{cases}
-E_0((x')^{-1}; k) - \iu k(x')^{-1}                 & \text{ for } x' > 0 \\
-K'-E'                                                   & \text{ for } x' = 0 \\
-2(K'-E') + E_0((x')^{-1}; k)  - \iu k(x')^{-1}     & \text{ for } x' < 0
-\end{cases}
-\]
-After transforming the integrals in the same way, we find ourselves faced with the formula, for all $x'$,
-\[
-E_1(x';k) - k(x')^{-1} = (K'-E') - \int_0^{x'} s^{-2}\bra{ \sqrt{\frac{s^2 + k^2}{1 + s^2}} - k }\;ds.
-\]
-The part of the integrand in the bracket is analytic, but because of the $s^{-2}$, the integrand as a whole may not be analytic at $s=0$. Fortunately though, it is. To see this, use the square root estimate
-\[
-1 \leq \sqrt {1 + x^2} \leq 1 + \frac{1}{2}x^2,
-\]
-To obtain the bound
-\[
--\frac{1}{2}k s^2 \leq \sqrt{k^2 + s^2} - k \sqrt{1+s^2} \leq \frac{1}{2}\frac{1}{k} s^2,
-\]
-which shows that the part in the bracket vanishes to order $s^2$ and so the integrand is analytic, and therefore the integral is also. We can then give an expression for $\tilde{E}$:
-\[
-\tilde E(\tilde{x};k) =
-\begin{cases}
-E_0(x; k) - kx + 2(K'-E')n             & \text{ for } \tilde x \in (2πn - π, 2πn + π) \\
-E_1(x'; k) -k(x')^{-1} + 2(K'-E')n     & \text{ for } \tilde x \in (2πn, 2πn + 2π).
-\end{cases}
+\tilde{E}(\tilde{x}; k) = 2n(K'-E') + E_0(x;k).
 \]

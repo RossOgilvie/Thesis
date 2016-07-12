@@ -37,6 +37,14 @@
 
 \newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
 
+\newcommand{\makefigure}[2]{
+\begin{figure}[ht]
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
+{\caption{#1}}
+{\includegraphics[width=0.4\textwidth]{#2}}
+\end{figure}
+}
+
 %make lists use bracketed roman numerals
 \renewcommand{\labelenumi}{(\roman{enumi})}
 %useful commands
