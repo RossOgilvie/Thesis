@@ -367,17 +367,19 @@ The integrand is analytic, and so $\tilde{F}$ is an analytic function for all va
 &= \frac{1}{2} \int_0^{\tilde{x}} \frac{\bra{\cos^2 s/2 + k^2\sin^2 s/2} - k^2}{ \cos^2 s/2 } \frac{1}{\sqrt{\cos^2 s/2 + k^2\sin^2 s/2} + k}\;ds \\
 &= \frac{1}{2} (1-k^2) \int_0^{\tilde{x}} \frac{1}{\sqrt{\cos^2 s/2 + k^2\sin^2 s/2} + k}\;ds.
 \end{align*}
-Manipulating the integrand into a form that is plainly analytic demonstrates that $\tilde{E}$ is as well. One could reasonably ask how to compute the values of these extended functions, and the answer is quite simple. Write $\tilde{x} = 2π n + y$ for $n$ the greatest integer less than $\tilde{x}$. Then
+Manipulating the integrand into a form that is plainly analytic demonstrates that $\tilde{E}$ is as well. One could reasonably ask how to compute the values of these extended functions, and the answer is quite simple. Define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Let $n=W(\tilde{x})$ and write $\tilde{x} = 2πn + y$. Then
 \begin{align*}
 \tilde{F}(\tilde{x};k)
 &= \frac{1}{2} \bra{ \int_0^{2πn} + \int_{2πn}^{2πn +y}} \frac{1}{\sqrt{\cos^2 s/2 + k^2 \sin^2 s/2}} \;ds \\
 &= \frac{1}{2} \bra{ n\int_0^{2π} + \int_{0}^{y}} \frac{1}{\sqrt{\cos^2 s/2 + k^2 \sin^2 s/2}} \;ds \\
 &= \bra{ n\oint_{\RInf} + \int_{0}^{x}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
 &= 2nK' + F_0(x;k),
+\labelthis{eqn:tildeF_period}
 \end{align*}
 where $x = \tan \tilde{x}/2 = \tan y/2$ and recalling the period of $F_0$ from earlier. Likewise
 \[
 \tilde{E}(\tilde{x}; k) = 2n(K'-E') + E_0(x;k).
+\labelthis{eqn:tildeE_period}
 \]
 
 
