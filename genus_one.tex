@@ -120,29 +120,7 @@ Once we understand which curves admit spectral data, then we can understand the 
 
 
 \subsection{Differentials of the Elliptic Spectral Curve}
-It will be necessary to have explicit formula for the space of integral differentials of the spectral curve. We construct the desired differentials in two stages. First, we narrow the space to a 3 dimensional one, of differentials with the correct symmetries. Then we compute the periods of the basis of the space. This allows us to find the differentials inside that space with the integral periods.
-
-If we write differentials in the form
-\[
-b(ζ)\frac{dζ}{ζ^2η},
-\]
-for some polynomial $b(ζ)$, the restriction that the differentials have double poles at $ζ=0,\infty$ means that the polynomial part must be degree four. The restiction that these poles have no residues means that the bottom and top terms determine the linear and third order terms. And finally the reality condition ($ρ^* Θ = -\bar{Θ}$) means that the middle term must be real and the top term is the conjugate of the bottom term. In effect, we only have a complex number of choice in the bottom term and a real scalar in the middle term. This is our real 3-space of differentials.
-
-First note that the holomorphic differential
-\[
-ω := \frac{dζ}{η} = ζ^2 \frac{dζ}{η}
-\]
-lies in this space. It makes for an obvious first basis vector.
-In genus one, there is an exact differential with the correct pole behaviour, namely
-\[
-Θ^1 := \iu\; d\left( \frac{η}{ζ} \right)
-= \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}.
-\]
-Inspection shows that it is real, and so it we take it as the second basis vector. To complete the basis, we need a differential such that any complex number can be chosen as the strength of the pole. One such choice is
-\[
-λ = \left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ + \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 - \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}.
-\]
-With a basis of this space of differentials found, we next need to calculate the periods of $ω$ and $λ$ so that we may find an integral differential. Towards this end, we will transform from the form of the spectral curve prefered by Hitchin to the Jacobi form of an elliptic curve, on which the standard elliptic integrals are defined. Consider the genus one spectral curve
+It will be necessary to have explicit formulae for the integral differentials of the spectral curve. To compute the periods of differentials, we must first reduce them into a standard form. Every differential of the second kind, that is, those that have double poles with no residues, may be written as the sum of standard elliptic integrals of the first and second kind, and exact differentials. Towards this end, we will transform from the form of the spectral curve prefered by Hitchin to the Jacobi form of an elliptic curve, on which the standard elliptic integrals are defined. Consider the genus one spectral curve
 \[
 η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
 \]
@@ -187,6 +165,13 @@ z = f(ζ) &= \frac{ζ(\bar{α}A + B) - (A + αB)}{ζ(\bar{α}A - B) - (A - αB)}
 % den &:= ζ(\bar{α}A-B) - (A - αB)\\
 % ned &:= -z(\bar{α}A-B) + (\bar{α}A+B)
 \end{align}
+
+Because of the holomorphic involution $η\to-η$, this formula almost but not quite specifies a relation between $η$ and $w$. There is a free sign choice to make. In $(ζ,η)$ there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this copy of the unit circle in $Σ$, $η(ζ)=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation the unit circle is mapped to the imaginary axis. On the imaginary axis, $w(iu) = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$ so also has a notion of an upper sheet. We choose the transformation between elliptic curves to map the upper sheet to the upper sheet.
+% The sign choice needed to make the upper unit circle map to the upper imaginary axis is
+% \[
+% η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
+% \]
+
 The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what its imagine under this transformation is.
 The real involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution in the $z$-plane is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore is the image of the unit circle.
 
@@ -197,88 +182,87 @@ z = f(ζ) &= \frac{\bar{α}A + B}{\bar{α}A - B}\frac{ζ - μ}{ζ - ν}, \\
 \label{eqn:f_inv_2}
 \end{align}
 
-Because of the holomorphic involution $η\to-η$, this formula almost but not quite specifies a relation between $η$ and $w$. There is a free sign choice to make. In $(ζ,η)$ there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this copy of the unit circle in $Σ$, $η(ζ)=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation the unit circle is mapped to the imaginary axis. On the imaginary axis, $w(iu) = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$ so also has a notion of an upper sheet. The sign choice needed to make the upper unit circle map to the upper imaginary axis is
-\[
-η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
-\]
+PICUTRE \todo{this}
 
-We are now in a position to compute the periods of $ω$ and $λ$. First we must write them as a combination of the standard elliptic differentials. There is only one holomorphic differential on a genus one curve (up to scaling), so
-\[
-ω := \frac{dζ}{η} = \frac{-2}{\abs{α-β} + \abs{1-\bar{α}β}}\tilde{ω}, \qquad
-\tilde{ω} := \frac{dz}{w}.
-\]
+Having set-up the transformation, we construct the desired differentials in two stages. First, we narrow the space to a 3 dimensional one, of differentials with the correct poles and symmetries. Then we compute the periods of the basis of the space. This allows us to find the differentials inside that space with the integral periods.
 
-The standard differential of the second kind may be writen as
+If we write differentials in the form
 \[
-e := (1-k^2z^2)\frac{dz}{w} = \frac{-2AB(1-\abs{α}^2)^2}{\abs{α-β} + \abs{1-\bar{α}β}}\cdot\frac{(ζ-β)(1-\bar{β}ζ)}{(\bar{α}A-B)^2(ζ-μ)^2}\frac{dζ}{η}.
+b(ζ)\frac{dζ}{ζ^2η},
 \]
-$λ$ is a differential of the second kind, so we can express it as the sum of the standard differential of the second kind $e$, exact differentials of the second kind and the holomorphic differential. In the $(z,w)$ plane, the pole of $e$ is at infinity. Let $x=z^{-1}$ and expand in this coordinate
+for some polynomial $b(ζ)$, the restriction that the differentials have double poles at $ζ=0,\infty$ means that the polynomial part must be degree four. The restiction that these poles have no residues means that the bottom and top terms determine the first and third order terms. And finally the reality condition $ρ^* Θ = -\bar{Θ}$ means that the middle term must be real and the top term is the conjugate of the bottom term. In effect, we only have a complex number of choice in the bottom term and a real scalar in the middle term. This is our real 3-space of differentials.
+
+First note that the holomorphic differential
+\[
+ω := \frac{dz}{w}
+\]
+lies in this space. It makes for an obvious first basis vector. It spans the middle terms completely.
+In genus one, there is an exact differential with the correct pole behaviour, namely
+\[
+Θ^1 := \iu\; d\left( \frac{η}{ζ} \right)
+% = \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}.
+\]
+It is real, curtesy of the factor $\iu$, and so it we take it as the second basis vector. As has been mentioned, every differential can be written as the sum of an exact differential, one of the first kind and one of the second kind. Given that we already have taken the standard differential of the first kind as a basis vector, we seek to complete the basis with the sum of the standard differential of the second kind and an exact differential.
+
+The standard differential of the second kind is defined to be
+\[
+e := (1-k^2 z^2) \frac{dz}{w}.
+\]
+It is real, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential.
+\[
+e + d\left[ \frac{w}{z + \bar{z}_0} \right].
+\]
+We verify now that the pole at $z=\infty$ has actually been cancelled. Letting $z' = z^{-1}$, at infinity $e$ has the expansion
 \begin{align*}
-w &\sim x^{-2} \bra{k - \frac{1}{k}\frac{1+k^2}{2}x^2 + \dots} \\
-e &\sim dx \bra{k^3x^{-2} + \bra{\frac{1}{k}\frac{1+k^2}{2}-k}x^0 + \dots}
+w &\sim kz'^{-2} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \\
+e &\sim kz'^{-2} dz' \bra{1-k^{-2}z'^2}\bra{1 + \frac{1+k^2}{k^2} z'^2 + \ldots}
 \end{align*}
-which shows that $e$ has a double pole with no residue. In the $ζ$-plane, this pole is not at either zero or infinity, so we add an exact differential to cancel this misplaced pole, at the cost of introducing one at $ζ=\infty$.
+whereas the exact differential has
+\begin{align*}
+d\left[ \frac{w}{z + \bar{z}_0} \right]
+&\sim d\left[ k z'^{-1} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \bra{1 - \bar{z}_0z' + \bar{z}_0^2z'^2  + \ldots} \right]\\
+&= -k z'^{-2}dz' \bra{1 + \bra{\bar{z}_0^2 - \frac{1}{2}\frac{1+k^2}{k^2}}z'^2 + \ldots}
+\end{align*}
+which shows that it does cancel the double pole of $e$. Unfortunately, this exact differential does not have the correct symmetries. The space of exact differentials with the correct poles is spanned by
 \[
-e - Nd\left(\frac{η}{ζ-ν}\right) := e + \frac {2} {\abs{α-β}+\abs{1-\bar{α}β}} d\left(\frac{η}{ζ-ν}\right)
+d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right],
 \]
-is holomorphic on $\C$, since we have chosen $N$ to match the strength of the double pole of $e$, and because they are both residue free the two poles must cancel completely. Likewise, so too is
+so we take as our third basis differential
 \[
-λ - d\left(\frac{η}{ζ}\right) = \left[ \left(\bar{α}(1+\abs{β}^2)+β(1+\abs{α}^2)\right)ζ^3 - 2\bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}
+λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + z_0d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
+= e + d\left[ \frac{wz}{(z-z_0)(z + \bar{z}_0)} \right],
 \]
-holomorphic on $\C$. Hence all the poles have been moved to infinity. We choose a scaling factor that balances these as well.
-\[
-λ - d\left(\frac{η}{ζ}\right) \sim M \left( e - Nd\left(\frac{η}{ζ-ν}\right) \right)
-\qquad \implies \qquad
-M = -\bra{\abs{α-β}+\abs{1-\bar{α}β}}
-\]
-So the difference of the two sides above is holomorphic on the whole spectral curve, a compact Riemann surface of genus one, and therefore a multiple of $ω$.
-\[
-Lω := λ - d\left(\frac{η}{ζ}\right) - M \left( e - Nd\left(\frac{η}{ζ-ν}\right) \right)
-\]
-At this point, we may rearrange the above to write
-\[
-    λ = Lω + Me + exact
-\]
-which is sufficent to be able to compute its periods in terms of the standard elliptic integrals. In the $ζ$-plane, let $γ_R, γ_I$ denote the real and imaginary periods respectively. We will choose the basis in the following way. For $γ_R$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise, then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For $γ_I$, start at the same point we began $γ_R$ and follow the unit circle clockwise. The image of $γ_R$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(γ_I)$ is simply a traversal of the imaginary axis from bottom to on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
+which has both the correct poles and the correct symmetries.
+
+We are now in a position to compute the periods of our basis. In the $ζ$-plane, let $γ_R, γ_I$ denote the real and imaginary periods respectively. We will choose the basis in the following way. For $γ_R$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise, then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For $γ_I$, start at the same point we began $γ_R$ and follow the unit circle clockwise. The image of $γ_R$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(γ_I)$ is simply a traversal of the imaginary axis from bottom to on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
 
 \makefigure{$γ_R$ in red and $γ_I$ in black}{thesis_graphics_temp/zeta_periods.png}
 
 To summarise the standard elliptic integrals
 \begin{align*}
-\int_{f(γ_R)}\tilde{ω} &= 4K(k) \\
-\int_{f(γ_I)}\tilde{ω} &= 2\iu K' \\
-\int_{f(γ_R)}e &= 4E(k) \\
-\int_{f(γ_I)}e &= 2\iu(K'-E')
+\int_{f(γ_R)} ω &= 4K(k) \\
+\int_{f(γ_I)} ω &= 2\iu K' \\
+\int_{f(γ_R)} e &= 4E(k) \\
+\int_{f(γ_I)} e &= 2\iu(K'-E')
 \end{align*}
-where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denote not the derivative but instead the complement. By definition $k' = \sqrt{1-k^2}$ and $K'(k) = K(k')$ and ditto for $E'$. The periods for our basis are
+where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denote not the derivative but instead the complement. By definition $k' = \sqrt{1-k^2}$ and $K'(k) = K(k')$ and ditto for $E'$. Let $Θ^2 = Ωω + Λλ$ and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
 \begin{align*}
-\int_{γ_R} λ &= 8\frac{L}{M}K + 4 ME \\
-\int_{γ_I} λ &= 2\iu(2\frac{L}{M}+M)K' - 2\iu M E'
+4KΩ + 4EΛ &= 0 \\
+2\iu K' Ω + 2\iu(K'-E')Λ &= 2π\iu
 \end{align*}
-Let $Θ^2 = Ωω + Λλ$ and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
+From the first equation, we can write $Λ = - ΓK$ and $Ω = ΓE$ for some $Γ$. Substituting this into the second equation gives
 \begin{align*}
-K(\frac{2}{M}Ω + \frac{2}{M}LΛ) + MΛE &= 0 \\
-K'(\frac{2}{M}Ω + \frac{2}{M}LΛ + MΛ) -MΛE' &= \pi
-\end{align*}
-From the first equation, we can write $ MΛ = - ΓK$ for some $Γ$ and the term multiplying the $K$ as $ΓE$. Substituting this into the second equation gives
-\begin{align*}
-\pi
-&= K'(ΓE - ΓK) + ΓKE' \\
+π
+&= K'ΓE - (K'-E')ΓK \\
 &= Γ(K'E + KE' - KK') \labelthis{eqn:legendre_relation}\\
 &= \frac{\pi}{2}Γ \\
-Γ &= 2 \\
-Λ &= -\frac{2}{M}K \\
-Ω &= 2\frac{L}{M}K + ME
+Γ &= 2
 \end{align*}
-where \eqref{eqn:legendre_relation} uses Legendre's relation. We can unwind these definitions a little to yield
+where \eqref{eqn:legendre_relation} uses Legendre's relation. Thus $Θ^2 = 2Eω - 2Kλ$, or if we unwind these definitions a little
 \[
-Θ^2 = 2E \tilde{ω} - 2Ke - \frac{2}{M}K\left[ d\bra{\frac{η}{ζ}} - MNd\bra{\frac{η}{ζ-ν}} \right]
+Θ^2 = 2E ω - 2Ke - 2K d\left[ \frac{wz}{(z-z_0)(z + \bar{z}_0)} \right]
 \]
-which shows a nice division, with the first two terms providing the desired periods and the last two terms giving the required pole behaviour. One could also arrange things as follows
-\[
-Θ_1^2 = 2E \tilde{ω} - 2K\bra{e - Nd\bra{\frac{η}{ζ-ν}}} - \frac{2}{M}K d\bra{\frac{η}{ζ}}
-\]
-so that each term is holomorphic on at least $ζ\in\C^*$. With this differential found, every integral differential is of the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$.
+which shows a nice division, with the first two terms providing the desired periods and the last two terms giving the required pole behaviour. With this differential found, every integral differential is of the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$.
 
 
 EXPAND ON THIS: \todo{this}
@@ -793,7 +777,7 @@ This is positive, so $U$ is without zeroes. Taking a similar approach for $V$
 \[
 V(x,k,u,v') > K \left[ w(\iu u) w'(v') + (1+k^2)uv' + k^2u^2 + (v')^2\right].
 \]
-In addition to the above bound for $w(\iu u)$, we also now require a lower bound for $w'(v')$:
+In addition to the bound for $w(\iu u)$, we also now require a lower bound for $w'(v')$:
 \[
 w(v') = \sqrt{k^2 + (1+k^2)(v')^2 + (v')^4} > \sqrt{(1+k^2)(v')^2} = \sqrt{(1+k^2)}\abs{v'},
 \]
