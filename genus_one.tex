@@ -227,10 +227,15 @@ which shows that it does cancel the double pole of $e$. Unfortunately, this exac
 \[
 d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right],
 \]
-so we take as our third basis differential
+so we add a differential of this form to restore the symmetry.
 \[
-λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + z_0d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
-= e + d\left[ \frac{wz}{(z-z_0)(z + \bar{z}_0)} \right],
+d\left[ \frac{w}{z + \bar{z}_0} + C\frac{w}{(z-z_0)(z + \bar{z}_0)}\right]
+= d\left[ \frac{w(z - z_0 + C)}{(z-z_0)(z + \bar{z}_0)}\right]
+\]
+is real when $z_0 - C$ is an imaginary number. Thus $C \in \Re z_0 + i\R$. This degree of freedom to choose any imaginary amount is exactly adding a scalar of $Θ^1$. There are two obvious choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both are valid, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^1$, which introduces a symmetry into the formulae that we will use later. Hence we take as our third basis differential
+\[
+λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0 d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
+= e + d\left[ \frac{w(z - \iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right],
 \]
 which has both the correct poles and the correct symmetries.
 
@@ -260,7 +265,7 @@ From the first equation, we can write $Λ = - ΓK$ and $Ω = ΓE$ for some $Γ$.
 \end{align*}
 where \eqref{eqn:legendre_relation} uses Legendre's relation. Thus $Θ^2 = 2Eω - 2Kλ$, or if we unwind these definitions a little
 \[
-Θ^2 = 2E ω - 2Ke - 2K d\left[ \frac{wz}{(z-z_0)(z + \bar{z}_0)} \right]
+Θ^2 = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right]
 \]
 which shows a nice division, with the first two terms providing the desired periods and the last two terms giving the required pole behaviour. With this differential found, every integral differential is of the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$.
 
@@ -324,7 +329,7 @@ x                       &   y
 \end{pmatrix}
 \vt{Θ}{\tilde{Θ}}
 \]
-The new pair of differentials are simpler in the sense that their periods are $0$ and $2π\iu g$ respectively. They are also closing, because they are an integer combination of closing differentials. And the integer matrix has determinant one, so is invertible over the integers. Further, the two differentials are linearly dependent exactly when $Ψ$ is zero. Hence,
+The new pair of differentials are simpler in the sense that their imaginary periods are $0$ and $2π\iu g$ respectively. They are also closing, because they are an integer combination of closing differentials. And the integer matrix has determinant one, so is invertible over the integers. Further, the two differentials are linearly dependent exactly when $Ψ$ is zero. Hence,
 \begin{lem}
 A curve admits linearly independent closing differentials if and only if it admits nonzero closing differentials with imaginary periods $0$ and $2π\iu g$, for some positive integer $g$.
 \end{lem}
@@ -337,7 +342,7 @@ Thus the condition above, $p\in\Q^+$, is a necessary conditon for a spectral cur
 Again, elimination of $b$ yields the condition for a common solution to exist. This equation can be written as
 \[
 2π\iu T := p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 = 2π \iu \frac{p Γ^- - Γ^+}{g}.
-\labelthis{def_T}
+\labelthis{eqn:def_T}
 \]
 
 \begin{lem}
@@ -388,33 +393,20 @@ We can derive explicit formula for the value of the integrals on these particula
 \int_{γ_+} e
 &= 2 \tilde E(f(1);k) - 2 E(k) \\
 \int_{γ_+} Θ^2
-&= \int_{γ_+} (2E \tilde{ω} - 2Ke) - \frac{2}{M}K \int_{γ_+} \left[ d\bra{\frac{η}{ζ}} - MNd\bra{\frac{η}{ζ-ν}} \right] \\
-% &= 4E F(f(1);k) - 4K E(f(1);k) - \frac{4K}{M} η(1)^+\left[ 1 - \frac{MN}{1-ν} \right] \\
-&= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K(k) \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν}.
+&= \int_{γ_+} (2Eω - 2Ke) - 2K \int_{γ_+} d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K \frac{w(f(1))\,(f(1)-\iu\,\Im z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}.\labelthis{eqn:gamma_plus}
 \end{align*}
 
 For the closing condition at $ζ=-1$
 \begin{align*}
 \int_{γ_-} Θ^2
-% &= 4EF(f(-1);k) - 4K\tilde{E}(f(-1);k) - \frac{4K}{M} η(-1)^+\left[ 1 - \frac{MN}{-1-ν} \right] \\
-&= 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) - 4K(k) \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν}.
+&= 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{align*}
 
-From these we explictly compute
-\begin{align*}
-2π\iu T_0 &=  p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 \\
-&=  p \left[ 4 E F(f(-1);k) - 4 K E(f(-1);k) - 4K \frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} \right] \\
-&\qquad\qquad   - \left[ 4 E F(f(1);k) - 4 K E(f(1);k) - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right]
-\labelthis{Teqn}
-% \\
-% &=  4p \left[ E F(f(-1);k) - K E(f(-1);k) \right] - 4\left[ E F(f(1);k) - K E(f(1);k) \right] \\
-% &\qquad\qquad    - 4K\left[ p\frac{\abs{1+α}\abs{1+β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1-ν}{1+ν} - \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{1+ν}{1-ν} \right]  \\
-% &=  4p \left[ E F(f(-1);k) - K E(f(-1);k) \right] - 4\left[ E F(f(1);k) - K E(f(1);k) \right] \\
-% &\qquad\qquad    - 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \left[ \frac{1-ν}{1+ν} - \frac{1+ν}{1-ν} \right]  \\
-% &=  4p \left[ E F(f(-1);k) - K E(f(-1);k) \right] - 4\left[ E F(f(1);k) - K E(f(1);k) \right] + 4K \frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}.
-\end{align*}
-
-Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formula we have derived for $T_0$, which is not defined when $ν$ takes either of these values. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and, because $ν$ is on the unit circle, $(1-ν)/(1+ν)$ and $(1+ν)/(1-ν)$ are purely imaginary as well.
+If one wishes, one could substitute these formulae into \ref{eqn:def_T} to get $T_0$. Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be inifinite. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and,
+\[
+(f(1)-z_0)(f(1) + \bar{z}_0) = -(f(1)-z_0)(\overline{f(1) - z_0}) = - \abs{f(1) - z_0}^2.
+\]
 
 % Properly understood, $T$ is not a function on the space of spectral curves $\mathcal{A}$, but rather it is a function on the space of paths $(γ_+, γ_-)$, which we shall call $\mathcal{P}$. To be more precise, let $\mathcal{P}$ be the space $\{(γ_+, γ_-, Σ, α)\}$ where $α$ is one of the branch points inside the unit circle of some genus one spectral curve $Σ$ and $γ_+$ and $γ_-$ are paths $(0,1) \to Σ$ defined in the following way. $γ_+$ starts at $(1, η(1)^-)$, monotonically tranverses the unit circle to $μ$ (that is, it does not pause or reverse direction), goes along the branch point circle to $α$, encircles it, returns to $μ$ along the branch point circle and retraces its path to $(1, η(1)^+)$. In an analogous way, $γ_-$ starts at $(-1, η(-1)^-)$ and finishes at $(-1, η(-1)^+)$. We shall call such paths rigid. Every path on $Σ$ that connects the two points over $1$ or $-1$ is homologous to one of these rigid paths.
 %
@@ -436,7 +428,7 @@ It is our ultimate aim to examine the surfaces defined by the two conditions and
 \begin{defn}\label{def:parameter space}
 Consider the product space $\R_{>0} \times (0,1) \times (\RInf) \times (\RInf)$. Let $p \in \R_{>0}$ and $k \in (0,1)$ be coordinates on the first two factors. Let $u, u' \in \R$, with $u' = u^{-1}$, be coordinates covering the third factor in the standard way, and likewise let $v, v' \in\R$, with $v' = v^{-1}$ be coordinates covering the fourth factor. Together, the four coordinate patches $(p,k,u,v)$, $(p,k,u',v)$, $(p,k,u,v')$ and $(p,k,u',v')$ to $\R_{>0} \times (0,1) \times \R^2$ cover $\R_{>0} \times (0,1) \times (\RInf)^2$.
 
-Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the four coordinate patches it is given by the equations $u=v$, $(u')^{-1} = v$, $u = (v')^{-1}$, $u' = v'$. Define $\mathcal{A}'$ to be the complement of $H$.
+Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the four coordinate patches it is given by the equations $u-v = 1-u'v = uv'- 1 = v' - u' = 0$. Define $\mathcal{A}'$ to be the complement of $H$.
 \end{defn}
 
 Note that $\mathcal{A}'$ does not include the points where $u'=v'=0$, so it is covered by three of the coordinate patches; $(p,k,u,v)$, $(p,k,u',v)$ and $(p,k,u,v')$ are sufficent for example.
@@ -447,9 +439,7 @@ As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive
 \[
 \frac{z-z_0}{z + \conj{z_0}},
 \]
-(compare to \ref{eqn:f_inv_2}).
-
-Note the following trick using cross ratios.
+(compare to \ref{eqn:f_inv_2}). Note the following trick using cross ratios.
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -517,18 +507,17 @@ The maps
 φ :     & \mathcal{A} \to \mathcal{A}' \\
         & (α,β) \mapsto
 \begin{cases}
-(p(α,β), k(α,β), u'=0, \Im f(-1)),         &\text{if $f(1) = \infty$} \\
-(p(α,β), k(α,β), \Im f(1), v'=0),          &\text{if $f(-1) = \infty$} \\
-(p(α,β), k(α,β), \Im f(1), \Im f(-1)),  &\text{otherwise} \\
+(p(α,β), k(α,β), u'=0, v = \Im f(-1)),         &\text{if $f(1) = \infty$} \\
+(p(α,β), k(α,β), u = \Im f(1), v' = 0),          &\text{if $f(-1) = \infty$} \\
+(p(α,β), k(α,β), u = \Im f(1), v = \Im f(-1)),  &\text{otherwise} \\
 \end{cases}
 \end{align}
 and
 \begin{align}
-φ' :    & \mathcal{A}' \to \mathcal{A} \\
-        & (p,k,u,v) \mapsto \left( f^{-1}(u,v)(1), f^{-1}(u,v)(k^{-1}) \right) \\
-        & (p,k,u',v) \mapsto \left( f^{-1}(u',v)(1), f^{-1}(u',v)(k^{-1}) \right) \\
-        & (p,k,u,v') \mapsto \left( f^{-1}(u,v')(1), f^{-1}(u,v')(k^{-1}) \right) \\
-        ,
+φ'  &:\;\mathcal{A}' \to \mathcal{A} \\
+    (p,k,u,v) &\mapsto \left( f^{-1}(u,v)(1), f^{-1}(u,v)(k^{-1}) \right) \\
+    (p,k,u',v) &\mapsto \left( f^{-1}(u',v)(1), f^{-1}(u',v)(k^{-1}) \right) \\
+    (p,k,u,v') &\mapsto \left( f^{-1}(u,v')(1), f^{-1}(u,v')(k^{-1}) \right),
 \end{align}
 are well-defined mutually inverse diffeomorphisms.
 
@@ -544,43 +533,29 @@ The first is excluded from $\mathcal{A}'$, the second is never zero, the third i
 \end{lem}
 
 
-Thus $\mathcal{A}$ and $\mathcal{A}'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Note when $ν=1$, $f(1) = \iu\infty$ and when $ν=-1$, $f(-1) = \iu\infty$, so the subset $\mathcal{A}_0$ is precisely covered by the coordinates $(p,k,u,v)$.  Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the third term of $T_0$. By direct computation
+Thus $\mathcal{A}$ and $\mathcal{A}'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Note when $ν=1$, $f(1) = \iu\infty$ and when $ν=-1$, $f(-1) = \iu\infty$, so the subset $\mathcal{A}_0$ is precisely covered by the coordinates $(p,k,u,v)$.  Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the elementary terms of the half-periods. By direct computation
 \begin{align*}
-\abs{1-α} &= \abs{\frac{(z_0 + \conj{z_0}) (\iu u - 1) }{ (\iu u - z_0) (1 + z_0) }} \\
-\abs{1-β} &= \abs{\frac{(z_0 + \conj{z_0}) (k \iu u - 1) }{ (\iu u - z_0) (1 + k z_0) }} \\
-%%%%%%%%%%%%%%%%
-\abs{α-β} &= \abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }} \\
-&= \abs{\frac{(z_0 + \conj{z_0}) (k - 1) }{ (1 + z_0) (1 + k z_0) }}
-\\
-%%%%%%%%%%%%%%%%
-\abs{1-\conj{α}β} &= \abs{\frac{(z_0 + \conj{z_0}) (k + 1) }{ (1 + z_0) (1 + k z_0) }}.
+u-y &= \frac{w(\iu u)(u-v)}{pw(\iu v) + w(\iu u)} &
+\abs{\iu u - z_0}^2 &= \frac{w(\iu u)(u-v)^2}{pw(\iu v) + w(\iu u)} \\
+v-y &= - \frac{w(\iu v)(u-v)}{pw(\iu v) + w(\iu u)} &
+\abs{\iu v - z_0}^2 &= \frac{w(\iu v)(u-v)^2}{pw(\iu v) + w(\iu u)}
 \end{align*}
-where the expressions were simplified using the observation that
-\[
-\abs{\frac{\iu u + \conj{z_0}}{\iu u - z_0}} = 1,
-\]
-because the denominator is the conjugate of the numerator. Next $ν = f^{-1}(\infty)$ and
-so
+These expressions combine to give from \ref{eqn:gamma_plus} and \ref{eqn:gamma_minus}
 \begin{align*}
-ν &= \frac{\iu u + \conj{z_0}}{\iu u - z_0} \\
-\frac{1+ν}{1-ν} &= -\iu \sqrt{\frac{w(\iu u)}{pw(\iu v)}}\sign{(u-v)} \\
-\frac{1-ν}{1+ν} &= \iu \sqrt{\frac{pw(\iu v)}{w(\iu u)}}\sign{(u-v)} \\
-\frac{4ν}{1-ν^2} &= \frac{1+ν}{1-ν} - \frac{1-ν}{1+ν} \\
-&= -\iu \frac{pw(\iu v) + w(\iu u)}{\sqrt{pw(\iu u)w(\iu v)}} \sign{(u-v)}.
-\end{align*}
-These expressions combine to give
-\begin{align*}
-\frac{\abs{1-α}\abs{1-β}}{\abs{α-β} + \abs{1-\conj{α}β}} \frac{4ν}{1-ν^2}
-&= \frac{1}{2}\abs{\frac{ (z_0 + \conj{z_0}) (1 - \iu u) (1-k\iu u) }{ (\iu u - z_0)^2 }}
-    \times -\iu \frac{pw(\iu v) + w(\iu u)}{\sqrt{pw(\iu u)w(\iu v)}} \sign{(u-v)} \\
-&= \frac{ \sqrt{pw(\iu u)w(\iu v)} }{ \abs{u - v}}
-    \times -\iu \frac{pw(\iu v) + w(\iu u)}{\sqrt{pw(\iu u)w(\iu v)}} \sign{(u-v)} \\
-&= -\iu \frac{ pw(\iu v) + w(\iu u) }{ u - v},
+- 4K \frac{w(f(1))\,(f(1)-\iu\,\Im z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}
+&= 4\iu K \frac{w(\iu u)\,(u-y)}{\abs{\iu u-z_0}^2}
+= 4\iu K \frac{w(\iu u)}{u-v}, \\
+- 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}
+&= 4\iu K \frac{w(\iu v)\,(v-y)}{\abs{\iu v-z_0}^2}
+= -4\iu K \frac{w(\iu v)}{u-v},
 \end{align*}
 and hence that
 \begin{align*}
-\labelthis{eqn:Teqn2}
-2π\iu T_0(p,k,u,v) = 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v}.
+2π\iu T_0(p,k,u,v)
+&= p\left\{ 4 E F(\iu v;k) - 4K E(\iu v;k) - 4 K \frac{w(\iu v)}{u-v} \right\}
+- \left\{ 4 E F(\iu u;k) - 4K E(\iu u;k) + 4 K \frac{w(\iu u)}{u-v} \right\} \\
+&= p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v}.
+\labelthis{eqn:Teqn}
 \end{align*}
 
 Consider the parameter space $\mathcal{A}$ for a fixed value of $p$, denoted $\mathcal{A}(p)$. Topologically it is the product of an interval and an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RInf \times \RInf$. Topologically $\RInf$ is just a circle, so this product is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.

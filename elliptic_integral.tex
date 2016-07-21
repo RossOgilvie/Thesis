@@ -106,7 +106,7 @@ In particular, as $k \to 1$, the complete elliptic integral of the first kind ha
 \[
 \lim_{k \to 1} \left[ K + \frac{1}{2}\ln(1-k) \right] = \frac{3}{2}\ln 2.
 \]
-A similar result, inequality (1), ties the integral of the second kind to that of the first type:
+A similar result, \cite{Anderson} inequality (1), ties the integral of the second kind to that of the first type:
 \[
 \frac{π}{4}k^2 \leq E - (1-k^2)K \leq k^2.
 \labelthis{E_bound}
@@ -344,9 +344,8 @@ This relation is useful in two ways. First, it can be used to construct a basis 
 \subsection{Analytic Continuation}
 \label{sub:EllipticContinuation}
 
-It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy-Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic.
 
-Above, we computed the limits of $F_0(x;k)$ and $E_0(x;k)$ as $x \to \infty$, but because both functions are odd, there is no way to extend them to single valued functions on $\RInf$. Instead we must extend these functions analytically. Let $\tilde{x}\in\R$ and consider the covering map $\R \to \RInf$ given by
+Above, we computed the limits of $F_0(x;k)$ and $E_0(x;k)$ as $x \to \infty$, but because both functions are odd, there is no way to extend them to single valued functions on $\RInf$. Instead we must extend these functions analytically. It is a standard fact that the elliptic integrals are analytic functions on the plane. To extend, we will use the fact that parameter integrals of analytic functions are analytic. Let $\tilde{x}\in\R$ and consider the covering map $\R \to \RInf$ given by
 \[
 \tilde{x} \mapsto \tan\frac{\tilde{x}}{2}.
 \]
@@ -367,7 +366,7 @@ The integrand is analytic, and so $\tilde{F}$ is an analytic function for all va
 &= \frac{1}{2} \int_0^{\tilde{x}} \frac{\bra{\cos^2 s/2 + k^2\sin^2 s/2} - k^2}{ \cos^2 s/2 } \frac{1}{\sqrt{\cos^2 s/2 + k^2\sin^2 s/2} + k}\;ds \\
 &= \frac{1}{2} (1-k^2) \int_0^{\tilde{x}} \frac{1}{\sqrt{\cos^2 s/2 + k^2\sin^2 s/2} + k}\;ds.
 \end{align*}
-Manipulating the integrand into a form that is plainly analytic demonstrates that $\tilde{E}$ is as well. One could reasonably ask how to compute the values of these extended functions, and the answer is quite simple. Define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Let $n=W(\tilde{x})$ and write $\tilde{x} = 2πn + y$. Then
+Manipulating the integrand into a form that is plainly analytic demonstrates that $\tilde{E}$ is as well. One could reasonably ask how to compute the values of these extended functions. This is answered by noticing the integrands are $2π\iu$ periodic. Write $\tilde{x} = 2πn + y$ for an integer $n$ and $y\in(-π,π)$. Then
 \begin{align*}
 \tilde{F}(\tilde{x};k)
 &= \frac{1}{2} \bra{ \int_0^{2πn} + \int_{2πn}^{2πn +y}} \frac{1}{\sqrt{\cos^2 s/2 + k^2 \sin^2 s/2}} \;ds \\
@@ -380,95 +379,4 @@ where $x = \tan \tilde{x}/2 = \tan y/2$ and recalling the period of $F_0$ from e
 \[
 \tilde{E}(\tilde{x}; k) = 2n(K'-E') + E_0(x;k).
 \labelthis{eqn:tildeE_period}
-\]
-
-
-
-
-
-
-\subsection{Universal Cover (Alternate to \ref{sub:EllipticContinuation})}
-
-It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy-Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic.
-
-In the body of the thesis, we encounter the situation where a function naturally defined on a circle is given a local expression in terms of the functions $F_0(x;k)$ and $E_0(x;k)$ that we have been considering. The question naturally arises how to extend and express those functions on the full circle. Above, we have already computed the limit as $x \to \infty$, but because both functions are odd, there is no way to extend these functions to $x \in \RInf$. Instead we shall extend these functions analytically to the universal cover of $\RInf$, namely $\R$.
-
-Let $x \in \R \subset \RInf$ be one coordinate on $\RInf$ and $x' = x^{-1}$ be another. Let $\tilde{x}$ be the coordinate on the universal cover with covering map
-\begin{align*}
-x &= \tan\frac{\tilde{x}}{2} \text{ for } \tilde{x}\not\in π+2\pi\Z \\
-x' &= \cot\frac{\tilde{x}}{2} \text{ for } \tilde{x}\not\in 2\pi\Z.
-\end{align*}
-Let $\tilde{F}$ and $\tilde{E}$ be the lifts to the universal cover of $F_0$ and $E_0$ respectively. We will give concrete expressions for these functions below.
-
-Recall that the period of $F_0(x)$ is $2K'$ and that of $E_0(x)$ it is $2(K' - E')$. To give the extension of either of these functions to the universal cover, it is sufficient to give an expression in each coordinate chart. On the universal cover, the extension will differ from the pullback by some number of periods.
-
-Consider the function $F_1$.
-\[
-F_1(x';k) =
-\begin{cases}
-F_0((x')^{-1}; k)             & \text{ for } x' > 0 \\
-K'                              & \text{ for } x' = 0 \\
-2K' + F_0((x')^{-1}; k)   & \text{ for } x' < 0
-\end{cases}
-\]
-The only thing to check is that it is analytic at $x'=0$. To show this, we transform the integrals so that their base point is at $x'=0$ rather than $x=0$ and apply the Cauchy-Kowalevski Theorem. For $x'>0$
-\begin{align*}
-F_0( (x')^{-1}; k)
-&= \int_0^{(x')^{-1}} \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&= \left(\int_0^{+\infty} - \int_{(x')^{-1}}^{+\infty} \right) \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&= K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
-\end{align*}
-and for $x' < 0$
-\begin{align*}
-2 K' + F_0((x')^{-1}; k)
-&= 2 K' + \left(\int_0^{-\infty} - \int_{(x')^{-1}}^{-\infty} \right) \frac{dt}{\sqrt{(1+t^2)(1+k^2t^2)}} \\
-&=  K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}}.
-\end{align*}
-So we have arrived at a single formula for all values of $x'$, namely
-\[
-F_1(x';k) = K' - \int_0^{x'} \frac{ds}{\sqrt{(1+s^2)(s^2+k^2)}},
-\]
-and since the integrand is analytic, the integral is too and we are done.
-
-Notice that $F_1$ differs from $F_0$ by a function of $k$ where ever they are both defined. Thus we can express the function $\tilde{F}$ as follows
-\[
-\tilde F(\tilde{x};k) =
-\begin{cases}
-F_0(x; k) + 2K'n             & \text{ for } \tilde x \in (2πn - π, 2πn + π) \\
-F_1(x'; k) + 2K'n             & \text{ for } \tilde x \in (2πn, 2πn + 2π),
-\end{cases}
-\]
-and this is a well defined analytic function.
-
-
-
-
-The definition and check for the integral of the second kind is entirely similar.
-\[
-E_1(x';k):=
-\begin{cases}
-E_0((x')^{-1}; k)         & \text{ for } x' > 0 \\
-K'-E'                                                   & \text{ for } x' = 0 \\
-2(K'-E') + E_0((x')^{-1}; k)   & \text{ for } x' < 0
-\end{cases}
-\]
-After transforming the integrals in the same way, we find ourselves faced with the formula, for all $x'$,
-\[
-E_1(x';k) = (K'-E') - \int_0^{x'} s^{-2}\bra{ \sqrt{\frac{s^2 + k^2}{1 + s^2}} - k }\;ds.
-\]
-On its face, the integrand appears not to be analytic because of the $s^{-2}$. However the difference in the bracket vanishes quadratically in $s$. To see this, use the square root estimate
-\[
-1 \leq \sqrt {1 + x^2} \leq 1 + \frac{1}{2}x^2,
-\]
-to obtain the bound
-\[
--\frac{1}{2}k s^2 \leq \sqrt{k^2 + s^2} - k \sqrt{1+s^2} \leq \frac{1}{2}\frac{1}{k} s^2,
-\]
-which shows that the part in the bracket vanishes to order $s^2$ and so the integrand is analytic, and therefore the integral is also. We can then give an expression for $\tilde{E}$:
-\[
-\tilde E(\tilde{x};k) =
-\begin{cases}
-E_0(x; k) + 2(K'-E')n             & \text{ for } \tilde x \in (2πn - π, 2πn + π) \\
-E_1(x'; k) + 2(K'-E')n     & \text{ for } \tilde x \in (2πn, 2πn + 2π).
-\end{cases}
 \]
