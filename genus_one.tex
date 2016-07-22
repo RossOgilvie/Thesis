@@ -545,15 +545,21 @@ These expressions combine to give from \ref{eqn:gamma_plus} and \ref{eqn:gamma_m
 - 4K \frac{w(f(1))\,(f(1)-\iu\,\Im z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}
 &= 4\iu K \frac{w(\iu u)\,(u-y)}{\abs{\iu u-z_0}^2}
 = 4\iu K \frac{w(\iu u)}{u-v}, \\
+\int_{γ_+} Θ^2
+= 4 E(k) F(f(1);k) &- 4 K(k) E(f(1);k) + 4\iu K \frac{w(\iu u)}{u-v}.
+\labelthis{eqn:gamma_plus2}\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}
 &= 4\iu K \frac{w(\iu v)\,(v-y)}{\abs{\iu v-z_0}^2}
-= -4\iu K \frac{w(\iu v)}{u-v},
+= - 4\iu K \frac{w(\iu v)}{u-v},\\
+\int_{γ_-} Θ^2
+= 4 E(k) F(f(-1);k) &- 4 K(k) E(f(-1);k) - 4\iu K \frac{w(\iu v)}{u-v}.\labelthis{eqn:gamma_minus2}
 \end{align*}
-and hence that
+And hence that
 \begin{align*}
 2π\iu T_0(p,k,u,v)
-&= p\left\{ 4 E F(\iu v;k) - 4K E(\iu v;k) - 4 K \frac{w(\iu v)}{u-v} \right\}
-- \left\{ 4 E F(\iu u;k) - 4K E(\iu u;k) + 4 K \frac{w(\iu u)}{u-v} \right\} \\
+&= p\left\{ 4 E F(\iu v;k) - 4K E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v} \right\}
+- \left\{ 4 E F(\iu u;k) - 4K E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v} \right\} \\
 &= p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v}.
 \labelthis{eqn:Teqn}
 \end{align*}
@@ -584,10 +590,10 @@ with the projection map $\mathcal{\tilde{A}} \to \mathcal{A}$ is given by
 \begin{align*}
     p &= p, \\
     k &= k, \\
-    u &= \tan \frac{\tilde{u}}{2},
-    \quad  u' = \cot \frac{\tilde{u}}{2}, \\
-    v &= \tan \frac{\tilde{v}}{2},
-    \quad  v' = \cot \frac{\tilde{v}}{2}.
+    u = \tan \frac{\tilde{u}}{2},       &\quad
+        u' = \cot \frac{\tilde{u}}{2},  \\
+    v = \tan \frac{\tilde{v}}{2},       &\quad
+        v' = \cot \frac{\tilde{v}}{2}.
 \end{align*}
 \end{defn}
 
@@ -629,7 +635,7 @@ where we have introduced the shorthand $w'(z')^2 = (1-(z')^2)(k^2 - (z')^2)$ to 
 \end{proof}
 \end{lem}
 
-In Appendix \ref{sub:EllipticContinuation}, extensions of $F_0(x;k)$ and $E_0(x;k)$ to the universal covers of $(k,x)\in (0,1)\times\RInf$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
+In Appendix \ref{sub:EllipticContinuation}, extensions of $F_0(x;k)$ and $E_0(x;k)$ to the universal covers of $(k,x)\in (0,1)\times(\RInf)$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
 \[
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
 = 4p \left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
@@ -652,7 +658,7 @@ If we wish to relate this to a specific local expression, it is simply a matter 
 \tilde{T}(p,k,\tilde{u},\tilde{v})
 &= 2\bra{ pW(\tilde{v}) - W(\tilde{u}) } + T_0(p,k,u,v) .
 \end{align*}
-Thus to do computations with the function $\tilde{T}$, one can continue to work with a function downstairs on $\mathcal{A}$ and make a note of the constants.
+Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}$ and make a note of the constants. In particular, $T \in \Q$ if and only $\tilde{T} \in \Q$, and so we can seek to find moduli space as a subset of the universal cover.
 
 
 
@@ -693,7 +699,7 @@ and
 = \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
 = \frac{(1+k^2)u + 2k^2 u^3}{w(\iu u)}.
 \]
-The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T_0$ is elementary if tedious.
+The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T_0$ is mechanical if tedious.
 % \begin{align*}\label{dTdk}
 % \frac{π}{2}\Partial{T_0}{k}
 % &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
@@ -702,21 +708,20 @@ The other derivatives of elliptic integrals are calculated in appendix \ref{sec:
 \frac{π}{2}\Partial{T_0}{u}
 = -\frac{E}{w(\iu u)} + \frac{pK w(\iu v)}{(u-v)^2} + \frac{K}{w(\iu u)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
 \end{equation}
-\begin{equation}\label{dTdv}
-\frac{π}{2}\Partial{T_0}{v}
-= \frac{pE}{w(\iu v)} - \frac{K w(\iu u)}{(u-v)^2} - \frac{pK}{w(\iu v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
-\end{equation}
+% \begin{equation}\label{dTdv}
+% \frac{π}{2}\Partial{T_0}{v}
+% = \frac{pE}{w(\iu v)} - \frac{K w(\iu u)}{(u-v)^2} - \frac{pK}{w(\iu v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
+% \end{equation}
 While $T$ may be multivalued on $\mathcal{A}'$, its derivatives are not: the ambiguity of being locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
 
-
-\begin{equation}\label{dTdu'}
-\frac{π}{2}\Partial{T}{u'}
-= \frac{E}{w'(u')} + \frac{pK w(\iu v)}{(1-u'v)^2} + \frac{K}{w'(u')(1-u'v)^2}\left[1 + k^2v^2 + - u'v + k^2u'v + (u')^2 + (u')^2v^2 \right]
-\end{equation}
-\begin{equation}\label{dTdv'}
-\frac{π}{2}\Partial{T}{v'}
-= -\frac{pE}{w'(v')} + \frac{K w(\iu u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
-\end{equation}
+% \begin{equation}\label{dTdu'}
+% \frac{π}{2}\Partial{T}{u'}
+% = \frac{E}{w'(u')} + \frac{pK w(\iu v)}{(1-u'v)^2} + \frac{K}{w'(u')(1-u'v)^2}\left[1 + k^2v^2 + - u'v + k^2u'v + (u')^2 + (u')^2v^2 \right]
+% \end{equation}
+% \begin{equation}\label{dTdv'}
+% \frac{π}{2}\Partial{T}{v'}
+% = -\frac{pE}{w'(v')} + \frac{K w(\iu u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
+% \end{equation}
 
 \begin{lem}
     \label{lem:deriv no zeroes}
@@ -726,9 +731,9 @@ U(p,k,u,v) := -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + 
 \]
 and
 \[
-V(p,k,u,v') := -(uv'-1)^2 E + pKw(\iu u)w'(v') + K\left[ 1 + k^2u^2 - uv' + k^2 uv' + (v')^2 + u^2 (v')^2 \right]
+V(p,k,v) := -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right]
 \]
-have no zeroes for $p \geq 1$, $k\in (0,1)$, $u,v,v' \in \R$.
+have no zeroes for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
 \begin{proof}
 We shall prove this statement by showing that the two functions are in fact always positive. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, \todo{reference the appendix}
 and also the assumption that $p\geq 1$, to simplify
@@ -748,32 +753,24 @@ U(p,k,u,v)
 &> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
 &\geq K \left[ 1 + k^2 u^2 v^2 \right].
 \end{align*}
-This is positive, so $U$ is without zeroes. Taking a similar approach for $V$
+This is positive, so $U$ is without zeroes. The second function, $V$, is almost immediate. Take $E<K$,
 \[
-V(x,k,u,v') > K \left[ w(\iu u) w'(v') + (1+k^2)uv' + k^2u^2 + (v')^2\right].
-\]
-In addition to the bound for $w(\iu u)$, we also now require a lower bound for $w'(v')$:
-\[
-w(v') = \sqrt{k^2 + (1+k^2)(v')^2 + (v')^4} > \sqrt{(1+k^2)(v')^2} = \sqrt{(1+k^2)}\abs{v'},
-\]
-which can now be applied to show that
-\[
-V(x,k,u,v') > K \left[k^2u^2 + (v')^2\right].
+V(p,k,v) > K \left[ -1 + pk w(\iu v) + 1 + k^2 v^2\right].
 \]
 This establishes that $V$ has no roots either.
 \end{proof}
 \end{lem}
 
-This result is of interest because it shows that if $p \leq 1$, then the $v$ and $v'$ derivatives of $T$ are nonzero:
-\begin{align*}
-\frac{π}{2}\Partial{T}{v} &= \frac{-p}{w(\iu v)(u-v)^2} U\bra{ \frac{1}{p},k,u,v }, \\
-\frac{π}{2}\Partial{T}{v'} &= \frac{p}{w'(v')(uv'-1)^2} V\bra{ \frac{1}{p},k,u,v' }.
-\end{align*}
-And if $p \geq 1$, then the $u$ and $u'$ derivatives of $T$ are nonzero:
-\begin{align*}
-\frac{π}{2}\Partial{T}{u} &= \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v }, \\
-\frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
-\end{align*}
+% This result is of interest because it shows that if $p \leq 1$, then the $v$ and $v'$ derivatives of $T$ are nonzero:
+% \begin{align*}
+% \frac{π}{2}\Partial{T}{v} &= \frac{-p}{w(\iu v)(u-v)^2} U\bra{ \frac{1}{p},k,u,v }, \\
+% \frac{π}{2}\Partial{T}{v'} &= \frac{p}{w'(v')(uv'-1)^2} V\bra{ \frac{1}{p},k,u,v' }.
+% \end{align*}
+% And if $p \geq 1$, then the $u$ and $u'$ derivatives of $T$ are nonzero:
+% \begin{align*}
+% \frac{π}{2}\Partial{T}{u} &= \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v }, \\
+% \frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
+% \end{align*}
 
 
 Recall that $\mathcal{S} \subset \mathcal{C}$ is the set of spectral curves that admit closing spectral data and that $\mathcal{\tilde{S}} \subset \mathcal{\mathcal{A}}$ is its preimage in the universal cover. Let $\mathcal{\tilde{S}}(p,q)$ denote the subset of $\mathcal{\tilde{A}}$ on which the values of $p(α,β) = p$ and $\tilde{T} = q$ are fixed. As we have shown that $\mathcal{S}$ is the space on which $p$ is a positive rational and $q$ is any rational (lemma \ref{lem:closing_conds}), it follows that
@@ -785,25 +782,49 @@ Recall that $\mathcal{S} \subset \mathcal{C}$ is the set of spectral curves that
 If $p \leq 1$ then $\tilde{\mathcal{S}}(p,q)$ is a graph over $(k,\tilde{u})$, and if $p \geq 1$ then $\tilde{\mathcal{S}}(p,q)$ is a graph over $(k, \tilde{v})$.
 
 \begin{proof}
-We prove this by direct application of the implict function theorem. Suppose first that $p \leq 1$. Consider the function $\tilde{T}(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{A}}$. Consider two formulae for its derivatives with respect to $\tilde{v}$.
-\[
-\Partial{\tilde{T}}{\tilde{v}}
-= \Partial{T}{v}\frac{dv}{d\tilde{v}}
-= \frac{1}{2}\sec^2\bfrac{\tilde{v}}{2} \Partial{T}{v},
-\]
-for $\tilde{v} \not\in π + 2π\Z$ and
-\[
-\Partial{\tilde{T}}{\tilde{v}}
-= \Partial{T}{v'}\frac{dv'}{d\tilde{v}}
-= -\frac{1}{2}\csc^2\bfrac{\tilde{v}}{2} \Partial{T}{v'},
-\]
-for $\tilde{v} \not\in 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, neither of the partial derivatives of $T$ with respect to $v$ or $v'$ are ever zero, and neither are $\sec$ or $\csc$. Hence $\partial \tilde{T} / \partial \tilde{v}$ is never zero. By the implicit function theorem therefore, there is a function $h$ such that the level set $\tilde{T}=q$ is a graph of the form $(p, k, \tilde{u}, h(p,k,\tilde{u}))$. Fixing a value of $p$ gives $\mathcal{\tilde{S}}(p,q)$ as a graph of the two remaining coordinates $(k,\tilde{u})$.
+We prove this by direct application of the implict function theorem. Suppose first that $p \geq 1$. Consider the function $\tilde{T}(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{A}}$. Consider the following formula for its derivative with respect to $\tilde{u}$.
+\begin{align*}
+\Partial{\tilde{T}}{\tilde{u}}
+= \frac{du}{d\tilde{u}}\Partial{T}{u}
+&= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \Partial{T}{u} \\
+&= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \times \frac{2}{π} \times \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
+&= \frac{1}{π}\frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v },
+\end{align*}
+which holds for $\tilde{u} \not\in π + 2π\Z$.
+%  and
+% \[
+% \Partial{\tilde{T}}{\tilde{v}}
+% = \Partial{T}{v'}\frac{dv'}{d\tilde{v}}
+% = -\frac{1}{2}\csc^2\bfrac{\tilde{v}}{2} \Partial{T}{v'},
+% \]
+% for $\tilde{v} \not\in 2π\Z$.
+As witnessed in Lemma \ref{lem:deriv no zeroes}, $U$ is never zero, and neither are the other functions present. Hence $\partial \tilde{T} / \partial \tilde{u}$ is never zero on this open set. It remains to check it does not vanish where $\tilde{u} \in π + 2π\Z$. As $\tilde{T}$ is an analytic function, its derivatives are continuous and so we may compute their value at this point by taking a limit. The corresponding limit downstairs is $u\to\infty$. Observe
+\begin{align*}
+\lim_{u\to\infty} u^{-2} U(p,k,u,v)
+&= \lim_{u\to\infty} -(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) + K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \\
+&= V(p,k,v).
+\end{align*}
+Therefore
+\begin{align}
+\lim_{\tilde{u}\to π + 2π\Z} \Partial{\tilde{T}}{\tilde{u}}
+&=\frac{1}{π} \lim_{u \to \infty} \frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
+&=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}U\bra{ p,k,u,v } \\
+&=\frac{1}{π} \frac{1}{k} V\bra{ p,k,v },
+\end{align}
+which is also nonzero. By the implicit function theorem therefore, there is a function $h$ such that the level set $\tilde{T}=q$ is a graph of the form $(p, k, \tilde{u}, h(p,k,\tilde{u}))$. Fixing a value of $p$ gives $\mathcal{\tilde{S}}(p,q)$ as a graph of the two remaining coordinates $(k,\tilde{u})$.
 
-The same argument holds if $p \geq 1$, as then the $\tilde{u}$ derivative of $\tilde{T}$ is nonvanishing.
+When $p \leq 1$, we employ the following symmetry.
+\begin{align*}
+T_0(p,k,u,v)
+&= 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} \\
+&= -p\left\{ -4\left[ E F(\iu v;k) - K E(\iu v;k) \right] + \frac{4}{p}\left[ E F(\iu u;k) - K E(\iu u;k) \right] + 4\iu K \frac{ w(\iu v) + \frac{1}{p}w(\iu u)}{u-v} \right\}\\
+&= -p T_0\bra{ \tfrac{1}{p}, k, v, u },
+\end{align*}
+so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing. Again, the implicit function theorem gives the result.
 \end{proof}
 \end{lem}
 
-The topological implication of this is that each path component of the moduli space $\tilde{\mathcal{S}}$ is diffeomorphic to a product of $(0,1)$ and $\R$ where $k$ is in the interval and the real parameter is either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$. For brevity, we will refer to it as $\tilde{x}$. To understand the topology of $\mathcal{S}$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{S}}$. There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}$ over $\mathcal{A}$ and the transformations of the two fold covering of $\mathcal{A}$ over $\mathcal{C}$.
+The topological implication of this is that each path component of the space $\tilde{\mathcal{S}}$ is diffeomorphic to a product of $(0,1)$ and $\R$ where $k$ is in the interval and the real parameter is either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$. For brevity, we will refer to it as $\tilde{x}$. To understand the topology of $\mathcal{S}$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{S}}$. There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}$ over $\mathcal{A}$ and the transformations of the two fold covering of $\mathcal{A}$ over $\mathcal{C}$.
 
 The first sort are easy to understand; they are generated by the translation
 \[
