@@ -267,13 +267,43 @@ where \eqref{eqn:legendre_relation} uses Legendre's relation. Thus $Θ^2 = 2Eω 
 \[
 Θ^2 = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right]
 \]
-which shows a nice division, with the first two terms providing the desired periods and the last two terms giving the required pole behaviour. With this differential found, every integral differential is of the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$.
+which shows a nice division, with the first two terms providing the desired periods and the last two terms giving the required pole behaviour. Though the various choices up to this point may seem contrived, they pay-off as we can characterise the differential $Θ^2$ in the following way.
+
+\begin{lem}
+The differential $Θ^2$ is the unique differential on the spectral curve with the correct poles and symmetries, with periods $0,2π\iu$ and, with principal part over $ζ=0$
+\[
+\pp Θ^2 \in \iu \R \pp Θ^1.
+\]
+
+\begin{proof}
+We first verify that $Θ^2$ has such properties, then verify uniqueness. The only property not yet demonstrated is the third one, concerning the principal part. By considering poles and symmetries, and noting that $ζ=0$ is $z=z_0$, for some real scalar $r$
+\[
+\pp Θ^1
+= \iu \pp d\bra{\frac{η}{ζ}}
+= \iu r \pp d \bra{ \frac{w}{(z-z_0)(z + \bar{z}_0)} }
+= -\iu r \frac{w(z_0)}{z_0 + \bar{z}_0}\frac{dz}{(z-z_0)^2}.
+\]
+On the other hand
+\begin{align*}
+\pp Θ^2
+&= - 2K \pp d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= + 2K \frac{w(z_0)(z_0-\iu\,\Im z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2} \\
+&= 2K \frac{w(z_0)(\Re z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2}.
+\end{align*}
+To establish uniqueness, suppose that $Θ$ was another such differetial. Then $Θ-Θ^2$ would be exact and have the correct poles and symmetries. So for some real $s$
+\[
+Θ = Θ^2 + s Θ^1.
+\]
+As taking principal part is linear, this shows that $s=0$.
+\end{proof}
+\end{lem}
 
 
 EXPAND ON THIS: \todo{this}
+With this differential found, every integral differential is of the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$.
 These differentials do not vanish for any $(α,β) \in \mathcal{A}$, and so trivialise the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{A}$.
 
-\todo{} These differenitals are also invariant under the involution that swaps the branch points, so they also serve as a basis for the differentials over $\mathcal{C}$
+\todo{} These differenitals are also invariant under the involution that swaps the branch points, so they also serve as a basis for the differentials over $\mathcal{C}$. True by inspection for $Θ^1$, use above lemma for $Θ^2$
 
 
 
@@ -339,7 +369,7 @@ Thus the condition above, $p\in\Q^+$, is a necessary conditon for a spectral cur
 2η(1)^+ \iu b + g\int_{γ_+} Θ^2 &= 2π\iu Γ^+ \in 2π\iu \Z, \\
 -2η(-1)^+ \iu b + g\int_{γ_-} Θ^2 &= 2π\iu Γ^- \in 2π\iu \Z.
 \end{align*}
-Again, elimination of $b$ yields the condition for a common solution to exist. This equation can be written as
+Again elimination of $b$ yields the condition for a common solution to exist. This equation can be written as
 \[
 2π\iu T := p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 = 2π \iu \frac{p Γ^- - Γ^+}{g}.
 \labelthis{eqn:def_T}
@@ -820,7 +850,7 @@ T_0(p,k,u,v)
 &= -p\left\{ -4\left[ E F(\iu v;k) - K E(\iu v;k) \right] + \frac{4}{p}\left[ E F(\iu u;k) - K E(\iu u;k) \right] + 4\iu K \frac{ w(\iu v) + \frac{1}{p}w(\iu u)}{u-v} \right\}\\
 &= -p T_0\bra{ \tfrac{1}{p}, k, v, u },
 \end{align*}
-so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing. Again, the implicit function theorem gives the result.
+so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing. Again the implicit function theorem gives the result.
 \end{proof}
 \end{lem}
 
