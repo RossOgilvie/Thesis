@@ -107,10 +107,10 @@ Once we understand which curves admit spectral data, then we can understand the 
 && && && && \dOnto_{\R\times\Z} \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 && && && \mathcal{A}    & \rOnto^{\Z_2}        & \mathcal{C} \\
-&& && & \ruInto         && \ruInto     & \\
+&& && & \ruInto         &&      & \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-&& \mathcal{P}(\mathbf{Q}^+) = \coprod \mathcal{P}(p)  & \rOnto^{\Z}    & \mathcal{A}(\mathbf{Q}^+) = \coprod \mathcal{A}(p) & \rOnto^{\Z_2}        & \mathcal{C}(\mathbf{Q}^+) = \coprod \mathcal{C}(p)    && \\
-& \ruInto & && & \ruInto & && \\
+&& \mathcal{P}(\mathbf{Q}^+) = \coprod \mathcal{P}(p)  & \rOnto^{\Z}    & \mathcal{A}(\mathbf{Q}^+) = \coprod \mathcal{A}(p) && \ruInto && \\
+& \ruInto & && && && \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tilde{\mathcal{S}} =  \coprod \mathcal{P}(p,q)     && \rOnto && \mathcal{S}   && &&
 \end{diagram}
@@ -272,6 +272,7 @@ where \eqref{eqn:legendre_relation} uses Legendre's relation. Thus $Θ^2 = 2Eω 
 which shows a nice division, with the first two terms providing the desired periods and the last two terms giving the required pole behaviour. Though the various choices up to this point may seem contrived, they pay-off as we can characterise the differential $Θ^2$ in the following way.
 
 \begin{lem}
+    \label{lem:theta2_characterisation}
 The differential $Θ^2$ is the unique differential on the spectral curve with the correct poles and symmetries, with periods $0,2π\iu$ and, with principal part over $ζ=0$
 \[
 \pp Θ^2 \in \iu \R \pp Θ^1.
@@ -301,11 +302,16 @@ As taking principal part is linear, this shows that $s=0$.
 \end{lem}
 
 
-EXPAND ON THIS: \todo{this}
-With this differential found, every integral differential is of the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$.
-These differentials do not vanish for any $(α,β) \in \mathcal{A}$, and so trivialise the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{A}$.
+Having found this pair of differentials, any other integeral differential may be written in the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$. If we think of the differentials as forming a $\Z\times\R$-bundle over $\mathcal{A}$, then this pair trivialises that bundle.
 
-\todo{} These differenitals are also invariant under the involution that swaps the branch points, so they also serve as a basis for the differentials over $\mathcal{C}$. True by inspection for $Θ^1$, use above lemma for $Θ^2$
+Recall that $\mathcal{A}$ double covers $\mathcal{C}$. The points $(α,β)$ and $(β,α)$ in $\mathcal{A}$ correspond to the same curve $Σ$ in $\mathcal{C}$. If we have a section of differentials $Θ : (α,β) \mapsto Ω^1(Σ(α,β))$, this raises the question on how $Θ(α,β)$ and $Θ(β,α)$, which are on the same curve, differ. We observe directly that $Θ^1 = \iu d (η/ζ)$ is invariant under the interchange of $α$ and $β$. Now we may use the characterisation of $Θ^2$ given by lemma \ref{lem:theta2_characterisation} to conclude the same for it, because
+\[
+\pp Θ^2(β,α) \in \iu \R \pp Θ^1(β,α) = \iu \R \pp Θ^1(α,β)
+\]
+and so uniqueness forces $Θ^2(β,α) = Θ^2(α,β)$.
+
+The consequence of this is that $Θ^1,Θ^2$ push forward to a well-defined basis of the differentials over $\mathcal{C}$ as well, and just as for $\mathcal{A}$ they trivialise the bundle $\mathcal{B} \to \mathcal{C}$. Though we mainly concentrate on the subspace of $\mathcal{A}$ of spectral curves that admit spectral data, at the end of this chaper we will consider the space of spectral data within the total space of $\mathcal{B}^2$.
+
 
 
 
@@ -574,14 +580,14 @@ These expressions combine to give from \ref{eqn:gamma_plus} and \ref{eqn:gamma_m
 &= 4\iu K \frac{w(\iu u)\,(u-y)}{\abs{\iu u-z_0}^2}
 = 4\iu K \frac{w(\iu u)}{u-v}, \\
 \int_{γ_+} Θ^2
-= 4 E(k) F(f(1);k) &- 4 K(k) E(f(1);k) + 4\iu K \frac{w(\iu u)}{u-v}.
+= 4 E(k) F(\iu u;k) &- 4 K(k) E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v}.
 \labelthis{eqn:gamma_plus2}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}
 &= 4\iu K \frac{w(\iu v)\,(v-y)}{\abs{\iu v-z_0}^2}
 = - 4\iu K \frac{w(\iu v)}{u-v},\\
 \int_{γ_-} Θ^2
-= 4 E(k) F(f(-1);k) &- 4 K(k) E(f(-1);k) - 4\iu K \frac{w(\iu v)}{u-v}.\labelthis{eqn:gamma_minus2}
+= 4 E(k) F(\iu v;k) &- 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v}.\labelthis{eqn:gamma_minus2}
 \end{align*}
 And hence that
 \begin{align*}
@@ -686,7 +692,7 @@ If we wish to relate this to a specific local expression, it is simply a matter 
 \tilde{T}(p,k,\tilde{u},\tilde{v})
 &= 2\bra{ pW(\tilde{v}) - W(\tilde{u}) } + T_0(p,k,u,v) .
 \end{align*}
-Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}$ and make a note of the constants. In particular, $T \in \Q$ if and only $\tilde{T} \in \Q$, and so we can seek to find moduli space as a subset of the universal cover.
+Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}$ and make a note of the constants. In particular, $T \in \Q$ if and only if $\tilde{T} \in \Q$, and so we can seek to find moduli space as a subset of the universal cover.
 
 
 
@@ -943,3 +949,143 @@ $\mathcal{S}(1)$ is topologically
 In this special case, we see that the action does not identify path components with different values of $q$; in fact $p-1$ is zero, so $q$ is fixed under the deck transformations. Consequently, the shifting action identifies values of $\tilde{x}$ that differ by $2π$ in the same path component, resulting in annuli.
 \end{proof}
 \end{thm}
+
+These two theorems give an understanding of what the condition $T\in\Q$ means. If we think of the first condition, $p\in\Q$, it lead to a dense disjoint collection of subspaces $\mathcal{C}(p)$ on which the condition was met. We can then think of examining the effect of imposing the second condition on one of these spaces. For $p$ not equal to one, the subset of meeting this extra condition is a dense collection of strips. As can be seen in the pictures below, and proved in the next chapter, they should be thought of as intertwined helicoids. But for $p$ equal to one, instead we have a dense collection of annuli. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the transistion between right and left handed spirals, where it is `flat' and closes up.
+
+In particular, $\mathcal{S}(1)$ seems special because it is not simply path connected. However, on the level of spectral data this disappears and the moduli space is simply path connected. But first, we revist and improve on lemma \ref{lem:closing_conds}. In that lemma, we see that the closing conditions are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data. However, to examine the moduli of spectral data, we must find the `minimal' set from which all other on that curve are generated.
+
+\begin{lem}
+On any curve $Σ \in \mathcal{S}$, there is a pair of differentials such that every closing differential is an integer combination of that pair.
+
+\begin{proof}
+The method of proof is similar to that of lemma \ref{lem:closing_conds}, but the construction must be refined a little. Let $Ψ$ be as described there. Recall, we write $p = n/m$ in lowest terms and define
+\[
+a = \frac{2π\iu n}{2\iu η(1)^+}, \qquad Ψ = a Θ^1.
+\]
+Suppose that $Θ$ is an exact closing differential. We assert that it must be an integer multiple of $Ψ$. To see this, note that it is a real scalar of $Θ^1$ and compute its integrals
+\[
+\int_{γ_+} Θ = 2\iu η(1)^+ b = 2π\iu \tilde{n}, \qquad
+\int_{γ_-} Θ = -2\iu η(-1)^+ b = 2π\iu \tilde{m},
+\]
+for some $b\in\R$, $n',m' \in \Z$. By the definition of $p$
+\[
+p = - \frac{η(1)}{η(-1)} = \frac{\tilde{n}}{\tilde{m}},
+\]
+so we must have that $\tilde{n} = ln, \tilde{m}= lm$ for an integer $l$. It follows that $b= la$ and hence $Θ = l Ψ$.
+
+We now turn our attention to the nonexact differentials. Suppose that for fixed paths $γ_+,γ_-$ the value of $T$ on the curve is $n'/m'$ is lowest terms. Define $g$ to be $m'/\gcd(m,m')$. Now, similar to lemma \ref{lem:closing_conds}, let $x,y$ be integers with $nx-my = 1$ and $Γ^+ = n'my / \gcd(m,m')$, $Γ^- = n'mx / \gcd(m,m')$. Then
+\[
+\frac{nΓ^- - m Γ^+}{gm}
+= \frac{n n'mx - m n'my}{m'm}
+= \frac{n'(nx - my)}{m'}
+= \frac{n'}{m'},
+\]
+So we can solve for a differential $\tilde{Ψ}$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any closing differential on the curve, we may write it as $Θ = bΘ^1 + kΘ^2$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and its integrals are $2π\iu e, 2π\iu f$. Taking its integrals over $γ_+$ and $γ_-$ and eliminating $b$ leads to
+\begin{align*}
+\frac{n'}{m'} &= \frac{nf - me}{km} \\
+n'k\bra{\frac{m}{\gcd(m,m')}} &= (nf - me)\bra{\frac{m'}{\gcd(m,m')}} \\
+&= (nf-me)g.
+\end{align*}
+Now, by construction $g$ is coprime to $m$. Also, $m'$ is coprime to $n'$, so $g$ is also. Hence we see that $g$ must divide $k$. Consider the differential
+\[
+Θ - \frac{k}{g}\tilde{Ψ}.
+\]
+It is closing and exact, so a multiple of $Ψ$ by the first part of this proof. Rearranging we have finally written $Θ$ as an integer combination of $Ψ,\tilde{Ψ}$.
+\end{proof}
+\end{lem}
+
+So the closing differentials are a $\Z\times\Z$-subbundle $\mathcal{M}$ of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}$. $Ψ$ is a well defined function on all of $\mathcal{C}(p)$, but $\tilde{Ψ}$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space. For $p\neq 1$, $\mathcal{S}(p)$ is simply connected however, so it is possible to extend these differentials to a frame for $\mathcal{M}(p)$, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
+
+For $p=1$, take a path component of $\mathcal{S}$. It is an annulus. $p=1=n/m$ implies that $m=n=1$ and $T_0 = m'/n'$ is well defined and constant on the whole annulus. Consider a simple nontrivial loop $\ell : [0,1]$. If we make a choice of $γ_+,γ_-$ on $Σ(\ell(t))$ such that the curves vary smoothly in $t$, what will be the change in $\tilde{Ψ}$ when we return to $\ell(1) = \ell(0)$? Let $\tilde{Ψ} = b Θ^1 + m' Θ^2$ be the initial differential, and let $\tilde{Ψ}'  = b' Θ^1 + m' Θ^2$ be its continuation to $\ell(1)$. From our previous compuations, each of
+\[
+\int_{γ_+} Θ^2, \int_{γ_-} Θ^2
+\]
+will be incremented by $2π\iu$ (or decremented, depending on the orientation of $\ell$). The difference $\tilde{Ψ}' - \tilde{Ψ} = (b'-b)Θ^1$ can be explicitly written
+\begin{align*}
+b'
+&= \frac{1}{2\iu η(1)^+}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+} Θ^2 + 2π\iu} } \\
+&= b - \frac{2π\iu}{2\iu η(1)^+}m' \\
+&= b - am',
+\end{align*}
+so that $\tilde{Ψ}' - \tilde{Ψ} = -am'Θ^1 = - m' Ψ$. Recall that the period of $\tilde{Ψ}$ is $g = m' / \gcd(m,m') = m'$. This says that everytime you loop around the annulus, the nonexact differential shifts by $m' Ψ$. Thus the part of the bundle $\mathcal{M}$ over this annulus is simply connected. The basis $Ψ,\tilde{Ψ}$ is not unique, one may add an integer multiple of $Ψ$ to $\tilde{Ψ}$, but this shows that there is a path in the moduli space between bases that have their nonexact differentials differ by $m'\Z Ψ$. Thus the part of the bundle $\mathcal{M}$ over this annulus has $m'$ components.
+
+There are some symmetries and special cases that also bear mention. First, we have already remarked upon and made use of the symmetry
+\[
+T(p,k,u,v) = -p T\bra{ \tfrac{1}{p}, k, v, u },
+\]
+but what is its interpretation? Looking at
+\[
+p = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}}
+\mapsto \frac{\abs{1+α}\abs{1+β}}{\abs{1-α}\abs{1-β}},
+\]
+one would guess that it is induced by $(α,β) \mapsto (-α,-β)$. Indeed this can be seen to be the case, as $k$ is invariant under such a transformation, and the induced map between the spectral curves
+\begin{align*}
+χ: Σ(α,β) &\to Σ(-α,-β) \\
+(ζ, η) &\mapsto (-ζ,-η)
+\end{align*}
+interchanges $1$ and $-1$, effectively swapping the roles of $u$ and $v$. The pullback of the differentials under the involution $χ$ would preverse the integrality of their integrals and so spectral data on $Σ(α,β)$ be transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \T^2 \to \S^3$ arises as the gauge transformation between the connections at $1$ and $-1$, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
+
+This can be seen directly in the genus zero case. Remember the form of the harmonic map
+\[
+g(z) = \exp (4w_R \abs{X}\hat{X}) \cdot \exp (-4w_I \abs{Y}\hat{Y}), \quad
+\hat{X} = \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}, \quad
+\hat{Y} = \begin{pmatrix}
+0 & e^{\iu ω} \\
+-e^{-\iu ω} & 0
+\end{pmatrix},
+\]
+for some angle $ω$ between the derivatives in the $1$ and $\iu$ directions, which determines the image up to $SO(4)$ rotation. Under inversion
+\[
+g(z)^{-1} = \exp (4w_I \abs{Y}\hat{Y}) \cdot \exp (-4w_R \abs{X}\hat{X}).
+\]
+In the genus zero case, the map between the spectral curves is $(ζ,η) \mapsto (-ζ,\iu η)$, so that the differentials transform as
+\[
+χ^* d \bra{ ζ^{-1}η (bζ - \bar{b}) } = d \bra{ ζ^{-1}η (\iu b ζ + \iu\bar{b}) }.
+\]
+In particular, the domain is rotated by $\iu$, so that $w'_I = w_R$ and $w'_R = - w_I$. Rotating so that again the derivative in the real direction is fixed
+\[
+g(z)^{-1} = \exp (-4w_I \abs{Y}\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix})
+\cdot \exp (-4w_R \abs{X}\begin{pmatrix}
+0 & -e^{-\iu ω} \\
+e^{\iu ω} & 0
+\end{pmatrix}).
+\]
+Thus we can see that the parameter $ω$ has been changed to $π-ω$. But on the other hand, examining the spectral curve the parameter $ω$ is given by (for some real $x$)
+\[
+\iu x e^{\iu ω} = \frac{α+1}{α-1},
+\]
+which under $α\mapsto -α$,
+\[
+\iu x e^{\iu ω'} = \frac{-α+1}{-α-1} = \bra{ \frac{α+1}{α-1} }^{-1} = \bra{\iu x e^{\iu ω} }^{-1}.
+\]
+Solving for $ω'$ gives $π-ω$, in complete agreement to before.
+
+\todo{} THERE is a bunch of fiddling around here to make the two approaches both come to $π-ω$, because the inversion also changes the domain subtlely, and ends up reversing one of the basis vectors. If instead you only cared about the unsinged angle between the vectors (ie up to complementary angle), then you could skip the domain related stuff and just say $-ω$ and $π-ω$ represent the same angle, up to a sign. See how much Emma and John hate the handwaving in this example. Could go either way.
+
+Returning to genus one, a special case of this are the spectral curves that are a fixed point of this transformation. In that case, $χ$ is an extra involution of the spectral curve and hence $β = -α$. These are exactly the genus one spectral curves that meet the conditions for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin identifies a particular one parameter family of these maps as the Gauss maps of Delauney surfaces. We identify in which part of $\mathcal{S}$ they reside.
+
+Firstly, as these are fixed points of $p \mapsto p^{-1}$, $p$ is one. The symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The plane $β=-α$ is two dimensional, but we have three parameters $(k,u,v)$ in this relation, so there must be some relation between them. As the four branch points are linear, $μ=\hat{α}$ and $ν = -\hat{α}$. Directly
+\[
+z_0 = \frac{A+αB}{A-αB} = \frac{1+ \abs{α}}{1-\abs{α}},\quad
+k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
+\]
+It follows from eqn \ref{eqn:f_2} that
+\[
+\iu v = f(-1)
+= \bra{\frac{1+ \abs{α}}{1-\abs{α}}}^2 \bra{ \frac{1+ \abs{α}}{1-\abs{α}} \frac{1+\hat{α}}{1-\hat{α}}}^{-1}
+= \frac{1}{k} f(1)^{-1},
+\]
+or concisely that $v= - (ku)^{-1}$. This is exactly the formula for the change of $u,v$ under the label swapping involution, as it should be because $χ$ is in effect swapping $(α,-α)$ amoungst doing other things. Hence using the formula for the label swapping involution in addition to the $1/p$ symmetry
+\[
+T_0\bra{1,k,u,-(ku)^{-1}}
+= T_0\bra{1,k,-(ku)^{-1},u} + 1-p
+= T_0\bra{1,k,-(ku)^{-1},u}
+= -T_0\bra{1,k,u,-(ku)^{-1}},
+\]
+from which we deduce that $T_0$ is zero. Therefore we have shown that $\{(α,-α)\}$ is the single annulus of $\mathcal{S}(0)$ where $T_0$ is zero, and these correspond to harmonic maps to the sphere.
