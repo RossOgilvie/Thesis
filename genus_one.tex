@@ -160,8 +160,8 @@ Having fixed a mapping of the roots, namely $(α,\cji{α},β,\cji{β}) \mapsto (
 \begin{align}
 A &:= (α-β)\abs{1-\bar{α}β}, \label{eqn:A} \\
 B &:= (1-\bar{α}β)\abs{α-β}, \label{eqn:B} \\
-z = f(ζ) &= \frac{ζ(\bar{α}A + B) - (A + αB)}{ζ(\bar{α}A - B) - (A - αB)}, \\
-ζ = f^{-1}(z) &= \frac{-z(A-αB) + (A+αB)}{-z(\bar{α}A-B) + (\bar{α}A+B)}.
+z = f(ζ) &= \frac{ζ(\bar{α}A + B) - (A + αB)}{ζ(\bar{α}A - B) - (A - αB)}, \label{eqn:f} \\
+ζ = f^{-1}(z) &= \frac{-z(A-αB) + (A+αB)}{-z(\bar{α}A-B) + (\bar{α}A+B)}. \label{eqn:f_inv}
 % den &:= ζ(\bar{α}A-B) - (A - αB)\\
 % ned &:= -z(\bar{α}A-B) + (\bar{α}A+B)
 \end{align}
@@ -175,14 +175,16 @@ Because of the holomorphic involution $η\to-η$, this formula almost but not qu
 The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what its imagine under this transformation is.
 The real involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution in the $z$-plane is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore is the image of the unit circle.
 
-As already mentioned, the four roots of the spectral curve are concyclic (or lie on a line), which we shall call the branch point circle. The intersection of this circle with the unit circle correspond to the points $z=0$ and $z=\infty$, which are the intersections of the real and imaginary axes. $z=0$ lies between $α$ and $\cji{α}$ and similiarly $z=\infty$ lies between $β$ and $\cji{β}$. We denote these points $μ = f^{-1}(0)$ and $ν = f^{-1}(\infty)$. Likewise we write $z_0 = f(0)$ and $-\bar{z_0} = f(\infty)$ (using the reality structure). These allow us to write alternate formula for $f$ and $f^{-1}$
+As already mentioned, the four roots of the spectral curve are concyclic (or lie on a line), which we shall call the branch point circle. The intersection of this circle with the unit circle correspond to the points $z=0$ and $z=\infty$, which are the intersections of the real and imaginary axes. $z=0$ lies between $α$ and $\cji{α}$ and similiarly $z=\infty$ lies between $β$ and $\cji{β}$. We denote these points $μ = f^{-1}(0)$ and $ν = f^{-1}(\infty)$. Likewise we write $z_0 = f(0)$ and $-\bar{z_0} = f(\infty)$ (using the reality structure). These allow us to write alternate formulae for $f$ and $f^{-1}$
 \begin{align}
-z = f(ζ) &= \frac{\bar{α}A + B}{\bar{α}A - B}\frac{ζ - μ}{ζ - ν}, \\
-ζ = f^{-1}(z) &= \frac{A-αB}{\bar{α}A-B}\frac{z - z_0}{z + \bar{z_0}}.
+z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
+\label{eqn:f_2} \\
+ζ = f^{-1}(z) &= ν \frac{z - z_0}{z + \bar{z_0}}.
 \label{eqn:f_inv_2}
 \end{align}
 
-PICUTRE \todo{this}
+\makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$}{thesis_graphics_temp/zeta_plane.png}
+\makefigure{The $z$-plane, with points marked in black. The red labels are their images under $f^{-1}$}{thesis_graphics_temp/z_plane.png}
 
 Having set-up the transformation, we construct the desired differentials in two stages. First, we narrow the space to a 3 dimensional one, of differentials with the correct poles and symmetries. Then we compute the periods of the basis of the space. This allows us to find the differentials inside that space with the integral periods.
 
@@ -409,11 +411,12 @@ Note that although the condition $T\in\Q$ is well defined, $T$ is a multivalued 
 
 Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Consider the open dense subset $\mathcal{A}_0$ of $\mathcal{A}$ where $ν \neq \pm 1$. On any spectral curve of $\mathcal{A}_0$, let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded.
 
-PICTURE \todo{picture}
+\makefigure{$γ_+$ in red and $γ_-$ in black}{thesis_graphics_temp/gamma_pm_zeta.png}
+
 
 In $(z,w)$ coordinates these paths are easy to describe by design. Start from the point $f(1)$ on the imaginary axis and go to the origin. Go out along the real axis, around $z=1$ (which corresponds to $ζ=α$) and back again to the origin. Return along the imaginary axis to $f(1)$. By taking the path that avoids $ν$, which corresponds to $z=\infty$, we keep to the realm of path integrals in the plane.
 
-PICTURE \todo{picture}
+\makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black}{thesis_graphics_temp/gamma_pm_z.png}
 
 We can derive explicit formula for the value of the integrals on these particular paths.
 \begin{align*}
@@ -433,7 +436,7 @@ For the closing condition at $ζ=-1$
 &= 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{align*}
 
-If one wishes, one could substitute these formulae into \ref{eqn:def_T} to get $T_0$. Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be inifinite. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and,
+If one wishes, one could substitute these formulae into \ref{eqn:def_T} to get $T_0$, though we hold off doing that until later. Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be inifinite. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and,
 \[
 (f(1)-z_0)(f(1) + \bar{z}_0) = -(f(1)-z_0)(\overline{f(1) - z_0}) = - \abs{f(1) - z_0}^2.
 \]
@@ -461,15 +464,33 @@ Consider the product space $\R_{>0} \times (0,1) \times (\RInf) \times (\RInf)$.
 Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the four coordinate patches it is given by the equations $u-v = 1-u'v = uv'- 1 = v' - u' = 0$. Define $\mathcal{A}'$ to be the complement of $H$.
 \end{defn}
 
-Note that $\mathcal{A}'$ does not include the points where $u'=v'=0$, so it is covered by three of the coordinate patches; $(p,k,u,v)$, $(p,k,u',v)$ and $(p,k,u,v')$ are sufficent for example.
+Note that $\mathcal{A}'$ does not include the points where $u'=v'=0$, so it is covered by three of the coordinate patches; $(p,k,u,v)$, $(p,k,u',v)$ and $(p,k,u,v')$ are sufficent for example. We must show that $\mathcal{A}'$ does indeed parameterise the space of spectral curves.
 
-First we must show that $\mathcal{A}'$ does indeed parameterise the space of spectral curves. We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. The map $f$ is written in terms of $(α,β)$ \todo{ref} and the new parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map, and both $p$ and $k$ already have their own formulae in terms of $α$ and $β$ (\ref{eqn:def_p}, \ref{eqn:def_k} respectively).
+\begin{lem}
+The given formulae for $p,k$ (eqns \ref{eqn:def_p}, \ref{eqn:def_k} respectively) and $\iu u = f(1)$, $\iu v = f(-1)$ extend to a diffeomorphism between the spaces $\mathcal{A}$ and $\mathcal{A}'$.
 
-As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive the reverse change in parameters is to express the inverse transformation $f^{-1}(z)$ in term of our new parameters. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to to forward direction. Recall $z_0 = f(0)$, the image of $ζ=0$ in the $z$-plane. The real structure of the $z$-plane then forces $f(\infty) = - \conj{z_0}$. As a M\"obius transformation is described up to a scalar by the points sent to $0$ and $\infty$, $f^{-1}$ is a scalar multiple of
+\begin{proof}
+We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. As stated, both $p$ and $k$ already have their own formulae in terms of $α$ and $β$ (eqns \ref{eqn:def_p}, \ref{eqn:def_k} respectively), which are combinations of the absolute values of various terms. These formulae could only fail to be smooth if those terms were zero. The terms in question are
+\[
+1-\bar{α}β, α-β, 1-α, 1+α, 1-β, 1+β.
+\]
+The last four are nonzero because the branch points are inside the unit circle. $α-β$ is nonzero because $α=β$ is excluded from $\mathcal{A}$. That leaves $1-\bar{α}β = \bar{α}(\cji{α} - β)$ which is zero iff $\cji{α}=β$. This is impossible because $β$ is inside the unit circle whereas $\cji{α}$ is outside it.
+
+The map $f$ is written in terms of $(α,β)$, eqn \ref{eqn:f}, and its coefficents are smooth functions. The parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map. This motivates the extended nature of the definition above. The map $f$ is a M\"obius transformation, and so may take the value infinity. Indeed, we have seen that $f(ν) = \infty$, and so one of these parameters is infinite when $ν=\pm 1$ and hence the necessity of the coordinates $u'$ and $v'$ to cover this situation. $z_0 = f(0)$ is a smooth function of $α,β$ and is never zero or infinity, because $0 = f(μ), \infty = f(ν)$ and $μ,ν\in\S^1$. Using the form of eqn \ref{eqn:f_2}, on $ν\neq 1$
+\[
+\iu u = -\bar{z}_0 \frac{1-μ}{1-ν},
+\]
+and on $μ\neq 1$
+\[
+-\iu u' = -\frac{1}{\bar{z}_0} \frac{1-ν}{1-μ},
+\]
+demonstrating that these are smooth functions on their respective domains of definition. Likewise for $v,v'$ using $f(-1)$.
+
+As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive the reverse change in parameters is to express the inverse transformation $f^{-1}(z)$ in term of our new parameters. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to $\iu u, \iu v$ in the forward direction. As a M\"obius transformation is described up to a scalar by the points sent to $0$ and $\infty$, $f^{-1}$ is a scalar multiple of
 \[
 \frac{z-z_0}{z + \conj{z_0}},
 \]
-(compare to \ref{eqn:f_inv_2}). Note the following trick using cross ratios.
+(compare to \ref{eqn:f_inv_2}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Note the following trick using cross ratios.
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -482,7 +503,7 @@ The same trick gives a similar formula for $β$.
 \abs{\frac{β-1}{β+1}}
 = \abs{\frac{1-k\iu u}{1 - k\iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}
 \]
-The terms on the left are the two halves of the expression for $p$. Multiplying and expanding shows that for fixed values of the parameters $(p,k,u,v)$, $z_0$ lies on a particular circle. Let $z_0 = x+\iu y$.
+The terms on the left are the two factors of the expression for $p$. Multiplying and expanding shows that for fixed values of the parameters $(p,k,u,v)$, $z_0$ lies on a particular circle. Let $z_0 = x+\iu y$.
 \begin{align*}
 p
 &= \abs{\frac{α-1}{α+1}} \abs{\frac{β-1}{β+1}}
@@ -494,76 +515,53 @@ p
 x^2 + y^2 &+ 2y \frac{puw(\iu v) - vw(\iu u)}{w(\iu u)-pw(\iu v)} + \frac{v^2w(\iu u) - pu^2w(\iu v)}{w(\iu u)-pw(\iu v)} = 0.
 \end{align*}
 
-In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0$ and $\iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Then $z_0$ lies on the circle
+In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0$ and $\iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Therefore $z_0$ lies on the circle
 \[
 x^2 + \bra{ y - \frac{u+v}{2} }^2 = \frac{(u-v)^2}{4},
 \]
 which simplifies to the relation
 \[
-x^2 + y^2 = y(u+v) - uv.
+x^2 + y^2 = y(u+v) - uv. \labelthis{eqn:z_0_circle}
 \]
 These two circles intersect in two points: $z_0$ and $-\conj{z_0}$. The precise formulas are
 \[
 x = \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v},\; y = \frac{puw(\iu v) + vw(\iu u)}{pw(\iu v) + w(\iu u)}
 \]
-where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ inside the unit circle, as opposed to choicing their conjugate-inverse partners. Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$.
-\begin{align*}
-% f^{-1}(z) &= C \frac{z-z_0}{z + \conj{z_0}} \\
-% 1 = f^{-1}(\iu u) &= C \frac{\iu u - z_0}{\iu u + \conj{z_0}} \\
-f^{-1}(z) &=  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}
-\end{align*}
-As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of the new parameters.
+where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ inside the unit circle, as opposed to choicing their conjugate-inverse partners. Note that these are smooth functions of $(p,k,u,v)$. $w(\iu x)^2 = (1+x^2)(1+k^2x^2)$ is strictly positive, as is $p$. Thus the term under the square root and the denominators never vanish. $u-v$ is never zero as this occurs exactly on the hypersurface $H$, which was excluded from $\mathcal{A}'$.
 
-In the case that one of $f(1)$ or $f(-1)$ is infinite, one needs to transistion to the coordinates $u'$ or $v'$ to maintain valid formulae. Though standard, it is perhaps still of some interest to consider the above geometrical argument in this limit. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly. Considering next $p$, the special case of the cross ratio gives that
-\begin{align*}
-p
-&= \frac{\abs{z_0 -\iu v}^2}{\abs{1-\iu v}\abs{k^{-1}-\iu v}} \\
-&= \frac{x^2}{k^{-1}\sqrt{1+v^2}\sqrt{1+k^2 v^2}} \\
-x &= \sqrt{\frac{p w(\iu v)}{k}}.
-\end{align*}
-These are the same formulas for $x$ and $y$ that one arrives by substituting $u = (u')^{-1}$ in the previous formulas and taking a limit $u' \to 0$. Given this modification of $z_0$, the rest of the formula for $f^{-1}$ is as before. The geometry for $f(-1) = \infty$ is similar. We summarise this in the following lemma.
+Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$ and $f^{-1}(\iu v) = -1$.
+\[
+f^{-1}(z)
+=  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}
+=  -\frac{\iu v + \conj{z_0}}{\iu v - z_0} \frac{z-z_0}{z + \conj{z_0}}
+\]
+As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of the new parameters. A problem could potentially occur if $z_0$ were to equal $\iu u$ or $\iu v$, in which case the scaling factor would be $0/0$. This could only occur if $\Re{z_0}=0$, which itself only occurs if $u=v$. But we have already noted that this hyperplane is excluded from $\mathcal{A}'$. Likewise the formula would be in trouble if $z_0 = -1, -k^{-1}$ (for then $α$ or $β$ would be infinite), but again this occurs only if $\Re{z_0} < 0$, which is impossible.
 
-\begin{lem}
-The following maps between $\mathcal{A} = \{ (α,β) \in D\times D | α \neq β \}$ and $\mathcal{A}'$ (def \ref{def:parameter space}) are diffeomorphisms. Recall $A, B$ (ref \todo{ref}), functions of $(α,β)$, and
+In the case that one of $f(1)$ or $f(-1)$ is infinite, one needs to transistion to the coordinates $u'$ or $v'$ to maintain valid formulae. Using the notation $w'(\iu a)^2 = (1+a^2)(k^2 + a^2)$ we have
+\begin{align*}
+x
+&= \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v}
+= \frac{\sqrt{u^2 \times pw'(\iu u')w(\iu v)}}{pw(\iu v) + u^2 w'(\iu u')} \abs{u}\abs{1-u'v} \\
+&= \frac{\sqrt{pw'(\iu u')w(\iu v)}}{pu'^2w(\iu v) + w'(\iu u')} \abs{1-u'v}.
+\end{align*}
+Likewise
 \[
-f(ζ) = \frac{ζ(\bar{α}A + B) - (A + αB)}{ζ(\bar{α}A - B) - (A - αB)}.
+x
+= \frac{\sqrt{pw(\iu u)w(\iu v')}}{pw'(\iu v') + v'^2w'(\iu u')} \abs{uv'-1},
 \]
-Also recall from above $z_0$, a function of $(p,k,u,v)$ and
-\[
-f^{-1}(p,u,v,k)(z) =  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}.
-\]
-The maps
-\begin{align}
-φ :     & \mathcal{A} \to \mathcal{A}' \\
-        & (α,β) \mapsto
-\begin{cases}
-(p(α,β), k(α,β), u'=0, v = \Im f(-1)),         &\text{if $f(1) = \infty$} \\
-(p(α,β), k(α,β), u = \Im f(1), v' = 0),          &\text{if $f(-1) = \infty$} \\
-(p(α,β), k(α,β), u = \Im f(1), v = \Im f(-1)),  &\text{otherwise} \\
-\end{cases}
-\end{align}
 and
-\begin{align}
-φ'  &:\;\mathcal{A}' \to \mathcal{A} \\
-    (p,k,u,v) &\mapsto \left( f^{-1}(u,v)(1), f^{-1}(u,v)(k^{-1}) \right) \\
-    (p,k,u',v) &\mapsto \left( f^{-1}(u',v)(1), f^{-1}(u',v)(k^{-1}) \right) \\
-    (p,k,u,v') &\mapsto \left( f^{-1}(u,v')(1), f^{-1}(u,v')(k^{-1}) \right),
-\end{align}
-are well-defined mutually inverse diffeomorphisms.
-
-\begin{proof}
-These maps are inverses by construction above. We have not checked if the formulae are well-defined everywhere. For $φ'$, such a problem could potentially occur if $z_0$ were to equal $\iu u$, in which case the scaling factor would be $0/0$. This could only occur if $\Re{z_0}=0$, which itself only occurs if $u=v$. But this is exactly the plane which is excluded from $\mathcal{A}'$.
-
-In the forward direction, $p$ and $k$ are well behaved functions. The only complicating situation is when $f(1)$ or $f(-1)$ is infinite, but this is exactly when $u'$ or $v'$ is zero. The functions could only fail to be smooth if they contain an expression of the form $\abs{h}$ at a point where $h=0$. Looking through the defintions of the formulae, this occurs when one of the following is the zero:
 \[
-u-v,\;\;    pw(\iu u)w(\iu v),\;\;      α-β,\;\;    1- \conj{α}β.
+y
+= \frac{pu'w(\iu v) + vw'(\iu u')}{pu'^2w(\iu v) + w'(\iu u')}
+= \frac{puw'(\iu v') + v'w(\iu u)}{pw'(\iu v') + v'^2w(\iu u)}. \labelthis{eqn:y_prime_version}
 \]
-The first is excluded from $\mathcal{A}'$, the second is never zero, the third is also excluded from the domain, and the last is zero, if and only if $\cji{α} - β =0$ which is impossible if both $α,β$ are inside the unit circle.
+These all lead to smooth formulae for $z_0$ on their respective coordinate patches. Having made the change in formula for $z_0$, the same formula for $f^{-1}$ applies. Hence we have found a way from $\mathcal{A}'$ back to $(α,β) \in \mathcal{A}$. These two maps are inverses by construction, and we have verified that they are smooth. Therefore the spaces are diffeomorphic.
 \end{proof}
 \end{lem}
 
+Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in eqn \ref{eqn:y_prime_version}.
 
-Thus $\mathcal{A}$ and $\mathcal{A}'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Note when $ν=1$, $f(1) = \iu\infty$ and when $ν=-1$, $f(-1) = \iu\infty$, so the subset $\mathcal{A}_0$ is precisely covered by the coordinates $(p,k,u,v)$.  Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the elementary terms of the half-periods. By direct computation
+This shows that $\mathcal{A}$ and $\mathcal{A}'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Note when $ν=1$, $f(1) = \iu\infty$ and when $ν=-1$, $f(-1) = \iu\infty$, so the subset $\mathcal{A}_0$ is precisely covered by the coordinates $(p,k,u,v)$. Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the elementary terms of the half-periods. By direct computation
 \begin{align*}
 u-y &= \frac{w(\iu u)(u-v)}{pw(\iu v) + w(\iu u)} &
 \abs{\iu u - z_0}^2 &= \frac{w(\iu u)(u-v)^2}{pw(\iu v) + w(\iu u)} \\
@@ -902,7 +900,7 @@ Putting these together we conclude that the value of $T_0$ changes by $1-p$ unde
 2π\iu (T_0 \circ g - T_0) = \bra{ p\int_{γ'_-} Θ^2 - \int_{γ'_+} Θ^2 } - \bra{ p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 } = p(-2π\iu) - (-2π\iu) = 2π\iu (1-p).
 \]
 
-To infer what the effect of the transformation is on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently altered their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$ $\iu v$. In particular, as one tranverses the unit circle clockwise, one traverse the imaginary axis in the $z$-plane from bottom to top. Correspondingly, $-\infty < 0 < u < v$.
+To infer what the effect of the transformation is on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently altered their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$, $\iu v$. In particular, as one tranverses the unit circle clockwise, one traverses the imaginary axis in the $z$-plane from bottom to top. Correspondingly, $-\infty < 0 < u < v$.
 
 As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n,m$. $2\atan(ku)$ will be between $0$ and $π$, so after the transformation $\tilde{u}$ will be in the range $(2πn +π, 2π(n+1))$. In otherwords its winding number has incresed by $1$. The same can be said for $\tilde{v}$. Putting these two parts together
 \[
@@ -918,11 +916,11 @@ This relation is a difference of analytic functions on an open set, so by contin
 
 
 
-Thus, if we consider the surfaces $\mathcal{\tilde{S}}(p,q)$ parameterised by $(p,q,k,\tilde{x})$, where $\tilde{x}$ is mapped to either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$, we see that under the generating deck transformation
+If we consider the surfaces $\mathcal{\tilde{S}}(p,q)$ parameterised by $(p,q,k,\tilde{x})$, where $\tilde{x}$ is mapped to either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$, we see that under the generating deck transformation
 \[
 (p,q,k,\tilde{x}) \mapsto (p, q + (p-1), k, \tilde{x}')
 \]
-where $\tilde{x}' = 2πn+ π + 2\atan (k \tan (\tilde{x}/2))$. This provides an identification between $\mathcal{\tilde{S}}(p,q)$ and $\mathcal{\tilde{S}}(p,q + k(p-1))$ for any integral $k$.
+where $\tilde{x}' = 2πn+ π + 2\atan (k \tan (\tilde{x}/2))$. This provides an identification between $\mathcal{\tilde{S}}(p,q)$ and $\mathcal{\tilde{S}}(p,q + l(p-1))$ for any integral $l$.
 
 \begin{thm}
 For $p\neq 1$, $\mathcal{S}(p)$ is topologically
