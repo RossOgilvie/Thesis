@@ -1,26 +1,31 @@
 %!TEX root = thesis.tex
 \section{Glossary}
+Below is a list of notation and terms, with a short description and a reference to their definition. They are arranged alphabetically, first Latin then Greek.
 
 \begin{description}[align=right]
 
-\item[$f(ζ)$] The M\"obius transformation that takes one from the $ζ$ definition of an elliptic spectral curve to the Lengendre standard form.
+\item[$f(ζ)$] In genus one, the M\"obius transformation that takes one from the standard form of the spectral curve REF to the Jacobi form.
 
 \item[$P(ζ)$] The equation of the spectral curve is $η^2 = P(ζ)$. In standard form, where the roots are given by conjugate inverse pairs $α_j, \cji{α}_j$,
 \[
     P(ζ) = \prod (ζ - α_j)(1 - \bar{α}_jζ).
 \]
 
-\item[$w(z)$] This is the equation of an elliptic curve in Legendre form. $w(z) = \sqrt{(1-z^2)(1-k^2z^2)}$.
+\item[$w(z)$] This is the equation of an elliptic curve in Jacobi form. $w(z)^2 = (1-z^2)(1-k^2z^2)$.
 
-\item[$w'(z')$] Variant of the equation of an elliptic curve in Legendre form, to deal with values at infinity. $w'(z') = \sqrt{(1-(z')^2)(k^2 - (z')^2)}$.
+\item[$w'(z')$] Variant of $w(z)$ used to concisely write equations in $z'$. $w'(z')^2 = (1-(z')^2)(k^2 - (z')^2)$.
 
-\item[$η$] The fibre coordinate of a bundle over $\CP^1$. The spectral curve is defined by $η^2 = P(ζ)$. With a subscript, it indicates the genus of the spectral curve.
+\item[$z$] A coordinate on $\CP^1$, over which the Jacobi elliptic curve is written.
 
-\item[$η(ζ)^+$] The value of the fibre coordinate over $ζ$, taken as the positive square root of $P(ζ)$. For a point on the unit circle $ζ = e^{\iu θ}$ and a spectral curve in the standard form of genus $p$,
-\[
-    η(e^{\iu θ}) = e^{\iu θ \frac{p+1}{2}} \prod_j \abs{e^{\iu θ} - α_j}.
-\]
+\item[$z'$] A coordinate on $\CP^1$, with $z' = z^{-1}$.
 
 \item[$ζ$] A coordinate on $\CP^1$, over which the spectral curve is defined.
+
+\item[$η$] The spectral curve is defined by $η^2 = P(ζ)$.
+
+\item[$η(ζ)^+$] The value of the fibre coordinate over $ζ$, taken so that $η(1)$ is positive. For a point on the unit circle $ζ = e^{\iu θ}$ and a spectral curve in standard form, for odd genus $p$,
+\[
+    η(e^{\iu θ})^+ = e^{\iu θ \frac{p+1}{2}} \prod_j \abs{e^{\iu θ} - α_j}.
+\]
 
 \end{description}

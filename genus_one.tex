@@ -805,46 +805,71 @@ This establishes that $V$ has no roots either.
 % \frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
 % \end{align*}
 
-
-Recall that $\mathcal{S} \subset \mathcal{C}$ is the set of spectral curves that admit closing spectral data and that $\mathcal{\tilde{S}} \subset \mathcal{\mathcal{A}}$ is its preimage in the universal cover. Let $\mathcal{\tilde{S}}(p,q)$ denote the subset of $\mathcal{\tilde{A}}$ on which the values of $p(α,β) = p$ and $\tilde{T} = q$ are fixed. As we have shown that $\mathcal{S}$ is the space on which $p$ is a positive rational and $q$ is any rational (lemma \ref{lem:closing_conds}), it follows that
-\[
-\mathcal{\tilde{S}} = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{S}}(p,q).
-\]
-
 \begin{lem}
-If $p \leq 1$ then $\tilde{\mathcal{S}}(p,q)$ is a graph over $(k,\tilde{u})$, and if $p \geq 1$ then $\tilde{\mathcal{S}}(p,q)$ is a graph over $(k, \tilde{v})$.
+\label{lem:range_T}
+The range of $\tilde{T}$ on $\mathcal{A}(p)$ is $\R$.
 
 \begin{proof}
-We prove this by direct application of the implict function theorem. Suppose first that $p \geq 1$. Consider the function $\tilde{T}(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{A}}$. Consider the following formula for its derivative with respect to $\tilde{u}$.
+Fix $p$, but also fix any value for $k$. By REF, $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$, such that
+\[
+-C \leq 4p \left[ E F_0(v) - K E_0(v) \right]-4 \left[ E F_0(u) - K E_0(u) \right] \leq C.
+\]
+It follows from REF that
+\[
+- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C
+\leq
+2π T_0(p,k,u,v)
+\leq
+- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] + C,
+\]
+and so it is sufficent to show that the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
+\[
+\lim_{u \to v^+} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
+= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^+} \frac{1}{u-v} = +\infty.
+\]
+From the other side,
+\[
+\lim_{u \to v^-} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
+= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^-} \frac{1}{u-v} = -\infty.
+\]
+By continuity, $T_0$ and therefore $\tilde{T}$ obtains every value.
+\end{proof}
+\end{lem}
+
+
+
+\begin{lem}
+\label{lem:T_graph}
+If $p \leq 1$ then $\tilde{\mathcal{A}}(p)$ is diffeomorphic to $\{(q,k,\tilde{u}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is diffeomorphic to $\{(q_0,k,\tilde{u}) \}$.
+
+Likewise, if $p \geq 1$ then $\tilde{\mathcal{A}}(p)$ is diffeomorphic to $\{(q,k,\tilde{v}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is diffeomorphic to $\{(q_0,k,\tilde{v})$.
+
+\begin{proof}
+Fix a value of $p$ and consider the function $F(q, k,\tilde{u},\tilde{v}) = \tilde{T}(p,k,\tilde{u},\tilde{v}) - q$ on $\mathcal{\tilde{A}}(p)\times\R$. $F^{-1}(0)$ is a graph over $\mathcal{\tilde{A}}(p)$ given by $q=\tilde{T}$, so they are diffeomorphic. We will apply the implicit function theorem to show that $F^{-1}(0)$ can also be written as a graph over either $(q,k,\tilde{u})$ or $(q,k,\tilde{v})$, depening on the magnitude of $p$.
+
+Suppose first that the fixed value of $p$ is greater than or equal to one. We compute the following formula for the derivative of $F$ with respect to $\tilde{u}$.
 \begin{align*}
-\Partial{\tilde{T}}{\tilde{u}}
-= \frac{du}{d\tilde{u}}\Partial{T}{u}
+\Partial{F}{\tilde{u}}
+= \Partial{\tilde{T}}{\tilde{u}}
+&= \frac{du}{d\tilde{u}}\Partial{T}{u} \\
 &= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \Partial{T}{u} \\
 &= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \times \frac{2}{π} \times \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
 &= \frac{1}{π}\frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v },
 \end{align*}
-which holds for $\tilde{u} \not\in π + 2π\Z$.
-%  and
-% \[
-% \Partial{\tilde{T}}{\tilde{v}}
-% = \Partial{T}{v'}\frac{dv'}{d\tilde{v}}
-% = -\frac{1}{2}\csc^2\bfrac{\tilde{v}}{2} \Partial{T}{v'},
-% \]
-% for $\tilde{v} \not\in 2π\Z$.
-As witnessed in Lemma \ref{lem:deriv no zeroes}, $U$ is never zero, and neither are the other functions present. Hence $\partial \tilde{T} / \partial \tilde{u}$ is never zero on this open set. It remains to check it does not vanish where $\tilde{u} \in π + 2π\Z$. As $\tilde{T}$ is an analytic function, its derivatives are continuous and so we may compute their value at this point by taking a limit. The corresponding limit downstairs is $u\to\infty$. Observe
+which holds for $\tilde{u} \not\in π + 2π\Z$.As witnessed in Lemma \ref{lem:deriv no zeroes}, $U$ is never zero, and neither are the other three factors present. Hence $\partial \tilde{T} / \partial \tilde{u}$ is never zero on this open set. It remains to check it does not vanish when $\tilde{u} \in π + 2π\Z$. Observe
 \begin{align*}
 \lim_{u\to\infty} u^{-2} U(p,k,u,v)
 &= \lim_{u\to\infty} -(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) + K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \\
 &= V(p,k,v).
 \end{align*}
-Therefore
+As $\tilde{T}$ is an analytic function, in particular its derivatives are continuous and so we may compute their value at these points by taking a limit. Therefore
 \begin{align}
-\lim_{\tilde{u}\to π + 2π\Z} \Partial{\tilde{T}}{\tilde{u}}
+\lim_{\tilde{u}\to π + 2π\Z} \Partial{F}{\tilde{u}}
 &=\frac{1}{π} \lim_{u \to \infty} \frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
 &=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}U\bra{ p,k,u,v } \\
 &=\frac{1}{π} \frac{1}{k} V\bra{ p,k,v },
 \end{align}
-which is also nonzero. By the implicit function theorem therefore, there is a function $h$ such that the level set $\tilde{T}=q$ is a graph of the form $(p, k, \tilde{u}, h(p,k,\tilde{u}))$. Fixing a value of $p$ gives $\mathcal{\tilde{S}}(p,q)$ as a graph of the two remaining coordinates $(k,\tilde{u})$.
+which is also nonzero. By the implicit function theorem, there is a function $h$ such that $F^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range} \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed at $q_0$, then the level set $q_0 = \tilde{T}$ is paramterised by the remaining two coordinates $(k,\tilde{u})$.
 
 When $p \leq 1$, we employ the following symmetry.
 \begin{align*}
@@ -857,9 +882,15 @@ so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing
 \end{proof}
 \end{lem}
 
-The topological implication of this is that each path component of the space $\tilde{\mathcal{S}}$ is diffeomorphic to a product of $(0,1)$ and $\R$ where $k$ is in the interval and the real parameter is either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$. For brevity, we will refer to it as $\tilde{x}$. To understand the topology of $\mathcal{S}$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{S}}$. There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}$ over $\mathcal{A}$ and the transformations of the two fold covering of $\mathcal{A}$ over $\mathcal{C}$.
+Recall that $\mathcal{S} \subset \mathcal{C}$ is the set of spectral curves that admit closing spectral data and that $\mathcal{\tilde{S}} \subset \mathcal{\mathcal{A}}$ is its preimage in the universal cover. Let $\mathcal{\tilde{A}}(p,q)$ denote the subset of $\mathcal{\tilde{A}}$ on which the values of $p(α,β) = p$ and $\tilde{T} = q$ are fixed. As we have shown that $\mathcal{S}$ is the space on which $p$ is a positive rational and $q$ is any rational (lemma \ref{lem:closing_conds}), it follows that
+\[
+\mathcal{\tilde{S}} = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{A}}(p,q).
+\]
 
-The first sort are easy to understand; they are generated by the translation
+There are several topological implications of the previous lemma. First, each level set $\mathcal{\tilde{A}}(p,q)$ is connected. More precisely each of these is diffeomorphic to a product of $(0,1)$ and $\R$. The above disjoint union is the decomposition of $\mathcal{\tilde{S}}$ into its connected components. By varying the value of $q$, we see that the $\mathcal{\tilde{A}}(p,q)$ foliate $\mathcal{A}(p)$, so $\mathcal{\tilde{S}}$ is arranged densely in $\mathcal{\tilde{A}}(p)$ in the same way that $\Q$ is arranged densely in $\R$.
+\todo{phrase this better}
+
+To understand the topology of $\mathcal{S}$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{S}}$. There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}$ over $\mathcal{A}$ and the transformations of the two fold covering of $\mathcal{A}$ over $\mathcal{C}$. The first sort are easy to understand; they are generated by the translation
 \[
 (p, k,\tilde{u},\tilde{v}) \mapsto (p, k, \tilde{u} + 2π, \tilde{v} + 2π).
 \]
@@ -921,37 +952,42 @@ This relation is a difference of analytic functions on an open set, so by contin
 
 
 
-If we consider the surfaces $\mathcal{\tilde{S}}(p,q)$ parameterised by $(p,q,k,\tilde{x})$, where $\tilde{x}$ is mapped to either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$, we see that under the generating deck transformation
+If we consider the surfaces $\mathcal{\tilde{A}}(p,q)$ parameterised by $(p,q,k,\tilde{x})$, where $\tilde{x}$ is mapped to either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$, we see that under the generating deck transformation
 \[
 (p,q,k,\tilde{x}) \mapsto (p, q + (p-1), k, \tilde{x}')
 \]
-where $\tilde{x}' = 2πn+ π + 2\atan (k \tan (\tilde{x}/2))$. This provides an identification between $\mathcal{\tilde{S}}(p,q)$ and $\mathcal{\tilde{S}}(p,q + l(p-1))$ for any integral $l$.
+where $\tilde{x}' = 2πn+ π + 2\atan (k \tan (\tilde{x}/2))$. This provides an identification between $\mathcal{\tilde{A}}(p,q)$ and $\mathcal{\tilde{A}}(p,q + l(p-1))$ for any integral $l$.
 
 \begin{thm}
-For $p\neq 1$, $\mathcal{S}(p)$ is topologically
+For $p\neq 1$, $\mathcal{C}(p)$ is diffeomorphic to
 \[
-\bra{\Q/ (p-1)\Z} \times (0,1) \times \R.
+\{ (q,k,\tilde{x}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
 \]
+such that $\mathcal{S}(p) = \{ \mathcal{C}(p) \mid q \in \Q/ (p-1)\Z \}$.
 \begin{proof}
-Fix $p\neq 1$ and consider the part of $\mathcal{S}$ with such a fixed value of $p$. It is the quotient of $\mathcal{\tilde{S}}(p)$ by the covering transformations, which as one can note preserve the value of $p$. We have already shown how different path components $\mathcal{\tilde{S}}(p,q)$ can be indentified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficent to take one representative from each of $\Q/(p-1)\Z$ to cover the image. The diffeomorphism between each path component and $(0,1)\times\R$ has already been noted above.
+Fix $p\neq 1$ and consider $\mathcal{C}(p)$. It is the quotient of $\mathcal{\tilde{A}}(p)$ by the covering transformations, which preserve \ref{} the value of $p$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}(p)$ is foliated by $\mathcal{\tilde{A}}(p,q)$ and we have just shown how different $\mathcal{\tilde{A}}(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each of $\R/(p-1)\Z$ to cover the image.
+
+Lemma \ref{lem:T_graph} also demonstrates that $\mathcal{\tilde{S}}(p)$ is the union of $\mathcal{\tilde{A}}(p,q)$ with $q \in \Q$. $\mathcal{S}(p)$ is the image of $\mathcal{\tilde{S}}(p)$, so it is the subset of $\mathcal{C}(p)$ where $q$ is in the image of $\Q$, that is $\Q/(p-1)\Z$.
 \end{proof}
 \end{thm}
 
 This leaves just one special case.
 
 \begin{thm}
-$\mathcal{S}(1)$ is topologically
+$\mathcal{C}(1)$ is diffeomorphic to
 \[
-\Q \times (0,1) \times \bra{\R/2π\Z}.
+\{ (q,k,\tilde{u}) \in \R \times (0,1) \times \bra{\R/2π\Z} \},
 \]
+such that $\mathcal{S}(1) = \{ \mathcal{C}(1) \mid q \in \Q \}$.
+
 \begin{proof}
 In this special case, we see that the action does not identify path components with different values of $q$; in fact $p-1$ is zero, so $q$ is fixed under the deck transformations. Consequently, the shifting action identifies values of $\tilde{x}$ that differ by $2π$ in the same path component, resulting in annuli.
 \end{proof}
 \end{thm}
 
-These two theorems give an understanding of what the condition $T\in\Q$ means. If we think of the first condition, $p\in\Q$, it lead to a dense disjoint collection of subspaces $\mathcal{C}(p)$ on which the condition was met. We can then think of examining the effect of imposing the second condition on one of these spaces. For $p$ not equal to one, the subset of meeting this extra condition is a dense collection of strips. As can be seen in the pictures below, and proved in the next chapter, they should be thought of as intertwined helicoids. But for $p$ equal to one, instead we have a dense collection of annuli. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the transistion between right and left handed spirals, where it is `flat' and closes up.
+These two theorems give an understanding of what the condition $T\in\Q$ means. If we think of the first condition, $p\in\Q$, it lead to a dense disjoint collection of subspaces $\mathcal{C}(p)$ on which the condition was met. We can then think of examining the effect of imposing the second condition on one of these spaces. For $p$ not equal to one, the subset of meeting this extra condition is a dense collection of strips. As can be seen in the pictures below, and proved in the next chapter, they should be thought of as intertwined helicoids. But for $p$ equal to one, instead we have a dense collection of annuli. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the transition between right and left handed spirals, where it is `flat' and closes up.
 
-In particular, $\mathcal{S}(1)$ seems special because it is not simply path connected. However, on the level of spectral data this disappears and the moduli space is simply path connected. But first, we revist and improve on lemma \ref{lem:closing_conds}. In that lemma, we see that the closing conditions are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data. However, to examine the moduli of spectral data, we must find the `minimal' set from which all other on that curve are generated.
+In particular, $\mathcal{S}(1)$ seems special because it is not simply connected. However, on the level of spectral data this disappears and the moduli space is simply connected. But first, we revisit and improve on lemma \ref{lem:closing_conds}. In that lemma, we see that the closing conditions are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data. However, to examine the moduli of spectral data, we must find the `minimal' set from which all other on that curve are generated.
 
 \begin{lem}
 On any curve $Σ \in \mathcal{S}$, there is a pair of differentials such that every closing differential is an integer combination of that pair.
@@ -1022,7 +1058,7 @@ one would guess that it is induced by $(α,β) \mapsto (-α,-β)$. Indeed this c
 χ: Σ(α,β) &\to Σ(-α,-β) \\
 (ζ, η) &\mapsto (-ζ,-η)
 \end{align*}
-interchanges $1$ and $-1$, effectively swapping the roles of $u$ and $v$. The pullback of the differentials under the involution $χ$ would preverse the integrality of their integrals and so spectral data on $Σ(α,β)$ be transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \T^2 \to \S^3$ arises as the gauge transformation between the connections at $1$ and $-1$, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
+interchanges $1$ and $-1$, effectively swapping the roles of $u$ and $v$. The pullback of the differentials under the involution $χ$ would preserve the integrality of their integrals and so spectral data on $Σ(α,β)$ be transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \T^2 \to \S^3$ arises as the gauge transformation between the connections at $1$ and $-1$, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
 
 This can be seen directly in the genus zero case. Remember the form of the harmonic map
 \[
@@ -1065,7 +1101,7 @@ which under $α\mapsto -α$,
 \]
 Solving for $ω'$ gives $π-ω$, in complete agreement to before.
 
-\todo{} THERE is a bunch of fiddling around here to make the two approaches both come to $π-ω$, because the inversion also changes the domain subtlely, and ends up reversing one of the basis vectors. If instead you only cared about the unsinged angle between the vectors (ie up to complementary angle), then you could skip the domain related stuff and just say $-ω$ and $π-ω$ represent the same angle, up to a sign. See how much Emma and John hate the handwaving in this example. Could go either way.
+\todo{} THERE is a bunch of fiddling around here to make the two approaches both come to $π-ω$, because the inversion also changes the domain subtlety, and ends up reversing one of the basis vectors. If instead you only cared about the unsigned angle between the vectors (ie up to complementary angle), then you could skip the domain related stuff and just say $-ω$ and $π-ω$ represent the same angle, up to a sign. See how much Emma and John hate the handwaving in this example. Could go either way.
 
 Returning to genus one, a special case of this are the spectral curves that are a fixed point of this transformation. In that case, $χ$ is an extra involution of the spectral curve and hence $β = -α$. These are exactly the genus one spectral curves that meet the conditions for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin identifies a particular one parameter family of these maps as the Gauss maps of Delauney surfaces. We identify in which part of $\mathcal{S}$ they reside.
 
@@ -1080,7 +1116,7 @@ It follows from eqn \ref{eqn:f_2} that
 = \bra{\frac{1+ \abs{α}}{1-\abs{α}}}^2 \bra{ \frac{1+ \abs{α}}{1-\abs{α}} \frac{1+\hat{α}}{1-\hat{α}}}^{-1}
 = \frac{1}{k} f(1)^{-1},
 \]
-or concisely that $v= - (ku)^{-1}$. This is exactly the formula for the change of $u,v$ under the label swapping involution, as it should be because $χ$ is in effect swapping $(α,-α)$ amoungst doing other things. Hence using the formula for the label swapping involution in addition to the $1/p$ symmetry
+or concisely that $v= - (ku)^{-1}$. This is exactly the formula for the change of $u,v$ under the label swapping involution, as it should be because $χ$ is in effect swapping $(α,-α)$ amongst doing other things. Hence using the formula for the label swapping involution in addition to the $1/p$ symmetry
 \[
 T_0\bra{1,k,u,-(ku)^{-1}}
 = T_0\bra{1,k,-(ku)^{-1},u} + 1-p
