@@ -3,8 +3,7 @@
 \section{Genus One Moduli Space}
 % \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
 
-\subsection{Intro}
-\label{sub:Intro}
+\subsubsection{Rambling}
 
 An outline:
 \begin{enumerate}
@@ -46,170 +45,206 @@ Known examples, special cases
 Go to the Winchester, have a pint, and wait for this to blow over.
 \end{enumerate}
 
-The different moduli spaces we could be interested in
-
-There are several interrelated moduli spaces of spectral data that we could be interested in. Spectral data is a triple $(Σ,Θ,\tilde{Θ})$ of a spectral curve $Σ$ and a pair of differentials on it. We know that every spectral curve has many differentials with with correct poles and symmetries. Spectral curves are parameterised by their branch points, and by symmetries we need only track branch points inside the unit circle. By counting degrees, we know there is a plane of such differentials with purely imaginary periods, but in general not every spectral curve will satisfy the further condition that there is a rank two lattice of differentials within this plane that have integral periods. Let the space of spectral curves that have \emph{integral} differentials be denoted $\mathcal{C}$. Within this space we could impose the further condition, the closing condition, on the differentials that requires their integrals over the marked points to also be integral. We shall call such differentials \emph{closing}, and the space of spectral curves with closing differentials $\mathcal{S}$.
-
-One can note that the plane of differentials with imaginary periods is naturally thought of as a rank two vector bundle over the space of spectral curves. Thus the moduli of closing spectral data $\mathcal{M}$ can be thought of a bundle over $\mathcal{S}$. Our ultimate aim will be to describe this bundle.
-
-If we are considering only spectral curves of a fixed genus, we will use a subscript on the moduli space to denote this. In this chapter we are considering only genus one, so we will omit subscripts.
-
-In the genus one case, every spectral curve admits integral differentials but not every one admits closing differentials. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}$ within $\mathcal{C}$. We will investigate the topology of this space and show it to be naturally divided into path connected components that are dense in $\mathcal{C}$. Most components will be simply connected, except for an exceptional family of annuli. In the course of our investigation we will develop an explicit parameterisation of this space. The moduli space $\mathcal{M}$ will be show to be a trivial bundle.
-
-In the calculations that follow, we will actually work with a cover of the space of spectral curves. A spectral curve is determined by its branch points, but we will consider instead ordered pairs of branch points. Let $\mathcal{A}$ be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc. If we consider the action of $\Z_2$ that interchanges the two points, then we note that it is a free and transitive action. The quotient space is smooth, indeed it can be identified with the space of spectral curves $\mathcal{C}$. We consider $\mathcal{A}$ as a two-to-one cover of $\mathcal{C}$. We will work primarily with the former, which we may consider as the space of spectral curves with a distinguished branch point $α$.
-
 Vocab summary
 \begin{enumerate}
-\item
-differentials = differentials with the correct poles and symmetries and imaginary periods
-\item
-integral differentials = differentials with the correct periods
-\item
-closing differentials = integral differentials meeting the closing conditions
-\item
-$\mathcal{C}$ = the space of spectral curves = $(D^2\setminus Δ) / \Z_2$
-\item
-$\mathcal{A}$ = the space of spectral curves with a distinguished branch point = $D^2\setminus Δ$
-\item
-principal path = a path that follows the recipe laid out for traversing from the two points over $1$ or $-1$. Do not exist on every spectral curve (convention, expand the convention?)
-\item
-distinguished path = like a principal path, but with possibly extra winding
-\item
-$\mathcal{P}$ = the universal cover of $\mathcal{A}$
-\item
-$\mathcal{S}$ = the space of spectral curves that have spectral data, $\subset \mathcal{C}$
-\item
-$\tilde{\mathcal{S}}$ = the subspace of $\mathcal{P}$ that meets the conditions $p\in\Q^+, T\in\Q$
-\item
-Any of these followed by $(p)$, eg $\mathcal{A}(p)$ = the subspace where $p(α,β)$ is a fixed value $p$
-\item
-Any of these followed by $(\Q^+)$, eg $\mathcal{A}(\Q^+)$ = the disjoint union of the subspaces where $p$ is a positive rational
-\item
-Any of these followed by $(p,q)$, eg $\mathcal{A}(p,q)$ = the subspace where $p(α,β)$ is a fixed value $p$, and the principal branch $T_0$ of $T$ is $q$ modulo blah. May be better to describe it as the image of $\mathcal{P}(p,q)$ where $\tilde{T}_0 = q$
+    \item
+    differentials = differentials with the correct poles and symmetries and imaginary periods
+    \item
+    closing differentials = differentials with integral periods meeting the closing conditions, alt name differentials satisfying the closing conditions
+    \item
+    $\mathcal{C}$ = the space of spectral curves = $(D^2\setminus Δ) / \Z_2$
+    \item
+    $\mathcal{A}$ = the space of spectral curves with a distinguished branch point = $D^2\setminus Δ$
+    \item
+    principal path over = a path that follows the recipe laid out for traversing from the two points over $1$ or $-1$. Do not exist on every spectral curve (convention, expand the convention?)
+    \item
+    $\mathcal{\tilde{A}}$ = the universal cover of $\mathcal{A}$
+    \item
+    $\mathcal{S}$ = the space of spectral curves that have spectral data, $\subset \mathcal{C}$
+    \item
+    $\mathcal{\tilde{S}}$ = the subspace of $\mathcal{\tilde{A}}$ that meets the conditions $p\in\Q^+, \tilde{T}\in\Q$
+    \item
+    Any of these followed by $(p)$, eg $\mathcal{A}(p)$ = the subspace where $p(α,β)$ is a fixed value $p$
+    \item
+    $\mathcal{\tilde{A}}(p,q)$ = the subspace where $p(α,β)$ is a fixed value $p$, and $\tilde{T}$ is $q$
 
-\item
-$\mathcal{B}$ = integral differentials
-\item
-$\mathcal{B}(n)$ = integral differentials with period $2π\iu n$
-\item
-$\mathcal{B}^2$ = pairs of integral differentials
-\item
-$\mathcal{B}^2(n,\tilde{n})$ = pairs of integral differentials with periods $2π\iu n$, $2π\iu \tilde{n}$ respectively
-\item
-$\mathcal{M},\mathcal{M}(n,\tilde{n})$ = space of spectral data, resp. with specified periods
+    \item
+    $\mathcal{B}$ = differentials with integral periods
+    \item
+    $\mathcal{B}(n)$ = differentials with period $2π\iu n$
+    \item
+    $\mathcal{B}^2$ = pairs of differentials with integral periods
+    \item
+    $\mathcal{B}^2(n,\tilde{n})$ = pairs of differentials with periods $2π\iu n$, $2π\iu \tilde{n}$ respectively
+    \item
+    $\mathcal{M},\mathcal{M}(n,\tilde{n})$ = space of spectral data, resp. with specified periods
 \end{enumerate}
 
 Once we understand which curves admit spectral data, then we can understand the structure of the differentials on those curves.
 
+The different moduli spaces we could be interested in
+
+There are several interrelated moduli spaces of spectral data that we could be interested in. Spectral data is a triple $(Σ,Θ,\tilde{Θ})$ of a spectral curve $Σ$ and a pair of differentials on it. We know that every spectral curve has many differentials with with correct poles and symmetries. Spectral curves are parameterised by their branch points, and by symmetries we need only track branch points inside the unit circle. By counting degrees, we know there is a plane of such differentials with purely imaginary periods, but in general not every spectral curve will satisfy the further condition that there is a rank two lattice of differentials within this plane that have integral periods. Let the space of spectral curves that have differentials with integral periods be denoted $\mathcal{C}$. Within this space we could impose the further condition, the closing condition, on the differentials that requires their integrals over the marked points to also be integral. We shall call such differentials \emph{closing}, and the space of spectral curves with closing differentials $\mathcal{S}$.
+
+One can note that the plane of differentials with imaginary periods is naturally thought of as a rank two vector bundle over the space of spectral curves. Thus the moduli of closing spectral data $\mathcal{M}$ can be thought of a bundle over $\mathcal{S}$. Our ultimate aim will be to describe this bundle.
+
+
+
+
+
+
+
+
+
+
+\subsection{Overview}
+\label{sub:Overview}
+
+Recall that the space of genus one spectral curves is denoted $\mathcal{C}_1$, and within this those curves which admit periodic spectral data form a space denoted $\mathcal{S}_1$. In the genus one case, every spectral curve admits differentials with integral periods but not every one admits periodic differentials, that is, differentials that meeting the closing conditions. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}_1$ within $\mathcal{C}_1$. We will investigate the topology of this space and show it to be naturally divided into connected components that are dense in $\mathcal{C}_1$. Most components will be simply connected, except for an exceptional family of annuli. In the course of our investigation we will develop an explicit parameterisation of this space. The moduli space $\mathcal{M}_1$ of periodic spectral data will be shown to be a trivial bundle over $\mathcal{S}$.
+
+As this chapter is concerned with spectral curves of genus one only, we will drop the subscripts on $\mathcal{C}_1,\mathcal{S}_1$ and $\mathcal{M}_1$ in this chapter. To provide a paramterisation of $\mathcal{C}$, we will actually work with a double cover of this space. A spectral curve is determined by its branch points, but we will consider instead ordered pairs of branch points. Let $\mathcal{A}$ be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc. If we consider the action of $\Z_2$ that interchanges the two points, then we note that it is a free and transitive action. The quotient space is smooth, indeed it can be identified with the space of spectral curves $\mathcal{C}$. We consider $\mathcal{A}$ as a two-to-one cover of $\mathcal{C}$.
+
+The main theorems are \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, which give the topology of the connected components of $\mathcal{S}$ and a parameterisation that shows how they fit densely into a folition of $\mathcal{C}$. To achieve this result, several pieces need to be collected. First, one must find on every curve the differentials with integral periods (\textsection\ref{sub:Differentials}). Having found these differentials, one can formulate two conditions that test whether a given spectral curve admits periodic spectral data (\textsection\ref{sub:closing conditions}). Each condition yields a real-valued function on $\mathcal{A}$ that is valued in $\Q$ exactly when the corresponding curve meets the condition. One condition is algebraic and simple to describe. The function is strictly positive. One can immediately give a parameterisation that shows the level sets of the function foliate $\mathcal{A}$ into solid tori. The second condition, that some function $T$ (eqn \ref{eqn:def_T}) takes values in $\Q$, is however multivalued and transcendental; it is dependent on paths of integration on the curve, and the integrals are elliptic integrals.
+
+To analyse the closing conditions, especially the second condition, we introduce a new set of coordinates on $\mathcal{A}$ that are adapted to calculation (\textsection\ref{sub:Reformulate}). In these new coordinates, one can see how to move to $\mathcal{\tilde{A}}$, the universal cover of $\mathcal{A}$, so that $T$ becomes a single valued function $\tilde{T}$. One then computes the derivatives of $\tilde{T}$ and uses the implicit function theorem to show that its level sets, denoted $\mathcal{\tilde{A}}(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}$, the preimage of $\mathcal{S}$ in $\mathcal{\tilde{A}}$. Finally, one brings this understanding back down to $\mathcal{C}$. $\mathcal{\tilde{A}}$ is also the universal cover of $\mathcal{C}$, so by observing the effect of the deck transformations on $\mathcal{\tilde{S}}$, one recovers $\mathcal{S}$ as a quotient of $\mathcal{\tilde{S}}$ (\textsection\ref{sub:Topology}).
+
+To close this chapter, in \textsection\ref{sub:Corollaries}, we show that $\mathcal{M}$ is a trivial bundle over $\mathcal{S}$. We also consider examples of harmonic maps and show in which component on the moduli space they reside. Building on this, we identify a symmetry of $\mathcal{C}$ and provide a geometrical interpretation. We illustrate this interpretation in the case of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
+
+We have introduced numerous spaces, so it is convient to summarise them and their relationship to one another. Consider the diagram below. One starts out with the space of spectral curves $\mathcal{C}$ in the top right corner, which is covered by the parameter space $\mathcal{A}$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}$. Within each of these spaces, we may consider the subspaces on which the first closing condition has the value $p\in\Q^+$. On the bottom line we have the statement that the cover of moduli of spectral curves $\mathcal{\tilde{S}}$ is the union of $\mathcal{\tilde{A}}(p,q)$, the level sets of $\tilde{T}$, on which $\tilde{T}$ is rational. The $\Z$ and $\Z_2$ over a surjective map (a double-headed arrow) indicate the group of deck transformations.
 \[
 \begin{diagram}
-&& && && && \mathcal{B} \\
-&& && && && \dOnto_{\R\times\Z} \\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-&& && && \mathcal{A}    & \rOnto^{\Z_2}        & \mathcal{C} \\
-&& && & \ruInto         &&      & \\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-&& \mathcal{P}(\mathbf{Q}^+) = \coprod \mathcal{P}(p)  & \rOnto^{\Z}    & \mathcal{A}(\mathbf{Q}^+) = \coprod \mathcal{A}(p) && \ruInto && \\
-& \ruInto & && && && \\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tilde{\mathcal{S}} =  \coprod \mathcal{P}(p,q)     && \rOnto && \mathcal{S}   && &&
+    \mathcal{\tilde{A}} &\rOnto^{\Z}&  \mathcal{A}  &\rOnto^{\Z_2}&  \mathcal{C} \\
+    \uInto  &&  \uInto  &&  \uInto  \\
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \mathcal{\tilde{A}}(p)  &\rOnto^{\Z}&  \mathcal{A}(p)  &\rOnto^{\Z_2}&  \mathcal{C}(p) \\
+    \uInto  &&  &&  \uInto  \\
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \mathcal{\tilde{S}}(p) =  \coprod_{q\in\Q} \mathcal{\tilde{A}}(p,q)  &&  \rOnto  && \mathcal{S}(p)
 \end{diagram}
 \]
 
 
 
+
+
+
+
+
+
+
+
+
 \subsection{Differentials of the Elliptic Spectral Curve}
-It will be necessary to have explicit formulae for the integral differentials of the spectral curve. To compute the periods of differentials, we must first reduce them into a standard form. Every differential of the second kind, that is, those that have double poles with no residues, may be written as the sum of standard elliptic integrals of the first and second kind, and exact differentials. Towards this end, we will transform from the form of the spectral curve prefered by Hitchin to the Jacobi form of an elliptic curve, on which the standard elliptic integrals are defined. Consider the genus one spectral curve
+\label{sub:Differentials}
+As outlined in the previous section, it will be necessary to have explicit formulae for the differentials with integral periods of the spectral curve. We construct the differentials in four stages. First, we find the differentials with double poles and no residues over $ζ=0,\infty$ and that also are real with respect to $ρ$. It is a real three dimensional vector space. Then we construct a map from the spectral curve to an elliptic curve in Jacobi form. Next, we take a basis of the $3$-space and use the map to compute the periods of these basis differentials in terms of the Jacobi elliptic integrals. Finally, we must solve a system of linear equations among the basis elements to find the differentials with integral periods, and we leverage standard relations among the elliptic integrals to do so.
+
+Following the notation of Chapter REF\todo{ref}, we write the differentials in the form
 \[
-η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
+b(ζ)\frac{dζ}{ζ^2η},
 \]
-with roots $α, \cji{α}, β$ and $\cji{β}$, and the Jacobi normal form
+for some polynomial $b(ζ)$. We make the assumption that the spectral curve is not branched at $ζ=0,\infty$, that is we are considering only nonconformal maps. We summarise from REF \todo{ref} the conditions that $b(ζ)$ must satisfy. For a differential to have double poles at $ζ=0,\infty$ requires that $b(ζ)$ must be degree four. If further these poles have no residue, then constant coefficent of $b(ζ)$ determines the coefficent of $ζ$ and likewise coefficent of $ζ^4$ determines the coefficent of $ζ^3$. The reality condition $ρ^* Θ = -\bar{Θ}$ forces the middle term to be real, while also forcing the leading order coefficent to be conjugate to the constant coefficent. Counting then the degrees of freedom in the choice of $b(ζ)$, we may choose any complex number as the constant coefficent and any real scalar in the middle term. This is our real three dimensional vector space of differentials.
+
+In the theory of elliptic curves, differentials with double poles and no residues are referred to as differentials of the second kind. Every ellpitic curve may be transformed into the Jacobi normal form
 \[
 w^2 = (1-z^2)(1-k^2z^2)
 \]
-where $k$ is the elliptic modulus. There is a M\"obius transformation between the two, as we shall demonstrate. For a given spectral curve, how is one to compute the modulus and therefore determine the appropriate Jacobi form to transform into? Consider the cross ratio of the roots
+where $k$ is called the elliptic modulus. The standard differential of the second kind is defined to be
+\[
+e := (1-k^2 z^2) \frac{dz}{w}.
+\labelthis{eqn:def_e}
+\]
+Every differential of the second kind may be written as the linear conbination of $e$, the holomorphic differential $ω$,
+\[
+ω := \frac{dz}{w},
+\]
+and an exact differential. GIVE CITATION.\todo{this} Before we can write the differentials as a combination of standard differentials, we first construct a M\"obius transformation from the genus one spectral curve written as
+\[
+η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
+\]
+with roots $α, \cji{α}, β$ and $\cji{β}$, to the Jacobi normal form above. For a given curve, how is one to compute the modulus and therefore determine the appropriate Jacobi form to transform into? Consider the cross ratio of the roots
 \[
 [α,\cji{α};β,\cji{β}] = \frac{\abs{α-β}^2}{\abs{1-\bar{α}β}^2} \labelthis{eqn:roots_cross_ratio}
 \]
-This is a real quantity, and so the four roots lie on a circle (or a line). Thus the roots of the Jacobi form do also, which forces $k$ to be real. Any transformation between the curves must take branch points to branch points, so we must decide on a correspondence for the roots. There are twenty-four possible orderings that can be divided into six groups of four, based on the value of the cross ratio. By convention, $k \in (0,1)$, which eliminates four of the groups. Of the two groups that remain we choose a representative: either $(α,\cji{α},β,\cji{β}) \mapsto (1,-1,k^{-1},-k^{-1})$ or $(1,k^{-1},-1,-k^{-1})$. A M\"obius transformation preserves the cross ratio, so we observe that
-\begin{align}
-[1,-1;k^{-1},-k^{-1}] &= \bra{\frac{k-1}{k+1}}^2, \label{eqn:good_ordering}\\
-[1,k^{-1};-1,-k^{-1}] &= \frac{4k}{(k+1)^2}. \label{eqn:bad_ordering}
-\end{align}
-To choose between the two, consider the degenerations of the curve where two pairs of roots come together, that is $α=β$ (and $\cji{α} = \cji{β}$). In the Jacobi form, this manifests as the extreme $k=1$. \ref{eqn:roots_cross_ratio} takes the value zero, as does \ref{eqn:good_ordering}, but \ref{eqn:bad_ordering} takes the value one. Thus the latter is eliminated from contention. Only one group remains, and the modulus is given by
-\[
-k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
-\labelthis{eqn:def_k}
-\]
-
-Within this group of orderings, four possibilities still remain
+This is a real quantity, and so the four roots lie on a circle (or a line). Thus the roots of the Jacobi form do also, which forces $k$ to be real. Any transformation between the curves must take branch points to branch points, so we must decide on a correspondence for the roots. There are twenty-four possible choices, but we choose the correspondence
 \[
   \begin{array}{ l|l|l|l}
-    1 & -1 & k^{-1} & -k^{-1} \\
-    \hline\hline
     α & \cji{α} & β & \cji{β} \\
-    \cji{α} & α & \cji{β} & β \\
-    β & \cji{β} & α & \cji{α} \\
-    \cji{β} & β & \cji{α} & α \\
+    \hline\hline
+    1 & -1 & k^{-1} & -k^{-1}
   \end{array}
 \]
-The first two rows and the last two rows exchanged by swapping the labelling of $α$ and $β$. We shall choose to send $α$ to a fixed root of the Jacobi form. Secondly, the first two rows send the points inside the unit circle to either the left or right half $z$-plane. We shall choose to send them to the right half plane.
+This correspondence has several nice properties taht distinguish it from the others. By convention, $k \in (0,1)$, which rules out sixteen of the choices. Consider the behaviour of the curve as $k\to 1$. The Jacobi form of the curve develops two nodes at $z=\pm 1$. This corresponds to $α=β$ (and $\cji{α} = \cji{β}$). But
+\[
+[1,k^{-1};-1,-k^{-1}] = \frac{4k}{(k+1)^2}
+\]
+disagrees with eqn \ref{eqn:roots_cross_ratio}, which rules out this correspondence and the three others with the same cross ratio. Finally, our choice of correspondences takes the unit disk to the right half plane. There is only one other correspondence that has all three of these properties, namely
+\[
+  \begin{array}{ l|l|l|l}
+      β & \cji{β} & α & \cji{α} \\
+    \hline\hline
+    1 & -1 & k^{-1} & -k^{-1}
+  \end{array}
+\]
+The difference between the two is a choice of which root, $α$ or $β$, is mapped to $1$. This is the reason that we work with $\mathcal{A}$ and not $\mathcal{C}$. On the latter space, there would be no way to consistently make this choice. \todo{improve this point} From our correspondence, equating the cross ratios $[α,\cji{α};β,\cji{β}] = [1,-1;k^{-1},-k^{-1}]$ gives
+\[
+k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}},
+\labelthis{eqn:def_k}
+\]
+and the map, which we shall call $f$, can be computed from the relation $[α,\cji{α};β,ζ] = [1,-1;k^{-1},f(ζ)]$.
 
-Having fixed a mapping of the roots, namely $(α,\cji{α},β,\cji{β}) \mapsto (1,-1,k^{-1},-k^{-1})$, the formula for the transformation can be found by rearranging the relation $[ζ,β;α,\cji{α}] = [f(ζ),k^{-1};1,-1]$ to get
-\begin{align}
-A &:= (α-β)\abs{1-\bar{α}β}, \label{eqn:A} \\
-B &:= (1-\bar{α}β)\abs{α-β}, \label{eqn:B} \\
-z = f(ζ) &= \frac{ζ(\bar{α}A + B) - (A + αB)}{ζ(\bar{α}A - B) - (A - αB)}, \label{eqn:f} \\
-ζ = f^{-1}(z) &= \frac{-z(A-αB) + (A+αB)}{-z(\bar{α}A-B) + (\bar{α}A+B)}. \label{eqn:f_inv}
-% den &:= ζ(\bar{α}A-B) - (A - αB)\\
-% ned &:= -z(\bar{α}A-B) + (\bar{α}A+B)
-\end{align}
+The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what is its imagine under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution in the $z$-plane is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore is the image of the unit circle.
 
-Because of the holomorphic involution $η\to-η$, this formula almost but not quite specifies a relation between $η$ and $w$. There is a free sign choice to make. In $(ζ,η)$ there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this copy of the unit circle in $Σ$, $η(ζ)=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation the unit circle is mapped to the imaginary axis. On the imaginary axis, $w(iu) = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$ so also has a notion of an upper sheet. We choose the transformation between elliptic curves to map the upper sheet to the upper sheet.
-% The sign choice needed to make the upper unit circle map to the upper imaginary axis is
-% \[
-% η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
-% \]
-
-The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what its imagine under this transformation is.
-The real involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution in the $z$-plane is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore is the image of the unit circle.
-
-As already mentioned, the four roots of the spectral curve are concyclic (or lie on a line), which we shall call the branch point circle. The intersection of this circle with the unit circle correspond to the points $z=0$ and $z=\infty$, which are the intersections of the real and imaginary axes. $z=0$ lies between $α$ and $\cji{α}$ and similiarly $z=\infty$ lies between $β$ and $\cji{β}$. We denote these points $μ = f^{-1}(0)$ and $ν = f^{-1}(\infty)$. Likewise we write $z_0 = f(0)$ and $-\bar{z_0} = f(\infty)$ (using the reality structure). These allow us to write alternate formulae for $f$ and $f^{-1}$
+As already mentioned, the four roots of the spectral curve are concyclic (or lie on a line), which we shall call the branch point circle. The intersection of this circle with the unit circle correspond to the points $z=0$ and $z=\infty$, which are the intersections of the real and imaginary axes. $z=0$ lies between $α$ and $\cji{α}$ and similiarly $z=\infty$ lies between $β$ and $\cji{β}$. We denote these points $μ = f^{-1}(0)$ and $ν = f^{-1}(\infty)$. Likewise we write $z_0 = f(0)$ and $-\bar{z_0} = f(\infty)$ (using the reality structure). These allow us to write concise formulae for $f$ and $f^{-1}$
 \begin{align}
 z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
-\label{eqn:f_2} \\
+\label{eqn:f} \\
 ζ = f^{-1}(z) &= ν \frac{z - z_0}{z + \bar{z_0}}.
-\label{eqn:f_inv_2}
+\label{eqn:f_inv}
 \end{align}
 
 \makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$}{thesis_graphics_temp/zeta_plane.png}
 \makefigure{The $z$-plane, with points marked in black. The red labels are their images under $f^{-1}$}{thesis_graphics_temp/z_plane.png}
 
-Having set-up the transformation, we construct the desired differentials in two stages. First, we narrow the space to a 3 dimensional one, of differentials with the correct poles and symmetries. Then we compute the periods of the basis of the space. This allows us to find the differentials inside that space with the integral periods.
 
-If we write differentials in the form
-\[
-b(ζ)\frac{dζ}{ζ^2η},
-\]
-for some polynomial $b(ζ)$, the restriction that the differentials have double poles at $ζ=0,\infty$ means that the polynomial part must be degree four. The restiction that these poles have no residues means that the bottom and top terms determine the first and third order terms. And finally the reality condition $ρ^* Θ = -\bar{Θ}$ means that the middle term must be real and the top term is the conjugate of the bottom term. In effect, we only have a complex number of choice in the bottom term and a real scalar in the middle term. This is our real 3-space of differentials.
 
-First note that the holomorphic differential
+\begin{lem}
+\label{lem:coeff_f_smooth}
+The points $μ,ν$ and $z_0$ are smooth functions of the parameters $(α,β)\in\mathcal{A}$.
+\begin{proof}
+$μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms of $α,β$ using the relation $[α,\cji{α};β,μ] = [1,-1;k^{-1},0]$. Rearranging gives
 \[
-ω := \frac{dz}{w}
+μ = \frac{ (α-β)\abs{1-\bar{α}β} + α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} + (1-\bar{α}β)\abs{α-β} }.
 \]
-lies in this space. It makes for an obvious first basis vector. It spans the middle terms completely.
-In genus one, there is an exact differential with the correct pole behaviour, namely
+This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. $α-β$ is never zero on $\mathcal{A}$ by definition. $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disk, this is impossible. Finally, the denominator is zero exactly when
+\[
+\bar{α} = - \frac{1-\bar{α}β}{\abs{1-\bar{α}β}} \frac{\abs{α-β}}{α-β}.
+\]
+But the right hand side is an element of the unit circle, so again this possibility is ruled out. The proof is entirely similiar for
+\[
+ν = \frac{ (α-β)\abs{1-\bar{α}β} - α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} - (1-\bar{α}β)\abs{α-β} }
+\]
+and
+\[
+z_0 = \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} }.
+\]
+\end{proof}
+\end{lem}
+
+Because of the holomorphic involution $η\to-η$, the formulae \ref{eqn:f} and \ref{eqn:f_inv} almost but not quite specifies a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ laying\todo{laying or lying?} over the unit circle $ζ=1$. Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this positive unit circle in $Σ$, $η(ζ)=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation $f$ the unit circle is mapped to the imaginary axis. Over the imaginary axis in the Jacobi elliptic curve $w(iu) = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$, so it also has a canonical choice of a positive and negative imaginary axis. We choose the transformation between elliptic curves to map the positive unit circle to the positive imaginary axis. \todo{positive axis sounds like $\R^+$, likewise upper unit circle could be heard as upper half of the unit circle}
+% The sign choice needed to make the upper unit circle map to the upper imaginary axis is
+% \[
+% η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
+% \]
+
+Having found the map $f$ that transforms the spectral curve into Jacobi normal form, we are now in a position to choose a basis of the $3$-space of differentials. First note that the holomorphic differential $ω$ lies in this space and so makes for an obvious first basis vector. It spans the middle terms completely.
+In genus one, there is an exact differential with the double poles over $ζ=0,\infty$, namely
 \[
 Θ^1 := \iu\; d\left( \frac{η}{ζ} \right)
 % = \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}.
 \]
-It is real, curtesy of the factor $\iu$, and so it we take it as the second basis vector. As has been mentioned, every differential can be written as the sum of an exact differential, one of the first kind and one of the second kind. Given that we already have taken the standard differential of the first kind as a basis vector, we seek to complete the basis with the sum of the standard differential of the second kind and an exact differential.
+It is real, due to the factor $\iu$, and so we take it as the second basis vector. As has been mentioned, every differential can be written as the linear combination of $ω$, $e$ and an exact differential. Given that we already have taken $ω$ as a basis vector, we seek to complete the basis with the sum of $e$ and an exact differential.
 
-The standard differential of the second kind is defined to be
-\[
-e := (1-k^2 z^2) \frac{dz}{w}.
-\]
-It is real, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential.
+Recall eqn \ref{eqn:def_e}, the definition of $e$. It is real with respect to $ρ(z) = -\bar{z}$, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential.
 \[
 e + d\left[ \frac{w}{z + \bar{z}_0} \right].
 \]
@@ -224,7 +259,7 @@ d\left[ \frac{w}{z + \bar{z}_0} \right]
 &\sim d\left[ k z'^{-1} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \bra{1 - \bar{z}_0z' + \bar{z}_0^2z'^2  + \ldots} \right]\\
 &= -k z'^{-2}dz' \bra{1 + \bra{\bar{z}_0^2 - \frac{1}{2}\frac{1+k^2}{k^2}}z'^2 + \ldots}
 \end{align*}
-which shows that it does cancel the double pole of $e$. Unfortunately, this exact differential does not have the correct symmetries. The space of exact differentials with the correct poles is spanned by
+which shows that it does cancel the double pole of $e$. Unfortunately, this exact differential is not real. The space of exact differentials (not necessarily real) with the double poles over $ζ=0,\infty$ is spanned by
 \[
 d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right],
 \]
@@ -235,10 +270,9 @@ d\left[ \frac{w}{z + \bar{z}_0} + C\frac{w}{(z-z_0)(z + \bar{z}_0)}\right]
 \]
 is real when $z_0 - C$ is an imaginary number. Thus $C \in \Re z_0 + i\R$. This degree of freedom to choose any imaginary amount is exactly adding a scalar of $Θ^1$. There are two obvious choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both are valid, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^1$, which introduces a symmetry into the formulae that we will use later. Hence we take as our third basis differential
 \[
-λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0 d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
-= e + d\left[ \frac{w(z - \iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right],
+λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0\; d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
+= e + d\left[ \frac{w(z - \iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
 \]
-which has both the correct poles and the correct symmetries.
 
 We are now in a position to compute the periods of our basis. In the $ζ$-plane, let $γ_R, γ_I$ denote the real and imaginary periods respectively. We will choose the basis in the following way. For $γ_R$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise, then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For $γ_I$, start at the same point we began $γ_R$ and follow the unit circle clockwise. The image of $γ_R$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(γ_I)$ is simply a traversal of the imaginary axis from bottom to on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
 
@@ -272,13 +306,13 @@ which shows a nice division, with the first two terms providing the desired peri
 
 \begin{lem}
     \label{lem:theta2_characterisation}
-The differential $Θ^2$ is the unique differential on the spectral curve with the correct poles and symmetries, with periods $0,2π\iu$ and, with principal part over $ζ=0$
+The differential $Θ^2$ is the unique real differential on the spectral curve with double poles and no residues over $ζ=0,\infty$, with periods $0,2π\iu$ and, with principal part over $ζ=0$
 \[
 \pp Θ^2 \in \iu \R \pp Θ^1.
 \]
 
 \begin{proof}
-We first verify that $Θ^2$ has such properties, then verify uniqueness. The only property not yet demonstrated is the third one, concerning the principal part. By considering poles and symmetries, and noting that $ζ=0$ is $z=z_0$, for some real scalar $r$
+We first verify that $Θ^2$ has such properties, then verify uniqueness. The only property not yet demonstrated is the third one, concerning the principal part. We note that $ζ=0$ corresponds to $z=z_0$, so for some real scalar $r$
 \[
 \pp Θ^1
 = \iu \pp d\bra{\frac{η}{ζ}}
@@ -292,11 +326,11 @@ On the other hand
 &= + 2K \frac{w(z_0)(z_0-\iu\,\Im z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2} \\
 &= 2K \frac{w(z_0)(\Re z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2}.
 \end{align*}
-To establish uniqueness, suppose that $Θ$ was another such differetial. Then $Θ-Θ^2$ would be exact and have the correct poles and symmetries. So for some real $s$
+To establish uniqueness, suppose that $Θ$ was another such differetial. Then $Θ-Θ^2$ would be exact, real and have double poles with no residues. So for some real $s$
 \[
 Θ = Θ^2 + s Θ^1.
 \]
-As taking principal part is linear, this shows that $s=0$.
+As taking principal part is linear, the third condition forces $s=0$.
 \end{proof}
 \end{lem}
 
@@ -312,6 +346,8 @@ and so uniqueness forces $Θ^2(β,α) = Θ^2(α,β)$.
 The consequence of this is that $Θ^1,Θ^2$ push forward to a well-defined basis of the differentials over $\mathcal{C}$ as well, and just as for $\mathcal{A}$ they trivialise the bundle $\mathcal{B} \to \mathcal{C}$. Though we mainly concentrate on the subspace of $\mathcal{A}$ of spectral curves that admit spectral data, at the end of this chaper we will consider the space of spectral data within the total space of $\mathcal{B}^2$.
 
 
+SOMETHING ABOUT THE CONFORMAL CASE/ UNDOING THE NONCOMFORMAL ASSUMPTION.
+
 
 
 
@@ -320,6 +356,7 @@ The consequence of this is that $Θ^1,Θ^2$ push forward to a well-defined basis
 
 
 \subsection{The Closing Conditions}
+\label{sub:closing conditions}
 Recall the closing conditions. These are the conditions that spectral data must meet in order that they correspond to a harmonic map from the torus, rather than a harmonic map of the plane (of finite type). If $(Σ,Θ,\tilde{Θ})$ is a triple of spectral data, $Θ$ satisfies the closing condition at $ζ=1$ if
 \[
 \int_{γ_{+}} Θ \in 2π\iu \Z,
@@ -451,6 +488,8 @@ If one wishes, one could substitute these formulae into \ref{eqn:def_T} to get $
 % $\mathcal{P}$ is naturally a $\Z^2$-bundle over the space $\mathcal{A}$. The projection map takes a tuple $(γ_+, γ_-, Σ, α)$ to the underlying spectral curve $(Σ,α)$. The fibre over any spectral curve $Σ$ is seen to be $\Z^2$, because if one fixes a point on the upper unit circle, not lying over $1,-1,μ$, the (signed) number of crossings of that point by a path uniquely determines that path. As an aside, the issue with points over $1,-1$ and $μ$ is that the paths may terminate there (in the obvious way for the first two, in the sense that the path may leave the unit circle in the latter case). One could probably introduce a convention to get around this, but it is not necessary to do so for our purposes.
 %
 % Viewed from this perspective, we consider $T$ to be a multivalued function on $\mathcal{A}$ defined locally up the addition of multiples of $p$ and $1$, and $T_0$ is a principal branch cut. We call $\tilde{T}$ the well defined version that is defined on $\mathcal{P}$. $\mathcal{P}$ is actually a cover of the universal cover of $\mathcal{A}$ (implying $\mathcal{P}$ is disconnected), a fact that will become apparent once we have adopted coordinates better adapted to the situation.
+
+
 
 
 
@@ -714,12 +753,8 @@ Thus to do computations with the function $\tilde{T}$, one can continue to work 
 
 
 
-
-
-
-
-
 \subsection{The topology of the moduli space}
+\label{sub:Topology}
 
 In the interest of having manageable formulae, we recall the definition of $w'(z')^2 = (1 - (z')^2)(k^2 - (z')^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
 \[
@@ -959,6 +994,7 @@ If we consider the surfaces $\mathcal{\tilde{A}}(p,q)$ parameterised by $(p,q,k,
 where $\tilde{x}' = 2πn+ π + 2\atan (k \tan (\tilde{x}/2))$. This provides an identification between $\mathcal{\tilde{A}}(p,q)$ and $\mathcal{\tilde{A}}(p,q + l(p-1))$ for any integral $l$.
 
 \begin{thm}
+\label{thm:topology_curves}
 For $p\neq 1$, $\mathcal{C}(p)$ is diffeomorphic to
 \[
 \{ (q,k,\tilde{x}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
@@ -974,6 +1010,7 @@ Lemma \ref{lem:T_graph} also demonstrates that $\mathcal{\tilde{S}}(p)$ is the u
 This leaves just one special case.
 
 \begin{thm}
+\label{thm:topology_curves_p1}
 $\mathcal{C}(1)$ is diffeomorphic to
 \[
 \{ (q,k,\tilde{u}) \in \R \times (0,1) \times \bra{\R/2π\Z} \},
@@ -987,7 +1024,14 @@ In this special case, we see that the action does not identify path components w
 
 These two theorems give an understanding of what the condition $T\in\Q$ means. If we think of the first condition, $p\in\Q$, it lead to a dense disjoint collection of subspaces $\mathcal{C}(p)$ on which the condition was met. We can then think of examining the effect of imposing the second condition on one of these spaces. For $p$ not equal to one, the subset of meeting this extra condition is a dense collection of strips. As can be seen in the pictures below, and proved in the next chapter, they should be thought of as intertwined helicoids. But for $p$ equal to one, instead we have a dense collection of annuli. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the transition between right and left handed spirals, where it is `flat' and closes up.
 
-In particular, $\mathcal{S}(1)$ seems special because it is not simply connected. However, on the level of spectral data this disappears and the moduli space is simply connected. But first, we revisit and improve on lemma \ref{lem:closing_conds}. In that lemma, we see that the closing conditions are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data. However, to examine the moduli of spectral data, we must find the `minimal' set from which all other on that curve are generated.
+
+
+
+
+\subsection{Corollaries}
+\label{sub:Corollaries}
+
+$\mathcal{S}(1)$ seems special because it is not simply connected. However, on the level of spectral data this disappears and the moduli space is simply connected. But first, we revisit and improve on lemma \ref{lem:closing_conds}. In that lemma, we see that the closing conditions are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data. However, to examine the moduli of spectral data, we must find the `minimal' set from which all other on that curve are generated.
 
 \begin{lem}
 On any curve $Σ \in \mathcal{S}$, there is a pair of differentials such that every closing differential is an integer combination of that pair.
