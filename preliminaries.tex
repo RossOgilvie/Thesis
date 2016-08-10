@@ -1,11 +1,31 @@
+%!TEX root = thesis.tex
+
 \section{Preliminaries}
 \label{sec:Preliminaries}
 
-Hitchin's theorem 8.1 \cite{Hitchin1990} provides conditions on the spectral data for it to correspond to a solution to the set of equations
+\subsection{Rambling}
+Things that have to be covered
+- intro what is a harmonic map
+- recap of construction of spectral curve.
+- recap Hitchin theorems
+- reformulate into forms we use
+- define spaces
+- make argument about imaginary periods
+
+HIGGS FIELD
+Suppose that $M$ is a compact Riemann surface, and $G$ is a Lie group with a bi-invariant metric. Given any smooth map $f: M\to G$, we can pull back the metric connection on $TG$ to $d_A$ on $f^*(TG)$. Using the the orientation of the complex structure of $M$, we have the Hodge star operator $* : Ω^1(M) \to Ω^1(M)$. $f$ is harmonic if $d_A^* df$ is zero. Using the Hodge star to write the adjoint, this is equivalent to
 \[
-d_A'' Φ = 0,\, F_A = [{Φ},{Φ}^*], \labelthis{HME}
+d_A (* df) = 0.
 \]
-a theorem 8.20 gives an addtional condition for this data to correspond to an actual harmonic map from the torus into $\S^3$. The conditions are reporduced here and labelled. Let $ρ$ be the real structure induced from $ζ\mapsto \cji{ζ}$ on $\CP^1$ and $σ$ the hyperelliptic involution given by $η\mapsto -η$. Given a hyperelliptic curve $Σ$ in the total space of $\mathcal{O}(p+1)\to^π \CP^1$ defined by the equation $η^2 = P(ζ)$ and meromorphic differentials $Θ, \tilde{Θ}$ on $Σ$ the following properties must be satisfied.
+Pulling back the Maurer-Cartan form of $G$ to $2(Φ - Φ^*)$, with $Φ$ the $(1,0)$ part of the form, harmonicity of $f$ implies
+\[
+d_A'' Φ = 0,\, F_A = [{Φ},{Φ}^*]. \labelthis{eqn:Hit1.7}
+\]
+(Hitchin eqn 1.7). If a pair $(A,Φ)$ satisfies \ref{eqn:Hit1.7} and further the connections
+\[
+\nabla_A + Φ - Φ^*, \nabla_A - Φ + Φ^*
+\]
+are trivial, then it is possible to recover a harmonic map from $M$ to $G$. For the case of $M$ a torus and $G=SU(2)$, Hitchin's theorem 8.1 \cite{Hitchin1990} provides a correspondence between solutions of \ref{eqn:Hit1.7} and so-callled spectral data. Theorem 8.20 gives an addtional condition on spectral data to ensure that the two connections are trivial, and so the spectral data corresponds to a harmonic map from the torus into $\S^3$. The conditions are reproduced here and labelled. Let $ρ$ be the real structure induced from $ζ\mapsto \cji{ζ}$ on $\CP^1$ and $σ$ the hyperelliptic involution given by $η\mapsto -η$. Given a hyperelliptic curve $Σ$ in the total space of $π: \mathcal{O}(p+1)\to \CP^1$ defined by the equation $η^2 = P(ζ)$ and meromorphic differentials $Θ, \tilde{Θ}$ on $Σ$ the following properties must be satisfied.
 \begin{enumerate}
 \item Real spectral curve: $P(ζ)$ is a real section of $\mathcal{O}$ with respect to $ρ$.
 \item No real zeroes: $P(ζ)$ has no zeroes on the unit circle $\S^1\subset\CP^1$.
@@ -49,3 +69,54 @@ So to have a double pole requires that $b_0$ must also vanish for a conformal ma
 P_1b_0 - 2P_0b_1 = 0
 \]
 and observe the relation continues to hold in the conformal case, even though it now is needed to produce the desired cancellation as the two double poles `collide'.
+
+
+SPACES
+Spectral curves are hyperelliptic curves as above that meet conditions i,ii,iii. In this thesis we consider non-singular spectral curves. Something something genus. The equation of the spectral curve $η^2 = P(ζ)$ is determined up to real scalar by the roots of $P$. By the reality structure, if $α$ is a root, so is $\cji{α}$. Different real scalars define the same curve up to biholomorphism. We therefore choose the following cannonical form of $P$,
+\[
+P(ζ) = \prod_{i=0}^{g} (ζ-α_i)(1-\bar{α}_i ζ),
+\]
+where $α_i$ are the roots of $P$ inside the open unit disc $D$. Define
+\[
+\mathcal{A}_g = \{ (α_0, α_1, \ldots, α_g) \in D^{g+1} \mid α_i \neq α_j \}.
+\]
+Every point of $\mathcal{A}_g$ determines a non-singular spectral curve $Σ(α_0,\ldots,α_g)$ via a polynomial $P$ with those roots. However, different permutations of components of a point of $\mathcal{A}_g$ yeild the same spectral curve. Let $Sym(g+1)$ be the symmetric group on $g+1$ elements, and we have it act on $\mathcal{A}_g$ by permutation. We define $\mathcal{C}_g$ to be $\mathcal{A}_g / Sym(g+1)$ and we call this the space of spectral curves. By excluding singular curves, that is curves with multiple roots, the action of the symmetric group has no fixed points and so the quotient is also a smooth manifold.
+
+SINGULARITIES AND THEIR EXCLUSION
+
+In the case of spectral curves of genus two or lower, there are no differentials with real linearly independent principal parts on singular curves.
+
+\begin{lem}
+On a spectral curve of genus zero, differentials with linearly independent principal parts do not have common roots.
+\begin{proof}
+The conformal case is established in Hitchin p659. We repeat it here. Any differential has the form
+\[
+(b + \bar{b}ζ)\frac{dζ}{ζη}.
+\]
+If two such differentials have a common root, then they must be real scalars of one another.
+
+In the nonconformal case, the form of the differentials has more terms. Let the spectral curve be given by
+\[
+η^2 = -α + (1+α\bar{α})ζ -\bar{α} ζ^2,
+\]
+for $α\neq 0$ in the unit disc, and let $a = -α^{-1}(1+α\bar{α})$. Then the differential is determined by a nonzero constant $b$,
+\[
+(b + ab ζ + \overline{ab}ζ^2 + \bar{b}ζ^3)\frac{dζ}{ζ^2η}.
+\]
+Take two differentials $Θ,\tilde{Θ}$ with real linearly independent principal parts. We shall compute their greatest common divisor. Observe
+\[
+\bar{b}\tilde{Θ} - \bar{c}Θ = (\bar{b}c - \bar{c}b)(aζ+1)\frac{dζ}{ζ^2η}.
+\]
+By assumption, $b/c$ is not real, so this is nonzero. Its only root is $-a^{-1}$, but at $ζ=-a^{-1}$
+\[
+b + ab (-a^{-1}) + \overline{ab}(-a^{-1})^2 + \bar{b}(-a^{-1})^3
+= \bar{b}a^{-3} ( a\bar{a} - 1),
+\]
+which is only zero if $\abs{a} = 1$, which itself only occurs when $α=0$. But we are considering the nonconformal case, ie $α\neq 0$, so $Θ$ and $aζ+1$ have no common factors. Hence
+\[
+\gcd(Θ,\tilde{Θ})
+= \gcd\bra{ Θ, \bar{b}\tilde{Θ} - \bar{c}Θ }
+= \gcd( Θ, aζ+1) = 1
+\]
+\end{proof}
+\end{lem}
