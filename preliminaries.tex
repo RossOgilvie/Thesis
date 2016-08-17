@@ -5,30 +5,73 @@
 
 HIGGS FIELD
 
-Suppose that $M$ is a compact Riemann surface, and $G$ is a Lie group with a bi-invariant metric. Given any smooth map $f: M\to G$, we can pull back the metric connection on $TG$ to $d_A$ on $f^*(TG)$. Using the the orientation of the complex structure of $M$, we have the Hodge star operator $* : Ω^1(M) \to Ω^1(M)$. $f$ is harmonic if $d_A^* df$ is zero. Using the Hodge star to express the adjoint, this is equivalent to
+Suppose that $M$ is a compact Riemann surface, and $G$ is a Lie group with a bi-invariant metric. Given any smooth map $f: M\to G$, we can pull back the metric connection on $TG$ to a connection we shall denote $A$ on $f^*(TG)$, with associated covariant exterior differential $d_A$. Using the the orientation of the complex structure of $M$, we have the Hodge star operator $* : Ω^1(M) \to Ω^1(M)$. $f$ is harmonic iff $d_A^* df$ is zero. Using the Hodge star to express the adjoint, this is equivalent to
 \[
 d_A (* df) = 0.
 \]
-Pulling back the Maurer-Cartan form of $G$ to $2(Φ - Φ^*)$, with $Φ$ half of the $(1,0)$ part of the form, harmonicity of $f$ implies
+The Maurer-Cartan form $ω$ of a Lie group is $\mathfrak{g}$-valued one-form that is invariant under the left group action and acts trivially on the on tangent space at the identity. This forces, for any $X\in T_gG$, $ω(X) = (L_{g^{-1}})^*v$, where $L$ is left multiplication. For linear groups, such as we will be considering, if use the identification map $g:G \to \Mat_{n\times n}(\R)$, at $a\in G$
+\[
+ω_a = g(a)^{-1} dg_a.
+\]
+The importance of the Maurer-Cartan form is in its property of characterising maps to the Lie group. If $φ$ is a $\mathfrak{g}$-value one-form on a simply connected manifold $U$ satisfying the Maurer-Cartan equation
+\[
+dφ + \frac{1}{2}[φ\wedge φ] = 0,
+\]
+where $[(X\otimes α) \wedge (Y\otimes β)] = [X,Y]\otimes(α\wedge β)$ for elements $X,Y\in\mathfrak{g}$ and differential forms $α,β$, then there is a map $f:U \to G$ such that $f^*ω = φ$, unique up to left translation.
+
+Suppose that $d_L$ is the trivial connection on $f^*(TG)$ arising from the left trivialisation. Consider the connection $d_A = d_L + \tfrac{1}{2}φ$, using the fact that the Maurer-Cartan form is the difference between the left and right connections and the Levi-Civita connection is their average. Computing the curvature
+\[
+F_A = d_A^2
+= (d_L + \tfrac{1}{2}φ)^2
+= d_L^2 + \frac{1}{2}[(Φ - Φ^*) \wedge (Φ - Φ^*)]
+= [Φ \wedge Φ^*].
+\]
+
+Return now to a harmonic map $f:M\to G$ and pull back the Maurer-Cartan form of $G$ to $φ = 2(Φ - Φ^*)$, with $2Φ$ the $(1,0)$ part of the form $φ$. Harmonicity of $f$ implies that
+\[
+d_A'' Φ = 0.
+\]
+Together, these two equations
 \[
 d_A'' Φ = 0,\, F_A = [{Φ},{Φ}^*]. \labelthis{eqn:Hit1.7}
 \]
-(Hitchin eqn 1.7). If a pair $(A,Φ)$ satisfies \ref{eqn:Hit1.7} and further the connections
+are Hitchin eqn 1.7. If a pair $(A,Φ)$ satisfies \ref{eqn:Hit1.7} and further the connections
 \[
-\nabla_A + Φ - Φ^*, \nabla_A - Φ + Φ^*
+d_{-1} := d_A - Φ + Φ^*, d_{1} := d_A + Φ - Φ^*
 \]
-are trivial, then it is possible to recover the harmonic map from $M$ to $G$.
+are trivial, then it is possible to recover the harmonic map from $M$ to $G$. These are certainly necessary, as if such a pair is arising from a harmonic map, the above two connections are the left and right connections respectively. Conversely, given such a pair, if the two connections are trivial then there are nonvanishing sections $X,Y$ of a $\mathfrak{g}$-vector bundle that are nonvanishing and parallel with each connection respectively.  Let $f:M \to G$ be the map such that $X = Y\cdot f$. As the difference $d_{1} - d_{-1}$ is $φ$ and
+\[
+(d_{1} - d_{-1})(X) = d_{1}(Yf) - d_{-1}(X) = X (f^{-1}d_{-1}f),
+\]
+then $φ$ is the pull back of the Maurer-Cartan form by $f$. The first of \ref{eqn:Hit1.7} gives that $f$ is harmonic.
 
-Consider now the case $M$ a torus and $G=SU(2)$.
+CONSTRUCTION
+
+Consider now the case where $M$ a torus and $G=SU(2)$. Hitchin investigated solutions of \ref{eqn:Hit1.7} and characterised them in terms of a spectral curve construction. We recall that construction now. From a pair $(A,Φ)$ we construct a $C^\times$ family of flat $SL_2\C$ connections
+\[
+d_ζ := d_A + ζ^{-1}Φ - ζΦ^*,
+\]
+where flatness follows from the two equations. Fix a base point and take a pair of generating loops for the fundamental group. The holonomy representation is described by two matrices $H(ζ)$ and $\tilde{H}(ζ)$ in $SL_2\C$ corresponding to transporting vectors along those loops parallel to $d_ζ$. Because the fundamental group is abelian, these matrices commute. Their eigenvalues $μ$ satisfy the quadratic equation
+\[
+μ^2 - (\tr H)μ + 1 = 0.
+\]
+
+Next Hitchin establishes (Prop 2.3) that the eigenvalues $μ,\tilde{μ}$ of $H,\tilde{H}$ considered as holomorphic functions over $\C^\times$ are branched at only finitely many points, and further (Prop 2.10) that (except in a trvial case) these functions have the same branch points. By examining the singularities of $\tr H, \tr \tilde{H}$ as $ζ\to 0$, it is shown that $\log μ$ and $\log \tilde{μ}$ are meromorphic functions in a neighbourhood of $0$. Using the real structure to transport this information to $ζ=\infty$, on constructs a nonsingular hyperelliptic curve over $\CP^1$, branched over the points where $μ,\tilde{μ}$ are, such that $\log μ$ and $\log \tilde{μ}$ are well-defined meromorphic functions. One then differentiates $\log μ, \log \tilde{μ}$ to get differentials of the second kind $Θ,\tilde{Θ}$ respectively, removing the additive ambiguity of taking logarithms.
+
+The final stage turns attention to the eigenline bundle over the hyperelliptic curve. As the matrices $H$ and $\tilde{H}$ commute, at each point of the curve we associate the common eigenspace of the eigenvalues $μ$. This is a holomorphic line bundle $E$. At points where $E$ and $σ^*E$ coincide, we add singular points of the corresponding order to the hyperelliptic curve, to construct the spectral curve $Σ$ of arithmetic genus $g = \deg E^* - 1$.
+
+Having assemebled this data $(Σ,Θ,\tilde{Θ},E)$, Theorem 8.1 characterises spectral data that arises from pairs $(A,Φ)$ and show that this is a correspondence unique up to tensoring with a flat $Z_2$ bundle. The proof proceeds by direct reconstruction. Theorem 8.20 firstly reformulates the requirement that $d_1, d_{-1}$ be flat connections into a requirement about the values of $μ$, and then identifies certain geometric features of a harmonic map with properties that spectral data may possess. For example, a harmonic map is conformal exactly when the spectral curve is branched over $0$. The following sections will introduce the various conditions that spectral data must satisfy.
+
+Throughout this thesis, we will consider only nonsingular spectral curves. The primary reason to do this is that our particular focus shall be on spectral curves of low genus, and all such spectral curves are nonsingular, as we demonstrate in REF. Such an assumption then allows us to comment when our methods exend more generally without distraction.
 
 MARKED CURVE
 
-Consider a hyperelliptic curve $Σ$ over $\CP^1$ with hyperelliptic involution $σ$ and projection $π:Σ\to\CP^1$. We call a tuple $(Σ,π^{-1}(0),π^{-1}(1),π^{-1}(-1))$ a \emph{marked curve} if
+Consider a (nonsingular) hyperelliptic curve $Σ$ over $\CP^1$ with hyperelliptic involution $σ$ and projection $π:Σ\to\CP^1$, such that $π\circ σ = π$. We call a tuple $(Σ,\{ ξ_0, σ(ξ_0) \}, \{ ξ_1, σ(ξ_1) \})$ a \emph{marked curve} if
 \begin{enumerate}
+\item $π(ξ_0) = 0$ and $π(ξ_1) = 1$.
 \item there is a real involution $ρ: Σ \to Σ$ such that $ρ\circ σ$ is without fixed points and $π(ρ(ξ)) = \cji{π(ξ)}$.
-\item the curve is non-singular at $π^{-1}\{0\}$.
 \end{enumerate}
-Note that there may be one or two points of $π^{-1}(0)$, which correspond to the cases of conformal and nonconformal harmonic maps respectively. The condition that $ρ\circ σ$ is without fixed points ensures that the curve is not branched ($ξ = σ(ξ)$) at any point over the unit circle. Thus there are always two points of both $π^{-1}(1)$ and $π^{-1}(-1)$. We shall use $ρ$ to also denote the real involution $π(ζ) = \cji{ζ}$ on $\CP^1$.
+Note that $ξ_0$ and $σ(ξ_0)$ may or may not be distinct points, which correspond to the cases of nonconformal and conformal harmonic maps respectively. The condition that $ρ\circ σ$ is without fixed points ensures that the curve is not branched ($ξ = σ(ξ)$) at any point over the unit circle. Thus there are always two points of both $π^{-1}(1) = \{ ξ_1, σ(ξ_1) \}$ and $π^{-1}(-1)$. We shall use $ρ$ to also denote the real involution $π(ζ) = \cji{ζ}$ on $\CP^1$.
 
 We may build a model for marked curves, unique up to biholomorphism. Suppose that $Σ$ has genus $g$. Consider the bundle $π: \mathcal{O}(g+1)\to \CP^1$, and the tautological section $η$ of $π^* \mathcal{O}(g+1) \to \mathcal{O}(g+1)$. There is a reality structure on $\mathcal{O}(k)$ for any $k$ compatible with $ρ$, namely if $w$ is the fibre coordinate
 \[
@@ -39,36 +82,41 @@ Take a section $P(ζ)$ of $\mathcal{O}(2g+2)$ and consider the curve $Σ'$ defin
 \begin{enumerate}
 \item Real spectral curve: $P(ζ)$ is a real section of $\mathcal{O}(2g+2)$ with respect to the real structure induced by $ρ$.
 \item No real zeroes: $P(ζ)$ has no zeroes on the unit circle $\S^1\subset\CP^1$.
-\item Simple zeroes: $P(ζ)$ has at most simple zeroes at $ζ=0,\infty$.
+\item Simple zeroes: $P(ζ)$ has only simple zeroes.
 \end{enumerate}
-Then $Σ'$ is a marked curved. The holomorphic involution $ρ$ is the restriction of $ρ$ on $\mathcal{O}(g+1)$. The fixed points of $σ$ are the roots of $P$, so ``no real zeroes" ensures that $ρ\circ σ$ is fixed point free and ``simple zeroes" provides that the curve is not singular over $0$. As hyperelliptic curves are determined by their branch points in $\CP^1$, up to automorphism of $\CP^1$ which we have fixed by fixing $0,1,-1$, all marked curves correspond to some section $P(ζ)$. The only freedom remaining is the choice of a real scaling of $P$, which we shall fix now.
+Then $Σ'$ is a marked curved. The holomorphic involution $ρ$ is the restriction of $ρ$ on $\mathcal{O}(2g+2)$. The fixed points of $σ$ are the roots of $P$, so ``no real zeroes" ensures that $ρ\circ σ$ is fixed point free and ``simple zeroes" provides that the curve is not singular.
 
-Let $P(ζ) = A(ζ-β_1)\cdots(ζ-β_k)$ be a section of $\mathcal{O}(k)$. Applying the real involution
+Hyperelliptic curves are determined by their branch points in $\CP^1$, up to automorphism of $\CP^1$. To see this, first choose a non-branch point of $\CP^1$ and take the complement. Over this affine space, the function field of $Σ$ is a quadratic extension and so must be Galois. Take the nontrivial automorphism $σ$ of the extension and find an element $η$ such that $σ(η)= - η$ (this may be done by taking any nonfixed element $η'$ and choosing $η = η' - σ(η')$). $σ(η^2) = η^2$, so we have that $η^2=P(ζ)$ for some polynomial $P$. This determines $Σ$ up to scaling of $y$ and automorphism of $\CP^1$. The choice of automorphism of $\CP^1$ has however been removed by the imposition of the marked points, which fix $0,1$ and $\infty$. All marked curves therefore correspond to some section $P(ζ)$, determined uniquely up to scaling.
+
+Let $P(ζ) = A(ζ-β_1)\cdots(ζ-β_k)$ be a section of $\mathcal{O}(2g+2)$. Applying the real involution
 \[
 \bar{ζ}^{-k} \overline{P(ζ)}
 = \bar{ζ}^{-k} \bar{A}(\bar{ζ}-\bar{β}_1)\cdots(\bar{ζ}-\bar{β}_n)
 = \bar{A}\bra{\prod_{β_i \neq 0} \bar{β}_i (\cji{β}_i-\cji{ζ})}
 \bra{\prod_{β_i=0}\cji{ζ}}.
 \]
-If $P$ is real then this is equal to $P(\cji{ζ})$ and if $P$ has no real zeroes then for no $i$ is $β_i$ equal to $\cji{β}_i$. Thus the set of roots is fixed under this involution, and the nonzero roots must arrange into pairs. Any roots at zero, $β_i = 0$, are paired with roots `at infinity', which manifest as a reduction of degree; $P$ has a root at zero of order $k-n$.
+If $P$ is real then this is equal to $P(\cji{ζ})$ and if $P$ has no real zeroes then for no $i$ is $β_i$ equal to $\cji{β}_i$. Thus the set of roots is fixed under this involution, and the nonzero roots must arrange into pairs. If there is a root at zero, it must be paired with a root `at infinity'; in other words $P$ has degree $2g+1$.
 
 Suppose we have a marked curve of genus $g$. Denote its branch points $α_0,\cji{α}_0,\ldots,α_g,\cji{α}_g$. We fix the following scaling of $P$
 \[
 P(ζ) = \prod_{i=0}^{g} (ζ - α_i)(1 -\bar{α}_i ζ).
 \]
-This scaling is well-behaved if one branch point is zero. It makes $P$ a real section.
+$P$ is a real section. The nice feature of this scaling is that it is well-behaved if one branch point is zero, the corresponding factor becomes simply $ζ$, and the degree of $P$ is reduced as reqired.
 
 DIFFERENTIALS
 
-Symmetry conditions on the differentials
+We already mentioned that the differentials in the spectral data must be of the second kind. This means that they have at most double poles, but are residue free. Such differential are also required to possess certain symmetries arising from their origin as eigenvalues of connections. For instance, at a fixed $ζ\in\C^\times$ that is not a branch point of the spectral curve, the two eigenvalues of $H(ζ)$ are $μ(ζ)$ and $μ(ζ)^{-1}$. Hence $σ^*μ = μ^{-1}$, and so for $Θ = d \log μ$
+\[
+σ^* Θ = d \log \bra{ μ^{-1} } = - Θ.
+\]
+
+On a marked curve $Σ$, the conditions a differential $Θ$ must satisfy are
 \begin{enumerate}
-\item Poles: The differentials have double poles with no residues at $π^{-1}\{0,\infty\}$ where $π$ is the projection $π: Σ \to \CP^1$, but are otherwise holomorphic.
-\item Symmetry: The differentials both satisfy $σ^* Θ = - Θ$.
-\item Real differentials: The differentials both satisfy $ρ^* Θ = - \bar{Θ}$
+\item Poles: The differential has double poles with no residues at $π^{-1}\{0,\infty\}$ where $π$ is the projection $π: Σ \to \CP^1$, but are otherwise holomorphic.
+\item Symmetry: The differential satisfies $σ^* Θ = - Θ$.
+\item Reality: The differential satisfies $ρ^* Θ = - \bar{Θ}$
 \item Imaginary Periods: The differentials have purely imaginary periods
 \end{enumerate}
-argument about plane of imaginary period differentials. Call it $\mathcal{B}_Σ$.
-Reformulate a bit.
 A holomorphic differential is $dζ/η$, so meromorphic differentials on $Σ$ are of the form $(f(ζ) + η g(ζ))dζ/η$ for $f,g$ meromorphic functions on $\CP^1$ REF Miranda. All meromorphic functions on $\CP^1$ are rational functions. Applying the hyperelliptic involution gives
 \[
 σ^*\bra{ (f(ζ) + η g(ζ))\frac{dζ}{η} } = (-f(ζ) + η g(ζ))\frac{dζ}{η},
@@ -79,83 +127,89 @@ b_1 - \frac{1}{2}\frac{P_1}{P_0}b_0,
 \]
 where subscripts denote coefficents of the polynomials. This must therefore vanish. Reality of the differential means that this polynomial is real, that is $\overline{b(ζ)}=\bar{ζ}^{g+3}b(\cji{ζ})$.
 
-Now suppose that $P$ has a root at $ζ=0$. Because $P$ can have at most a simple zero at $ζ=0$, $P_1 \neq 0$. Let a local coordinate of a point of $π^{-1}(0)$ be $ξ =\sqrt{ζ}$ and expand
+Now suppose that $P$ has a root at $ζ=0$. Because it must be a simple root, $P_1 \neq 0$. Let $ξ$ be a local coordinate of a point of $π^{-1}(0)$ with $ξ^2 = ζ$ and expand
 \[
 θ = \frac{dζ}{η}f(ζ)
 \sim \frac{2ξdξ}{ξ} \frac{1}{\sqrt{P_1}} \bra{1-\frac{1}{2}\frac{P_2}{P_1}ξ^2+O(ξ^4)} f(ξ^2)
 \]
-So to have double poles requires that $f(ζ) = ζ^{-1}a(ζ)$ for some polynomial $a(ζ)$ of degree $g+1$ and note that this is automatically residue free. Reality of the differential means that this polynomial is also real, that is $\overline{a(ζ)}=\bar{ζ}^{g+1}a(\cji{ζ})$. If we write $b(ζ) = ζa(ζ)$, we see that this is a special case of the form above, where if $P_0$ vanishes so too must $b_0$. In light of this, we may rephrase equation REF among the coefficients to be
+So to have double poles requires that $f(ζ) = ζ^{-1}a(ζ)$ for some polynomial $a(ζ)$ of degree $g+1$ and note that this is automatically residue free. Reality of the differential means that this polynomial $a$ is also real, that is $\overline{a(ζ)}=\bar{ζ}^{g+1}a(\cji{ζ})$. If we write $b(ζ) = ζa(ζ)$, we see that this is a special case of the form above, where if $P_0$ vanishes so too must $b_0$. In light of this, we may rephrase equation REF among the coefficients to be
 \[
 P_1b_0 - 2P_0b_1 = 0.
 \]
-In summary, every differential meeting conditions REF can be written as
+In summary, every differential meeting the first three conditions of REF can be written as
 \[
 Θ = b(ζ)\frac{dζ}{ζ^2η},
 \]
 for some real degree $g+3$ polynomial $b(ζ)$, meeting the condition $P_1b_0 - 2P_0b_1 = 0$ on its coefficents.
 
-Finally, having purely imginary periods imposes further linear relations on the coefficents of $b$. Counting real degrees of freedom, we have $2\times(g+4)/2 - 2 = g+2$ in choosing $b$. We may choose a basis of homology such that the $A$ periods are all real, and the $B$ periods are purely imaginary. Then a necessary condition is that the $A$ periods must vanish: $g$ linear constraints. Thus there is a real 2-plane of differentials with purely imaginary periods.
+Finally, having purely imginary periods imposes further linear relations on the coefficents of $b$. Take a basis of the homology of $Σ$ denoted $A_1,\ldots,A_g,B_1,\ldots,B_g$. Let $A_i$ be the difference of the two lifts to $Σ$ of the arc connecting $α_i$ and $\cji{α}_i$. Such cycles have the property that $ρ_*(A_i) = -A_i$, and along such cycles
+\[
+\int_{A_i} Θ
+= - \int_{ρ_*(A_i)} Θ
+= - \int_{A_i} ρ^* Θ
+= \overline{ \int_{A_i} Θ }.
+\]
+Thus, the $A_i$-period of a real differential is real. If the periods are to be imaginary, these periods must all vanish, which imposes $g$ real constraints. In the choice of $b$ we have initially $2(g+4)$ real degrees of freedom, but they is reduced by half due to the reality, and by a further $2$ because of the relationship between $b_0$ and $b_1$. The $g$ constraints from the imaginary periods leave just $2$ real degrees of freedom in the choice of differential satisfying REF. Thus there is a real 2-plane of differentials with purely imaginary periods, which we shall call $\mathcal{B}_Σ$.
 
 SPECTRAL DATA
 
-More conditions
+We are now in a position to state the final conditions for $(Σ,Θ,\tilde{Θ},E)$, $Σ$ a marked curve, $Θ$ and $\tilde{Θ}$ differentials satisfying REF and $E$ a line bundle on $Σ$, must meet in order to correspond to a pair $(A,Φ)$ solving the equations \ref{eqn:Hit1.7}.
 \begin{enumerate}
-\item Linear independence: The principal parts of the two differentials are real linearly independent.
-\item Periods: The periods of the differentials lie in $2π\iu\Z$
+\item Linear independence: The principal parts of the differentials $Θ, \tilde{Θ}$ are real linearly independent.
+\item Periods: The periods of the differentials $Θ, \tilde{Θ}$ lie in $2π\iu\Z$.
+\item Quaternionic: $E$ is a line bundle of degree $g+1$ that is quaternionic with respect to the involution $ρ\circ σ$.
 \end{enumerate}
-Talk about line bundle $L$.
-Hitchin's theorem 8.1 \cite{Hitchin1990} provides a correspondence between solutions of \ref{eqn:Hit1.7} and so-callled spectral data $(Σ,Θ,\tilde{Θ},L)$. $Σ$ is called a spectral curve if it admits spectral data.
-Called isoperiodic set REF. Justify why we will now ignore $L$.
 
+Hitchin's theorem 8.1 \cite{Hitchin1990} provides a correspondence between solutions of \ref{eqn:Hit1.7} and tuples $(Σ,Θ,\tilde{Θ},E)$ (though such a correspondence necessarily includes singular spectral curves, which we are not considering). If the choice of curve and differentials is fixed, one may still choose $E$ subject to only to condition REF. There are many such choices, they form a real $g$ dimensional torus in the Jacobian of $Σ$. Variation of $E$ is called an isospectral deformation. On the other hand, if we have a triple $(Σ,Θ,\tilde{Θ})$ satisfying the conditions, then there always exists such a line bundle $E$ completing the tuple. Thus we focus our attention on the problem of deforming the triple $(Σ,Θ,\tilde{Θ})$ and in particular to the structure of the space of such triples.
 
 CLOSING CONDITIONS
 
-Theorem 8.20 gives an addtional condition on spectral data to ensure that the two connections are trivial, and so the spectral data corresponds to a harmonic map from the torus into $\S^3$.
+Theorem 8.20 gives an addtional condition on a triple $(Σ,Θ,\tilde{Θ})$ to ensure that the two connections are trivial, and so that the pair $(A,Φ)$ correspond to a harmonic map from the torus into $\S^3$.
 \begin{enumerate}
-\item Closing conditions: $μ$ has value $1$ at $π^{-1}\{\pm 1\}$, where $Θ = d\log μ$, $μσ^*μ = 1$.
+\item Closing conditions: $μ$ has value $1$ at $π^{-1}\{\pm 1\}$, where $μ$ is a function on $Σ\setminusπ^{-1}\{0,\infty\}$, $Θ = d\log μ$ and $μσ^*μ = 1$. Likewise for $\tilde{μ}$, $\tilde{Θ}=d\log \tilde{μ}$.
 \end{enumerate}
-The closing condition can be reformulated as a period type constraint also. Consider if we had such a $μ$ for $Θ$. Then suppose that $γ_1$ was a path connecting the two points of $π^{-1}(1)$.
+As our interest is in harmonic maps primarily, not solutions of \ref{eqn:Hit1.7}, we consider this condition as on par with the ones above. The closing condition can be reformulated as a period type constraint also. Consider if we had such a $μ$ for $Θ$. Then suppose that $γ_+$ was a path in $Σ$ connecting the two points of $π^{-1}(1) = \{ξ_1, σ(ξ_1)\}$.
 \[
-\int_{γ_1} Θ = \log μ(1^+) - \log μ(1^-) \in 2π\iu\Z
+\int_{γ_+} Θ = \log μ(ξ_{1}) - \log μ(σ(ξ_{1}) \in 2π\iu\Z
 \]
-and likewise for the two points over $-1$. Conversely, suppose that
+and likewise for $γ_-$ connecting the two points $\{ξ_{-1}, σ(ξ_{-1})\}$ over $-1$.
 \[
-\int_{γ_1} Θ, \int_{γ_{-1}} Θ \in 2π\iu\Z
+\int_{γ_-} Θ = \log μ(ξ_{-1}) - \log μ(σ(ξ_{-1}) \in 2π\iu\Z
 \]
-Then we could define $μ$ to be $\exp(\int θ)$. The integral of $Θ$ is defined up to a constant, periods and residues. The latter are zero, the constant of integration is fixed by the condition $μσ^*μ = 1$, and the periods are all in $2π\iu\Z$ so do not change $μ$. These integrals then imply that
+Conversely, suppose that
 \[
-μ(1^+)/μ(1^-) = \exp \left(\int_{γ_1} Θ \right) = 1.
+\int_{γ_+} Θ, \int_{γ_-} Θ \in 2π\iu\Z \labelthis{eqn:closing}
 \]
-Together with $μ(1^+)μ(1^-) = μ(1^+)σ^*μ(1^+) = 1$, this implies that $μ(1^\pm) = \pm 1$. Looking at the construction of solutions of \eqref{eqn:Hit1.7}, we are free to tensor with an element of $H^1(M,\Z_2)$, which we can use to fix the signs to be $+1$ in a unique way. Thus for all $Θ$ that satisfy these closing conditions, there is one $μ$ that satisfies Hitchin's closing condition.
-
+Then we could define $μ$ to be $\exp(\int Θ)$. The integral of $Θ$ is defined up to a constant, periods and residues. The latter are zero, the constant of integration is fixed by the condition $μσ^*μ = 1$, and the periods are all in $2π\iu\Z$ so do not change $μ$. These integrals then imply that
+\[
+μ(ξ_1)/μ(σ(ξ_1)) = \exp \left(\int_{γ_+} Θ \right) = 1.
+\]
+Together with $μ(ξ_1)μ(σ(ξ_1)) = μ(ξ_1)σ^*μ(ξ_1) = 1$, this implies that $μ(ξ_1),μ(σ(ξ_1)) = \pm 1$. Looking at the construction of solutions of \eqref{eqn:Hit1.7}, we are free to tensor with an element of $H^1(M,\Z_2)$, which we can use to fix the signs to be $+1$ in a unique way. Thus for any $Θ$ that satisfy \ref{eqn:closing}, there is a unique corresponding $μ$ that satisfies the closing conditions. We therefore use the term closing conditions to describe either formulation. The final part of Theorem 8.20 states that the harmonic map is uniquely determined by its spectral data, up to the action of $SO(4)$ on $SU(3)$.
 
 INTERPRETATION OF SPECTRAL DATA
 
-Given a set of spectral data, we can detect certain features of the corresponding map directly. For example, if $P$ is an even polynomial, then the image of the map is a geodesic sphere. Of particular interest is the case where $P(0)=0$; in this case the map is conformal. Totally geodesic 2-sphere case.
-
+Given a set of spectral data, we can detect certain features of the corresponding map directly. The most important example of this has occured several times already. The harmonic map $f$ is a conformal map if and only if $P(0) = 0$. Another example that we shall come across is the case where $f$ takes its image in a totally geodesic $2$-sphere. Such a case occurs exactly when $P$ is an even polynomial, and $Θ,\tilde{Θ}$ and $E$ are invariant under $τ\circ σ$, where $τ$ is the extra involution $τ(ζ,η) = (-ζ,η)$.
 
 SPACES
 
-In this thesis we consider non-singular marked curves. We classify the curves by their genus. Recall that by the choice of scaling of $P$, the marked curve $Σ$ is determined uniquely by the roots of $P$. Let $D$ be the open unit disc and define
+In order to speak of the moduli of triples $(Σ,Θ,\tilde{Θ})$, we shall build a parameter space for curves and differentials and then identify a moduli as a subset. Consider (nonsingular) marked curves and their genus. Recall that by the choice of scaling of $P$, the marked curve $Σ$ is determined uniquely by the roots of $P$. Let $D$ be the open unit disc and define
 \[
 \mathcal{A}_g = \{ (α_0, α_1, \ldots, α_g) \in D^{g+1} \mid α_i \neq α_j \}.
 \]
-Every point of $\mathcal{A}_g$ determines a non-singular spectral curve $Σ(α_0,\ldots,α_g)$ via a polynomial $P$ with roots $\{α_0,cji{α}_0,ldots,α_g,cji{α}_g}$. However, different permutations of components of a point of $\mathcal{A}_g$ yeild the same spectral curve. Let $Sym(g+1)$ be the symmetric group on $g+1$ elements, and have it act on $\mathcal{A}_g$ by permutation. We define $\mathcal{C}_g$ to be $\mathcal{A}_g / Sym(g+1)$ and we call this the space of marked curves. By excluding singular curves, that is curves with multiple roots, the action of the symmetric group has no fixed points and so the quotient is also a smooth manifold.
+Every point of $\mathcal{A}_g$ determines a marked curve $Σ(α_0,\ldots,α_g)$ via a polynomial $P$ with roots $\{α_0,cji{α}_0,ldots,α_g,cji{α}_g\}$. However, different permutations of components of a point of $\mathcal{A}_g$ yeild the same marked curve. Let $Sym(g+1)$ be the symmetric group on $g+1$ elements, and have it act on $\mathcal{A}_g$ by permutation. We define $\mathcal{C}_g$ to be $\mathcal{A}_g / Sym(g+1)$ and we call this the space of marked curves. By excluding singular curves, that is curves with multiple roots, the action of the symmetric group has no fixed points and so the quotient is also a smooth manifold.
 
-SINGULARITIES AND THEIR EXCLUSION
-
-In the case of spectral curves of genus two or lower, there are no differentials with real linearly independent principal parts on singular curves.
+Before we proceed to differentials, let us once again give justification to excluding singular curves. We shall prove that in the case of curves of genus two or lower, there are no differentials with real linearly independent principal parts on singular curves.
 
 \begin{lem}
-On a spectral curve of genus zero, differentials with linearly independent principal parts do not have common roots.
+On a curve of genus zero, differentials satisfying conditions REF with linearly independent principal parts do not have common roots.
 \begin{proof}
-The conformal case is established in Hitchin p659. We repeat it here. Any differential has the form
+The conformal case is established in Hitchin p659. Any differential has the form, for some complex number $b$,
 \[
 (b + \bar{b}ζ)\frac{dζ}{ζη}.
 \]
 If two such differentials have a common root, then they must be real scalars of one another.
 
-In the nonconformal case, the form of the differentials has more terms. Let the spectral curve be given by
+In the nonconformal case, the form of the differentials has more terms to consider. Let the spectral curve be given by
 \[
 η^2 = -α + (1+α\bar{α})ζ -\bar{α} ζ^2,
 \]
@@ -181,12 +235,7 @@ which is only zero if $\abs{a} = 1$, which itself only occurs when $α=0$. But w
 \end{proof}
 \end{lem}
 
-argument/explanation about why a common root of the differentials is a singular point of the curve.
+Suppose we have a singular spectral curve $Σ$ with normalisation $\tilde{Σ}$.
+Because there can be no singular points on the unit circle, all singular points come in pairs, so the (arthimetic) genus of $Σ$ and $\tilde{Σ}$ differ by an even number. This excludes the possibility of singular spectral curves of genus one. If we add in the fact that at a point of $\tilde{Σ}$ that maps to $Σ$ with multiplicity $m$, the differentials $Θ$ and $\tilde{Θ}$ both have a common zero of order $m-1$, the the above lemma shows that no singular spectral curve has a genus zero normalisation. This rules out singular genus two spectral curves also.
 
-MORE SPACES
-
-Over $\mathcal{C}$, there is a bundle $\mathcal{B}$ of differentials with imaginary periods. As argued above it is a rank 2 vector bundle; the fibre over $Σ$ is $\mathcal{B}_Σ$. Bundle of differentials with integral periods is $\mathcal{B}(n_1,\ldots,n_g)$.
-\[
-\int_{B_k} Θ = 2π\iu n_k.
-\]
-Space of spectral data with closing conditions is $\mathcal{M}$, a subsapce of the total space of $\mathcal{B}\times\mathcal{B}$. Space of spectral curves with spectral data meeting closing conditions is $\mathcal{S}$, a subspace of $\mathcal{C}$.
+Over $\mathcal{C}$, there is a bundle $\mathcal{B}$ of differentials with imaginary periods. As argued above it is a rank 2 vector bundle; the fibre over $Σ$ is $\mathcal{B}_Σ$. We define the space of spectral data $(Σ,Θ,\tilde{Θ})$ with integral periods and satisfying the closing conditions to be $\mathcal{M}$, a subsapce of the total space of $\mathcal{B}\times\mathcal{B}$. Importantly, it is not a subbundle over $\mathcal{C}$, because not every marked curve admits spectral data. Instead, we denote the space of marked curves that do admits spectral data as $\mathcal{S}$, a subspace of $\mathcal{C}$, namely the projection of $\mathcal{M}$.
