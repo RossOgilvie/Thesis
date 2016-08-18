@@ -1,3 +1,5 @@
+%!TEX root = thesis.tex
+
 \section{Deformation Theory}
 \label{sec:Deformation Theory}
 
@@ -673,3 +675,26 @@ Because we forced the $c$'s to have the facotr, we can now remove the factor fro
 {\bf\dot {\tilde b}^1} + q \tilde b^1, {\bf\dot {\tilde b}^2} + q \tilde b^2, {\bf\dot{\tilde P}} + 2q \tilde P,
 \]
 for real quadratic $q$. Choose $q$ such that the degrees are as low as possible, so then we may multiple the solutions to the reduced equation but the factor to get solutions to the nonreduced equation.
+
+
+\subsection{Possibility of common factors}
+Suppose that $(P,b^1,b^2)$ is a path in the space of spectral data, and that at $t=0$ we have the following common factors
+\[
+\gcd(P,b^1,b^2) = F,\;\; \gcd(P/F,b^i/F) = F^i,\;\; \gcd(b^1/FF^1, b^2/FF^2) = G,
+\]
+so that we may write
+\[
+P = F F^1 F^2 \tilde{P},\;\; b^i = F F^i G \tilde{b}^i.
+\]
+Inserting these into REF, we observe that
+\[
+\dot{P} F F^i G \tilde{b}^i = 2 F F^1 F^2 \tilde{P} (\dot{b}^i + \hat{c}^i - ζ\hat{c}^{i\prime}) + ζP' \hat{c}^i.
+\]
+Assuming that the spectral curve is nonsingular, $P'$ does not share any common factors with $P$. Hence we see that $FF^i$ divides $ζ\hat{c}^i$. If we assume that the spectral curve is nonconformal, $ζ$ is not a factor of $P$, so $FF^i$ divides $\hat{c}^i$. We write $\hat{c}^i = (ζ^2-1)FF^i\tilde{c}^i$. Putting these into the $Q$-equation
+\begin{align*}
+FF^1G\tilde{b}^1 FF^2\tilde{c}^2 - FF^2G\tilde{b}^2 FF^1\tilde{c}^1 &= Q FF^1F^2\tilde{P} \\
+FG\bra{\tilde{b}^1 \tilde{c}^2 - \tilde{b}^2 \tilde{c}^1} &= Q \tilde{P}
+\end{align*}
+By definition, neither $F$ nor $G$ divide $\tilde{P}$ so they must divide $Q$. This provides a limit on the number of coincident roots that are allowed; $Q$ is quadratic so $FG$ degree two or less. Moreover, because all of $P,b^1,b^2$ are real, and $P$ has no roots on the unit circle, any common roots must come in conjugate inverse pairs. Hence at most one of $G$ and $F$ is not trivial. We write $Q = FG\tilde{Q}$.
+
+In the conformal case, we know that $P_0, b^1_0$ and $b^2_0$ vanish at $t=0$. Thus $F$ is sure to include a factor of $ζ$. We write $F = ζ\tilde{F}$. The same reasoning as above then implies that $\tilde{F}G$ divides $Q$, with the same restriction that at most one of $F$ and $G$ can be nontrivial. Thus we have divided our analysis into six cases; where $F$, $G$ or neither is nontrivial, and conformal and nonconformal.
