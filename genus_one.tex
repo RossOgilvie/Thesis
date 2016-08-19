@@ -102,7 +102,7 @@ One can note that the plane of differentials with imaginary periods is naturally
 
 Recall that the space of genus one spectral curves is denoted $\mathcal{C}_1$, and within this those curves which admit periodic spectral data are a subspace denoted $\mathcal{S}_1$. Every spectral curve of $\mathcal{C}_1$ admits differentials with integral periods but not every one admits differentials that meeting the closing conditions REF\todo{ref}. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}_1$ within $\mathcal{C}_1$. We will investigate the topology of $\mathcal{S}_1$ and show it to be a dense set of leaves of a foliation of $\mathcal{C}_1$. Most connected components will be simply connected, except for an exceptional family of annuli. The moduli space $\mathcal{M}_1$ of periodic spectral data will be shown to be a trivial bundle over $\mathcal{S}_1$.
 
-As this chapter is concerned with spectral curves of genus one only, we will drop the subscripts on $\mathcal{C}_1,\mathcal{S}_1$ and $\mathcal{M}_1$. A spectral curve is determined by its branch points, and because of the real involution $ρ$, the branch points are of the form $\{α,\cji{α},β,\cji{β}\}$. Let $\mathcal{A}$ be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc. \todo{Why can't the roots be equal. Explain} The action of $\Z_2$ that interchanges the two points is a free and transitive action. Thus the quotient space $\mathcal{A}/\Z_2$ is smooth, and it can be identified with the space of spectral curves $\mathcal{C}$. $\mathcal{A}$ as a two-to-one cover of $\mathcal{C}$. We denote the covering map $Σ$, so that
+As this chapter is concerned with spectral curves of genus one only, we will drop the subscripts on $\mathcal{C}_1,\mathcal{S}_1$ and $\mathcal{M}_1$. A spectral curve is determined by its branch points, and because of the real involution $ρ$, the branch points are of the form $\{α,\cji{α},β,\cji{β}\}$. Let $\mathcal{A}$ be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc. \todo{Why can't the roots be equal. Explain} The action of $\Z_2$ that interchanges the two points is a free and transitive action. Thus the quotient space $\mathcal{A}/\Z_2$ is smooth, and it can be identified with the space of spectral curves $\mathcal{C}$. $\mathcal{A}$ is a two-to-one cover of $\mathcal{C}$. We denote the covering map $Σ$, so that
 \[
 Σ(α,β) = \{ (ζ,η) \mid η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ) \}.
 \]
@@ -233,7 +233,7 @@ z_0 = \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β}
 \end{proof}
 \end{lem}
 
-Because of the holomorphic involution $η\to-η$, equations \ref{eqn:f} and \ref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ laying\todo{laying or lying?} over the unit circle $ζ=1$. Thus there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this upper unit circle in $Σ$, $η=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation $f$ the unit circle is mapped to the imaginary axis. Over the imaginary axis in the Jacobi elliptic curve, for $z=\iu u$, $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$, so it also has a canonical choice of a upper and lower imaginary axis. We choose the transformation between elliptic curves to map the positive unit circle to the positive imaginary axis.
+Because of the holomorphic involution $η\to-η$, equations \ref{eqn:f} and \ref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ laying \todo{laying or lying?} over the unit circle $ζ=1$. Thus there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this upper unit circle in $Σ$, $η=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation $f$ the unit circle is mapped to the imaginary axis. Over the imaginary axis in the Jacobi elliptic curve, for $z=\iu u$, $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$, so it also has a canonical choice of a upper and lower imaginary axis. We choose the transformation between elliptic curves to map the positive unit circle to the positive imaginary axis.
 % The sign choice needed to make the upper unit circle map to the upper imaginary axis is
 % \[
 % η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
@@ -242,53 +242,55 @@ Because of the holomorphic involution $η\to-η$, equations \ref{eqn:f} and \ref
 Having found the map $f$ that transforms the spectral curve into Jacobi normal form, we are now in a position to choose a basis of the vector $3$-space of differentials. First note that the holomorphic differential $ω$ lies in this space and so makes for an obvious first basis vector. It spans the middle terms completely, accounting for every possible choice of $b_2$.
 In genus one, there is an exact differential with the double poles over $ζ=0,\infty$, namely
 \[
-Θ^1 := \iu\; d\left( \frac{η}{ζ} \right)
+Θ^1 := \iu\; d\left( \frac{η}{ζ} \right).
 % = \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}.
 \]
 Due to the factor $\iu$ it is real, and so we take it as the second basis vector. As previously stated, every differential can be written as the linear combination of $ω$, $e$ and an exact differential. Given that we already have taken $ω$ as a basis vector, we seek to complete the basis with the sum of $e$ and an exact differential.
 
-Recall eqn \ref{eqn:def_e}, the definition of $e$. It is real with respect to $\tilde{ρ}(z) = -\bar{z}$, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential. We asser that
+Recall eqn \ref{eqn:def_e}, the definition of $e$. It is real with respect to $\tilde{ρ}(z) = -\bar{z}$, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential. We assert that
 \[
 e + d\left[ \frac{w}{z + \bar{z}_0} \right]
 \]
 has no pole at $z=\infty$. To check this let $z' = z^{-1}$, and expand $e$ about $z' = 0$.
 \begin{align*}
-w &\sim kz'^{-2} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \\
-e &\sim kz'^{-2} dz' \bra{1-k^{-2}z'^2}\bra{1 + \frac{1+k^2}{k^2} z'^2 + \ldots}
+w &= kz'^{-2} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \\
+e &= kz'^{-2} dz' \bra{1-k^{-2}z'^2}\bra{1 + \frac{1+k^2}{k^2} z'^2 + \ldots}
 \end{align*}
-whereas the exact differential has
+whereas the exact differential has the following expansion
 \begin{align*}
 d\left[ \frac{w}{z + \bar{z}_0} \right]
-&\sim d\left[ k z'^{-1} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \bra{1 - \bar{z}_0z' + \bar{z}_0^2z'^2  + \ldots} \right]\\
-&= -k z'^{-2}dz' \bra{1 + \bra{\bar{z}_0^2 - \frac{1}{2}\frac{1+k^2}{k^2}}z'^2 + \ldots}
+&= d\left[ k z'^{-1} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \bra{1 - \bar{z}_0z' + \bar{z}_0^2z'^2  + \ldots} \right]\\
+&= -k z'^{-2}dz' \bra{1 + \bra{\bar{z}_0^2 - \frac{1}{2}\frac{1+k^2}{k^2}}z'^2 + \ldots},
 \end{align*}
-which shows that it does cancel the double pole of $e$. Unfortunately, this exact differential is not real. The space of exact differentials (not necessarily real) with the double poles over $ζ=0,\infty$ is spanned by
+which shows that their sum is holomorphic at $z=\infty$. Unfortunately, this differential is not real. The space of exact differentials (not necessarily real) with the double poles over $ζ=0,\infty$ is
 \[
-d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right],
+\Set { C\,d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right] }{ C\in \C},
 \]
 so we add a differential of this form to restore the symmetry.
 \[
-d\left[ \frac{w}{z + \bar{z}_0} + C\frac{w}{(z-z_0)(z + \bar{z}_0)}\right]
+d\left[ \frac{w}{z + \bar{z}_0}\right] + C\,d \left[\frac{w}{(z-z_0)(z + \bar{z}_0)}\right]
 = d\left[ \frac{w(z - z_0 + C)}{(z-z_0)(z + \bar{z}_0)}\right]
 \]
-is real when $z_0 - C$ is an imaginary number. Thus $C \in \Re z_0 + i\R$. This degree of freedom to choose any imaginary amount is exactly adding a scalar of $Θ^1$. There are two obvious choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both are valid, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^1$, which introduces a symmetry into the formulae that we will use later. Hence we take as our third basis differential
+is real when $z_0 - C$ is an imaginary number. Thus $C \in \Re z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^1$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^1$, which introduces a symmetry into the formulae that we will use later REF. Hence we take as our third basis differential
 \[
 λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0\; d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
 = e + d\left[ \frac{w(z - \iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
 \]
 
-We are now in a position to compute the periods of our basis. In the $ζ$-plane, let $γ_R, γ_I$ denote the real and imaginary periods respectively. We will choose the basis in the following way. For $γ_R$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise, then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For $γ_I$, start at the same point we began $γ_R$ and follow the unit circle clockwise. The image of $γ_R$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(γ_I)$ is simply a traversal of the imaginary axis from bottom to on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
+We are now in a position to compute the periods of our basis $ω,Θ^1,λ$. In the $ζ$-plane, let $A, B$ denote the real and imaginary periods respectively. We will choose these periods in the following way. First, take the branch cuts to be along the branch point circle, between $α$ and $b $ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the upper or lower sheet, where as before the upper sheet is where $η$ is positive over $ζ=1$.
 
-\makefigure{$γ_R$ in red and $γ_I$ in black}{thesis_graphics_temp/zeta_periods.png}
+For $A$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
+
+\makefigure{$A$ in red and $B$ in black}{thesis_graphics_temp/zeta_periods.png}
 
 To summarise the standard elliptic integrals
 \begin{align*}
-\int_{f(γ_R)} ω &= 4K(k) \\
-\int_{f(γ_I)} ω &= 2\iu K' \\
-\int_{f(γ_R)} e &= 4E(k) \\
-\int_{f(γ_I)} e &= 2\iu(K'-E')
+\int_{f(A)} ω &= 4K(k) &
+\int_{f(B)} ω &= 2\iu K' \\
+\int_{f(A)} e &= 4E(k) &
+\int_{f(B)} e &= 2\iu(K'-E')
 \end{align*}
-where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denote not the derivative but instead the complement. By definition $k' = \sqrt{1-k^2}$ and $K'(k) = K(k')$ and ditto for $E'$. Let $Θ^2 = Ωω + Λλ$ and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
+where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denotes not the derivative but instead the complement. By definition $k' = \sqrt{1-k^2}$ and $K'(k) = K(k')$ and $E'(k) = E(k')$. Let $Θ^2 = Ωω + Λλ$ for some real constants $Ω,Λ$. We wish to be able to describe all the differentials meeting condions REF and having integral periods. Suppose $Θ^2$ were to have an imaginary period of $2π\iu$. If we had any other differential with imaginary period $2π\iu n$, then by subtracting $nΘ^2$ the result would be an exact differential, and therefore a HEREHERE and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
 \begin{align*}
 4KΩ + 4EΛ &= 0 \\
 2\iu K' Ω + 2\iu(K'-E')Λ &= 2π\iu
@@ -364,11 +366,11 @@ Recall the closing conditions. These are the conditions that spectral data must 
 \[
 \int_{γ_{+}} Θ \in 2π\iu \Z,
 \]
-where $γ_+$ is a path that begins at $(1,η(1)^-)$ and ends at $(1,η(1)^+)$, the two points on the spectral curve lying over $ζ=1$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination of periods $aγ_R + bγ_I$. The difference in the values of the integrals is therefore
+where $γ_+$ is a path that begins at $(1,η(1)^-)$ and ends at $(1,η(1)^+)$, the two points on the spectral curve lying over $ζ=1$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination of periods $aA + bB$. The difference in the values of the integrals is therefore
 \[
 \int_{γ} Θ - \int_{γ'} Θ
 = \int_{γ - γ'} Θ
-= a\int_{γ_R} Θ + b\int_{γ_I} Θ
+= a\int_{A} Θ + b\int_{B} Θ
 = 2π\iu nb,
 \]
 because by the period conditions, the real period of $Θ$ is zero and its imaginary period is a multiple of $2π\iu$. So although the value of the integral is dependent on the path, the condition that the value must lie in $2π\iu \Z$ is not. Likewise, the closing condition at $ζ=-1$ is defined by taking $γ_-$, a path from $(-1,η(-1)^-)$ to $(-1,η(-1)^+)$, and requiring the integral of $Θ$ over this path to lie in $2π\iu \Z$ also.
