@@ -47,6 +47,9 @@
 
 %make lists use bracketed roman numerals
 \renewcommand{\labelenumi}{(\roman{enumi})}
+% make bars really mean overline, which look much better.
+% in an ideal would, i would define \conj
+\renewcommand*{\bar}{\overline}
 %useful commands
 \newcommand{\bra}[1]{\left(#1\right)}
 \newcommand{\bfrac}[2]{\left(\frac{#1}{#2}\right)}
@@ -63,6 +66,7 @@
 \newcommand{\imply}{\Rightarrow}
 
 
+
 \DeclareMathOperator{\atan}{atan}
 \DeclareMathOperator{\acos}{acos}
 \DeclareMathOperator{\asin}{asin}
@@ -74,6 +78,7 @@
 
 \newcommand{\aside}[1]{{\it ASIDE:} #1}
 
+\DeclareMathOperator{\Mat}{Mat}
 \DeclareMathOperator*{\img}{img}
 % \DeclareMathOperator*{\deg}{deg}
 \DeclareMathOperator*{\tr}{tr}
