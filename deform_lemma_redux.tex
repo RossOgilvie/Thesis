@@ -169,43 +169,54 @@ Thus $\hat c^i$ has a factor of $ζ-1$. The same reasoning applied to $γ_-$ lea
 
 
 
-\subsection{Two necessary conditions}
+\subsection{Further Necessary Conditions}
 Naturally, there is a realtionship between the tangent vector to $\mathcal{M}$ at a point and these polynomials $c^i$. From the equality of mixed partial derivatives
 \begin{align*}
 \dot{(dq^i)} &= \frac{d\zeta}{\zeta^2\eta}\left( -\frac{1}{2}\frac{\dot P}{P}b^i + \dot b^i \right) \\
 d\dot q^i & = \frac{1}{\zeta^2\eta}\left( -\hat c^i -\frac{1}{2}\frac{P'}{P}\zeta\hat c^i + \zeta\hat {c^i}'\right)d\zeta \\
-\dot P b^i - 2P\dot b^i &= 2P\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\zeta\hat c^i \labelthis{eq:EMPDi}
+\dot P b^i - 2P\dot b^i &= 2P\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\zeta\hat c^i \labelthis{eqn:EMPDi}
 \end{align*}
 This yields equations linking $\dot{b}^i$ to $\hat{c}^i$ for each of $i=1,2$. The two equations are not however independent of one another, for they both contain $P$ and its derivatives. If we multiply the equations by $\hat c^2$ and $\hat c^1$ respectively and take the difference, we arrive at
 \[
-\dot P (b^1\hat c^2 - b^2\hat c^1) =  2P(\dot b^1\hat c^2 - \dot b^2\hat c^1 - \zeta\hat {c^1}'\hat c^2 + \zeta\hat {c^2}'\hat c^1).\labelthis{eq:diffed}
+\dot P (b^1\hat c^2 - b^2\hat c^1) =  2P(\dot b^1\hat c^2 - \dot b^2\hat c^1 - \zeta\hat {c^1}'\hat c^2 + \zeta\hat {c^2}'\hat c^1).\labelthis{eqn:diffed}
 \]
-From \eqref{eq:diffed} we will conclude that $P$ divides $b^1\hat c^2 - b^2\hat c^1$ by showing that it vanishes at every root of $P$. If $α$ is a root of $P$ and not a root of $\dot{P}$, we see it is a root of $b^1\hat c^2 - b^2 \hat c^1$ directly from \eqref{eq:diffed}. Suppose that $P$ and $\dot P$ have a common root $\alpha$. If $α=0$, then we know from REF that $b^i_0=0$ and so $ζ$ divides $b^i$. If $α\neq 0$, from \eqref{eq:EMPDi} we have that
+From \eqref{eqn:diffed} we will conclude that $P$ divides $b^1\hat c^2 - b^2\hat c^1$ by showing that it vanishes at every root of $P$. If $α$ is a root of $P$ and not a root of $\dot{P}$, we see it is a root of $b^1\hat c^2 - b^2 \hat c^1$ directly from \eqref{eqn:diffed}. Suppose that $P$ and $\dot P$ have a common root $α$. If $α=0$, then we know from REF that $b^i_0=0$ and so $ζ$ divides $b^i$. If $α\neq 0$, from \eqref{eqn:EMPDi} we have that
 \begin{align*}
-\dot P(\alpha) b^i(\alpha) &= 2P(\alpha)\left( \dot b^i(\alpha) + \hat c^i(\alpha) - \alpha\hat {c^i}'(\alpha)\right) +P'(\alpha)\alpha\hat c^i(\alpha) \\
-0 &= 0 + P'(\alpha)\alpha\hat c^i(\alpha)
+\dot P(α) b^i(α) &= 2P(α)\left( \dot b^i(α) + \hat c^i(α) - α\hat {c^i}'(α)\right) +P'(α)α\hat c^i(α) \\
+0 &= 0 + P'(α)α\hat c^i(α)
 \end{align*}
-But the assumption that the spectral curve is nonsingular forces $P'(\alpha)\neq 0$. Thus we can conclude that $\hat{c}^i(\alpha)=0$. Hence $P$ divides $b^1\hat c^2 - b^2 \hat c^1$ and we can conclude that there is some degree 4 polynomial $\hat Q$ such that
+But the assumption that the spectral curve is nonsingular forces $P'(α)\neq 0$. Thus we can conclude that $\hat{c}^i(α)=0$. Hence $P$ divides $b^1\hat c^2 - b^2 \hat c^1$ and we can conclude that there is some degree 4 polynomial $\hat Q$ such that
 \[
 b^1 \hat c^2 - b^2 \hat c^1 = \hat Q P
 \]
 As $\zeta^2-1$ is a factor of both $\hat{c}$'s, and $P$ has no zeroes on the unit circle, it must be a factor of $\hat Q$. Define $\hat Q = (\zeta^2-1)Q$ to give
 \[
-b^1 c^2 - b^2 c^1 = Q P \labelthis{eq:Q}
+b^1 c^2 - b^2 c^1 = Q P \labelthis{eqn:Q}
 \]
 for some real quadratic polynomial $Q$. This is a necessary condition that the polynomials $c^i$ must satisfy if they correspond to a tangent vector.
 
-The construction of the polynomials $\hat{c}^i$ took into account the order of the poles, the real structure, the periods and the closing conditions of the differenitals, but we have not considered the resdue free condition. For that, we need to preserve $P_1b_0 - 2P_0b_1 = 0$. Taking derivatives, we will need to show that
+The construction of the polynomials $\hat{c}^i$ took into account the order of the poles, the real structure, the periods and the closing conditions of the differenitals, but we have not considered the residue free condition. For that, we need to preserve $P_1b_0 - 2P_0b_1 = 0$. Taking derivatives, we will need to show that
 \[
-\dot{P}_1 b_0 + P_1 \dot{b}_0 - 2 \dot{P}_0 b_1 - 2 P_0 \dot{b}_1 = 0 \labelthis{eq:residueTangent}
+\dot{P}_1 b_0 + P_1 \dot{b}_0 - 2 \dot{P}_0 b_1 - 2 P_0 \dot{b}_1 = 0 \labelthis{eqn:residueTangent}
 \]
 holds at every point of the path.
 
-To close this section, we consider whether at a given point $(P,b^1,b^2)$ the polynomials $\hat{c}^i$ and $Q$ are uniquely determined by a tangent vector $(\dot P, \dot b^1, \dot b^2)$. Since the equations are linear in the $t$-derivative quantities, we need only consider this question for the zero tangent vector. But then from \eqref{eqn:EMPDi},
+Finally, it will not be possible to solve for a tangent vector given an arbitrary polynomial $Q$. Obverse that we would expect generically that given polynomials $b^1,b^2,Q$ and $P$, the solutions $c^1,c^2$ to \eqref{eqn:Q} would be degree $g+2$, but infact we know that they must be a degree lower than this. To this end, let the $n+1$ distinct roots of $b^2$ be denoted as $\{\beta_j\}$ and have multiplicities $r_j +1$. For any real quadratic polynomial $Q$ define
+\[
+% R^i = \sum_{j=1}^{p+3} \frac{Q(\beta^i_j) P(\beta^i_j)}{b^{3-i}(\beta^i_j) {b^i}'(\beta^i_j)}.
+R(Q) = \sum_{j=0}^{n} \sum_{k=0}^{r_j} \frac{g_j^{(r_j-k)}({β}_j)} {k! (r_j-k)!} \bra{\frac{Q(ζ) P(ζ)}{b^1(ζ)}}^{(k)}({β}_j),
+\]
+for
+\[
+g_j(ζ) = \frac{(ζ-{β}_j)^{r_j+1}}{b^2(ζ)} ,
+\]
+with bracketed superscripts denoting differentiation with respect to $ζ$. The important feature of this equation is that it is linear in the coefficients of $Q$.
+
+To close this section, we consider whether at a given point $(P,b^1,b^2)$ the polynomials $\hat{c}^i$ and $Q$ are uniquely determined by a tangent vector $(\dot P, \dot b^1, \dot b^2)$. Since the equations are linear in the components of the tangent vector, we need only consider this question for the zero tangent vector. But then from \eqref{eqn:EMPDi},
 \[
 0 = 2P\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\zeta\hat c^i.
 \]
-The assumption of a nonsingular spectral curve means that $P$ and $P'$ have no common factors and by evaluation at the roots of $P$ implies that $\hat c^i=0$. This immediately implies that $Q=0$ also. So every real quadratic $Q$ is associated to at most one tangent vector to the space of spectral data.
+The assumption of a nonsingular spectral curve requires that $P$ and $P'$ have no common factors and by evaluation at the roots of $P$ the above equation implies that $\hat c^i=0$. This immediately implies that $Q=0$ also. So every real quadratic $Q$ is associated to at most one tangent vector to the space of spectral data.
 
 
 
@@ -225,6 +236,7 @@ Above we saw how to distill an infinitesimal deformation into a real quadratic p
 Suppose that $\ell(t) = (P(t),b^1(t),b^2(t))$ is a path in the space of spectral data, and that at $t=0$ we have the following common factors
 \[
 \gcd(P,b^1,b^2) = F,\;\; \gcd(P/F,b^i/F) = F^i,\;\; \gcd(b^1/FF^1, b^2/FF^2) = G,
+\labelthis{eqn:common factors}
 \]
 so that we may write
 \[
@@ -234,98 +246,109 @@ Inserting these into \eqref{eqn:EMPDi}, we observe that
 \[
 \dot{P} F F^i G \tilde{b}^i = 2 F F^1 F^2 \tilde{P} (\dot{b}^i + \hat{c}^i - ζ\hat{c}^{i\prime}) + ζP' \hat{c}^i.
 \]
-Assuming that the spectral curve is nonsingular, $P'$ does not share any common factors with $P$. Hence we see that $FF^i$ divides $ζ\hat{c}^i$. If we assume that the spectral curve is nonconformal, $ζ$ is not a factor of $P$, so $FF^i$ divides $\hat{c}^i$. We write $\hat{c}^i = (ζ^2-1)FF^i\tilde{c}^i$. Inserting these into the $Q$-equation \eqref{eqn:Q},
+Assuming that the spectral curve is nonsingular, $P'$ does not share any common factors with $P$. Hence we see that $FF^i$ divides $ζ\hat{c}^i$. If we assume that the spectral curve is nonconformal, $ζ$ is not a factor of $P$, so $FF^i$ divides $\hat{c}^i$. We write $\hat{c}^i = (ζ^2-1)FF^i\tilde{c}^i$. We then then remove the common factors from the above equation,
+\[
+\dot{P} G \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + ζ(ζ^2-1)P' \tilde{c}^i,
+\labelthis{eqn:EMPDi reduced}
+\]
+with $j\neq i$ (ie if $i=1$, then $j=2$). Inserting these expressions for $\hat{c}^i$ into the $Q$-equation \eqref{eqn:Q} on the other hand produces
 \begin{align*}
 FF^1G\tilde{b}^1 FF^2\tilde{c}^2 - FF^2G\tilde{b}^2 FF^1\tilde{c}^1 &= Q FF^1F^2\tilde{P} \\
 FG\bra{\tilde{b}^1 \tilde{c}^2 - \tilde{b}^2 \tilde{c}^1} &= Q \tilde{P}
 \end{align*}
-By definition, neither $F$ nor $G$ divide $\tilde{P}$ so they must divide $Q$. This provides a limit on the number of coincident roots that are allowed; $Q$ is quadratic so $FG$ is degree two or less. Moreover, because all of $P,b^1,b^2$ are real, and $P$ has no roots on the unit circle, any common roots of the three polynomials must come in conjugate inverse pairs and so $F$ is even degree. Hence at most one of $G$ and $F$ is not trivial. We write $Q = FG\tilde{Q}$.
+By definition, neither $F$ nor $G$ divide $\tilde{P}$ so they must divide $Q$. This provides a limit on the number of coincident roots that are allowed; $Q$ is quadratic so $FG$ is degree two or less. Moreover, because all of $P,b^1,b^2$ are real, and $P$ has no roots on the unit circle, any common roots of the three polynomials must come in conjugate inverse pairs and so $F$ is even degree. Hence at most one of $G$ and $F$ is not trivial. We write $Q = FG\tilde{Q}$. With all these common factors removed, we have the equation
+\[
+\tilde{b}^1 \tilde{c}^2 - \tilde{b}^2 \tilde{c}^1 = \tilde{Q} \tilde{P}.
+\labelthis{eqn:Q reduced}
+\]
 
 In the conformal case, we know that $P_0, b^1_0$ and $b^2_0$ vanish at $t=0$. Thus $F$ is sure to include a factor of $ζ$. We write $F = ζ\tilde{F}$. The same reasoning as above then implies that $\tilde{F}G$ divides $Q$, with the same restriction that at most one of $\tilde{F}$ and $G$ can be nontrivial. Thus we have divided our analysis into six cases; conformal and nonconformal, and whether $F$, $G$ or neither is nontrivial.
 
-Finally, it will not be possible to solve for a tangent vector given an arbitrary polynomial $Q$. Obverse that we would expect generically that given polynomials $b^1,b^2,Q$ and $P$, the solutions $c^1,c^2$ to \eqref{eqn:Q} would be degree $g+2$, but infact we know that they must be a degree lower than this. To this end, let the $n+1$ distinct roots of $b^2$ be denoted as $\{\beta_j\}$ and have multiplicities $r_j +1$. For any real quadratic polynomial $Q$ define
-\[
-% R^i = \sum_{j=1}^{p+3} \frac{Q(\beta^i_j) P(\beta^i_j)}{b^{3-i}(\beta^i_j) {b^i}'(\beta^i_j)}.
-R(Q) = \sum_{j=0}^{n} \sum_{k=0}^{r_j} \frac{g_j^{(r_j-k)}({β}_j)} {k! (r_j-k)!} \bra{\frac{Q(ζ) P(ζ)}{b^1(ζ)}}^{(k)}({β}_j),
-\]
-for
-\[
-g_j(ζ) = \frac{(ζ-{β}_j)^{r_j+1}}{b^2(ζ)} ,
-\]
-with bracketed superscripts denoting differentiation with respect to $ζ$.
-
-
-
-
-
-
-\begin{lem}[Nonconformal, Both Trivial, Step One]
-Take a triple of nonconformal spectral data $(P,b^1,b^2)$, with a nonsingular spectral curve given by $η^2 = P$ of genus $g$. For every $Q$ with $R(Q) = 0$, there exist real polynomials $c^i$ of degree $g+1$ that satisfy \eqref{eq:Q}.
-
-\begin{proof}
-If we consider \eqref{eq:Q} as a linear system on the coefficents of $c^i$, then it is overdetermined, but nicely seaprates into two independent subsystems by considering it at the values at the roots of the $b$'s. If some of the roots are repeated, then consider the expansion near a $k$-th order root $β$ of $b^2$ and differentiate
-\begin{align*}
-c^2(ζ) &= \frac{Q(ζ)P(ζ)}{b^1(ζ)} + O((ζ-β)^k)\\
-(c^2)^{(l)}(ζ) &= \bra{\frac{Q(ζ)P(ζ)}{b^1(ζ)}}^{(l)} + O((ζ-β)^{k-l})\\
-(c^2)^{(l)}(β) &= \bra{\frac{Q(ζ)P(ζ)}{b^1(ζ)}}^{(l)}(β).
-\end{align*}
-
-This yields a system of $g+3$ equations. The the coefficent matrix in this system is a confluent Vandemonde matrix, and is always nonsingular. Thus there is a unique solution for $c^2$ that gives it degree $g+2$. Hermite interpolation allows one to match the value of a function at $n+1$ points to order $m$ each using a polynomial of degree $(n+1)(m+1)-1$. Take for $m$ the order of the highest order root of $b^2$ and consider the $(n+1)(m+1)$ polynomials such that
-\[
-H_{j,k}^{(l)}(β_i) = δ_{j,i}δ_{l,k}\;\;\text{ for }  l \leq m
-\]
-
-That is $H_{j,k}$ is a polynomial that is zero and has zero derivative to to the first $m$ orders at $β_j$, with the exception of its $k$-th derivative which has a value of $1$. Each of these is degree $(n+1)(m+1)-1$. $g+3$ of these basis polynomials can be used to fit the data of the problem. The remainding $(n+1)(m+1)-g-3$ can be used to reduce degree of the solution by $1$ each, resulting in a solution of exactly $g+2$ as expected. The full formulae can be found in  \cite{Spitzbart1960} for general confluent Vandermode matrices. We note only that $c^2_{g+2}$ is $-b^2_{g+3}R(Q)$, which by assumption is zero. By considering the leading order of \eqref{eqn:Q}, if $c^2_{g+2}$ vanishes, so too must $c^1_{g+2}$. Hence we have constructed a pair of degree $g+1$ polynomials. By an earlier observation REF, we may take these solutions to be real polynomials.
-\end{proof}
-\end{lem}
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{lem}[Nonconformal, Both Trivial, Step Two]
-Given a pair $(c^1,c^2)$ of degree $g+1$ real polynomials that satisfy \eqref{eq:Q} for some $Q$ with $R(Q)=0$, there is a unique tangent vector to the space of spectral data $(\dot P, \dot b^1, \dot b^2)$.
-\begin{proof}
-
-We are attempting to solve \eqref{eq:EMPDi} for the dotted quantities. Using Bezout's Identity, it has a solution if and only if $\gcd(P,b^i)$ divides the right hand side. But under our asusmptions, this is one and so there is always a solution. The first concern is that the two equations for $i=1,2$ may give different solutions for $\dot P$. But this cannot be, since $\dot P$ is determined by the value of the equation at the distict roots of $P$, namely
-\[
--\dot P(\alpha) b^i(\alpha) = -P'(\alpha)\alpha\hat c^i(\alpha)
-\]
-The polynomials $\hat c^i$ are determined by \eqref{eq:Q} and so if $\dot P^1$ and $\dot P^2$ are the two solutions arrising from the two equations then
-\begin{align*}
-b^1(\alpha) c^2(\alpha) - b^2(\alpha) c^1(\alpha) &= Q(\alpha) P(\alpha) = 0 \\
-\dot P^1(\alpha)
-= -P'(\alpha)\alpha \frac{\hat c^1(\alpha)}{b^1(\alpha)}
-&= -P'(\alpha)\alpha \frac{\hat c^2(\alpha)}{b^2(\alpha)}
-= \dot P^2(\alpha).
-\end{align*}
-
-The second consideration is the reality of the solutions. It is not obvious that the right hand side is real, but if it is then so will be the solutions. To see how to take the real involution of a derivative, we compute the following, supposing $f$ is real of degree $k$
+BETTER LINKAGE\todo{}
+We require real solutions. We now from REF that this is possible if the factors are all real polynomials. We check this now. For \eqref{eqn:Q} it is obvious. It is not obvious that the right hand side of \eqref{eqn:EMPDi} is real however. In particular, we must see how to take the real involution of a derivative. To do so, we compute the following, supposing $f$ is real of degree $k$
 \begin{align*}
 ζ^k \bar{f}(ζ^{-1}) &= f(ζ) \\
 kζ^{k-1} \bar{f}(ζ^{-1}) - ζ^{k-2} \bar{f}'(ζ^{-1}) &= f'(ζ) \\
 ρ^*(ζf') = ζ^{k-1}\bar{f}'(ζ^{-1}) &= k f(ζ) - ζf'(ζ)
 \end{align*}
-Thus we can compute the involution of the right hand side of \eqref{eq:EMPDi}.
+Thus we can compute the involution of the right hand side of \eqref{eqn:EMPDi}.
 \begin{align*}
 ρ^*\bra{ 2P\hat{c}^i - 2Pζ\hat{c}^{i\prime} + ζP'\hat{c}^i }
 &= -2P\hat{c}^i - 2P\bra{-(g+3)\hat{c}^i + ζ\hat{c}^{i\prime}} - \bra{(2p+2)P - ζP'}\hat{c}^i \\
 &= (-2+2g+6-2g-2)P\hat{c}^i - 2Pζ\hat{c}^{i\prime} + ζP'\hat{c}^i \\
 &= 2P\hat{c}^i - 2Pζ\hat{c}^{i\prime} + ζP'\hat{c}^i
 \end{align*}
-Remarkably then, this is a real polynomial and there are solutions of degree $2g+2$ and $g+3$ respectively that are real.
+Remarkably then, this is a real polynomial. To whit, for the equations that we are concerned with, if there are solutions the there will be real solutions of the same degree.
 
-The next worry is that this solution may not be unique. Indeed it is not. Let $\dot {\bf P}, \dot {\bf b}^1, \dot {\bf b}^2$ be a solution. Then the other solutions are given by, for $s\in \R$,
+Before we proceed, it may be prudent to make a comment about the notation choices that have been made. We have attempted to use ligatures in a consistent way to indicate the factors that a polynomial does or does not have. For example, a hat indicates a factor of $ζ^2-1$, and a tilde indicates that common factors have been removed. Bold will signify a particular solution to an equation. To choice of this particular solution may or may not be unique. When a solution to an equation appears without bold, it signifies a solution from the set of potential solutions. We shall use $d$ with various subscripts to indicate the degrees of polynomials. Finally, we shall use $i$ and $j$ for indices ranging over $1$ and $2$, with the understanding that they are not equal. For example, if $i=1$, then we take $j=2$ and vice versa.
+
+
+
+
+\begin{lem}[Nonconformal, $F=G=1$]
+Take a triple of nonconformal spectral data $(P,b^1,b^2)$, with a nonsingular spectral curve given by $η^2 = P$ of genus $g$. Suppose that, with reference to \eqref{eqn:common factors}, $F=G=1$. For every $Q$ with $R(Q) = 0$, there exist unique real polynomials $c^i$ of degree $g+1$ that satisfy \eqref{eqn:Q} and, further, there is a unique tangent vector to the space of spectral data $(\dot P, \dot b^1, \dot b^2)$.
+
+\begin{proof}
+In order to solve \eqref{eqn:EMPDi} or \eqref{eqn:Q}, one must first solve their reduced counterparts \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}.
+
+If we consider \eqref{eqn:Q reduced} as a linear system on the coefficents of $\tilde{c}^i$, then it is overdetermined, but by evaluating it at the values at the roots of the polynomials $\tilde{b}^i$ it nicely seaprates into two independent subsystems. Consider \eqref{eqn:Q reduced} at the roots of $\tilde{b}^2$. If some of the roots are repeated, then consider the expansion near a $k$-th order root $β$ of $\tilde{b}^2$ and differentiate $(k-1)$ times. This yields a system of $g+3$ equations. The coefficent matrix in this system is a confluent Vandemonde matrix, and is always nonsingular. Likewise at the roots of $\tilde{b}^2$.
+
+Thus there is a unique solution ${\bf \tilde{c}}^1, {\bf \tilde{c}}^2$ of degrees $g+2-d_1, g+2-d_2$, where $d_i = \deg F^i$. Explicitly, Hermite interpolation allows one to match the value of a function at $n+1$ points to order $m$ using a polynomial of degree $(n+1)(m+1)-1$. Take for $m$ the order of the highest order root of $\tilde{b}^1$ and consider the $(n+1)(m+1)$ polynomials such that\todo{don't use i j here, reserve them for indices.}
+\[
+H_{j,k}^{(l)}(β_i) = δ_{j,i}δ_{l,k}\;\;\text{ for }  l \leq m
+\]
+
+That is, $H_{j,k}$ is a polynomial that is zero and has zero derivatives to the first $m$ orders at every root $β_i$ of $\tilde{b}^1$, with the exception of its $k$-th derivative at $β_j$ which has a value of $1$. Each of these is degree $(n+1)(m+1)-1$. $g+3-d_1$ of these basis polynomials can be used to fit the data of the problem. The remaining $(n+1)(m+1)-(g+3-d_1)$ can be used to reduce degree of the solution by $1$ each, resulting in a solution of exactly degree $g+2-d_1$ as expected. The full formulae can be found in \cite{Spitzbart1960} for general confluent Vandermode matrices. We note only that ${\bf\tilde{c}}^1_{g+2-d_1}$ is $b^1_{g+3-d_1}R(Q)$, which by assumption is zero. By considering the leading order of \eqref{eqn:Q reduced}, if ${\bf\tilde{c}}^1_{g+2-d_1}$ vanishes, so too must ${\bf\tilde{c}}^2_{g+2-d_2}$.
+
+Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i {\bf\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree $g+1$. We similiarly define $\hat{c}^i = (ζ^2 -1)c^i$.
+
+Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} was a necessary condition.
+\[
+\dot{P} \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + ζ(ζ^2-1)P' \tilde{c}^i.
+\labelthis{eqn:EMPDi nc FG=1}
+\]
+Using Bezout's Identity, it has a solution because $\gcd(F^j\tilde{P},\tilde{b}^i) = 1$ The first concern is that the two equations for $i=1,2$ may give different solutions for $\dot P$, and indeed in general they do. However, for neither are the solutions unique, and we shall use the freedom in the space of solutions to find a common solution to both. Let a solution to each equation be $({\bf \dot{P}}^1, {\bf \dot{b}}^1)$ and $({\bf \dot{P}}^1, {\bf \dot{b}}^1)$. The sets of solutions are
+\[
+\Set { ({\bf \dot{P}}^1 + 2rF^2\tilde{P}, {\bf \dot{b}}^1) + r\tilde{b}^1 }
+{ r \text{ a real polynomial of degree } d_1 },
+\]
+and
+\[
+\Set { ({\bf \dot{P}}^2 + 2sF^1\tilde{P}, {\bf \dot{b}}^2) + r\tilde{b}^2 }
+{ s \text{ a real polynomial of degree } d_2 },
+\]
+respectively. First note that every element of both of these sets are in agreement at any root $α$ of $\tilde{P}$. From \eqref{eqn:EMPDi nc FG=1},
+\[
+\dot P^i(α) \tilde{b}^i(α) = P'(α)α(α^2 -1)\tilde{c}^i(α).
+\]
+By definition, roots of $\tilde{P}$ are roots of $P$ that are not common to either $\tilde{b}^1$ or $\tilde{b}^2$. If neither of them has a root at at $α$, then from \eqref{eqn:Q reduced} we see that
+\[
+\tilde{b}^1(α)\tilde{c}^2(α) - \tilde{b}^2(α)\tilde{c}^1(α) = Q(α)\tilde{P}(α) = 0,
+\]
+and
+\[
+\dot P^1(α)
+= -P'(α)α (α^2 - 1)\frac{\tilde{c}^1(α)}{\tilde{b}^1(α)}
+= -P'(α)α (α^2 - 1)\frac{\tilde{c}^2(α)}{\tilde{b}^2(α)}
+= \dot P^2(α).
+\]
+At the $d_1$ roots of $F^1$, we see that every solution $\dot{P}^2$ takes the same value. Let $β$ be such a root, then
+\[
+\dot{P}^2(β)
+= {\bf \dot{P}}^2(β) + 2sF^1(β)\tilde{P}(β)
+= {\bf \dot{P}}^2(β)
+= β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)},
+\]
+where we can be sure that $\tilde{b}^2(β) \neq 0$ because it cannot be a root of $b^2$ (if it were, $F\neq 1$). Also, $β$ is not a root of $\tilde{P}$ or $F^2$ by the assumption of nonsingularity. Thus this provides a constraint on the choice of $r$. Specifically we require that
+\[
+{\bf \dot{P}}^1(β) + 2r(β)F^2(β)\tilde{P}(β) = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)}.
+\]
+Likewise, at the $d_2$ roots of $F^2$, we aquire constraints on the choice of $s$. It is always possible to satisfy such constraints, so we see that there is common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$ to \eqref{eqn:EMPDi reduced}. It is also a solution to \eqref{eqn:EMPDi}.
+
+Still though, this solution is not unique. There remains one degree of freedom. For any real number $s$, we have solutions to \eqref{eqn:EMPDi} of the form
 \begin{align*}
-\dot P &= \dot {\bf P} + 2sP  \labelthis{eqn:P soln}\\
-\dot b^i &= \dot {\bf b}^i + sb^i
+\dot P &= {\bf \dot{P}} + 2sP  \labelthis{eqn:P soln}\\
+\dot b^i &= {\bf \dot{b}}^i + sb^i
 \end{align*}
 However, this freedom is simply the freedom to rescale $P$. We have chosen a preferred scaling of $P$, so our choice of $s$ is determined. Explicitly, if we were to allow other scalings, the formula for $P$ would be
 \[
@@ -340,9 +363,9 @@ Thus we know the values of $\dot{α}_i$ independent of the scaling from our solu
 \[
 \dot{P}_0 = \dot {\bf P}_0 + 2sP_0 = \dot r P_0 + \sum_i (-\dot{α}_i)\prod_i (-α_j),
 \]
-so we may ensure that $r\cong 1$ by choosing $s$ so that $\dot r = 0$. In summary, if we fix a scaling of the spectral curve, then there is a unique solution to \eqref{eq:EMPDi}, and hence a unique tangent vector.
+so we may ensure that $r\equiv 1$ by choosing $s$ so that $\dot r = 0$. In summary, if we fix a scaling of the spectral curve, then there is a unique solution to \eqref{eqn:EMPDi}.
 
-Finally then there is a second necessary condition that we derived. Recall \eqref{eq:residueTangent}. We must satisfy this infinitesimally, so that if we were to integrate out a path, the condition of no-residues would hold along the curve. We will see that this condition is satisfied already.
+Finally then there is a second necessary condition that must be satisfied by our solution $(\dot{P},\dot{b}^1,\dot{b}^2)$. We must satisfy \eqref{eqn:residueTangent}, so that \eqref{eqn:residue} holds along the path. But this condition is satisfied already.
 \begin{align*}
 \dot{P}_1 b_0 + P_1 \dot{b}_0 - 2(\dot{P}_0 b_1 + P_0 \dot{b}_1)
 &= P_1\dot{b}_0 - 2\dot{P}_0b_1 + 3P_1\hat{c}_0 - P_0\dot{b}_1 + 2P_1\dot{b}_0 \\
@@ -351,7 +374,9 @@ Finally then there is a second necessary condition that we derived. Recall \eqre
 &= \frac{3\dot{P}_0}{P_0}\bra{ - P_0b_1 + \frac{1}{2}P_1b_0 }\\
 &= 0
 \end{align*}
-The substitution in the first line comes from the $ζ$ linear terms of \eqref{eq:Q}, the third line from the constant terms of that equation and the last line comes from the fact that the quantity in the bracket is exactly the residue at $ζ=0$, which is zero by the assumption that $(b^1,b^2,P)$ is spectal data already.
+The substitution in the first line comes from the $ζ^1$ terms of \eqref{eqn:Q}, the third line from the constant terms of that equation and the last line comes from the fact that the quantity in the bracket is exactly the residue at $ζ=0$, which is zero by the assumption that $(b^1,b^2,P)$ is spectal data.
+
+Hence $(\dot{P},\dot{b}^1,\dot{b}^2)$ is a tangent vector to $\mathcal{M}$ at $(b^1,b^2,P)$.
 \end{proof}
 \end{lem}
 
@@ -361,19 +386,19 @@ The substitution in the first line comes from the $ζ$ linear terms of \eqref{eq
 
 
 
-The moral of these two lemmata is that at any point of spectral data there is a plane of deformation directions. Note that the condition on $Q$ is linear on its coefficents, so there is a plane of such $Q$ and each can then be used to first find a pair $C^1,c^2$ and then further a unique tangent vector. Thus, given a section of $Q$'s and an intial piece of spectral data, this data of tangent vectors then amounts to a first order linear ODE, which can be solved to give a deformation of the spectral data. (One may be concerned there is a catch-22 at play here: how is one to apply the condition $R=0$ on $Q$ without already having knowledge of the moduli of spectral data? Fear not. There are frames of meromorphic differentials defined for every hyperelliptic curve such that if the curve is actually a spectral curve, any admissible differentials are in the lattice generated by this frame. Thus we can use this frame to apply the condition and chose a section of $Q$'s, and if we start at a point in the moduli we will never flow outside it accidentally. )
+The moral of these two lemmata is that at any point of spectral data there is a plane of deformation directions. Note that the condition on $Q$ is linear on its coefficents, so there is a plane of such $Q$ and each can then be used to first find a pair $(c^1,c^2)$ and then further a unique tangent vector. Thus, given a section of $Q$'s and an intial piece of spectral data, this data of tangent vectors then amounts to a first order linear ODE, which can be solved to give a deformation of the spectral data. (One may be concerned there is a catch-22 at play here: how is one to apply the condition $R=0$ on $Q$ without already having knowledge of the moduli of spectral data? Fear not. There are frames of meromorphic differentials defined for every hyperelliptic curve such that if the curve is actually a spectral curve, any admissible differentials are in the lattice generated by this frame. Thus we can use this frame to apply the condition and chose a section of $Q$'s, and if we start at a point in the moduli we will never flow outside it accidentally. )
 
 
 
 
 
 
-What additional constraints are there if there are common zeroes amoung the polynomials? Suppose that $F = \gcd(P,b^1,b^2)$ is such a common factor. Take any root $α$ of $F$. Then from \eqref{eq:EMPDi} we have that
+What additional constraints are there if there are common zeroes amoung the polynomials? Suppose that $F = \gcd(P,b^1,b^2)$ is such a common factor. Take any root $α$ of $F$. Then from \eqref{eqn:EMPDi} we have that
 \begin{align}
 \dot P b^i - 2P\dot b^i &= 2P\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\zeta\hat c^i \\
 0 &= 0 + P'(α)α\hat c^i(α)
 \end{align}
-In the nonsingular and nonconformal case, this implies that $\hat c^i(α) = 0$ so that $F$ also divides both $\hat c$'s. The Q-equation \eqref{eq:Q} then implies that
+In the nonsingular and nonconformal case, this implies that $\hat c^i(α) = 0$ so that $F$ also divides both $\hat c$'s. The Q-equation \eqref{eqn:Q} then implies that
 \[
 F^2 \bar{\tilde{b}^1\tilde{c}^2 - \tilde{b}^2\tilde{c}^1 = F Q \tilde{P}}
 \]
@@ -393,19 +418,19 @@ where tildes repesent polynomials with the factor of $F$ removed. Again by nonsi
 
 
 \begin{lem}[Nonsigular, nonconformal, no common factor]
-Take a slight generalisation and assume $\gcd(P,b^1)=F^1$ and $\gcd(P,b^2)=F^2$ but $\gcd(b^1,b^2)=1$. Then for every real quadratic polynomial $Q$ satisfying $R=0$ (with the sum now taken over the roots of $b^1/\gcd(P,b^1)$), there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eq:EMPDi}.
+Take a slight generalisation and assume $\gcd(P,b^1)=F^1$ and $\gcd(P,b^2)=F^2$ but $\gcd(b^1,b^2)=1$. Then for every real quadratic polynomial $Q$ satisfying $R=0$ (with the sum now taken over the roots of $b^1/\gcd(P,b^1)$), there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
 \begin{proof}
 
 As $b^i$ is real and the roots of $P$ cannot lie on the unit circle, the common factors must be even degree $2d_i$, ie $F^i=\Pi_j (ζ-α_j)(1-\bar{α_j}ζ)$ and the polynomials factor as $b^i = F^i\tilde{b^i}$ and write $P = F^1F^2\tilde{P}$. Consider the equation
 \begin{align}
-\tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = Q\tilde{P}.\labelthis{eq:Qreduced}
+\tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = Q\tilde{P}.\labelthis{eqn:Qreduced}
 \end{align}
 
-With the common factors excluded from this modified equation, Bezout's identity again says that there is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p+2-2d_1$ and $p+2-2d_2$ respectively. But the $R=0$ condition is exactly the one that will ensure that $c^2$ is infact of degree $p+1-2d_2$. Considering the $ζ^{2p+5-2d_1-2d_2}$ terms of this equation it implies that $\tilde{c}^1$ is of degree $p+1-2d_1$. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eq:Q}, a necessary condition to solving \eqref{eq:EMPDi}. The previous coprimality assumption is no longer true. Every term however contains the factor $F^i$, so the equation is still solvable. For each $i$, call it $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
+With the common factors excluded from this modified equation, Bezout's identity again says that there is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p+2-2d_1$ and $p+2-2d_2$ respectively. But the $R=0$ condition is exactly the one that will ensure that $c^2$ is infact of degree $p+1-2d_2$. Considering the $ζ^{2p+5-2d_1-2d_2}$ terms of this equation it implies that $\tilde{c}^1$ is of degree $p+1-2d_1$. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q}, a necessary condition to solving \eqref{eqn:EMPDi}. The previous coprimality assumption is no longer true. Every term however contains the factor $F^i$, so the equation is still solvable. For each $i$, call it $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
 \[
 {\bf\dot P^i} + 2s^i F^{3-i}\tilde P, {\bf\dot b^i} + s^i \tilde b^1
 \]
-This does not mean however that there is a large space of solutions, because $\dot P$ must satisfy both equations. As before, $\dot P$ is determined by its values at the roots of $P$. If there were a common root of $b^1$, $b^2$ and $P$ it would completely factor from both equations; it wouldn't provide any constraint on $\dot P$. The assumption says though that there are no such common roots. Thus every root of $P$ constrains $\dot P$, and \eqref{eq:Qreduced} means that the two equations are consistent at the roots of $\tilde P$. So there for there must be some $s^i$'s that make the two solutions consistent. Having harmonised the solutions we are still free to add real multiples $P$, ie
+This does not mean however that there is a large space of solutions, because $\dot P$ must satisfy both equations. As before, $\dot P$ is determined by its values at the roots of $P$. If there were a common root of $b^1$, $b^2$ and $P$ it would completely factor from both equations; it wouldn't provide any constraint on $\dot P$. The assumption says though that there are no such common roots. Thus every root of $P$ constrains $\dot P$, and \eqref{eqn:Qreduced} means that the two equations are consistent at the roots of $\tilde P$. So there for there must be some $s^i$'s that make the two solutions consistent. Having harmonised the solutions we are still free to add real multiples $P$, ie
 \[
 \{ ({\bf \dot P^1} + 2s^1 F^2 \tilde{P} + 2u F^1F^2\tilde{P}, {\bf \dot b^1} + s^1\tilde{b}^1 + u F^1\tilde{b}^1, {\bf \dot b^2} + s^2\tilde{b}^2 + uF^2 \tilde{b}^2) \mid u \in \R\}.
 \]
@@ -425,7 +450,7 @@ The choice of scalar $u$ is again linked to the scaling of $P$, so there is an e
 
 
 \begin{lem}[Nonsigular, nonconformal, some common factors]
-Next assume $\gcd(P,b^1)=F^1$ and $\gcd(P,b^2)=F^2$ and $\gcd(b^1,b^2)=F$ but $\gcd(P,b^1,b^2)=1$. If $F$ is linear, take any real linear polynomial $Q$ or if $F$ is quadratic then take a pair of real numbers $\tilde Q$ and $r$. In either case, for any such choice there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eq:EMPDi}.
+Next assume $\gcd(P,b^1)=F^1$ and $\gcd(P,b^2)=F^2$ and $\gcd(b^1,b^2)=F$ but $\gcd(P,b^1,b^2)=1$. If $F$ is linear, take any real linear polynomial $Q$ or if $F$ is quadratic then take a pair of real numbers $\tilde Q$ and $r$. In either case, for any such choice there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
 \begin{proof}
 
 Write $P = F^1F^2\tilde{P}$ and $b^i = FF^i\tilde b^i$. Let the degrees be $2d_i = \deg F^i$, $d = \deg F$. If $d=1$ consider the equation
@@ -433,7 +458,7 @@ Write $P = F^1F^2\tilde{P}$ and $b^i = FF^i\tilde b^i$. Let the degrees be $2d_i
 \tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = Q\tilde{P}.
 \end{align}
 
-This is becoming familiar. There is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p+1-2d_1$ and $p+1-2d_2$ respectively. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eq:Q}.
+This is becoming familiar. There is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p+1-2d_1$ and $p+1-2d_2$ respectively. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q}.
 
 If $d=2$ then consider instead
 \begin{align}
@@ -443,9 +468,9 @@ Real solutions for $\tilde{c^1},\tilde{c^2}$ of degrees at most $g+1-2d_1$ and $
 \[
 \{ ({\bf \tilde c^1} + r \tilde{b}^1, {\bf \tilde c^2} + r \tilde{b}^1) \mid r\in \R\}.
 \]
-This is naturally an affine space, so there is no `correct' choice for the origin. But for the purposes of specifying the parameter $r$ in the lemma, we may for example take $r=0$ to be the point where the constant coefficent of $\tilde c^1$ is of minimum modulus. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eq:Q}.
+This is naturally an affine space, so there is no `correct' choice for the origin. But for the purposes of specifying the parameter $r$ in the lemma, we may for example take $r=0$ to be the point where the constant coefficent of $\tilde c^1$ is of minimum modulus. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q}.
 
-The first step in solving \eqref{eq:EMPDi} is to factor from every term $F^i$. For each $i$, call the solution to the reduced equation $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
+The first step in solving \eqref{eqn:EMPDi} is to factor from every term $F^i$. For each $i$, call the solution to the reduced equation $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
 \[
 {\bf\dot P^i} + 2s^i F^{3-i}\tilde P, {\bf\dot b^i} + s^i \tilde b^1
 \]
@@ -470,16 +495,16 @@ As before, the choice of $u$ is just scaling so we have constructed an essential
 
 
 \begin{lem}[Nonsigular, nonconformal, triple common factor]
-Assume $\gcd(P,b^1,b^2) = F$ is a real quadratic, $\gcd(P/F,b^1/F)=F^1$ and $\gcd(P/F,b^2/F)=F^2$. Take a pair of real numbers $\tilde Q$ and $r$. For any such choice there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eq:EMPDi}. NEEDS CONDITION ON P \todo{figure out the condition}
+Assume $\gcd(P,b^1,b^2) = F$ is a real quadratic, $\gcd(P/F,b^1/F)=F^1$ and $\gcd(P/F,b^2/F)=F^2$. Take a pair of real numbers $\tilde Q$ and $r$. For any such choice there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}. NEEDS CONDITION ON P \todo{figure out the condition}
 \begin{proof}
 
 Write $P = F^1F^2F\tilde{P}$ and $b^i = FF^i\tilde b^i$. Let the degrees be $2d_i = \deg F^i$. As was alluded to in the prior computation, the Q-equation is dramatically reduced.
 \begin{align}
 \tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = \tilde{Q}\tilde{P}.
 \end{align}
-There is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p-2d_1$ and $p-2d_2$ respectively. By the condition CONDITION\todo{me}, the soltuions are actually one degree less. Let $c^i :=  FF^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eq:Q} and are both degree $p+1$
+There is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p-2d_1$ and $p-2d_2$ respectively. By the condition CONDITION\todo{me}, the soltuions are actually one degree less. Let $c^i :=  FF^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q} and are both degree $p+1$
 
-We now progree to solving \eqref{eq:EMPDi}. Factor $FF^i$ from every term. For each $i$, call the solution to the reduced equation $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
+We now progree to solving \eqref{eqn:EMPDi}. Factor $FF^i$ from every term. For each $i$, call the solution to the reduced equation $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
 \[
 {\bf\dot P^i} + 2s^i F^{3-i}\tilde P, {\bf\dot b^i} + s^i \tilde b^1
 \]
@@ -510,18 +535,18 @@ Conformal spectral data is distinguished by $P(0)=0$. From the residue condition
 
 Factoring the common root, consider the necessary condition
 \[
-\tilde{b}^1 c^2 - \tilde{b}^2 c^1 = Q\tilde{P}.\labelthis{eq:QConformal}
+\tilde{b}^1 c^2 - \tilde{b}^2 c^1 = Q\tilde{P}.\labelthis{eqn:QConformal}
 \]
 There is a unique solution to this where both $c^i$ polynomials are degree $p$. The space of solutions of at most degree $p+1$ is therefore the same with an arbitrary multiple of $\tilde{b}^i$ added. Within this space, by consideration of degrees, there must be a real solution $(\bf c^1, \bf c^2)$ and all other real solutions are given by
 \[
 \{ ({\bf c^1} + r \tilde{b}^1, {\bf c^2} + r \tilde{b}^1) \mid r\in \R\}.
 \]
 
-Moving on, we attempt to solve a factored version of \eqref{eq:EMPDi}, namely
+Moving on, we attempt to solve a factored version of \eqref{eqn:EMPDi}, namely
 \[
-\dot P \tilde{b}^i - 2\tilde{P}\dot b^i = 2\tilde{P}\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\hat c^i. \labelthis{eq:EMPDiConformal}
+\dot P \tilde{b}^i - 2\tilde{P}\dot b^i = 2\tilde{P}\left( \hat c^i - \zeta\hat {c^i}'\right) + P'\hat c^i. \labelthis{eqn:EMPDiConformal}
 \]
-For the dotted quatities $\dot P$ and $\dot b^1$ there are unique solutions of degree $2p-1$ and $p$ respectively. Mulitplying the whole equation by $ζ$ gives back \eqref{eq:EMPDi}, so the right hand side is real and there are real solutions of degree $2p+2$ and $p+3$. The space of solutions is therefore
+For the dotted quatities $\dot P$ and $\dot b^1$ there are unique solutions of degree $2p-1$ and $p$ respectively. Mulitplying the whole equation by $ζ$ gives back \eqref{eqn:EMPDi}, so the right hand side is real and there are real solutions of degree $2p+2$ and $p+3$. The space of solutions is therefore
 \[
 \{ ({\bf \dot P} + 2s \tilde{P}, {\bf \dot b^1} + s \tilde{b}^1, {\bf \dot b^2} + s \tilde{b}^2) \mid s \text { a real quadratic polynomial}\}.
 \]
@@ -533,11 +558,11 @@ This is not automatically true as it was in the nonconformal case. Let $s = s_0 
 \[
 2 {\bf\dot{P}_0} b^1_1 - P_1 {\bf \dot{b}^1_0} + 3 s_0 P_1 b^1_1 = 0
 \]
-which fully determines $s_0$. Can we therefore simultaneously satisfy the condition for $i=2$? Note that \eqref{eq:EMPDiConformal} in the lowest degree says that
+which fully determines $s_0$. Can we therefore simultaneously satisfy the condition for $i=2$? Note that \eqref{eqn:EMPDiConformal} in the lowest degree says that
 \[
 \dot{P}_0 b^i_1 - 2P_1\dot{b}^i_0 = -3 P_1 c^i_0
 \]
-and \eqref{eq:QConformal} in the lowest degree yields
+and \eqref{eqn:QConformal} in the lowest degree yields
 \begin{align*}
 b^1_1 c^2_0 &= Q_0 P_1 + b^2_1 c^1_0 \\
 b^1_1 \bra{{\bf\dot{P}_0} b^2_1 - 2P_1{\bf\dot{b}^2_0}} &= -3Q_0 (P_1)^2 + b^2_1 \bra{{\bf\dot{P}_0} b^1_1 - 2P_1{\bf\dot{b}^1_0}} \\
@@ -574,10 +599,10 @@ But our free choice of $s_1\in\R$ is only adding multiples of $(2P,b^1,b^2)$, wh
 
 
 \begin{lem}[Nonsigular, conformal, common zeroes]
-The final nonsingular case to consider is to make a slight generalisation and assume again $\gcd(P,b^1)=ζF^1$ and $\gcd(P,b^2)=ζF^2$. Then for every pair of real numbers $(Q_1,r)$, there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eq:EMPDi}.
+The final nonsingular case to consider is to make a slight generalisation and assume again $\gcd(P,b^1)=ζF^1$ and $\gcd(P,b^2)=ζF^2$. Then for every pair of real numbers $(Q_1,r)$, there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
 
 \begin{proof}
-The proof of this is a hybrid of the previous two proofs. Necessarily $c^i = F^i \tilde{c}^i$, but then the argument from the conformal case applies to give a solution to \eqref{eq:Q} for every $Q = Q_1ζ$ and $r\in\R$. The \eqref{eq:EMPDiConformal} is massively underdetermined, however the argument from the nonconformal case applied here shows that $\dot P$ needs to have certain values at the nonzero roots of $P$, which there are $2p$ (not $2p+2$ as in the nonconformal case). Hence there is only a real quadratic freedom in the solution to that equation. Finally the argument about the residue condition applies to reduce this to just rescaling of spectral curve.
+The proof of this is a hybrid of the previous two proofs. Necessarily $c^i = F^i \tilde{c}^i$, but then the argument from the conformal case applies to give a solution to \eqref{eqn:Q} for every $Q = Q_1ζ$ and $r\in\R$. The \eqref{eqn:EMPDiConformal} is massively underdetermined, however the argument from the nonconformal case applied here shows that $\dot P$ needs to have certain values at the nonzero roots of $P$, which there are $2p$ (not $2p+2$ as in the nonconformal case). Hence there is only a real quadratic freedom in the solution to that equation. Finally the argument about the residue condition applies to reduce this to just rescaling of spectral curve.
 \end{proof}
 \end{lem}
 
@@ -598,7 +623,7 @@ These are incomplete. But there are no singular spectral curves in genus zero, o
 
 
 \begin{lem}[$b^1$ and $b^2$, on the unit circle]
-Suppose that $b^1$ and $b^2$ share a single common root $β\in\S^1$ and that $P(β)\neq 0$. Then for either every real linear polynomial $\tilde Q$ or pair of real numbers $(r,\tilde Q)$ there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eq:EMPDi}.
+Suppose that $b^1$ and $b^2$ share a single common root $β\in\S^1$ and that $P(β)\neq 0$. Then for either every real linear polynomial $\tilde Q$ or pair of real numbers $(r,\tilde Q)$ there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
 \end{lem}
 
 Proof.
@@ -607,13 +632,13 @@ Suppose first that $β$ is a simple root of at least one the polynomials. As bef
 \[
 \tilde b^1 c^2 - \tilde b^2 c^1 = \tilde Q P.
 \]
-Bezout's identity says that there is a unique solution to this equation $(c^1,c^2)$ where the polynomials are both of degree $g+1$. Multiplying the above equation by the factor $\sqrt{-\bar{β}}(ζ-β)$ gives a solution to \eqref{eq:Q}.
+Bezout's identity says that there is a unique solution to this equation $(c^1,c^2)$ where the polynomials are both of degree $g+1$. Multiplying the above equation by the factor $\sqrt{-\bar{β}}(ζ-β)$ gives a solution to \eqref{eqn:Q}.
 
 Suppose next that $β$ is a root of order 2 or more for both polynomials. Then we can see that it is only possible to satisfy the necessary condition of the Q-equation the $b$'s have at most an order 2 zero not in common with $P$, because $Q$ is quadratic and could not accomedate any higher order. Therefore consider $F=\bar{β}(ζ-β)^2$, $b^i = F \tilde b^i$ and the equation
 \[
 \tilde b^1 c^2 - \tilde b^2 c^1 = \tilde Q P.
 \]
-for a real scalar $\tilde Q$. Bezout's identity give fundemental solutions of degree $g+1$. The space of solutions to \eqref{eq:Q} are then
+for a real scalar $\tilde Q$. Bezout's identity give fundemental solutions of degree $g+1$. The space of solutions to \eqref{eqn:Q} are then
 \[
 F{\bf c^1} + r \tilde b^1, F{\bf c^2} + r \tilde b^2
 \]
@@ -628,7 +653,7 @@ In either case, having found $c$'s that satisfy the necessary condition, the sec
 
 
 \begin{lem}[$b^1$ and $b^2$, off the unit circle]
-Suppose that $b^1$ and $b^2$ share a single pair of common roots $β,\bar{β}^{-1}\not\in\S^1$ and that $P(β)\neq 0$. Then for every pair of real numbers $(\tilde Q,r)$ there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eq:EMPDi}.
+Suppose that $b^1$ and $b^2$ share a single pair of common roots $β,\bar{β}^{-1}\not\in\S^1$ and that $P(β)\neq 0$. Then for every pair of real numbers $(\tilde Q,r)$ there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
 \end{lem}
 
 Proof.
@@ -641,7 +666,7 @@ In this situation, Bezout's identity says that there is a family of solutions
 \[
 {\bf c^1} + r \tilde b^1, {\bf c^2} + r \tilde b^2
 \]
-where the $c$'s are degree $g+1$. $r$ is an affine coordinate for this space, but we may choose an origin for it such that ${\bf c^1}$ has degree $g$ for the sake of definiteness. Multiplying by the factor $(ζ-β)(1-\bar{β}ζ)$ gives a solution to \eqref{eq:Q} and a solution to \eqref{eq:EMPDi} follows easily. Different choices for $r$ lead to different $c$'s and therefore to different tangent vectors by the remark earlier that the relationship of tangent vectors to $c$'s is one-to-one.
+where the $c$'s are degree $g+1$. $r$ is an affine coordinate for this space, but we may choose an origin for it such that ${\bf c^1}$ has degree $g$ for the sake of definiteness. Multiplying by the factor $(ζ-β)(1-\bar{β}ζ)$ gives a solution to \eqref{eqn:Q} and a solution to \eqref{eqn:EMPDi} follows easily. Different choices for $r$ lead to different $c$'s and therefore to different tangent vectors by the remark earlier that the relationship of tangent vectors to $c$'s is one-to-one.
 \qed
 
 
@@ -657,7 +682,7 @@ where the $c$'s are degree $g+1$. $r$ is an affine coordinate for this space, bu
 
 
 \begin{lem}[$b^1$, $b^2$ and $P$] IN PROGRESS, NOT CERTAIN
-Suppose that $b^1$, $b^2$ and $P$ share a single pair of common roots $α,\bar{α}^{-1}\not\in\S^1$ and $P$ has some constraint \todo{ find such constraint}. Then for every pair of real numbers $(\tilde Q,r)$ and real quadratic polynomial $s$ there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eq:EMPDi}.
+Suppose that $b^1$, $b^2$ and $P$ share a single pair of common roots $α,\bar{α}^{-1}\not\in\S^1$ and $P$ has some constraint \todo{ find such constraint}. Then for every pair of real numbers $(\tilde Q,r)$ and real quadratic polynomial $s$ there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
 \end{lem}
 
 Proof.
@@ -670,11 +695,11 @@ In this situation, Bezout's identity says that there is a family of solutions
 \[
 {\bf \tilde c^1} + r \tilde b^1, {\bf \tilde c^2} + r \tilde b^2
 \]
-where the $c$'s are degree $g$. Use constraint to bump them down a degree. Let $c^1 = (ζ-α)(1-\bar{α}ζ) \tilde c^i$. Multiplying by the factor $(ζ-α)^2(1-\bar{α}ζ)^2$ gives a solution to \eqref{eq:Q}. Space of solutions is now
+where the $c$'s are degree $g$. Use constraint to bump them down a degree. Let $c^1 = (ζ-α)(1-\bar{α}ζ) \tilde c^i$. Multiplying by the factor $(ζ-α)^2(1-\bar{α}ζ)^2$ gives a solution to \eqref{eqn:Q}. Space of solutions is now
 \[
 {\bf c^1} + r \tilde b^1, {\bf c^2} + r \tilde b^2
 \]
-Because we forced the $c$'s to have the facotr, we can now remove the factor from every term in \eqref{eq:EMPDi}. Bezout says there is a space of solutions that look like
+Because we forced the $c$'s to have the facotr, we can now remove the factor from every term in \eqref{eqn:EMPDi}. Bezout says there is a space of solutions that look like
 \[
 {\bf\dot {\tilde b}^1} + q \tilde b^1, {\bf\dot {\tilde b}^2} + q \tilde b^2, {\bf\dot{\tilde P}} + 2q \tilde P,
 \]
