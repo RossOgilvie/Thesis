@@ -262,7 +262,27 @@ By definition, neither $F$ nor $G$ divide $\tilde{P}$ so they must divide $Q$. T
 \labelthis{eqn:Q reduced}
 \]
 
-In the conformal case, we know that $P_0, b^1_0$ and $b^2_0$ vanish at $t=0$. Thus $F$ is sure to include a factor of $ζ$. We write $F = ζ\tilde{F}$. The same reasoning as above then implies that $\tilde{F}G$ divides $Q$, with the same restriction that at most one of $\tilde{F}$ and $G$ can be nontrivial. Thus we have divided our analysis into six cases; conformal and nonconformal, and whether $F$, $G$ or neither is nontrivial.
+In the conformal case, we know that $P_0, b^1_0$ and $b^2_0$ vanish at $t=0$. Thus $F$ is sure to include a factor of $ζ$. We write $F = ζ\tilde{F}$. This time, we conclude that it is $\tilde{F}F^i$ that divides $\hat{c}^i$. The same reasoning as above then implies that $\tilde{F}G$ divides $Q$. However, the residue condition in this case simplifies in a way that forces another constraint on $Q$. At $t=0$,
+\[
+P_1 \dot{b}_0 - 2 \dot{P}_0 b_1 = 0.
+\]
+After removing the $ζ$ from every term, \eqref{eqn:EMPDi} in the lowest degree reads
+\[
+\dot P_0 b_1^i - 2P_1\dot b_0^i = 3P_1\hat{c}_0^i.
+\]
+Combining these two expressions shows that
+\[
+3P_1\hat{c}_0^i = \dot P_0 b_1^i - 4\dot{P}_0 b_1^i = -3\dot{P}_0 b_1^i.
+\]
+After removing the common factor of $ζ$, applying this to the lowest degree of \eqref{eqn:Q} we finally arrive at
+\begin{align*}
+Q_0 P_1 &= b^1_1 c^2_0 - b^2_1 c^1_0 \\
+Q_0 (P_1)^2 &= b^1_1 (P_1 c^2_0) - b^2_1 (P_1 c^1_0) \\
+&= b^1_1 (\dot{P}_0 b^2_1) - b^2_1 (\dot{P}_0 b^1_1) = 0. \\
+\end{align*}
+A spectral curve must be nonsingular at $ζ=0$, so if $P=0$ we can be sure that $P_1\neq 0$. Hence $Q_0$ must vanish at $t=0$. As $Q$ is a real quadratic polynomial, it must be of the form $Q=Q_1 ζ$ for some real number $Q_1$. Immediately then $\tilde{F} = G = 1$, as neither $P$ nor the polynomials $b^i$ are permitted to have multiple roots at $ζ=0$.
+
+Thus we have divided our analysis into four cases; conformal or nonconformal, and within the nonconformal case whether $F$, $G$ or neither is nontrivial.
 
 BETTER LINKAGE\todo{}
 We require real solutions. We now from REF that this is possible if the factors are all real polynomials. We check this now. For \eqref{eqn:Q} it is obvious. It is not obvious that the right hand side of \eqref{eqn:EMPDi} is real however. In particular, we must see how to take the real involution of a derivative. To do so, we compute the following, supposing $f$ is real of degree $k$
@@ -386,6 +406,129 @@ Hence $(\dot{P},\dot{b}^1,\dot{b}^2)$ is a tangent vector to $\mathcal{M}$ at $(
 
 
 
+
+
+
+\begin{lem}[Nonconformal, $G\neq1$]
+Take a triple of spectral data $(P,b^1,b^2)$ associated with a nonconformal harmonic map, with a nonsingular spectral curve given by $η^2 = P$ of genus $g$. Suppose that, with reference to \eqref{eqn:common factors}, $G$ is a nonconstant real polynomial and $F=1$. If $G$ is linear, then for every real linear polynomial $\tilde{Q}$, or if $G$ is quadratic then for every pair of real numbers $(\tilde{Q},r)$ there is a unique tangent vector to the space of spectral data $(\dot P, \dot b^1, \dot b^2)$.
+
+\begin{proof}
+This case, and the several cases to follow are similar to the first proof. We proceed by first solving the reduced equations \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced} and using the solutions to those equations to establish solutions to \eqref{eqn:EMPDi} and \eqref{eqn:Q}. Regardless of the degree of $G$, which we shall denote $d_G$, we know that we must set $Q = G\tilde{Q}$. \eqref{eqn:Q reduced} reads
+\[
+\tilde{b}^1\tilde{c}^2 - \tilde{b}^2\tilde{c}^1 = \tilde{Q}\tilde{P}.
+\]
+There is a solution to this equation $({\bf \tilde{c}}^1,{\bf \tilde{c}}^2)$ of degree $g+2-d_1-d_G,g+2-d_2-d_G$. If we multiply these by $F^1$ and $F^2$ respectively, we have solutions to \eqref{eqn:Q} of degree $g+2-d_G$ each. If $G$ is linear therefore, this is the unique solution of degree $g+1$, but if $G$ is quadratic the space of solutions to \eqref{eqn:Q} is
+\[
+\Set { (F^1{\bf \tilde{c}}^1 + rF^1\tilde{b}^1, F^2{\bf \tilde{c}}^1 + rF^2\tilde{b}^2 }
+{ r \text{ a real scalar} }.
+\]
+Hence for every $r\in\R$ there is a solution $c^1, c^2$. In either case, it was not necessary to have a condition similar to $R(Q)=0$, but corresponding the choice of $\tilde{Q}$ was more restricted.
+
+Next we must solve \eqref{eqn:EMPDi reduced}, but the proof above applies again essentially without modification.
+\[
+\dot{P} G \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + ζ(ζ^2-1)P' \tilde{c}^i,
+\labelthis{eqn:EMPDi nc G}
+\]
+Similar to last time, it has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at the roots of $F^1F^2\tilde{P}$ and a choice of scaling for $P$ forces a unique common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$. This solution also satisfies \eqref{eqn:residueTangent}.
+Hence it is a tangent vector to $\mathcal{M}$ at $(b^1,b^2,P)$.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+
+
+\begin{lem}[Conformal]
+Take a triple of spectral data $(P,b^1,b^2)$ associated with a conformal harmonic map, with a nonsingular spectral curve given by $η^2 = P$ of genus $g$. Then for every pair of real numbers $(Q_1,r)$, there is a unique tangent vector to the space of spectral data $(\dot P, \dot b^1, \dot b^2)$.
+
+\begin{proof}
+Recall that the condition for a triple of spectral data to be associated to a conformal harmonic map is that the spectral curve is branched over $ζ=0,\infty$. Thus $P$ is degree $2g+1$ and $P(0)=0$. From \eqref{eqn:Residue}, or directly by consideration of the order of the poles, $b^i_0 = 0$ also. We may write therefore that $P= ζF^1F^2\tilde{P}$ and $b^i = ζF^i \tilde{b}^i$, where $\tilde{P}$ is a real polynomial of degree $2g - d_1 - d_2$ and both $b^i$ are real polynomials of degree $g+1-d_i$.
+
+Factoring these common roots, \eqref{eqn:Q reduced} is simply
+\[
+\tilde{b}^1 \tilde{c}^2 - \tilde{b}^2 \tilde{c}^1 = ζQ_1\tilde{P}.
+\labelthis{eqn:Q conformal}
+\]
+In the way that the degrees of $\tilde{b}^i$ are reduced, this is similar to the nonconformal case where $G$ was quadratic. The space of solutions is
+\[
+\Set { ({\bf \tilde{c}}^1 + r \tilde{b}^1, {\bf \tilde{c}}^2 + r \tilde{b}^1) }{ r\in \R },
+\]
+where $({\bf \tilde{c}}^1,{\bf \tilde{c}}^2)$ is a solution of degree $(g+1-d_1, g+1-d_2)$. For every such solution, let $c^i = F^i\tilde{c}^i$ and consider the corresponding \eqref{eqn:EMPDi reduced}, namely
+\[
+\dot{P} \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + (ζ^2-1)P' \tilde{c}^i,
+\labelthis{eqn:EMPDi conformal}
+\]
+In what is by now a familiar story, for the dotted quatities there is a common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$. The space of solutions is however
+\[
+\Set{
+({\bf \dot P} + 2s F^1F^2\tilde{P}, {\bf \dot b}^1 + s F^1\tilde{b}^1, {\bf \dot b}^2 + s F^2\tilde{b}^2)
+}{ s \text { a real quadratic polynomial} }.
+\]
+Thus there appears not to be a unique tangent vector corresponding to each choice $(Q,r)$, but \eqref{eqn:residueTangent} is not automatically true as it was in the nonconformal case. Let $s = s_0 + s_1ζ + \bar{s}_0 ζ^2$ we see that the condition for $i=1$ implies that
+\[
+2 {\bf\dot{P}}_0 b^1_1 - P_1 {\bf \dot{b}}^1_0 + 3 s_0 P_1 b^1_1 = 0
+\]
+which fully determines $s_0$. Can we therefore simultaneously satisfy the condition for $i=2$? Note that \eqref{eqn:EMPDiConformal} in the lowest degree implies that
+\[
+\dot{P}_0 b^i_1 - 2P_1\dot{b}^i_0 = -3 P_1 c^i_0
+\]
+and \eqref{eqn:Q conformal} in the lowest degree yields
+\begin{align*}
+b^1_1 c^2_0 &= b^2_1 c^1_0 \\
+b^1_1 \bra{{\bf\dot{P}_0} b^2_1 - 2P_1{\bf\dot{b}^2_0}} &= b^2_1 \bra{{\bf\dot{P}_0} b^1_1 - 2P_1{\bf\dot{b}^1_0}} \\
+2b^1_1 {\bf\dot{b}^2_0} &= 2 b^2_1 {\bf\dot{b}^1_0} \\
+~\\
+b^1_1 \bra{2 {\bf\dot{P}_0} b^2_1 - P_1 {\bf \dot{b}^2_0} + 3 s_0 P_1 b^2_1}
+&= 2 {\bf\dot{P}_0} b^1_1b^2_1 - P_1 b^1_1{\bf \dot{b}^2_0} + 3 s_0 P_1 b^1_1b^2_1 \\
+&= 2 {\bf\dot{P}_0} b^1_1b^2_1 + P_1 b^2_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1b^2_1 \\
+&= b^2_1\bra{2 {\bf\dot{P}_0} b^1_1 - P_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1 } \\
+&= 0
+\end{align*}
+So the condition holds for $i=2$ also. Having passed this check, there is still one free parameter, namely for any $Q_1$ and $r$, the corresponding tangent vectors are
+\[
+\Set {
+({\bf \dot P} + 2(s_0+\bar{s}_0ζ^2) F^1F^2\tilde{P} + 2s_1ζ F^1F^2\tilde{P}, {\bf \dot b^1} + (s_0+\bar{s}_0ζ^2) F^1\tilde{b}^1 + s_1ζ F^1\tilde{b}^1, {\bf \dot b^2} + (s_0+\bar{s}_0ζ^2) F^2\tilde{b}^2 + s_1ζ F^2\tilde{b}^2)
+}{ s_1 \in \R }.
+\]
+But our free choice of $s_1\in\R$ is only adding multiples of $(2P,b^1,b^2)$, which as in the nonconformal case is a rescaling of the spectral curve, and so also determined.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 The moral of these two lemmata is that at any point of spectral data there is a plane of deformation directions. Note that the condition on $Q$ is linear on its coefficents, so there is a plane of such $Q$ and each can then be used to first find a pair $(c^1,c^2)$ and then further a unique tangent vector. Thus, given a section of $Q$'s and an intial piece of spectral data, this data of tangent vectors then amounts to a first order linear ODE, which can be solved to give a deformation of the spectral data. (One may be concerned there is a catch-22 at play here: how is one to apply the condition $R=0$ on $Q$ without already having knowledge of the moduli of spectral data? Fear not. There are frames of meromorphic differentials defined for every hyperelliptic curve such that if the curve is actually a spectral curve, any admissible differentials are in the lattice generated by this frame. Thus we can use this frame to apply the condition and chose a section of $Q$'s, and if we start at a point in the moduli we will never flow outside it accidentally. )
 
 
@@ -415,72 +558,6 @@ where tildes repesent polynomials with the factor of $F$ removed. Again by nonsi
 
 
 
-
-
-\begin{lem}[Nonsigular, nonconformal, no common factor]
-Take a slight generalisation and assume $\gcd(P,b^1)=F^1$ and $\gcd(P,b^2)=F^2$ but $\gcd(b^1,b^2)=1$. Then for every real quadratic polynomial $Q$ satisfying $R=0$ (with the sum now taken over the roots of $b^1/\gcd(P,b^1)$), there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
-\begin{proof}
-
-As $b^i$ is real and the roots of $P$ cannot lie on the unit circle, the common factors must be even degree $2d_i$, ie $F^i=\Pi_j (ζ-α_j)(1-\bar{α_j}ζ)$ and the polynomials factor as $b^i = F^i\tilde{b^i}$ and write $P = F^1F^2\tilde{P}$. Consider the equation
-\begin{align}
-\tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = Q\tilde{P}.\labelthis{eqn:Qreduced}
-\end{align}
-
-With the common factors excluded from this modified equation, Bezout's identity again says that there is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p+2-2d_1$ and $p+2-2d_2$ respectively. But the $R=0$ condition is exactly the one that will ensure that $c^2$ is infact of degree $p+1-2d_2$. Considering the $ζ^{2p+5-2d_1-2d_2}$ terms of this equation it implies that $\tilde{c}^1$ is of degree $p+1-2d_1$. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q}, a necessary condition to solving \eqref{eqn:EMPDi}. The previous coprimality assumption is no longer true. Every term however contains the factor $F^i$, so the equation is still solvable. For each $i$, call it $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
-\[
-{\bf\dot P^i} + 2s^i F^{3-i}\tilde P, {\bf\dot b^i} + s^i \tilde b^1
-\]
-This does not mean however that there is a large space of solutions, because $\dot P$ must satisfy both equations. As before, $\dot P$ is determined by its values at the roots of $P$. If there were a common root of $b^1$, $b^2$ and $P$ it would completely factor from both equations; it wouldn't provide any constraint on $\dot P$. The assumption says though that there are no such common roots. Thus every root of $P$ constrains $\dot P$, and \eqref{eqn:Qreduced} means that the two equations are consistent at the roots of $\tilde P$. So there for there must be some $s^i$'s that make the two solutions consistent. Having harmonised the solutions we are still free to add real multiples $P$, ie
-\[
-\{ ({\bf \dot P^1} + 2s^1 F^2 \tilde{P} + 2u F^1F^2\tilde{P}, {\bf \dot b^1} + s^1\tilde{b}^1 + u F^1\tilde{b}^1, {\bf \dot b^2} + s^2\tilde{b}^2 + uF^2 \tilde{b}^2) \mid u \in \R\}.
-\]
-The choice of scalar $u$ is again linked to the scaling of $P$, so there is an essentially unique vector $(\dot P, \dot b^1, \dot b^2)$ for every choice $Q$.
-\end{proof}
-\end{lem}
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{lem}[Nonsigular, nonconformal, some common factors]
-Next assume $\gcd(P,b^1)=F^1$ and $\gcd(P,b^2)=F^2$ and $\gcd(b^1,b^2)=F$ but $\gcd(P,b^1,b^2)=1$. If $F$ is linear, take any real linear polynomial $Q$ or if $F$ is quadratic then take a pair of real numbers $\tilde Q$ and $r$. In either case, for any such choice there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
-\begin{proof}
-
-Write $P = F^1F^2\tilde{P}$ and $b^i = FF^i\tilde b^i$. Let the degrees be $2d_i = \deg F^i$, $d = \deg F$. If $d=1$ consider the equation
-\begin{align}
-\tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = Q\tilde{P}.
-\end{align}
-
-This is becoming familiar. There is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p+1-2d_1$ and $p+1-2d_2$ respectively. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q}.
-
-If $d=2$ then consider instead
-\begin{align}
-\tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = \tilde{Q}\tilde{P}.
-\end{align}
-Real solutions for $\tilde{c^1},\tilde{c^2}$ of degrees at most $g+1-2d_1$ and $g+1-2d_2$ are now given by
-\[
-\{ ({\bf \tilde c^1} + r \tilde{b}^1, {\bf \tilde c^2} + r \tilde{b}^1) \mid r\in \R\}.
-\]
-This is naturally an affine space, so there is no `correct' choice for the origin. But for the purposes of specifying the parameter $r$ in the lemma, we may for example take $r=0$ to be the point where the constant coefficent of $\tilde c^1$ is of minimum modulus. Let $c^i :=  F^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q}.
-
-The first step in solving \eqref{eqn:EMPDi} is to factor from every term $F^i$. For each $i$, call the solution to the reduced equation $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
-\[
-{\bf\dot P^i} + 2s^i F^{3-i}\tilde P, {\bf\dot b^i} + s^i \tilde b^1
-\]
-This does not mean however that there is a large space of solutions, because $\dot P$ must satisfy both equations. As before, $\dot P$ is determined by its values at the roots of $P$. Again by assumption there is no common root of $b^1$, $b^2$ and $P$, so there for there must be some $s^i$'s that make the two solutions consistent. Solutions are therefore
-\[
-\{ ({\bf \dot P^1} + 2s^1 F^2 \tilde{P} + 2u F^1F^2\tilde{P}, {\bf \dot b^1} + s^1\tilde{b}^1 + u F^1\tilde{b}^1, {\bf \dot b^2} + s^2\tilde{b}^2 + uF^2 \tilde{b}^2) \mid u \in \R\}.
-\]
-As before, the choice of $u$ is just scaling so we have constructed an essentially unique vector $(\dot P, \dot b^1, \dot b^2)$.
-\end{proof}
-\end{lem}
 
 
 
