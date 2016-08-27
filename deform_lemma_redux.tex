@@ -206,17 +206,6 @@ In the cases where $F=G=1$, it will not be possible to solve for a tangent vecto
 \end{bmatrix}
 =
 \begin{bmatrix}
-% \bra{Q\tilde{P}(\tilde{b}^1)^{-1}} (β_1) \\
-% \bra{Q\tilde{P}(\tilde{b}^1)^{-1}}^{\prime} (β_1) \\
-% \vdots \\
-% \bra{Q\tilde{P}(\tilde{b}^1)^{-1}}^{(r_1-1)} (β_1) \\
-% \bra{Q\tilde{P}(\tilde{b}^1)^{-1}} (β_2) \\
-% \vdots \\
-% \bra{Q\tilde{P}(\tilde{b}^1)^{-1}}^{(r_2-1)} (β_2) \\
-% \bra{Q\tilde{P}(\tilde{b}^1)^{-1}} (β_3) \\
-% \vdots \\
-% \vdots \\
-% \bra{Q\tilde{P}(\tilde{b}^1)^{-1}}^{(r_k-1)} (β_k) \\
 h(β_1) \\ h'(β_1) \\ \vdots \\ h^{(r_1-1)(β_1)} \\
 h(β_2) \\ \vdots \\ h^{(r_2-1)(β_2)} \\
 h(β_3) \\ \vdots \\ \vdots \\ h^{(r_k-1)(β_k)} \\
@@ -228,9 +217,9 @@ h(ζ) := \frac{Q(ζ)\tilde{P}(ζ)}{\tilde{b}^1(ζ)},
 \]
 which is holomorphic at every root $β_i$, as $\tilde{b}^1(β_i)\neq 0$.
 
-The $(n+1)\times (n+1)$ coefficient matrix is called the confluent Vandermonde matrix at the roots of $\tilde{b}^2$, and we shall denote it $V(\tilde{b}^2)$. Let the column vector on the right hand side be denoted $\mathbf{h}(P,b^1,b^2)$. A confluent Vandermonde matrix is always nonsingular, therefore there is always a solution to this equation, but in general the solution $\tilde{c}^2$ will be a degree larger than we require. Thus, we must introduce a constraint in our choice of $Q$ to ensure the solution is indeed degree $g + 1 - (d_F + d_2 + d_G)$. From the highest order term fo \eqref{eqn:Q reduced}, if $\tilde{c}^2$ is degree $g + 1 - (d_F + d_2 + d_G)$, then $\tilde{c}^1$ will be $g + 1 - (d_F + d_1 + d_G)$ without any further restrictions.
+The $(n+1)\times (n+1)$ matrix on the left is called the confluent Vandermonde matrix at the roots of $\tilde{b}^2$, and we shall denote it $V(\tilde{b}^2)$. Let the column vector on the right hand side be denoted $\mathbf{h}(P,b^1;b^2)$. A confluent Vandermonde matrix is always nonsingular, therefore there is always a solution to this equation. But we see that in general the solution $\tilde{c}^2$ is degree $n$, a degree larger than we require. Thus, we must introduce a constraint in our choice of $Q$ to ensure the solution is indeed degree $n-1 = g + 1 - (d_F + d_2 + d_G)$. From the highest order term of \eqref{eqn:Q reduced}, if $\tilde{c}^2$ is degree $g + 1 - (d_F + d_2 + d_G)$, then $\tilde{c}^1$ will be $g + 1 - (d_F + d_1 + d_G)$ without any further restrictions.
 
-We define at any point $(P,b^1,b^2)$ of $\mathcal{M}$ and for any real quadratic polynomial $Q$, the function $R(P,b^1,b^2,Q)$ to be the dot product of the last row of $V(\tilde{b}^2)^{-1}$ with the vector $\mathbf{h}(P,b^1,b^2,Q)$. The condition that $R(Q) = 0$ is equivalent to the condition that $\tilde{c}^2$ is the correct degree. It is important to note that $R$ is linear function in the coefficients of $Q$.
+We define at any point $(P,b^1,b^2)$ of $\mathcal{M}$ and for any real quadratic polynomial $Q$, the function $R(P,b^1,b^2,Q)$ to be the dot product of the last row of $V(\tilde{b}^2)^{-1}$ with the vector $\mathbf{h}(P,b^1,b^2,Q)$. The condition that $R(Q) = 0$ is equivalent to the condition that $\tilde{c}^2_n=0$. This ensures that $\tilde{c}^2$ is the correct degree. It is important to note that $R$ is linear function in the coefficients of $Q$.
 
 Further, $R$ satifies a reality type condition. BLAH BLAH BLAH
 % \[
@@ -243,7 +232,8 @@ Further, $R$ satifies a reality type condition. BLAH BLAH BLAH
 % \]
 % with bracketed superscripts denoting differentiation with respect to $ζ$.
 
-BETTER LINKAGE\todo{}
+\todo{}
+Space of solutions.
 We require real solutions. Short explanation about how to force reality.
 
 For \eqref{eqn:Q} it is obvious. It is not obvious that the right hand side of \eqref{eqn:EMPDi} is real however. In particular, we must see how to take the real involution of a derivative. To do so, we compute the following, supposing $f$ is real of degree $k$
