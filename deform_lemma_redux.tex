@@ -184,7 +184,7 @@ Q_0 (P_1)^2 &= b^1_1 (P_1 c^2_0) - b^2_1 (P_1 c^1_0) \\
 \end{align*}
 A spectral curve must be nonsingular at $ζ=0$, so if $P=0$ we can be sure that $P_1\neq 0$. Hence $Q_0$ must vanish at $t=0$. As $Q$ is a real quadratic polynomial, it must be of the form $Q=Q_1 ζ$ for some real number $Q_1$. Immediately then $\tilde{F} = G = 1$, as neither $P$ nor the polynomials $b^i$ are permitted to have multiple roots at $ζ=0$.
 
-Thus we have divided our analysis into four cases; conformal or nonconformal, and within the nonconformal case whether $F$, $G$ or neither is nontrivial.
+Thus we have divided our analysis into four cases; conformal or nonconformal, and within the nonconformal case whether $F$, $G$ or neither is nontrivial. The points where $F$ is nontrivial represent singular points of the vector field of infinitesimal deformations are are not considered further in this thesis.
 
 In the cases where $F=G=1$, it will not be possible to solve for a tangent vector given an arbitrary quadratic polynomial $Q$. Consider \eqref{eqn:Q reduced} at the $k$ distinct roots of $\tilde{b}^2$, for $k \leq g + 3 - (d_F + d_2 + d_G)$. It is a linear system in the coefficients of $\tilde{c}^1$. If $\tilde{b}^2$ has higher order roots, then we may differentiate with respect to $ζ$ to obtain further relations. Let these roots be denoted $β_i$ and have multiplicities $r_i$. Suppose that $\tilde{c}^2$ were degree $n := g + 2 - (d_F + d_2 + d_G)$. The system of equations is
 \[
@@ -213,7 +213,7 @@ h(β_3) \\ \vdots \\ \vdots \\ h^{(r_k-1)(β_k)} \\
 \]
 where
 \[
-h(ζ) := \frac{Q(ζ)\tilde{P}(ζ)}{\tilde{b}^1(ζ)},
+h(ζ) := \frac{\tilde{Q}(ζ)\tilde{P}(ζ)}{\tilde{b}^1(ζ)},
 \]
 which is holomorphic at every root $β_i$, as $\tilde{b}^1(β_i)\neq 0$.
 
@@ -221,22 +221,87 @@ The $(n+1)\times (n+1)$ matrix on the left is called the confluent Vandermonde m
 
 We define at any point $(P,b^1,b^2)$ of $\mathcal{M}$ and for any real quadratic polynomial $Q$, the function $R(P,b^1,b^2,Q)$ to be the dot product of the last row of $V(\tilde{b}^2)^{-1}$ with the vector $\mathbf{h}(P,b^1,b^2,Q)$. The condition that $R(Q) = 0$ is equivalent to the condition that $\tilde{c}^2_n=0$. This ensures that $\tilde{c}^2$ is the correct degree. It is important to note that $R$ is linear function in the coefficients of $Q$.
 
-Further, $R$ satifies a reality type condition. BLAH BLAH BLAH
-% \[
-% % R^i = \sum_{j=1}^{p+3} \frac{Q(\beta^i_j) P(\beta^i_j)}{b^{3-i}(\beta^i_j) {b^i}'(\beta^i_j)}.
-% R(Q) = \sum_{j=0}^{n} \sum_{k=0}^{r_j} \frac{g_j^{(r_j-k)}({β}_j)} {k! (r_j-k)!} \bra{\frac{Q(ζ) P(ζ)}{b^1(ζ)}}^{(k)}({β}_j),
-% \]
-% for
-% \[
-% g_j(ζ) = \frac{(ζ-{β}_j)^{r_j+1}}{b^2(ζ)} ,
-% \]
-% with bracketed superscripts denoting differentiation with respect to $ζ$.
+Further, $R$ satifies a reality type condition. We first note that $R$ is a continuous function on $\R^{d_{\tilde{P}}}\times\R^{d_{\tilde{b}^1}}\times\R^{d_{\tilde{b}^2}}$
+\todo{describe this space better, roots of different polys are all disjoint, so open subset}.
+This is obviously true at points where the roots of $\tilde{b}^2$ are distinct. Suppose that we are in a neighbourhood of a point where $\tilde{b^2}$ has a double root $β$. In this neighbourhood, there are two roots $β_1,β_2$ that collasce at $β$ to form the double root. The corresponding of the Vandermonde matrix is
+\[
+\begin{bmatrix}
+1 & β_1 & (β_1)^2 & \cdots & (β_1)^{k} & \cdots & (β_1)^{n} \\
+1 & β_2 & (β_2)^2 & \cdots & (β_2)^{k} & \cdots & (β_2)^{n} \\
+&&&\vdots&&&
+\end{bmatrix}
+\begin{bmatrix}
+\tilde{c}^2_0 \\~\\ \tilde{c}^2_1 \\~\\ \vdots \\~\\ \tilde{c}^2_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+h(β_1) \\
+h(β_2) \\
+\vdots
+\end{bmatrix}.
+\]
+Performing elementary row operations does not change the solution to this system, and so we may subtract the first row from the second and scale it by $(β_2-β_1)^{-1}$. This gives
+\[
+\begin{bmatrix}
+1 & β_1 & (β_1)^2 & \cdots & (β_1)^{k} & \cdots & (β_1)^{n} \\
+0 & 1 & β_2+β_1 & \cdots & \sum_{i=0}^{k-1}(β_1)^i(β_2)^{k-1-i} & \cdots & \sum_{i=0}^{n-1}(β_1)^i(β_2)^{n-1-i} \\
+\vdots
+\end{bmatrix}
+\begin{bmatrix}
+\tilde{c}^2_0 \\~\\ \tilde{c}^2_1 \\~\\ \vdots \\~\\ \tilde{c}^2_n
+\end{bmatrix}
+=
+\begin{bmatrix}
+h(β_1) \\
+\frac{h(β_2) - h(β_1)}{β_2 - β_1} \\
+\vdots
+\end{bmatrix}.
+\]
+The limit of the above as $β_2 \to β_1$ is precisely the corresponding confluent Vandermonde matrix. The calculation for higher order roots is similar. This demonstrates that the coefficent matrix and the constant vector of the system of equations is continuous in the roots of the polynomial $b_2$. Combining this with the fact that inversion of a matrix is continuous and that the roots of a polynomial are continuous functions of coefficients (Viete map, track down reference in Whitney Complex Analytic Varieties \todo{ref}), this show that the solution is continuous. In particular, $R$ is the last component of the solution, and so is continuous.
 
-\todo{}
-Space of solutions.
-We require real solutions. Short explanation about how to force reality.
+This is useful because it allows one to compute the reality condition of $R$ on the open set where the roots of $\tilde{b}^2$ are distinct, and it will then follow that it holds everywhere on $SPACE$\todo{} by continuity. Let $\tilde{b}^2$ have $n+1$ distinct roots $β_i$. In this case, the form of the solution to the system of equations REF is elegant. Consider the Langrange polynomials at the roots of $\tilde{b}^2$,
+\[
+L_i (ζ) := \prod_{j \neq i} \frac{ζ-β_j}{β_i - β_j}.
+\]
+Each of these polynomials is degree $n$ and has the property that $L_i (β_j) = δ_{ij}$. The unique degree $n$ polynomial solving the system of equations is
+\[
+\tilde{c}^2(ζ) = \sum_{i = 1}^{n+1} h(β_i) L_i (ζ),
+\]
+and in particular the highest coefficent is
+\[
+R = \sum_{i = 1}^{n+1} h(β_i) \prod_{j \neq i} \bra{ β_i - β_j }^{-1}.
+\]
+Because $\tilde{b}^2$ is a real polynomial, its set of roots is invariant under $ζ \mapsto \cji{ζ}$. This creates an involution on the set of roots. Let $τ$ be such that $β_{τ(i)} = \cji{β}_i$. We now compute the conjugate of $R$.
+\begin{align*}
+\bar{R}
+&= \sum_{i = 1}^{n+1} \bar{h(β_i)} \prod_{j \neq i} \bra{ \bar{β}_i - \bar{β}_j }^{-1} \\
+&= \sum_{i = 1}^{n+1} \bar{\frac{Q(β_i)\tilde{P}(β_i)}{\tilde{b}^1(β_i)}}
+ \prod_{j \neq i} \cji{β}_i \cji{β}_j \bra{ \cji{β}_j - \cji{β}_i }^{-1} \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&= \sum_{i = 1}^{n+1} \bar{β}_i^{g+1 - d_2} \frac{\tilde{Q}(\cji{β}_i)\tilde{P}(\cji{β}_i)}{\tilde{b}^1(\cji{β}_i)}
+\prod_{j \neq i} \cji{β}_i β_{τ(j)} (-1)\bra{ β_{τ(i)} - β_{τ(j)} }^{-1} \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&= \sum_{i = 1}^{n+1} \bar{β}_i^{g+1 - d_2} h(β_{τ(i)})
+\bra { \cji{β}_i }^{n} \bra{ \prod_{j \neq i}  β_{τ(j)}} (-1)^{n} \prod_{j \neq i}\bra{ β_{τ(i)} - β_{τ(j)} }^{-1} \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&= (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i }  \sum_{i = 1}^{n+1} h(β_{τ(i)})
+ \prod_{j \neq i}\bra{ β_{τ(i)} - β_{τ(j)} }^{-1} \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&= (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i }  R. \\
+\end{align*}
+From this reality condition, it follows that $R(Q)=0$ only puts one real constraint on $Q$, and so at a point of SPACE\todo{} there is a two (real) dimensional plane of polynomials $Q$ that satisfy $R(Q) = 0$.
 
-For \eqref{eqn:Q} it is obvious. It is not obvious that the right hand side of \eqref{eqn:EMPDi} is real however. In particular, we must see how to take the real involution of a derivative. To do so, we compute the following, supposing $f$ is real of degree $k$
+Let us return to the general situation now. The next obstacle to reconstrucitng a tangent vector from a given $Q$ is that the polynomials $c^i$ and $\dot{P},\dot{b}^i$ must be real. We establish that if a solution of the appropriate degree exists, then there will be a real solution of the same degree. Suppose that we have a polynomial equation $AX - BY = C$, for some real polynomials $A,B,C$ of degrees $a,b,c$ respectively. Further suppose that solutions $X,Y$ exist of degrees $c-a$ and $c-b$ respectively. Then observe
+\begin{align*}
+C(ζ) &= ζ^c \bar{ C(\cji{ζ})}
+= ζ^{c}\bar{A(\cji{ζ})} \bar{X(\cji{ζ})} - ζ^{c}\bar{B(\cji{ζ})} \bar{Y(\cji{ζ})}
+= A(ζ) ζ^{c-a}\bar{X(\cji{ζ})} - B(ζ) ζ^{c-b}\bar{Y(\cji{ζ})} \\
+C(ζ)
+&= A(ζ) \frac{1}{2}\bra{ X(ζ) + ζ^{c-a}\bar{X(\cji{ζ})}} - B(ζ) \frac{1}{2}\bra{ Y(ζ) + ζ^{c-b}\bar{Y(\cji{ζ})}} ,
+\end{align*}
+which demonstrates the existence of real solutions.
+
+For \eqref{eqn:Q} it is obvious that it of this form. It is not obvious that the right hand side of \eqref{eqn:EMPDi} is real however. In particular, we must see how to take the real involution of a derivative. To do so, we compute the following, supposing $f$ is real of degree $k$
 \begin{align*}
 ζ^k \bar{f}(ζ^{-1}) &= f(ζ) \\
 kζ^{k-1} \bar{f}(ζ^{-1}) - ζ^{k-2} \bar{f}'(ζ^{-1}) &= f'(ζ) \\
@@ -249,11 +314,11 @@ Thus we can compute the involution of the right hand side of \eqref{eqn:EMPDi}.
 &= (-2+2g+6-2g-2)P\hat{c}^i - 2Pζ\hat{c}^{i\prime} + ζP'\hat{c}^i \\
 &= 2P\hat{c}^i - 2Pζ\hat{c}^{i\prime} + ζP'\hat{c}^i
 \end{align*}
-Remarkably then, this is a real polynomial. To wit, for the equations that we are concerned with, if there are solutions the there will be real solutions of the same degree.
+Remarkably then, this is a real polynomial.
 
-Short explanation about space of solutions to Bezout's identity. The method of solution is given above, so link back to that.
+Finally, in some circumstances, we will need to describe the set of solutions of $AX-BY=C$. Consider the related equation $AX-BY = 0$. If $X$ is a solution, then by evaluating at the roots of $B$ we see that $B$ divides $X$. Return now to the equation $AX-BY=C$ and suppose then that $(X,Y)$. If $(X',Y')$ is any other solution, then $A(X-X') - B(Y-Y') = 0$. Therefore $X-X' = r B$ and $Y-Y' = rA$ for some polynomial $r$. Conversely, given any solution $(X,Y)$, it is clear that $(X+rB,Y+rA)$ is again a solution for every polynomial $r$.
 
-Before we proceed, it may be prudent to make a comment about the notation choices that have been made. We have attempted to use ligatures in a consistent way to indicate the factors that a polynomial does or does not have. For example, a hat indicates a factor of $ζ^2-1$, and a tilde indicates that common factors have been removed. Bold will signify a particular solution to an equation. To choice of this particular solution may or may not be unique. When a solution to an equation appears without bold, it signifies a solution from the set of potential solutions. We shall use $d$ with various subscripts to indicate the degrees of polynomials. Finally, we shall use $i$ and $j$ for indices ranging over $1$ and $2$, with the understanding that they are not equal. For example, if $i=1$, then we take $j=2$ and vice versa.
+Before we proceed to the results, it may be prudent to make a comment about the notational choices that have been made. We have attempted to use ligatures in a consistent way to indicate the factors that a polynomial does or does not have. For example, a hat indicates a factor of $ζ^2-1$, and a tilde indicates that common factors have been removed. Bold will signify a particular solution to an equation. To choice of this particular solution may or may not be unique. When a solution to an equation appears without bold, it signifies a solution from the set of potential solutions. We shall use $d$ with various subscripts to indicate the degrees of polynomials. Finally, we shall use $i$ and $j$ for indices ranging over $1$ and $2$, with the understanding that they are not equal. For example, if $i=1$, then we take $j=2$ and vice versa.
 
 
 
@@ -282,12 +347,12 @@ Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} wa
 \]
 Using Bezout's Identity, it has a solution because $\gcd(F^j\tilde{P},\tilde{b}^i) = 1$ The first concern is that the two equations for $i=1,2$ may give different solutions for $\dot P$, and indeed in general they do. However, for neither are the solutions unique, and we shall use the freedom in the space of solutions to find a common solution to both. Let a solution to each equation be $({\bf \dot{P}}^1, {\bf \dot{b}}^1)$ and $({\bf \dot{P}}^1, {\bf \dot{b}}^1)$. The sets of solutions are
 \[
-\Set { ({\bf \dot{P}}^1 + 2rF^2\tilde{P}, {\bf \dot{b}}^1) + r\tilde{b}^1 }
+\Set { ({\bf \dot{P}}^1 + 2rF^2\tilde{P}, {\bf \dot{b}}^1 + r\tilde{b}^1 } )
 { r \text{ a real polynomial of degree } d_1 },
 \]
 and
 \[
-\Set { ({\bf \dot{P}}^2 + 2sF^1\tilde{P}, {\bf \dot{b}}^2) + r\tilde{b}^2 }
+\Set { ({\bf \dot{P}}^2 + 2sF^1\tilde{P}, {\bf \dot{b}}^2 + r\tilde{b}^2 } )
 { s \text{ a real polynomial of degree } d_2 },
 \]
 respectively. First note that every element of both of these sets are in agreement at any root $α$ of $\tilde{P}$. From \eqref{eqn:EMPDi nc FG=1},
@@ -391,9 +456,6 @@ Hence it is a tangent vector to $\mathcal{M}$ at $(b^1,b^2,P)$.
 
 
 
-
-
-
 \begin{lem}[Conformal]
 Take a triple of spectral data $(P,b^1,b^2)$ associated with a conformal harmonic map, with a nonsingular spectral curve given by $η^2 = P$ of genus $g$. Then for every pair of real numbers $(Q_1,r)$, there is a unique tangent vector to the space of spectral data $(\dot P, \dot b^1, \dot b^2)$.
 
@@ -453,114 +515,30 @@ But our free choice of $s_1\in\R$ is only adding multiples of $(2P,b^1,b^2)$, wh
 
 
 
+\begin{thm}
+The open subset of $\mathcal{M}$ where $\gcd(P,b^1,b^2) = 1$ is a two dimensional manifold.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The moral of these two lemmata is that at any point of spectral data there is a plane of deformation directions. Note that the condition on $Q$ is linear on its coefficents, so there is a plane of such $Q$ and each can then be used to first find a pair $(c^1,c^2)$ and then further a unique tangent vector. Thus, given a section of $Q$'s and an intial piece of spectral data, this data of tangent vectors then amounts to a first order linear ODE, which can be solved to give a deformation of the spectral data. (One may be concerned there is a catch-22 at play here: how is one to apply the condition $R=0$ on $Q$ without already having knowledge of the moduli of spectral data? Fear not. There are frames of meromorphic differentials defined for every hyperelliptic curve such that if the curve is actually a spectral curve, any admissible differentials are in the lattice generated by this frame. Thus we can use this frame to apply the condition and chose a section of $Q$'s, and if we start at a point in the moduli we will never flow outside it accidentally. )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsubsection{Old work that I might want to pick over}
-
-\begin{lem}[Nonsigular, nonconformal, triple common factor]
-Assume $\gcd(P,b^1,b^2) = F$ is a real quadratic, $\gcd(P/F,b^1/F)=F^1$ and $\gcd(P/F,b^2/F)=F^2$. Take a pair of real numbers $\tilde Q$ and $r$. For any such choice there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}. NEEDS CONDITION ON P \todo{figure out the condition}
 \begin{proof}
-
-Write $P = F^1F^2F\tilde{P}$ and $b^i = FF^i\tilde b^i$. Let the degrees be $2d_i = \deg F^i$. As was alluded to in the prior computation, the Q-equation is dramatically reduced.
-\begin{align}
-\tilde{b^1}\tilde{c^2} - \tilde{b^2}\tilde{c^1} = \tilde{Q}\tilde{P}.
-\end{align}
-There is a unique solution for $\tilde{c^1},\tilde{c^2}$ for degrees at most $p-2d_1$ and $p-2d_2$ respectively. By the condition CONDITION\todo{me}, the soltuions are actually one degree less. Let $c^i :=  FF^i\tilde{c}^i$. Then $c^1, c^2$ solve \eqref{eqn:Q} and are both degree $p+1$
-
-We now progree to solving \eqref{eqn:EMPDi}. Factor $FF^i$ from every term. For each $i$, call the solution to the reduced equation $({\bf\dot P^i}, {\bf\dot b^i})$. Then for any degree $2d_i$ polynomial $s^i$ another solution is
-\[
-{\bf\dot P^i} + 2s^i F^{3-i}\tilde P, {\bf\dot b^i} + s^i \tilde b^1
-\]
-Unlike before, $\dot P$ is not fully determined by its values at the roots of $P$. FIXME \todo{this} Solutions are therefore
-\[
-\{ ({\bf \dot P^1} + 2s^1 F^2 \tilde{P} + 2u F^1F^2\tilde{P}, {\bf \dot b^1} + s^1\tilde{b}^1 + u F^1\tilde{b}^1, {\bf \dot b^2} + s^2\tilde{b}^2 + uF^2 \tilde{b}^2) \mid u \in \R\}.
-\]
-As before, the choice of $u$ is just scaling so we have constructed an essentially unique vector $(\dot P, \dot b^1, \dot b^2)$.
+Consider the map defined on a small simply connected subset of SPACE
+\begin{align*}
+F(P,b^2,b^2)
+= \left( \int_{A_1} Θ^1, \dots, \int_{A_g} Θ^1, \right.& \int_{B_1} Θ^1, \dots, \int_{B_g} Θ^1, \int_{A_1} Θ^2, \dots, \int_{A_g} Θ^2, \int_{B_1} Θ^2, \dots, \int_{B_g} Θ^2, \\
+&\left. \int_{γ_+} Θ^1, \int_{γ_-} Θ^1, \int_{γ_+} Θ^2, \int_{γ_-} Θ^2,\, P_1b^1_0 - 2P_0b^1_1,\, P_1b^2_0 - 2P_0b^2_1,\, P_0 - \prod_{i}(-α_i) \right)
+\end{align*}
+where $A_i, B_i$ are the real and imaginary periods of the curve $η^2 = P(ζ)$, $γ_+,γ_-$ are the paths in the curve between the points of $ζ=1$ and $ζ=-1$, and $α_i$ are the roots of $P$ inside the unit circle. The choice of a small subset $U$ ensures that the choice of paths may be made smoothly. The differential of $F$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$. A point of $\mathcal{M}$ where $\gcd(P,b^1,b^2) = 1$ falls into one of the above three cases. In each case we computed that the kernel of $dF$ is two dimensional. Therefore at every such point, by the implict function theorem, $\mathcal{M}$ is a manifold.
 \end{proof}
-\end{lem}
+\end{thm}
 
-
-
-
-
-
-
-
-\begin{lem}[$b^1$, $b^2$ and $P$] IN PROGRESS, NOT CERTAIN
-Suppose that $b^1$, $b^2$ and $P$ share a single pair of common roots $α,\bar{α}^{-1}\not\in\S^1$ and $P$ has some constraint \todo{ find such constraint}. Then for every pair of real numbers $(\tilde Q,r)$ and real quadratic polynomial $s$ there is a solution $(\dot P, \dot b^1, \dot b^2)$ to \eqref{eqn:EMPDi}.
-\end{lem}
-
-Proof.
-
-Write $b^i = (ζ-α)(1-\bar{α}ζ) \tilde b^i$, $P = (ζ-α)(1-\bar{α}ζ) \tilde P$ and consider the equation
+Let us give a geometrical interpretation to the polynomial $Q$. Recall that the conformal type of the domain of a harmonic map is given by the ratios of the principal parts of the differentials. Let the conformal type be denoted $τ$. For a nonconformal harmonic map we have that $b^2_0 = τ b^1_0$. Considering the constant terms of \eqref{eqn:EMPDi} we have that
 \[
-\tilde b^1 \tilde c^2 - \tilde b^2 \tilde c^1 = \tilde Q \tilde P.
+\dot{P}_0b^i_0 -2P_0 \dot{b}^i = 2P_0\hat{c}^i_0.
 \]
-In this situation, Bezout's identity says that there is a family of solutions
+Noting that $c^i_0 = - \hat{c}^i_0$, we substitute this into \eqref{eqn:Q} to arrive at
 \[
-{\bf \tilde c^1} + r \tilde b^1, {\bf \tilde c^2} + r \tilde b^2
+Q_0 P_0 = b^1_0 c^2_0 - b^2_0 c^1_0 = b^1_0 \dot{b}^2_0 - \dot{b}^1_0 b^2_0.
 \]
-where the $c$'s are degree $g$. Use constraint to bump them down a degree. Let $c^1 = (ζ-α)(1-\bar{α}ζ) \tilde c^i$. Multiplying by the factor $(ζ-α)^2(1-\bar{α}ζ)^2$ gives a solution to \eqref{eqn:Q}. Space of solutions is now
+Differentiating the relationship $b^2_0 = τ b^1_0$ gives $\dot{b}^2_0 = \dot{τ} b^1_0 + τ \dot{b}^1_0$. Using this yields that
 \[
-{\bf c^1} + r \tilde b^1, {\bf c^2} + r \tilde b^2
+Q_0 = \frac{\dot{τ}}{τ} \frac{b^1_0 b^2_0}{P_0}.
 \]
-Because we forced the $c$'s to have the facotr, we can now remove the factor from every term in \eqref{eqn:EMPDi}. Bezout says there is a space of solutions that look like
-\[
-{\bf\dot {\tilde b}^1} + q \tilde b^1, {\bf\dot {\tilde b}^2} + q \tilde b^2, {\bf\dot{\tilde P}} + 2q \tilde P,
-\]
-for real quadratic $q$. Choose $q$ such that the degrees are as low as possible, so then we may multiple the solutions to the reduced equation but the factor to get solutions to the nonreduced equation.
+We see therefore that $Q_0$ controls the change in the conformal type.
