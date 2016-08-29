@@ -1,51 +1,7 @@
-%!TEX root = thesis.tex
+% !TEX root = thesis.tex
 
 \section{Deformation Theory}
 \label{sec:Deformation Theory}
-%
-% \subsection{Bezout's Identity}
-% \label{sub:Bezout's Identity}
-% Suppose that $A$, $B$ and $C$ are single variable polynomials over the complex numbers of degrees $a,b,c$ respectively. A natural and long studied question is the solution to the linear equation
-% \[
-% AX - BY = C
-% \labelthis{eqn:Bezout}
-% \]
-% in the unknowns $X$ and $Y$. Its complete solution for polynomials is due to \`Etienne B\'ezout REF. Let us recall the method of solution.
-%
-% Without loss of generality, we may assume that $\gcd(A,B,C) = 1$, otherwise we may divide out the common factor. Next, there cannot be a solution unless $\gcd(A',B') = 1$. If they have a common factor, then evaluation at a common root will cause the left hand side to vanish, but the right hand side will not. We will first solve $AX-BY = 1$ and then use this to give a complete solution. Evaluate the equation at the roots of $A$ to give values of $Y$, and at the roots of $B$ to learn similiarly about $X$. If either $A$ or $B$ has multiple roots, then differentiate the equation the appropriate number of times to generate further independent conditions. Hence we obtain a solution $(\tilde{X},\tilde{Y})$ of degrees at most $(b-1,a-1)$ by polynomial interpolation. $(C\tilde{X}, C\tilde{Y})$ is then a solution to $AX - BY = C$.
-%
-% If we have two solutions $(X,Y)$ and $(X',Y')$ to the equation, their difference satisfies $A(X-X') - B(Y-Y') = 0$. Again, evaluating at the roots of $A$ and $B$ show that the differences must be multiples of $B$ and $A$ respectively. Hence, given the solution $(\tilde{X},\tilde{Y})$ above, all other solutions are given by
-% \[
-% \Set {(C\tilde{X} + rB, C\tilde{Y} + rA) }{ r \text{ a polynomial} }.
-% \]
-%
-% What can be said about the degree of these solutions? We can choose an $r$ in such a way that $X = CX' + rB$ is reduced to at most degree $b-1$. There are two regimes to consider for the corresponding $Y$ solution. If $c < a + \deg X$ then consideration of the leading terms of the equation forces $Y$ to be degree $a + \deg X - b$. Whereas if $c > a + \deg X$ the degree of $Y$ must stay high, $\deg Y = c-b$ and it is not possible to simultaneously lower the degrees of the solutions.
-%
-% Because of the reality condition that the spectral curve and differentials must satisfy, we are particularly interested in real solutions to Bezout equations. The real involution $ρ_k$ of the bundle $\mathcal{O}(k)$ over $\CP^1$ acts on sections $p(ζ)$ of this bundle by
-% \[
-% ρ_k^* p(ζ) = \bar{ζ}^{-k} \bar{p(ζ)}.
-% \]
-% We say that $p$ is real of degree $k$ if $ρ_k^* p (ζ)= p(\cji{ζ})$ and imaginary if $ρ_k^* p (ζ)= - p(\cji{ζ})$. Reality is multiplicative in the following sense. Suppose that $p$ is real of degree $k$ and $q$ is real of degree $l$. Then their product is real of degree $k+l$, since
-% \[
-% ρ_{k+l}^* pq(ζ) = \bar{ζ}^{-k-l} \bar{p(ζ)q(ζ)} = \bar{ζ}^{-k} \bar{p(ζ)} \bar{ζ}^{-l} \bar{q(ζ)} = \bra {ρ_{k}^* p(ζ)} \bra{ρ_{l}^* q(ζ)}.
-% \]
-% We say that a polynomial $p$ is real if it is real of degree $\deg p$, or if it has a factor of $ζ^k$ and it is real of degree $\deg p + k$. Suppose that $A,B,C$ are real polynomials of degrees $a,b,c$ and $(X,Y)$ is a solution to \eqref{eqn:Bezout}. Then applying $ρ_c$ and taking the sum, we see that
-% \[
-% A(X+ρ_{c-a}^*X) - B(Y+ρ_{c-b}^*Y) = 2C
-% \]
-% Hence the real parts of $(X,Y)$, namely $(\tfrac{1}{2}(X+ρ_{c-a}^*X), \tfrac{1}{2}(Y+ρ_{c-b}^*Y))$, are also a solution. All other real solutions can then be obtained by adding real multiples of $B$ and $A$ respectively. Explicitly, the space of real solutions to $AX-BY = C$ is
-% \[
-% \Set{
-%     \bra { \frac{1}{2}C(\tilde{X}+ρ_{c-a}^*\tilde{X}) + rB, \frac{1}{2}C(\tilde{Y}+ρ_{c-b}^*\tilde{Y})) + rA) }
-% }{
-%     r \text{ a real polynomial}
-% }.
-% \]
-%
-
-
-
-
 
 \subsection{Set Up}
 This chapter considers the infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$, so called Whitham deformations. LIT REVIEW ABOUT WHITHAM DEFROMATIONS\todo{}. We have seen that the spectral data $(Σ,Θ^1,Θ^2)$ can be described more concretely as follows. The marked curve $Σ$ is described by $η^2 = P(ζ)$, for $P$ a real polynomial of degree $2g+2$, and each differential can be described by a real polynomial $b$ of degree $g+3$. Thus, we consider the moduli space of spectral data $\mathcal{M}$ as a subspace of the affine space of polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$.
@@ -329,16 +285,7 @@ Take a triple of nonconformal spectral data $(P,b^1,b^2)$, with a nonsingular sp
 \begin{proof}
 In order to solve \eqref{eqn:EMPDi} or \eqref{eqn:Q}, one must first solve their reduced counterparts \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}.
 
-If we consider \eqref{eqn:Q reduced} as a linear system on the coefficents of $\tilde{c}^i$, then it is overdetermined, but by evaluating it at the values at the roots of the polynomials $\tilde{b}^i$ it nicely seaprates into two independent subsystems. Consider \eqref{eqn:Q reduced} at the roots of $\tilde{b}^2$. If some of the roots are repeated, then consider the expansion near a $k$-th order root $β$ of $\tilde{b}^2$ and differentiate $(k-1)$ times. This yields a system of $g+3$ equations. The coefficent matrix in this system is a confluent Vandemonde matrix, and is always nonsingular. Likewise at the roots of $\tilde{b}^2$.
-
-Thus there is a unique solution ${\bf \tilde{c}}^1, {\bf \tilde{c}}^2$ of degrees $g+2-d_1, g+2-d_2$, where $d_i = \deg F^i$. Explicitly, Hermite interpolation allows one to match the value of a function at $n+1$ points to order $m$ using a polynomial of degree $(n+1)(m+1)-1$. Take for $m$ the order of the highest order root of $\tilde{b}^1$ and consider the $(n+1)(m+1)$ polynomials such that\todo{don't use i j here, reserve them for indices.}
-\[
-H_{j,k}^{(l)}(β_i) = δ_{j,i}δ_{l,k}\;\;\text{ for }  l \leq m
-\]
-
-That is, $H_{j,k}$ is a polynomial that is zero and has zero derivatives to the first $m$ orders at every root $β_i$ of $\tilde{b}^1$, with the exception of its $k$-th derivative at $β_j$ which has a value of $1$. Each of these is degree $(n+1)(m+1)-1$. $g+3-d_1$ of these basis polynomials can be used to fit the data of the problem. The remaining $(n+1)(m+1)-(g+3-d_1)$ can be used to reduce degree of the solution by $1$ each, resulting in a solution of exactly degree $g+2-d_1$ as expected. The full formulae can be found in \cite{Spitzbart1960} for general confluent Vandermode matrices. We note only that ${\bf\tilde{c}}^1_{g+2-d_1}$ is $b^1_{g+3-d_1}R(Q)$, which by assumption is zero. By considering the leading order of \eqref{eqn:Q reduced}, if ${\bf\tilde{c}}^1_{g+2-d_1}$ vanishes, so too must ${\bf\tilde{c}}^2_{g+2-d_2}$.
-
-Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i {\bf\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree $g+1$. We similiarly define $\hat{c}^i = (ζ^2 -1)c^i$.
+We consider \eqref{eqn:Q reduced} as a linear system on the coefficents of $\tilde{c}^i$ as above by making use of the confluent Vandermonde matrix. Thus there is a unique solution ${\bf \tilde{c}}^1, {\bf \tilde{c}}^2$ of degrees $g+2-d_1, g+2-d_2$, where $d_i = \deg F^i$. We note that ${\bf\tilde{c}}^1_{g+2-d_1}$ is $R(Q)$, which by assumption is zero. By considering the leading order of \eqref{eqn:Q reduced}, if ${\bf\tilde{c}}^1_{g+2-d_1}$ vanishes, so too must ${\bf\tilde{c}}^2_{g+2-d_2}$. Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i {\bf\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree $g+1$. We similiarly define $\hat{c}^i = (ζ^2 -1)c^i$.
 
 Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} was a necessary condition.
 \[
@@ -359,7 +306,7 @@ respectively. First note that every element of both of these sets are in agreeme
 \[
 \dot P^i(α) \tilde{b}^i(α) = P'(α)α(α^2 -1)\tilde{c}^i(α).
 \]
-By definition, roots of $\tilde{P}$ are roots of $P$ that are not common to either $\tilde{b}^1$ or $\tilde{b}^2$. If neither of them has a root at at $α$, then from \eqref{eqn:Q reduced} we see that
+By definition, roots of $\tilde{P}$ are roots of $P$ that are not common to either $\tilde{b}^1$ or $\tilde{b}^2$. Neither of them has a root at at $α$, so from \eqref{eqn:Q reduced} we see that
 \[
 \tilde{b}^1(α)\tilde{c}^2(α) - \tilde{b}^2(α)\tilde{c}^1(α) = Q(α)\tilde{P}(α) = 0,
 \]
@@ -381,7 +328,7 @@ where we can be sure that $\tilde{b}^2(β) \neq 0$ because it cannot be a root o
 \[
 {\bf \dot{P}}^1(β) + 2r(β)F^2(β)\tilde{P}(β) = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)}.
 \]
-Likewise, at the $d_2$ roots of $F^2$, we aquire constraints on the choice of $s$. It is always possible to satisfy such constraints, so we see that there is common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$ to \eqref{eqn:EMPDi reduced}. It is also a solution to \eqref{eqn:EMPDi}.
+Likewise, at the $d_2$ roots of $F^2$, we aquire constraints on the choice of $s$. It is always possible to meet these constraints (because, for example, the degree of $s$ is $d_2$ and there are $d_2$ distinct roots of $F^2$), so we see that there is common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$ to \eqref{eqn:EMPDi reduced}. It is also a solution to \eqref{eqn:EMPDi}.
 
 Still though, this solution is not unique. There remains one degree of freedom. For any real number $s$, we have solutions to \eqref{eqn:EMPDi} of the form
 \begin{align*}
@@ -390,9 +337,9 @@ Still though, this solution is not unique. There remains one degree of freedom. 
 \end{align*}
 However, this freedom is simply the freedom to rescale $P$. We have chosen a preferred scaling of $P$, so our choice of $s$ is determined. Explicitly, if we were to allow other scalings, the formula for $P$ would be
 \[
-P = r(t) \prod_i (ζ-α_i)(1- \bar{α}_iζ),
+P(t) = r(t) \prod_i (ζ-α_i(t))(1- \bar{α}_i(t)ζ),
 \]
-where $α_i$ are the roots inside the unit circle and $r(t)$ some real function. Then from any solution $\dot{P}$ (irrespective of the choice of $s$) we can determine how the roots $α_i$ are changing at $t=0$. Simply differentiate and evaluate at $α_i$
+where $α_i$ are the roots inside the unit circle and $r(t)$ some real function. Then from any solution $\dot{P}$ (irrespective of the choice of $s$) we can determine the derivatives of the roots $α_i$ at $t=0$. Simply differentiate $P$ and evaluate at $α_i$
 \begin{align*}
 \dot{P} = \dot{r} \prod_i (ζ-α_i)(1- \bar{α}_iζ) + r(0) \sum_i (-\dot{α} &+ (\dot{α}\bar{α}+α\dot{\bar{α}})ζ - \dot{\bar{α}}ζ^2) \prod_{j\neq i} (ζ-α_j)(1- \bar{α}_jζ) \\
 \dot{P}(α_i) &= -\dot{α}_i(1+α_i\bar{α}_i) \prod_{j\neq i} (α_i-α_j)(1- \bar{α}_j α_i).
