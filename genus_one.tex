@@ -107,7 +107,7 @@ As this chapter is concerned with spectral curves of genus one only, we will dro
 Σ(α,β) = \{ (ζ,η) \mid η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ) \}.
 \]
 
-The main theorems are \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, which describe the topology of the connected components of $\mathcal{S}$ and the folition of $\mathcal{C}$. This result is proved by the construction, in several stages, of a parameterisation of the foliation adapted to the closing conditions. First, in \textsection\ref{sub:Differentials} we find on every curve the differentials with integral periods. Having found these differentials, in \textsection\ref{sub:closing conditions} we reformulate the closing conditions to produce two real valued functions on $\mathcal{A}$ that are both valued in $\Q$ exactly when a given spectral curve admits periodic spectral data. One function is strictly positive and has an explicit algebraic formula. We immediately give a parameterisation that shows the level sets of the function foliate $\mathcal{A}$ into solid tori. The second function, $T$ (eqn \ref{eqn:def_T}), is however multivalued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
+The main theorems are \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, which describe the topology of the connected components of $\mathcal{S}$ and the folition of $\mathcal{C}$. This result is proved by the construction, in several stages, of a parameterisation of the foliation adapted to the closing conditions. First, in \textsection\ref{sub:Differentials} we find on every curve the differentials with integral periods. Having found these differentials, in \textsection\ref{sub:closing conditions} we reformulate the closing conditions to produce two real valued functions on $\mathcal{A}$ that are both valued in $\Q$ exactly when a given spectral curve admits periodic spectral data. One function is strictly positive and has an explicit algebraic formula. We immediately give a parameterisation that shows the level sets of the function foliate $\mathcal{A}$ into solid tori. The second function, $T$ (eqn \eqref{eqn:def_T}), is however multivalued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
 
 To analyse the two functions, especially the second, we introduce a new set of coordinates on $\mathcal{A}$ that are adapted to calculation (\textsection\ref{sub:Reformulate}). These new coordinates make align with the work of \textsection\ref{sub:EllipticContinuation}, allowing us to lift $T$ to $\mathcal{\tilde{A}}$, the universal cover of $\mathcal{A}$, so that it becomes a single valued function $\tilde{T}$. We then compute the derivatives of $\tilde{T}$ and use the implicit function theorem to prove that its level sets, denoted $\mathcal{\tilde{A}}(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}$, the preimage of $\mathcal{S}$ in $\mathcal{\tilde{A}}$. Finally, we push this foliation back down to $\mathcal{C}$. By uniqueness, $\mathcal{\tilde{A}}$ is also the universal cover of $\mathcal{C}$, so by observing the effect of the covering transformations on $\mathcal{\tilde{S}}$, one recovers $\mathcal{S}$ as a quotient (\textsection\ref{sub:Topology}).
 
@@ -180,7 +180,7 @@ This correspondence has several properties that distinguish it from the others. 
 \[
 [1,k^{-1};-1,-k^{-1}] = \frac{4k}{(k+1)^2}
 \]
-disagrees with eqn \ref{eqn:roots_cross_ratio} in this limit, which rules out this correspondence and the three others with the same cross ratio. Finally, our choice of correspondences takes the unit disk to the right half plane. There is only one other correspondence that has all three of these properties, namely
+disagrees with eqn \eqref{eqn:roots_cross_ratio} in this limit, which rules out this correspondence and the three others with the same cross ratio. Finally, our choice of correspondences takes the unit disk to the right half plane. There is only one other correspondence that has all three of these properties, namely
 \[
   \begin{array}{l || c|c|c|c}
     ζ & β & \cji{β} & α & \cji{α} \\
@@ -233,7 +233,7 @@ z_0 = \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β}
 \end{proof}
 \end{lem}
 
-Because of the holomorphic involution $η\to-η$, equations \ref{eqn:f} and \ref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ laying \todo{laying or lying?} over the unit circle $ζ=1$. Thus there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this upper unit circle in $Σ$, $η=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation $f$ the unit circle is mapped to the imaginary axis. Over the imaginary axis in the Jacobi elliptic curve, for $z=\iu u$, $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$, so it also has a canonical choice of a upper and lower imaginary axis. We choose the transformation between elliptic curves to map the positive unit circle to the positive imaginary axis.
+Because of the holomorphic involution $η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ laying \todo{laying or lying?} over the unit circle $ζ=1$. Thus there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this upper unit circle in $Σ$, $η=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation $f$ the unit circle is mapped to the imaginary axis. Over the imaginary axis in the Jacobi elliptic curve, for $z=\iu u$, $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$, so it also has a canonical choice of a upper and lower imaginary axis. We choose the transformation between elliptic curves to map the positive unit circle to the positive imaginary axis.
 % The sign choice needed to make the upper unit circle map to the upper imaginary axis is
 % \[
 % η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
@@ -247,7 +247,7 @@ In genus one, there is an exact differential with the double poles over $ζ=0,\i
 \]
 Due to the factor $\iu$ it is real, and so we take it as the second basis vector. As previously stated, every differential can be written as the linear combination of $ω$, $e$ and an exact differential. Given that we already have taken $ω$ as a basis vector, we seek to complete the basis with the sum of $e$ and an exact differential.
 
-Recall eqn \ref{eqn:def_e}, the definition of $e$. It is real with respect to $\tilde{ρ}(z) = -\bar{z}$, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential. We assert that
+Recall eqn \eqref{eqn:def_e}, the definition of $e$. It is real with respect to $\tilde{ρ}(z) = -\bar{z}$, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential. We assert that
 \[
 e + d\left[ \frac{w}{z + \bar{z}_0} \right]
 \]
@@ -483,7 +483,7 @@ For the closing condition at $ζ=-1$
 &= 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{align*}
 
-If one wishes, one could substitute these formulae into \ref{eqn:def_T} to get $T_0$, though we hold off doing that until later. Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be inifinite. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and,
+If one wishes, one could substitute these formulae into \eqref{eqn:def_T} to get $T_0$, though we hold off doing that until later. Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be inifinite. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and,
 \[
 (f(1)-z_0)(f(1) + \bar{z}_0) = -(f(1)-z_0)(\overline{f(1) - z_0}) = - \abs{f(1) - z_0}^2.
 \]
@@ -516,16 +516,16 @@ Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the f
 Note that $\mathcal{A}'$ does not include the points where $u'=v'=0$, so it is covered by three of the coordinate patches; $(p,k,u,v)$, $(p,k,u',v)$ and $(p,k,u,v')$ are sufficent for example. We must show that $\mathcal{A}'$ does indeed parameterise the space of spectral curves.
 
 \begin{lem}
-The given formulae for $p,k$ (eqns \ref{eqn:def_p}, \ref{eqn:def_k} respectively) and $\iu u = f(1)$, $\iu v = f(-1)$ extend to a diffeomorphism between the spaces $\mathcal{A}$ and $\mathcal{A}'$.
+The given formulae for $p,k$ (eqns \eqref{eqn:def_p}, \eqref{eqn:def_k} respectively) and $\iu u = f(1)$, $\iu v = f(-1)$ extend to a diffeomorphism between the spaces $\mathcal{A}$ and $\mathcal{A}'$.
 
 \begin{proof}
-We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. As stated, both $p$ and $k$ already have their own formulae in terms of $α$ and $β$ (eqns \ref{eqn:def_p}, \ref{eqn:def_k} respectively), which are combinations of the absolute values of various terms. These formulae could only fail to be smooth if those terms were zero. The terms in question are
+We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. As stated, both $p$ and $k$ already have their own formulae in terms of $α$ and $β$ (eqns \eqref{eqn:def_p}, \eqref{eqn:def_k} respectively), which are combinations of the absolute values of various terms. These formulae could only fail to be smooth if those terms were zero. The terms in question are
 \[
 1-\bar{α}β, α-β, 1-α, 1+α, 1-β, 1+β.
 \]
 The last four are nonzero because the branch points are inside the unit circle. $α-β$ is nonzero because $α=β$ is excluded from $\mathcal{A}$. That leaves $1-\bar{α}β = \bar{α}(\cji{α} - β)$ which is zero iff $\cji{α}=β$. This is impossible because $β$ is inside the unit circle whereas $\cji{α}$ is outside it.
 
-The map $f$ is written in terms of $(α,β)$, eqn \ref{eqn:f}, and its coefficents are smooth functions. The parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map. This motivates the extended nature of the definition above. The map $f$ is a M\"obius transformation, and so may take the value infinity. Indeed, we have seen that $f(ν) = \infty$, and so one of these parameters is infinite when $ν=\pm 1$ and hence the necessity of the coordinates $u'$ and $v'$ to cover this situation. $z_0 = f(0)$ is a smooth function of $α,β$ and is never zero or infinity, because $0 = f(μ), \infty = f(ν)$ and $μ,ν\in\S^1$. Using the form of eqn \ref{eqn:f_2}, on $ν\neq 1$
+The map $f$ is written in terms of $(α,β)$, eqn \eqref{eqn:f}, and its coefficents are smooth functions. The parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map. This motivates the extended nature of the definition above. The map $f$ is a M\"obius transformation, and so may take the value infinity. Indeed, we have seen that $f(ν) = \infty$, and so one of these parameters is infinite when $ν=\pm 1$ and hence the necessity of the coordinates $u'$ and $v'$ to cover this situation. $z_0 = f(0)$ is a smooth function of $α,β$ and is never zero or infinity, because $0 = f(μ), \infty = f(ν)$ and $μ,ν\in\S^1$. Using the form of eqn \eqref{eqn:f_2}, on $ν\neq 1$
 \[
 \iu u = -\bar{z}_0 \frac{1-μ}{1-ν},
 \]
@@ -539,7 +539,7 @@ As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive
 \[
 \frac{z-z_0}{z + \conj{z_0}},
 \]
-(compare to \ref{eqn:f_inv_2}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Note the following trick using cross ratios.
+(compare to \eqref{eqn:f_inv_2}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Note the following trick using cross ratios.
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -608,7 +608,7 @@ These all lead to smooth formulae for $z_0$ on their respective coordinate patch
 \end{proof}
 \end{lem}
 
-Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in eqn \ref{eqn:y_prime_version}.
+Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in eqn \eqref{eqn:y_prime_version}.
 
 This shows that $\mathcal{A}$ and $\mathcal{A}'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Note when $ν=1$, $f(1) = \iu\infty$ and when $ν=-1$, $f(-1) = \iu\infty$, so the subset $\mathcal{A}_0$ is precisely covered by the coordinates $(p,k,u,v)$. Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the elementary terms of the half-periods. By direct computation
 \begin{align*}
@@ -617,7 +617,7 @@ u-y &= \frac{w(\iu u)(u-v)}{pw(\iu v) + w(\iu u)} &
 v-y &= - \frac{w(\iu v)(u-v)}{pw(\iu v) + w(\iu u)} &
 \abs{\iu v - z_0}^2 &= \frac{w(\iu v)(u-v)^2}{pw(\iu v) + w(\iu u)}
 \end{align*}
-These expressions combine to give from \ref{eqn:gamma_plus} and \ref{eqn:gamma_minus}
+These expressions combine to give from \eqref{eqn:gamma_plus} and \eqref{eqn:gamma_minus}
 \begin{align*}
 - 4K \frac{w(f(1))\,(f(1)-\iu\,\Im z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}
 &= 4\iu K \frac{w(\iu u)\,(u-y)}{\abs{\iu u-z_0}^2}
@@ -643,7 +643,7 @@ And hence that
 
 Consider the parameter space $\mathcal{A}$ for a fixed value of $p$, denoted $\mathcal{A}(p)$. Topologically it is the product of an interval and an annulus, a feature not easily seen from the $α,β$ description. The interval component is obvious, it comes from $k\in (0,1)$. To see the annulus part, consider $\RInf \times \RInf$. Topologically $\RInf$ is just a circle, so this product is a torus. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus.
 
-A more instructive way of visualising $\mathcal{A}$ is to think of it as a solid cylinder with a line along the central axis removed. One should think of the `radius' of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider formula \ref{eqn:def_k} for $k$.
+A more instructive way of visualising $\mathcal{A}$ is to think of it as a solid cylinder with a line along the central axis removed. One should think of the `radius' of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider formula \eqref{eqn:def_k} for $k$.
 \[
 k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \]
@@ -720,7 +720,7 @@ In Appendix \ref{sub:EllipticContinuation}, extensions of $F_0(x;k)$ and $E_0(x;
 - 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
 + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
 \]
-If we wish to relate this to a specific local expression, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$, \'a la \ref{eqn:tildeF_period} and \ref{eqn:tildeE_period}. In particular, define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Then
+If we wish to relate this to a specific local expression, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$, \'a la \eqref{eqn:tildeF_period} and \eqref{eqn:tildeE_period}. In particular, define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Then
 \begin{align*}
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -1159,7 +1159,7 @@ Firstly, as these are fixed points of $p \mapsto p^{-1}$, $p$ is one. The symmet
 z_0 = \frac{A+αB}{A-αB} = \frac{1+ \abs{α}}{1-\abs{α}},\quad
 k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
 \]
-It follows from eqn \ref{eqn:f_2} that
+It follows from eqn \eqref{eqn:f_2} that
 \[
 \iu v = f(-1)
 = \bra{\frac{1+ \abs{α}}{1-\abs{α}}}^2 \bra{ \frac{1+ \abs{α}}{1-\abs{α}} \frac{1+\hat{α}}{1-\hat{α}}}^{-1}
