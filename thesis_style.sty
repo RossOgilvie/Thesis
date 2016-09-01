@@ -10,6 +10,9 @@
 \usepackage{listings}
 \usepackage{enumerate}
 
+% A package to help with the labelling of enumerates
+\usepackage{enumitem}
+
 %% for chapter quotes
 \usepackage{epigraph}
 
@@ -29,11 +32,11 @@
 % \setcounter{secnumdepth}{0}
 
 %Add math environs
-\newtheorem{defn}{Definition}[section]
-\newtheorem{lem}[defn]{Lemma}
-\newtheorem{thm}[defn]{Theorem}
-\newtheorem{cor}[defn]{Corollary}
-\newtheorem{remark}[defn]{Remark}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{remark}[equation]{Remark}
 
 \newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
 
@@ -57,7 +60,7 @@
 \newcommand{\norm}[1]{{\left\Vert#1\right\Vert}}
 \newcommand{\set}[2]{\left\{\left. #1 \;\right|\; #2 \right\}}
 \newcommand{\iprod}[2]{\left\langle #1 , #2 \right\rangle}
-\newcommand{\Set}[2]{\left\{\; #1 \;\mid\; #2 \;\right\}}
+\newcommand{\Set}[2]{\left\{\; #1 \;\middle|\; #2 \;\right\}}
 \newcommand{\vt}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 \newcommand{\Partial}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\cross}[4]{\left[#1,#2;\, #3, #4\right]}

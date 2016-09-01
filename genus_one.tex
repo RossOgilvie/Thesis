@@ -525,7 +525,7 @@ We proceed by determining a formula for the change of parameters from $(α,β)$ 
 \]
 The last four are nonzero because the branch points are inside the unit circle. $α-β$ is nonzero because $α=β$ is excluded from $\mathcal{A}$. That leaves $1-\bar{α}β = \bar{α}(\cji{α} - β)$ which is zero iff $\cji{α}=β$. This is impossible because $β$ is inside the unit circle whereas $\cji{α}$ is outside it.
 
-The map $f$ is written in terms of $(α,β)$, eqn \eqref{eqn:f}, and its coefficents are smooth functions. The parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map. This motivates the extended nature of the definition above. The map $f$ is a M\"obius transformation, and so may take the value infinity. Indeed, we have seen that $f(ν) = \infty$, and so one of these parameters is infinite when $ν=\pm 1$ and hence the necessity of the coordinates $u'$ and $v'$ to cover this situation. $z_0 = f(0)$ is a smooth function of $α,β$ and is never zero or infinity, because $0 = f(μ), \infty = f(ν)$ and $μ,ν\in\S^1$. Using the form of eqn \eqref{eqn:f_2}, on $ν\neq 1$
+The map $f$ is written in terms of $(α,β)$, \eqref{eqn:f}, and its coefficents are smooth functions. The parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map. This motivates the extended nature of the definition above. The map $f$ is a M\"obius transformation, and so may take the value infinity. Indeed, we have seen that $f(ν) = \infty$, and so one of these parameters is infinite when $ν=\pm 1$ and hence the necessity of the coordinates $u'$ and $v'$ to cover this situation. $z_0 = f(0)$ is a smooth function of $α,β$ and is never zero or infinity, because $0 = f(μ), \infty = f(ν)$ and $μ,ν\in\S^1$. Using \eqref{eqn:f}, on $ν\neq 1$
 \[
 \iu u = -\bar{z}_0 \frac{1-μ}{1-ν},
 \]
@@ -539,7 +539,7 @@ As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive
 \[
 \frac{z-z_0}{z + \conj{z_0}},
 \]
-(compare to \eqref{eqn:f_inv_2}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Note the following trick using cross ratios.
+(compare to \eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Note the following trick using cross ratios.
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -1006,7 +1006,7 @@ For $p\neq 1$, $\mathcal{C}(p)$ is diffeomorphic to
 \]
 such that $\mathcal{S}(p) = \{ \mathcal{C}(p) \mid q \in \Q/ (p-1)\Z \}$.
 \begin{proof}
-Fix $p\neq 1$ and consider $\mathcal{C}(p)$. It is the quotient of $\mathcal{\tilde{A}}(p)$ by the covering transformations, which preserve \ref{} the value of $p$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}(p)$ is foliated by $\mathcal{\tilde{A}}(p,q)$ and we have just shown how different $\mathcal{\tilde{A}}(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each of $\R/(p-1)\Z$ to cover the image.
+Fix $p\neq 1$ and consider $\mathcal{C}(p)$. It is the quotient of $\mathcal{\tilde{A}}(p)$ by the covering transformations, which preserve the value of $p$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}(p)$ is foliated by $\mathcal{\tilde{A}}(p,q)$ and we have just shown how different $\mathcal{\tilde{A}}(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each of $\R/(p-1)\Z$ to cover the image.
 
 Lemma \ref{lem:T_graph} also demonstrates that $\mathcal{\tilde{S}}(p)$ is the union of $\mathcal{\tilde{A}}(p,q)$ with $q \in \Q$. $\mathcal{S}(p)$ is the image of $\mathcal{\tilde{S}}(p)$, so it is the subset of $\mathcal{C}(p)$ where $q$ is in the image of $\Q$, that is $\Q/(p-1)\Z$.
 \end{proof}
@@ -1159,7 +1159,7 @@ Firstly, as these are fixed points of $p \mapsto p^{-1}$, $p$ is one. The symmet
 z_0 = \frac{A+αB}{A-αB} = \frac{1+ \abs{α}}{1-\abs{α}},\quad
 k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
 \]
-It follows from eqn \eqref{eqn:f_2} that
+It follows from \eqref{eqn:f} that
 \[
 \iu v = f(-1)
 = \bra{\frac{1+ \abs{α}}{1-\abs{α}}}^2 \bra{ \frac{1+ \abs{α}}{1-\abs{α}} \frac{1+\hat{α}}{1-\hat{α}}}^{-1}
