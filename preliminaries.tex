@@ -47,7 +47,6 @@ then $φ$ is the pull back of the Maurer-Cartan form by $f$. The first of \eqref
 
 
 \notoc\subsection{Construction of a Spectral Curve}
-\label{sub:construction}
 
 Consider now the case where $M$ a torus and $G=SU(2)$. Hitchin investigated solutions of \eqref{eqn:Hit1.7} and characterised them in terms of a spectral curve construction. We recall that construction now. From a pair $(A,Φ)$ we construct a $C^\times$ family of flat $SL_2\C$ connections
 \[
@@ -120,7 +119,7 @@ On a marked curve $Σ$, the conditions a differential $Θ$ must satisfy are
 \item\label{P:reality} Reality: The differential satisfies $ρ^* Θ = - \bar{Θ}$
 \item\label{P:imaginary periods} Imaginary Periods: The differentials have purely imaginary periods
 \end{enumerate}
-On any curve $Σ$ the meromorphic differentials are of the form $(f(ζ) + η g(ζ))dζ/η$ for $f,g$ meromorphic functions on $\CP^1$ \cite[Prop~III.1.10]{Miranda1995}. All meromorphic functions on $\CP^1$ are rational functions. Applying the hyperelliptic involution gives
+On any curve $dζ/η$ is a holomorphic differential, so meromorphic differentials on $Σ$ are of the form $(f(ζ) + η g(ζ))dζ/η$ for $f,g$ meromorphic functions on $\CP^1$ REF MIRANDA. All meromorphic functions on $\CP^1$ are rational functions. Applying the hyperelliptic involution gives
 \[
 σ^*\bra{ (f(ζ) + η g(ζ))\frac{dζ}{η} } = (-f(ζ) + η g(ζ))\frac{dζ}{η},
 \]
@@ -129,7 +128,7 @@ so the symmetry condition forces $g\equiv 0$. Suppose first that $Σ$ does not h
 b_1 - \frac{1}{2}\frac{P_1}{P_0}b_0,
 \labelthis{eqn:residue}
 \]
-where subscripts denote coefficients of the polynomials. This must therefore vanish. Reality of the differential means that this polynomial is real, that is $\overline{b(ζ)}=\bar{ζ}^{g+3}b(\cji{ζ})$.
+where subscripts denote coefficents of the polynomials. This must therefore vanish. Reality of the differential means that this polynomial is real, that is $\overline{b(ζ)}=\bar{ζ}^{g+3}b(\cji{ζ})$.
 
 Now suppose that $P$ has a root at $ζ=0$. Because it must be a simple root, $P_1 \neq 0$. Let $ξ$ be a local coordinate of a point of $π^{-1}(0)$ with $ξ^2 = ζ$ and expand
 \[
@@ -146,9 +145,9 @@ In summary, every differential meeting the three conditions \ref{P:poles}, \ref{
 Θ = b(ζ)\frac{dζ}{ζ^2η},
 \labelthis{eqn:def b}
 \]
-for some real degree $g+3$ polynomial $b(ζ)$, meeting the condition $P_1b_0 - 2P_0b_1 = 0$ on its coefficients.
+for some real degree $g+3$ polynomial $b(ζ)$, meeting the condition $P_1b_0 - 2P_0b_1 = 0$ on its coefficents.
 
-Finally, having purely imaginary periods imposes further linear relations on the coefficients of $b$. Take a basis of the homology of $Σ$ denoted $A_1,\ldots,A_g,B_1,\ldots,B_g$. Let $A_i$ be the difference of the two lifts to $Σ$ of the arc connecting $α_i$ and $\cji{α}_i$. Such cycles have the property that $ρ_*(A_i) = -A_i$, and along such cycles
+Finally, having purely imginary periods imposes further linear relations on the coefficents of $b$. Take a basis of the homology of $Σ$ denoted $A_1,\ldots,A_g,B_1,\ldots,B_g$. Let $A_i$ be the difference of the two lifts to $Σ$ of the arc connecting $α_i$ and $\cji{α}_i$. Such cycles have the property that $ρ_*(A_i) = -A_i$, and along such cycles
 \[
 \int_{A_i} Θ
 = - \int_{ρ_*(A_i)} Θ
@@ -170,7 +169,7 @@ A theorem of Hitchin \cite[Theorem~8.1]{Hitchin1990} provides a correspondence b
 
 \notoc\subsection{Closing Conditions}
 
-Moreover, \cite[Theorem~8.20]{Hitchin1990} gives an additional condition on a triple $(Σ,Θ,\tilde{Θ})$ to ensure that the two connections are trivial, and so that the pair $(A,Φ)$ correspond to a harmonic map from the torus into $\S^3$.
+Moreover, \cite[Theorem~8.20]{Hitchin1990} gives an addtional condition on a triple $(Σ,Θ,\tilde{Θ})$ to ensure that the two connections are trivial, and so that the pair $(A,Φ)$ correspond to a harmonic map from the torus into $\S^3$.
 \begin{enumerate}[resume*]
 \item\label{P:closing} Closing conditions: $μ$ has value $1$ at $π^{-1}\{\pm 1\}$, where $μ$ is a function on $Σ\setminusπ^{-1}\{0,\infty\}$, $Θ = d\log μ$ and $μσ^*μ = 1$. Likewise for $\tilde{μ}$, $\tilde{Θ}=d\log \tilde{μ}$.
 \end{enumerate}
@@ -192,7 +191,8 @@ Then we could define $μ$ to be $\exp(\int Θ)$. The integral of $Θ$ is defined
 \]
 Together with $μ(ξ_1)μ(σ(ξ_1)) = μ(ξ_1)σ^*μ(ξ_1) = 1$, this implies that $μ(ξ_1),μ(σ(ξ_1)) = \pm 1$. Looking at the construction of solutions of \eqref{eqn:Hit1.7}, we are free to tensor with an element of $H^1(M,\Z_2)$, which we can use to fix the signs to be $+1$ in a unique way. Thus for any $Θ$ that satisfy \eqref{eqn:closing}, there is a unique corresponding $μ$ that satisfies the closing conditions. We therefore use the term closing conditions to describe either formulation. The final part of Theorem 8.20 states that the harmonic map is uniquely determined by its spectral data, up to the action of $SO(4)$ on $SU(3)$.
 
-\notoc\subsection{Geometric Interpretation of Spectral Data}
+\notoc\subsection{Geometric Interpre}
+INTERPRETATION OF SPECTRAL DATA
 
 Given a set of spectral data, we can detect certain features of the corresponding map directly. The most important example of this has occurred several times already. The harmonic map $f$ is a conformal map if and only if $P(0) = 0$. Another example that we shall come across is the case where $f$ takes its image in a totally geodesic $2$-sphere. Such a case occurs exactly when $P$ is an even polynomial, and $Θ,\tilde{Θ}$ and $E$ are invariant under $τ\circ σ$, where $τ$ is the extra involution $τ(ζ,η) = (-ζ,η)$.
 
@@ -208,15 +208,15 @@ Before we proceed to differentials, let us once again give motivation to the exc
 
 \begin{lem}
     \label{lem:no singularities}
-On a curve of genus zero, differentials satisfying conditions \ref{P:poles}--\ref{P:imaginary periods} with linearly independent principal parts do not have common roots.
+On a marked curve of genus zero, differentials satisfying conditions \ref{P:poles}--\ref{P:reality} with linearly independent principal parts do not have common roots.
 \begin{proof}
-The conformal case is established in Hitchin p659. Any differential has the form, for some complex number $b$,
+We consider two cases, dependent on whether or not the marked curve is branched over $ζ=0$. If $ζ=0$ is a branch point, then we note we note the following more general proof. Suppose the marked curve has genus $g$. Then from \eqref{eqn:def b} we have that any differential may be written as
 \[
-(b + \bar{b}ζ)\frac{dζ}{ζη}.
+a(ζ)\frac{dζ}{ζη},
 \]
-If two such differentials have a common root, then they must be real scalars of one another.
+for some real polynomial $a$ of degree $g+1$. Any real polynomial is determined up real scaling to its $g+1$ roots, so if two such differentials have $g+1$ roots in common, then they are real linearly dependent. Letting $g=0$ shows that two differentials may not share any roots.
 
-In the nonconformal case, the form of the differentials has more terms to consider. Let the spectral curve be given by
+In the nonconformal case, there is no similar elegant generalisation. Instead we consider the specific form of the differentials. Let the spectral curve be given by
 \[
 η^2 = -α + (1+α\bar{α})ζ -\bar{α} ζ^2,
 \]
@@ -233,7 +233,7 @@ By assumption, $b/c$ is not real, so this is nonzero. Its only root is $-a^{-1}$
 b + ab (-a^{-1}) + \overline{ab}(-a^{-1})^2 + \bar{b}(-a^{-1})^3
 = \bar{b}a^{-3} ( a\bar{a} - 1),
 \]
-which is only zero if $\abs{a} = 1$, which itself only occurs when $α=0$. But we are considering the nonconformal case, where $α\neq 0$, so $Θ$ and $aζ+1$ have no common factors. Hence
+which is only zero if $\abs{a} = 1$, which itself only occurs when $α=0$. But we are considering the nonconformal case, ie $α\neq 0$, so $Θ$ and $aζ+1$ have no common factors. Hence
 \[
 \gcd(Θ,\tilde{Θ})
 = \gcd\bra{ Θ, \bar{b}\tilde{Θ} - \bar{c}Θ }
@@ -243,6 +243,6 @@ which is only zero if $\abs{a} = 1$, which itself only occurs when $α=0$. But w
 \end{lem}
 
 Suppose we have a singular spectral curve $Σ$ with normalisation $\tilde{Σ}$.
-Because there can be no singular points on the unit circle, all singular points come in pairs, so the (arithimetic) genus of $Σ$ and $\tilde{Σ}$ differ by at least two. This excludes the possibility of singular spectral curves of genus one. If we add in the fact that at a point of $\tilde{Σ}$ that maps to $Σ$ with multiplicity $m$, the differentials $Θ$ and $\tilde{Θ}$ both have a common zero of order $m-1$, the the above lemma shows that no singular spectral curve has a genus zero normalisation. This rules out singular genus two spectral curves also.
+Because there can be no singular points on the unit circle, all singular points come in pairs, so the (arthimetic) genus of $Σ$ and $\tilde{Σ}$ differ by at least two. This excludes the possibility of singular spectral curves of genus one. If we add in the fact that at a point of $\tilde{Σ}$ that maps to $Σ$ with multiplicity $m$, the differentials $Θ$ and $\tilde{Θ}$ both have a common zero of order $m-1$, the the above lemma shows that no singular spectral curve has a genus zero normalisation. This rules out singular genus two spectral curves also.
 
-Over $\mathcal{C}$, there is a bundle $\mathcal{B}$ of differentials with imaginary periods. As argued above it is a rank 2 vector bundle; the fibre over $Σ$ is $\mathcal{B}_Σ$. We define the space of spectral data $(Σ,Θ,\tilde{Θ})$ with integral periods and satisfying the closing conditions to be $\mathcal{M}$, a subspace of the total space of $\mathcal{B}\times\mathcal{B}$. Importantly, it is not a subbundle over $\mathcal{C}$, because not every marked curve admits spectral data. Instead, we denote the space of marked curves that do admits spectral data as $\mathcal{S}$, a subspace of $\mathcal{C}$, namely the projection of $\mathcal{M}$.
+Over $\mathcal{C}$, there is a bundle $\mathcal{B}$ of differentials with imaginary periods. As argued above it is a rank 2 vector bundle; the fibre over $Σ$ is $\mathcal{B}_Σ$. We define the space of spectral data $(Σ,Θ,\tilde{Θ})$ with integral periods and satisfying the closing conditions to be $\mathcal{M}$, a subsapce of the total space of $\mathcal{B}\times\mathcal{B}$. Importantly, it is not a subbundle over $\mathcal{C}$, because not every marked curve admits spectral data. Instead, we denote the space of marked curves that do admits spectral data as $\mathcal{S}$, a subspace of $\mathcal{C}$, namely the projection of $\mathcal{M}$.
