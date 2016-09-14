@@ -3,12 +3,14 @@
 \section{Deformation Theory}
 \label{sec:Deformation Theory}
 
-In this chapter we investigate the tangent space to the moduli space $\mathcal{M}$ of spectral data. We will prove there is an open set $U'$ such that $\mathcal{M}\cap U'$ is a two dimensional manifold. To show this, we fix the genus $g$ of the spectral curve and use \eqref{eqn:def P} and \eqref{eqn:def b} to consider $\mathcal{M}_g$ as a subset of an affine space $U$. Then by considering paths in $\mathcal{M}_g$ we develop equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} that characterise the tangent vectors to these paths. For an open subset $U' \subset U$, at every point $p$ we find all solutions to these equations to demonstrate that $T_p\mathcal{M}_g$ is two dimensional (Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} and \ref{lem:tangent conformal}). Having established that the dimension is constant, it naturally follows that $\mathcal{M}_g\cap U'$ is a manifold (Theorem \ref{thm:moduli manifold}).
+In this chapter we investigate the tangent space to the moduli space $\mathcal{M}$ of spectral data. We will prove there is an open set $U'$ such that $\mathcal{M}\cap U'$ is a two dimensional manifold. To show this, we fix the genus $g$ of the spectral curve and use \eqref{eqn:def P} and \eqref{eqn:def b} to consider $\mathcal{M}_g$ as a subset of an affine space $U$. Then by considering paths in $\mathcal{M}_g$ we develop equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} that characterise the tangent vectors to these paths. On an open subset $U' \subset U$, we find all solutions to these equations to demonstrate that $T_p\mathcal{M}_g$ is two dimensional (Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} and \ref{lem:tangent conformal}). Having established that the dimension is constant, it naturally follows that $\mathcal{M}_g\cap U'$ is a manifold (Theorem \ref{thm:moduli manifold}).
 
-\emph{A comment about notation.} Throughout we will use diacritical marks to indicate the factors that a polynomial does or does not have. A polynomial with a circumflex (hat) will be shown to have a factor of $ζ^2-1$, and a tilde will indicate that any common factors have been removed, cf. \eqref{eqn:common factors}. When giving the solutions to equations, we will use bold to signify a particular solution, which may or may not be unique, whereas a solution without bold signifies any solution from the set of potential solutions. Given a tuple of polynomials, such as $(X,Y)$, we also give their degrees as a tuple, eg $(x,y)$ for $x=\deg X$ and $y=\deg Y$. Finally, we shall use $i$ and $j$ for indices ranging over $\{1,2\}$, with the understanding that they are not equal. For example, if $i=1$, then we take $j=2$ and vice versa.
+\emph{A comment about notation.} Throughout we will use diacritical marks to indicate the factors that a polynomial does or does not have. A polynomial with a circumflex (hat) will be shown to have a factor of $ζ^2-1$, and a tilde will indicate that any common factors have been removed, cf. \eqref{eqn:common factors}. We shall use a dash to denote differentiation with respect to $ζ$ and a dot for differentiation with respect to $t$ evaluated at $t=0$.
+
+When giving the solutions to equations, we will use bold to signify a particular solution, which may or may not be unique, whereas a solution without bold signifies any solution from the set of potential solutions. Given a tuple of polynomials, such as $(X,Y)$, we also give their degrees as a tuple, eg $(x,y)$ for $x=\deg X$ and $y=\deg Y$. Finally, we shall use $i$ and $j$ for indices ranging over $\{1,2\}$, with the understanding that they are not equal. For example, if $i=1$, then we take $j=2$ and vice versa.
 
 \subsection{Whitham Deformations}
-Let us consider infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$ within the space of spectral data $\mathcal{M}_g$ with spectral curves of a fixed genus $g$. Recall that this triple consists of a marked curve $Σ$ and differentials $Θ^1, Θ^2$ satisfying the conditions \ref{P:real curve}--\ref{P:closing}.
+Let us consider infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$ within the space $\mathcal{M}_g$ of spectral data where the spectral curves have a fixed genus $g$. Recall that this triple consists of a marked curve $Σ$ and differentials $Θ^1, Θ^2$ satisfying the conditions \ref{P:real curve}--\ref{P:closing}.
 A deformation of spectral data is a path $\ell:(-ε,ε) \to \mathcal{M}$, parameterised by $t$. An infinitesimal deformation is the tangent vector of such a curve at $t=0$.
 There is an establish methodology for finding deformations that preserve the periods of differentials, so called Whitham deformations. This method was first discovered for the Korteweg-de Vries equation \cite{Flaschka1980,Lax1983}, before being developed generally for other integrable systems \cite{Krichever1995}. The form of Whitham deformations we use here resemble their application in the theory of constant mean curvature surfaces \cite{Kilian2015a,Carberry2016}.
 
@@ -18,17 +20,17 @@ If we write $\ell(t) = (Σ(t),Θ^1(t),Θ^2(t))$, then we know from \eqref{eqn:de
 \]
 for $i=1,2$. Equivalently then, we may describe $\ell$ in terms of these polynomials, $\ell(t) = (P(t,ζ),b^1(t,ζ),b^2(t,ζ))$.
 We let $Σ = Σ(0)$ and likewise $b^i(ζ) = b^i(0,ζ)$.
-More generally, omission of the parameter $t$ corresponds to evaluation at the point $t=0$. We shall use a dash to denote differentiation with respect to $ζ$ and a dot for differentiation with respect to $t$ evaluated at $t=0$.
+More generally, omission of the parameter $t$ will correspond to evaluation at the point $t=0$.
 
-We use this representation of the spetral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $U$.
+We use this representation of the spectral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $U$.
 
 \begin{defn}
 \label{def:def U}
 Let $U$ be the open subset of $\R^{4g+11}$ of real polynomial triples $(P,b^1,b^2)$ of degrees $(2g+2, g+3, g+3)$ where
-$P$ has only simple zeroes (cf. \ref{P:simple zeroes}) and no zeroes on the unit circle (cf. \ref{P:no real zeroes}), and the polynomials $b^i$ have a simple root at $ζ=0$ exactly when $P$ does, but otherwise do not have a root at $ζ=0$ (cf. \ref{P:poles}).
+$P$ has only simple zeroes (cf. \ref{P:simple zeroes}) and no zeroes on the unit circle (cf. \ref{P:no real zeroes}), and the polynomials $b^i$ have at most a simple root at $ζ=0$ (cf. \ref{P:poles}).
 \end{defn}
 
-Recall from Section \ref{sub:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ,\tilde{μ}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is exact, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
+Recall from Section \ref{sub:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ,\tilde{μ}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is an exact differential, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
 
 The functions $\dot{q}^i$ are of interest because they encode infinitesimal deformations of the spectral data that preserve the integrality of the periods.
 If we could determine the location and order of the poles of $\dot{q}^i$, we could characterise it as the quotient of a polynomial and a fixed holomorphic function, analogously to the characterisation of $Θ^i$ by $b^i$. To this end, we derive now in generality how a function may acquire additional poles when it is differentiated with respect to $t$.
@@ -67,7 +69,7 @@ The assumption of a non-singular spectral curve requires that $P$ and $P'$ have 
 &= L \left [ 2\frac{P}{L}\frac{\hat{c}^i}{L} - 2ζ\frac{P}{L}\bra{\frac{\hat {c}^i}{L}}' + ζ\bra{\frac{P}{L}}'\frac{\hat {c}^i}{L} \right]
 -ζ L' \frac{P}{L} \frac{\hat {c}^i}{L}.
 \end{align*}
-Again, evaluating at the roots of $L$ shows that $L$ divides $\hat{c}^i/L$. If $\deg L = 2g+2$, this shows that $\hat{c}^i$ is divisible by a degree polynomial of degree $4g+4$, and so must be zero for any $g$. If $\deg L = 2g$, then we have only shown that $\hat{c}^i$ vanishes for $g \geq 2$. We treat the two remaining cases, $\deg L = 2g$ and $g = 0$ or $1$, individually.
+Again, this shows that $L$ divides $\hat{c}^i/L$. If $\deg L = 2g+2$, this shows that $\hat{c}^i$ is divisible by a degree polynomial of degree $4g+4$, and so must be zero for any $g$. If $\deg L = 2g$, then we have only shown that $\hat{c}^i$ vanishes for $g \geq 2$. We treat the two remaining cases, $\deg L = 2g$ and $g = 0$ or $1$, individually.
 
 If $\deg L = 2g$ and $g = 1$, then $\hat{c}^i$ is a scalar multiple of $L^2$. Let $\hat{c}^i = a L^2$ and the equation simplifies to
 \[
@@ -138,7 +140,7 @@ In summary, any infinitesimal deformation of the spectral data, in other words a
 \subsection{The Tangent Space to $\mathcal{M}$}
 \label{sub:tangent space}
 
-In the preceding section, we ellucidated several properties that a deformation of spectral data necessarily posseses. Now we turn our attention to the converse; under what conditions it is possible to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} to find an infinitesimal deformation. Firstly, we examine whether it is possible construct polynomials $c^i$ solving \eqref{eqn:Q} for a given $Q$, and whether this construction is unique. Then secondly, we shall insert the polynomials $c^i$ into the right hand side of \eqref{eqn:EMPDi} and solve it to recover $\dot{b}^i$ and $\dot{P}$.
+In the preceding section, we elucidated several properties that a deformation of spectral data necessarily possesses. Now we turn our attention to the converse; under what conditions it is possible to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} to find an infinitesimal deformation. Firstly, we examine whether it is possible construct polynomials $c^i$ solving \eqref{eqn:Q} for a given $Q$, and whether this construction is unique. Then secondly, we shall insert the polynomials $c^i$ into the right hand side of \eqref{eqn:EMPDi} and solve it to recover $\dot{b}^i$ and $\dot{P}$.
 
 For each equation, the main obstacle to the existence of a solution is common factors among the polynomials $(P,b^1,b^2)$. If there are too many common factors, then it will not be possible to deform the spectral data. Even when it is possible to deform, the form of the solution of the equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} is dependent on those common factors. Thus we will need to divide our approach into several cases.
 
@@ -153,7 +155,7 @@ P = F F^1 F^2 \tilde{P},\;\; b^1 = F F^1 G \tilde{b}^1,\;\; b^2 = F F^2 G \tilde
 \]
 Because the spectral curve is nonsingular, $P$ has no repeated factors, and so the polynomials $F,F^1,F^2,\tilde{P}, \tilde{b}^1$ and $\tilde{b^2}$ are pairwise coprime. The common factor of $b^1$ and $b^2$, and therefore any differential on $Σ$ satisfying conditions \ref{P:poles}--\ref{P:imaginary periods}, is the product $FG$. We denote the degrees of the polynomials $F, F^1, F^2$ and $G$ as $d_F,d_1,d_2$ and $d_G$ respectively.
 
-We may ask, given these common factors amoung $P, b^1$ and $b^2$, what, if any, factors do the polynomials $c^i$ and $Q$ possess? Inserting these factorisations into \eqref{eqn:EMPDi}, we observe that
+We may ask, given these common factors among $P, b^1$ and $b^2$, what, if any, factors do the polynomials $c^i$ and $Q$ possess? Inserting these factorisations into \eqref{eqn:EMPDi}, we observe that
 \[
 \dot{P} F F^i G \tilde{b}^i = 2 F F^1 F^2 \tilde{P} (\dot{b}^i + \hat{c}^i - ζ\hat{c}^{i\prime}) + ζ(ζ^2-1 ) P'c^i.
 \]
@@ -208,13 +210,13 @@ vi && \multicolumn{2}{|c|}{$\deg FG > 1$}
 \end{center}
 
 We have seen that the spectral data in cases (iv) and (vi) do not admit any deformations.
-In general, points of $\mathcal{M}_g$ where case (iii) holds are singularities of a deformation \cite{Schmidt2016} and are not considered further in this thesis. We shall note only that this case cannont occur when the genus of the spectral curve is zero or one.
+In general, points of $\mathcal{M}_g$ where case (iii) holds are singularities of a deformation \cite{Schmidt2016} and are not considered further in this thesis. We shall note only that this case cannot occur when the genus of the spectral curve is zero or one.
 When the genus is zero, we have seen that the differentials cannot have any common roots at all (Lemma \ref{lem:no singularities}). We shall now give a similar short proof to show that the differentials of a genus one spectral curve may not have a common root at the branch points. Suppose that $Σ$ is genus one with branch points at $α,β,\cji{α},\cji{β}$, none of which are zero, and that $\gcd(P,b^1,b^2) = F$ is quadratic. Without loss of generality, let $F = (ζ-α)(1-\bar{α}ζ)$ and $b^1 = (c + dζ + \bar{c}ζ^2)F$ for some complex number $c$ and real number $d$. Expanding this and applying \eqref{eqn:residue condition} shows that
 \begin{align*}
 0 &= \bra{ -α(1+β\bar{β}) - β(1+α\bar{α}) }(-αc) - 2(αβ)\bra{-αd + (1+α\bar{α})c}\\
 &= \bra{ α^2(1+β\bar{β}) - αβ(1+α\bar{α}) }c + 2α^2β d.
 \end{align*}
-The coefficent of $c$ above, the bracketed expression, is never zero and so $c$ is determined by $d$. Hence $b^1$ is determined up to a real scalar. This demonstrates any two differentials with the same factor $F$ are real linearly dependent, which contradicts \ref{P:linear independence}.
+The coefficient of $c$ above, the bracketed expression, is never zero and so $c$ is determined by $d$. Hence $b^1$ is determined up to a real scalar. This demonstrates any two differentials with the same factor $F$ are real linearly dependent, which contradicts \ref{P:linear independence}.
 
 Let $U'$ be the subset of points of the three remaining cases: (i), (ii) and (v).
 As the points of cases (iii), (iv) and (vi) form a closed subvariety of the space of real polynomials, $U'$ is open. With reference to Definition \ref{def:def U}, we may characterise $U'$ as the set
@@ -244,11 +246,11 @@ FF^1G\tilde{b}^1 F^2\tilde{c}^2 - FF^2G\tilde{b}^2 F^1\tilde{c}^1 &= G\tilde{Q} 
 \tilde{b}^1 \tilde{c}^2 - \tilde{b}^2 \tilde{c}^1 &= \tilde{Q} \tilde{P}.
 \labelthis{eqn:Q reduced}
 \end{align*}
-As commented on previously, these equations \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced} are necessary conditions to be able to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} resepctively. If the polynomials $c^i$ or $Q$ did not have the factors indicated by \eqref{eqn:def c Q tilde}, then the there would be factors on the left hand sides of \eqref{eqn:EMPDi} and \eqref{eqn:Q} that did not appear on the right hand sides, and this contradiction would preclude the possibility of a solution.
+As commented on previously, these equations \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced} are necessary conditions to be able to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} respectively. If the polynomials $c^i$ or $Q$ did not have the factors indicated by \eqref{eqn:def c Q tilde}, then the there would be factors on the left hand sides of \eqref{eqn:EMPDi} and \eqref{eqn:Q} that did not appear on the right hand sides, and this contradiction would preclude the possibility of a solution.
 
-Both of these equations are in the form $AX - BY = C$, to which B\'ezout's identity for polynomials applies. B\'ezout's identity asserts that if $\gcd(A,B) = 1$, then there is a unique solution $(\mathbf{X},\mathbf{Y})$ of minimal degree, for $\deg \mathbf{X} < \deg B$ and $\deg \mathbf{Y} < \deg A$. Recall from the comment about notation at the start of the chaper that given a pair of polynomials $(X,Y)$, we also give their degrees as a pair $(x,y)$, for $x=\deg X$ and $y=\deg Y$.
+Both of these equations are in the form $AX - BY = C$, to which B\'ezout's identity for polynomials applies. B\'ezout's identity asserts that if $\gcd(A,B) = 1$, then there is a unique solution $(\mathbf{X},\mathbf{Y})$ of minimal degree, for $\deg \mathbf{X} < \deg B$ and $\deg \mathbf{Y} < \deg A$. Recall from the comment about notation at the start of the chapter that given a pair of polynomials $(X,Y)$, we also give their degrees as a pair $(x,y)$, for $x=\deg X$ and $y=\deg Y$.
 
-One may prove the existence of these minimal solutions using the Euclidean algorithm\todo{REFERENCE}. Because we will have need of the specific formula for the leading coefficients of $\mathbf{X}$ and $\mathbf{Y}$, we shall give an effective method to construct this minimal solution. We shall also prove some simple collaries, about when real solutions exist, and given the unique minimal solution, how to generate all solutions less than a given degree.
+One may prove the existence of these minimal solutions using the Euclidean algorithm \cite{Mora2003}. Because we will have need of the specific formula for the leading coefficients of $\mathbf{X}$ and $\mathbf{Y}$, we shall give an effective method to construct this minimal solution. We shall also prove some simple corollaries, about when real solutions exist, and given the unique minimal solution, how to generate all solutions less than a given degree.
 
 We shall construct the minimal solution by finding a linear system of equations that its coefficients must satisfy, and showing that there is a unique solution to this linear system. The solution to the linear system and the solution to B\'ezout's identity must therefore be the same. Assume that $\gcd(A,B)=1$, so that $A$ and $B$ are coprime, and let $(\mathbf{X},\mathbf{Y})$ be the solution of minimal degree. If $β$ is a root of $B$ of multiplicity $r$ and the degree of $B$ is $n+1$, then
 \[
@@ -342,7 +344,7 @@ h\bra{\tilde{b}^2, \frac{Q\tilde{P}}{\tilde{b}^1} }.
 When the point of $U''$ is understood, we shall abbreviate this to $R(Q)$.
 \end{defn}
 
-This function $R$ is simply the function that gives the value of the degree $n$ coefficent of $\tilde{c}^2$; the condition that $R((P,b^1,b^2),Q) = 0$ is equivalent to the condition that there is a solution $\tilde{c}^2$ to \eqref{eqn:Q reduced} of degree $n-1$ or less.
+This function $R$ is simply the function that gives the value of the degree $n$ coefficient of $\tilde{c}^2$; the condition that $R((P,b^1,b^2),Q) = 0$ is equivalent to the condition that there is a solution $\tilde{c}^2$ to \eqref{eqn:Q reduced} of degree $n-1$ or less.
 Likewise, evaluating \eqref{eqn:Q reduced} at the roots of $\tilde{b}^1$ leads to a solution $\tilde{c}^1$ of degree $g+2 - d_1$. From the highest order term of \eqref{eqn:Q reduced}, if $\tilde{c}^2$ is degree $n-1$ or lower, then $\tilde{c}^1$ will be degree $g + 1 - d_1$ or lower without any further restrictions on $Q$.
 
 It is important to note that $R$ is linear function in the coefficients of $Q$, so that the solutions of $R(Q)=0$ form a linear space. Intuitively, because $R$ is a complex valued function, we would expect this linear space of $Q$ to be real-codimension two. However, $R$ satisfies the following reality type condition, and thus $R(Q)=0$ puts only one real constraint on $Q$. In other words, at any point of $U''$ there is a two real-dimensional plane of real quadratic polynomials $Q$ that satisfy $R(Q) = 0$.
@@ -356,7 +358,7 @@ At every point $(P,b^1,b^2)$ of $U''$, $R((P,b^1,b^2), Q)$ satisfies the relatio
 where $β_i$ are the $n+1 = g+3 - d_2$ roots of $\tilde{b}^2$ counted with multiplicity.
 
 \begin{proof}
-We shall demonstrate this property first at points where the roots of $\tilde{b}^2$ are distinct. Let $\tilde{b}^2$ have $n+1 = g+3 - d_2$ distinct roots $β_i$. In this case, the explicit form of the solution to the linear system of equations \eqref{eqn:Q reduced linear} is elegant. Consider the Langrange polynomials at the roots of $\tilde{b}^2$,
+We shall demonstrate this property first at points where the roots of $\tilde{b}^2$ are distinct. Let $\tilde{b}^2$ have $n+1 = g+3 - d_2$ distinct roots $β_i$. In this case, the explicit form of the solution to the linear system of equations \eqref{eqn:Q reduced linear} is elegant. Consider the Lagrange polynomials at the roots of $\tilde{b}^2$,
 \[
 L_i (ζ) := \prod_{j \neq i} \frac{ζ-β_j}{β_i - β_j}.
 \]
@@ -590,7 +592,7 @@ This has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at t
 
 
 
-\begin{lem}[Case (v): conformal, $F=ζ$, $G=1$]
+\begin{lem}[Case (v)]
     \label{lem:tangent conformal}
 Take a triple of spectral data $(P,b^1,b^2)$ associated with a conformal harmonic map, with a non-singular spectral curve given by $η^2 = P$ of genus $g$. Suppose that $\gcd(b^1,b^2) = ζ$. Then for every pair of real numbers $(Q_1,r)$, there is a unique tangent vector $(\dot P, \dot b^1, \dot b^2)$ to the space of spectral data $\mathcal{M}_g$.
 
@@ -656,17 +658,19 @@ Though the details of the above three lemmata vary, we see that in every case th
 The open subset $\mathcal{M}_g \cap U'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold.
 
 \begin{proof}
-Consider the map $Ψ$ defined on a simply connected subset $V$ of $U'$ by
+For every point $p\in \mathcal{M}_g \cap U'$, consider the map $Ψ$, defined on a simply connected open neighbourhood $V\subset U'$ of $p$, by
 \begin{align*}
 Ψ(P,b^2,b^2)
 = \left( \int_{A_1} Θ^1, \dots, \int_{A_g} Θ^1, \right.& \int_{B_1} Θ^1, \dots, \int_{B_g} Θ^1, \int_{A_1} Θ^2, \dots, \int_{A_g} Θ^2, \int_{B_1} Θ^2, \dots, \int_{B_g} Θ^2, \\
-&\left. \int_{γ_+} Θ^1, \int_{γ_-} Θ^1, \int_{γ_+} Θ^2, \int_{γ_-} Θ^2,\, P_1b^1_0 - 2P_0b^1_1,\, P_1b^2_0 - 2P_0b^2_1,\, P_0 - \prod_{i}(-α_i) \right)
+&\left. \int_{γ_+} Θ^1, \int_{γ_-} Θ^1, \int_{γ_+} Θ^2, \int_{γ_-} Θ^2,\, P_1b^1_0 - 2P_0b^1_1,\, P_1b^2_0 - 2P_0b^2_1,\, (P_0)^{-1} \prod_{k}(-α_k) \right)
 \end{align*}
-where $A_i, B_i$ are the real and imaginary periods of the curve $η^2 = P(ζ)$, $γ_+,γ_-$ are the paths in the curve between the points of $ζ=1$ and $ζ=-1$, and $α_i$ are the roots of $P$ inside the unit circle. We may choose $V$ to be sufficiently small so that the choice of paths may be made smoothly. The components of $Ψ$ are the conditions that spectral data must satisfy, so the connected components of $\mathcal{M}_g \cap V$ are contained in level sets of $Ψ$,
+where $A_i, B_i$ are the real and imaginary periods of the curve $η^2 = P(ζ)$, $γ_+,γ_-$ are the paths in the curve between the points of $ζ=1$ and $ζ=-1$, and $α_k$ are the roots of $P$ inside the unit circle. Because $V$ is simply connected, the choice of paths $\{A_k\}, \{B_k\}, γ_+, γ_-$ may be made smoothly. The components of $Ψ$ are the conditions that spectral data must satisfy. In particular, the first $4g$ components of $Ψ$ are the periods of the differentials, the next four components are the integrals in the closing conditions \eqref{eqn:closing}, followed by the conditions to have no residues \eqref{eqn:residue condition} and the last component of $Ψ$ is our prefered scaling of the spectral curve.
+
+Hence the connected components of $\mathcal{M}_g \cap V$ are contained in level sets of $Ψ$,
 \[
-Ψ^{-1}\bra{ 0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,0,0,0 }.
+Ψ^{-1}\left[ 0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,0,0,1 \right].
 \]
-A point of $\mathcal{M}_g \cap V$ falls into one of the above three cases: Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} or \ref{lem:tangent conformal}. In each case we computed that the kernel of $dΨ$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap U'$ is a two dimensional manifold.
+The point $p$ of $\mathcal{M}_g \cap V$ falls into one of the above three cases: Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} or \ref{lem:tangent conformal}. In each case we computed that the kernel of $dΨ_p$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap U'$ is a two dimensional manifold.
 \end{proof}
 \end{thm}
 
