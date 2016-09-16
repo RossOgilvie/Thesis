@@ -12,9 +12,9 @@ When giving the solutions to equations, we will use bold to signify a particular
 \subsection{Whitham Deformations}
 Let us consider infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$ within the space $\mathcal{M}_g$ of spectral data where the spectral curves have a fixed genus $g$. Recall that this triple consists of a marked curve $Σ$ and differentials $Θ^1, Θ^2$ satisfying the conditions \ref{P:real curve}--\ref{P:closing}.
 A deformation of spectral data is a path $\ell:(-ε,ε) \to \mathcal{M}$, parameterised by $t$. An infinitesimal deformation is the tangent vector of such a curve at $t=0$.
-There is an establish methodology for finding deformations that preserve the periods of differentials, so called Whitham deformations. This method was first discovered for the Korteweg-de Vries equation \cite{Flaschka1980,Lax1983}, before being developed generally for other integrable systems \cite{Krichever1995}. The form of Whitham deformations we use here resemble their application in the theory of constant mean curvature surfaces \cite{Kilian2015a,Carberry2016}.
+There is an established methodology for finding the deformations that preserve the periods of differentials, the so called Whitham deformations. This method was first discovered for the Korteweg-de Vries equation \cite{Flaschka1980,Lax1983}, before being developed generally for other integrable systems \cite{Krichever1995}. The form of Whitham deformations we use here resemble their application in the theory of constant mean curvature surfaces \cite{Kilian2015a,Carberry2016}.
 
-If we write $\ell(t) = (Σ(t),Θ^1(t),Θ^2(t))$, then we know from \eqref{eqn:def P} that every spectral curve $Σ(t)$ may be written as $η^2 = P(t,ζ)$, for $P(t,ζ)$ a real polynomial of degree $2g+2$ in $ζ$, and from \eqref{eqn:def b} that each differential can be described by a real polynomial $b^i(t,ζ)$ of degree $g+3$ in $ζ$,
+Suppose that we are at a point of $\mathcal{M}_g$ that admits a deformation $\ell$. If we write $\ell(t) = (Σ(t),Θ^1(t),Θ^2(t))$, then we know from \eqref{eqn:def P} that every spectral curve $Σ(t)$ along this deformation may be written as $η^2 = P(t,ζ)$, for $P(t,ζ)$ a real polynomial of degree $2g+2$ in $ζ$, and from \eqref{eqn:def b} that each differential can be described by a real polynomial $b^i(t,ζ)$ of degree $g+3$ in $ζ$,
 \[
 Θ^i(t) = \frac{1}{ζ^2η}b^i(t,ζ) dζ,
 \]
@@ -30,17 +30,17 @@ Let $U$ be the open subset of $\R^{4g+11}$ of real polynomial triples $(P,b^1,b^
 $P$ has only simple zeroes (cf. \ref{P:simple zeroes}) and no zeroes on the unit circle (cf. \ref{P:no real zeroes}), and the polynomials $b^i$ have at most a simple root at $ζ=0$ (cf. \ref{P:poles}).
 \end{defn}
 
-Recall from Section \ref{sub:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ,\tilde{μ}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is an exact differential, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
+Recall from Section \ref{sub:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ,\tilde{μ}$ of the holonomy matrices $H, \tilde{H}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is an exact differential, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
 
 The functions $\dot{q}^i$ are of interest because they encode infinitesimal deformations of the spectral data that preserve the integrality of the periods.
 If we could determine the location and order of the poles of $\dot{q}^i$, we could characterise it as the quotient of a polynomial and a fixed holomorphic function, analogously to the characterisation of $Θ^i$ by $b^i$. To this end, we derive now in generality how a function may acquire additional poles when it is differentiated with respect to $t$.
 
-At a point of $Σ$ that is not a ramification point, a meromorphic function on $Σ(t)$ may be expanded as $(ζ-a)^k f(t,ζ-a)$, for a function $f$ holomorphic in its second parameter and non-vanishing at $f(0,0)$. As $ζ$ is independent of $t$, the order $k$ of this function cannot decrease under differentiation by $t$. At a ramification point lying over a branch point $α$, to compute the order of a function we must use a local coordinate $ξ(t)^2 = ζ - α(t)$, for $α(t)$ a root of $P(t)$ and $α(0) = α$. Any meromorphic function may be written locally as $ξ(t)^k f(t,ξ(t))$. Differentiating with respect to $t$ yields
+Consider a function that varies smoothly with $t$ and is meromorphic on each curve $Σ(t)$. In a neighbourhood of a point of $Σ(0)$ that is not a ramification point, for small $t$, $(t, ζ - ζ_0)$ are local coordinates, for a fixed point $ζ_0 \in \CP^1$. Thus we may we may expand the function as $(ζ-ζ_0)^k f(t,ζ-ζ_0)$, for a function $f$ holomorphic in its second parameter and non-vanishing at $f(0,0)$. As $ζ-ζ_0$ is independent of $t$, the order $k$ of this function cannot decrease under differentiation by $t$. However, at a ramification point lying over a branch point $α$, local coordinates are $(t,ξ)$, for $ξ(t)^2 = ζ - α(t)$ where $α(t)$ a root of $P(t)$ and $α(0) = α$. Any meromorphic function may be written locally as $ξ(t)^k f(t,ξ(t))$. Differentiating with respect to $t$ yields
 \[
 \left . \frac{d}{dt} ξ^k f(t,ξ) \right|_{t=0} = -\frac{k}{2} ξ^{k-2} \dot{α}f - \frac{1}{2}ξ^{k-1}\dot{α}f' + ξ^k \dot{f}.
 \labelthis{eqn:pole order}
 \]
-If the function had a pole at a ramification point, then that pole may become up to two orders worse. If the function was holomorphic, then at worst it acquires a simple pole.
+If the function had a pole at a ramification point, then its derivative with respect to $t$ may have a pole up to two orders worse. If the function was holomorphic, then the derivative has at worst a simple pole.
 
 As $dq^i$ has double poles without residues over $ζ=0,\infty$, it follows that $q^i$ has simple poles at those same points and is holomorphic at all other points. Applying \eqref{eqn:pole order} to $q^i$, we see that $\dot{q}^i$ may have simple poles at the nonzero roots of $P$. If the curve $Σ$ is branched over $ζ=0,\infty$, then $\dot{q}^i$ may have a triple pole there. Otherwise $\dot{q}^i$ has at worst simple poles over $ζ=0,\infty$.
 
@@ -53,25 +53,29 @@ for some degree $g+3$ polynomial $\hat{c}^i$. This gives a parameterisation of t
 We shall now demonstrate how the functions $\dot{q}^i$ relate to an infinitesimal deformation $(\dot{P},\dot{b}^1,\dot{b}^2)$, by using the equality of mixed partial derivatives. We compute the derivatives of $dq$ and $\dot{q}$ with respect to the variables $t$ and $ζ$ respectively.
 \begin{align*}
 \left . \frac{d}{dt} dq^i \right|_{t=0} &= \frac{dζ}{ζ^2 η}\left( -\frac{1}{2}\frac{\dot P}{P}b^i + \dot{b}^i \right) \\
-d(\dot{q}^i) & = \frac{dζ}{\zeta^2\eta}\left( -\hat{c}^i -\frac{1}{2}\frac{P'}{P}ζ\hat{c}^i + ζ\hat{c}^{i\prime}\right) \\
-\dot P b^i - 2P\dot b^i &= 2P\left( \hat c^i - ζ\hat {c}^{i\prime} \right) + P'\zeta\hat c^i \labelthis{eqn:EMPDi}
+d(\dot{q}^i) & = \frac{dζ}{\zeta^2\eta}\left( -\hat{c}^i -\frac{1}{2}\frac{P'}{P}ζ\hat{c}^i + ζ\hat{c}^{i\prime}\right).
 \end{align*}
+After equating and simplifying, one produces an equation that ensures compatibility between these two derivatives,
+\[
+\dot{P} b^i - 2P\dot{b}^i = 2P\left( \hat{c}^i - ζ\hat{c}^{i\prime} \right) + P'ζ\hat{c}^i. \labelthis{eqn:EMPDi}
+\]
 These two equations provide a link between $\dot{b}^i$ and $\hat{c}^i$ for each $i=1,2$. Indeed, given a point $(P,b^1,b^2)$ of $\mathcal{M}_g$ for which there are deformations, the polynomials $\hat{c}^i$ are determined uniquely by a tangent vector $(\dot P, \dot b^1, \dot b^2)$ to $\mathcal{M}_g$. Since the equations \eqref{eqn:EMPDi} are linear in the components of the tangent vector, we need only demonstrate that the zero tangent vector uniquely corresponds to $\hat{c}^i = 0$. For the zero tangent vector,
 \[
 0 = 2P\left( \hat{c}^i - ζ\hat {c}^{i\prime}\right) + P' ζ\hat {c}^i.
+\labelthis{eqn:EMPDi zero vector}
 \]
 The polynomial $P$ is either of the form $L$ or $ζL$, where $L$ has only nonzero roots. $L$ has degree either $2g+2$ or $2g$ respectively.
-The assumption of a non-singular spectral curve requires that $P$ and $P'$ have no common factors, hence evaluation at any of roots $α$ of $L$ shows that $P'(α)α\hat{c}^i(α) = 0$, and hence $α$ is a root of $\hat{c}^i$. This shows that $L$ divides $\hat{c}^i$ and for $g\geq 4$, the inequality $\deg L \geq 2g \geq g+4$ is sufficient to show that $\hat{c}^i$ is the zero polynomial, as it is a degree $g+3$ polynomial that is divisible by a polynomial of greater degree. To handle the remaining cases, $g<4$, we substitute in this factorisation of $\hat{c}^i$ and then remove the factor of $L$,
+The assumption of a non-singular spectral curve requires that $P$ and $P'$ have no common factors, hence evaluation of \eqref{eqn:EMPDi zero vector} at any root $α$ of $L$ shows that $P'(α)α\hat{c}^i(α) = 0$, and hence $α$ is a root of $\hat{c}^i$. This shows that $L$ divides $\hat{c}^i$, and for $g\geq 4$ the inequality $\deg L \geq 2g \geq g+4$ is sufficient to show that $\hat{c}^i$ is the zero polynomial, as it is a degree $g+3$ polynomial that is divisible by a polynomial of greater degree. To handle the remaining cases, $g<4$, we substitute in this factorisation of $\hat{c}^i$ and then remove the factor of $L$,
 \begin{align*}
 0
 &= 2L\frac{P}{L}\bra{ L\frac{\hat{c}^i}{L} - ζ\left[ L' \frac{\hat {c}^i}{L} + L \bra{\frac{\hat {c}^i}{L}}' \right] }
 + \left[L' \frac{P}{L} + L\bra{\frac{P}{L}}' \right] ζ L \frac{\hat{c}^i}{L}  \\
-&= L \left [ 2\frac{P}{L}\frac{\hat{c}^i}{L} - 2ζ\frac{P}{L}\bra{\frac{\hat {c}^i}{L}}' + ζ\bra{\frac{P}{L}}'\frac{\hat {c}^i}{L} \right]
+0 &= L \left [ 2\frac{P}{L}\frac{\hat{c}^i}{L} - 2ζ\frac{P}{L}\bra{\frac{\hat {c}^i}{L}}' + ζ\bra{\frac{P}{L}}'\frac{\hat {c}^i}{L} \right]
 -ζ L' \frac{P}{L} \frac{\hat {c}^i}{L}.
 \end{align*}
-Again, this shows that $L$ divides $\hat{c}^i/L$. If $\deg L = 2g+2$, this shows that $\hat{c}^i$ is divisible by a degree polynomial of degree $4g+4$, and so must be zero for any $g$. If $\deg L = 2g$, then we have only shown that $\hat{c}^i$ vanishes for $g \geq 2$. We treat the two remaining cases, $\deg L = 2g$ and $g = 0$ or $1$, individually.
+Again, this shows that $L$ divides $\hat{c}^i/L$. If $\deg L = 2g+2$, this shows that $\hat{c}^i$ is divisible by a polynomial of degree $4g+4$, and so must be zero for any $g$. If $\deg L = 2g$, then we have only shown that $\hat{c}^i$ vanishes for $g \geq 2$. We treat the two remaining cases, $\deg L = 2g$ and $g = 0$ or $1$, individually.
 
-If $\deg L = 2g$ and $g = 1$, then $\hat{c}^i$ is a scalar multiple of $L^2$. Let $\hat{c}^i = a L^2$ and the equation simplifies to
+If $\deg L = 2g$ and $g = 1$, then $\hat{c}^i$ is a scalar multiple of $L^2$. Let $\hat{c}^i = a L^2$ and equation \eqref{eqn:EMPDi zero vector} simplifies to
 \[
 0 = 2a L^3 \bra{ 3L - 2ζL' },
 \]
@@ -83,7 +87,9 @@ which forces $a = 0$. If $g=0$, then $P=ζ$ and $\hat{c}^i$ is a cubic polynomia
 \]
 which again shows that $\hat{c}^i$ is zero. Hence, the polynomials $\hat{c}^i$ are uniquely determined by a tangent vector $(\dot P, \dot b^1, \dot b^2)$ to $\mathcal{M}_g$ as claimed.
 
-The converse result, that a pair $(\hat{c}^1,\hat{c}^2)$ determines a tangent vector $(\dot P, \dot b^1, \dot b^2)$ is more difficult, does not hold in general, and is the focus of the next section. First though, let us continue to explore the consequences if it is possible to deform the spectral data. Note that the two equations \eqref{eqn:EMPDi} are not independent of one another, for they both contain $P$ and its derivatives. If we multiply the equations by $\hat c^2$ and $\hat c^1$ respectively and take the difference, we observe
+The converse result, that a pair $(\hat{c}^1,\hat{c}^2)$ determines an infinitesimal deformation $(\dot P, \dot b^1, \dot b^2)$, does not hold in general. In the next section we shall take up the task of describing this failure and the information, additional to $(\hat{c}^1,\hat{c}^2)$, that must be supplied in order to determine a unique tangent vector.
+
+First though, let us return to our line of inquiry. Recall that we have supposed that we are at a point $(P,b^1,b^2)$ of $\mathcal{M}_g$ that admits a deformation $\ell$, from which we have defined polynomials $\hat{c}^1$ and $\hat{c}^2$ and derived the pair of equations \eqref{eqn:EMPDi}. Note that the two equations \eqref{eqn:EMPDi} are not independent of one another, for they both contain $P$ and its derivatives. If we multiply the equations by $\hat c^2$ and $\hat c^1$ respectively and take the difference, we observe
 \[
 \dot P (b^1\hat c^2 - b^2\hat c^1) =  2P(\dot b^1\hat c^2 - \dot b^2\hat c^1 - ζ\hat{c}^{1\prime}\hat c^2 + ζ\hat{c}^{2\prime}\hat c^1).\labelthis{eqn:diffed}
 \]
@@ -92,13 +98,13 @@ We will prove that $b^1\hat c^2 - b^2\hat c^1$ is divisible by $P$ by showing th
 \dot P(α) b^i(α) &= 2P(α)\left( \dot b^i(α) + \hat c^i(α) - α\hat{c}^{i\prime}(α)\right) +P'(α)α\hat c^i(α) \\
 0 &= 0 + P'(α)α\hat{c}^i(α)
 \end{align*}
-But the assumption that the spectral curve is non-singular forces $P'(α)\neq 0$. Thus we may conclude that $\hat{c}^i(α)=0$. Hence $P$ divides $b^1\hat c^2 - b^2 \hat c^1$ and there is some degree four polynomial $\hat{Q}$ such that
+But the assumption that the spectral curve is non-singular forces $P'(α)\neq 0$. Thus we may conclude that $\hat{c}^i(α)=0$. Hence $P$ divides $b^1\hat c^2 - b^2 \hat c^1$ and there is some polynomial $\hat{Q}$, of degree at most four, such that
 \[
 b^1 \hat{c}^2 - b^2 \hat{c}^1 = \hat{Q} P.
 \labelthis{eqn:Q hat}
 \]
 
-Thus far, the only conditions we have placed on $\ell$ is that it must preserve the integral periods of $Θ^1, Θ^2$, which allowed us to produce well-defined meromorphic functions $\dot{q}^i$, and that the differentials must be of the second kind with double poles over $ζ=0,\infty$, which allowed us to write $\dot{q}^i$ as the quotient of a polynomial $\hat{c}^i$ by $ζη$. There two additional properties that the polynomials $\hat{c}^i$ must satisfy arising from \ref{P:reality} and \ref{P:closing}. The eigenvalues satisfy $ρ^* μ = \bar{μ}^{-1}$. Applying $\log$ and differentiating with respect to $t$ shows that the polynomials $\hat{c}^i$ are imaginary (that is, $\iu\hat{c}^i$ is a real polynomial with respect to the involution $ρ$).
+Thus far, we have only placed two conditions on the points along the deformation $\ell$. First, that it must preserve the integral periods of $Θ^1, Θ^2$, which allowed us to produce well-defined meromorphic functions $\dot{q}^i$. And second, that the differentials must have double poles over $ζ=0,\infty$ with no residues, which allowed us to write $\dot{q}^i$ as the quotient of a polynomial $\hat{c}^i$ by $ζη$. There two additional properties that the polynomials $\hat{c}^i$ must satisfy arising from \ref{P:reality} and \ref{P:closing}. The eigenvalues satisfy $ρ^* μ = \bar{μ}^{-1}$. Applying $\log$ and differentiating with respect to $t$ shows that the polynomials $\hat{c}^i$ are imaginary (that is, $\iu\hat{c}^i$ is a real polynomial with respect to the involution $ρ$).
 
 Next, consider the closing condition in its integral form \eqref{eqn:closing}. For some consistent choice of $q^i$ along $γ_+$
 \[
@@ -658,7 +664,9 @@ Though the details of the above three lemmata vary, we see that in every case th
 The open subset $\mathcal{M}_g \cap U'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold.
 
 \begin{proof}
-For every point $p\in \mathcal{M}_g \cap U'$, consider the map $Ψ$, defined on a simply connected open neighbourhood $V\subset U'$ of $p$, by
+Recall the defintion of $U'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i), (ii) or (v). That is, $U'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is either one or $ζ$, and $\deg\left[ \gcd(b^1,b^2) \right] \leq 2 - \deg\left[ \gcd(P,b^1,b^2)\right]$.
+
+At any point $p\in \mathcal{M}_g \cap U'$, take a simply connected open neighbourhood $V\subset U'$. On this neighbourhood, define the map $Ψ$ by
 \begin{align*}
 Ψ(P,b^2,b^2)
 = \left( \int_{A_1} Θ^1, \dots, \int_{A_g} Θ^1, \right.& \int_{B_1} Θ^1, \dots, \int_{B_g} Θ^1, \int_{A_1} Θ^2, \dots, \int_{A_g} Θ^2, \int_{B_1} Θ^2, \dots, \int_{B_g} Θ^2, \\
@@ -666,11 +674,12 @@ For every point $p\in \mathcal{M}_g \cap U'$, consider the map $Ψ$, defined on 
 \end{align*}
 where $A_i, B_i$ are the real and imaginary periods of the curve $η^2 = P(ζ)$, $γ_+,γ_-$ are the paths in the curve between the points of $ζ=1$ and $ζ=-1$, and $α_k$ are the roots of $P$ inside the unit circle. Because $V$ is simply connected, the choice of paths $\{A_k\}, \{B_k\}, γ_+, γ_-$ may be made smoothly. The components of $Ψ$ are the conditions that spectral data must satisfy. In particular, the first $4g$ components of $Ψ$ are the periods of the differentials, the next four components are the integrals in the closing conditions \eqref{eqn:closing}, followed by the conditions to have no residues \eqref{eqn:residue condition} and the last component of $Ψ$ is our prefered scaling of the spectral curve.
 
-Hence the connected components of $\mathcal{M}_g \cap V$ are contained in level sets of $Ψ$,
+Hence each connected components of $\mathcal{M}_g \cap V$ is contained in a level set of $Ψ$,
 \[
-Ψ^{-1}\left[ 0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,0,0,1 \right].
+\mathcal{M}_g \cap V
+\subset Ψ^{-1}\left( 0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,0,0,1 \right).
 \]
-The point $p$ of $\mathcal{M}_g \cap V$ falls into one of the above three cases: Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} or \ref{lem:tangent conformal}. In each case we computed that the kernel of $dΨ_p$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap U'$ is a two dimensional manifold.
+The point $p$ of $\mathcal{M}_g \cap V$ falls into one of the above three cases: Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} or \ref{lem:tangent conformal}. In each case we computed that the kernel of $dΨ_p$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point $p$. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap U'$ is a two dimensional manifold.
 \end{proof}
 \end{thm}
 

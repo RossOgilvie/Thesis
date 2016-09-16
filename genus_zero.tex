@@ -4,37 +4,43 @@
 \label{sec:Genus Zero}
 
 The moduli of spectral data where the spectral curve is genus zero is an instructive example. We shall denote this space $\mathcal{M}_0$.
-We have seen in \ref{lem:no singularities} that on a spectral curve of genus zero the pair of differentials may not have a common root. It follows from \ref{thm:moduli manifold} therefore that $\mathcal{M}_0$ is a two-dimensional manifold. Because the all differentials on $\CP^1$ are exact, and all meromomorphic functions are rational, it is possible to describe this space explicitly.
+We have seen in Lemma \ref{lem:no singularities} that on a spectral curve of genus zero the pair of differentials may not have a common root. It follows from Theorem \ref{thm:moduli manifold} therefore that $\mathcal{M}_0$ is a two-dimensional manifold. Because the all differentials on $\CP^1$ are exact, and all meromomorphic functions are rational, it is possible to describe this space explicitly using only elementary functions.
+We shall describe all translation invariant solutions to \eqref{eqn:Hit1.7} that arise from a harmonic map, which we will see are precisely the harmonic maps that correspond to genus zero spectral data.
 
-Let $z\in\C$ be a uniformising coordinate on the torus $\C/\Z\langle 1,τ\rangle$. We consider all translation invariant solutions to \eqref{eqn:Hit1.7}. We will shows these to be precisely the harmonic maps that correspond to genus zero spectral data. First though, we find all such maps and manipulate them into a standard form. Following \cite[(9.11)]{Hitchin1990}, write the Higgs field as $Φ = F \,dz$ and the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to the trivialisation arising from the translation action, for constant traceless matrices $F$ and $G$. The family of flat connections \eqref{eqn:flat connections} is
-\[
-d_ζ := d_A + ζ^{-1}Φ - ζΦ^*
-= d + G\,d\bar{z} - G^*\,dz + ζ^{-1}F\,dz - ζF^*\,d\bar{z},
-\]
-and equations \eqref{eqn:Hit1.7} become
+This example can be divided into two parts. In the first part, we start with \eqref{eqn:Hit1.7} and find all corresponding harmonic maps. In the second part we take these harmonic maps and work through the steps of Section \ref{sub:construction} to produce the associated spectral data. The approach for the first part will be to find all translation invariant solutions to \eqref{eqn:Hit1.7}, for each solution calculate the formula of associated gauge transformation and manipulate this formula into a standard form. Finally, we may then determine which formulae correspond to maps from a torus.
+
+Let $z\in\C$ be a uniformising coordinate on the torus $\C/\Z\langle 1,τ\rangle$. Following \cite[(9.11)]{Hitchin1990}, we write the Higgs field as $Φ = F \,dz$ and the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to the trivialisation arising from the translation action, for constant traceless matrices $F$ and $G$.
+With these definitions, equations \eqref{eqn:Hit1.7} become
 \[
 [F,G] = 0\;\; \text{and}\;\; [G,G^*] = [F,F^*].
 \]
-If $F$ commutes with is conjugate-transpose then so too does $G$, and they are simultaneously diagonalisable by an $SU(2)$ matrix. This case corresponds to a map from the torus to a circle, which does not produce a spectral curve, though we will see how degenerations of harmonic with a genus zero spectral curves may be identified with such maps. Assume therefore that $[F,F^*] \neq 0$. The first equation implies that $F$ and $G$ commute, so we may write $G = λF$. Then $(\abs{λ}^2 - 1)[F,F^*] = 0$ implies that $\abs{λ}=1$. Let $κ\in\S^1$ be such that $\bar{κ}^2=λ$.
+If $F$ commutes with is conjugate-transpose then so too does $G$, and they are simultaneously diagonalisable by an $SU(2)$ matrix. This case corresponds to a map from the torus to a circle, which does not produce a spectral curve. Assume therefore that $[F,F^*] \neq 0$. The first equation implies that $F$ and $G$ commute, so we may write $G = λF$. Then $(\abs{λ}^2 - 1)[F,F^*] = 0$ implies that $\abs{λ}=1$. Let $κ\in\S^1$ be such that $\bar{κ}^2=λ$.
 
-As the matrices $F$ and $G$ are constant, one can solve the parallel transport equation $d_ζ X = 0$ for a vector field $X$ explicitly for each $ζ \in \C^\times$. Recall that the harmonic map $f$ may be recovered as a gauge transformation between constant sections of $d_{-1}$ and $d_1$. We may therefore write the harmonic map as
+Recall that for a solution for \eqref{eqn:Hit1.7}, there is an $\S^1$ family of flat unitary connections \eqref{eqn:flat connections}, which are given in this case by
+\[
+d_ζ := d_A + ζ^{-1}Φ - ζΦ^*
+= d + G\,d\bar{z} - G^*\,dz + ζ^{-1}F\,dz - ζF^*\,d\bar{z}.
+\labelthis{eqn:flat connection translation}
+\]
+As the matrices $F$ and $G$ are constant, for each $ζ \in \C^\times$ one can solve the parallel transport equation $d_ζ X = 0$ explicitly for a vector field $X$ on $\C$.
+One may then recover the associated harmonic map as the change of gauge between the two parallel vector fields for the connections $d_1$ and $d_{-1}$, as in \eqref{eqn:gauge change}.
+We may therefore write the harmonic map as
 \begin{align*}
 f(z) = \exp( &(κz + \bar{κ}\bar{z})(-\bar{κ}F + κF^*) ) \\
 &\cdot \exp( (κz - \bar{κ}\bar{z})(-\bar{κ}F - κF^*) ).
 \end{align*}
-On the torus, we make a change of coordinates to $w = κz$. We write the real and imaginary parts of $w$ as $w_R + \iu w_I$. Recall that $sl_2\C$ can be decomposed as a direct sum $su_2 \oplus \iu su_2$. Write $\bar{κ}F = X + \iu Y$ for $X,Y\in su_2$ and we recognise the two expressions $-\bar{κ}F + κF^*$ and $-\bar{κ}F - κF^*$ as taking the real and imaginary parts of $κF$. The above formula becomes
+We may simplify this formula by making the following substitutions. On the torus, we make a change of coordinates to $w = κz$ and write $w$ as the sum of its real and imaginary parts $w_R + \iu w_I$. We note that $sl_2\C$ can be decomposed as a direct sum $su_2 \oplus \iu su_2$. Write $\bar{κ}F = X + \iu Y$ for $X,Y\in su_2$ and we recognise the two expressions $-\bar{κ}F + κF^*$ and $-\bar{κ}F - κF^*$ as taking the real and imaginary parts of $κF$. With these substitutions, the above formula becomes
 \[
 f(w) = \exp( -4w_R X ) \cdot \exp( 4 w_I Y  ).
 \labelthis{eqn:genus zero simple map}
 \]
+The matrix exponential of a $su_2$ matrix is of course an $SU(2)$ matrix, and a line through the origin of $su_2$, such as $\Set{-4w_R X }{w_R \in \R}$, is mapped to a one parameter subgroup of $SU(2)$, a circle. Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles. As we vary $w_R$ the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$.
 
-Let us see how to compute the matrix exponential of an $su_2$ matrix $Z$. The determinant of an $su_2$ matrix is always positive, so let the norm of $Z$ be given by the square root of its determinant. We may define the unit matrix $\hat{Z}$ in direction $Z$ to be $Z$ divided by its norm. If we note that $Z^2 = -\abs{Z}^2 I$, the matrix exponential may be written concisely as
+This is a map from the plane $w\in\C$ to $SU(2)$. We would like to know when it descends to a map from the torus. Thus we must compute the periodicity of this map, and in particular we need to know how to compute explicitly the matrix exponential of an $su_2$ matrix $Z$. The determinant of an $su_2$ matrix is always positive, so let the norm of $Z$ be given by the square root of its determinant. We may define the unit matrix $\hat{Z}$ in direction $Z$ to be $Z$ divided by its norm. If we note that $Z^2 = -\abs{Z}^2 I$, the matrix exponential may be written concisely as
 \[
 \exp Z = I \cos \abs{Z} + \hat{Z} \sin \abs{Z}.
 \]
-Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles. As we vary $w_R$ the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$.
-
-Given this explicit formula for the matrix exponential, we now compute the periods of the map $f$. For an $su_2$ matrix $Z$, $\exp Z = I$ when $\abs{Z} \in 2π\Z$. We may identify $su_2$ with the imaginary quaternions via the standard basis of $su_2$
+Given this explicit formula for the matrix exponential, we now compute the periods of the map $f$. For an $su_2$ matrix $Z$, $\exp Z = I$ when $\abs{Z} \in 2π\Z$. We may identify $su_2$ with the imaginary quaternions $\R\langle i,j,k\rangle$ via the standard basis of $su_2$
 \[
 σ_1 = \begin{pmatrix}
 \iu & 0 \\ 0 & -\iu
@@ -48,10 +54,10 @@ Given this explicit formula for the matrix exponential, we now compute the perio
 \]
 Under this identification, matrix multiplication agrees with quaternionic multiplication. In particular, if $X$ and $Y$ are linearly independent matrices, then the set $\{X,Y,YX, I\}$ is linearly independent. An element $w\in\C$ is a period of $f$ exactly when
 \begin{align*}
-I = I \cos(4w_R\abs{X})&\cos(4w_I\abs{Y})
+f(w) = I \cos(4w_R\abs{X})&\cos(4w_I\abs{Y})
 - \hat{X}\sin(4w_R\abs{X})\cos(4w_I\abs{Y}) \\
 &+ \hat{Y}\cos(4w_R\abs{X})\sin(4w_I\abs{Y})
-- \hat{X}\hat{Y}\sin(4w_R\abs{X})\sin(4w_I\abs{Y})
+- \hat{X}\hat{Y}\sin(4w_R\abs{X})\sin(4w_I\abs{Y}) = I
 \end{align*}
 Squaring and adding the coefficients of $\hat{Y}$ and $\hat{Y}\hat{X}$ together shows that $\sin^2(4w_I\abs{Y}) = 0$, and likewise for $\hat{X}$ and $\hat{Y}\hat{X}$ that $\sin^2(4w_R\abs{X}) = 0$. Let $4w_R\abs{X} = πk$ and $4w_I\abs{Y} = πl$. Then the coefficient of $I$ requires that
 \[
@@ -59,18 +65,14 @@ Squaring and adding the coefficients of $\hat{Y}$ and $\hat{Y}\hat{X}$ together 
 \]
 Thus the lattice of periods, expressed in the variable $w$, is generated by
 \[
-κ_0 := \frac{π}{4}\bra{\frac{1}{\abs{X}} - \iu\frac{1}{\abs{Y}}}.
+κ_0 := \frac{π}{4}\bra{\frac{1}{\abs{X}} - \iu\frac{1}{\abs{Y}}},
 \;\;\;\text{and}\;\;\;
-κ_1 := -\frac{π}{4}\bra{\frac{1}{\abs{X}} + \iu\frac{1}{\abs{Y}}}
+κ_1 := -\frac{π}{4}\bra{\frac{1}{\abs{X}} + \iu\frac{1}{\abs{Y}}}.
 \]
 
-\begin{center}
-\begin{figure}
-\includegraphics[width=0.4\textwidth]{thesis_graphics_temp/genus_zero_lattice.png}
-\end{figure}
-\end{center}
+\makefigure{The lattice of periods of $f$.}{thesis_graphics_temp/genus_zero_lattice.png}
 
-The roles of $κ$, $\abs{X}$, and $\abs{Y}$ are now apparent; they determine the conformal type $τ$ and the number of windings of the torus $\C/\Z\langle1,τ\rangle$ onto its image. The three parameters must be chosen so that $z=1,τ$ are points of the period lattice in the $w$ plane. That is, there must be integers $n,m,\tilde{n},\tilde{m}$
+The roles of $κ$, $\abs{X}$, and $\abs{Y}$ are now apparent; they determine the conformal type $τ$ and the number of windings of the torus $\C/\Z\langle1,τ\rangle$ onto its image. Only when three parameters are chosen so that $z=1,τ$ are points of this lattice of periods does $f$ descend to a map from the torus. That is, there must be integers $n,m,\tilde{n},\tilde{m}$
 \[
 κ\cdot 1 = n κ_0 + m κ_1,\;\;
 κ\cdot τ = \tilde{n} κ_0 + \tilde{m} κ_1
@@ -85,29 +87,30 @@ Solving for $τ$ yields
 \]
 for $x = \frac{\abs{Y}}{\abs{X}}$. This shows that the conformal type of domain of the map $f$ depends only on $x$, the ratio of $\abs{X}$ to $\abs{Y}$, and some integers.
 
-The correspondence between spectral data and harmonic maps does not distinguish between maps that differ by a rotation of $SU(2)$. We may use our freedom of rotation in $SU(2)$ to align $X$ in the direction of $σ_2$ and have $Y$ lie in the plane spanned by $σ_2$ and $σ_3$. After this rotation, $X = \abs{X}σ_2$ and for some $δ\in (0,π)$,
+Before proceeding to the second part of this example, where we compute the spectral data associated to the map $f$, we may further simplify \eqref{eqn:genus zero simple map}. The correspondence between spectral data and harmonic maps does not distinguish between maps that differ by a rotation of $\S^3 = SU(2)$. We may use our freedom of rotation in $SU(2)$ to align $X$ in the direction of $σ_2$ and have $Y$ lie in the plane spanned by $σ_2$ and $σ_3$. After this rotation, $X = \abs{X}σ_2$ and for some $δ\in (0,π)$,
 \[
 Y = \abs{Y} \begin{pmatrix}
 0 & e^{\iu δ} \\ -e^{-\iu δ} & 0
 \end{pmatrix}.
 \]
-Using the norm on $su_2$, we may consider $δ$ as the angle between $X$ and $Y$. When $δ = 0, π$, the image collapses to be the circle
+Using the norm on $su_2$, we may consider $δ$ as the angle between $X$ and $Y$. This transformation of $f$ into a standard form shows that the image of $f$ is determined up to rotation of $\S^3$ by the angle $δ\in (0,π)$. When $δ = 0$ of $π$, the image collapses to be the circle
 \[
 \Set{ I \cos r + σ_2 \sin r }{ r \in \R },
 \]
 but otherwise the image is a torus.
 
-This transformation of $f$ into a standard form shows that the image of $f$ is determined up to rotation of $\S^3$ by the angle $δ\in (0,π)$. And from \eqref{eqn:conformal type}, we know that the domain is determined by the integers $n,m,\tilde{n},\tilde{m}$ and $x\in \R_{>0}$. Thus this space of harmonic maps depends on two continuous and four discrete parameters.
+PICTURES OF THE MAPS FOR DIFFERENT DELTAS. Perhaps note that when $δ = π/2$, the image may be rotated to $\abs{z_1}=\abs{z_2} = 1/\sqrt{2}$, the (image of the) Clifford torus.
 
-PICTURES OF THE MAPS FOR DIFFERENT DELTAS
 
-We now turn to computing the spectral data associated to one of these harmonic maps. We may unwind the simplifications to express $F$ as
+% And from \eqref{eqn:conformal type}, we know that the domain is determined by the integers $n,m,\tilde{n},\tilde{m}$ and $x\in \R_{>0}$. Thus this space of harmonic maps depends on two continuous and four discrete parameters.
+
+We now turn to computing the spectral data associated to one of these harmonic maps. We may unwind the substitutions to express $F$ as
 \[
 F = κ\abs{X} \begin{pmatrix}
 0 & 1 + \iu xe^{\iu δ} \\ -1-\iu xe^{-\iu δ} & 0
 \end{pmatrix},
 \]
-and likewise $G = \bar{κ}^2 F$. Recall the family of flat connections \eqref{eqn:flat connections}. Again, because we can explicitly solve the parallel transport equations, we can easily compute the holonomy matrices. For a connection $d_ζ$, the holomony matrix for the loop from $z=0$ to $1$ is
+and likewise $G = \bar{κ}^2 F$. Recall the family of flat connections \eqref{eqn:flat connection translation}. Again, because we can explicitly solve the parallel transport equations, we can easily compute the holonomy matrices. For a connection $d_ζ$, the holomony matrix for the loop from $z=0$ to $1$ is
 \[
 H(ζ) = \exp (- G + G^* - ζ^{-1}F + ζ F^*),
 \]
@@ -120,36 +123,35 @@ and for the loop from $z=0$ to $τ$ it is
 \left[ (1+\iu xe^{-\iu δ}) + (1-\iu xe^{-\iu δ})ζ  \right] & 0
 \end{pmatrix}\right\}.
 \end{align*}
-To find the hyperelliptic curve, we may compute the eigenvalues of these holonomy matrices. Let $\tilde{μ}(ζ)$ be an eigenvalue of $\tilde{H}(ζ)$. If $\tilde{B}(ζ)$ is the exponent of $\tilde{H}(ζ)$ and $\tilde{ν}(ζ)$ is an eigenvalue $\tilde{B}(ζ)$, then the two eigenvalues of $\tilde{H}$ are $\tilde{μ}^{\pm 1} = \exp \pm \tilde{ν}$. As the exponent is traceless, we compute
+We note that setting $τ=1$ in the above formula gives the formula for $H(ζ)$, so we shall do all our computations with $\tilde{H}$ without loss of generality.
+
+To compute the spectral curve, we must determine for which values of $ζ$ do the two eigenlines of $H(ζ)$ coincide, and to what order. We know by REF HITCHIN, that the eigenlines of $H(ζ)$ coincide exactly when the eigenlines of $\tilde{H}(ζ)$ do. If $\tilde{B}(ζ)$ is defined by $\tilde{H}(ζ) = \exp \tilde{B}(ζ)$, then the eigenvectors of $\tilde{H}(ζ)$ and $\tilde{B}(ζ)$ are the same. The matrix $\tilde{B}(ζ)$ is off-diagonal, so $w(ζ) = (w_1(ζ)\; w_2(ζ))^T$ is an eigenvector if and only if
 \begin{align*}
-\tilde{ν}^2
-&= -\det (- G\bar{τ} + G^*τ - ζ^{-1}Fτ + ζ F^*\bar{τ}) \\
-&= -ζ^{-2}(κτ + \bar{κτ}ζ)^2 \abs{X}^2 \left[ (1 + \iu xe^{\iu δ}) - (-1 + \iu x e^{\iu δ})ζ \right] \left[ (1+\iu xe^{-\iu δ}) + (1-\iu xe^{-\iu δ})ζ  \right].
+-ζ^{-1}(κτ + \bar{κτ}ζ)\abs{X}(1 - \iu x e^{\iu δ})(ζ-α) w_2(ζ)^2
+&= ζ^{-1}(κτ + \bar{κτ}ζ)\abs{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)  w_1(ζ)^2 \\
+-(1 - \iu x e^{\iu δ})(ζ-α) w_2(ζ)^2
+&= (1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)  w_1(ζ)^2,
 \end{align*}
-Given that we have chosen $δ \in (0,π)$ and $x$ is positive, let
+where
 \[
 α = \frac{1+\iu x e^{\iu δ}}{-1+\iu x e^{\iu δ}}
 = \frac{x e^{\iu δ} - \iu}{x e^{\iu δ} +\iu},
 \labelthis{eqn:def branch point genus zero}
 \]
-which is always inside the unit circle. Finishing the computation
-\[
-\tilde{ν}^2
-= -ζ^{-2}(κτ + \bar{κτ}ζ)^2 \abs{X}^2 \abs{1- \iu xe^{\iu δ}}^2 (ζ-α)(1-\bar{α}ζ).
-\labelthis{eqn:eigenvalue}
-\]
-The branch points of the hyperelliptic curve are the odd order zeroes of $(\tr \tilde{H})^2 - 4 = (e^{\tilde{ν}} - e^{-\tilde{ν}})^2$, which are the odd order roots of $\tilde{ν}^2$, namely $α$ and $\cji{α}$. Thus the equation of the hyperelliptic curve is $η^2 = (ζ-α)(1-\bar{α}ζ)$.
+is a point that is always inside the unit circle because we have chosen $δ \in (0,π)$ and $x$ to be positive.
+From this we can see where and to what order any eigenspaces coincide. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 + \iu x e^{-\iu δ}$ never vanish. Hence the eigenlines coincide only at $α$ and $\cji{α}$, and only to first order. The spectral curve is therefore $η^2 = (ζ-α)(1-\bar{α}ζ)$, a genus one curve without singularities.
 
-The eigenvectors of $\tilde{H}(ζ)$ and $\tilde{B}(ζ)$ are the same, so we may compute the eigenline bundle over the hyperelliptic curve. The matrix $\tilde{B}$ is off-diagonal, so $w(ζ) = (w_1(ζ)\; w_2(ζ))^T$ is an eigenvector if and only if
+
+
+
+The pair of differentials $Θ,\tilde{Θ}$ arise as the derivatives of the logarithms $μ,\tilde{μ}$ of the eigenvalues of $H,\tilde{H}$ respectively. The two eigenvalues of $\tilde{H}$ are $\tilde{μ}^{\pm 1} = \exp \pm \tilde{ν}$, so in this example $\tilde{Θ} = d\log \tilde{μ} = d\tilde{ν}$. Therefore we must compute the eigenvalues of $\tilde{B}(ζ)$. As it is a traceless matrix,
 \begin{align*}
--ζ^{-1}(κτ + \bar{κτ}ζ)\abs{X}(1 - \iu x e^{\iu δ})(ζ-α) w_2(ζ)^2
-&= ζ^{-1}(κτ + \bar{κτ}ζ)\abs{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)  w_1(ζ)^2 \\
--(1 - \iu x e^{\iu δ})(ζ-α) w_2(ζ)^2
-&= \abs{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)  w_1(ζ)^2 \\
+\tilde{ν}^2
+&= -\det (- G\bar{τ} + G^*τ - ζ^{-1}Fτ + ζ F^*\bar{τ}) \\
+&= -ζ^{-2}(κτ + \bar{κτ}ζ)^2 \abs{X}^2 \abs{1- \iu xe^{\iu δ}}^2 (ζ-α)(1-\bar{α}ζ).
+\labelthis{eqn:eigenvalue}
 \end{align*}
-From this we can see where and to what order any eigenspaces coincide. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 - \iu x e^{\iu δ}$ never vanish. Hence the eigenlines coincide only at the branch points of the hyperelliptic curve, and only to first order. The spectral curve is therefore the hyperelliptic curve; there is no need to add singularities.
-
-Before proceeding, it is worth making a small calculation to simplify the coefficients appearing in \eqref{eqn:eigenvalue}. First note that
+Let us pause for a moment to make a small calculation to simplify the coefficients appearing in \eqref{eqn:eigenvalue}. First note that
 \[
 \abs{1-α}
 = \frac{2}{\abs{1 - \iu xe^{-\iu δ}}},
@@ -163,21 +165,20 @@ It follows then
 \text{ and }\;
 \iu κ_1 \abs{X}\abs{1-\iu x e} = \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }.
 \]
-
-The pair of differentials $Θ,\tilde{Θ}$ arise as the derivatives of the logarithms of the eigenvalues. However, in this example $Θ = d\log μ = dν$. Therefore
+Finally therefore, the differential corresponding the the eigenvalues of $\tilde{H}(ζ)$ is
 \[
 \tilde{Θ} = d\,\log \tilde{μ} = d\, \Big[ ζ^{-1}(κτ + \bar{κτ}ζ) \iu \abs{1 - \iu xe^{\iu δ}} η \Big].
 \labelthis{eqn:genus zero differential}
 \]
 Observe that this is real linear in $κ$, so that all the differentials lie in a lattice spanned by the basis
 \[
-d\, \Big[ ζ^{-1}(κ_0 + \bar{κ_0}ζ) \iu \abs{1 - \iu xe^{\iu δ}} η \Big],
+d\, \Big[ ζ^{-1}(κ_0 + \bar{κ_0}ζ) \iu\abs{X} \abs{1 - \iu xe^{\iu δ}} η \Big],
 \;\;\;
-d\, \Big[ ζ^{-1}(κ_1 + \bar{κ_1}ζ) \iu \abs{1 - \iu xe^{\iu δ}} η \Big].
+d\, \Big[ ζ^{-1}(κ_1 + \bar{κ_1}ζ) \iu\abs{X} \abs{1 - \iu xe^{\iu δ}} η \Big].
 \]
-This shows the interpretation of the lattice of differentials as selecting the degree of winding of the torus onto its image. This interpretation is supported by the general construction of a harmonic map from spectral data, where the domain of the map is constructed as the real span of the differentials. It also demonstrates the observation that one cannot deform the spectral data smoothly by altering the differentials alone. Hence the non-isospectral deformations arise only by moving the branch points of the spectral curve.
+This identifies the differentials with the lattice of periods of the map $f$, demonstrating the interpretation of the pair of differentials as selecting the degree of winding of the torus onto its image. This same interpretation holds for the general construction of a harmonic map from spectral data, where the domain of the map is constructed as the parallogram spanned by the differentials.
 
-We can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. In fact, if we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is a M\"obius transformation. One can write the inverse transformation as
+We can also see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. In fact, if we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is a M\"obius transformation. One can write the inverse transformation as
 \[
 x e^{\iu δ} = \iu \frac{1+α}{1-α}.
 \]
@@ -187,17 +188,13 @@ Taking the magnitude of both sides shows that $x$ is constant along arcs such th
 \]
 is fixed. These are arcs of circles centered on the real axis with radii such that the circle is perpendular to the unit circle. If $x$ is constant, so is $τ$, and so along these arc the corresponding family of harmonic maps have the same domain but images changing as in REF TO PICTURES. For example, if $x=1$ then $α$ lies in the imaginary axis, and as $δ$ moves from $0$ to $π/2$ to $π$, $α$ moves from $-\iu$ to $0$ to $\iu$ correspondingly.
 
-\begin{center}
-\begin{figure}
-\includegraphics[width=0.6\textwidth]{thesis_graphics_temp/genus_zero_parameters.png}
-\end{figure}
-\end{center}
+\makefigure{Constant parameter lines.}{thesis_graphics_temp/genus_zero_parameters.png}
 
 Conversely if $δ=π/2$ is fixed, then $α$ is given by
 \[
 α = \frac{x-1}{x+1},
 \]
-and takes values along the real axis. The two extremes, when $α=-1,1$ correspond to $x=0,\infty$. In this limit, the domain of the harmonic map is being stretched into a cylinder. We shall see this when we compute the energy of the maps; as  we aproach these two points $α=\pm 1$ the torus tends to having infinite area.
+and takes values along the real axis. The two extremes, when $α=-1,1$ correspond to $x=0,\infty$. In this limit, the domain of the harmonic map is being stretched into a cylinder. When we compute the energy of these maps, we will see that as we aproach the two points $α=\pm 1$ the torus tends to having infinite area.
 
 Having now explored the geometric meanings of the various parameters, let us describe the moduli space of triples $(Σ,Θ,\tilde{Θ})$ as a whole. We have seen that the marked curve $Σ$ is completely determined by its sole branch point $α$ in the unit disc $D$. And for every $α$ we may choose $Θ$ and $\tilde{Θ}$ from a rank two lattice. However, they must be real linearly independent. If we represent our choice of lattice points in terms of an integer combination of some basis, then linear independence is equivalent to the integer matrix
 \begin{align*}
