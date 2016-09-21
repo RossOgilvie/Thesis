@@ -151,23 +151,9 @@ The pair of differentials $Θ,\tilde{Θ}$ arise as the derivatives of the logari
 &= -ζ^{-2}(κτ + \bar{κτ}ζ)^2 \abs{X}^2 \abs{1- \iu xe^{\iu δ}}^2 (ζ-α)(1-\bar{α}ζ).
 \labelthis{eqn:eigenvalue}
 \end{align*}
-Let us pause for a moment to make a small calculation to simplify the coefficients appearing in \eqref{eqn:eigenvalue}. First note that
+Therefore, the differential corresponding the the eigenvalues of $\tilde{H}(ζ)$ is
 \[
-\abs{1-α}
-= \frac{2}{\abs{1 - \iu xe^{-\iu δ}}},
-\text{ and }\;
-\abs{1+α}
-= \frac{2x}{\abs{1 - \iu xe^{-\iu δ}}}.
-\]
-It follows then
-\[
-\iu κ_0 \abs{X}\abs{1-\iu x e} = \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} },
-\text{ and }\;
-\iu κ_1 \abs{X}\abs{1-\iu x e} = \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }.
-\]
-Finally therefore, the differential corresponding the the eigenvalues of $\tilde{H}(ζ)$ is
-\[
-\tilde{Θ} = d\,\log \tilde{μ} = d\, \Big[ ζ^{-1}(κτ + \bar{κτ}ζ) \iu \abs{1 - \iu xe^{\iu δ}} η \Big].
+\tilde{Θ} = d\,\log \tilde{μ} = d\, \Big[ ζ^{-1}(κτ + \bar{κτ}ζ) \iu\abs{X} \abs{1 - \iu xe^{\iu δ}} η \Big].
 \labelthis{eqn:genus zero differential}
 \]
 Observe that this is real linear in $κ$, so that all the differentials lie in a lattice spanned by the basis
@@ -177,6 +163,30 @@ d\, \Big[ ζ^{-1}(κ_0 + \bar{κ_0}ζ) \iu\abs{X} \abs{1 - \iu xe^{\iu δ}} η \
 d\, \Big[ ζ^{-1}(κ_1 + \bar{κ_1}ζ) \iu\abs{X} \abs{1 - \iu xe^{\iu δ}} η \Big].
 \]
 This identifies the differentials with the lattice of periods of the map $f$, demonstrating the interpretation of the pair of differentials as selecting the degree of winding of the torus onto its image. This same interpretation holds for the general construction of a harmonic map from spectral data, where the domain of the map is constructed as the parallogram spanned by the differentials.
+Let us pause for a moment to make a small calculation to simplify the coefficients appearing in \eqref{eqn:eigenvalue}. First note that
+\[
+\abs{1-α}
+= \frac{2}{\abs{1 - \iu xe^{\iu δ}}},
+\text{ and }\;
+\abs{1+α}
+= \frac{2x}{\abs{1 - \iu xe^{\iu δ}}}.
+\]
+It follows then
+\[
+\iu κ_0 \abs{X}\abs{1-\iu x e^{\iu δ}} = \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} },
+\text{ and }\;
+\iu κ_1 \abs{X}\abs{1-\iu x e^{\iu δ}} = \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }.
+\]
+We may write the differentials as
+\[
+d\, \Big[ ζ^{-1}η (c + \bar{c}ζ) \Big],
+\labelthis{eqn:genus zero diffs}
+\]
+where $c$ is a complex number in the lattice
+\[
+\Set{ \frac{π}{2}\bra{ \frac{n+m}{\abs{1+α}} + \iu \frac{n-m}{\abs{1-α}} } } { m,n \in \Z }.
+\]
+Note that any differential on the marked curve that satisfies conditions REF is of the form \eqref{eqn:genus zero diffs} for some complec number $c$ not necessarily lying in the lattice.
 
 We can also see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. In fact, if we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is a M\"obius transformation. One can write the inverse transformation as
 \[

@@ -180,7 +180,7 @@ This correspondence has several properties that distinguish it from the others. 
 \[
 [1,k^{-1};-1,-k^{-1}] = \frac{4k}{(k+1)^2}
 \]
-disagrees with eqn \eqref{eqn:roots_cross_ratio} in this limit, which rules out this correspondence and the three others with the same cross ratio. Finally, our choice of correspondences takes the unit disk to the right half plane. There is only one other correspondence that has all three of these properties, namely
+disagrees with eqn \eqref{eqn:roots_cross_ratio} in this limit, which rules out this correspondence and the three others with the same cross ratio. Finally, our choice of correspondences takes the unit disc to the right half plane. There is only one other correspondence that has all three of these properties, namely
 \[
   \begin{array}{l || c|c|c|c}
     ζ & β & \cji{β} & α & \cji{α} \\
@@ -218,7 +218,7 @@ $μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms
 \[
 μ = \frac{ (α-β)\abs{1-\bar{α}β} + α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} + (1-\bar{α}β)\abs{α-β} }.
 \]
-This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. $α-β$ is never zero on $\mathcal{A}$ by definition. $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disk, this is impossible. Finally, the denominator is zero exactly when
+This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. $α-β$ is never zero on $\mathcal{A}$ by definition. $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disc, this is impossible. Finally, the denominator is zero exactly when
 \[
 \bar{α} = - \frac{1-\bar{α}β}{\abs{1-\bar{α}β}} \frac{\abs{α-β}}{α-β}.
 \]
@@ -306,8 +306,9 @@ From the first equation, we can write $Λ = - ΓK$ and $Ω = ΓE$ for some $Γ$.
 where \eqref{eqn:legendre_relation} uses Legendre's relation. Thus $Θ^2 = 2Eω - 2Kλ$, or if we unwind these definitions a little
 \[
 Θ^2 = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right]
+\labelthis{eqn:theta2}
 \]
-which shows a nice division, with the first two terms providing the desired periods and the last two terms giving the required pole behaviour. Though the various choices up to this point may seem contrived, they pay-off as we can characterise the differential $Θ^2$ in the following way.
+which shows a nice division, with the first two terms providing the desired periods and the last term giving the required pole behaviour. Though the choices up to this point may seem arbitrary and contrived, they are not, as we can characterise the differential $Θ^2$ in the following way.
 
 \begin{lem}
     \label{lem:theta2_characterisation}
@@ -516,6 +517,7 @@ Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the f
 Note that $\mathcal{A}'$ does not include the points where $u'=v'=0$, so it is covered by three of the coordinate patches; $(p,k,u,v)$, $(p,k,u',v)$ and $(p,k,u,v')$ are sufficent for example. We must show that $\mathcal{A}'$ does indeed parameterise the space of spectral curves.
 
 \begin{lem}
+\label{lem:change of parameters}
 The given formulae for $p,k$ (eqns \eqref{eqn:def_p}, \eqref{eqn:def_k} respectively) and $\iu u = f(1)$, $\iu v = f(-1)$ extend to a diffeomorphism between the spaces $\mathcal{A}$ and $\mathcal{A}'$.
 
 \begin{proof}
@@ -637,7 +639,7 @@ And hence that
 2π\iu T_0(p,k,u,v)
 &= p\left\{ 4 E F(\iu v;k) - 4K E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v} \right\}
 - \left\{ 4 E F(\iu u;k) - 4K E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v} \right\} \\
-&= p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v}.
+&= 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v}.
 \labelthis{eqn:Teqn}
 \end{align*}
 
@@ -658,6 +660,7 @@ In the limit as $α \to β$, this formula says that $k \to 1$. From the equation
 The fact that the parameter space is not simply connected and that $T$ is not even a single valued function could obstruct our use of the implicit function theorem. The obvious way to correct this is to move the the unversal cover.
 
 \begin{defn}
+    \label{defn:mathcal tilde A}
 The universal cover of $\mathcal{A}$ is
 \[
 \mathcal{\tilde{A}} =
@@ -734,6 +737,7 @@ If we wish to relate this to a specific local expression, it is simply a matter 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \tilde{T}(p,k,\tilde{u},\tilde{v})
 &= 2\bra{ pW(\tilde{v}) - W(\tilde{u}) } + T_0(p,k,u,v) .
+\label{eqn:tilde T computable}
 \end{align*}
 Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}$ and make a note of the constants. In particular, $T \in \Q$ if and only if $\tilde{T} \in \Q$, and so we can seek to find moduli space as a subset of the universal cover.
 
@@ -938,7 +942,7 @@ The second sort require a little more effort. On one hand, the deck transformati
 \[
 z \mapsto \frac{1}{kz}.
 \]
-Under the composite map $\iu u$ is taken to $-\iu u^{-1}$. Ditto for $\iu v$. Using the map $f_s$ instead of $f$ is equivalent to swapping the labels on the branch points and then applying $f$. Thus, under the label-swapping involution,
+Under the composite map $\iu u$ is taken to $-\iu k^{-1}u^{-1}$ and $\iu v$ is taken to $-\iu k^{-1}v^{-1}$. Using the map $f_s$ instead of $f$ is equivalent to swapping the labels on the branch points and then applying $f$. Thus, under the label-swapping involution,
 \[
 (p,k,u,v) \mapsto \bra{ p,k, -(ku)^{-1}, -(kv)^{-1} }.
 \]
