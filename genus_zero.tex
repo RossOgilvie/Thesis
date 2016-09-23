@@ -3,28 +3,28 @@
 \section{Genus Zero}
 \label{sec:Genus Zero}
 
-The moduli of spectral data where the spectral curve is genus zero is an instructive example. We shall denote this space $\mathcal{M}_0$.
-We have seen in Lemma \ref{lem:no singularities} that on a spectral curve of genus zero the pair of differentials may not have a common root. It follows from Theorem \ref{thm:moduli manifold} therefore that $\mathcal{M}_0$ is a two-dimensional manifold. Because the all differentials on $\CP^1$ are exact, and all meromomorphic functions are rational, it is possible to describe this space explicitly using only elementary functions.
-We shall describe all translation invariant solutions to \eqref{eqn:Hit1.7} that arise from a harmonic map, which we will see are precisely the harmonic maps that correspond to genus zero spectral data.
+The moduli space of spectral data where the spectral curve is genus zero is an instructive case.
+It is possible to describe this space explicitly using only elementary functions, so we will develop formulae for all such harmonic maps, solutions to \eqref{eqn:Hit1.7} and spectral data. These examples will allow us to illustrate some of the correspondences between properties of these three sets of objects. The process will also demonstrate the spectral curve construction that was outlined in Section \ref{sub:construction}. Finally, it follows from Theorem \ref{thm:moduli manifold} that this moduli space $\mathcal{M}_0$ is a two-dimensional manifold, and provides us with a simple model that we will try to emulate for genus one spectral curves in the next chapter.
 
-This example can be divided into two parts. In the first part, we start with \eqref{eqn:Hit1.7} and find all corresponding harmonic maps. In the second part we take these harmonic maps and work through the steps of Section \ref{sub:construction} to produce the associated spectral data. The approach for the first part will be to find all translation invariant solutions to \eqref{eqn:Hit1.7}, for each solution calculate the formula of associated gauge transformation and manipulate this formula into a standard form. Finally, we may then determine which formulae correspond to maps from a torus.
+This example can be divided into two parts. In the first part, we start with \eqref{eqn:Hit1.7} and find all translation invariant solutions.
+We may then determine which solutions correspond to harmonic maps from a torus, by forcing a periodicity constraint. We can write down an explict formula for each harmonic map, and by applying rotations bring it into a standard form. In the second part, we take these harmonic maps and work through the steps of Section \ref{sub:construction} to produce the associated spectral data. We compare how the parameters that arise in the solutions to \eqref{eqn:Hit1.7} align with the parameters present in the description of the spectral data as defined by conditions \ref{P:real curve}--\ref{P:quaternionic}.
 
-Let $z\in\C$ be a uniformising coordinate on the torus $\C/\Z\langle 1,τ\rangle$. Following \cite[(9.11)]{Hitchin1990}, we write the Higgs field as $Φ = F \,dz$ and the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to the trivialisation arising from the translation action, for constant traceless matrices $F$ and $G$.
+Let $z\in\C$ be a uniformising coordinate on the torus $\C/\Z\langle 1,τ\rangle$. Suppose that we have a solution $(A,Φ)$ to \eqref{eqn:Hit1.7} that is invariant translations of this torus. Following \cite[(9.11)]{Hitchin1990}, we write the Higgs field as $Φ = F \,dz$ and the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to the trivialisation arising from the translation action, for constant traceless matrices $F$ and $G$.
 With these definitions, equations \eqref{eqn:Hit1.7} become
 \[
 [F,G] = 0\;\; \text{and}\;\; [G,G^*] = [F,F^*].
 \]
 If $F$ commutes with is conjugate-transpose then so too does $G$, and they are simultaneously diagonalisable by an $SU(2)$ matrix. This case corresponds to a map from the torus to a circle, which does not produce a spectral curve. Assume therefore that $[F,F^*] \neq 0$. The first equation implies that $F$ and $G$ commute, so we may write $G = λF$. Then $(\abs{λ}^2 - 1)[F,F^*] = 0$ implies that $\abs{λ}=1$. Let $κ\in\S^1$ be such that $\bar{κ}^2=λ$.
 
-Recall that for a solution for \eqref{eqn:Hit1.7}, there is an $\S^1$ family of flat unitary connections \eqref{eqn:flat connections}, which are given in this case by
+Hence a translation invariant solution to \eqref{eqn:Hit1.7} is given by a constant traceless matrix $F$ and a complex number $κ\in\S^1$, with $G = \bar{κ}^2 F$. Recall that for any solution for \eqref{eqn:Hit1.7}, there is an $\S^1$ family of flat unitary connections \eqref{eqn:flat connections}, which are given in this case by
 \[
 d_ζ := d_A + ζ^{-1}Φ - ζΦ^*
-= d + G\,d\bar{z} - G^*\,dz + ζ^{-1}F\,dz - ζF^*\,d\bar{z}.
+= d + G\,d\bar{z} - G^*\,dz + ζ^{-1}F\,dz - ζF^*\,d\bar{z},
 \labelthis{eqn:flat connection translation}
 \]
-As the matrices $F$ and $G$ are constant, for each $ζ \in \C^\times$ one can solve the parallel transport equation $d_ζ X = 0$ explicitly for a vector field $X$ on $\C$.
+for $ζ\in\S^1$. As the matrices $F$ and $G$ are constant, for each $ζ$ one can solve the parallel transport equation $d_ζ X = 0$ explicitly for a vector field $X$ by exponentiation.
 One may then recover the associated harmonic map as the change of gauge between the two parallel vector fields for the connections $d_1$ and $d_{-1}$, as in \eqref{eqn:gauge change}.
-We may therefore write the harmonic map as
+After factorising, we may write the harmonic map as
 \begin{align*}
 f(z) = \exp( &(κz + \bar{κ}\bar{z})(-\bar{κ}F + κF^*) ) \\
 &\cdot \exp( (κz - \bar{κ}\bar{z})(-\bar{κ}F - κF^*) ).
@@ -34,9 +34,9 @@ We may simplify this formula by making the following substitutions. On the torus
 f(w) = \exp( -4w_R X ) \cdot \exp( 4 w_I Y  ).
 \labelthis{eqn:genus zero simple map}
 \]
-The matrix exponential of a $su_2$ matrix is of course an $SU(2)$ matrix, and a line through the origin of $su_2$, such as $\Set{-4w_R X }{w_R \in \R}$, is mapped to a one parameter subgroup of $SU(2)$, a circle. Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles. As we vary $w_R$ the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$.
+The matrix exponential of a $su_2$ matrix is of course an $SU(2)$ matrix, and a line through the origin of $su_2$, such as $\Set{-4w_R X }{w_R \in \R}$, is mapped to a one parameter subgroup of $SU(2)$, a circle. Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles. As we vary $w_R$, the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$.
 
-This is a map from the plane $w\in\C$ to $SU(2)$. We would like to know when it descends to a map from the torus. Thus we must compute the periodicity of this map, and in particular we need to know how to compute explicitly the matrix exponential of an $su_2$ matrix $Z$. The determinant of an $su_2$ matrix is always positive, so let the norm of $Z$ be given by the square root of its determinant. We may define the unit matrix $\hat{Z}$ in direction $Z$ to be $Z$ divided by its norm. If we note that $Z^2 = -\abs{Z}^2 I$, the matrix exponential may be written concisely as
+This is a map from the plane $z\in\C$ to $SU(2)$. We would like to know when it descends to a map from our torus $\C/\Z\langle 1,τ\rangle$. Thus we must compute the periodicity of this map, and to do so we need to know how to compute explicitly the matrix exponential of an $su_2$ matrix $Z$. The determinant of an $su_2$ matrix is always positive, so let the norm of $Z$ be given by the square root of its determinant. We may define the unit matrix $\hat{Z}$ in direction $Z$ to be $Z$ divided by its norm. If we note that $Z^2 = -\abs{Z}^2 I$, the matrix exponential may be written concisely as
 \[
 \exp Z = I \cos \abs{Z} + \hat{Z} \sin \abs{Z}.
 \]
@@ -63,7 +63,7 @@ Squaring and adding the coefficients of $\hat{Y}$ and $\hat{Y}\hat{X}$ together 
 \[
 1 = \cos(4w_I\abs{Y})\cos(4w_R\abs{X}) = (-1)^k (-1)^l = (-1)^{k+l}.
 \]
-Thus the lattice of periods, expressed in the variable $w$, is generated by
+Thus the lattice of the periods of $f$, expressed in the variable $w$, is generated by
 \[
 κ_0 := \frac{π}{4}\bra{\frac{1}{\abs{X}} - \iu\frac{1}{\abs{Y}}},
 \;\;\;\text{and}\;\;\;
@@ -72,7 +72,7 @@ Thus the lattice of periods, expressed in the variable $w$, is generated by
 
 \makefigure{The lattice of periods of $f$.}{thesis_graphics_temp/genus_zero_lattice.png}
 
-The roles of $κ$, $\abs{X}$, and $\abs{Y}$ are now apparent; they determine the conformal type $τ$ and the number of windings of the torus $\C/\Z\langle1,τ\rangle$ onto its image. Only when three parameters are chosen so that $z=1,τ$ are points of this lattice of periods does $f$ descend to a map from the torus. That is, there must be integers $n,m,\tilde{n},\tilde{m}$
+The roles of $κ$, $\abs{X}$, and $\abs{Y}$ are now apparent; they must agree with the conformal type $τ$ in order for the map $f$ to be defined on the torus $\C/\Z\langle1,τ\rangle$, and they determine the number of windings of the torus onto its image. Agreement with the conformal type means that the three parameters are chosen so that $z=1,τ$ are points of this lattice of periods. That is, there must be integers $n,m,\tilde{n},\tilde{m}$
 \[
 κ\cdot 1 = n κ_0 + m κ_1,\;\;
 κ\cdot τ = \tilde{n} κ_0 + \tilde{m} κ_1
@@ -85,7 +85,7 @@ Solving for $τ$ yields
 {(n+m) +\iu x(n-m)},
 \labelthis{eqn:conformal type}
 \]
-for $x = \frac{\abs{Y}}{\abs{X}}$. This shows that the conformal type of domain of the map $f$ depends only on $x$, the ratio of $\abs{X}$ to $\abs{Y}$, and some integers.
+for $x = \frac{\abs{Y}}{\abs{X}}$. To turn this around, if one begins with the parameters $κ,\abs{X}$ and $\abs{Y}$ then this shows that the conformal type of domain of the map $f$ depends only on $x$, the ratio of $\abs{X}$ to $\abs{Y}$, and some integers.
 
 Before proceeding to the second part of this example, where we compute the spectral data associated to the map $f$, we may further simplify \eqref{eqn:genus zero simple map}. The correspondence between spectral data and harmonic maps does not distinguish between maps that differ by a rotation of $\S^3 = SU(2)$. We may use our freedom of rotation in $SU(2)$ to align $X$ in the direction of $σ_2$ and have $Y$ lie in the plane spanned by $σ_2$ and $σ_3$. After this rotation, $X = \abs{X}σ_2$ and for some $δ\in (0,π)$,
 \[
