@@ -78,14 +78,44 @@ Consider a (nonsingular) hyperelliptic curve $Σ$ over $\CP^1$ with hyperellipti
 \item\label{P:marked points} $π(ξ_0) = 0$ and $π(ξ_1) = 1$.
 \item\label{P:real involution} there is a real involution $ρ: Σ \to Σ$ such that $ρ\circ σ$ is without fixed points and $π(ρ(ξ)) = \cji{π(ξ)}$.
 \end{enumerate}
-Note that $ξ_0$ and $σ(ξ_0)$ may or may not be distinct points, which correspond to the cases of nonconformal and conformal harmonic maps respectively. The condition that $ρ\circ σ$ is without fixed points ensures that the curve is not branched ($ξ = σ(ξ)$) at any point over the unit circle. Thus there are always two points of both $π^{-1}(1) = \{ ξ_1, σ(ξ_1) \}$ and $π^{-1}(-1)$. We shall use $ρ$ to also denote the real involution $π(ζ) = \cji{ζ}$ on $\CP^1$.
+Points where $ξ = σ(ξ)$ are the ramification points of the curve.
+Note that $ξ_0$ and $σ(ξ_0)$ may or may not be distinct points. The condition that $ρ\circ σ$ is without fixed points ensures that the curve is not ramified at any point over the unit circle. Thus there are always two points of both $π^{-1}(1) = \{ ξ_1, σ(ξ_1) \}$ and $π^{-1}(-1)$. We shall use $ρ$ to also denote the real involution $π(ζ) = \cji{ζ}$ on $\CP^1$.
 
-We may build a model for marked curves, unique up to biholomorphism. Suppose that $Σ$ has genus $g$. Consider the bundle $π: \mathcal{O}(g+1)\to \CP^1$, and the tautological section $η$ of $π^* \mathcal{O}(g+1) \to \mathcal{O}(g+1)$. There is a reality structure on $\mathcal{O}(k)$ for any $k$ compatible with $ρ$, namely if $w$ is the fibre coordinate
+We may build a model for marked curves, unique up to biholomorphism. We will construct $Σ$ as an algebraic curve in the total space of a certain line bundle over $\CP^1$. To that end, let us now describe the line bundles over $\CP^1$. Let $ζ$ be the affine parameter on $\C \subseteq \CP^1$ and $ζ'$ be another parameter with the relation $ζ' = ζ^{-1}$, so that together they cover $\CP^1$. We define $\mathcal{O}(k)$ to be the line bundle over $\CP^1$ given by the trivialisations $(ζ,η) \in \C\times \C$ and $(ζ',η') \in \C\times \C$ with transition
 \[
-ρ(ζ,w) = \bra{ \cji{ζ}, \bar{ζ}^{-k} \bar{w}}.
+(ζ',η') = (ζ^{-1}, ζ^{-k}η).
 \]
+Suppose that $s$ is a holomorphic section of $\mathcal{O}(k)$. We may expand $s$ around $ζ=0$
+\[
+η = s(ζ) = s_0 + s_1 ζ + \dots.
+\]
+Applying the transition
+\[
+η' = s(ζ')
+= (ζ')^k (s_0 + s_1 (ζ'^{-1}) + \dots)
+= s_0 (ζ')^k + s_1 (ζ')^{k-1} + \dots + s_k + s_{k+1} (ζ')^{-1} + \dots,
+\]
+from which we see that $s_i = 0$ for all $i > k$. Thus we may identify sections of $\mathcal{O}(k)$ with polynomials of degree at most $k$. Further, the reality structiure $ρ$ on $\CP^1$ pulls back to give a reality structure on $\mathcal{O}(k)$, namely
+\[
+ρ(ζ,η) = \bra{ \cji{ζ}, \bar{ζ}^{k} \bar{η}}.
+\]
+Of particular interest are real sections of this bundle. Again, take $s$ to be a section of $\mathcal{O}(k)$. Then
+\[
+(ρ^*s) (ζ)
+= \bar{ζ}^{k} \bar{s\bra{ζ}^{-1}}
+= \bar{s_0}\bar{ζ}^{k} + \bar{s_1} \bar{ζ}^{k-1} + \dots + \bar{s_k},
+\]
+hence a section is real is its coefficients obey $s_i = \bar{s}_{k-i}$, for $0 \leq i \leq k$. Because we shall often focus our attention on polynomials rather the sections to which they correspond, we define spaces of polynomials that a real with respect to $ρ$.
+\begin{defn}
+Let $\mathcal{P}^k$ be the space of polynomials of degree at most $k$. We define the real polynomials $\mathcal{P}^k_\R$ to be
+\[
+\mathcal{P}^k_\R
+= \Set{ s = s_0 + \dots s_k ζ^k \in \mathcal{P}^k }{ s_i = \bar{s}_{k-i} \text{ for all } 0 \leq i \leq k}.
+\]
+\end{defn}
+If one is unfamiliar with this style of reality structure, this definition may produce some counterintuitive examples. For example, the polynomial $ζ$ is a real polynomial of $\mathcal{P}^2$. On reflection however, this is entirely appropriate, as fundamentally it represents a section of $\mathcal{O}(2)$ and the lack of a quadratic term simply indicates the presence of a roots at $ζ = \infty$.
 
-Take a section $P(ζ)$ of $\mathcal{O}(2g+2)$ and consider the curve $Σ'$ defined by $η^2 = P(ζ)$. It is hyperelliptic, with involution $σ(ζ,η) = (ζ,-η)$, and projection $π(ζ,η) = ζ$. Suppose that $P(ζ)$ has the following properties
+Armed with these line bundles over $\CP^1$, we may now provide a description of a marked curve $Σ$. Suppose that $Σ$ has genus $g$. Take a section $P(ζ)$ of $\mathcal{O}(2g+2)$ and consider the curve $Σ'$ in the total space of $\mathcal{O}(g+1)$ defined by $η^2 = P(ζ)$. It is hyperelliptic, with involution $σ(ζ,η) = (ζ,-η)$, and projection $π(ζ,η) = ζ$. Suppose that $P(ζ)$ has the following properties
 \begin{enumerate}[label=(P.\arabic*)]
 \item\label{P:real curve} Real spectral curve: $P(ζ)$ is a real section of $\mathcal{O}(2g+2)$ with respect to the real structure induced by $ρ$.
 \item\label{P:no real zeroes} No real zeroes: $P(ζ)$ has no zeroes on the unit circle $\S^1\subset\CP^1$.
@@ -93,7 +123,7 @@ Take a section $P(ζ)$ of $\mathcal{O}(2g+2)$ and consider the curve $Σ'$ defin
 \end{enumerate}
 Then $Σ'$ is a marked curve. The holomorphic involution $ρ$ is the restriction of $ρ$ on $\mathcal{O}(2g+2)$. The fixed points of $σ$ are the roots of $P$, so \ref{P:no real zeroes} ensures that $ρ\circ σ$ is fixed point free and \ref{P:simple zeroes} provides that the curve is not singular.
 
-Hyperelliptic curves are determined by their branch points in $\CP^1$, up to automorphism of $\CP^1$. To see this, first choose a non-branch point of $\CP^1$ and take the complement. Over this affine space, the function field of $Σ$ is a quadratic extension and so must be Galois. Take the nontrivial automorphism $σ$ of the extension and find an element $η$ such that $σ(η)= - η$ (this may be done by taking any nonfixed element $η'$ and choosing $η = η' - σ(η')$). $σ(η^2) = η^2$, so we have that $η^2=P(ζ)$ for some polynomial $P$. This determines $Σ$ up to scaling of $y$ and automorphism of $\CP^1$. The choice of automorphism of $\CP^1$ has however been removed by the imposition of the marked points, which fix $0,1$ and $\infty$. All marked curves therefore correspond to some section $P(ζ)$, determined uniquely up to scaling.
+Hyperelliptic curves are determined by their branch points in $\CP^1$, up to automorphism of $\CP^1$. To see this, first choose a non-branch point of $\CP^1$ and take the complement. Over this affine space, the function field of $Σ$ is a quadratic extension and so must be Galois. Take the nontrivial automorphism $σ$ of the extension and find an element $η$ such that $σ(η)= - η$ (this may be done by taking any nonfixed element $\tilde{η}$ and choosing $η = \tilde{η} - σ(\tilde{η})$). If we consider its square, $σ(η^2) = η^2$, so we have that $η^2=P(ζ)$ for some polynomial $P$. This determines $Σ$ up to scaling of $y$ and automorphism of $\CP^1$. The choice of automorphism of $\CP^1$ has however been removed by the imposition of the marked points, which fix $0,1$ and $\infty$. All marked curves therefore correspond to some section $P(ζ)$, determined uniquely up to scaling.
 
 Let $P(ζ) = A(ζ-β_1)\cdots(ζ-β_k)$ be a section of $\mathcal{O}(2g+2)$. Applying the real involution
 \[
@@ -134,7 +164,12 @@ so the symmetry condition forces $g\equiv 0$. Suppose first that $Σ$ does not h
 b_1 - \frac{1}{2}\frac{P_1}{P_0}b_0,
 \labelthis{eqn:residue}
 \]
-where subscripts denote coefficents of the polynomials. This must therefore vanish. Reality of the differential means that this polynomial is real, that is $\overline{b(ζ)}=\bar{ζ}^{g+3}b(\cji{ζ})$.
+where subscripts denote coefficents of the polynomials. This must therefore vanish.
+
+
+
+
+Reality of the differential means that this polynomial is real, that is $\overline{b(ζ)}=\bar{ζ}^{g+3}b(\cji{ζ})$.
 
 Now suppose that $P$ has a root at $ζ=0$. Because it must be a simple root, $P_1 \neq 0$. Let $ξ$ be a local coordinate of a point of $π^{-1}(0)$ with $ξ^2 = ζ$ and expand
 \[
@@ -252,6 +287,14 @@ Suppose we have a singular spectral curve $Σ$ with normalisation $\tilde{Σ}$.
 Because there can be no singular points on the unit circle, all singular points come in pairs, so the (arthimetic) genus of $Σ$ and $\tilde{Σ}$ differ by at least two. This excludes the possibility of singular spectral curves of genus one. If we add in the fact that at a point of $\tilde{Σ}$ that maps to $Σ$ with multiplicity $m$, the differentials $Θ$ and $\tilde{Θ}$ both have a common zero of order $m-1$, the the above lemma shows that no singular spectral curve has a genus zero normalisation. This rules out singular genus two spectral curves also.
 
 Over $\mathcal{C}$, there is a bundle $\mathcal{B}$ of differentials with imaginary periods. As argued above it is a rank 2 vector bundle; the fibre over $Σ$ is $\mathcal{B}_Σ$. We define the space of spectral data $(Σ,Θ,\tilde{Θ})$ with integral periods and satisfying the closing conditions to be $\mathcal{M}$, a subsapce of the total space of $\mathcal{B}\times\mathcal{B}$. Importantly, it is not a subbundle over $\mathcal{C}$, because not every marked curve admits spectral data. Instead, we denote the space of marked curves that do admits spectral data as $\mathcal{S}$, a subspace of $\mathcal{C}$, namely the projection of $\mathcal{M}$.
+
+
+
+
+
+
+
+
 
 
 
