@@ -14,19 +14,19 @@ Let us consider infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$
 A deformation of spectral data is a path $\ell:(-ε,ε) \to \mathcal{M}$, parameterised by $t$. An infinitesimal deformation is the tangent vector of such a curve at $t=0$.
 There is an established methodology for finding the deformations that preserve the periods of differentials, the so called Whitham deformations. This method was first discovered for the Korteweg-de Vries equation \cite{Flaschka1980,Lax1983}, before being developed generally for other integrable systems \cite{Krichever1995}. The form of Whitham deformations we use here resemble their application in the theory of constant mean curvature surfaces \cite{Kilian2015a,Carberry2016}.
 
-Suppose that we are at a point of $\mathcal{M}_g$ that admits a deformation $\ell$. If we write $\ell(t) = (Σ(t),Θ^1(t),Θ^2(t))$, then we know from \eqref{eqn:def P} that every spectral curve $Σ(t)$ along this deformation may be written as $η^2 = P(t,ζ)$, for $P(t,ζ)$ a real polynomial of degree $2g+2$ in $ζ$, and from \eqref{eqn:def b} that each differential can be described by a real polynomial $b^i(t,ζ)$ of degree $g+3$ in $ζ$,
+Suppose that we are at a point of $\mathcal{M}_g$ that admits a deformation $\ell$. If we write $\ell(t) = (Σ(t),Θ^1(t),Θ^2(t))$, then we know from \eqref{eqn:def P} that every spectral curve $Σ(t)$ along this deformation may be written as $η^2 = P(t,ζ)$, for $P(t,ζ)$ a polynomial in $ζ$ belonging to $\mathcal{P}^{2g+2}_\R$, and from \eqref{eqn:def b} that each differential can be indentified with $b^i(t,ζ)$ such that
 \[
 Θ^i(t) = \frac{1}{ζ^2η}b^i(t,ζ) dζ,
 \]
-for $i=1,2$. Equivalently then, we may describe $\ell$ in terms of these polynomials, $\ell(t) = (P(t,ζ),b^1(t,ζ),b^2(t,ζ))$.
-We let $Σ = Σ(0)$ and likewise $b^i(ζ) = b^i(0,ζ)$.
-More generally, omission of the parameter $t$ will correspond to evaluation at the point $t=0$.
+for $i=1,2$, where for each $t$ we have that $b^i(t,ζ)$ a member of $\mathcal{P}^{g+3}_\R$.
 
-We use this representation of the spectral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $U$.
+Equivalently then, we may describe $\ell$ in terms of these polynomials, $\ell(t) = (P(t,ζ),b^1(t,ζ),b^2(t,ζ))$.
+We let $Σ = Σ(0)$ and likewise $b^i(ζ) = b^i(0,ζ)$.
+More generally, omission of the parameter $t$ will correspond to evaluation at the point $t=0$. We use this representation of the spectral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $U$.
 
 \begin{defn}
 \label{def:def U}
-Let $U$ be the open subset of $\R^{4g+11}$ of real polynomial triples $(P,b^1,b^2)$ of degrees $(2g+2, g+3, g+3)$ where
+Let $U$ be the open subset of $\mathcal{P}^{2g+2}_\R\times \mathcal{P}^{g+3}_\R\times\mathcal{P}^{g+3}_\R$ of triples of real polynomials $(P,b^1,b^2)$ where
 $P$ has only simple zeroes (cf. \ref{P:simple zeroes}) and no zeroes on the unit circle (cf. \ref{P:no real zeroes}), and the polynomials $b^i$ have at most a simple root at $ζ=0$ (cf. \ref{P:poles}).
 \end{defn}
 
@@ -48,7 +48,7 @@ The consequence of this is that $ζη\dot{q}^i$ is holomorphic. This expression 
 \[
 \dot{q}^i = \frac{1}{ζη}\hat{c}^i(ζ)
 \]
-for some degree $g+3$ polynomial $\hat{c}^i$. This gives a parameterisation of the functions $\dot{q}^i$ by the affine space of the coefficients of the polynomials $\hat{c}^i$, comparable to the description of a triple of spectral data $(Σ,Θ^1,Θ^2)$ as polynomials $(P,b^1,b^2)\in\R^{4g+11}$.
+for some degree $g+3$ polynomial $\hat{c}^i$. This gives a parameterisation of the functions $\dot{q}^i$ by a vector space, the space of polynomials $\hat{c}^i$.
 
 We shall now demonstrate how the functions $\dot{q}^i$ relate to an infinitesimal deformation $(\dot{P},\dot{b}^1,\dot{b}^2)$, by using the equality of mixed partial derivatives. We compute the derivatives of $dq$ and $\dot{q}$ with respect to the variables $t$ and $ζ$ respectively.
 \begin{align*}
@@ -199,7 +199,7 @@ Thus we have divided our analysis into six cases organised according to the comm
 \begin{tabular}{|c|c|c|c|l|}
 \hline
 Case & Type & $\deg F$ & $\deg G$ & Description\\ \hline\hline
-i & \multirow{4}{*}{Nonconformal} & 0 & 0
+i & \multirow{4}{*}{Nonconformal: $P_0 \neq 0$} & 0 & 0
 & $\gcd(b^1,b^2) = 1$\\ \cline{1-1}\cline{3-5}
 ii && 0 & 1, 2
 & $\gcd(b^1,b^2)$ is linear or quadratic and does not divide $P$ \\ \cline{1-1}\cline{3-5}
@@ -208,14 +208,16 @@ iii && 2 & 0
 iv && \multicolumn{2}{|c|}{$\deg FG > 2$}
 & The degree of $\gcd(b^1,b^2)$ is greater than two \\ \hline\hline
 %%%%%%%%%%%%%%%%%%%%
-v &\multirow{2}{*}{Conformal}& 1 & 0
-& $\gcd(b^1,b^2) = ζ$ \\ \cline{1-1}\cline{3-5}
-vi && \multicolumn{2}{|c|}{$\deg FG > 1$}
+v &\multirow{2}{*}{Conformal: $P_0 = 0$}& 0 & 0,1
+& $\gcd(b^1,b^2) \in \mathcal{P}^0_\R \cup \mathcal{P}^1_\R$, but $\gcd(b^1,b^2)\neq ζ$ \\ \cline{1-1}\cline{3-5}
+vi && 1 & 0
+& $\gcd(P,b^1,b^2) = \gcd(b^1,b^2) = ζ$ \\ \cline{1-1}\cline{3-5}
+vii && \multicolumn{2}{|c|}{$\deg FG > 1$}
 & The degree of $\gcd(b^1,b^2)$ is greater than one \\ \hline
 \end{tabular}
 \end{center}
 
-We have seen that the spectral data in cases (iv) and (vi) do not admit any deformations.
+We have seen that the spectral data in cases (iv) and (vii) do not admit any deformations.
 In general, points of $\mathcal{M}_g$ where case (iii) holds are singularities of a deformation \cite{Schmidt2016} and are not considered further in this thesis. We shall note only that this case cannot occur when the genus of the spectral curve is zero or one.
 When the genus is zero, we have seen that the differentials cannot have any common roots at all (Lemma \ref{lem:no singularities}). We shall now give a similar short proof to show that the differentials of a genus one spectral curve may not have a common root at the branch points. Suppose that $Σ$ is genus one with branch points at $α,β,\cji{α},\cji{β}$, none of which are zero, and that $\gcd(P,b^1,b^2) = F$ is quadratic. Without loss of generality, let $F = (ζ-α)(1-\bar{α}ζ)$ and $b^1 = (c + dζ + \bar{c}ζ^2)F$ for some complex number $c$ and real number $d$. Expanding this and applying \eqref{eqn:residue condition} shows that
 \begin{align*}
@@ -224,17 +226,17 @@ When the genus is zero, we have seen that the differentials cannot have any comm
 \end{align*}
 The coefficient of $c$ above, the bracketed expression, is never zero and so $c$ is determined by $d$. Hence $b^1$ is determined up to a real scalar. This demonstrates any two differentials with the same factor $F$ are real linearly dependent, which contradicts \ref{P:linear independence}.
 
-Let $U'$ be the subset of points of the three remaining cases: (i), (ii) and (v).
-As the points of cases (iii), (iv) and (vi) form a closed subvariety of the space of real polynomials, $U'$ is open. With reference to Definition \ref{def:def U}, we may characterise $U'$ as the set
+Let $U'$ be the subset of points of the two  cases: (i) and (ii).
+As the points of cases (iii), (iv) and (vii) form a closed subvariety of the space of real polynomials, $U'$ is open. With reference to Definition \ref{def:def U}, we may characterise $U'$ as the set
 \[
-U' = \Set{ (P,b^1,b^2) \in U } { \gcd(P,b^1,b^2) \text{ divides } ζ,\; \deg\left[ \gcd(b^1,b^2) \right] \leq 2 - \deg\left[ \gcd(P,b^1,b^2) \right]  }.
+U' = \Set{ (P,b^1,b^2) \in U } { F = \gcd(P,b^1,b^2) = 1,\; G=\gcd(b^1,b^2) \in \mathcal{P}^0_\R \cup \mathcal{P}^1_\R \cup \mathcal{P}^2_\R }.
 \labelthis{eqn:def U'}
 \]
 In particular, the points of case (i) are the set
 \[
 U'' = \Set{ (P,b^1,b^2) \in U } { FG = \gcd(b^1,b^2) = 1 }.
 \]
-The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap U'$ is a manifold.
+The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap U'$ is a manifold. We also show that the points of case (vi) are smooth points of $\mathcal{M}_g$.
 
 In each of the three cases, $F^i$ must divide $c^i$ and $G$ must divide $Q$. Let us therefore define
 \[
@@ -451,13 +453,13 @@ Hence we have established \eqref{eqn:R reality} at all points of $U''$.
 \end{proof}
 \end{lem}
 
-In cases (ii) and (v), the degree of $\tilde{b}^2$ is
+In cases (ii) and (vi), the degree of $\tilde{b}^2$ is
 \[
 g+3 - (d_2 + d_F + d_G) \leq g + 2 - d_2,
 \]
 as either $F$ or $G$ will be nontrivial. This means that the minimal solution to \eqref{eqn:Q reduced}, which has degree strictly less than $\deg \tilde{b}^2$, will have the correct degree without needing to impose any extra conditions on $Q$.
 
-At this point we have shown how to solve equations such as \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}, when the solutions will be have the correct degree, how to determine all of the solutions when the solution is not unique, and the existence of real solutions. We are therefore ready to solve these equations in each of the three cases (i), (ii), and (v), and to use the solutions to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q}. At the end of that process, we will have constructed a tangent vector $(\dot{P}, \dot{b}^1, \dot{b}^2)$ to the moduli space of spectral data $\mathcal{M}_g$.
+At this point we have shown how to solve equations such as \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}, when the solutions will be have the correct degree, how to determine all of the solutions when the solution is not unique, and the existence of real solutions. We are therefore ready to solve these equations in each of the three cases (i), (ii), and (vi), and to use the solutions to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q}. At the end of that process, we will have constructed a tangent vector $(\dot{P}, \dot{b}^1, \dot{b}^2)$ to the moduli space of spectral data $\mathcal{M}_g$.
 
 
 
@@ -598,7 +600,7 @@ This has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at t
 
 
 
-\begin{lem}[Case (v)]
+\begin{lem}[Case (vi)]
     \label{lem:tangent conformal}
 Take a triple of spectral data $(P,b^1,b^2)$ associated with a conformal harmonic map, with a non-singular spectral curve given by $η^2 = P$ of genus $g$. Suppose that $\gcd(b^1,b^2) = ζ$. Then for every pair of real numbers $(Q_1,r)$, there is a unique tangent vector $(\dot P, \dot b^1, \dot b^2)$ to the space of spectral data $\mathcal{M}_g$.
 
@@ -664,7 +666,7 @@ Though the details of the above three lemmata vary, we see that in every case th
 The open subset $\mathcal{M}_g \cap U'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold.
 
 \begin{proof}
-Recall the defintion of $U'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i), (ii) or (v). That is, $U'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is either one or $ζ$, and $\deg\left[ \gcd(b^1,b^2) \right] \leq 2 - \deg\left[ \gcd(P,b^1,b^2)\right]$.
+Recall the defintion of $U'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i), (ii) or (vi). That is, $U'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is either one or $ζ$, and $\deg\left[ \gcd(b^1,b^2) \right] \leq 2 - \deg\left[ \gcd(P,b^1,b^2)\right]$.
 
 At any point $p\in \mathcal{M}_g \cap U'$, take a simply connected open neighbourhood $V\subset U'$. On this neighbourhood, define the map $Ψ$ by
 \begin{align*}
@@ -683,7 +685,7 @@ The point $p$ of $\mathcal{M}_g \cap V$ falls into one of the above three cases:
 \end{proof}
 \end{thm}
 
-By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within cases (i) and (v), while those with a genus one spectral curve may also be case (ii). In either case, $\mathcal{M}_0$ and $\mathcal{M}_1$ are subsets of $U'$ and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
+By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within cases (i) and (vi), while those with a genus one spectral curve may also be case (ii). In either case, $\mathcal{M}_0$ and $\mathcal{M}_1$ are subsets of $U'$ and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
 
 To close this chapter, let us give a geometric interpretation to the polynomial $Q$. Recall that the conformal type of the domain of a harmonic map is given by the ratios of the principal parts of the differentials of its spectral data. Let the conformal type be denoted $τ$. For a nonconformal harmonic map we have that $b^2_0 = τ b^1_0$. Consideration of the constant terms of \eqref{eqn:EMPDi} reveal that
 \[

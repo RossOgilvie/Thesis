@@ -89,57 +89,95 @@ Suppose that $s$ is a holomorphic section of $\mathcal{O}(k)$. We may expand $s$
 \[
 η = s(ζ) = s_0 + s_1 ζ + \dots.
 \]
-Applying the transition
+We transition to the coordinates $(ζ',η')$ and this time expand about $ζ'=0$ to deduce
 \[
-η' = s(ζ')
+η' = ζ^{-k}s(ζ)
 = (ζ')^k (s_0 + s_1 (ζ'^{-1}) + \dots)
 = s_0 (ζ')^k + s_1 (ζ')^{k-1} + \dots + s_k + s_{k+1} (ζ')^{-1} + \dots,
 \]
 from which we see that $s_i = 0$ for all $i > k$. Thus we may identify sections of $\mathcal{O}(k)$ with polynomials of degree at most $k$. Further, the reality structiure $ρ$ on $\CP^1$ pulls back to give a reality structure on $\mathcal{O}(k)$, namely
 \[
-ρ(ζ,η) = \bra{ \cji{ζ}, \bar{ζ}^{k} \bar{η}}.
+ρ(ζ,η) = \bra{ \cji{ζ}, \bar{ζ}^{-k} \bar{η}}.
 \]
 Of particular interest are real sections of this bundle. Again, take $s$ to be a section of $\mathcal{O}(k)$. Then
 \[
 (ρ^*s) (ζ)
-= \bar{ζ}^{k} \bar{s\bra{ζ}^{-1}}
-= \bar{s_0}\bar{ζ}^{k} + \bar{s_1} \bar{ζ}^{k-1} + \dots + \bar{s_k},
+= \bar{ζ}^{-k} \bar{s(ζ)}
+= \bar{s_0}\bar{ζ}^{-k} + \bar{s_1} \bar{ζ}^{k-1} + \dots + \bar{s_k},
 \]
-hence a section is real is its coefficients obey $s_i = \bar{s}_{k-i}$, for $0 \leq i \leq k$. Because we shall often focus our attention on polynomials rather the sections to which they correspond, we define spaces of polynomials that a real with respect to $ρ$.
+hence a section is real, that is $ρ^*s = s$, if its coefficients obey $s_i = \bar{s_{k-i}}$, for $0 \leq i \leq k$. Because we shall often focus our attention on polynomials rather the sections to which they correspond, we introduce a notation for the spaces of polynomials that are real with respect to $ρ$.
 \begin{defn}
 Let $\mathcal{P}^k$ be the space of polynomials of degree at most $k$. We define the real polynomials $\mathcal{P}^k_\R$ to be
 \[
 \mathcal{P}^k_\R
-= \Set{ s = s_0 + \dots s_k ζ^k \in \mathcal{P}^k }{ s_i = \bar{s}_{k-i} \text{ for all } 0 \leq i \leq k}.
+= \Set{ s = s_0 + \dots s_k ζ^k \in \mathcal{P}^k }{ s_i = \bar{s_{k-i}} \text{ for all } 0 \leq i \leq k}.
 \]
+This is a real vector space of dimension $k+1$.
 \end{defn}
-If one is unfamiliar with this style of reality structure, this definition may produce some counterintuitive examples. For example, the polynomial $ζ$ is a real polynomial of $\mathcal{P}^2$. On reflection however, this is entirely appropriate, as fundamentally it represents a section of $\mathcal{O}(2)$ and the lack of a quadratic term simply indicates the presence of a roots at $ζ = \infty$.
+
+If one is unfamiliar with this style of reality structure, this definition may produce some counterintuitive examples. For example, the polynomial $ζ$ is a real polynomial of $\mathcal{P}^2$. On reflection however, this is entirely appropriate, as if one views this polynomial  as a section of $\mathcal{O}(2)$ then the lack of a quadratic term simply indicates the presence of a root at $ζ = \infty$.
+
+We shall illustrate two properties of these spaces $\mathcal{P}^k_\R$. Firstly a multiplicative property, and secondly that they are disjoint from one another. Suppose that $p \in \mathcal{P}^k_\R$ and $q \in \mathcal{P}^l_\R$. Then it follows immediately that $pq \in \mathcal{P}^{k+l}_\R$,
+\[
+ρ^*(pq)
+= \bar{ζ}^{-k-l} \bar{(pq)(ζ)}
+= \bar{ζ}^{-k} \bar{p(ζ)} \, \bar{ζ}^{-l} \bar{q(ζ)}
+= pq.
+\]
+Similiarly, if a real polynomial has a real factor then the quotient is also real. Using this, we may inductively prove that the spaces $\mathcal{P}^k_\R$ and $\mathcal{P}^l_\R$ are disjoint.
+\begin{lem}
+The only polynomial common to both $\mathcal{P}^k_\R$ and $\mathcal{P}^l_\R$, for $k\neq l$, is the zero polynomial.
+\begin{proof}
+We may assume that $k < l$ and suppose that $s$ lies in the intersection $\mathcal{P}^k_\R \cap \mathcal{P}^l_\R$. Then
+\[
+s
+= s_0 + s_1 ζ + \dots + \bar{s_0}ζ^k
+= s_0 + s_1 ζ + \dots + \bar{s_0}ζ^k + 0 ζ^{k+1} + \dots + 0ζ^l,
+\]
+which implies that $s_0 = 0$. Therefore $ζ$ divides $s$, and hence $ζ^{-1}s \in \mathcal{P}^{k-2}_\R \cap \mathcal{P}^{l-2}_\R$. Inductuvely therefore, we must only check the two base cases of $k=0,1$. If $s = s_0 \in \mathcal{P}^0_\R \cap \mathcal{P}^k_\R$ then as before
+\[
+s = s_0 + 0 ζ + \dots + 0 ζ^k,
+\]
+and if $s = s_0 + \bar{s_0}ζ \in \mathcal{P}^1_\R$ then
+\[
+s = s_0 + \bar{s_0}ζ + 0 ζ^2 + \dots + 0ζ^k.
+\]
+In either case, the reality condition forces $s$ to be the zero polynomial.
+\end{proof}
+\end{lem}
+
+This reality relationship between the coefficients of a polynomial of $\mathcal{P}^k_\R$ extends to a relationship between the roots of the polynomial. Let $s$ be a real polynomial of $\mathcal{P}^k_\R$. Let the $k$ roots of $s$, counted with multiplicity, be $\{α_i\}$. Then for some scalar $a\in\C$, $s$ factors as $s(ζ) = a(ζ - α_1)\dots(ζ-α_k)$. Applying the real involution,
+\begin{align*}
+s = ρ^*s
+&= \bar{ζ}^{-k} \bar{a}(\bar{ζ} - \bar{α_1})\dots(\bar{ζ}-\bar{α_k}) \\
+&= (-1)^k \bar{a}\bra{\prod_{i=1}^k \bar{α_i}} (\cji{ζ} - \cji{α_1})\dots(\cji{ζ} - \cji{α_k}).
+\end{align*}
+Therefore the set of roots must be invariant under $ζ\mapsto \cji{ζ}$. Every root must either lie on the unit circle, or else have a corresponding conjugate-inverse partner. As we see above, writing the factors as $ζ-α$ does not lead to a nice expression for scaling factor $a$. However, we can choose a normalisation of the factors that does better. If $β$ is a point on the unit circle, then
+\[
+β + \bar{β}ζ
+\]
+is a real polynomial of $\mathcal{P}^1_\R$, which has a root on the unit circle at $-β^2$. If $α$ is a point inside the unit disk then
+\[
+(ζ-α)(1-\bar{α}ζ)
+\]
+is a real polynomial of $\mathcal{P}^2_\R$. Given any real polynomial, we may construct another with the same roots where each factor is of the form above. The quotient of these two polynomials is a real polynomial of $\mathcal{P}^0_\R$, that is a real number. Hence every real polynomial may be written as a product of factors of these forms, multiplied by a real scalar.
 
 Armed with these line bundles over $\CP^1$, we may now provide a description of a marked curve $Σ$. Suppose that $Σ$ has genus $g$. Take a section $P(ζ)$ of $\mathcal{O}(2g+2)$ and consider the curve $Σ'$ in the total space of $\mathcal{O}(g+1)$ defined by $η^2 = P(ζ)$. It is hyperelliptic, with involution $σ(ζ,η) = (ζ,-η)$, and projection $π(ζ,η) = ζ$. Suppose that $P(ζ)$ has the following properties
 \begin{enumerate}[label=(P.\arabic*)]
-\item\label{P:real curve} Real spectral curve: $P(ζ)$ is a real section of $\mathcal{O}(2g+2)$ with respect to the real structure induced by $ρ$.
+\item\label{P:real curve} Real spectral curve: $P(ζ)$ is a real section of $\mathcal{O}(2g+2)$ with respect to the real structure induced by $ρ$. That is, it is an element of $\mathcal{P}^{2g+2}_\R$.
 \item\label{P:no real zeroes} No real zeroes: $P(ζ)$ has no zeroes on the unit circle $\S^1\subset\CP^1$.
 \item\label{P:simple zeroes} Simple zeroes: $P(ζ)$ has only simple zeroes.
 \end{enumerate}
-Then $Σ'$ is a marked curve. The holomorphic involution $ρ$ is the restriction of $ρ$ on $\mathcal{O}(2g+2)$. The fixed points of $σ$ are the roots of $P$, so \ref{P:no real zeroes} ensures that $ρ\circ σ$ is fixed point free and \ref{P:simple zeroes} provides that the curve is not singular.
+Then $Σ'$ is a marked curve. The holomorphic involution $ρ$ is the restriction of $ρ$ on $\mathcal{O}(g+1)$. The fixed points of $σ$ are the roots of $P$, so \ref{P:no real zeroes} ensures that $ρ\circ σ$ is fixed point free and \ref{P:simple zeroes} provides that the curve is not singular.
 
 Hyperelliptic curves are determined by their branch points in $\CP^1$, up to automorphism of $\CP^1$. To see this, first choose a non-branch point of $\CP^1$ and take the complement. Over this affine space, the function field of $Σ$ is a quadratic extension and so must be Galois. Take the nontrivial automorphism $σ$ of the extension and find an element $η$ such that $σ(η)= - η$ (this may be done by taking any nonfixed element $\tilde{η}$ and choosing $η = \tilde{η} - σ(\tilde{η})$). If we consider its square, $σ(η^2) = η^2$, so we have that $η^2=P(ζ)$ for some polynomial $P$. This determines $Σ$ up to scaling of $y$ and automorphism of $\CP^1$. The choice of automorphism of $\CP^1$ has however been removed by the imposition of the marked points, which fix $0,1$ and $\infty$. All marked curves therefore correspond to some section $P(ζ)$, determined uniquely up to scaling.
 
-Let $P(ζ) = A(ζ-β_1)\cdots(ζ-β_k)$ be a section of $\mathcal{O}(2g+2)$. Applying the real involution
-\[
-\bar{ζ}^{-k} \overline{P(ζ)}
-= \bar{ζ}^{-k} \bar{A}(\bar{ζ}-\bar{β}_1)\cdots(\bar{ζ}-\bar{β}_n)
-= \bar{A}\bra{\prod_{β_i \neq 0} \bar{β}_i (\cji{β}_i-\cji{ζ})}
-\bra{\prod_{β_i=0}\cji{ζ}}.
-\]
-If $P$ is real then this is equal to $P(\cji{ζ})$ and if $P$ has no real zeroes then for no $i$ is $β_i$ equal to $\cji{β}_i$. Thus the set of roots is fixed under this involution, and the nonzero roots must arrange into pairs. If there is a root at zero, it must be paired with a root `at infinity'; in other words $P$ has degree $2g+1$.
-
-Suppose we have a marked curve of genus $g$. Denote its branch points inside the unit circle as $α_0,\cji{α}_0,\ldots,α_g,\cji{α}_g$. We fix the following scaling of $P$
+Suppose we have a marked curve of genus $g$. Denote its branch points inside the unit circle as $α_0,\cji{α}_0,\ldots,α_g,\cji{α}_g$. We fix the following scaling of $P$,
 \[
 P(ζ) = \prod_{i=0}^{g} (ζ - α_i)(1 -\bar{α}_i ζ).
 \labelthis{eqn:def P}
 \]
-$P$ is a real section. The nice feature of this scaling is that it is well-behaved if one branch point is zero, the corresponding factor becomes simply $ζ$, and the degree of $P$ is reduced as reqired.
+Notice the absence of any factors of the form $β + \bar{β}ζ$ because $P$ has no roots on the unit circle. The nice feature of this scaling is that it is well-behaved if one branch point is zero; the corresponding factor becomes simply $ζ$.
 
 \subsection{Differentials of the Second Kind}
 
