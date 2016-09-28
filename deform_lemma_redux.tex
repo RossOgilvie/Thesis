@@ -198,26 +198,24 @@ Thus we have divided our analysis into six cases organised according to the comm
 \begin{center}
 \begin{tabular}{|c|c|c|c|l|}
 \hline
-Case & Type & $\deg F$ & $\deg G$ & Description\\ \hline\hline
+Case & Type & $F \in \mathcal{P}^k_\R$ & $G\in \mathcal{P}^l_\R$ & Description\\ \hline\hline
 i & \multirow{4}{*}{Nonconformal: $P_0 \neq 0$} & 0 & 0
 & $\gcd(b^1,b^2) = 1$\\ \cline{1-1}\cline{3-5}
 ii && 0 & 1, 2
 & $\gcd(b^1,b^2)$ is linear or quadratic and does not divide $P$ \\ \cline{1-1}\cline{3-5}
 iii && 2 & 0
 & $\gcd(b^1,b^2)$ is quadratic and divides $P$ \\ \cline{1-1}\cline{3-5}
-iv && \multicolumn{2}{|c|}{$\deg FG > 2$}
+iv && \multicolumn{2}{|c|}{$FG \in \mathcal{P}^k_\R,\, k>2$}
 & The degree of $\gcd(b^1,b^2)$ is greater than two \\ \hline\hline
 %%%%%%%%%%%%%%%%%%%%
-v &\multirow{2}{*}{Conformal: $P_0 = 0$}& 0 & 0,1
-& $\gcd(b^1,b^2) \in \mathcal{P}^0_\R \cup \mathcal{P}^1_\R$, but $\gcd(b^1,b^2)\neq ζ$ \\ \cline{1-1}\cline{3-5}
-vi && 1 & 0
-& $\gcd(P,b^1,b^2) = \gcd(b^1,b^2) = ζ$ \\ \cline{1-1}\cline{3-5}
-vii && \multicolumn{2}{|c|}{$\deg FG > 1$}
-& The degree of $\gcd(b^1,b^2)$ is greater than one \\ \hline
+v &\multirow{2}{*}{Conformal: $P_0 = 0$}& 0,2 & 0,1
+& $\gcd(b^1,b^2) \in \mathcal{P}^0_\R \cup \mathcal{P}^1_\R \cup \mathcal{P}^2_\R$ \\ \cline{1-1}\cline{3-5}
+vi && \multicolumn{2}{|c|}{$FG \in \mathcal{P}^k_\R,\, k>2$}
+& $\gcd(b^1,b^2)\in \mathcal{P}^k_\R$ for some $k>2$ \\ \hline
 \end{tabular}
 \end{center}
 
-We have seen that the spectral data in cases (iv) and (vii) do not admit any deformations.
+These six cases are disjoint and cover all of the space $U$. We have seen that the spectral data in cases (iv) and (vi) do not admit any deformations.
 In general, points of $\mathcal{M}_g$ where case (iii) holds are singularities of a deformation \cite{Schmidt2016} and are not considered further in this thesis. We shall note only that this case cannot occur when the genus of the spectral curve is zero or one.
 When the genus is zero, we have seen that the differentials cannot have any common roots at all (Lemma \ref{lem:no singularities}). We shall now give a similar short proof to show that the differentials of a genus one spectral curve may not have a common root at the branch points. Suppose that $Σ$ is genus one with branch points at $α,β,\cji{α},\cji{β}$, none of which are zero, and that $\gcd(P,b^1,b^2) = F$ is quadratic. Without loss of generality, let $F = (ζ-α)(1-\bar{α}ζ)$ and $b^1 = (c + dζ + \bar{c}ζ^2)F$ for some complex number $c$ and real number $d$. Expanding this and applying \eqref{eqn:residue condition} shows that
 \begin{align*}
@@ -226,17 +224,26 @@ When the genus is zero, we have seen that the differentials cannot have any comm
 \end{align*}
 The coefficient of $c$ above, the bracketed expression, is never zero and so $c$ is determined by $d$. Hence $b^1$ is determined up to a real scalar. This demonstrates any two differentials with the same factor $F$ are real linearly dependent, which contradicts \ref{P:linear independence}.
 
-Let $U'$ be the subset of points of the two  cases: (i) and (ii).
-As the points of cases (iii), (iv) and (vii) form a closed subvariety of the space of real polynomials, $U'$ is open. With reference to Definition \ref{def:def U}, we may characterise $U'$ as the set
+Observe that because of the requirements that the differentials must have double poles, $\mathcal{M}_g$ will only intersect with a specific part of case (v). By equation REF, if $P_0$ vanishes at a point of $\mathcal{M}_g$ then so too must $b^1_0$ and $b^2_0$. Thus the intersection of $\mathcal{M}_g$ and the points of case (v) are the points where $\gcd(b^1,b^2) = ζ$. We will use this observation in Lemma \ref{lem:tangent conformal} to make introduce some assumptions on the polynomials $b^i$ without any loss of generality.
+
+Let $U'$ be the subset of points of the three cases: (i), (ii) and (v). The set $U'$ is open because the points of cases (iii), (iv) and (vi) form a closed subset of the space $U$ of triples of real polynomials satifying the conditions of REF. To see that it is closed, first note that the union of cases (iv) and (vi) may be described simply as the space where $\gcd(b^1,b^2)$ lies in $\mathcal{P}^k_\R$ for some $k>2$, without regard for whether $P_0$ vanishes or not. Then the union of this with the points of case (iii) is the same as the union
 \[
-U' = \Set{ (P,b^1,b^2) \in U } { F = \gcd(P,b^1,b^2) = 1,\; G=\gcd(b^1,b^2) \in \mathcal{P}^0_\R \cup \mathcal{P}^1_\R \cup \mathcal{P}^2_\R }.
+\Set{(P,b^1,b^2) \in U}{ \gcd(b^1,b^2) \in\mathcal{P}^k_\R,\,k >2 }
+\cup
+\Set{(P,b^1,b^2) \in U}{ \gcd(P,b^1,b^2) \in\mathcal{P}^l_\R,\,l \geq 2 },
+\]
+which is the union of two closed sets.
+
+With reference to Definition \ref{def:def U}, we may characterise $U'$ as the set
+\[
+U' = \Set{ (P,b^1,b^2) \in U } { F = \gcd(P,b^1,b^2) \in \mathcal{P}^k_\R,\, k < 2, \text{ and } \gcd(b^1,b^2) \in \mathcal{P}^l_\R, l \leq 2 }.
 \labelthis{eqn:def U'}
 \]
 In particular, the points of case (i) are the set
 \[
 U'' = \Set{ (P,b^1,b^2) \in U } { FG = \gcd(b^1,b^2) = 1 }.
 \]
-The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap U'$ is a manifold. We also show that the points of case (vi) are smooth points of $\mathcal{M}_g$.
+The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap U'$ is a manifold. We also show that the points of case (v) are smooth points of $\mathcal{M}_g$.
 
 In each of the three cases, $F^i$ must divide $c^i$ and $G$ must divide $Q$. Let us therefore define
 \[
@@ -453,13 +460,13 @@ Hence we have established \eqref{eqn:R reality} at all points of $U''$.
 \end{proof}
 \end{lem}
 
-In cases (ii) and (vi), the degree of $\tilde{b}^2$ is
+In cases (ii) and (v), the degree of $\tilde{b}^2$ is
 \[
 g+3 - (d_2 + d_F + d_G) \leq g + 2 - d_2,
 \]
 as either $F$ or $G$ will be nontrivial. This means that the minimal solution to \eqref{eqn:Q reduced}, which has degree strictly less than $\deg \tilde{b}^2$, will have the correct degree without needing to impose any extra conditions on $Q$.
 
-At this point we have shown how to solve equations such as \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}, when the solutions will be have the correct degree, how to determine all of the solutions when the solution is not unique, and the existence of real solutions. We are therefore ready to solve these equations in each of the three cases (i), (ii), and (vi), and to use the solutions to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q}. At the end of that process, we will have constructed a tangent vector $(\dot{P}, \dot{b}^1, \dot{b}^2)$ to the moduli space of spectral data $\mathcal{M}_g$.
+At this point we have shown how to solve equations such as \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}, when the solutions will be have the correct degree, how to determine all of the solutions when the solution is not unique, and the existence of real solutions. We are therefore ready to solve these equations in each of the three cases (i), (ii), and (v), and to use the solutions to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q}. At the end of that process, we will have constructed a tangent vector $(\dot{P}, \dot{b}^1, \dot{b}^2)$ to the moduli space of spectral data $\mathcal{M}_g$.
 
 
 
@@ -600,7 +607,7 @@ This has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at t
 
 
 
-\begin{lem}[Case (vi)]
+\begin{lem}[Case (v)]
     \label{lem:tangent conformal}
 Take a triple of spectral data $(P,b^1,b^2)$ associated with a conformal harmonic map, with a non-singular spectral curve given by $η^2 = P$ of genus $g$. Suppose that $\gcd(b^1,b^2) = ζ$. Then for every pair of real numbers $(Q_1,r)$, there is a unique tangent vector $(\dot P, \dot b^1, \dot b^2)$ to the space of spectral data $\mathcal{M}_g$.
 
@@ -666,7 +673,7 @@ Though the details of the above three lemmata vary, we see that in every case th
 The open subset $\mathcal{M}_g \cap U'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold.
 
 \begin{proof}
-Recall the defintion of $U'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i), (ii) or (vi). That is, $U'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is either one or $ζ$, and $\deg\left[ \gcd(b^1,b^2) \right] \leq 2 - \deg\left[ \gcd(P,b^1,b^2)\right]$.
+Recall the defintion of $U'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i), (ii) or (v). That is, $U'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is either one or $ζ$, and $\deg\left[ \gcd(b^1,b^2) \right] \leq 2 - \deg\left[ \gcd(P,b^1,b^2)\right]$.
 
 At any point $p\in \mathcal{M}_g \cap U'$, take a simply connected open neighbourhood $V\subset U'$. On this neighbourhood, define the map $Ψ$ by
 \begin{align*}
@@ -685,7 +692,7 @@ The point $p$ of $\mathcal{M}_g \cap V$ falls into one of the above three cases:
 \end{proof}
 \end{thm}
 
-By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within cases (i) and (vi), while those with a genus one spectral curve may also be case (ii). In either case, $\mathcal{M}_0$ and $\mathcal{M}_1$ are subsets of $U'$ and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
+By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within cases (i) and (v), while those with a genus one spectral curve may also be case (ii). In either case, $\mathcal{M}_0$ and $\mathcal{M}_1$ are subsets of $U'$ and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
 
 To close this chapter, let us give a geometric interpretation to the polynomial $Q$. Recall that the conformal type of the domain of a harmonic map is given by the ratios of the principal parts of the differentials of its spectral data. Let the conformal type be denoted $τ$. For a nonconformal harmonic map we have that $b^2_0 = τ b^1_0$. Consideration of the constant terms of \eqref{eqn:EMPDi} reveal that
 \[
