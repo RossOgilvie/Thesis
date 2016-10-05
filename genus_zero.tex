@@ -4,62 +4,82 @@
 \label{sec:Genus Zero}
 
 The moduli space of spectral data where the spectral curve is genus zero is an instructive case.
-It is possible to describe this space explicitly using only elementary functions, so we will develop formulae for all such harmonic maps, solutions to \eqref{eqn:Hit1.7} and spectral data. These examples will allow us to illustrate some of the correspondences between properties of these three sets of objects. The process will also demonstrate the spectral curve construction that was outlined in Section \ref{sub:construction}. Finally, it follows from Theorem \ref{thm:moduli manifold} that this moduli space $\mathcal{M}_0$ is a two-dimensional manifold, and provides us with a simple model that we will try to emulate for genus one spectral curves in the next chapter.
+It is possible to describe this space using only elementary functions, so we will give explicit formulae for all such harmonic maps $f$ and their associated solutions $(A,Φ)$ to \eqref{eqn:Hit1.7} and spectral data $(Σ,Θ,\tilde{Θ})$. These formulae will allow us to illustrate the correspondences between certain properties of the map and its spectral data. The process of deriving the spectral data from a formula of a harmonic map also serves as a demonstration of the spectral curve construction that was outlined in Section \ref{sub:construction}. Finally, we may describe the moduli space $\mathcal{M}_0$ as a disjoint union of discs to both give an example of the results of the previous chapter and as a guide for the description of $\mathcal{M}_1$ in the subsequent chapter.
 
-This example can be divided into two parts. In the first part, we start with \eqref{eqn:Hit1.7} and find all translation invariant solutions.
-We may then determine which solutions correspond to harmonic maps from a torus, by forcing a periodicity constraint. We can write down an explict formula for each harmonic map, and by applying rotations bring it into a standard form. In the second part, we take these harmonic maps and work through the steps of Section \ref{sub:construction} to produce the associated spectral data. We compare how the parameters that arise in the solutions to \eqref{eqn:Hit1.7} align with the parameters present in the description of the spectral data as defined by conditions \ref{P:real curve}--\ref{P:quaternionic}.
+The derivations within this chapter may be divided into three parts. In the first part, we start with equations \eqref{eqn:Hit1.7} and find all translation invariant solutions. Amoung these solutions, we determine which correspond to harmonic maps from a torus by forcing a periodicity constraint. We then write an explict formula for each harmonic map, and bring it into a standard form by applying rotations. In the second part, we take these harmonic maps and work through the steps of Section \ref{sub:construction} to produce the associated spectral data. Further calculations give rise to formulae for the infinitesimal deformations in terms of derivative of the branch point, and an expression of the energy of the harmonic map.
 
-Let $z\in\C$ be a uniformising coordinate on the torus $\C/\Z\langle 1,τ\rangle$. Suppose that we have a solution $(A,Φ)$ to \eqref{eqn:Hit1.7} that is invariant translations of this torus. Following \cite[(9.11)]{Hitchin1990}, we write the Higgs field as $Φ = F \,dz$ and the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to the trivialisation arising from the translation action, for constant traceless matrices $F$ and $G$.
-With these definitions, equations \eqref{eqn:Hit1.7} become
+Let us start then by finding all translation invariant pairs $(A,Φ)$ solving equations \eqref{eqn:Hit1.7}. By translation invariance we mean that, for $z\in\C$ a uniformising coordinate on the torus $M = \C/\Z\langle 1,τ\rangle$, we may write the Higgs field as $Φ = F \,dz$ and the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to the trivialisation arising from the translation action, for constant traceless matrices $F$ and $G$ (compare to \cite[(9.11)]{Hitchin1990}). With these definitions, equations \eqref{eqn:Hit1.7} become
 \[
 [F,G] = 0\;\; \text{and}\;\; [G,G^*] = [F,F^*].
 \]
-If $F$ commutes with is conjugate-transpose then so too does $G$, and they are simultaneously diagonalisable by an $SU(2)$ matrix. This case corresponds to a map from the torus to a circle, which does not produce a spectral curve. Assume therefore that $[F,F^*] \neq 0$. The first equation implies that $F$ and $G$ commute, so we may write $G = λF$. Then $(\abs{λ}^2 - 1)[F,F^*] = 0$ implies that $\abs{λ}=1$. Let $κ\in\S^1$ be such that $\bar{κ}^2=λ$.
+If $F$ commutes with its conjugate-transpose then so too does $G$, and they are simultaneously diagonalisable by an $\SU(2)$ matrix. This case corresponds to a conformal map from the torus to a $2$-sphere, which does not produce a spectral curve \cite[Prop~3.14]{Hitchin1990}. Assume therefore that $[F,F^*] \neq 0$. The first equation implies that $F$ and $G$ commute, so we may write $G = λF$. Then $(\abs{λ}^2 - 1)[F,F^*] = 0$ implies that $\abs{λ}=1$. Let $κ\in\S^1$ be such that $\bar{κ}^2=λ$.
 
-Hence a translation invariant solution to \eqref{eqn:Hit1.7} is given by a constant traceless matrix $F$ and a complex number $κ\in\S^1$, with $G = \bar{κ}^2 F$. Recall that for any solution for \eqref{eqn:Hit1.7}, there is an $\S^1$ family of flat unitary connections \eqref{eqn:flat connections}, which are given in this case by
+Hence a translation invariant solution to \eqref{eqn:Hit1.7} is given by a constant traceless matrix $F$ and a complex number $κ\in\S^1$, with $G = \bar{κ}^2 F$. Recall equation \eqref{eqn:flat connections}, that for any solution for \eqref{eqn:Hit1.7} there is an $\S^1$ family of flat unitary connections, which are given in this case by
 \[
 d_ζ := d_A + ζ^{-1}Φ - ζΦ^*
 = d + G\,d\bar{z} - G^*\,dz + ζ^{-1}F\,dz - ζF^*\,d\bar{z},
 \labelthis{eqn:flat connection translation}
 \]
-for $ζ\in\S^1$. As the matrices $F$ and $G$ are constant, for each $ζ$ one can solve the parallel transport equation $d_ζ X = 0$ explicitly for a vector field $X$ by exponentiation.
-One may then recover the associated harmonic map as the change of gauge between the two parallel vector fields for the connections $d_1$ and $d_{-1}$, as in \eqref{eqn:gauge change}.
-After factorising, we may write the harmonic map as
+for $ζ\in\S^1$. As the matrices $F$ and $G$ are constant, for each $ζ$ one can solve the parallel transport equation $d_ζ X = 0$ explicitly by exponentiation.
+One may then recover the associated harmonic map as the change of gauge between two parallel vector fields for the connections $d_1$ and $d_{-1}$, as in \eqref{eqn:gauge change}.
+After factorising, we write the harmonic map as
 \begin{align*}
 f(z) = \exp( &(κz + \bar{κ}\bar{z})(-\bar{κ}F + κF^*) ) \\
 &\cdot \exp( (κz - \bar{κ}\bar{z})(-\bar{κ}F - κF^*) ).
 \end{align*}
-We may simplify this formula by making the following substitutions. On the torus, we make a change of coordinates to $w = κz$ and write $w$ as the sum of its real and imaginary parts $w_R + \iu w_I$. We note that $sl_2\C$ can be decomposed as a direct sum $su_2 \oplus \iu su_2$. Write $\bar{κ}F = X + \iu Y$ for $X,Y\in su_2$ and we recognise the two expressions $-\bar{κ}F + κF^*$ and $-\bar{κ}F - κF^*$ as taking the real and imaginary parts of $κF$. With these substitutions, the above formula becomes
+We may simplify this formula by making the following substitutions. On the torus,  make the change of coordinates $w = κz$ and let $w = w_R + \iu w_I$ be the sum of its real and imaginary parts. We note that $\sl_2\C$ can be decomposed as a direct sum $\su_2 \oplus \iu \su_2$. If we decompose $\bar{κ}F = X + \iu Y$ for $X,Y\in \su_2$ then we may replace the two expressions $-\bar{κ}F + κF^*$ and $-\bar{κ}F - κF^*$ by the real and imaginary parts of $κF$. With these substitutions, the above formula becomes
 \[
-f(w) = \exp( -4w_R X ) \cdot \exp( 4 w_I Y  ).
+f(w) = \exp( -4w_R X ) \cdot \exp( 4 w_I Y ).
 \labelthis{eqn:genus zero simple map}
 \]
-The matrix exponential of a $su_2$ matrix is of course an $SU(2)$ matrix, and a line through the origin of $su_2$, such as $\Set{-4w_R X }{w_R \in \R}$, is mapped to a one parameter subgroup of $SU(2)$, a circle. Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles. As we vary $w_R$, the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$.
+The matrix exponential of an $\su_2$ matrix is of course an $\SU(2)$ matrix, and a line through the origin of $\su_2$, such as $\Set{-4w_R X }{w_R \in \R}$, is mapped to a one parameter subgroup of $\SU(2)$, a circle. As we vary $w_R$, the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$. Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles, and hence the image is a torus.
 
-This is a map from the plane $z\in\C$ to $SU(2)$. We would like to know when it descends to a map from our torus $\C/\Z\langle 1,τ\rangle$. Thus we must compute the periodicity of this map, and to do so we need to know how to compute explicitly the matrix exponential of an $su_2$ matrix $Z$. The determinant of an $su_2$ matrix is always positive, so let the norm of $Z$ be given by the square root of its determinant. We may define the unit matrix $\hat{Z}$ in direction $Z$ to be $Z$ divided by its norm. If we note that $Z^2 = -\abs{Z}^2 I$, the matrix exponential may be written concisely as
-\[
-\exp Z = I \cos \abs{Z} + \hat{Z} \sin \abs{Z}.
-\]
-Given this explicit formula for the matrix exponential, we now compute the periods of the map $f$. For an $su_2$ matrix $Z$, $\exp Z = I$ when $\abs{Z} \in 2π\Z$. We may identify $su_2$ with the imaginary quaternions $\R\langle i,j,k\rangle$ via the standard basis of $su_2$
+Not all solutions to \ref{eqn:Hit1.7} correspond to harmonic maps of the torus, and thus far this map $f$ is only a map from the plane $z\in\C$ to $\SU(2)$. It induces a map on the torus $M$ when it periodic with respect to the lattice $\Z\langle 1,τ\rangle$. Thus we must show firstly that the map is periodic and then determine for which matrices $X,Y$ and rotation $κ$ do these periods lie in the lattice. To do so we will need to know how to compute explicitly the matrix exponential of an $\su_2$ matrix.
+
+Calculations with $\su_2$ matrices are far more pleasant when one leverages their underlying geometry.
+We may identify $\su_2$ with $\R^3 = \R\langle i,j,k\rangle$ via the standard basis of $\su_2$
 \[
 σ_1 = \begin{pmatrix}
 \iu & 0 \\ 0 & -\iu
-\end{pmatrix} \mapsto i, \;
+\end{pmatrix} \mapsto i, \quad
 σ_2 = \begin{pmatrix}
 0 & 1 \\ -1 & 0
-\end{pmatrix}\mapsto j, \;
+\end{pmatrix}\mapsto j, \quad
 σ_3 = \begin{pmatrix}
 0 & \iu \\ \iu & 0
 \end{pmatrix} \mapsto k.
 \]
-Under this identification, matrix multiplication agrees with quaternionic multiplication. In particular, if $X$ and $Y$ are linearly independent matrices, then the set $\{X,Y,YX, I\}$ is linearly independent. An element $w\in\C$ is a period of $f$ exactly when
+If $\langle\cdot,\cdot\rangle_{\R^3}$ and $\times_{\R^3}$ are the usual inner and cross products of $\R^3$ then the multiplication of two matrices $A,B \in \su_2$ may be computed as
+\[
+AB = -\langle A, B\rangle_{\R^3} I + (A\times_{\R^3} B).
+\]
+Further, this identification puts an inner product on $\su_2$, given by
+\[
+\langle A, B \rangle_{\su_2} = -\frac{1}{2}\tr AB.
+\]
+This inner product is actually the same as the metric that arises by considering $\SU(2)$ as $\S^3$. From this formula, the norm of an $\su_2$ matrix is the square root of its determinant. We define the unit matrix $\hat{Z}$ in direction $Z$ to be $Z$ divided by its norm. With these definitions, note that $Z^2 = -\abs{Z}^2 I$ and hence the matrix exponential may be written concisely as
+\[
+\exp Z = I \cos \abs{Z} + \hat{Z} \sin \abs{Z}.
+\]
+
+Given this explicit formula for the matrix exponential, we now compute the periods of the map $f$. By the assumption that the matrix $F = κ(X+\iu Y)$ does not commute with its conjugate-transpose, $X$ and $Y$ are linearly independent. If $a+\iu b$ is a point such that $f(a+\iu b) = I$ then $\exp(4aX ) = \exp(4bY)$, and so by linear independence they must both equal $\pm I$. For any $w\in\C$ it follows that
+\begin{align*}
+f(w + a +\iu b)
+&= \exp( -4(w_R+a) X ) \exp( 4 (w_I+b) Y ) \\
+&= \exp( -4aX ) \exp( -4w_R X ) \exp( 4 b Y ) \exp( 4 w_I Y ) \\
+&= (\pm I)^2 \exp( -4w_R X ) \exp( 4 w_I Y ) \\
+&= f(w),
+\end{align*}
+and thus $a+\iu b$ is a period. The converse, that $f(w)=I$ if $w$ is a period, is trivial. Thus $f$ is periodic, and its periods are precisely the points where it takes the value $I$.
+
+We have reduced the task of finding the periods of $f$ to that of solving $f(w)=I$. Again because $X$ and $Y$ are linearly independent matrices, the set $\{I,X,Y,XY\}$ is linearly independent. An element $w\in\C$ is a period of $f$ exactly when
 \begin{align*}
 f(w) = I \cos(4w_R\abs{X})&\cos(4w_I\abs{Y})
 - \hat{X}\sin(4w_R\abs{X})\cos(4w_I\abs{Y}) \\
 &+ \hat{Y}\cos(4w_R\abs{X})\sin(4w_I\abs{Y})
 - \hat{X}\hat{Y}\sin(4w_R\abs{X})\sin(4w_I\abs{Y}) = I
 \end{align*}
-Squaring and adding the coefficients of $\hat{Y}$ and $\hat{Y}\hat{X}$ together shows that $\sin^2(4w_I\abs{Y}) = 0$, and likewise for $\hat{X}$ and $\hat{Y}\hat{X}$ that $\sin^2(4w_R\abs{X}) = 0$. Let $4w_R\abs{X} = πk$ and $4w_I\abs{Y} = πl$. Then the coefficient of $I$ requires that
+Squaring and adding the coefficients of $\hat{Y}$ and $\hat{X}\hat{Y}$ together shows that $\sin^2(4w_I\abs{Y}) = 0$, and likewise for $\hat{X}$ and $\hat{X}\hat{Y}$ that $\sin^2(4w_R\abs{X}) = 0$. Let $4w_R\abs{X} = πk$ and $4w_I\abs{Y} = πl$. Then the coefficient of $I$ requires that
 \[
 1 = \cos(4w_I\abs{Y})\cos(4w_R\abs{X}) = (-1)^k (-1)^l = (-1)^{k+l}.
 \]
@@ -72,7 +92,7 @@ Thus the lattice of the periods of $f$, expressed in the variable $w$, is genera
 
 \makefigure{The lattice of periods of $f$.}{thesis_graphics_temp/genus_zero_lattice.png}
 
-The roles of $κ$, $\abs{X}$, and $\abs{Y}$ are now apparent; they must agree with the conformal type $τ$ in order for the map $f$ to be defined on the torus $\C/\Z\langle1,τ\rangle$, and they determine the number of windings of the torus onto its image. Agreement with the conformal type means that the three parameters are chosen so that $z=1,τ$ are points of this lattice of periods. That is, there must be integers $n,m,\tilde{n},\tilde{m}$
+The geometric meaning of $κ$, $\abs{X}$, and $\abs{Y}$ are now apparent; they must agree with the conformal type $τ$ in order for the map $f$ to be defined on the torus $\C/\Z\langle1,τ\rangle$, and they determine the number of windings of the torus onto its image. Agreement with the conformal type means that the three parameters are chosen so that $z=1,τ$ are points of this lattice of periods. That is, there must be integers $n,m,\tilde{n},\tilde{m}$
 \[
 κ\cdot 1 = n κ_0 + m κ_1,\;\;
 κ\cdot τ = \tilde{n} κ_0 + \tilde{m} κ_1
