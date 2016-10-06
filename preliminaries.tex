@@ -58,20 +58,25 @@ Consider now the case where $M$ a torus and $G=SU(2)$. Hitchin investigated solu
 d_ζ := d_A + ζ^{-1}Φ - ζΦ^*,
 \labelthis{eqn:flat connections}
 \]
-where flatness follows from the two equations. Fix a base point and take a pair of generating loops for the fundamental group. The holonomy representation is described by two matrices $H(ζ)$ and $\tilde{H}(ζ)$ in $SL_2\C$ corresponding to transporting vectors along those loops parallel to $d_ζ$. Because the fundamental group is abelian, these matrices commute. Their eigenvalues $μ$ satisfy the quadratic equation
+where flatness follows from the two equations. Fix a base point and take a pair of generating loops for the fundamental group. The holonomy representation is described by two matrices $H(ζ)$ and $\tilde{H}(ζ)$ in $SL_2\C$ corresponding to transporting vectors along those loops parallel to $d_ζ$. The eigenvalues $μ$ of $H$ satisfy the quadratic equation
 \[
 μ^2 - (\tr H)μ + 1 = 0.
 \]
+As the matrices $H$ and $\tilde{H}$ commute, they share eigenspaces. We therefore define the spectral curve $Σ$ to be the closure of
+\[
+\Set{ (ζ, L)\in \C^\times \times \CP^1 }{ L \text{ is an eigenline of } H(ζ) },
+\]
+in $\CP^1\times \CP^1$. This curve $Σ$ double covers $\C^\times$ via projection onto the first factor.
+Hitchin establishes (Prop 2.3) that the eigenvalues $μ,\tilde{μ}$ of $H,\tilde{H}$ considered as holomorphic functions over $\C^\times$ are branched at only finitely many points, and further that (except in the trvial case of a conformal map to a $2$-sphere) these functions have the same branch points (Prop 2.10). Thus the spectral curve is of finite genus. By analysis of the signularities of $\tr H, \tr \tilde{H}$ as $ζ\to 0$, it is shown that $\log μ$ and $\log \tilde{μ}$ are meromorphic functions in a neighbourhood of $0$. Specifically, they have a simple pole and the eigenlines may coincide to at most first order. Using the real structure, one may transport this information to $ζ=\infty$ also.
 
-Next Hitchin establishes (Prop 2.3) that the eigenvalues $μ,\tilde{μ}$ of $H,\tilde{H}$ considered as holomorphic functions over $\C^\times$ are branched at only finitely many points, and further (Prop 2.10) that (except in a trvial case) these functions have the same branch points. By examining the singularities of $\tr H, \tr \tilde{H}$ as $ζ\to 0$, it is shown that $\log μ$ and $\log \tilde{μ}$ are meromorphic functions in a neighbourhood of $0$. Using the real structure to transport this information to $ζ=\infty$, on constructs a nonsingular hyperelliptic curve over $\CP^1$, branched over the points where $μ,\tilde{μ}$ are, such that $\log μ$ and $\log \tilde{μ}$ are well-defined meromorphic functions. One then differentiates $\log μ, \log \tilde{μ}$ to get differentials of the second kind $Θ,\tilde{Θ}$ respectively, removing the additive ambiguity of taking logarithms.
-
-The final stage turns attention to the eigenline bundle over the hyperelliptic curve. As the matrices $H$ and $\tilde{H}$ commute, at each point of the curve we associate the common eigenspace of the eigenvalues $μ$. This is a holomorphic line bundle $E$. At points where $E$ and $σ^*E$ coincide, we add singular points of the corresponding order to the hyperelliptic curve, to construct the spectral curve $Σ$ of arithmetic genus $g = \deg E^* - 1$.
+Having constructed a curve, one may furnish it with addtional objects. For instance, we can differentiate $\log μ, \log \tilde{μ}$ to get differentials of the second kind $Θ,\tilde{Θ}$ respectively. One can also consider the trivial $\C^2$ bundle over $Σ$ and construct the eigenline bundle $E$ over $Σ$. By the construction of $Σ$, its arithmetic genus obeys $g = \deg E^* - 1$.
 
 Having assemebled this data $(Σ,Θ,\tilde{Θ},E)$, Theorem 8.1 characterises spectral data that arises from pairs $(A,Φ)$ and show that this is a correspondence unique up to tensoring with a flat $Z_2$ bundle. The proof proceeds by direct reconstruction. \cite[Theorem~8.20]{Hitchin1990} firstly reformulates the requirement that $d_1, d_{-1}$ be flat connections into a requirement about the values of $μ$, and then identifies certain geometric features of a harmonic map with properties that spectral data may possess. For example, a harmonic map is conformal exactly when the spectral curve is branched over $0$. The following sections will introduce the various conditions that spectral data must satisfy.
 
 Throughout this thesis, we will consider only nonsingular spectral curves. The primary reason to do this is that our particular focus shall be on spectral curves of low genus, and all such spectral curves are nonsingular, as we demonstrate in Lemma \ref{lem:no singularities}. Such an assumption then allows us to comment when our methods exend more generally without distraction.
 
 \subsection{Marked Curve}
+\label{sub:marked curve}
 
 Consider a (nonsingular) hyperelliptic curve $Σ$ over $\CP^1$ with hyperelliptic involution $σ$ and projection $π:Σ\to\CP^1$, such that $π\circ σ = π$. We call a tuple $(Σ,\{ ξ_0, σ(ξ_0) \}, \{ ξ_1, σ(ξ_1) \})$ a \emph{marked curve} if
 \begin{enumerate}[label=(P.\arabic*')]
@@ -208,7 +213,7 @@ We are now in a position to state fully the conditions for $(Σ,Θ,\tilde{Θ},E)
 \begin{enumerate}[resume*]
 \item\label{P:linear independence} Linear independence: The principal parts of the differentials $Θ, \tilde{Θ}$ are real linearly independent.
 \item\label{P:periods} Periods: The periods of the differentials $Θ, \tilde{Θ}$ lie in $2π\iu\Z$.
-\item\label{P:quaternionic} Quaternionic: $E$ is a line bundle of degree $g+1$ that is quaternionic with respect to the involution $ρ\circ σ$.
+\item\label{P:quaternionic} Quaternionic: $E^*$ is a line bundle of degree $g+1$ that is quaternionic with respect to the involution $ρ\circ σ$.
 \end{enumerate}
 
 A theorem of Hitchin \cite[Theorem~8.1]{Hitchin1990} provides a correspondence between solutions of \eqref{eqn:Hit1.7} and tuples $(Σ,Θ,\tilde{Θ},E)$ (though such a correspondence necessarily includes singular spectral curves, which we are not considering). If the choice of curve and differentials is fixed, one may still choose $E$ subject to only to condition \ref{P:quaternionic}. There are many such choices, they form a real $g$ dimensional torus in the Jacobian of $Σ$. Variation of $E$ is called an isospectral deformation. On the other hand, if we have a triple $(Σ,Θ,\tilde{Θ})$ satisfying the conditions, then there always exists such a line bundle $E$ completing the tuple. Thus we focus our attention on the problem of deforming the triple $(Σ,Θ,\tilde{Θ})$ and in particular to the structure of the space of such triples.
