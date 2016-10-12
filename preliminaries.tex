@@ -252,10 +252,11 @@ Given a set of spectral data, we can detect certain features of the correspondin
 In order to speak of the moduli of triples $(Σ,Θ,\tilde{Θ})$, we shall build a parameter space for curves and differentials and then identify a moduli as a subset. Consider (nonsingular) marked curves and their genus. Recall that by the choice of scaling of $P$, the marked curve $Σ$ is determined uniquely by the roots of $P$. Let $D$ be the open unit disc and define
 \[
 \mathcal{A}_g = \{ (α_0, α_1, \ldots, α_g) \in D^{g+1} \mid α_i \neq α_j \}.
+\labelthis{eqn:def Ag}
 \]
 Every point of $\mathcal{A}_g$ determines a marked curve $Σ(α_0,\ldots,α_g)$ via a polynomial $P$ with roots $\{α_0,\cji{α}_0,\ldots,α_g,\cji{α}_g\}$. However, different permutations of components of a point of $\mathcal{A}_g$ yeild the same marked curve. Let $Sym(g+1)$ be the symmetric group on $g+1$ elements, and have it act on $\mathcal{A}_g$ by permutation. We define $\mathcal{C}_g$ to be $\mathcal{A}_g / Sym(g+1)$ and we call this the space of marked curves. By excluding singular curves, that is curves with multiple roots, the action of the symmetric group has no fixed points and so the quotient is also a smooth manifold.
 
-Before we proceed to differentials, let us once again give motivation to the exclusion of singular curves. We shall prove that in the case of curves of genus two or lower, there are no differentials with real linearly independent principal parts on singular curves.
+Before we proceed to differentials, let us once again give motivation to the exclusion of singular curves. We shall prove that in the case of curves of genus two or lower, there are no differentials with real linearly independent principal parts on singular curves. The proof requires the following lemma about marked curves of genus zero.
 
 \begin{lem}
     \label{lem:no singularities}
