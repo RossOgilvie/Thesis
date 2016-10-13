@@ -141,36 +141,23 @@ We have introduced numerous spaces, so we summarise them and their relationship 
 
 \subsection{Differentials of the Elliptic Spectral Curve}
 \label{sub:Differentials}
-As outlined in the previous section, it will be necessary to have explicit formulae for the differentials with integral periods of the spectral curve. We construct the differentials in four stages. First, we find the differentials that have double poles and no residues over $ζ=0,\infty$ and that also are real with respect to $ρ$. They form a real three dimensional vector space. Then we construct a transformation of the spectral curve to Jacobi normal form. Next, we take a basis of the $3$-space and use the transformation to compute the periods of these basis differentials in terms of the Jacobi elliptic integrals. Finally, we must solve a system of linear equations among the basis elements to find the differentials with integral periods, and we leverage standard relations among the Jacobi elliptic integrals to do so.
+As outlined in the previous section, it will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct the differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions \ref{P:poles}--\ref{P:reality}. The second step is to therefore write down these differentials; the differentials $Θ$ on $Σ$ that have double poles and no residues over $ζ=0,\infty$, that with respect to the hyperelliptic involution $σ$ obey $σ^*Θ = - Θ$, and that are real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$. They form a three dimensional real vector space.
 
-Following the notation of Chapter REF\todo{ref}, we write the differentials in the form
+Next, we use the transformation $f$ to compute the periods of these differentials in terms of the Jacobi elliptic integrals. Finally, we leverage the standard relations among the Jacobi elliptic integrals to describe explicitly the differentials with integral periods, those which meet condition \ref{P:periods}. Any differential that meets all the conditions \ref{P:poles}--\ref{P:periods} may be written as a linear combination of two distinguished differentials, $Θ^E$ and $Θ^P$. The choice of these two differentials on $Σ(α,β)$ varies smoothly in the parameters $(α,β)$. The space of differentials with integral periods will be shown to be trivial bundles over $\mathcal{A}_1$ and $\mathcal{C_1}$.
+
+With the standard scaling \eqref{eqn:def P}, any marked curve of genus one may be written as
 \[
-b(ζ)\frac{dζ}{ζ^2η},\;\; b(ζ) = b_0 + b_1ζ + \ldots + b_n ζ^n
+η^2 = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ),
 \]
-for some polynomial $b(ζ)$. We summarise from REF \todo{ref} the conditions that $b(ζ)$ must satisfy. First assume that the spectral curve is not branched at $ζ=0,\infty$, that is the harmonic map is nonconformal.  For a differential to have double poles at $ζ=0,\infty$ requires that $b(ζ)$ must be degree four. If further these poles have no residue, then $b_0$ determines $b_1$ and likewise $b_4$ determines $b_3$. The reality condition $ρ^* Θ = -\bar{Θ}$ forces the middle coefficient $b_2$ to be real, while also forcing $b_4$ to be conjugate to $b_0$. Counting the degrees of freedom in the choice of $b(ζ)$, we may choose any complex number for $b_0$ and any real scalar for $b_2$ in the middle term. If the spectral curve is branched at $ζ=0,\infty$, then for a differential to have double poles at $ζ=0,\infty$ requires that $b(ζ)$ must $ζ a(ζ)$, for $a(ζ)$ a real quadratic polynomial. Likewise there are three degrees of freedom in this choice of differential. In either case, there is a real three dimensional vector space of differentials.
-
-Every ellpitic curve may be transformed into the Jacobi normal form
+with roots $α, \cji{α}, β$ and $\cji{β}$. On the other hand, every ellpitic curve may be transformed into the Legendre normal form
 \[
 w^2 = (1-z^2)(1-k^2z^2)
 \]
-where $k$ is called the elliptic modulus. In the theory of elliptic curves, differentials with double poles and no residues are referred to as differentials of the second kind. The standard differential of the second kind is defined to be
+where $k$ is a complex number called the elliptic modulus. For a given marked curve, how is one to compute the modulus and therefore determine the appropriate Jacobi form into which to transform? The answer lies in the consideration of the cross ratio of the roots
 \[
-e := (1-k^2 z^2) \frac{dz}{w}.
-\labelthis{eqn:def_e}
+[α,\cji{α};β,\cji{β}] = \frac{\abs{α-β}^2}{\abs{1-\bar{α}β}^2}. \labelthis{eqn:roots_cross_ratio}
 \]
-Every differential of the second kind may be written as the linear conbination of $e$, the holomorphic differential $ω$,
-\[
-ω := \frac{dz}{w},
-\]
-and an exact differential. GIVE CITATION.\todo{this} But before we can write the differentials as a combination of standard differentials, we first construct a M\"obius transformation from the genus one spectral curve written as
-\[
-η^2 = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
-\]
-with roots $α, \cji{α}, β$ and $\cji{β}$, to the Jacobi normal form above. For a given curve, how is one to compute the modulus and therefore determine the appropriate Jacobi form into which to transform? Consider the cross ratio of the roots
-\[
-[α,\cji{α};β,\cji{β}] = \frac{\abs{α-β}^2}{\abs{1-\bar{α}β}^2} \labelthis{eqn:roots_cross_ratio}
-\]
-This is a real quantity, and so the four roots lie on a circle (or a line). Thus the roots of the Jacobi form do also, which forces $k$ to be real. Any transformation between the curves must take branch points to branch points, so we must decide on a correspondence for the roots. There are twenty-four possible choices, but we choose the correspondence
+This is a real quantity, and so the four roots lie on a circle (or a line). Thus the roots of the Legendre form do also, which forces $k$ to be real. Any transformation between the curves must take branch points to branch points, so we must decide on a correspondence for the roots. There are twenty-four possible choices, but we choose the correspondence
 \[
   \begin{array}{ l||c|c|c|c}
     ζ & α & \cji{α} & β & \cji{β} \\
@@ -178,7 +165,7 @@ This is a real quantity, and so the four roots lie on a circle (or a line). Thus
     z & 1 & -1 & k^{-1} & -k^{-1}
   \end{array}
 \]
-This correspondence has several properties that distinguish it from the others. By convention, $k \in (0,1)$, which rules out sixteen of the choices. Consider the behaviour of the curve as $k\to 1$. The Jacobi form of the curve develops two nodes at $z=\pm 1$. This corresponds to forming nodes $α=β$ and $\cji{α} = \cji{β}$. But the value of
+This correspondence has three properties that distinguish it from the others. By convention, $k \in (0,1)$, which rules out sixteen of the choices. Second, consider the behaviour of the curve as $k\to 1$. The Legendre form of the curve develops two nodes at $z=\pm 1$. This corresponds to forming nodes $α=β$ and $\cji{α} = \cji{β}$. But the value of
 \[
 [1,k^{-1};-1,-k^{-1}] = \frac{4k}{(k+1)^2}
 \]
@@ -196,6 +183,11 @@ k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}},
 \labelthis{eqn:def_k}
 \]
 and the map, which we shall call $f$, can be computed from the relation $[α,\cji{α};β,ζ] = [1,-1;k^{-1},f(ζ)]$. Instead of solving this relation for $f$ directly, we turn to understanding the geometry of the transformation so that we might produce a meaningful expression.
+
+we first construct a M\"obius transformation from the genus one spectral curve written as
+
+
+
 
 The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what is its image under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution $\tilde{ρ}$ in the $z$-plane is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore is the image of the unit circle.
 
@@ -240,6 +232,31 @@ Because of the holomorphic involution $η\to-η$, equations \eqref{eqn:f} and \e
 % \[
 % η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
 % \]
+
+
+
+
+
+
+Following the notation of Chapter REF\todo{ref}, we write the differentials in the form
+\[
+b(ζ)\frac{dζ}{ζ^2η},\;\; b(ζ) = b_0 + b_1ζ + \ldots + b_n ζ^n
+\]
+for some polynomial $b(ζ)$. We summarise from REF \todo{ref} the conditions that $b(ζ)$ must satisfy. First assume that the spectral curve is not branched at $ζ=0,\infty$, that is the harmonic map is nonconformal.  For a differential to have double poles at $ζ=0,\infty$ requires that $b(ζ)$ must be degree four. If further these poles have no residue, then $b_0$ determines $b_1$ and likewise $b_4$ determines $b_3$. The reality condition $ρ^* Θ = -\bar{Θ}$ forces the middle coefficient $b_2$ to be real, while also forcing $b_4$ to be conjugate to $b_0$. Counting the degrees of freedom in the choice of $b(ζ)$, we may choose any complex number for $b_0$ and any real scalar for $b_2$ in the middle term. If the spectral curve is branched at $ζ=0,\infty$, then for a differential to have double poles at $ζ=0,\infty$ requires that $b(ζ)$ must $ζ a(ζ)$, for $a(ζ)$ a real quadratic polynomial. Likewise there are three degrees of freedom in this choice of differential. In either case, there is a real three dimensional vector space of differentials.
+
+In the theory of elliptic curves, differentials with double poles and no residues are referred to as differentials of the second kind. The standard differential of the second kind is defined to be
+\[
+e := (1-k^2 z^2) \frac{dz}{w}.
+\labelthis{eqn:def_e}
+\]
+Every differential of the second kind may be written as the linear conbination of $e$, the holomorphic differential $ω$,
+\[
+ω := \frac{dz}{w},
+\]
+and an exact differential. GIVE CITATION.\todo{this} But before we can write the differentials as a combination of standard differentials,
+
+
+
 
 Having found the map $f$ that transforms the spectral curve into Jacobi normal form, we are now in a position to choose a basis of the vector $3$-space of differentials. First note that the holomorphic differential $ω$ lies in this space and so makes for an obvious first basis vector. It spans the middle terms completely, accounting for every possible choice of $b_2$.
 In genus one, there is an exact differential with the double poles over $ζ=0,\infty$, namely
