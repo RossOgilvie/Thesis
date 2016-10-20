@@ -182,16 +182,13 @@ The difference between the two is a choice of which root, $α$ or $β$, is mappe
 k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}},
 \labelthis{eqn:def_k}
 \]
-and the map, which we shall call $f$, can be computed from the relation $[α,\cji{α};β,ζ] = [1,-1;k^{-1},f(ζ)]$. Instead of solving this relation for $f$ directly, we turn to understanding the geometry of the transformation so that we might produce a meaningful expression.
+and the map, which we shall call $f$, can be computed from the relation $[α,\cji{α};β,ζ] = [1,-1;k^{-1},f(ζ)]$. Instead of solving this relation for $f$ immediately, we turn to understanding the geometry of the transformation so that we might produce a meaningful expression.
 
-we first construct a M\"obius transformation from the genus one spectral curve written as
+The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what is its image under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution $\tilde{ρ}(z)$ in the $z$-plane that exchanges $1,-1$ and $k^{-1},-k^{-1}$ is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore must be the image of the unit circle under $f$.
 
+As already mentioned, the four roots of the spectral curve lie on a circle (or a line), which we shall call the branch circle. Let two points at the intersection of the branch circle with the unit circle be $μ$ and $ν$, with $μ$ lying between $α$ and $\cji{α}$ and $ν$ lying between $β$ and $\cji{β}$ (see Figure \ref{fig:zeta plane}). Under $f$, the branch circle is mapped to the real axis. Therefore the $f(μ)$ and $f(ν)$ must lie on the intersection of the real and imaginary axes. Hence $f(μ) = 0$ and $f(ν) = \infty$.
 
-
-
-The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what is its image under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution $\tilde{ρ}$ in the $z$-plane is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore is the image of the unit circle.
-
-As already mentioned, the four roots of the spectral curve lie on a circle (or lie on a line), which we shall call the branch point circle. The intersection of this circle with the unit circle correspond to the points $z=0$ and $z=\infty$, which are themselves the intersections of the real and imaginary axes. $z=0$ lies on the branch point circle between $α$ and $\cji{α}$ and similiarly $z=\infty$ lies between $β$ and $\cji{β}$. We denote these points $μ = f^{-1}(0)$ and $ν = f^{-1}(\infty)$. Likewise we write $z_0 = f(0)$ and $-\bar{z_0} = f(\infty)$ (using the reality structure). As M\"obius transformations are determined by three points, these points allow us to write concise formulae for $f$ and $f^{-1}$
+A M\"obius tranformation, such as $f$, is determined up to scaling by the points it sends to $0$ and $\infty$, in this case $μ$ and $ν$. One other point is therefore needed to determine this scaling. We write $z_0 := f(0)$. Using the reality structure $\tilde{ρ}(z)$, we have $f(\infty) = -\bar{z_0}$. These points allow us to write concise formulae for $f$ and $f^{-1}$
 \begin{align}
 z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 \label{eqn:f} \\
@@ -199,52 +196,47 @@ z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 \label{eqn:f_inv}
 \end{align}
 
-\makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$}{thesis_graphics_temp/zeta_plane.png}
+\makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$\label{fig:zeta plane}}{thesis_graphics_temp/zeta_plane.png}
 \makefigure{The $z$-plane, with points marked in black. The red labels are their images under $f^{-1}$}{thesis_graphics_temp/z_plane.png}
-
-
 
 \begin{lem}
 \label{lem:coeff_f_smooth}
-The points $μ,ν$ and $z_0$ are smooth functions of the parameters $(α,β)\in\mathcal{A}_1$.
+The functions $μ,ν,z_0,(z_0)^{-1}$ and $k$ are smooth functions of the parameters $(α,β)\in\mathcal{A}_1$. Further $μ - ν$ is never zero.
 \begin{proof}
-$μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms of $α,β$ using the relation $[α,\cji{α};β,μ] = [1,-1;k^{-1},0]$. Rearranging gives
+Recall that $μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms of $α,β$ using the cross-ratio relation $[α,\cji{α};β,μ] = [1,-1;k^{-1},0]$. Rearranging gives
 \[
 μ = \frac{ (α-β)\abs{1-\bar{α}β} + α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} + (1-\bar{α}β)\abs{α-β} }.
 \]
-This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. $α-β$ is never zero on $\mathcal{A}_1$ by definition. $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disc, this is impossible. Finally, the denominator is zero exactly when
+This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. $α-β$ is never zero on $\mathcal{A}_1$ by definition. The factor $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disc, this is impossible. Finally, the denominator is zero exactly when
 \[
 \bar{α} = - \frac{1-\bar{α}β}{\abs{1-\bar{α}β}} \frac{\abs{α-β}}{α-β}.
 \]
-But the right hand side is an element of the unit circle, so again this possibility is ruled out. The proof is entirely similiar for
+But the right hand side is an element of the unit circle, so again this possibility is ruled out. The proof of smoothness is entirely similiar for
+\begin{align*}
+ν &= \frac{ (α-β)\abs{1-\bar{α}β} - α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} - (1-\bar{α}β)\abs{α-β} }, \\
+z_0 &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} }, \\
+(z_0)^{-1} &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }, \text{ and} \\
+k &= \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
+\end{align*}
+The final claim is that $μ-ν$ is never zero. This is clear from the geometry, as the branch circle is a circle that passes through points both inside and outside the unit circle and so must intersect the unit circle at distinct two points. Algebraically, the difference vanishes only if
 \[
-ν = \frac{ (α-β)\abs{1-\bar{α}β} - α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} - (1-\bar{α}β)\abs{α-β} }
+2\bra{\abs{α}^2 - 1} (α-β)(1-\bar{α}β) = 0,
 \]
-and
-\[
-z_0 = \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} }.
-\]
+and this has already shown not to occur on $\mathcal{A}_1$.
 \end{proof}
 \end{lem}
 
-Because of the holomorphic involution $η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ laying \todo{laying or lying?} over the unit circle $ζ=1$. Thus there is a notion of the `upper' unit circle, the one on which $η$ is positive over $ζ=1$. More generally, on this upper unit circle in $Σ$, $η=ζ\abs{ζ-α}\abs{ζ-β}$. Under the transformation $f$ the unit circle is mapped to the imaginary axis. Over the imaginary axis in the Jacobi elliptic curve, for $z=\iu u$, $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$, so it also has a canonical choice of a upper and lower imaginary axis. We choose the transformation between elliptic curves to map the positive unit circle to the positive imaginary axis.
-% The sign choice needed to make the upper unit circle map to the upper imaginary axis is
-% \[
-% η = \frac{AB\bra{1-\abs{α}^2}\bra{\abs{α-β}+ \abs{1-\bar{α}β}}}{(\bar{α}A-B)^2(z+\bar{z_0})^2}w
-% \]
+Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ lying over the unit circle $ζ=1$. Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$. At a point $(ζ,η)$ on the positive unit circle in $Σ$, we define the function $η^+$ to be the value of $η$. Algebraically, $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$.
 
+Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Jacobi elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
 
-
-
-
-
-Following the notation of Chapter REF\todo{ref}, we write the differentials in the form
+Having found the map $f$ that transforms the genus one marked curve $Σ$ into Jacobi normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions \ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions \ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of Section \ref{sub:prelim diffs}, recall that all differentials on a genus one marked curve $Σ$ that have (at most) a double root over $ζ=0$ and $ζ=\infty$ may be written the form
 \[
-b(ζ)\frac{dζ}{ζ^2η},\;\; b(ζ) = b_0 + b_1ζ + \ldots + b_n ζ^n
+Θ = b(ζ)\frac{dζ}{ζ^2η},
 \]
-for some polynomial $b(ζ)$. We summarise from REF \todo{ref} the conditions that $b(ζ)$ must satisfy. First assume that the spectral curve is not branched at $ζ=0,\infty$, that is the harmonic map is nonconformal.  For a differential to have double poles at $ζ=0,\infty$ requires that $b(ζ)$ must be degree four. If further these poles have no residue, then $b_0$ determines $b_1$ and likewise $b_4$ determines $b_3$. The reality condition $ρ^* Θ = -\bar{Θ}$ forces the middle coefficient $b_2$ to be real, while also forcing $b_4$ to be conjugate to $b_0$. Counting the degrees of freedom in the choice of $b(ζ)$, we may choose any complex number for $b_0$ and any real scalar for $b_2$ in the middle term. If the spectral curve is branched at $ζ=0,\infty$, then for a differential to have double poles at $ζ=0,\infty$ requires that $b(ζ)$ must $ζ a(ζ)$, for $a(ζ)$ a real quadratic polynomial. Likewise there are three degrees of freedom in this choice of differential. In either case, there is a real three dimensional vector space of differentials.
+for a polynomial $b(ζ)$ of degree $4$. Condition \ref{P:reality} forces $b\in \mathcal{P}^4_\R$, the space of polynomials that are real with respect to $ρ$. Practically, if we write $b(ζ) = b_0 + \dots + b_4 ζ^4$, this condition forces $b_i = b_{4-i}$. Lastly, if we write out the equation of $Σ$ as $η^2 = P(ζ) = P_0 ζ + \dots + P_4 ζ^4$, $Θ$ has no residues exactly when $P_1b_0 - 2P_0b_1 = 0$ (equation \ref{eqn:residue condition}). If we count the degrees of freedom remaining, we may choose $(b_0,b_1)$ from a complex line and $b_2$ to be any real number. Hence for each marked curve $Σ$ there is a real three dimensional vector space $W$ of differentials that meet conditions \ref{P:poles}--\ref{P:reality}.
 
-In the theory of elliptic curves, differentials with double poles and no residues are referred to as differentials of the second kind. The standard differential of the second kind is defined to be
+This presents an obvious choice of basis, but one that we will not choose. Instead, we shall choose a basis that it suited to computing the periods of the differentials so that we may be able to satisfy condition \ref{P:periods}, that the periods of the differentials lie in $2π\iu$. For this we turn to the the classical theory of elliptic curves, which has long studied differentials and their periods. It is standard to refer to differentials with double poles and no residues as differentials of the second kind. Condition \ref{P:poles} may therefore be rephrased as the differential must be of the second kind and have poles at the points of $\Sigma$ over $ζ=0$ and $\infty$. The standard Jacobi differential of the second kind is defined to be
 \[
 e := (1-k^2 z^2) \frac{dz}{w}.
 \labelthis{eqn:def_e}
@@ -253,50 +245,48 @@ Every differential of the second kind may be written as the linear conbination o
 \[
 ω := \frac{dz}{w},
 \]
-and an exact differential. GIVE CITATION.\todo{this} But before we can write the differentials as a combination of standard differentials,
+and an exact differential. GIVE CITATION.\todo{this}
 
-
-
-
-Having found the map $f$ that transforms the spectral curve into Jacobi normal form, we are now in a position to choose a basis of the vector $3$-space of differentials. First note that the holomorphic differential $ω$ lies in this space and so makes for an obvious first basis vector. It spans the middle terms completely, accounting for every possible choice of $b_2$.
-In genus one, there is an exact differential with the double poles over $ζ=0,\infty$, namely
+Note that the holomorphic differential $ω$ lies in the space $W$ and so makes for an obvious first basis vector. It accounts for every possible choice of $b_2$.
+In genus one, there is a real and exact differential with double poles over $ζ=0,\infty$, namely
 \[
-Θ^1 := \iu\; d\left( \frac{η}{ζ} \right).
+Θ^E := \iu\; d\left( \frac{η}{ζ} \right).
 % = \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}.
 \]
-Due to the factor $\iu$ it is real, and so we take it as the second basis vector. As previously stated, every differential can be written as the linear combination of $ω$, $e$ and an exact differential. Given that we already have taken $ω$ as a basis vector, we seek to complete the basis with the sum of $e$ and an exact differential.
+We take it as the second basis vector. The superscript $E$ is a mnemonic for exact. Given that we already have taken $ω$ as a basis vector, we seek to complete the basis of $W$ with the sum of $e$ and an exact differential.
 
-Recall eqn \eqref{eqn:def_e}, the definition of $e$. It is real with respect to $\tilde{ρ}(z) = -\bar{z}$, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed. This pole can be moved to $ζ=\infty$ by adding an exact differential. We assert that
+Recall equation \eqref{eqn:def_e}, the definition of $e$. It is real with respect to $\tilde{ρ}(z) = -\bar{z}$, but it has a pole at $z=\infty$ ($ζ=ν$), which not allowed under condition \ref{P:poles}. This pole can be moved to $ζ=\infty$ by adding an exact differential. We assert that
 \[
 e + d\left[ \frac{w}{z + \bar{z}_0} \right]
 \]
 has no pole at $z=\infty$. To check this let $z' = z^{-1}$, and expand $e$ about $z' = 0$.
 \begin{align*}
-w &= kz'^{-2} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \\
-e &= kz'^{-2} dz' \bra{1-k^{-2}z'^2}\bra{1 + \frac{1+k^2}{k^2} z'^2 + \ldots}
+w &= kz'^{-2} \bra{1 + O(z'^2) } \\
+e &= kz'^{-2} dz' \bra{1-k^{-2}z'^2}\bra{1 + O(z'^2)} = kz'^{-2} dz' \bra{1 + O(z'^2)},
 \end{align*}
 whereas the exact differential has the following expansion
 \begin{align*}
 d\left[ \frac{w}{z + \bar{z}_0} \right]
-&= d\left[ k z'^{-1} \bra{1 - \frac{1}{2}\frac{1+k^2}{k^2} z'^2 + \dots} \bra{1 - \bar{z}_0z' + \bar{z}_0^2z'^2  + \ldots} \right]\\
-&= -k z'^{-2}dz' \bra{1 + \bra{\bar{z}_0^2 - \frac{1}{2}\frac{1+k^2}{k^2}}z'^2 + \ldots},
+&= d\left[ k z'^{-1} \bra{1  + O(z'^2)} \bra{1 - \bar{z}_0z' + \bar{z}_0^2z'^2  + \ldots} \right]\\
+&= d\left[ k z'^{-1} \bra{1  + O(z')} \right]\\
+&= -k z'^{-2}dz' \bra{1 + O(z'^2)},
 \end{align*}
-which shows that their sum is holomorphic at $z=\infty$. Unfortunately, this differential is not real. The space of exact differentials (not necessarily real) with the double poles over $ζ=0,\infty$ is
+which shows that their sum is holomorphic at $z=\infty$. Unfortunately, this differential is not real with respect to $\tilde{ρ}$. To correct this deficency we shall add another exact differential. The space of exact differentials (not necessarily real) with the double poles over $ζ=0,\infty$ is
 \[
 \Set { C\,d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right] }{ C\in \C},
 \]
-so we add a differential of this form to restore the symmetry.
+so we add a differential of this form to restore the reality. The exact differential
 \[
 d\left[ \frac{w}{z + \bar{z}_0}\right] + C\,d \left[\frac{w}{(z-z_0)(z + \bar{z}_0)}\right]
 = d\left[ \frac{w(z - z_0 + C)}{(z-z_0)(z + \bar{z}_0)}\right]
 \]
-is real when $z_0 - C$ is an imaginary number. Thus $C \in \Re z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^1$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^1$, which introduces a symmetry into the formulae that we will use later REF. Hence we take as our third basis differential
+is real when $z_0 - C$ is an imaginary number. Thus we should choose $C \in \Re z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^E$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^1$, which introduces a symmetry into the formulae that we will use later REF. Hence we take as our third basis differential
 \[
 λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0\; d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
 = e + d\left[ \frac{w(z - \iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
 \]
 
-We are now in a position to compute the periods of our basis $ω,Θ^1,λ$. In the $ζ$-plane, let $A, B$ denote the real and imaginary periods respectively. We will choose these periods in the following way. First, take the branch cuts to be along the branch point circle, between $α$ and $b $ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the upper or lower sheet, where as before the upper sheet is where $η$ is positive over $ζ=1$.
+We are now in a position to compute the periods of our basis $ω,Θ^1,λ$. In the $ζ$-plane, let $A, B$ denote the real and imaginary periods respectively. We will choose these periods in the following way. First, take the branch cuts to be along the branch circle, between $α$ and $b $ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the upper or lower sheet, where as before the upper sheet is where $η$ is positive over $ζ=1$.
 
 For $A$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
 
@@ -476,7 +466,7 @@ Thus the space of genus one spectral curves that admit closing spectral data is 
 
 Note that although the condition $T\in\Q$ is well defined, $T$ is a multivalued function on $\mathcal{A}_1$. It it dependent on the paths of integration. As previously seen, different paths will change the integrals by multiples of $2π\iu$ and therefore $T$ is defined up to an element of $\Z\langle 1,p\rangle \subset \Q$. In practice, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$.
 
-Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Consider the open dense subset $\mathcal{A}_0$ of $\mathcal{A}_1$ where $ν \neq \pm 1$. On any spectral curve of $\mathcal{A}_0$, let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch point circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded.
+Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Consider the open dense subset $\mathcal{A}_0$ of $\mathcal{A}_1$ where $ν \neq \pm 1$. On any spectral curve of $\mathcal{A}_0$, let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded.
 
 \makefigure{$γ_+$ in red and $γ_-$ in black}{thesis_graphics_temp/gamma_pm_zeta.png}
 
@@ -508,7 +498,7 @@ If one wishes, one could substitute these formulae into \eqref{eqn:def_T} to get
 (f(1)-z_0)(f(1) + \bar{z}_0) = -(f(1)-z_0)(\overline{f(1) - z_0}) = - \abs{f(1) - z_0}^2.
 \]
 
-% Properly understood, $T$ is not a function on the space of spectral curves $\mathcal{A}_1$, but rather it is a function on the space of paths $(γ_+, γ_-)$, which we shall call $\mathcal{P}$. To be more precise, let $\mathcal{P}$ be the space $\{(γ_+, γ_-, Σ, α)\}$ where $α$ is one of the branch points inside the unit circle of some genus one spectral curve $Σ$ and $γ_+$ and $γ_-$ are paths $(0,1) \to Σ$ defined in the following way. $γ_+$ starts at $(1, η(1)^-)$, monotonically tranverses the unit circle to $μ$ (that is, it does not pause or reverse direction), goes along the branch point circle to $α$, encircles it, returns to $μ$ along the branch point circle and retraces its path to $(1, η(1)^+)$. In an analogous way, $γ_-$ starts at $(-1, η(-1)^-)$ and finishes at $(-1, η(-1)^+)$. We shall call such paths rigid. Every path on $Σ$ that connects the two points over $1$ or $-1$ is homologous to one of these rigid paths.
+% Properly understood, $T$ is not a function on the space of spectral curves $\mathcal{A}_1$, but rather it is a function on the space of paths $(γ_+, γ_-)$, which we shall call $\mathcal{P}$. To be more precise, let $\mathcal{P}$ be the space $\{(γ_+, γ_-, Σ, α)\}$ where $α$ is one of the branch points inside the unit circle of some genus one spectral curve $Σ$ and $γ_+$ and $γ_-$ are paths $(0,1) \to Σ$ defined in the following way. $γ_+$ starts at $(1, η(1)^-)$, monotonically tranverses the unit circle to $μ$ (that is, it does not pause or reverse direction), goes along the branch circle to $α$, encircles it, returns to $μ$ along the branch circle and retraces its path to $(1, η(1)^+)$. In an analogous way, $γ_-$ starts at $(-1, η(-1)^-)$ and finishes at $(-1, η(-1)^+)$. We shall call such paths rigid. Every path on $Σ$ that connects the two points over $1$ or $-1$ is homologous to one of these rigid paths.
 %
 % $\mathcal{P}$ is naturally a $\Z^2$-bundle over the space $\mathcal{A}_1$. The projection map takes a tuple $(γ_+, γ_-, Σ, α)$ to the underlying spectral curve $(Σ,α)$. The fibre over any spectral curve $Σ$ is seen to be $\Z^2$, because if one fixes a point on the upper unit circle, not lying over $1,-1,μ$, the (signed) number of crossings of that point by a path uniquely determines that path. As an aside, the issue with points over $1,-1$ and $μ$ is that the paths may terminate there (in the obvious way for the first two, in the sense that the path may leave the unit circle in the latter case). One could probably introduce a convention to get around this, but it is not necessary to do so for our purposes.
 %
@@ -670,7 +660,7 @@ k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \]
 In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $p$, for a fixed value of $p$, the subspace $α=β$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In later chapters, the interesting structure of the moduli space in this limit will be investigated.
 
-% Another way that this model is useful is it allows us to see how the space of spectral curves is not simply connected and the essential appearence of the multivalued behaviour of $T$. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch point circle is approximately a line. As we move around the axis, the points $μ,ν$ in the $ζ$-plane are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut. After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$.
+% Another way that this model is useful is it allows us to see how the space of spectral curves is not simply connected and the essential appearence of the multivalued behaviour of $T$. Take a small loop around the central axis, which is to say a certain path in the space of spectral curves with $k$ close to $1$. This implies that $α$ and $β$ must be close together, and so the branch circle is approximately a line. As we move around the axis, the points $μ,ν$ in the $ζ$-plane are moving around the unit circle. Every time $ν$ crosses either $1$ or $-1$, we have moved across a branch cut. After one full rotation, $α$ and $β$ have returned to their original positions, but $T$ has been incremented by $1+p$.
 %
 % Viewed in
 %
