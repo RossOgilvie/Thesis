@@ -271,7 +271,7 @@ d\left[ \frac{w}{z + \bar{z}_0} \right]
 &= d\left[ k z'^{-1} \bra{1  + O(z')} \right]\\
 &= -k z'^{-2}dz' \bra{1 + O(z'^2)},
 \end{align*}
-which shows that their sum is holomorphic at $z=\infty$. Unfortunately, this differential is not real with respect to $\tilde{ρ}$. To correct this deficency we shall add another exact differential. The space of exact differentials (not necessarily real) with the double poles over $ζ=0,\infty$ is
+which shows that their sum is holomorphic at $z=\infty$. Unfortunately, this differential is not real with respect to $\tilde{ρ}$. To correct this deficency we shall have to add another exact differential. The set of exact differentials (not necessarily real) with the double poles over $ζ=0,\infty$ is
 \[
 \Set { C\,d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right] }{ C\in \C},
 \]
@@ -280,31 +280,48 @@ so we add a differential of this form to restore the reality. The exact differen
 d\left[ \frac{w}{z + \bar{z}_0}\right] + C\,d \left[\frac{w}{(z-z_0)(z + \bar{z}_0)}\right]
 = d\left[ \frac{w(z - z_0 + C)}{(z-z_0)(z + \bar{z}_0)}\right]
 \]
-is real when $z_0 - C$ is an imaginary number. Thus we should choose $C \in \Re z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^E$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^1$, which introduces a symmetry into the formulae that we will use later REF. Hence we take as our third basis differential
+is real when $z_0 - C$ is an imaginary number. Thus we should choose $C \in \Re z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^E$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^E$, which introduces a symmetry into the formulae that we will use later. Hence we take as our third basis differential
 \[
 λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0\; d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
 = e + d\left[ \frac{w(z - \iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
 \]
 
-We are now in a position to compute the periods of our basis $ω,Θ^1,λ$. In the $ζ$-plane, let $A, B$ denote the real and imaginary periods respectively. We will choose these periods in the following way. First, take the branch cuts to be along the branch circle, between $α$ and $b $ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the upper or lower sheet, where as before the upper sheet is where $η$ is positive over $ζ=1$.
+We are now in a position to compute the periods of our basis $ω,Θ^E,λ$. We choose a basis of homology of the marked curve $Σ$ following way. First, take the branch cuts to be along the branch circle, between $α$ and $b $ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the upper or lower sheet, where as before the upper sheet is where $η$ is positive over $ζ=1$.
 
-For $A$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
+For the loop $A$, start on the upper unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the lower unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For the loop $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the upper sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the upper sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
 
 \makefigure{$A$ in red and $B$ in black}{thesis_graphics_temp/zeta_periods.png}
 
-To summarise the standard elliptic integrals
+The loop $A$ is a real period, which means that the integral of a real differential over $A$ is real. Recall that a differential $Θ$ is real with respect to $ρ$ when $ρ^* Θ = - \bar{Θ}$. By construction, $ρ_* A = -A$. Together, we see that
+\[
+\bar{\int_A Θ}
+= \int_A \bar{Θ}
+= -\int_A ρ^* Θ
+= -\int_{ρ_* A} Θ
+= -\int_{-A} Θ
+= \int_{A} Θ,
+\]
+which shows the $A$-period of $Θ$ to be real. Likewise, the integral of a real differential over $B$ is always an imaginary number.
+
+We wish to be able to describe the differentials of $W$ that have having imaginary and integral periods. As $Θ^E$ is exact, any real multiple of it fits this description. Suppose $Θ^P\in W$ were to have a real period of zero and an imaginary period of $2π\iu$. If we had any other differential in $W$ with vanishing real period and an imaginary period of  $2π\iu n$, then by subtracting $nΘ^P$ the result would be an exact differential, and therefore would have to be a real multiple of $Θ^E$. Thus if we are able to find such a differential $Θ^P$, then any differential meeting conditions \ref{P:poles}--\ref{P:periods} would lie in $\R Θ^E + \Z Θ^P \subset W$.
+
+Thus we have reduced the problem to finding a differential $Θ^P$ with vanishing $A$-period and a $B$-period of $2π\iu$. The superscript $P$ is a mnemonic for period. Clearly, we may add a real multiple of $Θ^E$ to $Θ^P$ and it will also meet this requirement. Therefore let $Θ^P = Ωω + Λλ$, for some real constants $Ω,Λ$, be a combination of the other two basis vectors of $W = \R\langle ω,Θ^E,λ\rangle$.
+
+It is useful at this point to summarise the standard elliptic integrals, the periods of the differentials $ω$ and $e$,
 \begin{align*}
 \int_{f(A)} ω &= 4K(k) &
 \int_{f(B)} ω &= 2\iu K' \\
 \int_{f(A)} e &= 4E(k) &
 \int_{f(B)} e &= 2\iu(K'-E')
 \end{align*}
-where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denotes not the derivative but instead the complement. By definition $k' = \sqrt{1-k^2}$ and $K'(k) = K(k')$ and $E'(k) = E(k')$. Let $Θ^2 = Ωω + Λλ$ for some real constants $Ω,Λ$. We wish to be able to describe all the differentials meeting condions REF and having integral periods. Suppose $Θ^2$ were to have an imaginary period of $2π\iu$. If we had any other differential with imaginary period $2π\iu n$, then by subtracting $nΘ^2$ the result would be an exact differential, and therefore a HEREHERE and we wish for this differential to have a real period of zero and an imaginary period of $2π\iu$. That requires
+where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denotes not the derivative but instead the elliptic complement. The elliptic complement is by definition $k' = \sqrt{1-k^2}$, and $K'(k) = K(k')$ and $E'(k) = E(k')$. Note that $λ$ is the sum of $e$ and an exact differential and so has the same periods.
+
+We require that
 \begin{align*}
-4KΩ + 4EΛ &= 0 \\
-2\iu K' Ω + 2\iu(K'-E')Λ &= 2π\iu
+\int_A Θ^P &= 4KΩ + 4EΛ = 0 \\
+\int_B Θ^P &= 2\iu K' Ω + 2\iu(K'-E')Λ = 2π\iu.
 \end{align*}
-From the first equation, we can write $Λ = - ΓK$ and $Ω = ΓE$ for some $Γ$. Substituting this into the second equation gives
+From the first equation, we can write $Λ = - ΓK$ and $Ω = ΓE$ for some $Γ\in \R$. Substituting this into the second equation gives
 \begin{align*}
 π
 &= K'ΓE - (K'-E')ΓK \\
@@ -312,71 +329,61 @@ From the first equation, we can write $Λ = - ΓK$ and $Ω = ΓE$ for some $Γ$.
 &= \frac{\pi}{2}Γ \\
 Γ &= 2
 \end{align*}
-where \eqref{eqn:legendre_relation} uses Legendre's relation. Thus $Θ^2 = 2Eω - 2Kλ$, or if we unwind these definitions a little
+where \eqref{eqn:legendre_relation} uses Legendre's relation (see Lemma \ref{lem:Legendres relation}). Thus $Θ^P = 2Eω - 2Kλ$, or if we unwind these definitions a little
 \[
-Θ^2 = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right]
+Θ^P = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
 \labelthis{eqn:theta2}
 \]
-which shows a nice division, with the first two terms providing the desired periods and the last term giving the required pole behaviour. Though the choices up to this point may seem arbitrary and contrived, they are not, as we can characterise the differential $Θ^2$ in the following way.
+This equation shows a nice division, with the first two terms providing the desired periods and the last term giving the required pole behaviour. Though the choices up to this point may seem arbitrary and contrived, they are not, as we can characterise the differential $Θ^P$ in the following way.
 
 \begin{lem}
     \label{lem:theta2_characterisation}
-The differential $Θ^2$ is the unique real differential on the spectral curve with double poles and no residues over $ζ=0,\infty$, with periods $0,2π\iu$ and, with principal part over $ζ=0$
+The differential $Θ^P$ is the unique real differential on the marked curve $Σ$ with double poles and no residues over $ζ=0$ and $\infty$, with periods $0$ and $2π\iu$ over $A$ and $B$, and with principal part over $ζ=0$
 \[
-\pp Θ^2 \in \iu \R \pp Θ^1.
+\pp Θ^P \in \iu \R \pp Θ^E.
 \]
 
 \begin{proof}
-We first verify that $Θ^2$ has such properties, then verify uniqueness. The only property not yet demonstrated is the third one, concerning the principal part. We note that $ζ=0$ corresponds to $z=z_0$, so for some real scalar $r$
+We first verify that $Θ^P$ has such properties, then verify uniqueness. The only property not yet demonstrated is the third one, concerning the principal part. We note that $ζ=0$ corresponds to $z=z_0$, so for some real scalar $r$
 \[
-\pp Θ^1
+\pp Θ^E
 = \iu \pp d\bra{\frac{η}{ζ}}
 = \iu r \pp d \bra{ \frac{w}{(z-z_0)(z + \bar{z}_0)} }
 = -\iu r \frac{w(z_0)}{z_0 + \bar{z}_0}\frac{dz}{(z-z_0)^2}.
 \]
 On the other hand
 \begin{align*}
-\pp Θ^2
+\pp Θ^P
 &= - 2K \pp d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
 &= + 2K \frac{w(z_0)(z_0-\iu\,\Im z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2} \\
 &= 2K \frac{w(z_0)(\Re z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2}.
 \end{align*}
-To establish uniqueness, suppose that $Θ$ was another such differetial. Then $Θ-Θ^2$ would be exact, real and have double poles with no residues. So for some real $s$
+To establish uniqueness, suppose that $Θ$ was another such differetial. Then $Θ-Θ^P$ would be exact, real and have double poles with no residues. So for some real $s$
 \[
-Θ = Θ^2 + s Θ^1.
+Θ = Θ^P + s Θ^E.
 \]
 As taking principal part is linear, the third condition forces $s=0$.
 \end{proof}
 \end{lem}
 
+As we have already remarked, having found this pair of differentials any other differential satisfying \ref{P:poles}--\ref{P:periods} may be written in the form $a Θ^E + n Θ^P$ for some $a\in\R$ and $n\in\Z$. We may think of the differentials satisfying \ref{P:poles}--\ref{P:periods} as forming a $\Z\times\R$-bundle over $\mathcal{A}_1$. This pair of differentials $Θ^E$ and $Θ^P$ vary smoothly with respect to $(α,β)$, and are always linearly independent, and so trivialises that bundle.
 
-Having found this pair of differentials, any other integeral differential may be written in the form $a Θ^1 + n Θ^2$ for some $a\in\R$ and $n\in\Z$. If we think of the differentials as forming a $\Z\times\R$-bundle over $\mathcal{A}_1$, then this pair trivialises that bundle.
-
-Recall that $\mathcal{A}_1$ double covers $\mathcal{C}_1$. The points $(α,β)$ and $(β,α)$ in $\mathcal{A}_1$ correspond to the same curve $Σ$ in $\mathcal{C}_1$. If we have a section of differentials $Θ : (α,β) \mapsto Ω^1(Σ(α,β))$, this raises the question on how $Θ(α,β)$ and $Θ(β,α)$, which are on the same curve, differ. We observe directly that $Θ^1 = \iu d (η/ζ)$ is invariant under the interchange of $α$ and $β$. Now we may use the characterisation of $Θ^2$ given by lemma \ref{lem:theta2_characterisation} to conclude the same for it, because
+Recall that $\mathcal{A}_1$ double covers $\mathcal{C}_1$; the points $(α,β)$ and $(β,α)$ in $\mathcal{A}_1$ correspond to the same marked curve $Σ\in \mathcal{C}_1$. If we have a section of differentials $Θ : (α,β) \mapsto Ω^1(Σ(α,β))$, this raises the question on how $Θ(α,β)$ and $Θ(β,α)$, which are on the same curve $Σ(α,β)$, differ. We observe directly that $Θ^E = \iu d (η/ζ)$ is invariant under the interchange of $α$ and $β$. Now we may use the characterisation of $Θ^P$ given by Lemma \ref{lem:theta2_characterisation} to conclude the same for it, because
 \[
-\pp Θ^2(β,α) \in \iu \R \pp Θ^1(β,α) = \iu \R \pp Θ^1(α,β)
+\pp Θ^P(β,α) \in \iu \R \pp Θ^E(β,α) = \iu \R \pp Θ^E(α,β)
 \]
-and so uniqueness forces $Θ^2(β,α) = Θ^2(α,β)$.
+and so uniqueness forces $Θ^P(β,α) = Θ^P(α,β)$.
 
-The consequence of this is that $Θ^1,Θ^2$ push forward to a well-defined basis of the differentials over $\mathcal{C}_1$ as well, and just as for $\mathcal{A}_1$ they trivialise the bundle $\mathcal{B} \to \mathcal{C}_1$. Though we mainly concentrate on the subspace of $\mathcal{A}_1$ of spectral curves that admit spectral data, at the end of this chaper we will consider the space of spectral data within the total space of $\mathcal{B}^2$.
-
-
-SOMETHING ABOUT THE CONFORMAL CASE/ UNDOING THE NONCOMFORMAL ASSUMPTION.
-
-
-
-
-
-
+The consequence of this is that $(Θ^E,Θ^P)$ pushes forward to a well-defined basis of the differentials over $\mathcal{C}_1$ as well, and just as for $\mathcal{A}_1$ they trivialise the bundle $\mathcal{B}_1 \to \mathcal{C}_1$. Though we mainly concentrate on the subspace of $\mathcal{A}_1$ of spectral curves that admit spectral data, at the end of this chaper we will consider the space of spectral data within the total space of $(\mathcal{B}_1)^2$.
 
 
 \subsection{The Closing Conditions}
 \label{sub:closing conditions}
-Recall the closing conditions. These are the conditions that spectral data must meet in order that they correspond to a harmonic map from the torus, rather than a harmonic map of the plane (of finite type). If $(Σ,Θ,\tilde{Θ})$ is a triple of spectral data, $Θ$ satisfies the closing condition at $ζ=1$ if
+Recall the closing conditions, Condition \ref{P:closing}. These are the conditions that spectral data must meet in order that they correspond to a harmonic map of the torus, rather than a harmonic map of the plane (of finite type). If $(Σ,Θ,\tilde{Θ})$ is a triple of spectral data, $Θ$ satisfies the closing condition at $ζ=1$ if
 \[
 \int_{γ_{+}} Θ \in 2π\iu \Z,
 \]
-where $γ_+$ is a path that begins at $(1,η(1)^-)$ and ends at $(1,η(1)^+)$, the two points on the spectral curve lying over $ζ=1$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination of periods $aA + bB$. The difference in the values of the integrals is therefore
+where $γ_+$ is a path that begins at $(1,η(1)^-)$ and ends at $(1,η(1)^+)$, the two points on the spectral curve lying over $ζ=1$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is non-the-less well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination of periods $aA + bB$. The difference in the values of the integrals is therefore
 \[
 \int_{γ} Θ - \int_{γ'} Θ
 = \int_{γ - γ'} Θ
@@ -385,68 +392,72 @@ where $γ_+$ is a path that begins at $(1,η(1)^-)$ and ends at $(1,η(1)^+)$, t
 \]
 because by the period conditions, the real period of $Θ$ is zero and its imaginary period is a multiple of $2π\iu$. So although the value of the integral is dependent on the path, the condition that the value must lie in $2π\iu \Z$ is not. Likewise, the closing condition at $ζ=-1$ is defined by taking $γ_-$, a path from $(-1,η(-1)^-)$ to $(-1,η(-1)^+)$, and requiring the integral of $Θ$ over this path to lie in $2π\iu \Z$ also.
 
-For an exact differential, the particular path of integration is irrelevant and the value of the integral is well defined.
+We have seen that every marked curve $Σ\in\mathcal{A}_1$ admits differentials that meet Condtions \ref{P:poles}--\ref{P:periods}, but it is not possible to find differentials on every curve that further satisfy Condition \ref{P:closing}. It will be our ongoing aim to find all such curves in $\mathcal{A}_1$.
+
+Let us begin by formulating a condition on $(α,β)$ such that $Σ(α,β)$ admits has an exact differential that meets the closing conditions. For an exact differential, such as $Θ^E$, the particular path of integration is irrelevant and the value of the integral is
 \[
-\int_{γ_{+}} Θ^1 = i \left. d\bra{\frac{η}{ζ}} \right|_{(1, η(1)^-)}^{(1, η(1)^+)} = 2i η(1)^+ = 2i \abs{1-α}\abs{1-β}
+\int_{γ_{+}} Θ^E = i \left. d\bra{\frac{η}{ζ}} \right|_{(1, η(1)^-)}^{(1, η(1)^+)} = 2i η(1)^+ = 2i \abs{1-α}\abs{1-β}
 \]
-And similiarly for the other marked point
+And similiarly over the other marked point
 \[
-\int_{γ_{-}} Θ^1 = -2i η(-1)^+ = 2i \abs{1+α}\abs{1+β}.
+\int_{γ_{-}} Θ^E = -2i η(-1)^+ = 2i \abs{1+α}\abs{1+β}.
 \]
-One can use these formulae to define an explicit condition for a spectral curve to admit an exact closing differential. An exact closing differential must be a real multiple of $Θ^1$. Let the scaling factor be $a$. The two closing conditions applied to $a Θ^1$ are then
+One can use these formulae to define an explicit condition that a marked curve must satisfy. Any exact differential with the properties of \ref{P:poles}--\ref{P:periods} must be a real multiple of $Θ^E$. Let the scaling factor be $a\in\R$. The two closing conditions applied to $a Θ^E$ are then
 \begin{align*}
 2\iu η(1)^+ a &\in 2π\iu \Z, \\
 -2\iu η(-1)^- a &\in 2π\iu \Z.
 \end{align*}
 Eliminating $a$ from the two equations, there is a common solution for $a$ if and only if
 \[
-p := \frac{2\iu η(1)^+}{-2\iu η(-1)^-} = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q^+.
+S(α,β) := \frac{2\iu η(1)^+}{-2\iu η(-1)^-} = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q^+.
 \labelthis{eqn:def_p}
 \]
-In other words, if and only if $p(α,β)$ is a positive rational. This gives the flavour of what we are aiming to achieve. We would like to give conditions on a spectral curve that ensures it admits closing spectral data, and we would like to give such conditions explicitly so we can give results on the subspace of such spectral curves within the space of all spectral curves.
+In other words, if and only if $S(α,β)$ is a positive rational.
 
-Before we plow ahead to differentials with periods, there is a simplification we can make. Suppose that a spectral curve admits a pair of closing differentials $Θ,\tilde{Θ}$ with periods $2π\iu n, 2π\iu \tilde{n}$ respectively. Let $g$ be the greatest common denominator of $n$ and $\tilde{n}$ (choosen to be a positive number), and by Bezout's identity let $x,y$ be the integers that satisfy
+This gives the flavour of what we are aiming to achieve. We will produce two explicit functions such that a marked curve admits spectral data exactly when these functions take certain values. The two functions may be interpreted as defining equations for the subspace of spectral curves $\mathcal{S}_1$ within the space of all marked curves $\mathcal{C}_1$.
+
+Before we plow ahead to differentials with periods, there is a simplification we can make. Suppose that we have a triple of spectral data $(Σ,Θ^1,Θ^2)$ such that the differentials $Θ^1,Θ^2$ have imaginary periods $2π\iu n^1, 2π\iu n^2$ respectively. Let $k>0$ be the greatest common denominator of $n^1$ and $n^2$, and by Bezout's identity let $x,y$ be the integers that satisfy
 \[
-xn + y\tilde{n} = g.
+xn^1 + yn^2 = k.
 \]
-Then consider the differentials $Ψ,\tilde{Ψ}$ defined by the following integer combination
+Then consider the differentials $Ψ^E,Ψ^P$ defined by the following integer combination
 \[
-\vt{Ψ}{\tilde{Ψ}} =
+\vt{Ψ^E}{Ψ^P} =
 \begin{pmatrix}
-\tfrac{\tilde{n}}{g}    &   -\tfrac{\tilde{n}}{g} \\
+\tfrac{n^2}{k}    &   -\tfrac{n^1}{k} \\
 x                       &   y
 \end{pmatrix}
-\vt{Θ}{\tilde{Θ}}
+\vt{Θ^1}{Θ^2}
 \]
-The new pair of differentials are simpler in the sense that their imaginary periods are $0$ and $2π\iu g$ respectively. They are also closing, because they are an integer combination of closing differentials. And the integer matrix has determinant one, so is invertible over the integers. Further, the two differentials are linearly dependent exactly when $Ψ$ is zero. Hence,
+The new pair of differentials are simpler in the sense that their imaginary periods are $0$ and $2π\iu k$ respectively. They also meet the closing condition, because they are an integer combination of differentials that do. And the integer matrix has determinant one, so is invertible over the integers. Further, the two differentials are linearly dependent exactly when $Ψ^E$ is zero. Hence,
 \begin{lem}
-A curve admits linearly independent closing differentials if and only if it admits nonzero closing differentials with imaginary periods $0$ and $2π\iu g$, for some positive integer $g$.
+A marked curve admits spectral data if and only if it admits nonzero differentials with imaginary periods $0$ and $2π\iu k$, for some positive integer $k$, that also satisfy the closing conditions \ref{P:closing}.
 \end{lem}
 
-Thus the condition above, $p\in\Q^+$, is a necessary conditon for a spectral curve to admit closing differentials. To find a second necessary condition, concerning the differential with period $2π\iu g$, we follow the same line of reasoning. For some real number $b$, we may write $\tilde{Ψ} = b Θ^1 + g Θ^2$. Fix two paths $γ_+, γ_-$. The two closing conditions applied to $\tilde{Ψ}$ are then
+Thus the condition above, $S\in\Q^+$, is a necessary conditon for a spectral curve to admit spectral data. To find a second necessary condition, concerning the existence of a  differential with imaginary period $2π\iu k$, we follow the same line of reasoning. For some real number $b$, we may write $Ψ^P = b Θ^E + k Θ^P$. Fix two paths $γ_+, γ_-$. The two closing conditions applied to $Ψ^P$ are then
 \begin{align*}
-2η(1)^+ \iu b + g\int_{γ_+} Θ^2 &= 2π\iu Γ^+ \in 2π\iu \Z, \\
--2η(-1)^+ \iu b + g\int_{γ_-} Θ^2 &= 2π\iu Γ^- \in 2π\iu \Z.
+2η(1)^+ \iu b + g\int_{γ_+} Θ^P &= 2π\iu Γ^+ \in 2π\iu \Z, \\
+-2η(-1)^+ \iu b + g\int_{γ_-} Θ^P &= 2π\iu Γ^- \in 2π\iu \Z.
 \end{align*}
 Again elimination of $b$ yields the condition for a common solution to exist. This equation can be written as
 \[
-2π\iu T := p \int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 = 2π \iu \frac{p Γ^- - Γ^+}{g}.
+2π\iu T(α,β,γ_+,γ_-) := p \int_{γ_-} Θ^P - \int_{γ_+} Θ^P = 2π \iu \frac{p Γ^- - Γ^+}{g}.
 \labelthis{eqn:def_T}
 \]
 
 \begin{lem}
 \label{lem:closing_conds}
-A spectral curve admits a pair of nonzero closing differentials, one exact and one inexact, if and only if $p\in\Q^+$ and $T\in\Q$ for any paths $γ_+, γ_-$.
+A marked curve admits a pair of nonzero differentials satisfying the closing conditions, one exact and one inexact, if and only if $S\in\Q^+$ and $T\in\Q$ for any paths $γ_+, γ_-$.
 
 \begin{proof}
 From the above discussion, these are a necessary conditions.
 
-For the converse suppose that the are both rational, say $p = n/m$ and $T = n'/m'$. The rationality of $p$ ensures the consistent solution of an $a$, and hence the existence of $Ψ = aΘ^1$ satisfying the closing conditions. Explicitly
+For the converse suppose that the are both rational, say $p = n/m$ and $T = n'/m'$. The rationality of $p$ ensures the consistent solution of an $a$, and hence the existence of $Ψ = aΘ^E$ satisfying the closing conditions. Explicitly
 \[
 a = \frac{2π\iu n}{2\iu η(1)^+} = \frac{2π\iu n}{-2\iu η(-1)^+}\frac{-2\iu η(-1)^+}{2\iu η(1)^+} = \frac{2π\iu n}{-2\iu η(-1)^+} \frac{1}{p} = \frac{2π\iu m}{-2\iu η(-1)^+}.
 \]
 
-To find a $\tilde{Ψ}$, we must first solve
+To find a $Ψ^P$, we must first solve
 \[
 T = \frac{n'}{m'} = \frac{n'm}{m'm} = \frac{n Γ^- - mΓ^+}{gm}.
 \]
@@ -456,13 +467,13 @@ We can see that we may take $g$ to be $m'$. Let $x,y$ be integers such that $xm-
 \]
 to obtain equality of the numerator. Hence the condition for the existence of a consistent solution for $b$ is met. $b$ may be computed as
 \[
-b = \frac{1}{2\iu η(1)^+}\bra{ 2π\iu y n'm - m' \int_{γ_+} Θ^2 }.
+b = \frac{1}{2\iu η(1)^+}\bra{ 2π\iu y n'm - m' \int_{γ_+} Θ^P }.
 \]
-In summary, we have found $a,b$ and $g$ such that $Ψ = aΘ^1, \tilde{Ψ} = bΘ^1 + gΘ^2$ solve the closing conditions, and so we have demonstrated that the spectral curve admits closing differentials.
+In summary, we have found $a,b$ and $g$ such that $Ψ = aΘ^E, Ψ^P = bΘ^E + gΘ^P$ solve the closing conditions, and so we have demonstrated that the spectral curve admits closing differentials.
 \end{proof}
 \end{lem}
 
-Thus the space of genus one spectral curves that admit closing spectral data is defined by the equations $p(α,β) \in \Q^+, T(α,β) \in \Q$ inside $\mathcal{A}_1$. In general the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with the integrals of $Θ^1$ lead to an algebraic expression, as we have just seen, but the integrals of $Θ^2$ will lead to a transcendental conditions involving incomplete elliptic integrals.
+Thus the space of genus one spectral curves that admit closing spectral data is defined by the equations $p(α,β) \in \Q^+, T(α,β) \in \Q$ inside $\mathcal{A}_1$. In general the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with the integrals of $Θ^E$ lead to an algebraic expression, as we have just seen, but the integrals of $Θ^P$ will lead to a transcendental conditions involving incomplete elliptic integrals.
 
 Note that although the condition $T\in\Q$ is well defined, $T$ is a multivalued function on $\mathcal{A}_1$. It it dependent on the paths of integration. As previously seen, different paths will change the integrals by multiples of $2π\iu$ and therefore $T$ is defined up to an element of $\Z\langle 1,p\rangle \subset \Q$. In practice, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$.
 
@@ -482,14 +493,14 @@ We can derive explicit formula for the value of the integrals on these particula
 &= 2 F(f(1);k) - 2 K(k) \\
 \int_{γ_+} e
 &= 2 \tilde E(f(1);k) - 2 E(k) \\
-\int_{γ_+} Θ^2
+\int_{γ_+} Θ^P
 &= \int_{γ_+} (2Eω - 2Ke) - 2K \int_{γ_+} d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
 &= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K \frac{w(f(1))\,(f(1)-\iu\,\Im z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}.\labelthis{eqn:gamma_plus}
 \end{align*}
 
 For the closing condition at $ζ=-1$
 \begin{align*}
-\int_{γ_-} Θ^2
+\int_{γ_-} Θ^P
 &= 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{align*}
 
@@ -633,14 +644,14 @@ These expressions combine to give from \eqref{eqn:gamma_plus} and \eqref{eqn:gam
 - 4K \frac{w(f(1))\,(f(1)-\iu\,\Im z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}
 &= 4\iu K \frac{w(\iu u)\,(u-y)}{\abs{\iu u-z_0}^2}
 = 4\iu K \frac{w(\iu u)}{u-v}, \\
-\int_{γ_+} Θ^2
+\int_{γ_+} Θ^P
 = 4 E(k) F(\iu u;k) &- 4 K(k) E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v}.
 \labelthis{eqn:gamma_plus2}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}
 &= 4\iu K \frac{w(\iu v)\,(v-y)}{\abs{\iu v-z_0}^2}
 = - 4\iu K \frac{w(\iu v)}{u-v},\\
-\int_{γ_-} Θ^2
+\int_{γ_-} Θ^P
 = 4 E(k) F(\iu v;k) &- 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v}.\labelthis{eqn:gamma_minus2}
 \end{align*}
 And hence that
@@ -971,9 +982,9 @@ How does the value of $T$ change when this transformation is precomposed? To see
 \includegraphics[height=50mm]{thesis_graphics_temp/deck_T_1.png}
 \end{center}
 
-The difference between these two paths is homologous to a loop anticlockwise around the upper unit circle. So by the normalisation of $Θ^2$,
+The difference between these two paths is homologous to a loop anticlockwise around the upper unit circle. So by the normalisation of $Θ^P$,
 \[
-\int_{γ'_+} Θ^2 - \int_{γ_+} Θ^2 = \int_{\S^1} = -2π\iu.
+\int_{γ'_+} Θ^P - \int_{γ_+} Θ^P = \int_{\S^1} = -2π\iu.
 \]
 
 Likewise if we consider the difference between the path $γ_-$ and its pullback $γ'_-$ we again have a anticlockwise loop of the upper unit circle.
@@ -982,11 +993,11 @@ Likewise if we consider the difference between the path $γ_-$ and its pullback 
 \end{center}
 Hence
 \[
-\int_{γ'_-} Θ^2 - \int_{γ_-} Θ^2 = \int_{\S^1} = -2π\iu.
+\int_{γ'_-} Θ^P - \int_{γ_-} Θ^P = \int_{\S^1} = -2π\iu.
 \]
 Putting these together we conclude that the value of $T_0$ changes by $1-p$ under this transformation.
 \[
-2π\iu (T_0 \circ g - T_0) = \bra{ p\int_{γ'_-} Θ^2 - \int_{γ'_+} Θ^2 } - \bra{ p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2 } = p(-2π\iu) - (-2π\iu) = 2π\iu (1-p).
+2π\iu (T_0 \circ g - T_0) = \bra{ p\int_{γ'_-} Θ^P - \int_{γ'_+} Θ^P } - \bra{ p\int_{γ_-} Θ^P - \int_{γ_+} Θ^P } = p(-2π\iu) - (-2π\iu) = 2π\iu (1-p).
 \]
 
 To infer what the effect of the transformation is on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently altered their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$, $\iu v$. In particular, as one tranverses the unit circle clockwise, one traverses the imaginary axis in the $z$-plane from bottom to top. Correspondingly, $-\infty < 0 < u < v$.
@@ -1057,9 +1068,9 @@ On any curve $Σ \in \mathcal{S}_1$, there is a pair of differentials such that 
 \begin{proof}
 The method of proof is similar to that of lemma \ref{lem:closing_conds}, but the construction must be refined a little. Let $Ψ$ be as described there. Recall, we write $p = n/m$ in lowest terms and define
 \[
-a = \frac{2π\iu n}{2\iu η(1)^+}, \qquad Ψ = a Θ^1.
+a = \frac{2π\iu n}{2\iu η(1)^+}, \qquad Ψ = a Θ^E.
 \]
-Suppose that $Θ$ is an exact closing differential. We assert that it must be an integer multiple of $Ψ$. To see this, note that it is a real scalar of $Θ^1$ and compute its integrals
+Suppose that $Θ$ is an exact closing differential. We assert that it must be an integer multiple of $Ψ$. To see this, note that it is a real scalar of $Θ^E$ and compute its integrals
 \[
 \int_{γ_+} Θ = 2\iu η(1)^+ b = 2π\iu \tilde{n}, \qquad
 \int_{γ_-} Θ = -2\iu η(-1)^+ b = 2π\iu \tilde{m},
@@ -1077,7 +1088,7 @@ We now turn our attention to the nonexact differentials. Suppose that for fixed 
 = \frac{n'(nx - my)}{m'}
 = \frac{n'}{m'},
 \]
-So we can solve for a differential $\tilde{Ψ}$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any closing differential on the curve, we may write it as $Θ = bΘ^1 + kΘ^2$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and its integrals are $2π\iu e, 2π\iu f$. Taking its integrals over $γ_+$ and $γ_-$ and eliminating $b$ leads to
+So we can solve for a differential $Ψ^P$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any closing differential on the curve, we may write it as $Θ = bΘ^E + kΘ^P$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and its integrals are $2π\iu e, 2π\iu f$. Taking its integrals over $γ_+$ and $γ_-$ and eliminating $b$ leads to
 \begin{align*}
 \frac{n'}{m'} &= \frac{nf - me}{km} \\
 n'k\bra{\frac{m}{\gcd(m,m')}} &= (nf - me)\bra{\frac{m'}{\gcd(m,m')}} \\
@@ -1085,26 +1096,26 @@ n'k\bra{\frac{m}{\gcd(m,m')}} &= (nf - me)\bra{\frac{m'}{\gcd(m,m')}} \\
 \end{align*}
 Now, by construction $g$ is coprime to $m$. Also, $m'$ is coprime to $n'$, so $g$ is also. Hence we see that $g$ must divide $k$. Consider the differential
 \[
-Θ - \frac{k}{g}\tilde{Ψ}.
+Θ - \frac{k}{g}Ψ^P.
 \]
-It is closing and exact, so a multiple of $Ψ$ by the first part of this proof. Rearranging we have finally written $Θ$ as an integer combination of $Ψ,\tilde{Ψ}$.
+It is closing and exact, so a multiple of $Ψ$ by the first part of this proof. Rearranging we have finally written $Θ$ as an integer combination of $Ψ,Ψ^P$.
 \end{proof}
 \end{lem}
 
-So the closing differentials are a $\Z\times\Z$-subbundle $\mathcal{M}_1$ of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. $Ψ$ is a well defined function on all of $\mathcal{C}_1(p)$, but $\tilde{Ψ}$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space. For $p\neq 1$, $\mathcal{S}_1(p)$ is simply connected however, so it is possible to extend these differentials to a frame for $\mathcal{M}_1(p)$, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
+So the closing differentials are a $\Z\times\Z$-subbundle $\mathcal{M}_1$ of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. $Ψ$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space. For $p\neq 1$, $\mathcal{S}_1(p)$ is simply connected however, so it is possible to extend these differentials to a frame for $\mathcal{M}_1(p)$, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
 
-For $p=1$, take a path component of $\mathcal{S}_1$. It is an annulus. $p=1=n/m$ implies that $m=n=1$ and $T_0 = m'/n'$ is well defined and constant on the whole annulus. Consider a simple nontrivial loop $\ell : [0,1]$. If we make a choice of $γ_+,γ_-$ on $Σ(\ell(t))$ such that the curves vary smoothly in $t$, what will be the change in $\tilde{Ψ}$ when we return to $\ell(1) = \ell(0)$? Let $\tilde{Ψ} = b Θ^1 + m' Θ^2$ be the initial differential, and let $\tilde{Ψ}'  = b' Θ^1 + m' Θ^2$ be its continuation to $\ell(1)$. From our previous compuations, each of
+For $p=1$, take a path component of $\mathcal{S}_1$. It is an annulus. $p=1=n/m$ implies that $m=n=1$ and $T_0 = m'/n'$ is well defined and constant on the whole annulus. Consider a simple nontrivial loop $\ell : [0,1]$. If we make a choice of $γ_+,γ_-$ on $Σ(\ell(t))$ such that the curves vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous compuations, each of
 \[
-\int_{γ_+} Θ^2, \int_{γ_-} Θ^2
+\int_{γ_+} Θ^P, \int_{γ_-} Θ^P
 \]
-will be incremented by $2π\iu$ (or decremented, depending on the orientation of $\ell$). The difference $\tilde{Ψ}' - \tilde{Ψ} = (b'-b)Θ^1$ can be explicitly written
+will be incremented by $2π\iu$ (or decremented, depending on the orientation of $\ell$). The difference $\tilde{Ψ}^P - Ψ^P = (b'-b)Θ^E$ can be explicitly written
 \begin{align*}
 b'
-&= \frac{1}{2\iu η(1)^+}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+} Θ^2 + 2π\iu} } \\
+&= \frac{1}{2\iu η(1)^+}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+} Θ^P + 2π\iu} } \\
 &= b - \frac{2π\iu}{2\iu η(1)^+}m' \\
 &= b - am',
 \end{align*}
-so that $\tilde{Ψ}' - \tilde{Ψ} = -am'Θ^1 = - m' Ψ$. Recall that the period of $\tilde{Ψ}$ is $g = m' / \gcd(m,m') = m'$. This says that everytime you loop around the annulus, the nonexact differential shifts by $m' Ψ$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus is simply connected. The basis $Ψ,\tilde{Ψ}$ is not unique, one may add an integer multiple of $Ψ$ to $\tilde{Ψ}$, but this shows that there is a path in the moduli space between bases that have their nonexact differentials differ by $m'\Z Ψ$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus has $m'$ components.
+so that $\tilde{Ψ}^P - Ψ^P = -am'Θ^E = - m' Ψ$. Recall that the period of $Ψ^P$ is $g = m' / \gcd(m,m') = m'$. This says that everytime you loop around the annulus, the nonexact differential shifts by $m' Ψ$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus is simply connected. The basis $Ψ,Ψ^P$ is not unique, one may add an integer multiple of $Ψ$ to $Ψ^P$, but this shows that there is a path in the moduli space between bases that have their nonexact differentials differ by $m'\Z Ψ$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus has $m'$ components.
 
 There are some symmetries and special cases that also bear mention. First, we have already remarked upon and made use of the symmetry
 \[
