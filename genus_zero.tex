@@ -4,11 +4,11 @@
 \label{sec:Genus Zero}
 
 The moduli space of spectral data where the spectral curve is genus zero is an instructive case.
-It is possible to describe this space using only elementary functions, so we will give explicit formulae for all such harmonic maps $f$ and their associated solutions $(A,Φ)$ to \eqref{eqn:Hit1.7} and spectral data $(Σ,Θ,\tilde{Θ})$. These formulae will allow us to illustrate the correspondences between certain properties of the map and its spectral data. The process of deriving the spectral data from a formula of a harmonic map also serves as a demonstration of the spectral curve construction that was outlined in Section \ref{sub:construction}. Finally, we may describe the moduli space $\mathcal{M}_0$ as a disjoint union of discs to both give an example of the results of the previous chapter and as a guide for the description of $\mathcal{M}_1$ in the subsequent chapter.
+It is possible to describe this space using only elementary functions, so we will give explicit formulae for all such harmonic maps $f$ and their associated solutions $(A,Φ)$ to \eqref{eqn:Hit1.7} and spectral data $(Σ,Θ^1,Θ^2)$. These formulae will allow us to illustrate the correspondences between certain properties of the map and its spectral data. The process of deriving the spectral data from a formula of a harmonic map also serves as a demonstration of the spectral curve construction that was outlined in Section \ref{sub:construction}. Finally, we may describe the moduli space $\mathcal{M}_0$ as a disjoint union of discs to both give an example of the results of the previous chapter and as a guide for the description of $\mathcal{M}_1$ in the subsequent chapter.
 
-The derivations within this chapter may be divided into three parts. In the first part, we start with equations \eqref{eqn:Hit1.7} and find all translation invariant solutions. Amoung these solutions, we determine which correspond to harmonic maps from a torus by forcing a periodicity constraint. We then write an explict formula for each harmonic map, and bring it into a standard form by applying rotations. In the second part, we take these harmonic maps and work through the steps of Section \ref{sub:construction} to produce the associated spectral data. Further calculations give rise to formulae for the infinitesimal deformations in terms of derivative of the branch point, and an expression of the energy of the harmonic map.
+The derivations within this chapter may be divided into three parts. In the first part, we start with equations \eqref{eqn:Hit1.7} and find all translation invariant solutions. Among these solutions, we determine which correspond to harmonic maps from a torus by forcing a periodicity constraint. We then write an explict formula for each harmonic map, and bring it into a standard form by applying rotations. In the second part, we take these harmonic maps and work through the steps of Section \ref{sub:construction} to produce the associated spectral data. Further calculations give rise to formulae for the infinitesimal deformations in terms of derivative of the branch point, and an expression of the energy of the harmonic map.
 
-Let us start then by finding all translation invariant pairs $(A,Φ)$ solving equations \eqref{eqn:Hit1.7}. By translation invariance we mean that, for $z\in\C$ a uniformising coordinate on the torus $M = \C/\Z\langle 1,τ\rangle$, we may write the Higgs field as $Φ = F \,dz$ and the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to the trivialisation arising from the translation action, for constant traceless matrices $F$ and $G$ (compare to \cite[(9.11)]{Hitchin1990}). With these definitions, equations \eqref{eqn:Hit1.7} become
+Let us start then by finding all translation invariant pairs $(A,Φ)$ solving equations \eqref{eqn:Hit1.7}. By translation invariance we mean that, for $z\in\C$ a uniformising coordinate on the torus $M = \C/\Z\langle 1,τ\rangle$, we may write the Higgs field as $Φ = F \,dz$ and the $(0,1)$ part of the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to some trivialisation $d$, for constant traceless matrices $F$ and $G$ (compare to \cite[(9.11)]{Hitchin1990}). With these definitions, equations \eqref{eqn:Hit1.7} become
 \[
 [F,G] = 0\;\; \text{and}\;\; [G,G^*] = [F,F^*].
 \]
@@ -21,20 +21,20 @@ d_ζ := d_A + ζ^{-1}Φ - ζΦ^*
 \labelthis{eqn:flat connection translation}
 \]
 for $ζ\in\S^1$. As the matrices $F$ and $G$ are constant, for each $ζ$ one can solve the parallel transport equation $d_ζ X = 0$ explicitly by exponentiation.
-One may then recover the associated harmonic map as the change of gauge between two parallel vector fields for the connections $d_1$ and $d_{-1}$, as in \eqref{eqn:gauge change}.
+One may then recover the associated harmonic map from $\C$ to $\SU(2)$ as the change of gauge between two parallel vector fields for the connections $d_1$ and $d_{-1}$, as in \eqref{eqn:gauge change}. We do not yet know whether this map will descend to a map from $M$, because we have not required $d_1$ and $d_{-1}$ to be trivial.
 After factorising, we write the harmonic map as
 \[
 f(z) = \exp[ (κz + \bar{κ}\bar{z})(-\bar{κ}F + κF^*) ]
 \exp[ (κz - \bar{κ}\bar{z})(-\bar{κ}F - κF^*) ].
 \]
-We may simplify this formula by making the following substitutions. On the torus,  make the change of coordinates $w = κz$ and let $w = w_R + \iu w_I$ be the sum of its real and imaginary parts. We note that $\sl_2\C$ can be decomposed as a direct sum $\su_2 \oplus \iu \su_2$. If we decompose $\bar{κ}F = X + \iu Y$ for $X,Y\in \su_2$ then we may replace the two expressions $-\bar{κ}F + κF^*$ and $-\bar{κ}F - κF^*$ by the real and imaginary parts of $κF$. With these substitutions, the above formula becomes
+We may simplify this formula by making the following substitutions. On $\C$, make the change of coordinates $w = κz$ and let $w = w_R + \iu w_I$ be the sum of its real and imaginary parts. We note that $\sl_2\C$ can be decomposed as a direct sum $\su_2 \oplus \iu \su_2$. If we decompose $\bar{κ}F = X + \iu Y$ for $X,Y\in \su_2$ then we may replace the two expressions $-\bar{κ}F + κF^*$ and $-\bar{κ}F - κF^*$ by the real and imaginary parts of $κF$. With these substitutions, the above formula becomes
 \[
 f(w) = \exp( -4w_R X ) \exp( 4 w_I Y ).
 \labelthis{eqn:genus zero simple map}
 \]
 The matrix exponential of an $\su_2$ matrix is of course an $\SU(2)$ matrix, and a line through the origin of $\su_2$, such as $\Set{-4w_R X }{w_R \in \R}$, is mapped to a one parameter subgroup of $\SU(2)$, a circle. As we vary $w_R$, the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$. Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles, and hence the image is a torus.
 
-Not all solutions to \ref{eqn:Hit1.7} correspond to harmonic maps of the torus, and thus far this map $f$ is only a map from the plane $z\in\C$ to $\SU(2)$. It induces a map on the torus $M$ when it periodic with respect to the lattice $\Z\langle 1,τ\rangle$. Thus we must show firstly that the map is periodic and then determine for which matrices $X,Y$ and rotations $κ$ these periods lie in the lattice. To do so we will need to know how to compute explicitly the matrix exponential of an $\su_2$ matrix.
+Not all solutions to \ref{eqn:Hit1.7} correspond to harmonic maps of the torus $M = \C/\Z\langle 1,τ\rangle$, and thus far this map $f$ is only a map from the plane $\C$ to $\SU(2)$. It induces a map on the torus $M$ when it periodic with respect to the lattice $\Z\langle 1,τ\rangle$. Thus we must show firstly that the map is periodic and then determine for which matrices $X,Y$ and rotations $κ$ these periods lie in the lattice. To do so we will need to know how to compute explicitly the matrix exponential of an $\su_2$ matrix.
 
 Calculations with $\su_2$ matrices are far more pleasant when one leverages their underlying geometry.
 We may identify $\su_2$ with $\R^3 = \R\langle i,j,k\rangle$ via the standard basis of $\su_2$
@@ -49,7 +49,7 @@ We may identify $\su_2$ with $\R^3 = \R\langle i,j,k\rangle$ via the standard ba
 0 & \iu \\ \iu & 0
 \end{pmatrix} \mapsto k.
 \]
-If $\langle\cdot,\cdot\rangle_{\R^3}$ and $\times_{\R^3}$ are the usual inner and cross products of $\R^3$ then the multiplication of two matrices $A,B \in \su_2$ may be computed as
+If $\langle\cdot,\cdot\rangle_{\R^3}$ and $\times_{\R^3}$ are the usual inner and cross products of $\R^3$ then the product of two matrices $A,B \in \su_2$ may be computed as
 \[
 AB = -\langle A, B\rangle_{\R^3} I + (A\times_{\R^3} B).
 \labelthis{eqn:su2 product}
@@ -63,13 +63,13 @@ This inner product is actually the same as the one that arises by considering $\
 \exp Z = I \cos \norm{Z} + \hat{Z} \sin \norm{Z}.
 \]
 
-Given this explicit formula for the matrix exponential, we now compute the periods of the map $f$. By the assumption that the matrix $F = κ(X+\iu Y)$ does not commute with its conjugate-transpose, $X$ and $Y$ are linearly independent. If $a+\iu b$ is a point such that $f(a+\iu b) = I$ then $\exp(4aX ) = \exp(4bY)$, and so by linear independence they must both equal $\pm I$. For any $w\in\C$ it follows that
+Given this explicit formula for the matrix exponential, we now compute the periods of the map $f$. By the assumption that the matrix $F = κ(X+\iu Y)$ does not commute with its conjugate-transpose, $X$ and $Y$ are linearly independent. If $a+\iu b$ is a point such that $f(a+\iu b) = I$ then $\exp(4aX ) = \exp(4bY)$, and so by linear independence they must both equal $\pm I$. For any $u\in\C$ it follows that
 \begin{align*}
-f(w + a +\iu b)
-&= \exp( -4(w_R+a) X ) \exp( 4 (w_I+b) Y ) \\
-&= \exp( -4aX ) \exp( -4w_R X ) \exp( 4 b Y ) \exp( 4 w_I Y ) \\
-&= (\pm I)^2 \exp( -4w_R X ) \exp( 4 w_I Y ) \\
-&= f(w),
+f(u + a +\iu b)
+&= \exp( -4(u_R+a) X ) \exp( 4 (u_I+b) Y ) \\
+&= \exp( -4aX ) \exp( -4u_R X ) \exp( 4 b Y ) \exp( 4 u_I Y ) \\
+&= (\pm I)^2 \exp( -4u_R X ) \exp( 4 u_I Y ) \\
+&= f(u),
 \end{align*}
 and thus $a+\iu b$ is a period. The converse, that $f(w)=I$ if $w$ is a period, is trivial. Thus $f$ is periodic, and its periods are precisely the points where it takes the value $I$.
 
@@ -92,9 +92,9 @@ Thus the lattice of the periods of $f$, expressed in the variable $w$, is genera
 \labelthis{eqn:def kappa12}
 \]
 
-\makefigure{The lattice of periods of $f$.}{thesis_graphics_temp/genus_zero_lattice.png}
+\makefigure{The lattice of periods of $f$. TODO This has the wrong labels }{thesis_graphics_temp/genus_zero_lattice.png}
 
-The geometric meaning of $κ$, $\norm{X}$, and $\norm{Y}$ are now apparent; they determine the size and rotational offset of the lattice of periods of $f$. The three parameters must be chosen so that $1$ and $τ$ are points of this lattice of periods $\Z\langle \bar{κ}κ_1,\bar{κ}κ_2 \rangle$.
+The geometric meaning of $κ$, $\norm{X}$, and $\norm{Y}$ are now apparent. The parameter $κ$ mediates between the $z$ and $w$ coordinates on $\C$ and so rotational offset angle of the lattice of periods of $f$ with respect to $\langle 1,τ \rangle$. More simply, the parameters $\norm{X}$ and $\norm{Y}$ determine the size of the lattice of periods by \eqref{eqn:def kappa12}. The three parameters must be chosen so that $1$ and $τ$ are points of this lattice of periods $\Z\langle \bar{κ}κ_1,\bar{κ}κ_2 \rangle$.
 That is, there must be integers $n^1,m^1,n^2,m^2$
 \[
 κ = n^1 κ_1 + m^1 κ_2,\;\;
@@ -105,10 +105,10 @@ Eliminating $κ$ and solving for $τ$ yields
 \[
 τ
 = \frac{(n^2 + m^2) + \iu x(n^2 - m^2)}
-{(n^1+m^1) +\iu x(n^1-m^1)},
+{(n^1+m^1) +\iu x(n^1-m^1)}, \text{ for } x = \frac{\norm{Y}}{\norm{X}}.
 \labelthis{eqn:conformal type}
 \]
-for $x = \frac{\norm{Y}}{\norm{X}}$. To turn this around, if one begins with the parameters $κ,\norm{X}$ and $\norm{Y}$ then this shows that the conformal type of domain of the map $f$ depends on $x$ and four integers. These four integers may be interpreted as winding numbers of the map. The parallelogram spanned by $κ_1$ and $κ_2$ covers the image exactly once. Thus in \eqref{eqn:def kappa} the integers $n^1$ and $m^1$ may be interpreted as how many times the loop $[0,1] \subset \C/\langle 1,τ \rangle$ is wrapped around the image, and likewise for $n^2$ and $m^2$.
+To turn this around, if one begins with the parameters $κ,\norm{X}$ and $\norm{Y}$ then this shows that the conformal type of domain of the map $f$ depends on $x$ and four integers. These four integers may be interpreted as winding numbers of the map. The parallelogram spanned by $κ_1$ and $κ_2$ covers the image exactly once. Thus in \eqref{eqn:def kappa} the integers $n^1$ and $m^1$ may be interpreted as how many times the loop $[0,1] \subset \C/\langle 1,τ \rangle$ is wrapped around the image, and likewise for $n^2$ and $m^2$.
 
 Before proceeding to the second part of this example, where we compute the spectral data associated to the map $f$, we may further simplify \eqref{eqn:genus zero simple map}. The correspondence between spectral data and harmonic maps does not distinguish between maps that differ by an $\SO(4)$ rotation of $\S^3 = \SU(2)$. We may use this freedom of rotation to align $X$ in the direction of $σ_2$ and have $Y$ lie in the plane spanned by $σ_2$ and $σ_3$ such that $(X,Y)$ carries the same orientation as $(σ_2,σ_3)$. After this rotation $X = \norm{X}σ_2$, and for some $δ\in (0,π)$
 \[
@@ -149,9 +149,9 @@ H^2(ζ)
 (1+\iu xe^{-\iu δ}) + (1-\iu xe^{-\iu δ})ζ & 0
 \end{pmatrix}\right\}.
 \end{align*}
-We note that setting $τ=1$ above recovers the formula for $H^1(ζ)$, so we shall do all our computations with $H^2$.
+We note that setting $τ=1$ above recovers the formula for $H^1(ζ)$, so we shall do all our computations with $H^2$. Also, by rotating the vectors $X$ and $Y$ into the $σ_2σ_3$-plane we have ensured that the holonomy matrices are off-diagonal. Thus their eigenvalues and eigenspaces are easy to write down.
 
-To compute the spectral curve, we find the values of $ζ$ for which the two eigenlines of $H^2(ζ)$ coincide. If $B(ζ)$ is defined by $H^2(ζ) = \exp B(ζ)$, then the eigenspaces of $H^2(ζ)$ and $B(ζ)$ are the same, so we may do our computation with the latter. The matrix $B(ζ)$ is off-diagonal, so $u(ζ) = (u_1(ζ)\; u_2(ζ))^T$ is an eigenvector if and only if
+To find the spectral curve, we find the values of $ζ$ for which the two eigenlines of $H^2(ζ)$ coincide. If $B(ζ)$ is defined by $H^2(ζ) = \exp B(ζ)$, then the eigenspaces of $H^2(ζ)$ and $B(ζ)$ are the same, so we may do our computation with the latter. The matrix $B(ζ)$ is off-diagonal, so $u(ζ) = (u_1(ζ)\; u_2(ζ))^T$ is an eigenvector if and only if
 \[
 -ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α) u_2(ζ)^2
 = ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ) u_1(ζ)^2.
@@ -162,14 +162,14 @@ where $α$ is a point that is always inside the unit circle, given by
 = \frac{x e^{\iu δ} - \iu}{x e^{\iu δ} +\iu}.
 \labelthis{eqn:def branch point genus zero}
 \]
-Points of the eigenline curve, in $\CP^1 \times\CP^1$, are therefore of the form
+Following \eqref{eqn:eigneline curve}, points of the eigenline curve in $\CP^1 \times\CP^1$ are of the form
 \begin{align*}
 &\bra{ζ, \left[\pm \sqrt{-ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] } \\
-&\qquad= \bra{ζ, \left[\pm \sqrt{-\norm{X}(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] }.
+&\qquad= \bra{ζ, \left[\pm \sqrt{-(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] }.
 \end{align*}
-From this we can see where and to what order the eigenlines coincide. They coincide when one of the homogeneous coordinates vanish, with the order of coincidence the same as the order of the root. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 + \iu x e^{-\iu δ}$ never vanish. Hence the eigenlines coincide only over $α$ and $\cji{α}$, and only to first order. The spectral curve is therefore $η^2 = (ζ-α)(1-\bar{α}ζ)$, a genus zero hyperelliptic curve without singularities.
+From this we can see where and to what order the eigenlines coincide. The plus-minus sign produces two distinct lines unless one of the components of the homogeneous coordinates has a root, with the order of coincidence the same as the order of the root. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 + \iu x e^{-\iu δ}$ never vanish. Hence the eigenlines coincide only over $α$ and $\cji{α}$, and only to first order. The spectral curve is therefore $η^2 = (ζ-α)(1-\bar{α}ζ)$, a genus zero hyperelliptic curve without singularities.
 
-Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some nonrigorous intutition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is a M\"obius transformation to the unit disc. One can write the inverse transformation as
+Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some nonrigorous intutition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is the Cayley transform, a M\"obius transformation of the upper half plane to the unit disc. One can write the inverse transformation as
 \[
 x e^{\iu δ} = \iu \frac{1+α}{1-α}.
 \]
@@ -177,9 +177,9 @@ Taking the magnitude of both sides shows that $x$ is constant along arcs such th
 \[
 \abs{\frac{1+α}{1-α}}
 \]
-is fixed. These are arcs of circles centered on the real axis with radii such that the circle is perpendicular to the unit circle. If $x$ is constant, so too is $τ$, and along these arc the corresponding family of harmonic maps have the same domain but images changing as in Figure \ref{fig:genus zero maps}.
+is fixed. These are arcs of circles centered on the real axis with radii such that the circle is perpendicular to the unit circle. If $x$ is constant, so too is $τ$, and along this arc the corresponding family of harmonic maps have the same domain but images changing as in Figure \ref{fig:genus zero maps}.
 
-In the limit as $α$ approaches the unit circle for fixed $x$, the parameter $δ$ tends to $0$ or $π$ and the image of the harmonic map collapses into a circle, specifically a one-parameter subgroup of $\SU(2)$. A harmonic map to a circle subgroup is a particular case of a conformal map to a totally geodesic $2$-sphere, the class of harmonic tori in $\S^3$ that do not produce spectral curves by the construction of Section \ref{sub:construction}. In Chapter \ref{sec:Moduli Boundary}, we will develop a process whereby a curve that has a double point on the unit circle, and which is the limit of spectral curves, is normalised to produce a spectral curve of lower genus. The analogous process is not possible here however, as the normalisation of $η^2 = e^{-\iu \varphi} (ζ- e^{\iu \varphi})^2$ is the disjoint union of two spheres, which does not fit into the defintion of a marked curve (Section \ref{sub:marked curve}). One can however appreciate the moral sentiment common to both these cases, that the development of a double point on the unit circle should be thought of as the harmonic map degenerating to `simpler' harmonic map.
+In the limit as $α$ approaches the unit circle for fixed $x$, the parameter $δ$ tends to $0$ or $π$ and the image of the harmonic map collapses into a circle, specifically a one-parameter subgroup of $\SU(2)$. A harmonic map to a circle subgroup is a particular case of a conformal map to a totally geodesic $2$-sphere, the class of harmonic tori in $\S^3$ that do not produce spectral curves by the construction of Section \ref{sub:construction}. In Chapter \ref{sec:Moduli Boundary}, we will develop a process whereby we take the limit of a family of spectral curves as it tends towards a curve that has a double point on the unit circle, and that singular curve is normalised to produce a spectral curve of lower genus. The analogous process is not possible here, as the normalisation of $η^2 = e^{-\iu \varphi} (ζ- e^{\iu \varphi})^2$ is the disjoint union of two spheres, which does not fit into our defintion of spectral data (Section \ref{sub:marked curve}). One can however appreciate the moral sentiment common to both these cases, that the development of a double point on the unit circle should be thought of as a fmaily of harmonic maps degenerating to `simpler' harmonic map.
 
 \makefigure{Constant parameter lines.}{thesis_graphics_temp/genus_zero_parameters.png}
 
@@ -187,9 +187,9 @@ Conversely if $δ$ is fixed, say at $δ=π/2$, but $x$ is allowed to vary then $
 \[
 α = \frac{x-1}{x+1},
 \]
-and takes values along the real axis. Throughout this deformation, the image of the corresponding harmonic maps is fixed, it is only the domain that is changing. The two extremes, when $α=-1$ or $1$, correspond to $x=0$ and $\infty$ respectively. In these two limits, one of $\norm{X}$ or $\norm{Y}$ is dwarfing the other, which by \eqref{eqn:def kappa12} shows that in one direction the lattice of periods is becoming neglible. Another way to put this is that the limit of the lattice of periods will be only rank one, not rank two. Thus we should interpret this limit as corresponding to a harmonic map of the cylinder. Towards the end of this chapter, when we compute the energy of these maps, we will see that as we aproach the two points $α=-1, 1$ the torus tends to having infinite area, which support this interpretation.
+and takes values along the real axis. Throughout this deformation, the image of the corresponding harmonic maps is fixed, it is only the domain that is changing. The two extremes, when $α=-1$ or $1$, correspond to $x=0$ and $\infty$ respectively. In these two limits, one of $\norm{X}$ or $\norm{Y}$ is dwarfing the other, which by \eqref{eqn:def kappa12} shows that in one direction the lattice of periods is becoming negligible. Another way to put this is that the limit of the lattice of periods will be only rank one, not rank two. Thus we should interpret this limit as corresponding to a harmonic map of the cylinder. Towards the end of this chapter, when we compute the energy of these maps, we will see that as we aproach the two points $α=-1, 1$ the torus tends to having infinite area, which supports this interpretation.
 
-We shall see the features of these limits recur in the moduli space $\mathcal{M}_1$, of spectral data with a genus one curve. The limit of a spectral curve when one of its branch points tends towards $\pm 1$ is qualitatively different than when it tends to another point on the unit circle. At $α \in \S^1 \setminus\{\pm 1\}$, the harmonic map degenerates to a simpler map, whereas at $\pm 1$ the spectral data is not well defined in the limit.
+To summarise, the two parameters $x$ and $δ$ that constitute $α$ control the conformal type of the domain and image of the harmonic map respectively, with the extreme cases corresponding to maps from a cylinder or maps to a circle. We shall see the features of these limits recur in the moduli space $\mathcal{M}_1$, of spectral data with a genus one curve. The limit of a spectral curve when one of its branch points tends towards $\pm 1$ is qualitatively different than when it tends to another point on the unit circle. At $α \in \S^1 \setminus\{\pm 1\}$, the harmonic map degenerates to a simpler map, whereas at $\pm 1$ the spectral data is not well defined in the limit.
 
 Having found the spectral curve, we continue our quest to find the spectral data of the harmonic map $f$ by computing the pair of differentials. The pair of differentials $Θ^1,Θ^2$ arise as the derivatives of the logarithms of the eigenvalues $μ^1,μ^2$ of the holonomy matrices $H^1,H^2$ respectively. The two eigenvalues of $H^2$ are $(μ^2)^{\pm 1} = \exp (\pm ν)$, so in this example $Θ^2 = d\log μ^2 = dν$. To compute $ν$, an eigenvalue of $B(ζ)$, we note that as $B$ is a traceless matrix
 \begin{align*}
@@ -241,7 +241,7 @@ The final piece of the spectral data, though one that we do not treat extensivel
 
 
 
-We have computed the spectral data for all maps $f$ of the form \eqref{eqn:genus zero simple map} and noted that they were all and exactly the spectral data with a genus zero spectral curve. Let us turn then to describing the moduli space $\mathcal{M}_0$, of triples $(Σ,Θ^1,Θ^2)$, as a whole. We have seen that the marked curve $Σ$ is completely determined by its sole branch point $α$ in the unit disc $D$. And for every $α$ we may choose $Θ^1$ and $Θ^2$ from a rank two lattice. However by condition \ref{P:linear independence} they must be real linearly independent. Given a basis of the lattice of differentials, such as $Ψ^1, Ψ^2$ above in \eqref{eqn:genus zero differential basis}, we may represent our choice of lattice points in terms of two pairs of integers. As a matrix equation, this takes the form
+We have computed the spectral data for all maps $f$ of the form \eqref{eqn:genus zero simple map} and noted that they were all and exactly the spectral data with a genus zero spectral curve. Let us turn then to describing the moduli space $\mathcal{M}_0$, of triples $(Σ,Θ^1,Θ^2)$, as a whole. We have seen that the marked curve $Σ$ is completely determined by its sole branch point $α$ in the unit disc $D$. And for every $α$ we may choose $Θ^1$ and $Θ^2$ from a rank two lattice. However by condition \ref{P:linear independence} they must be real linearly independent. Given a basis of the lattice of differentials, such as $Ψ^1, Ψ^2$ in \eqref{eqn:genus zero differential basis} above, we may represent our choice of lattice points in terms of two pairs of integers. As a matrix equation, this takes the form
 \begin{align*}
 \begin{pmatrix}
 Θ^1 \\ Θ^2
@@ -266,7 +266,7 @@ But this is just the action of $\Mat_2^*\Z$ on a point $τ$ in the upper half pl
 \[
 τ = \frac{1-x^2 + 2\iu x}{1+x^2},
 \]
-so as $α$ moves in the unit disc, $τ$ sweeps out the upper half unit circle. The range of the conformal parameter for any other genus zero harmonic map is the image of this semicircle under some element of $\Mat_2^*\Z$. Hence the possible ranges of the conformal parameter $τ$ under deformation of the harmonic map are semicircles in the upper half plane centered on the real axis with endpoints in $\Q$ (or vertical rays with a rational endpoint, which are a special case).
+so as $α$ moves in the unit disc, $τ$ sweeps out the upper half of the unit circle. The range of the conformal parameter for any other genus zero harmonic map is the image of this semicircle under some element of $\Mat_2^*\Z$. Hence the possible ranges of the conformal parameter $τ$ under deformation of the harmonic map are semicircles in the upper half plane centered on the real axis with endpoints in $\Q$ (or vertical rays with a rational endpoint, which are a special case).
 
 \begin{figure}[ht]
 \centering
@@ -291,8 +291,11 @@ for some constant $C$ and $s^i \in \Z\langle r^1, r^2 \rangle$. If the deformati
 + \bra{\bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i} ζ^3
 \right].
 \end{align*}
-Note that this is a cubic polynomial that is imaginary with respect to the involution $ρ$, as expected. We wish to factorise it, but to do so we first need to simplify the expressions appearing in the coefficients. By labourious calculation, using the specific form of $s^i$, the first order coefficient may be shown to be equal to the conjugate of the zeroeth order coefficient. We have then
-% If one wishes to verify this calculation for oneself, it is recommended to first check for $s^i$ equal to $\abs{1+α}^{-1}$ and then $\iu\abs{1-α}^{-1}$. As $s^i$ is in fact an integral combination of the functions $r^1$ and $r^2$, and those functions are real combinations of the two suggested functions, and because the expressions in the coefficients are real linear, this check is sufficient.
+Note that this is a cubic polynomial that is imaginary with respect to the involution $ρ$, as expected. We wish to factorise it, but to do so we first need to simplify the expressions appearing in the coefficients. By labourious calculation, using the specific form of $s^i$, the first order coefficient may be shown to be equal to the conjugate of the zeroeth order coefficient.
+
+(If one wishes to verify this calculation for oneself, it is recommended to first check for $s^i$ equal to $\abs{1+α}^{-1}$ and then $\iu\abs{1-α}^{-1}$. As $s^i$ is in fact an integral combination of the functions $r^1$ and $r^2$, $r^i$ is a real combination of the two suggested functions, and because the expressions in the coefficients are real linear in $s^i$, this check is sufficient.)
+
+We have then
 \begin{align*}
 \dot q^i
 &= \frac{1}{ζη} \left[- \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i}
@@ -309,7 +312,7 @@ b^i(ζ) \frac{dζ}{ζ^2η} := dq^i
 = \frac{dζ}{ζ^2η} \left[ αs^i -\frac{1}{2}(1+α\bar{α})s^i ζ - \frac{1}{2}(1+α\bar{α})\bar{s}^i ζ^2 + \bar{α}\bar{s}^i ζ^3 \right].
 \labelthis{eqn:b genus zero}
 \]
-These polynomials are also cubic and are real with respect to $ρ$. They also satisfy the residue condition \eqref{eqn:residue condition}. If we take $b^i$ and $c^1$ and substitute them into $b^1c^2 - b^2 c^1$, this is the left hand side of equation \eqref{eqn:Q}. Dividing by $P$ leaves the polynomial $Q$,
+These polynomials are also cubic and are real with respect to $ρ$. They also satisfy the residue condition \eqref{eqn:residue condition}. If we take $b^i$ and $c^i$ and substitute them into $b^1c^2 - b^2 c^1$, this is the left hand side of equation \eqref{eqn:Q}. Dividing by $P$ leaves the polynomial $Q$,
 \[
 Q = \frac{\pi^2}{4}\frac{1}{\abs{1-α^2}}\bra{n^1m^2-n^2m^1} \left[ - 2\iu α \bra{\Re\frac{\dot{α}}{1-α^2}} + (1-α\bar{α}) \bra{\Im\frac{\dot{α}}{1-α^2}} ζ + 2\iu \bar{α}\bra{\Re \frac{\dot{α}}{1-α^2}}ζ^2\right].
 \]

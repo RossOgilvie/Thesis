@@ -8,20 +8,24 @@
 
 \subsection{Higgs Field}
 
-Suppose that $M$ is a compact Riemann surface, and $G$ is a Lie group with a bi-invariant metric. Given any smooth map $f: M\to G$, we can pull back the bi-invariant metric connection on $TG$ to a connection we shall denote $A$ on $f^*(TG)$, with associated covariant exterior differential $d_A$. Using the the orientation of the complex structure of $M$, we have the Hodge star operator $* : Ω^1(M) \to Ω^1(M)$. $f$ is harmonic iff $d_A^* df$ is zero. Using the Hodge star to express the adjoint, this is equivalent to
+Suppose that $M$ is a compact Riemann surface, and $G$ is a Lie group with a bi-invariant metric. Given any smooth map $f: M\to G$, we can pull back the bi-invariant metric connection on $TG$ to a connection we shall denote $A$ on $f^*(TG)$, with associated covariant exterior differential $d_A$. Using the the orientation of the complex structure of $M$, we have the Hodge star operator $* : Ω^1(M) \to Ω^1(M)$. The map $f$ is harmonic iff $d_A^* df$ is zero. Using the Hodge star to express the adjoint, this is equivalent to
 \[
 d_A (* df) = 0.
 \]
-The Maurer-Cartan form $ω$ of a Lie group is $\mathfrak{g}$-valued one-form that is invariant under the left group action and acts trivially on the on tangent space at the identity. This forces, for any $X\in T_gG$, $ω(X) = (L_{g^{-1}})^*v$, where $L$ is left multiplication. For linear groups, such as we will be considering, if use the identification map $g:G \to \Mat_{n\times n}(\R)$, at $a\in G$
+The Maurer-Cartan form $ω$ of a Lie group is the unique $\mathfrak{g}$-valued one-form that is invariant under the left group action and acts trivially on the on tangent space at the identity. This forces, for any $X\in T_gG$, $ω(X) = (L_{g^{-1}})^* X$, where $L$ is left multiplication. For linear groups, such as we will be considering, if use the identification map $g:G \to \Mat_{n\times n}(\R)$, at $a\in G$
 \[
 ω_a = g(a)^{-1} dg_a.
 \]
-The importance of the Maurer-Cartan form is in its property of characterising maps to the Lie group. If $φ$ is a $\mathfrak{g}$-value one-form on a simply connected manifold $U$ satisfying the Maurer-Cartan equation
+The importance of the Maurer-Cartan form is its property of characterising maps to the Lie group. If $φ$ is a $\mathfrak{g}$-value one-form on a simply connected manifold $U$ satisfying the Maurer-Cartan equation
 \[
 dφ + \frac{1}{2}[φ\wedge φ] = 0,
 \]
 where $[(X\otimes α) \wedge (Y\otimes β)] = [X,Y]\otimes(α\wedge β)$ for elements $X,Y\in\mathfrak{g}$ and differential forms $α,β$, then there is a map $f:U \to G$ such that $f^*ω = φ$, unique up to left translation.
 
+Take a harmonic map $f:M\to G$ and pull back the Maurer-Cartan form of $G$ to $φ = 2(Φ - Φ^*)$, with $2Φ$ the $(1,0)$ part of the form $φ$. Harmonicity of $f$ implies that
+\[
+d_A'' Φ = 0.
+\]
 Suppose that $d_L$ is the trivial connection on $f^*(TG)$ arising from the left trivialisation. The Levi-Civita connection $d_A$ is then $d_L + \tfrac{1}{2}φ$, because that the Maurer-Cartan form is the difference between the left and right connections and the Levi-Civita connection is their average. Computing the curvature
 \[
 F_A = d_A^2
@@ -29,26 +33,20 @@ F_A = d_A^2
 = d_L^2 + \frac{1}{2}[(Φ - Φ^*) \wedge (Φ - Φ^*)]
 = [Φ \wedge Φ^*].
 \]
-
-Return now to a harmonic map $f:M\to G$ and pull back the Maurer-Cartan form of $G$ to $φ = 2(Φ - Φ^*)$, with $2Φ$ the $(1,0)$ part of the form $φ$. Harmonicity of $f$ implies that
-\[
-d_A'' Φ = 0.
-\]
 Together, these two equations
 \[
-d_A'' Φ = 0,\, F_A = [{Φ},{Φ}^*]. \labelthis{eqn:Hit1.7}
+d_A'' Φ = 0,\;\; F_A = [{Φ},{Φ}^*]. \labelthis{eqn:Hit1.7}
 \]
-are \cite[(1.7)]{Hitchin1990}. One may consider these equations directly, without the context of a map $f$ and its pullback of the tangent bundle $f^*(TG)$. To do so, consider instead a principal $G$-bundle $P$. Then we may take $d_A$ to be a connection on $P$, and $Φ$ to be a $(1,0)$ section of the vector bundle $\ad P$ associated to $P$ via the adjoint representation. If a pair $(A,Φ)$ satisfies \eqref{eqn:Hit1.7} and further the connections
+are \cite[(1.7)]{Hitchin1990}. One may consider these equations directly, without the context of a map $f$ and its pullback of the tangent bundle $f^*(TG)$. To do so for a matrix group, consider instead a trivial complex vector bundle $V$ over $M$. Let $Φ$ be a $(1,0)$ section of $\mathfrak{g}(V) \subset \End(V)$ and $d_A$ a connection on $V$. One may also use a gauge theoretical setup, taking a principal $G$-bundle $P$. Then we may take $d_A$ to be a connection on $P$, and $Φ$ to be a $(1,0)$ section of the vector bundle $\ad P$ associated to $P$ via the adjoint representation. The two approaches are reconciled by taking $P$ to be the $G$-frame bundle of $V$. If a pair $(A,Φ)$ satisfies \eqref{eqn:Hit1.7} then the connections
 \[
-d_{-1} := d_A - Φ + Φ^*, d_{1} := d_A + Φ - Φ^*
+d_{-1} := d_A - Φ + Φ^* \text{ and } d_{1} := d_A + Φ - Φ^*
 \]
-are trivial, then it is possible to recover the harmonic map from $M$ to $G$. These are certainly necessary, as if such a pair is arising from a harmonic map, the above two connections are the left and right connections respectively. Conversely, given such a pair, if the two connections are trivial then there are nonvanishing sections $X,Y$ of the $\mathfrak{g}$-vector bundle $\ad P$ that are nonvanishing and parallel with each connection respectively.  Let $f:M \to G$ be the map such that $X = Y\cdot f$. As the difference $d_{1} - d_{-1}$ is $φ$ and
+are flat. If further they are trivial then it is possible to recover the harmonic map from $M$ to $G$. This is certainly a necessary condition, as if such a pair is arising from a harmonic map, the above two connections are the left and right connections respectively. Conversely, given such a pair, if the two connections are trivial then there are sections $X$ and $Y$ of $P$ that are parallel with respect to $d_1$ and $d_{-1}$ respectively.  Let $f:M \to G$ be the map such that $X = Y\cdot f$. As the difference $d_{1} - d_{-1}$ is $φ = 2(Φ - Φ^*)$ and
 \[
 (d_{1} - d_{-1})(X) = d_{1}(Yf) - d_{-1}(X) = X (f^{-1}d_{-1}f),
 \labelthis{eqn:gauge change}
 \]
-then $φ$ is the pull back of the Maurer-Cartan form by $f$. The first of \eqref{eqn:Hit1.7} gives that $f$ is harmonic.
-
+it follows that $φ$ is the pull back of the Maurer-Cartan form by $f$. The first of \eqref{eqn:Hit1.7} then gives that $f$ is harmonic. We note that even if the two connections $d_1$ and $d_{-1}$ are not trivial, we may take the universal cover $\C \to M$ and pullback both $Φ$ and $d_A$. In the pullback those connections will be trivial, and so we will have a harmonic map from the plane into $G$.
 
 \subsection{Construction of a Spectral Curve}
 \label{sub:construction}
@@ -65,6 +63,7 @@ where flatness follows from the two equations. Fix a base point and take a pair 
 As the matrices $H$ and $\tilde{H}$ commute, they share eigenspaces. We therefore define the spectral curve $Σ$ to be the closure of
 \[
 \Set{ (ζ, L)\in \C^\times \times \CP^1 }{ L \text{ is an eigenline of } H(ζ) },
+\labelthis{eqn:eigneline curve}
 \]
 in $\CP^1\times \CP^1$. This curve $Σ$ double covers $\C^\times$ via projection onto the first factor.
 Hitchin establishes (Prop 2.3) that the eigenvalues $μ,\tilde{μ}$ of $H,\tilde{H}$ considered as holomorphic functions over $\C^\times$ are branched at only finitely many points, and further that (except in the trvial case of a conformal map to a $2$-sphere) these functions have the same branch points (Prop 2.10). Thus the spectral curve is of finite genus. By analysis of the signularities of $\tr H, \tr \tilde{H}$ as $ζ\to 0$, it is shown that $\log μ$ and $\log \tilde{μ}$ are meromorphic functions in a neighbourhood of $0$. Specifically, they have a simple pole and the eigenlines may coincide to at most first order. Using the real structure, one may transport this information to $ζ=\infty$ also.
