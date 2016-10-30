@@ -201,7 +201,7 @@ z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 
 \begin{lem}
 \label{lem:coeff_f_smooth}
-The functions $μ,ν,z_0,(z_0)^{-1}$ and $k$ are smooth functions of the parameters $(α,β)\in\mathcal{A}_1$. Further $μ - ν$ is never zero.
+The functions $μ,ν,z_0,(z_0)^{-1}$ and $k$ are smooth functions of the parameters $(α,β)\in\mathcal{A}_1$. The function $f(α,β)(ζ)$ is a smooth function of $(α,β,ζ)\in\mathcal{A}_1 \times \CP^1$ whenever $ζ \neq ν$. Further $μ - ν$ is never zero.
 \begin{proof}
 Recall that $μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms of $α,β$ using the cross-ratio relation $[α,\cji{α};β,μ] = [1,-1;k^{-1},0]$. Rearranging gives
 \[
@@ -218,6 +218,8 @@ z_0 &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β
 (z_0)^{-1} &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }, \text{ and} \\
 k &= \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \end{align*}
+By the formula \eqref{eqn:f}, we also conclude that $f$ is smooth so long as the denominator is nonzero.
+
 The final claim is that $μ-ν$ is never zero. This is clear from the geometry, as the branch circle is a circle that passes through points both inside and outside the unit circle and so must intersect the unit circle at distinct two points. Algebraically, the difference vanishes only if
 \[
 2\bra{\abs{α}^2 - 1} (α-β)(1-\bar{α}β) = 0,
@@ -430,6 +432,7 @@ x                       &   y
 The new pair of differentials are simpler in the sense that their imaginary periods are $0$ and $2π\iu l$ respectively. They also meet the closing condition, because they are an integer combination of differentials that do. And the integer matrix has determinant one, so is invertible over the integers. Further, the two differentials are linearly dependent exactly when $Ψ^E$ is zero. Hence,
 
 \begin{lem}
+\label{lem:exist spectral data}
 A marked curve admits spectral data if and only if it admits a pair of nonzero differentials with imaginary periods $0$ and $2π\iu l$, for some positive integer $l$, that also satisfy the closing conditions \ref{P:closing}.
 \end{lem}
 
@@ -476,36 +479,42 @@ Thus the space of genus one spectral curves that admit closing spectral data is 
 
 Note that although the condition $T\in\Q$ is well defined, $T(α,β)$ is a multivalued function on $\mathcal{A}_1$. It it dependent on the paths of integration. As previously seen, different paths will change the integrals of $Θ^P$ by multiples of $2π\iu$ and therefore $T(α,β)$ is defined up to an element of $\Z\langle 1,S(α,β)\rangle \subset \Q$. So that we may work with a well-defined function, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$.
 
-Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Consider the open dense subset $\mathcal{A}_1 \setminus \{ν \neq \pm 1\}$ of $\mathcal{A}_1$. On any spectral curve of $\mathcal{A}_1 \setminus \{ν \neq \pm 1\}$, let $γ_+$ be the path that begins at $(1,η^-(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,η^+(1))$. Likewise for $γ_-$ from $(-1,η^-(-1))$ to $(-1,η^+(-1))$. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded.
+Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $γ_+$ be the path that begins at $(1,η^-(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,η^+(1))$. Likewise for $γ_-$ from $(-1,η^-(-1))$ to $(-1,η^+(-1))$. These paths are illustrated in figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded.
 
-\makefigure{$γ_+$ in red and $γ_-$ in black}{thesis_graphics_temp/gamma_pm_zeta.png}
+\makefigure{$γ_+$ in red and $γ_-$ in black\label{fig:gamma paths}}{thesis_graphics_temp/gamma_pm_zeta.png}
 
-In $(z,w)$ coordinates these paths are easy to describe by design. Start from the point $f(1)$ on the imaginary axis and go to the origin. Go out along the real axis, around $z=1$ (which corresponds to $ζ=α$) and back again to the origin. Return along the imaginary axis to $f(1)$. By taking the path that avoids $ν$, which corresponds to $z=\infty$, we keep to the realm of path integrals in the plane.
+As $ν\neq 1$, we know that $f(1) \neq \infty$ and so $f(γ_+)$ lies in the plane (it doesn't cross $z=\infty$).
+By design it is easy to describe these paths in terms of the $(z,w)$ coordinates.
+Start from the point $f(1)$ on the imaginary axis and go to the origin. Go out along the real axis, around $z=1$ (which corresponds to $ζ=α$) and back again to the origin. Return along the imaginary axis to $f(1)$. This is illustrated in figure \ref{fig:f gamma paths}.
 
-\makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black}{thesis_graphics_temp/gamma_pm_z.png}
+\makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black\label{fig:f gamma paths}}{thesis_graphics_temp/gamma_pm_z.png}
 
-We can derive explicit formula for the value of the integrals on these particular paths.
+Having fixed a choice of paths, we can write explicit formulae for the value of the integrals on these particular paths.
 \begin{align*}
-\int_{γ_+} \tilde {ω}
-&= \bra{2\int_0^{f(1)} - 2\int_0^1} \tilde {ω} \\
-&= 2 F(f(1);k) - 2 K(k) \\
+\int_{γ_+} ω
+&= \bra{2\int_0^{f(1)} - 2\int_0^1} ω
+= 2 F(f(1);k) - 2 K(k) \\
 \int_{γ_+} e
 &= 2 \tilde E(f(1);k) - 2 E(k) \\
 \int_{γ_+} Θ^P
 &= \int_{γ_+} (2Eω - 2Ke) - 2K \int_{γ_+} d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
 &= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K \frac{w(f(1))\,(f(1)-\iu\,\Im z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}.\labelthis{eqn:gamma_plus}
 \end{align*}
-
-For the closing condition at $ζ=-1$
+For the closing condition at $ζ=-1$, we have similarly
 \begin{align*}
 \int_{γ_-} Θ^P
 &= 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Im z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{align*}
 
-If one wishes, one could substitute these formulae into \eqref{eqn:def_T} to get $T_0$, though we hold off doing that until later. Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be inifinite. $T_0$ is a real valued function because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z;k)$ take the imaginary axis to itself and,
+If one wishes, one could substitute these formulae into \eqref{eqn:def_T} to get $T_0$, though we hold off doing that until later. Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be inifinite. We also note that these integrals are purely imagiary, as we expected on theoretical grounds, because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z ;k)$ take the imaginary axis to itself and
 \[
 (f(1)-z_0)(f(1) + \bar{z}_0) = -(f(1)-z_0)(\overline{f(1) - z_0}) = - \abs{f(1) - z_0}^2.
 \]
+From the definition of $T_0$ in \eqref{eqn:def_T}, it is a real valued function.
+
+To summarise our calculations to this point, we determined that every differential on a marked curve $Σ$ that satisfies condtions \ref{P:poles}--\ref{P:reality} must lie in a real three-dimensional vector space $W$. We found a basis $\{ω,Θ^E,λ\}$ of $W$, gave a basis $A,B$ for the homology of $Σ$ and computed the periods of the basis differentials with respect to this basis. This allowed us to find a differential $Θ^P\in \R\{ω,λ\} \subset W$ that satisfied \ref{P:periods}. We observed that every differential on $Σ$ that meet the conditions \ref{P:poles}--\ref{P:periods} was the sum of a real multiple of $Θ^E$ and an integer multiple of $Θ^P$.
+
+With these two differentials we then attempted to further satisfy \ref{P:closing}. This was not possible for an arbitrary marked curve $Σ$, which lead us to define the functions $S(α,β)$ by \eqref{eqn:def_S} and $T(α,β)$ by \eqref{eqn:def_T}. Lemmata \ref{lem:exist spectral data} and \ref{lem:closing_conds} taken together imply that a marked curve admits spectral data exactly when the functions $S$ and $T$ simultaneously take rational values. The last part of this section noted that $T$ is a multivalued function, and so took a principal branch cut of it and derived the corresponding explicit formulae.
 
 % Properly understood, $T$ is not a function on the space of spectral curves $\mathcal{A}_1$, but rather it is a function on the space of paths $(γ_+, γ_-)$, which we shall call $\mathcal{P}$. To be more precise, let $\mathcal{P}$ be the space $\{(γ_+, γ_-, Σ, α)\}$ where $α$ is one of the branch points inside the unit circle of some genus one spectral curve $Σ$ and $γ_+$ and $γ_-$ are paths $(0,1) \to Σ$ defined in the following way. $γ_+$ starts at $(1, η^-(1))$, monotonically tranverses the unit circle to $μ$ (that is, it does not pause or reverse direction), goes along the branch circle to $α$, encircles it, returns to $μ$ along the branch circle and retraces its path to $(1, η^+(1))$. In an analogous way, $γ_-$ starts at $(-1, η^-(-1))$ and finishes at $(-1, η^+(-1))$. We shall call such paths rigid. Every path on $Σ$ that connects the two points over $1$ or $-1$ is homologous to one of these rigid paths.
 %
@@ -521,45 +530,48 @@ If one wishes, one could substitute these formulae into \eqref{eqn:def_T} to get
 
 
 
-\subsection{Marked Point Coordinates}
+\subsection{Coordinates for $\mathcal{A}_1$}
 \label{sub:Reformulate}
 
-It is our ultimate aim to examine the surfaces defined by the two conditions and our examination will result in coordinates for those surfaces. This involves applying the implicit function theorem and the necessary computation for that theorem requires differentiating the above expressions. It is therefore prudent to adopt a parameterisation of the space of spectral curves more suited to that task than $(α,β)$. An obvious first coordinate is $p$ itself, as then we can enforce the first condition simply by holding this coordinate constant. Elliptic integrals are the most difficult part of the above to differentiate, so to minimise our labour we choose the other three (real) coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$.
-
-\begin{defn}\label{def:parameter space}
-Consider the product space $\R_{>0} \times (0,1) \times (\RInf) \times (\RInf)$. Let $p \in \R_{>0}$ and $k \in (0,1)$ be coordinates on the first two factors. Let $u, u' \in \R$, with $u' = u^{-1}$, be coordinates covering the third factor in the standard way, and likewise let $v, v' \in\R$, with $v' = v^{-1}$ be coordinates covering the fourth factor. Together, the four coordinate patches $(p,k,u,v)$, $(p,k,u',v)$, $(p,k,u,v')$ and $(p,k,u',v')$ to $\R_{>0} \times (0,1) \times \R^2$ cover $\R_{>0} \times (0,1) \times (\RInf)^2$.
-
-Consider the hypersurface $H$ that is the closure of $\{u=v\}$. In each of the four coordinate patches it is given by the equations $u-v = 1-u'v = uv'- 1 = v' - u' = 0$. Define $\mathcal{A}_1'$ to be the complement of $H$.
-\end{defn}
-
-Note that $\mathcal{A}_1'$ does not include the points where $u'=v'=0$, so it is covered by three of the coordinate patches; $(p,k,u,v)$, $(p,k,u',v)$ and $(p,k,u,v')$ are sufficent for example. We must show that $\mathcal{A}_1'$ does indeed parameterise the space of spectral curves.
+We would like to examine the subspace of $\mathcal{A}_1$ defined by the two conditions $S,T \in \Q$. This would be the set of genus one spectral curves. At its core, our method will invoke the implicit function theorem, for which the necessary computation will be the differentiation of the function $T$. It is therefore prudent to adopt a parameterisation of the space of marked curves $\mathcal{A}_1$ more suited to the task than $(α,β)$. We shall take as our first coordinate $p=S(α,β)$ itself, as then we can enforce the condition $p\in\Q$ simply by holding this coordinate constant. Elliptic integrals are the most difficult part of \eqref{eqn:gamma_plus} to differentiate, so to minimise our labour we choose the other three coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$. The content of the following lemma is that these four choices can essentially serve as coordinates for $\mathcal{A}_1$.
 
 \begin{lem}
-\label{lem:change of parameters}
-The given formulae for $p,k$ (eqns \eqref{eqn:def_S}, \eqref{eqn:def_k} respectively) and $\iu u = f(1)$, $\iu v = f(-1)$ extend to a diffeomorphism between the spaces $\mathcal{A}_1$ and $\mathcal{A}_1'$.
+    \label{lem:change of parameters}
+The following functions are diffeomorphisms:
+\begin{align*}
+φ_0 :\; &\mathcal{A}_1 \setminus \{ν = \pm 1\} \to \R^+ \times (0,1) \times \R \times \R \setminus \{u=v\}\\
+&(α,β) \mapsto (p,k,u,v) = \bra{S(α,β), k(α,β), -\iu f(1), -\iu f(-1)}, \\
+φ_1 :\; &\mathcal{A}_1 \setminus \{μ = 1 \text{ or } ν = -1\} \to \R^+ \times (0,1) \times \R \times \R \setminus \{u'v=1\}\\
+&(α,β) \mapsto (p,k,u',v) = \bra{S(α,β), k(α,β), \iu f(1)^{-1}, -\iu f(-1)}, \\
+φ_2 :\; &\mathcal{A}_1 \setminus \{μ = -1 \text{ or } ν = 1\} \to \R^+ \times (0,1) \times \R \times \R \setminus \{uv'=1\}\\
+&(α,β) \mapsto (p,k,u,v') = \bra{S(α,β), k(α,β), -\iu f(1), \iu f(-1)^{-1}},
+% φ_{--} :\; &\mathcal{A}_1 \setminus \{μ = -1, ν = -1\} \to \R^+ \times (0,1) \times \R \times \R\\
+% &(α,β) \mapsto (p,k,u',v') = \bra{S(α,β), k(α,β), \iu f(1)^{-1}, \iu f(-1)^{-1}}, \\
+\end{align*}
+for the functions $S$ given by \eqref{eqn:def_S}, $k$ given by \eqref{eqn:def_k} and $f$ given by \eqref{eqn:f}. Also, the union of the domains covers $\mathcal{A}_1$.
 
 \begin{proof}
-We proceed by determining a formula for the change of parameters from $(α,β)$ to $(p,k,u,v)$. The forward direction has already been achived. As stated, both $p$ and $k$ already have their own formulae in terms of $α$ and $β$ (eqns \eqref{eqn:def_S}, \eqref{eqn:def_k} respectively), which are combinations of the absolute values of various terms. These formulae could only fail to be smooth if those terms were zero. The terms in question are
+First note that the exclusions from the codomains are correct. If, for example, $u=v$ then
 \[
-1-\bar{α}β, α-β, 1-α, 1+α, 1-β, 1+β.
+f(1) = \iu u = \iu v = f(-1),
 \]
-The last four are nonzero because the branch points are inside the unit circle. $α-β$ is nonzero because $α=β$ is excluded from $\mathcal{A}_1$. That leaves $1-\bar{α}β = \bar{α}(\cji{α} - β)$ which is zero iff $\cji{α}=β$. This is impossible because $β$ is inside the unit circle whereas $\cji{α}$ is outside it.
+but $f$ is an invertible transformation. Likewise for the codomains of other two functions.
 
-The map $f$ is written in terms of $(α,β)$, \eqref{eqn:f}, and its coefficents are smooth functions. The parameters $\iu u$ and $\iu v$ are the images of points $1$ and $-1$ respectively under this map. This motivates the extended nature of the definition above. The map $f$ is a M\"obius transformation, and so may take the value infinity. Indeed, we have seen that $f(ν) = \infty$, and so one of these parameters is infinite when $ν=\pm 1$ and hence the necessity of the coordinates $u'$ and $v'$ to cover this situation. $z_0 = f(0)$ is a smooth function of $α,β$ and is never zero or infinity, because $0 = f(μ), \infty = f(ν)$ and $μ,ν\in\S^1$. Using \eqref{eqn:f}, on $ν\neq 1$
-\[
-\iu u = -\bar{z}_0 \frac{1-μ}{1-ν},
-\]
-and on $μ\neq 1$
+Next, $S(α,β)$ is smooth since $α$ and $β$ are inside the unit disc. The other functions are smooth by Lemma \ref{lem:coeff_f_smooth}. Hence the function $φ_0$ is smooth. The other two functions are necessary because the map $f$ is a M\"obius transformation, and so takes the value infinity. Indeed, we have seen that $f(ν) = \infty$, and so one of $u$ or $v$ is infinite when $ν=\pm 1$. Using \eqref{eqn:f}, on the subset of $\mathcal{A}_1$ where $μ\neq 1$
 \[
 -\iu u' = -\frac{1}{\bar{z}_0} \frac{1-ν}{1-μ},
 \]
-demonstrating that these are smooth functions on their respective domains of definition. Likewise for $v,v'$ using $f(-1)$.
+and where $μ\neq -1$
+\[
+-\iu v' = -\frac{1}{\bar{z}_0} \frac{1+ν}{1+μ},
+\]
+demonstrating that $φ_1$ and $φ_2$ are smooth functions on their respective domains of definition.
 
-As the old parameters $α,β$ are points in the $ζ$-plane, one method to derive the reverse change in parameters is to express the inverse transformation $f^{-1}(z)$ in term of our new parameters. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to $\iu u, \iu v$ in the forward direction. As a M\"obius transformation is described up to a scalar by the points sent to $0$ and $\infty$, $f^{-1}$ is a scalar multiple of
+It remains to show that these functions have smooth inverses. As the parameters $α$ and $β$ are points in the $ζ$-plane, one method to derive the inverse functions is to express the transformation $f^{-1}(z)$ in term of our new parameters $(p,k,u,v)$. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to how the transformation $f(ζ)$ is determined by $(α,β)$ and $\iu u = f(1)$. As a M\"obius transformation is described, up to a scalar, by the points sent to $0$ and $\infty$, $f^{-1}(z)$ is a scalar multiple of
 \[
 \frac{z-z_0}{z + \conj{z_0}},
 \]
-(compare to \eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Note the following trick using cross ratios.
+(compare to \eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Observe the following trick using cross ratios:
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -572,7 +584,8 @@ The same trick gives a similar formula for $β$.
 \abs{\frac{β-1}{β+1}}
 = \abs{\frac{1-k\iu u}{1 - k\iu v}} \abs{\frac{z_0 - \iu v}{z_0 - \iu u}}
 \]
-The terms on the left are the two factors of the expression for $p$. Multiplying and expanding shows that for fixed values of the parameters $(p,k,u,v)$, $z_0$ lies on a particular circle. Let $z_0 = x+\iu y$.
+The terms on the left are the two factors of the expression for $S$. We will show that
+$z_0$ lies on a particular circle determined by the parameters $(p,k,u,v)$. Let $z_0 = x+\iu y$. Then
 \begin{align*}
 p
 &= \abs{\frac{α-1}{α+1}} \abs{\frac{β-1}{β+1}}
@@ -581,10 +594,11 @@ p
 &= p \frac{\sqrt{1+v^2}}{\sqrt{1+u^2}}\frac{\sqrt{1+k^2v^2}}{\sqrt{1+k^2u^2}}
 = p \frac{w(\iu v)}{w(\iu u)} \\
 \abs{z_0 - \iu v} ^2 &= p \frac{w(\iu v)}{w(\iu u)} \abs{z_0 - \iu u}^2 \\
-x^2 + y^2 &+ 2y \frac{puw(\iu v) - vw(\iu u)}{w(\iu u)-pw(\iu v)} + \frac{v^2w(\iu u) - pu^2w(\iu v)}{w(\iu u)-pw(\iu v)} = 0.
+x^2 + y^2 &+ 2y \frac{puw(\iu v) - vw(\iu u)}{w(\iu u)-pw(\iu v)} + \frac{v^2w(\iu u) - pu^2w(\iu v)}{w(\iu u)-pw(\iu v)} = 0,
 \end{align*}
+where recall that $w$ is defined by the relation $w^2 = (1-z^2)(1-k^2z^2)$. The function $w(\iu t) = \sqrt{(1+t^2)(1+k^2t^2)}$ should be taken with a positive square root on the second line, since the left hand side is positive.
 
-In the $ζ$-plane, the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and invariant under the real involution. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0$ and $\iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Therefore $z_0$ lies on the circle
+On the other hand, in the $ζ$-plane the points $-1,0,1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and that is invariant under the real involution $ρ$. Applying the M\"obius transformation $f$ we can therefore say that $\iu v, z_0$ and $\iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis ($\tilde{ρ}(z) = -\bar{z}$). Therefore $z_0$ lies on the circle
 \[
 x^2 + \bra{ y - \frac{u+v}{2} }^2 = \frac{(u-v)^2}{4},
 \]
@@ -592,21 +606,22 @@ which simplifies to the relation
 \[
 x^2 + y^2 = y(u+v) - uv. \labelthis{eqn:z_0_circle}
 \]
-These two circles intersect in two points: $z_0$ and $-\conj{z_0}$. The precise formulas are
+Thus we have determined two circles that $z_0$ lies on. These two circles intersect in two points: $z_0$ and $-\conj{z_0}$. The precise formulas are
 \[
 x = \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v},\; y = \frac{puw(\iu v) + vw(\iu u)}{pw(\iu v) + w(\iu u)}
+\labelthis{eqn:formula xy}
 \]
-where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ inside the unit circle, as opposed to choicing their conjugate-inverse partners. Note that these are smooth functions of $(p,k,u,v)$. $w(\iu x)^2 = (1+x^2)(1+k^2x^2)$ is strictly positive, as is $p$. Thus the term under the square root and the denominators never vanish. $u-v$ is never zero as this occurs exactly on the hypersurface $H$, which was excluded from $\mathcal{A}_1'$.
+where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ inside the unit circle. Note that these are smooth functions of $(p,k,u,v)$, because the term under the square root and the denominators are strictly positive functions.
 
-Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$ and $f^{-1}(\iu v) = -1$.
+Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$ and $f^{-1}(\iu v) = -1$ to conclude
 \[
 f^{-1}(z)
 =  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}
-=  -\frac{\iu v + \conj{z_0}}{\iu v - z_0} \frac{z-z_0}{z + \conj{z_0}}
+=  -\frac{\iu v + \conj{z_0}}{\iu v - z_0} \frac{z-z_0}{z + \conj{z_0}}.
 \]
-As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of the new parameters. A problem could potentially occur if $z_0$ were to equal $\iu u$ or $\iu v$, in which case the scaling factor would be $0/0$. This could only occur if $\Re{z_0}=0$, which itself only occurs if $u=v$. But we have already noted that this hyperplane is excluded from $\mathcal{A}_1'$. Likewise the formula would be in trouble if $z_0 = -1, -k^{-1}$ (for then $α$ or $β$ would be infinite), but again this occurs only if $\Re{z_0} < 0$, which is impossible.
+As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of the new parameters. A problem could potentially occur if $z_0$ were to equal $\iu u$ or $\iu v$, in which case the scaling factor would be $0/0$. This could only occur if $\Re{z_0}=0$, which itself only occurs if $u=v$. But we have already noted that this is impossible. Likewise the formula would be in trouble if $z_0 = -1, -k^{-1}$ (for then $α$ or $β$ would be infinite), but again this occurs only if $\Re{z_0} < 0$, which is excluded by our decision to take $z_0$ in the right half-plane.
 
-In the case that one of $f(1)$ or $f(-1)$ is infinite, one needs to transistion to the coordinates $u'$ or $v'$ to maintain valid formulae. Using the notation $w'(\iu a)^2 = (1+a^2)(k^2 + a^2)$ we have
+Having constructed an inverse for $φ_0$, we also have to construct ones for $φ_1$ and $φ_2$. But we can easily do so by modifying formula \eqref{eqn:formula xy} for $x$ and $y$. Using the notation $w'(\iu t)^2 = (1+t^2)(k^2 + t^2)$ we have
 \begin{align*}
 x
 &= \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v}
@@ -624,13 +639,23 @@ y
 = \frac{pu'w(\iu v) + vw'(\iu u')}{pu'^2w(\iu v) + w'(\iu u')}
 = \frac{puw'(\iu v') + v'w(\iu u)}{pw'(\iu v') + v'^2w(\iu u)}. \labelthis{eqn:y_prime_version}
 \]
-These all lead to smooth formulae for $z_0$ on their respective coordinate patches. Having made the change in formula for $z_0$, the same formula for $f^{-1}$ applies. Hence we have found a way from $\mathcal{A}_1'$ back to $(α,β) \in \mathcal{A}_1$. These two maps are inverses by construction, and we have verified that they are smooth. Therefore the spaces are diffeomorphic.
+These both give smooth formulae for $z_0$. Having made the change in formula for $z_0$, the same formula for $f^{-1}$ applies.
+
+It is interesting to see that it was necessary to exclude the plane where $u=v$ (or $u'v=1$ or $uv'=1$), for otherwise $x$ would be zero, $z_0$ would be equal to $-\bar{z_0}$ and $f^{-1}(z)$ would be a constant function. We shall see later that these points correspond to the diagonal $\{α=β\} \subset D\times D$ and represent a degeneration of marked curves.
+
+Finally, it is simple to see that the three domains cover $\mathcal{A}_1$. If there was some point $(α,β) \in \mathcal{A}_1$ that was not covered, then one could compute $μ(α,β)$ and $ν(α,β)$. But the intersection
+\[
+\{ν = \pm 1\}
+\cap \{μ = 1 \text{ or } ν = -1 \}
+\cap \{μ = -1 \text{ or } ν = 1 \} \subset \mathcal{A}_1
+\]
+consists of only those points where $μ=ν=1$ or $μ=ν=-1$, and Lemma \ref{lem:coeff_f_smooth} proves that $μ$ and $ν$ are never equal.
 \end{proof}
 \end{lem}
 
 Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in eqn \eqref{eqn:y_prime_version}.
 
-This shows that $\mathcal{A}_1$ and $\mathcal{A}_1'$ can be identified as spaces, and we will no longer use a prime to distinguish between them. Note when $ν=1$, $f(1) = \iu\infty$ and when $ν=-1$, $f(-1) = \iu\infty$, so the subset $\mathcal{A}_0$ is precisely covered by the coordinates $(p,k,u,v)$. Having established formula for the inverse transformation from the new coordinates, it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the elementary terms of the half-periods. By direct computation
+Recall that we defined a principal branch cut $T_0$ of $T$ on $\mathcal{A}\setminus\{ν=\pm 1\}$. This is exactly the domain of $φ_0$, and we have constructed a formula for the inverse transformation, so it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the last terms of equations \eqref{eqn:gamma_plus} and \eqref{gamma_minus}. By direct computation
 \begin{align*}
 u-y &= \frac{w(\iu u)(u-v)}{pw(\iu v) + w(\iu u)} &
 \abs{\iu u - z_0}^2 &= \frac{w(\iu u)(u-v)^2}{pw(\iu v) + w(\iu u)} \\
