@@ -1,12 +1,18 @@
-\documentclass{article}
+% \documentclass{article}
+% \documentclass[PhD]{usydthesis}
+\documentclass{Dissertate}
 % \documentclass{memoir}
 
 \usepackage{thesis_style}
 
-\fancyhdr
-
 \begin{document}
-\tableofcontents
+% roman page numbers for the initial pages
+% \pagenumbering{roman}
+
+% uncomment this to change the date on the title page
+%\renewcommand{\Today}{October ????}
+\maketitle          % creates the title page
+\tableofcontents    % creates the table of contents
 
 \include{preliminaries}
 \include{deform_lemma_redux}

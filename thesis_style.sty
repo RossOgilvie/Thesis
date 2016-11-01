@@ -13,23 +13,50 @@
 % A package to help with the labelling of enumerates
 \usepackage{enumitem}
 
+% For row spanning columns in tables
+\usepackage{multirow}
+
 %% for chapter quotes
 \usepackage{epigraph}
 
-\newcommand{\fancyhdr}{
-\usepackage{fancyhdr}
-\usepackage{float}
-\usepackage[left=0.75in, top=1in, right=0.75in, bottom=1in]{geometry}
-\pagestyle{plain}
-}
+%%%%%%% For aligning lists
+\usepackage{enumitem}
+%%%%%%% For captions beside the figure
+\usepackage{floatrow}
+\usepackage{caption}
+% \captionsetup{labelformat=empty}
 
-\newcommand{\makeheading}[1]{\rhead{#1\\Ross Ogilvie -- University of Sydney -- rosso@maths.usyd.edu.au \\\today}\thispagestyle{fancy}}
+% For plots
+\usepackage{tikz}
+\usepackage{pgfplots}
 
+% For commutative diagrams
+\usepackage[heads=littlevee]{diagrams}
+
+% For todo note and missing figures
+\usepackage{todonotes}
+
+% \newcommand{\fancyhdr}{
+% \usepackage{fancyhdr}
+% \usepackage{float}
+% \usepackage[left=0.75in, top=1in, right=0.75in, bottom=1in]{geometry}
+% \pagestyle{plain}
+% }
+
+% \newcommand{\makeheading}[1]{\rhead{#1\\Ross Ogilvie -- University of Sydney -- rosso@maths.usyd.edu.au \\\today}\thispagestyle{fancy}}
+
+%%%%%%%%% to stop things appearing in the table of contentns
+\setcounter{tocdepth}{2}
+\let\oldaddcontentsline\addcontentsline
+\newcommand{\stoptocentries}{\renewcommand{\addcontentsline}[3]{}}
+\newcommand{\starttocentries}{\let\addcontentsline\oldaddcontentsline}
 
 \setlength{\parskip}{2ex}
 \setlength{\parindent}{0in}
 \numberwithin{equation}{section}
+\numberwithin{figure}{section}
 % \setcounter{secnumdepth}{0}
+% \newcommand{\nocontentsline}[3]{}
 
 %Add math environs
 \newtheorem{defn}[equation]{Definition}
@@ -58,7 +85,6 @@
 \newcommand{\bfrac}[2]{\left(\frac{#1}{#2}\right)}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{{\left\Vert#1\right\Vert}}
-\newcommand{\set}[2]{\left\{\left. #1 \;\right|\; #2 \right\}}
 \newcommand{\iprod}[2]{\left\langle #1 , #2 \right\rangle}
 \newcommand{\Set}[2]{\left\{\; #1 \;\middle|\; #2 \;\right\}}
 \newcommand{\vt}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
@@ -78,8 +104,10 @@
 \DeclareMathOperator{\asinh}{asinh}
 
 \DeclareMathOperator{\rem}{rem}
+\DeclareMathOperator{\Wind}{Wind}
+\DeclareMathOperator{\id}{id}
 
-\newcommand{\aside}[1]{{\it ASIDE:} #1}
+% \newcommand{\aside}[1]{{\it ASIDE:} #1}
 
 \DeclareMathOperator{\Mat}{Mat}
 \DeclareMathOperator*{\img}{img}
@@ -87,6 +115,7 @@
 \DeclareMathOperator*{\tr}{tr}
 \DeclareMathOperator*{\ad}{ad}
 \DeclareMathOperator*{\Ad}{Ad}
+\DeclareMathOperator{\End}{rem}
 \DeclareMathOperator{\pp}{pp.}
 \DeclareMathOperator{\sign}{sign}
 \renewcommand{\Re}{\mathfrak{R}\text{e}\,}
@@ -106,7 +135,13 @@
 \newcommand{\T}{\mathbb{T}}
 \renewcommand{\S}{\mathbb{S}}
 \renewcommand{\H}{\mathbb{H}}
-\newcommand{\M}{\mathcal{M}}
+% \newcommand{\M}{\mathcal{M}}
+
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SO}{\mathrm{SO}}
+
+\newcommand{\su}{\mathfrak{su}}
+\renewcommand{\sl}{\mathfrak{sl}}
 
 
 
@@ -150,8 +185,3 @@
 \let\textPhi=\Phi
 \let\textPsi=\Psi
 \let\textOmega=\Omega
-
-
-% THESIS SPECIFIC
-\newcommand{\edge}[1]{\mathcal{E}_{#1}}
-\newcommand{\face}[1]{\mathcal{F}_{#1}}

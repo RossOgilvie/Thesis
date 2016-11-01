@@ -1082,23 +1082,27 @@ This relation is a difference of analytic functions on an open set, so by contin
 
 
 
-If we consider the surfaces $\mathcal{\tilde{A}}_1(p,q)$ parameterised by $(p,q,k,\tilde{x})$, where $\tilde{x}$ is mapped to either $\tilde{u}$ or $\tilde{v}$ depending on the magnitude of $p$, we see that under the generating deck transformation
+Fix a value for $p$ and take a point $(p,k,\tilde{u},\tilde{v}) \in \mathcal{\tilde{A}}_1(p)$. If $p\leq 1$ let $\tilde{x}$ be $\tilde{u}$ and otherwise take it to be $\tilde{v}$. We know by Lemma \ref{lem:T_graph} that $(q,k,\tilde{x})$, where $q = \tilde{T}(p,k,\tilde{u},\tilde{v})$, are coordinates for $\mathcal{\tilde{A}}_1(p)$. In particular, $\mathcal{\tilde{A}}_1$ is foliated by the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
 \[
-(p,q,k,\tilde{x}) \mapsto (p, q + (p-1), k, \tilde{x}')
+(p,q,k,\tilde{x}) \mapsto (p, q + (p-1), k, \tilde{x}'), \text{ where } \tilde{x}' = 2π\Wind(\tilde{x}) + π + 2\atan (k \tan (\tilde{x}/2)).
+\labelthis{eqn:group action}
 \]
-where $\tilde{x}' = 2πn+ π + 2\atan (k \tan (\tilde{x}/2))$. This provides an identification between $\mathcal{\tilde{A}}_1(p,q)$ and $\mathcal{\tilde{A}}_1(p,q + l(p-1))$ for any integral $l$.
+Thus the group of covering transformations preserve the level sets of $\tilde{T}$; specifically they provide an identification between the level set $\mathcal{\tilde{A}}_1(p,q)$ and the level set $\mathcal{\tilde{A}}_1(p,q + l(p-1))$ for any integer $l$.
 
 \begin{thm}
 \label{thm:topology_curves}
-For $p\neq 1$, $\mathcal{C}_1(p)$ is diffeomorphic to
+For $p\neq 1$, the space of marked curves $\mathcal{C}_1(p)$ is diffeomorphic to
 \[
 \{ (q,k,\tilde{x}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
 \]
-such that $\mathcal{S}_1(p) = \{ \mathcal{C}_1(p) \mid q \in \Q/ (p-1)\Z \}$.
+such that the subspace of spectral curves $\mathcal{S}_1(p)$ is
+\[
+\mathcal{S}_1(p) = \{ \mathcal{C}_1(p) \mid q \in \Q/ (p-1)\Z \}.
+\]
 \begin{proof}
-Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{A}}_1(p)$ by the covering transformations, which preserve the value of $p$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}_1(p)$ is foliated by $\mathcal{\tilde{A}}_1(p,q)$ and we have just shown how different $\mathcal{\tilde{A}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each of $\R/(p-1)\Z$ to cover the image.
+Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{A}}_1(p)$ by the group of covering transformations $\Z\langle\tilde{λ}\rangle$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}_1(p)$ is foliated by $\mathcal{\tilde{A}}_1(p,q)$ and we have just shown in \eqref{eqn:group action} how different $\mathcal{\tilde{A}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each of $\R/(p-1)\Z$ to cover the image.
 
-Lemma \ref{lem:T_graph} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of $\mathcal{\tilde{A}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $\Q/(p-1)\Z$.
+Lemma \ref{lem:T_graph} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of $\mathcal{\tilde{A}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$ under the covering map, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $q \in \Q/(p-1)\Z$.
 \end{proof}
 \end{thm}
 
@@ -1106,18 +1110,31 @@ This leaves just one special case.
 
 \begin{thm}
 \label{thm:topology_curves_p1}
-$\mathcal{C}_1(1)$ is diffeomorphic to
+The space of marked curves $\mathcal{C}_1(1)$ is diffeomorphic to
 \[
-\{ (q,k,\tilde{u}) \in \R \times (0,1) \times \bra{\R/2π\Z} \},
+\{ (q,k,[\tilde{x}]_{\tilde{λ}}) \in \R \times (0,1) \times \bra{\R/π\Z} \},
 \]
-such that $\mathcal{S}_1(1) = \{ \mathcal{C}_1(1) \mid q \in \Q \}$.
+where $[\tilde{x}]_{\tilde{λ}}$ refers to the equivalence relation \eqref{eqn:annuli actions}, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is
+\[
+\mathcal{S}_1(1) = \{ \mathcal{C}_1(1) \mid q \in \Q \}.
+\]
 
 \begin{proof}
-In this special case, we see that the action does not identify path components with different values of $q$; in fact $p-1$ is zero, so $q$ is fixed under the deck transformations. Consequently, the shifting action identifies values of $\tilde{x}$ that differ by $2π$ in the same path component, resulting in annuli.
+In this special case where $p=1$, we see that the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set. From \eqref{eqn:group action}, this relation is $(1,q,k,\tilde{x}) \sim (1, q, k, \tilde{x}')$, where
+\[
+\tilde{x}' \in  \{ \tilde{x} + 2π\Z \} \cup
+\{ π + 2\atan (k \tan (\tilde{x}/2)) + 2π\Z \}.
+\labelthis{eqn:annuli action}
+\]
+Focusing just on the $\tilde{x}$ component, this identifies any $\tilde{x} \in \R$ with a unique value in $[0,π)$ and so we may diffeomorphically identify $\R/\Z\langle\tilde{λ}\rangle$ with $\R/π\Z$. The result is that the quotient of each level set $\mathcal{\tilde{A}}_1(1,q)$ by the group $\Z\langle\tilde{λ}\rangle$ is an annulus parameterised by $(k,[\tilde{x}]_{\tilde{λ}}) \in (0,1)\times \R/π\Z$, where $[\tilde{x}]_{\tilde{λ}}$ refers to the equivalence relation \eqref{eqn:annuli action} from above
 \end{proof}
 \end{thm}
 
-These two theorems give an understanding of what the condition $T\in\Q$ means. If we think of the first condition, $p\in\Q$, it lead to a dense disjoint collection of subspaces $\mathcal{C}_1(p)$ on which the condition was met. We can then think of examining the effect of imposing the second condition on one of these spaces. For $p$ not equal to one, the subset of meeting this extra condition is a dense collection of strips. As can be seen in the pictures below, and proved in the next chapter, they should be thought of as intertwined helicoids. But for $p$ equal to one, instead we have a dense collection of annuli. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the transition between right and left handed spirals, where it is `flat' and closes up.
+These two theorems complete our quest to gain an understanding of the subspace of spectral curves $\mathcal{S}_1$ within $\mathcal{C}_1$. First we charactersied when a marked curve is a spetral curve by way of a necessary and sufficient condition: that the two real valued functions $S(α,β)$ and $T(α,β)$ take rational values. The first condition, $S\in\Q^+$, lead immediately to a dense disjoint collection of subspaces $\mathcal{C}_1(p)$ on which the condition was met, where $p$ was the value of $S$.
+
+Then we moved to the universal cover $\mathcal{\tilde{A}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multivalued function $T$. We then considered the subspaces of $\mathcal{\tilde{A}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be strips in Lemma \ref{}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
+
+The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group was shown to be $\Z\langle\tilde{λ}\rangle$ and its action was described by \eqref{eqn:group action}. This allowed us to describe the quotients in the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of strips within $\mathcal{C}_1$. As can be seen in the pictures below, and proved rigourously in the next chapter, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'.
 
 
 
@@ -1126,62 +1143,67 @@ These two theorems give an understanding of what the condition $T\in\Q$ means. I
 \subsection{Corollaries}
 \label{sub:Corollaries}
 
-$\mathcal{S}_1(1)$ seems special because it is not simply connected. However, on the level of spectral data this disappears and the moduli space is simply connected. But first, we revisit and improve on lemma \ref{lem:closing_conds}. In that lemma, we see that the closing conditions are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data. However, to examine the moduli of spectral data, we must find the `minimal' set from which all other on that curve are generated.
+In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are strips, but the components of $\mathcal{S}_1(1)$ are distinguished because the are not simply connected. This section will show several properties of these components. First that although the moduli space of spectral curves is not simply connected, the moduli space of spectral data is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case lie within a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a transformation on the space spectral curves and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
+
+Before we can prove that the moduli space of spectral data is simply connected, we must revisit and improve on Lemma \ref{lem:closing_conds}. In that lemma, we see that the rationality of the values of the functions $S$ and $T$ are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data on any marked curve that meets both conditions. However, to examine the moduli of spectral data, we must find a `minimal' set of spectral data from which all other on that curve may generated.
 
 \begin{lem}
-On any curve $Σ \in \mathcal{S}_1$, there is a pair of differentials such that every closing differential is an integer combination of that pair.
+On any curve $Σ \in \mathcal{S}_1$, there is a pair of differentials $Ψ^E,Ψ^P$ such that every differential that satisfies conditions \ref{P:poles}--\ref{P:closing} is an integer combination of that pair.
 
 \begin{proof}
-The method of proof is similar to that of lemma \ref{lem:closing_conds}, but the construction must be refined a little. Let $Ψ$ be as described there. Recall, we write $p = n/m$ in lowest terms and define
+The method of proof is similar to that of Lemma \ref{lem:closing_conds}, but the construction must be refined a little. Let $Ψ^E$ be as described in that lemma. Specificcally recall that on a marked curve $Σ(α,β)$, if we write $S(α,β) = n/m$ as a rational number in lowest terms then define
 \[
-a = \frac{2π\iu n}{2\iu η^+(1)}, \qquad Ψ = a Θ^E.
+a := \frac{2π\iu n}{2\iu η^+(1)} \text{ and } Ψ^E := a Θ^E.
 \]
-Suppose that $Θ$ is an exact closing differential. We assert that it must be an integer multiple of $Ψ$. To see this, note that it is a real scalar of $Θ^E$ and compute its integrals
+Suppose that $Θ$ is an exact differential meeting conditions \ref{P:poles}--\ref{P:closing}. We assert that it must be an integer multiple of $Ψ^E$. To see this, note that it is a real scalar of $Θ^E$ and compute its integrals
 \[
 \int_{γ_+} Θ = 2\iu η^+(1) b = 2π\iu \tilde{n}, \qquad
 \int_{γ_-} Θ = -2\iu η^+(-1) b = 2π\iu \tilde{m},
 \]
-for some $b\in\R$, $n',m' \in \Z$. By the definition of $p$
+for some $b\in\R$, $\tilde{n},\tilde{m} \in \Z$. By the definition of $S(α,β)$
 \[
-p = - \frac{η(1)}{η(-1)} = \frac{\tilde{n}}{\tilde{m}},
+S = - \frac{η(1)}{η(-1)} = \frac{\tilde{n}}{\tilde{m}},
 \]
 so we must have that $\tilde{n} = ln, \tilde{m}= lm$ for an integer $l$. It follows that $b= la$ and hence $Θ = l Ψ$.
 
-We now turn our attention to the nonexact differentials. Suppose that for fixed paths $γ_+,γ_-$ the value of $T$ on the curve is $n'/m'$ is lowest terms. Define $g$ to be $m'/\gcd(m,m')$. Now, similar to lemma \ref{lem:closing_conds}, let $x,y$ be integers with $nx-my = 1$ and $Γ^+ = n'my / \gcd(m,m')$, $Γ^- = n'mx / \gcd(m,m')$. Then
+We now turn our attention to the nonexact differentials. Suppose that for fixed paths $γ_+,γ_-$ the value of $T$ on the marked curve $Σ(α,β)$ is $n'/m'$ in lowest terms. Define $g$ to be $m'/\gcd(m,m')$. Now, similar to lemma \ref{lem:closing_conds}, let $x,y$ be integers with $nx-my = 1$ and $Γ^+ = n'my / \gcd(m,m')$, $Γ^- = n'mx / \gcd(m,m')$. Then
 \[
 \frac{nΓ^- - m Γ^+}{gm}
 = \frac{n n'mx - m n'my}{m'm}
 = \frac{n'(nx - my)}{m'}
 = \frac{n'}{m'},
 \]
-So we can solve for a differential $Ψ^P$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any closing differential on the curve, we may write it as $Θ = bΘ^E + kΘ^P$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and its integrals are $2π\iu e, 2π\iu f$. Taking its integrals over $γ_+$ and $γ_-$ and eliminating $b$ leads to
+So we can solve \eqref{} for a differential $Ψ^P$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any closing differential on the curve, we may write it as $Θ = bΘ^E + kΘ^P$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and its integrals are $2π\iu e, 2π\iu f$. Taking its integrals over $γ_+$ and $γ_-$ and eliminating $b$ leads to
 \begin{align*}
 \frac{n'}{m'} &= \frac{nf - me}{km} \\
 n'k\bra{\frac{m}{\gcd(m,m')}} &= (nf - me)\bra{\frac{m'}{\gcd(m,m')}} \\
 &= (nf-me)g.
 \end{align*}
-Now, by construction $g$ is coprime to $m$. Also, $m'$ is coprime to $n'$, so $g$ is also. Hence we see that $g$ must divide $k$. Consider the differential
+Now, by construction $g$ is coprime to $m$. Also, $m'$ is coprime to $n'$, so $g$ is also. Hence we see that $g$ must divide $k$. Finally, consider the differential
 \[
 Θ - \frac{k}{g}Ψ^P.
 \]
-It is closing and exact, so a multiple of $Ψ$ by the first part of this proof. Rearranging we have finally written $Θ$ as an integer combination of $Ψ,Ψ^P$.
+It meets conditions \ref{P:poles}--\ref{P:closing} and is exact, so must be an integer multiple of $Ψ^E$ by the first part of this proof. Rearranging, we have written $Θ$ as an integer combination of $Ψ^E$ and $Ψ^P$.
 \end{proof}
 \end{lem}
 
-So the closing differentials are a $\Z\times\Z$-subbundle $\mathcal{M}_1$ of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. $Ψ$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space. For $p\neq 1$, $\mathcal{S}_1(p)$ is simply connected however, so it is possible to extend these differentials to a frame for $\mathcal{M}_1(p)$, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
+Conversely, the integer combinations of differentials that meet the conditions \ref{P:poles}--\ref{P:closing} also meet those conditions. So the space of differentials meeting those conditions are a $\Z\times\Z$-subbundle of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. The differential $Ψ^E$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space $\mathcal{C}_1(p)$. However, for $p\neq 1$ the space of spectral curves $\mathcal{S}_1(p)$ is simply connected, so it is possible to make a consistent choice of paths on this subspace, and thereby to extend these differentials to a frame, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
 
-For $p=1$, take a path component of $\mathcal{S}_1$. It is an annulus. $p=1=n/m$ implies that $m=n=1$ and $T_0 = m'/n'$ is well defined and constant on the whole annulus. Consider a simple nontrivial loop $\ell : [0,1]$. If we make a choice of $γ_+,γ_-$ on $Σ(\ell(t))$ such that the curves vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous compuations, each of
+For $S=1$, take any path component of $\mathcal{S}_1(1)$. It is an annulus. Writing $S=1=n/m$ in as a reduced fraction implies that $m=n=1$. From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1)$ that wraps around the annulus once. If we make a choice of $γ_+,γ_-$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous compuations, each of
 \[
 \int_{γ_+} Θ^P, \int_{γ_-} Θ^P
 \]
-will be incremented by $2π\iu$ (or decremented, depending on the orientation of $\ell$). The difference $\tilde{Ψ}^P - Ψ^P = (b'-b)Θ^E$ can be explicitly written
+will be incremented, or decremented (depending on the orientation of $\ell$), by $2π\iu$. The difference $\tilde{Ψ}^P - Ψ^P = (b'-b)Θ^E$ can be explicitly computed as
 \begin{align*}
 b'
 &= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+} Θ^P + 2π\iu} } \\
 &= b - \frac{2π\iu}{2\iu η^+(1)}m' \\
 &= b - am',
 \end{align*}
-so that $\tilde{Ψ}^P - Ψ^P = -am'Θ^E = - m' Ψ$. Recall that the period of $Ψ^P$ is $g = m' / \gcd(m,m') = m'$. This says that everytime you loop around the annulus, the nonexact differential shifts by $m' Ψ$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus is simply connected. The basis $Ψ,Ψ^P$ is not unique, one may add an integer multiple of $Ψ$ to $Ψ^P$, but this shows that there is a path in the moduli space between bases that have their nonexact differentials differ by $m'\Z Ψ$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus has $m'$ components.
+so that $\tilde{Ψ}^P - Ψ^P = -am'Θ^E = - m' Ψ^E$. Recall that the period of $Ψ^P$ is $g = m' / \gcd(m,m') = m'$. This equations shows that everytime you loop around the annulus, the nonexact differential shifts by $m' Ψ^E$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus is simply connected. The basis $Ψ^E,Ψ^P$ is not unique, one may add an integer multiple of $Ψ^E$ to $Ψ^P$, but this shows that there is a path in the moduli space between bases that have their nonexact differentials differ by $m'\Z Ψ^E$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus has $m'$ components.
+\todo{rework this. too dense}
+
+PART ABOUT THE MAT2Z OF $\mathcal{M}_1$
 
 There are some symmetries and special cases that also bear mention. First, we have already remarked upon and made use of the symmetry
 \[
