@@ -538,7 +538,7 @@ We would like to examine the subspace of $\mathcal{A}_1$ defined by the two cond
 Though the idea is clear, one must be aware that $f$ is a M\"obius function $\CP^1 \to \CP^1$ and so, for example, there will be points of $\mathcal{A}_1$ where $\iu u = f(1)$ is infinite. To cover these cases we introduce the additional coordinates $u' = u^{-1}$ and $v' = v^{-1}$. The content of the following lemma is that $p$, $k$ and images of the marked points will serve as coordinates for $\mathcal{A}_1$.
 
 \begin{lem}
-    \label{lem:change of parameters}
+\label{lem:change of parameters}
 The following functions are diffeomorphisms:
 \begin{align*}
 φ_0 :\; &\mathcal{A}_1 \setminus \{ν = \pm 1\} \to \R^+ \times (0,1) \times \R \times \R \setminus \{u=v\}\\
@@ -749,6 +749,7 @@ Using these, we rewrite $T_0$ in the follwoing way.
 4p \left[ E F_0(v; k) - K E_0(v; k) \right]
 -4 \left[ E F_0(u; k) - K E_0(u; k) \right]
 - 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
+\labelthis{eqn:T0 rewrite}
 \]
 
 \begin{lem}
@@ -768,37 +769,44 @@ which is analytic. Next, when using the coordinate $u'$ we have
 \frac{w(\iu u)}{u-v} - k u
 &= \frac{w(\iu u) - ku^2}{u-v} + \frac{kuv}{u-v} \\
 &= \frac{1 + (1+k^2)u^2}{(u-v) (w(\iu u) + ku^2)} + \frac{kv}{1-u'v} \\
-&= \frac{u'((u')^2 + (1+k^2)} {(1-u'v) (w'(\iu u') + k)} + \frac{kv}{1-u'v},
+&= \frac{u'((u')^2 + (1+k^2))} {(1-u'v) (w'(\iu u') + k)} + \frac{kv}{1-u'v},
 \end{align}
 where we have again used the auxillary function $w'(\iu t)^2 = (1+t^2)(k^2 + t^2)$. This is a sum of analytic functions of $u'$. As these three coordinate patches cover all of $\mathcal{A}_1$ we are done.
 \end{proof}
 \end{lem}
 
-In Appendix \ref{sub:EllipticContinuation}, extensions of $F_0(x;k)$ and $E_0(x;k)$ to the universal covers of $(k,x)\in (0,1)\times(\RInf)$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
+In Section \ref{sub:EllipticContinuation}, analytic extensions of $F_0(x;k)$ and $E_0(x;k)$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
 \[
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
-= 4p \left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
+:= 4p \left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
 - 4 \left[ E \tilde{F}(\tilde{u}) - K \tilde{E}(\tilde{u}) \right]
 - 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
 + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
 \]
-If we wish to relate this to a specific local expression, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$, \'a la \eqref{eqn:tildeF_period} and \eqref{eqn:tildeE_period}. In particular, define the winding number $W : \R \to \Z$ of a number $x$ to be the integer $W(x)$ such that $-π < x - 2πW(x) < π$. Then
+To actually compute the value of this function, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$.
+If we define the winding number $\Wind : \R \to \Z$ of a number $x$ to be the integer $\Wind(x)$ such that $-π < x - 2π\Wind(x) < π$, then recall \eqref{eqn:tildeF_period} and \eqref{eqn:tildeE_period},
+\begin{align*}
+\tilde{F}(\tilde{x};k) &= 2\Wind(\tilde{x})K' + F_0\bra{\tan \frac{\tilde{x}}{2};k}, \\
+\tilde{E}(\tilde{x}; k) &= 2\Wind(\tilde{x})(K'-E') + E_0\bra{\tan \frac{\tilde{x}}{2};k} .
+\end{align*}
+Then
 \begin{align*}
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
 %%%%%%%%%%%%%%%%%%%%%%%%
-&= 4p \left[ E (2K'W(\tilde{v})+F_0(v)) - K (2(K'-E')W(\tilde{v})+E_0(v)) \right] \\
-&\quad - 4 \left[ E (2K'W(\tilde{u})+F_0(u)) - K (2(K'-E')W(\tilde{u})+E_0(u)) \right]
-- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
-+ \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] \\
+% &= 4p \left[ E (2K'W(\tilde{v})+F_0(v)) - K (2(K'-E')W(\tilde{v})+E_0(v)) \right] \\
+% &\quad - 4 \left[ E (2K'W(\tilde{u})+F_0(u)) - K (2(K'-E')W(\tilde{u})+E_0(u)) \right]
+% - 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
+% + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] \\
 %%%%%%%%%%%%%%%%%%%%%%%%
-&= 4p \left[ 2EK' - 2K(K'-E') \right]W(\tilde{v})
-- 4 \left[ 2EK' - 2K(K'-E') \right]W(\tilde{u}) + T_0(p,k,u,v)\\
+&= 4p \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{v})
+- 4 \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{u}) + T_0(p,k,u,v)\\
 %%%%%%%%%%%%%%%%%%%%%%%%
 \tilde{T}(p,k,\tilde{u},\tilde{v})
-&= 2\bra{ pW(\tilde{v}) - W(\tilde{u}) } + T_0(p,k,u,v) .
+&= 2\bra{ p\Wind(\tilde{v}) - \Wind(\tilde{u}) } + T_0(p,k,u,v),
 \label{eqn:tilde T computable}
 \end{align*}
-Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and make a note of the constants. In particular, $T \in \Q$ if and only if $\tilde{T} \in \Q$, and so we can seek to find moduli space as a subset of the universal cover.
+using Legendre's relation (see Section \ref{sub:Legendre's Relation}).
+Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular, $T \in \Q$ if and only if $\tilde{T} \in \Q$. In the following section, we will find the level sets of $\tilde{T}$ in $\mathcal{A}_1(p)$.
 
 
 
@@ -824,7 +832,7 @@ Thus to do computations with the function $\tilde{T}$, one can continue to work 
 \subsection{The topology of the moduli space}
 \label{sub:Topology}
 
-In the interest of having manageable formulae, we recall the definition of $w'(z')^2 = (1 - (z')^2)(k^2 - (z')^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
+In the interest of having manageable formulae, we recall the definition of $w'(\iu t)^2 = (1 + t^2)(k^2 + t^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
 \[
 \Partial{}{u} F(\iu u; k) = \frac{\iu}{w(\iu u)},\;\;\;
 \Partial{}{u} E(\iu u; k) = \iu\frac{1+k^2 u^2}{w(\iu u)},
@@ -835,20 +843,21 @@ and
 = \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
 = \frac{(1+k^2)u + 2k^2 u^3}{w(\iu u)}.
 \]
-The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T_0$ is mechanical if tedious.
+The other derivatives of elliptic integrals are calculated in Section \ref{sub:Derivatives}. Equipped with these tools, the calculation of the derivatives of $T_0$ is mechanical if tedious.
 % \begin{align*}\label{dTdk}
 % \frac{π}{2}\Partial{T_0}{k}
 % &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
 % \end{align*}
-\begin{equation}\label{dTdu}
+\[
 \frac{π}{2}\Partial{T_0}{u}
 = -\frac{E}{w(\iu u)} + \frac{pK w(\iu v)}{(u-v)^2} + \frac{K}{w(\iu u)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
-\end{equation}
+\labelthis{dTdu}
+\]
 % \begin{equation}\label{dTdv}
 % \frac{π}{2}\Partial{T_0}{v}
 % = \frac{pE}{w(\iu v)} - \frac{K w(\iu u)}{(u-v)^2} - \frac{pK}{w(\iu v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
 % \end{equation}
-While $T$ may be multivalued on $\mathcal{A}_1'$, its derivatives are not: the ambiguity of being locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
+% While $T$ may be multivalued on $\mathcal{A}_1'$, its derivatives are not: the ambiguity of being locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
 
 % \begin{equation}\label{dTdu'}
 % \frac{π}{2}\Partial{T}{u'}
@@ -871,8 +880,7 @@ V(p,k,v) := -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right]
 \]
 have no zeroes for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
 \begin{proof}
-We shall prove this statement by showing that the two functions are in fact always positive. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, \todo{reference the appendix}
-and also the assumption that $p\geq 1$, to simplify
+We shall prove this statement by showing that the two functions are in fact always positive. We will draw on several inequalities that are explained in Section \ref{sub:Inequalities}. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
 \begin{align*}
 U(p,k,u,v)
 &= -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
@@ -889,7 +897,7 @@ U(p,k,u,v)
 &> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
 &\geq K \left[ 1 + k^2 u^2 v^2 \right].
 \end{align*}
-This is positive, so $U$ is without zeroes. The second function, $V$, is almost immediate. Take $E<K$,
+This is positive, so $U$ is without zeroes. The second function, $V$, is almost immediate. Again using $K>E$,
 \[
 V(p,k,v) > K \left[ -1 + pk w(\iu v) + 1 + k^2 v^2\right].
 \]
@@ -913,11 +921,11 @@ This establishes that $V$ has no roots either.
 The range of $\tilde{T}$ on $\mathcal{A}_1(p)$ is $\R$.
 
 \begin{proof}
-Fix $p$, but also fix any value for $k$. By REF, $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$, such that
+Fix $p$, but also fix any value for $k$. By \eqref{eqn:F0_E0_uniform_bounds}, $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$ but independent of $u$ and $v$, such that
 \[
 -C \leq 4p \left[ E F_0(v) - K E_0(v) \right]-4 \left[ E F_0(u) - K E_0(u) \right] \leq C.
 \]
-It follows from REF that
+Substituting this into \eqref{eqn:T0 rewrite},the definition of $T_0$,
 \[
 - 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C
 \leq
@@ -925,7 +933,7 @@ It follows from REF that
 \leq
 - 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] + C,
 \]
-and so it is sufficent to show that the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
+and so it is sufficent to show that for any fixed $p$ and $k$ the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
 \[
 \lim_{u \to v^+} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
 = k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^+} \frac{1}{u-v} = +\infty.
@@ -935,7 +943,7 @@ From the other side,
 \lim_{u \to v^-} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
 = k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^-} \frac{1}{u-v} = -\infty.
 \]
-By continuity, $T_0$ and therefore $\tilde{T}$ obtains every value.
+By continuity $T_0$, and therefore $\tilde{T}$, obtains every value.
 \end{proof}
 \end{lem}
 
@@ -943,36 +951,36 @@ By continuity, $T_0$ and therefore $\tilde{T}$ obtains every value.
 
 \begin{lem}
 \label{lem:T_graph}
-If $p \leq 1$ then $\tilde{\mathcal{A}_1}(p)$ is diffeomorphic to $\{(q,k,\tilde{u}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is diffeomorphic to $\{(q_0,k,\tilde{u}) \}$.
+If $p \leq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and $\{(q,k,\tilde{u}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is $\{(q_0,k,\tilde{u})\}$.
 
-Likewise, if $p \geq 1$ then $\tilde{\mathcal{A}_1}(p)$ is diffeomorphic to $\{(q,k,\tilde{v}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is diffeomorphic to $\{(q_0,k,\tilde{v})$.
+Likewise, if $p \geq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and $\{(q,k,\tilde{v}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is $\{(q_0,k,\tilde{v})$.
 
 \begin{proof}
-Fix a value of $p$ and consider the function $F(q, k,\tilde{u},\tilde{v}) = \tilde{T}(p,k,\tilde{u},\tilde{v}) - q$ on $\mathcal{\tilde{A}}_1(p)\times\R$. $F^{-1}(0)$ is a graph over $\mathcal{\tilde{A}}_1(p)$ given by $q=\tilde{T}$, so they are diffeomorphic. We will apply the implicit function theorem to show that $F^{-1}(0)$ can also be written as a graph over either $(q,k,\tilde{u})$ or $(q,k,\tilde{v})$, depening on the magnitude of $p$.
+Fix a value of $p$ and consider the function $G(q, k,\tilde{u},\tilde{v}) = \tilde{T}(p,k,\tilde{u},\tilde{v}) - q$ on $\mathcal{\tilde{A}}_1(p)\times\R$. $G^{-1}(0)$ is a graph over $\mathcal{\tilde{A}}_1(p)$ given by $q=\tilde{T}$, so they are diffeomorphic. We will apply the implicit function theorem to show that $G^{-1}(0)$ can also be written as a graph over either $(q,k,\tilde{u})$ or $(q,k,\tilde{v})$, depening on the magnitude of $p$.
 
-Suppose first that the fixed value of $p$ is greater than or equal to one. We compute the following formula for the derivative of $F$ with respect to $\tilde{u}$.
+Suppose first that the fixed value of $p$ is greater than or equal to one. We compute the following formula for the derivative of $G$ with respect to $\tilde{u}$.
 \begin{align*}
-\Partial{F}{\tilde{u}}
+\Partial{G}{\tilde{u}}
 = \Partial{\tilde{T}}{\tilde{u}}
-&= \frac{du}{d\tilde{u}}\Partial{T}{u} \\
-&= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \Partial{T}{u} \\
+&= \frac{du}{d\tilde{u}}\Partial{T_0}{u} \\
+&= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \Partial{T_0}{u} \\
 &= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \times \frac{2}{π} \times \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
 &= \frac{1}{π}\frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v },
 \end{align*}
-which holds for $\tilde{u} \not\in π + 2π\Z$.As witnessed in Lemma \ref{lem:deriv no zeroes}, $U$ is never zero, and neither are the other three factors present. Hence $\partial \tilde{T} / \partial \tilde{u}$ is never zero on this open set. It remains to check it does not vanish when $\tilde{u} \in π + 2π\Z$. Observe
+which holds for $\tilde{u} \not\in π + 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, $U$ is never zero, and neither are the other three factors present. Hence $\partial \tilde{G} / \partial \tilde{u}$ is never zero on this open set. It remains to check it does not vanish when $\tilde{u} \in π + 2π\Z$. Observe
 \begin{align*}
 \lim_{u\to\infty} u^{-2} U(p,k,u,v)
 &= \lim_{u\to\infty} -(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) + K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \\
 &= V(p,k,v).
 \end{align*}
-As $\tilde{T}$ is an analytic function, in particular its derivatives are continuous and so we may compute their value at these points by taking a limit. Therefore
+As $\tilde{T}$ is an analytic function its derivatives are continuous and so we may compute their value at these points by taking a limit. Therefore
 \begin{align}
-\lim_{\tilde{u}\to π + 2π\Z} \Partial{F}{\tilde{u}}
+\lim_{\tilde{u}\to π + 2π\Z} \Partial{G}{\tilde{u}}
 &=\frac{1}{π} \lim_{u \to \infty} \frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
 &=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}U\bra{ p,k,u,v } \\
 &=\frac{1}{π} \frac{1}{k} V\bra{ p,k,v },
 \end{align}
-which is also nonzero. By the implicit function theorem, there is a function $h$ such that $F^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range} \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed at $q_0$, then the level set $q_0 = \tilde{T}$ is paramterised by the remaining two coordinates $(k,\tilde{u})$.
+which is also nonzero. By the implicit function theorem, there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range} \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed at $q_0$, then the level set $q_0 = \tilde{T}$ is paramterised by the remaining two coordinates $(k,\tilde{u})$.
 
 When $p \leq 1$, we employ the following symmetry.
 \begin{align*}
@@ -985,69 +993,88 @@ so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing
 \end{proof}
 \end{lem}
 
-Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves that admit closing spectral data and that $\mathcal{\tilde{S}}_1 \subset \mathcal{\mathcal{A}_1}$ is its preimage in the universal cover. Let $\mathcal{\tilde{A}}_1(p,q)$ denote the subset of $\mathcal{\tilde{A}}_1$ on which the values of $p(α,β) = p$ and $\tilde{T} = q$ are fixed. As we have shown that $\mathcal{S}_1$ is the space on which $p$ is a positive rational and $q$ is any rational (lemma \ref{lem:closing_conds}), it follows that
+Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves, marked curves that admit spectral data, and define $\mathcal{\tilde{S}}_1 \subset \mathcal{\mathcal{A}}_1$ to be its preimage in the universal cover. Let $\mathcal{\tilde{A}}_1(p,q)$ denote the subset of $\mathcal{\tilde{A}}_1$ on which the values of $S\circ π = p$ and $\tilde{T} = q$ are fixed. As we have shown that $\mathcal{S}_1$ is the space on which $p$ is a positive rational and $q$ is any rational (lemma \ref{lem:closing_conds}), it follows that
 \[
 \mathcal{\tilde{S}}_1 = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{A}}_1(p,q).
 \]
 
-There are several topological implications of the previous lemma. First, each level set $\mathcal{\tilde{A}}_1(p,q)$ is connected. More precisely each of these is diffeomorphic to a product of $(0,1)$ and $\R$. The above disjoint union is the decomposition of $\mathcal{\tilde{S}}_1$ into its connected components. By varying the value of $q$, we see that the $\mathcal{\tilde{A}}_1(p,q)$ foliate $\mathcal{A}_1(p)$, so $\mathcal{\tilde{S}}_1$ is arranged densely in $\mathcal{\tilde{A}}_1(p)$ in the same way that $\Q$ is arranged densely in $\R$.
-\todo{phrase this better}
+There are several topological implications of the previous lemma. First, each level set $\mathcal{\tilde{A}}_1(p,q)$ is connected. More precisely each of these is diffeomorphic to a product of $(0,1)$ and $\R$. The above disjoint union is the decomposition of $\mathcal{\tilde{S}}_1$ into its path connected components. By varying the value of $q$, we see that the $\mathcal{\tilde{A}}_1(p,q)$ foliate $\mathcal{\tilde{A}}_1(p)$, so $\mathcal{\tilde{S}}_1$ is arranged densely in $\mathcal{\tilde{A}}_1(p)$, analogously to how $\Q$ is arranged densely in $\R$.
 
-To understand the topology of $\mathcal{S}_1$, we must understand the action of the deck transformations as restricted to $\tilde{\mathcal{S}_1}$. There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}_1$ over $\mathcal{A}_1$ and the transformations of the two fold covering of $\mathcal{A}_1$ over $\mathcal{C}_1$. The first sort are easy to understand; they are generated by the translation
-\[
-(p, k,\tilde{u},\tilde{v}) \mapsto (p, k, \tilde{u} + 2π, \tilde{v} + 2π).
-\]
-The second sort require a little more effort. On one hand, the deck transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ is simply the involution that swaps $α$ and $β$. The difficulty is what this action looks like when pulled back to the universal cover. By inspection of the defintions of $p$ and $k$, they are unchanged if the labbeling of the branch points is exchanged. We therefore must say what happens to $u$ and $v$. Our construction thus far relies on the standardisation in the definition of $f$ that sends $α$ to $1$ and $β$ to $k^{-1}$. Let $f_s$ be the map which instead standardises the roots of the spectral curve in the other way, taking $β$ to $1$. Consider the composition of $f_s \circ f^{-1}$. It is a M\"obius transformation that exchanges $1$ and $k^{-1}$ and also $-1$ and $-k^{-1}$. It therefore must be the map
+To understand the topology of $\mathcal{S}_1$, we must understand the action of the covering transformations of $\mathcal{\tilde{A}}_1 \to \mathcal{A}_1 \to \mathcal{C}_1$ as restricted to $\tilde{\mathcal{S}}_1$, and so we must first describe the group of covering transformations. The covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ are easy to understand; there is $λ : (α,β) \mapsto (β,α)$, which swaps the labelling of the branch points inside the unit disc, and of course the identity $\id$. The difficulty is describing these actions pulled back to the universal cover.
+
+% There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}_1$ over $\mathcal{A}_1$ and the transformations of the two fold covering of $\mathcal{A}_1$ over $\mathcal{C}_1$. The first sort are easy to understand; they are generated by the translation
+% \[
+% (p, k,\tilde{u},\tilde{v}) \mapsto (p, k, \tilde{u} + 2π, \tilde{v} + 2π).
+% \]
+% The second sort require a little more effort. On one hand, the deck transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ is simply the involution that swaps $α$ and $β$.
+
+In preparation, let us describe $λ$ in terms of the $(p,k,u,v)$ coordinates.
+By inspection of the defintions of $p = S(α,β)$ and $k = k(α,β)$, \eqref{eqn:def_S} and \eqref{eqn:def_k}, they are unchanged if the labbeling of the branch points is exchanged. We therefore must say what happens to $u$ and $v$. Recall that $\iu = f(1)$ and $\iu v = f(-1)$. Our construction thus far relies on a definition of $f$ that sends $α$ to $1$ and $β$ to $k^{-1}$. Let $f_s$ be the M"Obius transformation which instead standardises the branch points of the marked curve in the other way, taking $β$ to $1$ and $α$ to $k^{-1}$. Equivalently, $f_s$ is the result of first swapping the order of branch points $(α,β)$ and then applying $f$. Consider the composition of $f_s \circ f^{-1}$. It is a M\"obius transformation that exchanges $1$ and $k^{-1}$ and also $-1$ and $-k^{-1}$. It therefore must be the map
 \[
 z \mapsto \frac{1}{kz}.
 \]
-Under the composite map $\iu u$ is taken to $-\iu k^{-1}u^{-1}$ and $\iu v$ is taken to $-\iu k^{-1}v^{-1}$. Using the map $f_s$ instead of $f$ is equivalent to swapping the labels on the branch points and then applying $f$. Thus, under the label-swapping involution,
+Under the map $f_s \circ f^{-1}$ the point $\iu u$ is taken to $-\iu (ku)^{-1}$ and $\iu v$ is taken to $-\iu (kv)^{-1}$. Thus, under the label-swapping involution $λ$,
 \[
-(p,k,u,v) \mapsto \bra{ p,k, -(ku)^{-1}, -(kv)^{-1} }.
+λ: (p,k,u,v) \mapsto \bra{ p,k, -(ku)^{-1}, -(kv)^{-1} }.
 \]
-This then carries on to the universal cover in the following way. For some integer $n$
+This gives us the covering transformations of the universal cover in the following way. Recall that the covering map of the universal cover $\mathcal{\tilde{A}}_1$ over $\mathcal{A}_1$ in part reads $u = \tan \tilde{u}/2$. That is, $\tilde{u} \in 2\atan u + 2π\Z$. If we take a point $(α,β) \in \mathcal{A}_1$ with some $u$ coordinate, the $\tilde{u}$ coordinate of any point of $\mathcal{\tilde{A}}_1$ that lies over $(β,α)$ must be
 \[
-\tilde{u} = 2πn + 2\atan u \mapsto 2πn + 2\atan \bra{ -\frac{1}{ku} } = 2πn + π + 2\atan (ku).
+2\atan \bra{ -\frac{1}{ku} } + 2π\Z
+= 2\bra{\pm\frac{π}{2} + \atan (ku)} + 2π\Z
+= 2πm + π + 2\atan (ku)
 \]
-Applying the transformation again
+for some integer $m$. Therefore, the covering transformations lie within the set
 \[
-2πn + π + 2\atan (ku) \mapsto 2πn + π + 2\atan \bra{ -\frac{k}{ku} } = 2π(n+1) + 2\atan u = \tilde{u} + 2π.
+\Set {(p,k,\tilde{u},\tilde{v}) \mapsto (p,k, 2πm + π + 2\atan (ku), 2πn + π + 2\atan (kv))} {m,n \in \Z}.
 \]
-The same applies to $\tilde{v}$. This shows that deck transformations of $\mathcal{\tilde{A}}_1$ over $\mathcal{A}_1$ are actually a subgroup of the group generated by the label-swapping involution. Hence we can focus our attention solely on the latter.
+Not every element of this set is a well defined map on $\mathcal{\tilde{A}}_1$ however, because by Definition \ref{defn:mathcal tilde A} we have that $\tilde{u} < \tilde{v} < \tilde{u} + 2π$. Hence above if we choose $m$, there choice of $n$ is completely determined and therefore the group of covering transformations is generated by
+\[
+\tilde{λ} : (p,k,\tilde{u},\tilde{v}) \mapsto (p,k, 2π\Wind(\tilde{u}) + π + 2\atan (ku), 2π\Wind(\tilde{v}) + π + 2\atan (kv)).
+\]
+If we apply this transformation twice, we see that the $\tilde{u}$ coordinate changes thusly
+\begin{align*}
+2π\Wind(\tilde{u}) + 2\atan u
+&\mapsto 2π\Wind(\tilde{u}) + π + 2\atan (ku) \\
+&\mapsto 2π\Wind(\tilde{u}) + π + 2\atan \bra{ -\frac{k}{ku} } \\
+&= 2π\Wind(\tilde{u}) + 2π + 2\atan u = \tilde{u} + 2π,
+\end{align*}
+and ditto for $\tilde{v}$. This is actually a generator for the group of covering transformation of $\mathcal{\tilde{A}}_1$ over $\mathcal{A}_1$, which is plain by inspection of Definition \ref{defn:mathcal tilde A}. As expected, those transformations are an index two subgroup of the covering transformations of $\mathcal{\tilde{A}}_1$ over $\mathcal{C}_1$.
 
-How does the value of $T$ change when this transformation is precomposed? To see this, it is useful to consider the situation in the $ζ$-plane. Suppose for concreteness that $μ$ and $ν$ are chosen such that $ν,μ,1$ and $-1$ are arranged clockwise as shown in the following diagram. The principal choice of path $γ_+$ is shown in black, whereas its pullback under the exchange of the roots is shown in red. Let it be denoted $γ'_+$.
+If we wish to see the effect of the covering transformations as restricted to $\mathcal{\tilde{S}}_1$, we must determine how the value of $\tilde{T}$ changes when it is precomposed with $\tilde{λ}$, since $\mathcal{\tilde{S}}_1$ is a collection of its level sets. It is useful to consider first the effect of $λ$ on $T_0$ in the $ζ$-plane. Suppose for concreteness that $μ$ and $ν$ are chosen such that $ν,μ,1$ and $-1$ are arranged clockwise as shown in Figure \ref{fig:deck_T_1}. The principal choice of path $γ_+$ is shown in black, whereas its pullback under the exchange of the roots is shown in red. Let it be denoted $γ'_+$.
 
-\begin{center}
-\includegraphics[height=50mm]{thesis_graphics_temp/deck_T_1.png}
-\end{center}
+\makefigure{The principal path $γ_+$ in black and its pullback $γ'_+$ under $λ$ in red. \label{fig:deck_T_1}}{thesis_graphics_temp/deck_T_1.png}
 
-The difference between these two paths is homologous to a loop anticlockwise around the upper unit circle. So by the normalisation of $Θ^P$,
+The difference between these two paths is homologous to a loop anticlockwise around the upper unit circle. So by the construction of $Θ^P$,
 \[
 \int_{γ'_+} Θ^P - \int_{γ_+} Θ^P = \int_{\S^1} = -2π\iu.
 \]
 
 Likewise if we consider the difference between the path $γ_-$ and its pullback $γ'_-$ we again have a anticlockwise loop of the upper unit circle.
-\begin{center}
-    \includegraphics[height=50mm]{thesis_graphics_temp/deck_T_1.png}
-\end{center}
+
+\makefigure{The principal path $γ_-$ in black and its pullback $γ'_-$ under $λ$ in red. \label{fig:deck_T_-1}}{thesis_graphics_temp/deck_T_-1.png}
+
 Hence
 \[
 \int_{γ'_-} Θ^P - \int_{γ_-} Θ^P = \int_{\S^1} = -2π\iu.
 \]
 Putting these together we conclude that the value of $T_0$ changes by $1-p$ under this transformation.
 \[
-2π\iu (T_0 \circ g - T_0) = \bra{ p\int_{γ'_-} Θ^P - \int_{γ'_+} Θ^P } - \bra{ p\int_{γ_-} Θ^P - \int_{γ_+} Θ^P } = p(-2π\iu) - (-2π\iu) = 2π\iu (1-p).
+2π\iu (T_0 \circ λ - T_0) = \bra{ p\int_{γ'_-} Θ^P - \int_{γ'_+} Θ^P } - \bra{ p\int_{γ_-} Θ^P - \int_{γ_+} Θ^P } = p(-2π\iu) - (-2π\iu) = 2π\iu (1-p).
 \]
 
-To infer what the effect of the transformation is on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently altered their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$, $\iu v$. In particular, as one tranverses the unit circle clockwise, one traverses the imaginary axis in the $z$-plane from bottom to top. Correspondingly, $-\infty < 0 < u < v$.
-
-As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n,m$. $2\atan(ku)$ will be between $0$ and $π$, so after the transformation $\tilde{u}$ will be in the range $(2πn +π, 2π(n+1))$. In otherwords its winding number has incresed by $1$. The same can be said for $\tilde{v}$. Putting these two parts together
+To infer the effect of the transformation on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently altered their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$, $\iu v$. In particular,
 \[
-\tilde{T} \circ g - \tilde{T}
-= \bra{ T_0 \circ g + 2(p(m+1)-(n+1)) } - \bra{ T_0 + 2(pm-n) }
+0 = f(μ),\;\; \iu u = f(1),\;\; \iu v = f(-1),\;\; \infty = f(ν),
+\]
+and as one tranverses the unit circle clockwise, one traverses the imaginary axis in the $z$-plane upwards. Correspondingly, $0 < u < v$.
+
+As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n,m$. The value of $2\atan(ku)$ will be between $0$ and $π$, so after the transformation $\tilde{u}$ will be in the range $(2πn +π, 2π(n+1))$. In otherwords its winding number has incresed by $1$. The same can be said for $\tilde{v}$. Putting these two parts together
+\[
+\tilde{T} \circ \tilde{λ} - \tilde{T}
+= \bra{ T_0\circ λ + 2(p(m+1)-(n+1)) } - \bra{ T_0 + 2(pm-n) }
 = 1-p  +2(p-1) = p-1.
 \]
-This relation is a difference of analytic functions on an open set, so by continuation it applies everywhere. Thus the effect of the deck transformation on $\tilde{T}$ is to increase its value by $p-1$.
+This relation is a difference of analytic functions on an open set, so by continuation it applies everywhere. Thus the effect of the covering transformation $\tilde{λ}$ on $\tilde{T}$ is to increase its value by $p-1$.
 
 
 
