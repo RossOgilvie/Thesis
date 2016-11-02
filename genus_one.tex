@@ -1,6 +1,6 @@
 %!TEX root = thesis.tex
 
-\section{Genus One Moduli Space}
+\chapter{Genus One Moduli Space}
 % \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
 
 \subsubsection{Rambling}
@@ -97,8 +97,8 @@ One can note that the plane of differentials with imaginary periods is naturally
 
 
 
-\subsection{Overview}
-\label{sub:Overview}
+\section{Overview}
+\label{sec:Overview}
 
 Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{S}_1$. Every marked curve of $\mathcal{C}_1$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods} and that also have integral periods (Condition \ref{P:periods}) but not every curve admits differentials that further meet the closing conditions, Condition \ref{P:closing}. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}_1$ within $\mathcal{C}_1$. We will investigate the topology of $\mathcal{S}_1$ and show it to be a dense collection of leaves of a foliation of $\mathcal{C}_1$. Most connected components will be simply connected, though there is also an exceptional family of annuli. The moduli space $\mathcal{M}_1$ of periodic spectral data will be shown to be a trivial bundle over $\mathcal{S}_1$.
 
@@ -109,11 +109,11 @@ Recall from equation \eqref{eqn:def Ag} that $\mathcal{A}_1$ is the space $\{ (�
 \]
 is the marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$ and which has the standard scaling \eqref{eqn:def P}.
 
-The main theorems of this chapter are Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, which together describe a folition of $\mathcal{C}_1$ and identifies the connected components of $\mathcal{S}_1$ as leaves of this foliation. This result is proved by the construction, in several stages, of a parameterisation of the foliation adapted to the closing conditions. First, in \textsection\ref{sub:Differentials} on each marked curve we find the differentials with integral periods. Having found these differentials, in \textsection\ref{sub:closing conditions} we reformulate the closing conditions to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given spectral curve admits spectral data. The first function is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (eqn \eqref{eqn:def_T}), is however multivalued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
+The main theorems of this chapter are Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, which together describe a folition of $\mathcal{C}_1$ and identifies the connected components of $\mathcal{S}_1$ as leaves of this foliation. This result is proved by the construction, in several stages, of a parameterisation of the foliation adapted to the closing conditions. First, in \textsection\ref{sec:Differentials} on each marked curve we find the differentials with integral periods. Having found these differentials, in \textsection\ref{sec:closing conditions} we reformulate the closing conditions to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given spectral curve admits spectral data. The first function is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (eqn \eqref{eqn:def_T}), is however multivalued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
 
-To analyse the two functions, especially the second, we introduce a new set of coordinates on $\mathcal{A}_1$ that are adapted to calculation (\textsection\ref{sub:Reformulate}). These new coordinates dovetail with the results of \textsection\ref{sub:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$. We then compute the derivatives of $\tilde{T}$ and use the implicit function theorem to prove that its level sets, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$. Finally, we push this foliation back down to $\mathcal{C}_1$. By uniqueness, $\mathcal{\tilde{A}}_1$ is also the universal cover of $\mathcal{C}_1$, so one recovers $\mathcal{S}_1$ as a quotient by covering transformations (\textsection\ref{sub:Topology}).
+To analyse the two functions, especially the second, we introduce a new set of coordinates on $\mathcal{A}_1$ that are adapted to calculation (\textsection\ref{sec:Reformulate}). These new coordinates dovetail with the results of \textsection\ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$. We then compute the derivatives of $\tilde{T}$ and use the implicit function theorem to prove that its level sets, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$. Finally, we push this foliation back down to $\mathcal{C}_1$. By uniqueness, $\mathcal{\tilde{A}}_1$ is also the universal cover of $\mathcal{C}_1$, so one recovers $\mathcal{S}_1$ as a quotient by covering transformations (\textsection\ref{sec:Topology}).
 
-To close this chapter, in \textsection\ref{sub:Corollaries}, we show that $\mathcal{M}_1$ is a trivial bundle over $\mathcal{S}_1$. We consider some well-known examples of harmonic maps and show in which component of the moduli space they reside. Building on this, we identify a symmetry of $\mathcal{S}_1$ and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
+To close this chapter, in \textsection\ref{sec:Corollaries}, we show that $\mathcal{M}_1$ is a trivial bundle over $\mathcal{S}_1$. We consider some well-known examples of harmonic maps and show in which component of the moduli space they reside. Building on this, we identify a symmetry of $\mathcal{S}_1$ and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
 
 We have introduced numerous spaces, so we summarise them and their relationship to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. Within each of these spaces, we may consider the subspaces on which the first function has the value $p\in\Q^+$. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$, is the union of those $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. A double-headed arrow indicates a covering map and the $\Z$ or $\Z_2$ over it indicates the group of covering transformations.
 \[
@@ -139,8 +139,8 @@ We have introduced numerous spaces, so we summarise them and their relationship 
 
 
 
-\subsection{Differentials of the Elliptic Spectral Curve}
-\label{sub:Differentials}
+\section{Differentials of the Elliptic Spectral Curve}
+\label{sec:Differentials}
 As outlined in the previous section, it will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct the differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions \ref{P:poles}--\ref{P:reality}. The second step is to therefore write down these differentials; the differentials $Θ$ on $Σ$ that have double poles and no residues over $ζ=0,\infty$, that with respect to the hyperelliptic involution $σ$ obey $σ^*Θ = - Θ$, and that are real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$. They form a three dimensional real vector space.
 
 Next, we use the transformation $f$ to compute the periods of these differentials in terms of the Jacobi elliptic integrals. Finally, we leverage the standard relations among the Jacobi elliptic integrals to describe explicitly the differentials with integral periods, those which meet condition \ref{P:periods}. Any differential that meets all the conditions \ref{P:poles}--\ref{P:periods} may be written as a linear combination of two distinguished differentials, $Θ^E$ and $Θ^P$. The choice of these two differentials on $Σ(α,β)$ varies smoothly in the parameters $(α,β)$. The space of differentials with integral periods will be shown to be trivial bundles over $\mathcal{A}_1$ and $\mathcal{C_1}$.
@@ -232,7 +232,7 @@ Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} an
 
 Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Jacobi elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
 
-Having found the map $f$ that transforms the genus one marked curve $Σ$ into Jacobi normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions \ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions \ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of Section \ref{sub:prelim diffs}, recall that all differentials on a genus one marked curve $Σ$ that have (at most) a double root over $ζ=0$ and $ζ=\infty$ may be written the form
+Having found the map $f$ that transforms the genus one marked curve $Σ$ into Jacobi normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions \ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions \ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of Section \ref{sec:prelim diffs}, recall that all differentials on a genus one marked curve $Σ$ that have (at most) a double root over $ζ=0$ and $ζ=\infty$ may be written the form
 \[
 Θ = b(ζ)\frac{dζ}{ζ^2η},
 \]
@@ -316,7 +316,7 @@ It is useful at this point to summarise the standard elliptic integrals, the per
 \int_{f(A)} e &= 4E(k) &
 \int_{f(B)} e &= 2\iu(K'-E')
 \end{align*}
-where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denotes not the derivative but instead the elliptic complement. The elliptic complement is by definition $k' = \sqrt{1-k^2}$, and $K'(k) = K(k')$ and $E'(k) = E(k')$. Further properties of elliptic integrals may be found in Appendix \ref{sec:Elliptic Integrals}. Note that $λ$ is the sum of $e$ and an exact differential and so has the same periods as $e$.
+where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denotes not the derivative but instead the elliptic complement. The elliptic complement is by definition $k' = \sqrt{1-k^2}$, and $K'(k) = K(k')$ and $E'(k) = E(k')$. Further properties of elliptic integrals may be found in Appendix \ref{chp:Elliptic Integrals}. Note that $λ$ is the sum of $e$ and an exact differential and so has the same periods as $e$.
 
 We require that
 \begin{align*}
@@ -379,8 +379,8 @@ and so uniqueness forces $Θ^P(β,α) = Θ^P(α,β)$.
 The consequence of this is that $(Θ^E,Θ^P)$ pushes forward to a well-defined basis of the differentials over $\mathcal{C}_1$ as well, and just as for $\mathcal{A}_1$ they trivialise the bundle $\mathcal{B}_1 \to \mathcal{C}_1$. Though we mainly concentrate on the subspace of $\mathcal{A}_1$ of spectral curves that admit spectral data, at the end of this chaper we will consider the space of spectral data within the total space of $(\mathcal{B}_1)^2$.
 
 
-\subsection{The Closing Conditions}
-\label{sub:closing conditions}
+\section{The Closing Conditions}
+\label{sec:closing conditions}
 Recall the closing conditions, Condition \ref{P:closing}. These are the conditions that spectral data must meet in order that they correspond to a harmonic map of the torus, rather than a harmonic map of the plane (of finite type). If $(Σ,Θ,\tilde{Θ})$ is a triple of spectral data, $Θ$ satisfies the closing condition at $ζ=1$ if
 \[
 \int_{γ_{+}} Θ \in 2π\iu \Z,
@@ -530,8 +530,8 @@ With these two differentials we then attempted to further satisfy \ref{P:closing
 
 
 
-\subsection{Coordinates for $\mathcal{A}_1$}
-\label{sub:Reformulate}
+\section{Coordinates for $\mathcal{A}_1$}
+\label{sec:Reformulate}
 
 We would like to examine the subspace of $\mathcal{A}_1$ defined by the two conditions $S,T \in \Q$. This would be the set of genus one spectral curves. At its core, our method will invoke the implicit function theorem, for which the necessary computation will be the differentiation of the function $T$. It is therefore prudent to adopt a parameterisation of the space of marked curves $\mathcal{A}_1$ more suited to the task than $(α,β)$. We shall take as our first coordinate $p=S(α,β)$ itself, as then we can enforce the condition $p\in\Q$ simply by holding this coordinate constant. Elliptic integrals are the most difficult part of \eqref{eqn:gamma_plus} to differentiate, so to minimise our labour we choose the other three coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$.
 
@@ -775,7 +775,7 @@ where we have again used the auxillary function $w'(\iu t)^2 = (1+t^2)(k^2 + t^2
 \end{proof}
 \end{lem}
 
-In Section \ref{sub:EllipticContinuation}, analytic extensions of $F_0(x;k)$ and $E_0(x;k)$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
+In Section \ref{sec:EllipticContinuation}, analytic extensions of $F_0(x;k)$ and $E_0(x;k)$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
 \[
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
 := 4p \left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
@@ -805,7 +805,7 @@ Then
 &= 2\bra{ p\Wind(\tilde{v}) - \Wind(\tilde{u}) } + T_0(p,k,u,v),
 \label{eqn:tilde T computable}
 \end{align*}
-using Legendre's relation (see Section \ref{sub:Legendre's Relation}).
+using Legendre's relation (see Section \ref{sec:Legendre's Relation}).
 Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular, $T \in \Q$ if and only if $\tilde{T} \in \Q$. In the following section, we will find the level sets of $\tilde{T}$ in $\mathcal{A}_1(p)$.
 
 
@@ -829,8 +829,8 @@ Thus to do computations with the function $\tilde{T}$, one can continue to work 
 
 
 
-\subsection{The topology of the moduli space}
-\label{sub:Topology}
+\section{The topology of the moduli space}
+\label{sec:Topology}
 
 In the interest of having manageable formulae, we recall the definition of $w'(\iu t)^2 = (1 + t^2)(k^2 + t^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
 \[
@@ -843,7 +843,7 @@ and
 = \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
 = \frac{(1+k^2)u + 2k^2 u^3}{w(\iu u)}.
 \]
-The other derivatives of elliptic integrals are calculated in Section \ref{sub:Derivatives}. Equipped with these tools, the calculation of the derivatives of $T_0$ is mechanical if tedious.
+The other derivatives of elliptic integrals are calculated in Section \ref{sec:Derivatives}. Equipped with these tools, the calculation of the derivatives of $T_0$ is mechanical if tedious.
 % \begin{align*}\label{dTdk}
 % \frac{π}{2}\Partial{T_0}{k}
 % &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
@@ -880,7 +880,7 @@ V(p,k,v) := -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right]
 \]
 have no zeroes for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
 \begin{proof}
-We shall prove this statement by showing that the two functions are in fact always positive. We will draw on several inequalities that are explained in Section \ref{sub:Inequalities}. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
+We shall prove this statement by showing that the two functions are in fact always positive. We will draw on several inequalities that are explained in Section \ref{sec:Inequalities}. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
 \begin{align*}
 U(p,k,u,v)
 &= -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
@@ -1140,8 +1140,8 @@ The final step was to push these level sets back down to $\mathcal{C}_1$. To do 
 
 
 
-\subsection{Corollaries}
-\label{sub:Corollaries}
+\section{Corollaries}
+\label{sec:Corollaries}
 
 In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are strips, but the components of $\mathcal{S}_1(1)$ are distinguished because the are not simply connected. This section will show several properties of these components. First that although the moduli space of spectral curves is not simply connected, the moduli space of spectral data is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case lie within a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a transformation on the space spectral curves and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
 

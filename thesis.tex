@@ -1,13 +1,15 @@
-\documentclass{article}
-% \documentclass{memoir}
+% \documentclass{article}
+\documentclass{report}
 
 \usepackage{thesis_style}
 
-\fancyhdr
-
 \begin{document}
+
+\include{titlepage}
+\include{frontmatter}
 \tableofcontents
 
+\setcounter{chapter}{-1}  % start chapter numbering at 0
 \include{preliminaries}
 \include{deform_lemma_redux}
 \include{genus_zero}
@@ -16,12 +18,13 @@
 
 
 % APPENDICES
-\appendix
-\include{glossary}
-\include{elliptic_integral}
+% \appendix
+% \include{glossary}
+% \include{elliptic_integral}
 % \include{misc}
 
 % \bibliography{library}
 \bibliography{library,manual_entered}
 \bibliographystyle{alpha}
+
 \end{document}

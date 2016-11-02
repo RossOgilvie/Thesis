@@ -1,14 +1,14 @@
 %!TEX root = thesis.tex
 
-\section{Elliptic Integrals}
-\label{sec:Elliptic Integrals}
+\chapter{Elliptic Integrals}
+\label{chp:Elliptic Integrals}
 
 %%%%%%%%% I don't want these subsections in the table of contents, because there are too many of them and they're not really important. There is a command at the bottom that turns the ToC back on again
 \stoptocentries
 
 The purpose of this appendix is to provide background information about elliptic integrals. It contains their definitions and the basic properties, as well as some results that are used in the body of the thesis. It is not a comprehensive treatment, specifically elliptic integrals of the third kind are not treated, and incomplete integrals are only treated for an imaginary argument.
 
-\subsection{Definitions and Periods}
+\section{Definitions and Periods}
 Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor `elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. This topic has a long history, at least two hundred years, and consequently there are several competing conventions. In this thesis we shall use the Legendre elliptic integrals, (sometimes also called Jacobi elliptic integrals, of a modulus $k$. Every elliptic integral may be reduced to a combination of Legendre elliptic integrals \cite{armitage2006elliptic}.
 
 \begin{defn}
@@ -90,8 +90,8 @@ Again, we introduce the notation that $E' = E(k')$.
 
 
 
-\subsection{Inequalities and Limits}
-\label{sub:Inequalities}
+\section{Inequalities and Limits}
+\label{sec:Inequalities}
 Throughout this thesis, we use inequalities to bound the behaviour of elliptic integrals. One can obtain a crude bound from the fact that $K$ is an increasing function and $E$ is a decreasing one. The exact values
 \[
 K(0) = E(0) = \frac{π}{2}, \;\; E(1) = 1,
@@ -245,8 +245,8 @@ PLOT OF FUNCTIONS FOR k=0, 0.5, 1 \todo{this}
 
 
 
-\subsection{Derivatives}
-\label{sub:Derivatives}
+\section{Derivatives}
+\label{sec:Derivatives}
 The aim of this section is to compute the derivatives of the elliptic integrals. The derivatives of the incomplete integrals with respect to the variable $z$ are trivial because they are simply parameter integrals
 \begin{align}
     \Partial{}{z} F(z;k) &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \label{eqn:dFdz} \\
@@ -292,8 +292,8 @@ We can recover the well known formulae for the derivatives of the complete ellip
 
 
 
-\subsection{Legendre's Relation}
-\label{sub:Legendre's Relation}
+\section{Legendre's Relation}
+\label{sec:Legendre's Relation}
 There is a surprising relation between the complete elliptic integrals. The standard proof is reproduced below \todo{find citation}.
 
 \begin{lem}[Legendre's relation]
@@ -347,8 +347,8 @@ This relation is useful in two ways. First, it can be used to construct a basis 
 
 
 
-\subsection{Analytic Continuation}
-\label{sub:EllipticContinuation}
+\section{Analytic Continuation}
+\label{sec:EllipticContinuation}
 
 Above, we computed the limits of $F_0(x;k)$ and $E_0(x;k)$ as $x \to \infty$, but because both functions are odd, there is no way to extend them to single valued functions on $\RInf$. Instead we must extend these functions analytically. It is a standard fact that the elliptic integrals are analytic functions on the plane. To extend, we will use the fact that parameter integrals of analytic functions are analytic. Let $\tilde{x}\in\R$ and consider the covering map $\R \to \RInf$ given by
 \[

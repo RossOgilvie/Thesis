@@ -6,30 +6,81 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 
+%% Set the font
+\usepackage{fontspec}
+% \setmainfont{Latin Modern Roman}
+
+%% For unicode characters in math environments
+\usepackage{unicode-math}
+
+\setmathfont{Latin Modern Math}
+\setmathfont[range={\mathcal,\mathscr,\mathbfscr}]{XITS Math}
+\setmathfont[range={\mathbb}]{TeX Gyre Termes Math}
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\protected\def\mathbb#1{{\mathchar\numexpr256*\symAMSb+`#1\relax}}
+% the redefinition for the missing \setminus must be delayed
+\AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
+
 %set up pages the way I like them and provide a quick command to do the headings
-\usepackage{listings}
-\usepackage{enumerate}
+% \usepackage{listings}
+% \usepackage{enumerate}
+
+% Cool Chapter titles
+\usepackage[explicit]{titlesec}
+\usepackage{xhfill}
+\usepackage{varwidth}
+
+\titleformat{\chapter}[display]
+  {\Large}{\filleft\thechapter}{2ex}
+  {\hspace*{\dimexpr-4em-10pt\relax}%
+    \advance\hsize4em\advance\hsize10pt%
+    \rule[0.5ex]{4em}{1pt}\hspace{10pt}%
+    \begin{varwidth}{\textwidth}\raggedright#1\end{varwidth}%
+    \hspace{10pt}\xrfill[0.5ex]{1pt}%
+  }
+
 
 % A package to help with the labelling of enumerates
 \usepackage{enumitem}
+%make lists use bracketed roman numerals
+\renewcommand{\labelenumi}{(\roman{enumi})}
+%make lists use latin letters, then bracketed roman numerals
+% \renewcommand{\labelenumi}{\alph{enumi})}
+% \renewcommand{\labelenumii}{(\roman{enumii})}
+
+% For row spanning columns in tables
+\usepackage{multirow}
 
 %% for chapter quotes
 \usepackage{epigraph}
 
-\newcommand{\fancyhdr}{
-\usepackage{fancyhdr}
-\usepackage{float}
-\usepackage[left=0.75in, top=1in, right=0.75in, bottom=1in]{geometry}
-\pagestyle{plain}
-}
+%%%%%%% For captions beside the figure
+\usepackage{floatrow}
+\usepackage{caption}
+% \captionsetup{labelformat=empty}
 
-\newcommand{\makeheading}[1]{\rhead{#1\\Ross Ogilvie -- University of Sydney -- rosso@maths.usyd.edu.au \\\today}\thispagestyle{fancy}}
+% For plots
+\usepackage{tikz}
+\usepackage{pgfplots}
 
+% For commutative diagrams
+\usepackage[heads=littlevee]{diagrams}
+
+% For todo note and missing figures
+\usepackage{todonotes}
+
+%%%%%%%%% to stop things appearing in the table of contentns
+\setcounter{tocdepth}{2}
+\let\oldaddcontentsline\addcontentsline
+\newcommand{\stoptocentries}{\renewcommand{\addcontentsline}[3]{}}
+\newcommand{\starttocentries}{\let\addcontentsline\oldaddcontentsline}
 
 \setlength{\parskip}{2ex}
 \setlength{\parindent}{0in}
-\numberwithin{equation}{section}
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
 % \setcounter{secnumdepth}{0}
+% \newcommand{\nocontentsline}[3]{}
 
 %Add math environs
 \newtheorem{defn}[equation]{Definition}
@@ -40,6 +91,7 @@
 
 \newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
 
+%% A command to make figures with a caption along side
 \newcommand{\makefigure}[2]{
 \begin{figure}[ht]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
@@ -48,8 +100,6 @@
 \end{figure}
 }
 
-%make lists use bracketed roman numerals
-\renewcommand{\labelenumi}{(\roman{enumi})}
 % make bars really mean overline, which look much better.
 % in an ideal would, i would define \conj
 \renewcommand*{\bar}{\overline}
@@ -58,7 +108,6 @@
 \newcommand{\bfrac}[2]{\left(\frac{#1}{#2}\right)}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{{\left\Vert#1\right\Vert}}
-\newcommand{\set}[2]{\left\{\left. #1 \;\right|\; #2 \right\}}
 \newcommand{\iprod}[2]{\left\langle #1 , #2 \right\rangle}
 \newcommand{\Set}[2]{\left\{\; #1 \;\middle|\; #2 \;\right\}}
 \newcommand{\vt}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
@@ -78,8 +127,10 @@
 \DeclareMathOperator{\asinh}{asinh}
 
 \DeclareMathOperator{\rem}{rem}
+\DeclareMathOperator{\Wind}{Wind}
+\DeclareMathOperator{\id}{id}
 
-\newcommand{\aside}[1]{{\it ASIDE:} #1}
+% \newcommand{\aside}[1]{{\it ASIDE:} #1}
 
 \DeclareMathOperator{\Mat}{Mat}
 \DeclareMathOperator*{\img}{img}
@@ -87,6 +138,7 @@
 \DeclareMathOperator*{\tr}{tr}
 \DeclareMathOperator*{\ad}{ad}
 \DeclareMathOperator*{\Ad}{Ad}
+\DeclareMathOperator{\End}{rem}
 \DeclareMathOperator{\pp}{pp.}
 \DeclareMathOperator{\sign}{sign}
 \renewcommand{\Re}{\mathfrak{R}\text{e}\,}
@@ -103,55 +155,13 @@
 \newcommand{\RP}{\mathbb{R}\text{P}}
 \newcommand{\CP}{\mathbb{C}\text{P}}
 \renewcommand{\P}{\mathbb{P}}
-\newcommand{\T}{\mathbb{T}}
+% \newcommand{\T}{\mathbb{T}}
 \renewcommand{\S}{\mathbb{S}}
 \renewcommand{\H}{\mathbb{H}}
-\newcommand{\M}{\mathcal{M}}
+% \newcommand{\M}{\mathcal{M}}
 
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SO}{\mathrm{SO}}
 
-
-%% Allow unicode input of greek characters
-\usepackage[utf8x]{inputenc}
-
-% Straight up greek lower. All except omicron
-\let\textalpha=\alpha
-\let\textbeta=\beta
-\let\textgamma=\gamma
-\let\textdelta=\delta
-\let\textepsilon=\varepsilon
-\let\textzeta=\zeta
-\let\texteta=\eta
-\let\texttheta=\theta
-\let\textiota=\iota
-\let\textkappa=\kappa
-\let\textlambda=\lambda
-\let\textmu=\mu
-\let\textnu=\nu
-\let\textxi=\xi
-\let\textpi=\pi
-\let\textrho=\rho
-\let\textsigma=\sigma
-\let\texttau=\tau
-\let\textupsilon=\upsilon
-\let\textphi=\phi
-\let\textchi=\chi
-\let\textpsi=\psi
-\let\textomega=\omega
-
-% straight uppercase
-\let\textGamma=\Gamma
-\let\textDelta=\Delta
-\let\textTheta=\Theta
-\let\textLambda=\Lambda
-\let\textXi=\Xi
-\let\textPi=\Pi
-\let\textSigma=\Sigma
-\let\textUpsilon=\Upsilon
-\let\textPhi=\Phi
-\let\textPsi=\Psi
-\let\textOmega=\Omega
-
-
-% THESIS SPECIFIC
-\newcommand{\edge}[1]{\mathcal{E}_{#1}}
-\newcommand{\face}[1]{\mathcal{F}_{#1}}
+\newcommand{\su}{\mathfrak{su}}
+\renewcommand{\sl}{\mathfrak{sl}}

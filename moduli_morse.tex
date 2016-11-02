@@ -1,11 +1,11 @@
 %!TEX root = thesis_single.tex
 
-\section{Genus One Moduli Space}
-\label{sec:Moduli Space}
+\chapter{Genus One Moduli Space}
+\label{chp:Moduli Space}
 % \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
 
-\subsection{Intro}
-\label{sub:Intro}
+\section{Intro}
+\label{sec:Intro}
 
 An outline:
 \begin{enumerate}
@@ -33,8 +33,8 @@ In the previous section, we performed two important calculations. For any genus 
 
 
 
-\subsection{Marked Point Coordinates}
-\label{sub:Reformulate}
+\section{Marked Point Coordinates}
+\label{sec:Reformulate}
 
 Recall the two rationality conditions that must be satisfied for a genus one spectral curve to admit differentials meeting the closing condition
 \begin{align}
@@ -191,7 +191,7 @@ After one full rotation, $α$ and $β$ have returned to their original positions
 
 
 
-\subsection{Universal Cover of the Parameter Space}
+\section{Universal Cover of the Parameter Space}
 
 To deal with the multivaluedness of $T$ on the parameter space $P$, we shall move to its universal cover $\tilde{P}$, on which $T$ can be realised as a single valued function $\tilde{T}$. Let the coordinates on $\tilde{P}$ be
 \[
@@ -240,7 +240,7 @@ Define the winding number $N : \R \to \Z$ of a number $x$ to be the integer $N(x
 
 
 
-\subsection{Derivaitves}
+\section{Derivaitves}
 
 In the interest of having manageable formulae, we recall the definition of $w(y)^2 = (1+y^2)(1+k^2 y^2)$. Using primes to indicate coordinates at infinity (ie $y' = 1/y$), not derivatives, we introduce $w'(y')^2 = (1 + (y')^2)(k^2 + (y')^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
 \[
@@ -253,7 +253,7 @@ and
 = \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
 = \frac{(1+k^2)u + 2k^2 u^3}{w(u)}.
 \]
-The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T$ is elementary if tedious.
+The other derivatives of elliptic integrals are calculated in appendix \ref{chp:Elliptic Integrals}. Equipped with these tools, the calculation of the derivatives of $T$ is elementary if tedious.
 \begin{align*}\label{dTdk}
 \frac{π}{2}\Partial{T}{k}
 &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
@@ -332,7 +332,7 @@ This result is of interest because it shows that the $v$ and $v'$ derivatives of
 
 
 
-\subsection{Coordinates on $\mathcal{M}$}
+\section{Coordinates on $\mathcal{M}$}
 \begin{lem}
 $(k, \tilde{u})$ are coordinates on $\mathcal{M}$.
 \begin{proof}

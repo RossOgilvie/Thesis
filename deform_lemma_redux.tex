@@ -1,7 +1,7 @@
 % !TEX root = thesis.tex
 
-\section{Deformation Theory}
-\label{sec:Deformation Theory}
+\chapter{Deformation Theory}
+\label{chp:Deformation Theory}
 
 In this chapter we investigate the tangent space to the moduli space $\mathcal{M}$ of spectral data. We will prove there is an open set $U'$ such that $\mathcal{M}\cap U'$ is a two dimensional manifold. To show this, we fix the genus $g$ of the spectral curve and use \eqref{eqn:def P} and \eqref{eqn:def b} to consider $\mathcal{M}_g$ as a subset of an affine space $U$. Then by considering paths in $\mathcal{M}_g$ we develop equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} that characterise the tangent vectors to these paths. On an open subset $U' \subset U$, we find all solutions to these equations to demonstrate that $T_p\mathcal{M}_g$ is two dimensional (Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} and \ref{lem:tangent conformal}). Having established that the dimension is constant, it naturally follows that $\mathcal{M}_g\cap U'$ is a manifold (Theorem \ref{thm:moduli manifold}).
 
@@ -9,7 +9,7 @@ In this chapter we investigate the tangent space to the moduli space $\mathcal{M
 
 When giving the solutions to equations, we will use bold to signify a particular solution, which may or may not be unique, whereas a solution without bold signifies any solution from the set of potential solutions. Given a tuple of polynomials, such as $(X,Y)$, we also give their degrees as a tuple, eg $(x,y)$ for $x=\deg X$ and $y=\deg Y$. Finally, we shall use $i$ and $j$ for indices ranging over $\{1,2\}$, with the understanding that they are not equal. For example, if $i=1$, then we take $j=2$ and vice versa.
 
-\subsection{Whitham Deformations}
+\section{Whitham Deformations}
 Let us consider infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$ within the space $\mathcal{M}_g$ of spectral data where the spectral curves have a fixed genus $g$. Recall that this triple consists of a marked curve $Σ$ and differentials $Θ^1, Θ^2$ satisfying the conditions \ref{P:real curve}--\ref{P:closing}.
 A deformation of spectral data is a path $\ell:(-ε,ε) \to \mathcal{M}$, parameterised by $t$. An infinitesimal deformation is the tangent vector of such a curve at $t=0$.
 There is an established methodology for finding the deformations that preserve the periods of differentials, the so called Whitham deformations. This method was first discovered for the Korteweg-de Vries equation \cite{Flaschka1980,Lax1983}, before being developed generally for other integrable systems \cite{Krichever1995}. The form of Whitham deformations we use here resemble their application in the theory of constant mean curvature surfaces \cite{Kilian2015a,Carberry2016}.
@@ -30,7 +30,7 @@ Let $U$ be the open subset of $\mathcal{P}^{2g+2}_\R\times \mathcal{P}^{g+3}_\R\
 $P$ has only simple zeroes (cf. \ref{P:simple zeroes}) and no zeroes on the unit circle (cf. \ref{P:no real zeroes}), and the polynomials $b^i$ have at most a simple root at $ζ=0$ (cf. \ref{P:poles}).
 \end{defn}
 
-Recall from Section \ref{sub:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ,\tilde{μ}$ of the holonomy matrices $H, \tilde{H}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is an exact differential, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
+Recall from Section \ref{sec:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ,\tilde{μ}$ of the holonomy matrices $H, \tilde{H}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is an exact differential, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
 
 The functions $\dot{q}^i$ are of interest because they encode infinitesimal deformations of the spectral data that preserve the integrality of the periods.
 If we could determine the location and order of the poles of $\dot{q}^i$, we could characterise it as the quotient of a polynomial and a fixed holomorphic function, analogously to the characterisation of $Θ^i$ by $b^i$. To this end, we derive now in generality how a function may acquire additional poles when it is differentiated with respect to $t$.
@@ -144,8 +144,8 @@ In summary, any infinitesimal deformation of the spectral data, in other words a
 
 
 
-\subsection{The Tangent Space to $\mathcal{M}$}
-\label{sub:tangent space}
+\section{The Tangent Space to $\mathcal{M}$}
+\label{sec:tangent space}
 
 In the preceding section, we elucidated several properties that a deformation of spectral data necessarily possesses. Now we turn our attention to the converse; under what conditions it is possible to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} to find an infinitesimal deformation. Firstly, we examine whether it is possible construct polynomials $c^i$ solving \eqref{eqn:Q} for a given $Q$, and whether this construction is unique. Then secondly, we shall insert the polynomials $c^i$ into the right hand side of \eqref{eqn:EMPDi} and solve it to recover $\dot{b}^i$ and $\dot{P}$.
 
@@ -553,7 +553,7 @@ where $α_k$ are the roots inside the unit circle and $r(t)$ is some real functi
 \end{align*}
 Thus we know the values of $\dot{α}_k$, independent of choice of $s$ in our solution \eqref{eqn:P soln}, because any two solutions $\dot{P}$ differ by a multiple of $P$, which vanishes at every root $α_k$. Alternatively, if we take the lowest order of \eqref{eqn:rescale P},
 \[
-\dot{P}_0 = \dot {\bf P}_0 + 2sP_0 = \dot r P_0 + \sum_k (-\dot{α}_k)\prod_{m\neq k} (-α_m),
+\dot{P}_0 = {\bf \dot{P}}_0 + 2sP_0 = \dot r P_0 + \sum_k (-\dot{α}_k)\prod_{m\neq k} (-α_m),
 \]
 so we may ensure that $r\equiv 1$ by choosing $s$ so that $\dot r = 0$. In short, if we fix a scaling of the spectral curve, then there is a unique solution to \eqref{eqn:EMPDi}.
 
