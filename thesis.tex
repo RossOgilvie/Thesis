@@ -1,33 +1,29 @@
 % \documentclass{article}
-% \documentclass[PhD]{usydthesis}
-\documentclass{Dissertate}
+\documentclass[PhD]{usydthesis}
 % \documentclass{memoir}
 
 \usepackage{thesis_style}
 
 \begin{document}
-% roman page numbers for the initial pages
-% \pagenumbering{roman}
 
-% uncomment this to change the date on the title page
-%\renewcommand{\Today}{October ????}
-\maketitle          % creates the title page
-\tableofcontents    % creates the table of contents
+\include{titlepage}
 
+\setcounter{section}{-1}  % start chapter numbering at 0
 \include{preliminaries}
-\include{deform_lemma_redux}
-\include{genus_zero}
-\include{genus_one}
-\include{moduli_boundary}
+% \include{deform_lemma_redux}
+% \include{genus_zero}
+% \include{genus_one}
+% \include{moduli_boundary}
 
 
 % APPENDICES
-\appendix
-\include{glossary}
-\include{elliptic_integral}
+% \appendix
+% \include{glossary}
+% \include{elliptic_integral}
 % \include{misc}
 
 % \bibliography{library}
-\bibliography{library,manual_entered}
-\bibliographystyle{alpha}
+% \bibliography{library,manual_entered}
+% \bibliographystyle{alpha}
+
 \end{document}
