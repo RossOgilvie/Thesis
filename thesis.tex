@@ -1,19 +1,20 @@
 % \documentclass{article}
-\documentclass[PhD]{usydthesis}
-% \documentclass{memoir}
+\documentclass{report}
 
 \usepackage{thesis_style}
 
 \begin{document}
 
 \include{titlepage}
+\include{frontmatter}
+\tableofcontents
 
-\setcounter{section}{-1}  % start chapter numbering at 0
+\setcounter{chapter}{-1}  % start chapter numbering at 0
 \include{preliminaries}
-% \include{deform_lemma_redux}
-% \include{genus_zero}
-% \include{genus_one}
-% \include{moduli_boundary}
+\include{deform_lemma_redux}
+\include{genus_zero}
+\include{genus_one}
+\include{moduli_boundary}
 
 
 % APPENDICES
@@ -23,7 +24,7 @@
 % \include{misc}
 
 % \bibliography{library}
-% \bibliography{library,manual_entered}
-% \bibliographystyle{alpha}
+\bibliography{library,manual_entered}
+\bibliographystyle{alpha}
 
 \end{document}

@@ -7,7 +7,7 @@
 
 \begin{document}
 \makeheading{Computations}
-\section{Elliptic Spectral Curve and Differentials}
+\chapter{Elliptic Spectral Curve and Differentials}
 Previously dealt with the special case of an elliptic spectral curve where there was an additional reflection symmetry of the branch points. Here however we will do the calculation in full generality. Consider the curve
 \[
 η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ)
@@ -92,8 +92,8 @@ From the first equation, we can write $ MΛ = - ΓK$ and the multiple of the $K$
 \end{align}
 where \eqref{eq:legendre_relation} uses Legendre's relation.
 
-\section{The Sym Lattice}
-\label{sec:The Sym Lattice}
+\chapter{The Sym Lattice}
+\label{chp:The Sym Lattice}
 We have computed two differentials that satisfy the period conditions and are real linearly independent. Though obviously there is nothing `natural' about this choice, many other combinations are possible. We also have not applied the Sym point conditions. For general $α,β$, there are not enough degrees of freedom to satisfy the condition at both points, only enough for one. With these two ideas in mind, we make the following definitions.
 
 Let $γ_+$ be the path that begins at $(1,-η(1))$, traverses the unit circle anticlockwise to the point $(α/\norm{α},-η(α/\norm{α}))$, follows the ray $\R^+ α$ to $α$, circles this branch point, goes back along the ray $\R^+ α$ (though on a different branch now) to the unit circle, and continues to $(1,+η(1))$. Likewise for $γ_-$ from $(-1,-η(-1))$ to $(-1,η(-1))$. Other paths between the points over $ζ = \pm 1$ will differ from these by some number of periods, which by constuction will be in $2\pi \iu \Z$, and so the Sym point conditions are well defined. Let
@@ -110,8 +110,8 @@ These again form a basis of the plane of differentials, and also satisfy the Sym
 \]
 Then by considering periods $Θ - n Θ_1^P$ is exact so a multiple of $Θ_1^S$. It is easy to see what the multiple is, it much be $k$ from the first half period above. Therefore $Θ = n Θ_1^P + k Θ_1^S$, which is in the lattice as claimed. Note however that the half period integrals are extremely difficult to compute and so in practice we cannot write explicit formulas for our basis $\Z\langle Θ_1^P, Θ_1^S\rangle$. We will need some other method to find which $α,β$ are admissible.
 
-\section{Taking the limit}
-\label{sec:Taking the limit}
+\chapter{Taking the limit}
+\label{chp:Taking the limit}
 Having now computed a basis for the differentials, we consider how these basis elements behave under the process of moving one of the branch points onto the unit circle. Because of the reality condition, this means it is fusing with its partner branch point and creating a curve with a double point. Normalising this double pointed curve results in a rational curve. Our aim is to view the spectral genus zero case as the limit of spectral genus one.
 
 For convience we will ignore Sym points for a while. This allows us to take the limit as the point $α$ goes to $1$ which is computationally the simplest case. The broader case of $α$ going to another point of the circle is obtained as a rotation of this one. Firstly we compute the limits of the various scale factors we have accumulated.
@@ -157,8 +157,8 @@ From this we can see that we should chose $s=1$ to be the correct sign for the s
 \end{align}
 These lie squarely in the plane of genus 0 differentials, as we would hope. We can now see the significance of the development of a zero at the double point. When we pull back regular differentials on a curve with a double point, the result is differentials with simple poles at the two preimages of the double point, with opposite residues at those points. But by having a zero at the double point, the pole is neutralised and we again have regular differentials.
 
-\section{Matching the limit differentials to the lattice}
-\label{sec:Matching the limit differentials to the lattice}
+\chapter{Matching the limit differentials to the lattice}
+\label{chp:Matching the limit differentials to the lattice}
 
 Consider the isomorphism/ change of coordinates for the plane of genus zero differentials that makes the following indentificaiton
 \[

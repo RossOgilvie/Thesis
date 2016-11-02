@@ -1,11 +1,11 @@
 %!TEX root = thesis.tex
 
-\section{Elliptic Integrals}
-\label{sec:Elliptic Integrals}
+\chapter{Elliptic Integrals}
+\label{chp:Elliptic Integrals}
 
 The purpose of this appendix is to provide background information about elliptic integrals. It contains their definitions and the basic properties, as well as some results that are used in the body of the thesis. It is not a comprehensive treatment, specifically elliptic integrals of the third kind are not treated, and incomplete integrals are only treated for an imaginary argument.
 
-\subsection{Definitions and Periods}
+\section{Definitions and Periods}
 Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor 'elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. This topic has a long history, at least two hundred years, and consequently there are several competing conventions. In this thesis we shall use the Jacobi elliptic integrals, of a modulus $k$. The incomplete elliptic integral of the first kind is defined as
 \[
 F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}},
@@ -84,8 +84,8 @@ Again, we introduce the notation that $E' = E(k')$.
 
 
 
-\subsection{Inequalities and Limits}
-\label{sub:Inequalities}
+\section{Inequalities and Limits}
+\label{sec:Inequalities}
 Throughout this thesis, we use inequalities to bound the behaviour of elliptic integrals. The inequalities we use are found in \cite{Anderson}. Their inequality (2) contains only $K$ and confines its behaviour to within a strip-like region of known width.
 \[
 \ln 4 \leq K + \frac{1}{2}\ln (1-k^2) \leq \frac{π}{2}.
@@ -218,8 +218,8 @@ The above inequalities serve to show that the integrals are dominated by functio
 
 
 
-\subsection{Derivatives}
-\label{sub:Derivatives}
+\section{Derivatives}
+\label{sec:Derivatives}
 The aim of this section is to compute the derivatives of the elliptic integrals. The derivatives of the incomplete integrals with respect to the variable $z$ are trivial because they are simply parameter integrals
 \begin{align}
     \Partial{}{z} F(z;k) &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \label{eqn:dFdz} \\
@@ -275,8 +275,8 @@ We can recover the well known formula for the derivatives of the complete ellipt
 
 
 
-\subsection{Legendre's Relation}
-\label{sub:Legendre's Relation}
+\section{Legendre's Relation}
+\label{sec:Legendre's Relation}
 There is a suprising relation between the complete elliptic integrals. The standard proof is reproduced below \todo{find citation}.
 
 \begin{lem}[Legendre's relation]
@@ -329,8 +329,8 @@ This relation is useful in two ways. First, it can be used to construct a basis 
 
 
 
-\subsection{Continuation and Analyticity}
-\label{sub:EllipticContinuation}
+\section{Continuation and Analyticity}
+\label{sec:EllipticContinuation}
 
 It is a standard fact that the elliptic integrals are analytic functions on the plane. The relevant theorem is the Cauchy-Kowalevski theorem (\cite{Evans1998}, 4.6.3), which in generality provides the analytic solutions of PDEs, but in our situation yields that parameter integrals of analytic functions are analytic.
 

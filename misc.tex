@@ -1,4 +1,4 @@
-\section{Misc Stuff}
+\chapter{Misc Stuff}
 
 COMPUTATION OF T AT U OR V INFINITY
 
@@ -89,7 +89,7 @@ Due to the symmetry between $u$ and $v$ inherent in the definition of $T$, the t
 
 
 
-\subsection{The Cut space}
+\section{The Cut space}
 THIS PART COMPUTES T AS k TO 0 AND 1
 
 Fix a value of $p \leq 1$.
@@ -186,7 +186,7 @@ and
 = \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
 = \frac{(1+k^2)u + 2k^2 u^3}{w(\iu u)}.
 \]
-The other derivatives of elliptic integrals are calculated in appendix \ref{sec:Elliptic Integrals}.
+The other derivatives of elliptic integrals are calculated in appendix \ref{chp:Elliptic Integrals}.
 \begin{align*}\label{dTdk}
 \frac{π}{2}\Partial{T}{k}
 &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
@@ -204,7 +204,7 @@ The other derivatives of elliptic integrals are calculated in appendix \ref{sec:
 = -\frac{pE}{w'(\iu v')} + \frac{K w(\iu u)}{(uv'-1)^2} + \frac{pK}{w'(\iu v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
 \end{equation}
 
-Let us focus on the polynomials in the square brackets. We reuse the idea of a dominant and remainder for $k^2$. Define $\rem(k^2) = k^2 - 1$. Unlike for $\rem(K)$, we can be very explicit about $\rem(k^2)$, namely it is $(2-\exp(-1/ε))\exp(-1/ε)$, and so because of the $\exp(-1/ε)$ factor both $ε^{-n}\rem(k^2)$ and $ε^{-n}K\rem(k^2)$ are in $\mathcal{F}$ (a set of extendable functions, see Appendix \ref{sec:Extension Calculations}). \todo{FIX}
+Let us focus on the polynomials in the square brackets. We reuse the idea of a dominant and remainder for $k^2$. Define $\rem(k^2) = k^2 - 1$. Unlike for $\rem(K)$, we can be very explicit about $\rem(k^2)$, namely it is $(2-\exp(-1/ε))\exp(-1/ε)$, and so because of the $\exp(-1/ε)$ factor both $ε^{-n}\rem(k^2)$ and $ε^{-n}K\rem(k^2)$ are in $\mathcal{F}$ (a set of extendable functions, see Appendix \ref{chp:Extension Calculations}). \todo{FIX}
 
 Plugging in the $(k,u,v')$-derivatives to the chain rule and ripping apart and rearranging pieces as necessary to get into a well behaved terms, we arrive at
 \begin{align*}
@@ -324,7 +324,7 @@ So if $δ$ is chosen small enough, then the bracketed term is negative. One coul
 
 
 LIMIT OF DIFFERENTIALS FOR BRANCH POINTS ON THE UNIT CIRCLE
-\subsection{Boundary Limit}
+\section{Boundary Limit}
 Consider the behaviour of the differentials in the limit as $β$ tends to a point on the unit circle that is not $ζ=1,-1$. Such a point is on the boundary of the space of branch points $(α,β)$. Firstly note that
 \begin{align}
 A &\to (α-β)\abs{α-β} \\
@@ -408,7 +408,7 @@ These lie squarely in the plane of genus 0 differentials, as we would hope. We c
 
 
 SHIT. AN ATTEMPT TO DO DEFORMATIONS DIRECTLY
-\subsection{Deformations}
+\section{Deformations}
 TO FIX \todo{this}
 
 The full problem of deformations is hard, but consider the case of just $Θ^S$.
@@ -456,8 +456,8 @@ which can be interpretted geometrically for $z$ in the unit disc as saying that 
 
 
 
-\subsection{Matching the limit differentials to the lattice}
-\label{sec:Matching the limit differentials to the lattice}
+\section{Matching the limit differentials to the lattice}
+\label{chp:Matching the limit differentials to the lattice}
 
 INSERT JUSTIFICATION FOR INTERCHANGING LIMITS AND INTEGRALS AS JOHN POINTED OUT.\todo{this}
 
