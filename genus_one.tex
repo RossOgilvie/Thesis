@@ -1,106 +1,12 @@
 %!TEX root = thesis.tex
 
-\chapter{Genus One Moduli Space}
+\chapter{The Genus One Moduli Space}
 % \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
-
-\subsubsection{Rambling}
-
-An outline:
-\begin{enumerate}
-\item
-Give the outline
-\item
-Compute a basis of differentials with the correct symmetries
-\item
-Compute their periods and a basis of differentials
-\item
-Introduce the various moduli spaces we will consider
-\item
-Formulate the conditions
-\item
-Reformulate in coordindates more suited to calculation.
-\item
-Talk about shape of this parameter space.
-\item
-Talk about $T$ and its multi-defined-ness. Universal cover
-\item
-Uniform coordinate
-\item
-Show derivative is nonzero
-\item
-Apply Implicit Function theorem in uniform coord and k
-\item
-Project down. Compute the deck transformations and quotient by them to get the topology
-\item
-Give the basis of differentials over each point. Show every closing diff meets lies in this span. Triviality of the p=1 differentials
-\item
-Corollories:
-The spirally nature, the density
-Something about the k=1 limit. Is it a single point?
-something about the modulus $τ$ of the domain?
-the p, 1/p symmetry corresponding to a reflection, via swapping 1 and -1.
-interchanging the diffs swaps the orientation.
-Known examples, special cases
-\item
-Go to the Winchester, have a pint, and wait for this to blow over.
-\end{enumerate}
-
-Vocab summary
-\begin{enumerate}
-    \item
-    differentials = differentials with the correct poles and symmetries and imaginary periods
-    \item
-    closing differentials = differentials with integral periods meeting the closing conditions, alt name differentials satisfying the closing conditions
-    \item
-    $\mathcal{C}_1$ = the space of spectral curves = $(D^2\setminus Δ) / \Z_2$
-    \item
-    $\mathcal{A}_1$ = the space of spectral curves with a distinguished branch point = $D^2\setminus Δ$
-    \item
-    principal path over = a path that follows the recipe laid out for traversing from the two points over $1$ or $-1$. Do not exist on every spectral curve (convention, expand the convention?)
-    \item
-    $\mathcal{\tilde{A}}_1$ = the universal cover of $\mathcal{A}_1$
-    \item
-    $\mathcal{S}_1$ = the space of spectral curves that have spectral data, $\subset \mathcal{C}_1$
-    \item
-    $\mathcal{\tilde{S}}_1$ = the subspace of $\mathcal{\tilde{A}}_1$ that meets the conditions $p\in\Q^+, \tilde{T}\in\Q$
-    \item
-    Any of these followed by $(p)$, eg $\mathcal{A}_1(p)$ = the subspace where $p(α,β)$ is a fixed value $p$
-    \item
-    $\mathcal{\tilde{A}}_1(p,q)$ = the subspace where $p(α,β)$ is a fixed value $p$, and $\tilde{T}$ is $q$
-
-    \item
-    $\mathcal{B}$ = differentials with integral periods
-    \item
-    $\mathcal{B}(n)$ = differentials with period $2π\iu n$
-    \item
-    $\mathcal{B}^2$ = pairs of differentials with integral periods
-    \item
-    $\mathcal{B}^2(n,\tilde{n})$ = pairs of differentials with periods $2π\iu n$, $2π\iu \tilde{n}$ respectively
-    \item
-    $\mathcal{M}_1,\mathcal{M}_1(n,\tilde{n})$ = space of spectral data, resp. with specified periods
-\end{enumerate}
-
-Once we understand which curves admit spectral data, then we can understand the structure of the differentials on those curves.
-
-The different moduli spaces we could be interested in
-
-There are several interrelated moduli spaces of spectral data that we could be interested in. Spectral data is a triple $(Σ,Θ,\tilde{Θ})$ of a spectral curve $Σ$ and a pair of differentials on it. We know that every spectral curve has many differentials with with correct poles and symmetries. Spectral curves are parameterised by their branch points, and by symmetries we need only track branch points inside the unit circle. By counting degrees, we know there is a plane of such differentials with purely imaginary periods, but in general not every spectral curve will satisfy the further condition that there is a rank two lattice of differentials within this plane that have integral periods. Let the space of spectral curves that have differentials with integral periods be denoted $\mathcal{C}_1$. Within this space we could impose the further condition, the closing condition, on the differentials that requires their integrals over the marked points to also be integral. We shall call such differentials \emph{closing}, and the space of spectral curves with closing differentials $\mathcal{S}_1$.
-
-One can note that the plane of differentials with imaginary periods is naturally thought of as a rank two vector bundle over the space of spectral curves. Thus the moduli of closing spectral data $\mathcal{M}_1$ can be thought of a bundle over $\mathcal{S}_1$. Our ultimate aim will be to describe this bundle.
-
-
-
-
-
-
-
-
-
 
 \section{Overview}
 \label{sec:Overview}
 
-Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{S}_1$. Every marked curve of $\mathcal{C}_1$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods} and that also have integral periods (Condition \ref{P:periods}) but not every curve admits differentials that further meet the closing conditions, Condition \ref{P:closing}. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}_1$ within $\mathcal{C}_1$. We will investigate the topology of $\mathcal{S}_1$ and show it to be a dense collection of leaves of a foliation of $\mathcal{C}_1$. Most connected components will be simply connected, though there is also an exceptional family of annuli. The moduli space $\mathcal{M}_1$ of periodic spectral data will be shown to be a trivial bundle over $\mathcal{S}_1$.
+Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{S}_1$. Every marked curve of $\mathcal{C}_1$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods} and that also have integral periods (Condition \ref{P:periods}) but not every curve admits differentials that further meet the closing conditions, Condition \ref{P:closing}. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}_1$ within $\mathcal{C}_1$. We will investigate the topology of $\mathcal{S}_1$ and show it to be a dense collection of leaves of a foliation of $\mathcal{C}_1$. Most connected components will be simply connected, though there is also an exceptional family of annuli. The moduli space $\mathcal{M}_1$ of spectral data will be shown to be a trivial bundle over $\mathcal{S}_1$.
 
 A marked curve is determined by its branch points, and because of the real involution $ρ$, the branch points come in conjugate-inverse pairs.
 Recall from equation \eqref{eqn:def Ag} that $\mathcal{A}_1$ is the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc. The action of $\Z_2$ that interchanges the two points is a free and transitive action. Thus the quotient space $\mathcal{A}_1/\Z_2$ is smooth, and it can be identified with the space of marked curves $\mathcal{C}_1$. $\mathcal{A}_1$ is a two-to-one cover of $\mathcal{C}_1$. We denote the covering map $Σ$, so that
@@ -139,7 +45,7 @@ We have introduced numerous spaces, so we summarise them and their relationship 
 
 
 
-\section{Differentials of the Elliptic Spectral Curve}
+\section{The Differentials of an Elliptic Marked Curve}
 \label{sec:Differentials}
 As outlined in the previous section, it will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct the differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions \ref{P:poles}--\ref{P:reality}. The second step is to therefore write down these differentials; the differentials $Θ$ on $Σ$ that have double poles and no residues over $ζ=0,\infty$, that with respect to the hyperelliptic involution $σ$ obey $σ^*Θ = - Θ$, and that are real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$. They form a three dimensional real vector space.
 
@@ -247,7 +153,7 @@ Every differential of the second kind may be written as the linear conbination o
 \[
 ω := \frac{dz}{w},
 \]
-and an exact differential. GIVE CITATION.\todo{this}
+and an exact differential \cite[Art. 167]{Hancock1910}.
 
 Note that the holomorphic differential $ω$ lies in the space $W$ and so makes for an obvious first basis vector. It accounts for every possible choice of $b_2$.
 In genus one, there is a real and exact differential with double poles over $ζ=0,\infty$, namely
@@ -284,11 +190,11 @@ e + d\left[ \frac{w}{z + \bar{z}_0}\right] + C\,d \left[\frac{w}{(z-z_0)(z + \ba
 \]
 is real when $z_0 - C$ is an imaginary number. Thus we should choose $C \in \Re z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^E$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^E$, which introduces a symmetry that we will use later. Hence we take as our third basis differential
 \[
-λ := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0\; d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
+ε := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Re z_0\; d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
 = e + d\left[ \frac{w(z - \iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
 \]
 
-We are now in a position to compute the periods of our basis $ω,Θ^E,λ$. We choose a basis of homology of the marked curve $Σ$ following way. First, take the branch cuts to be along the branch circle, between $α$ and $β$ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the positive or negative sheet, where as before the positive sheet is where $η$ is positive over $ζ=1$.
+We are now in a position to compute the periods of our basis $ω,Θ^E,ε$. We choose a basis of homology of the marked curve $Σ$ following way. First, take the branch cuts to be along the branch circle, between $α$ and $β$ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the positive or negative sheet, where as before the positive sheet is where $η$ is positive over $ζ=1$.
 
 For the loop $A$, start on the positive unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the negative unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For the loop $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the positive sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the positive sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
 
@@ -307,7 +213,7 @@ which shows the $A$-period of $Θ$ to be real. Likewise, the integral of a real 
 
 We wish to be able to describe the differentials of $W$ that have having imaginary and integral periods. As $Θ^E$ is exact, any real multiple of it fits this description. Suppose there existed $Θ^P\in W$ that had a real period of zero and an imaginary period of $2π\iu$. If we had any other differential in $W$ with vanishing real period and an imaginary period of  $2π\iu l$, then by subtracting $lΘ^P$ the result would be an exact differential, and therefore would have to be a real multiple of $Θ^E$. In short, if we are able to find such a differential $Θ^P$, then any differential meeting conditions \ref{P:poles}--\ref{P:periods} would lie in $\R Θ^E + \Z Θ^P \subset W$.
 
-Thus we have reduced the problem to finding a differential $Θ^P \in W$ with vanishing $A$-period and a $B$-period of $2π\iu$. The superscript $P$ is a mnemonic for period. Clearly, we may add a real multiple of $Θ^E$ to $Θ^P$ and it will also meet this requirement. Therefore let $Θ^P = Ωω + Λλ$, for some real constants $Ω,Λ$, be a combination of the other two basis vectors of $W = \R\langle ω,Θ^E,λ\rangle$.
+Thus we have reduced the problem to finding a differential $Θ^P \in W$ with vanishing $A$-period and a $B$-period of $2π\iu$. The superscript $P$ is a mnemonic for period. Clearly, we may add a real multiple of $Θ^E$ to $Θ^P$ and it will also meet this requirement. Therefore let $Θ^P = aω + bε$, for some real constants $a$ and $b$, be a combination of the other two basis vectors of $W = \R\langle ω,Θ^E,ε\rangle$.
 
 It is useful at this point to summarise the standard elliptic integrals, the periods of the differentials $ω$ and $e$,
 \begin{align*}
@@ -316,22 +222,22 @@ It is useful at this point to summarise the standard elliptic integrals, the per
 \int_{f(A)} e &= 4E(k) &
 \int_{f(B)} e &= 2\iu(K'-E')
 \end{align*}
-where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denotes not the derivative but instead the elliptic complement. The elliptic complement is by definition $k' = \sqrt{1-k^2}$, and $K'(k) = K(k')$ and $E'(k) = E(k')$. Further properties of elliptic integrals may be found in Appendix \ref{chp:Elliptic Integrals}. Note that $λ$ is the sum of $e$ and an exact differential and so has the same periods as $e$.
+where $K$ and $E$ are the complete elliptic integrals of the first and second kind, and the prime denotes not the derivative but instead the elliptic complement. The elliptic complement is by definition $k' = \sqrt{1-k^2}$, and $K'(k) = K(k')$ and $E'(k) = E(k')$. Further properties of elliptic integrals may be found in Appendix \ref{chp:Elliptic Integrals}. Note that $ε$ is the sum of $e$ and an exact differential and so has the same periods as $e$.
 
 We require that
 \begin{align*}
-\int_A Θ^P &= 4KΩ + 4EΛ = 0 \\
-\int_B Θ^P &= 2\iu K' Ω + 2\iu(K'-E')Λ = 2π\iu.
+\int_A Θ^P &= 4Ka + 4Eb = 0 \\
+\int_B Θ^P &= 2\iu K' a + 2\iu(K'-E')b = 2π\iu.
 \end{align*}
-From the first equation, we can write $Λ = - ΓK$ and $Ω = ΓE$ for some $Γ\in \R$. Substituting this into the second equation gives
+From the first equation, we can write $a = cE$ and $b = - cK$ for some $c\in \R$. Substituting this into the second equation gives
 \begin{align*}
 π
-&= K'ΓE - (K'-E')ΓK \\
-&= Γ(K'E + KE' - KK') \labelthis{eqn:legendre_relation}\\
-&= \frac{\pi}{2}Γ \\
-Γ &= 2
+&= cK'E - c(K'-E')K \\
+&= c(K'E + KE' - KK') \labelthis{eqn:legendre_relation}\\
+&= \frac{\pi}{2}c \\
+c &= 2
 \end{align*}
-where \eqref{eqn:legendre_relation} uses Legendre's relation (see Lemma \ref{lem:Legendres relation}). Thus $Θ^P = 2Eω - 2Kλ$, or if we unwind these definitions a little
+where \eqref{eqn:legendre_relation} uses Legendre's relation (see Lemma \ref{lem:Legendres relation}). Thus $Θ^P = 2Eω - 2Kε$, or if we unwind these definitions a little
 \[
 Θ^P = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
 \labelthis{eqn:theta2}
@@ -470,6 +376,7 @@ We can see that we may take $l$ to be $m'$. Let $x,y$ be integers such that $xm-
 to obtain equality of the numerator. Hence the condition for the existence of a consistent solution for $b$ is met. The constant $b$ may be computed as
 \[
 b = \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \int_{γ_+} Θ^P }.
+\labelthis{eqn:period differential scaling}
 \]
 In summary, we have found real constants $a,b$ and $l$ such that $Ψ^E = aΘ^E, Ψ^P = bΘ^E + lΘ^P$ solve the closing conditions, and so we have demonstrated that the spectral curve admits differentials satisfying conditions \ref{P:poles}--\ref{P:closing}.
 \end{proof}
@@ -573,7 +480,7 @@ demonstrating that $φ_1$ and $φ_2$ are smooth functions on their respective do
 
 It remains to show that these functions have smooth inverses. As the parameters $α$ and $β$ are points in the $ζ$-plane, one method to derive the inverse functions is to express the transformation $f^{-1}(z)$ in term of our new parameters $(p,k,u,v)$. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to how the transformation $f(ζ)$ is determined by $(α,β)$ and $\iu u = f(1)$. As a M\"obius transformation is described, up to a scalar, by the points sent to $0$ and $\infty$, $f^{-1}(z)$ is a scalar multiple of
 \[
-\frac{z-z_0}{z + \conj{z_0}},
+\frac{z-z_0}{z + \bar{z_0}},
 \]
 (compare to \eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. Observe the following trick using cross ratios:
 \[
@@ -610,7 +517,7 @@ which simplifies to the relation
 \[
 x^2 + y^2 = y(u+v) - uv. \labelthis{eqn:z_0_circle}
 \]
-Thus we have determined two circles that $z_0$ lies on. These two circles intersect in two points: $z_0$ and $-\conj{z_0}$. The precise formulae are
+Thus we have determined two circles that $z_0$ lies on. These two circles intersect in two points: $z_0$ and $-\bar{z_0}$. The precise formulae are
 \[
 x = \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v},\; y = \frac{puw(\iu v) + vw(\iu u)}{pw(\iu v) + w(\iu u)}
 \labelthis{eqn:formula xy}
@@ -620,8 +527,8 @@ where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-p
 Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$ and $f^{-1}(\iu v) = -1$ to conclude
 \[
 f^{-1}(z)
-=  \frac{\iu u + \conj{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \conj{z_0}}
-=  -\frac{\iu v + \conj{z_0}}{\iu v - z_0} \frac{z-z_0}{z + \conj{z_0}}.
+=  \frac{\iu u + \bar{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \bar{z_0}}
+=  -\frac{\iu v + \bar{z_0}}{\iu v - z_0} \frac{z-z_0}{z + \bar{z_0}}.
 \]
 As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formula for the branch points in terms of the new parameters. A problem could potentially occur if $z_0$ were to equal $\iu u$ or $\iu v$, in which case the scaling factor would be $0/0$. This could only occur if $\Re{z_0}=0$, which itself only occurs if $u=v$. But we have already noted that this is impossible. Likewise the formula would be in trouble if $z_0 = -1, -k^{-1}$ (for then $α$ or $β$ would be infinite), but again this occurs only if $\Re{z_0} < 0$, which is excluded by our decision to take $z_0$ in the right half-plane.
 
@@ -659,7 +566,7 @@ consists of only those points where $μ=ν=1$ or $μ=ν=-1$, and Lemma \ref{lem:
 
 Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in \eqref{eqn:y_prime_version}.
 
-Recall that we defined a principal branch cut $T_0$ of $T$ on $\mathcal{A}\setminus\{ν=\pm 1\}$. This is exactly the domain of $φ_0$, and we have constructed a formula for the inverse transformation, so it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the last terms of equations \eqref{eqn:gamma_plus} and \eqref{gamma_minus}. By direct computation
+Recall that we defined a principal branch cut $T_0$ of $T$ on $\mathcal{A}\setminus\{ν=\pm 1\}$. This is exactly the domain of $φ_0$, and we have constructed a formula for the inverse transformation, so it is time to rewrite $T_0$ in terms of $(p,k,u,v)$. Particularly, we must compute the factors in the last terms of equations \eqref{eqn:gamma_plus} and \eqref{eqn:gamma_minus}. By direct computation
 \begin{align*}
 u-y &= \frac{w(\iu u)(u-v)}{pw(\iu v) + w(\iu u)} &
 \abs{\iu u - z_0}^2 &= \frac{w(\iu u)(u-v)^2}{pw(\iu v) + w(\iu u)} \\
@@ -683,16 +590,17 @@ These expressions combine to give from \eqref{eqn:gamma_plus} and \eqref{eqn:gam
 \end{align*}
 And hence that
 \begin{align*}
-2π\iu T_0(p,k,u,v)
-&= p\left\{ 4 E F(\iu v;k) - 4K E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v} \right\}
-- \left\{ 4 E F(\iu u;k) - 4K E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v} \right\} \\
-&= 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v},
+&2π\iu T_0(p,k,u,v) \\
+&= 4p\left[ E F(\iu v;k) - K E(\iu v;k) - \iu K \frac{w(\iu v)}{u-v} \right]
+- 4\left[ E F(\iu u;k) - K E(\iu u;k) + \iu K \frac{w(\iu u)}{u-v} \right] \\
+&= 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right]
+- 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v},
 \labelthis{eqn:Teqn}
 \end{align*}
-where we have omitted the elliptic modulus $k$ in the complete elliptic integrals, ie $K=K(k)$ and $E= E(k)$.
+where we have omitted the elliptic modulus $k$ in the complete elliptic integrals, $K=K(k)$ and $E= E(k)$.
 
 These coordinates show the topology of $\mathcal{A}_1$.
-They embed $\mathcal{A}_1$ into $\R^+\times(0,1)\times T^2$ in the following way.
+They embed $\mathcal{A}_1$ into $\R^+\times(0,1)\times \mathbb{T}^2$ in the following way.
 The first two factors $\R^+ \times (0,1)$ are obvious, they come from $p \in R^+$ and $k\in (0,1)$. To see the torus part, consider
 \[
 \{(u,v) \in \R \times \R \} \cup
@@ -736,7 +644,7 @@ with the projection map $\mathcal{\tilde{A}}_1 \to \mathcal{A}_1$ is given by
 \end{align*}
 \end{defn}
 
-The justification of this definition of $\mathcal{\tilde{A}}_1$ precedes in two steps. First, we have already observed $\mathcal{A}_1$ is embeds in to $\R^+ \times (0,1) \times T^2$. The universal cover of this larger space is $\R^+\times(0,1)\times\R^2$, with the covering map given above using the standard half-tan mapping of $\R$ to $\S^1$. The second step is to recall that $\mathcal{A}_1$ is the complement of the hyperplane $u-v = 0$. When pulled back to the universal cover, this hyperplane becomes a collections of hyperplanes $u-v \in 2π\Z$. Thus we may take a simply connected region of the complement $u-v \not\in 2π\Z$ to cover $\mathcal{A}_1$ and this is $\mathcal{\tilde{A}}_1$ above.
+The justification of this definition of $\mathcal{\tilde{A}}_1$ precedes in two steps. First, we have already observed $\mathcal{A}_1$ is embeds in to $\R^+ \times (0,1) \times \mathbb{T}^2$. The universal cover of this larger space is $\R^+\times(0,1)\times\R^2$, with the covering map given above using the standard half-tan mapping of $\R$ to $\S^1$. The second step is to recall that $\mathcal{A}_1$ is the complement of the hyperplane $u-v = 0$. When pulled back to the universal cover, this hyperplane becomes a collections of hyperplanes $u-v \in 2π\Z$. Thus we may take a simply connected region of the complement $u-v \not\in 2π\Z$ to cover $\mathcal{A}_1$ and this is $\mathcal{\tilde{A}}_1$ above.
 
 It is straightforward to lift $T_0$ to a single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$. Recall the defintions of $F_0$ and $E_0$ from \ref{defn:F0 and E0}:
 \[
@@ -744,13 +652,13 @@ F_0(x ;k) = \Im F(\iu x; k), \qquad
 E_0(x ;k) = \Im F(\iu x; k) - kx.
 \]
 Using these, we rewrite $T_0$ in the follwoing way.
-\[
+\begin{align*}
 2π T_0(p,k,u,v) =
-4p \left[ E F_0(v; k) - K E_0(v; k) \right]
--4 \left[ E F_0(u; k) - K E_0(u; k) \right]
-- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
+4p& \left[ E F_0(v; k) - K E_0(v; k) \right]
+-4 \left[ E F_0(u; k) - K E_0(u; k) \right] \\
+&- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
 \labelthis{eqn:T0 rewrite}
-\]
+\end{align*}
 
 \begin{lem}
 The function
@@ -776,13 +684,13 @@ where we have again used the auxillary function $w'(\iu t)^2 = (1+t^2)(k^2 + t^2
 \end{lem}
 
 In Section \ref{sec:EllipticContinuation}, analytic extensions of $F_0(x;k)$ and $E_0(x;k)$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The previous lemma has established that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
-\[
+\begin{align*}
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
-:= 4p \left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
-- 4 \left[ E \tilde{F}(\tilde{u}) - K \tilde{E}(\tilde{u}) \right]
-- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
+:= 4p &\left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
+- 4 \left[ E \tilde{F}(\tilde{u}) - K \tilde{E}(\tilde{u}) \right] \\
+&- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
 + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
-\]
+\end{align*}
 To actually compute the value of this function, it is simply a matter of substituting the correct expression for $\tilde{F}$ or $\tilde{E}$.
 If we define the winding number $\Wind : \R \to \Z$ of a number $x$ to be the integer $\Wind(x)$ such that $-π < x - 2π\Wind(x) < π$, then recall \eqref{eqn:tildeF_period} and \eqref{eqn:tildeE_period},
 \begin{align*}
@@ -798,15 +706,15 @@ Then
 % - 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
 % + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] \\
 %%%%%%%%%%%%%%%%%%%%%%%%
-&= 4p \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{v})
-- 4 \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{u}) + T_0(p,k,u,v)\\
+&= T_0(p,k,u,v) + 4p \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{v}) \\
+&\qquad - 4 \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{u}) \\
 %%%%%%%%%%%%%%%%%%%%%%%%
 \tilde{T}(p,k,\tilde{u},\tilde{v})
-&= 2\bra{ p\Wind(\tilde{v}) - \Wind(\tilde{u}) } + T_0(p,k,u,v),
+&= T_0(p,k,u,v) + 2\bra{ p\Wind(\tilde{v}) - \Wind(\tilde{u}) },
 \label{eqn:tilde T computable}
 \end{align*}
 using Legendre's relation (see Section \ref{sec:Legendre's Relation}).
-Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular, $T \in \Q$ if and only if $\tilde{T} \in \Q$. In the following section, we will find the level sets of $\tilde{T}$ in $\mathcal{A}_1(p)$.
+Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular if $p$ is rational, $T \in \Q$ if and only if $\tilde{T} \in \Q$. In the following section, we will find the level sets of $\tilde{T}$ in $\mathcal{A}_1(p)$.
 
 
 
@@ -829,7 +737,7 @@ Thus to do computations with the function $\tilde{T}$, one can continue to work 
 
 
 
-\section{The topology of the moduli space}
+\section{The Topology of the Moduli Space}
 \label{sec:Topology}
 
 In the interest of having manageable formulae, we recall the definition of $w'(\iu t)^2 = (1 + t^2)(k^2 + t^2)$. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
@@ -882,7 +790,7 @@ have no zeroes for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
 \begin{proof}
 We shall prove this statement by showing that the two functions are in fact always positive. We will draw on several inequalities that are explained in Section \ref{sec:Inequalities}. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
 \begin{align*}
-U(p,k,u,v)
+U&(p,k,u,v)\\
 &= -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
 &> -(u-v)^2 K + Kw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
 &= K \left[ w(\iu u)w(\iu v) + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right]
@@ -926,13 +834,13 @@ Fix $p$, but also fix any value for $k$. By \eqref{eqn:F0_E0_uniform_bounds}, $\
 -C \leq 4p \left[ E F_0(v) - K E_0(v) \right]-4 \left[ E F_0(u) - K E_0(u) \right] \leq C.
 \]
 Substituting this into \eqref{eqn:T0 rewrite},the definition of $T_0$,
-\[
-- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C
+\begin{gather*}
+- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C \\
 \leq
 2π T_0(p,k,u,v)
-\leq
+\leq \\
 - 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] + C,
-\]
+\end{gather*}
 and so it is sufficent to show that for any fixed $p$ and $k$ the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
 \[
 \lim_{u \to v^+} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
@@ -951,9 +859,17 @@ By continuity $T_0$, and therefore $\tilde{T}$, obtains every value.
 
 \begin{lem}
 \label{lem:T_graph}
-If $p \leq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and $\{(q,k,\tilde{u}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is $\{(q_0,k,\tilde{u})\}$.
+If $p \leq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and
+\[
+\{(q,k,\tilde{u}) \in \R\times(0,1)\times\R \},
+\]
+such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is $\{(q_0,k,\tilde{u})\}$.
 
-Likewise, if $p \geq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and $\{(q,k,\tilde{v}) \in \R\times(0,1)\times\R \}$, such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is $\{(q_0,k,\tilde{v})$.
+Likewise, if $p \geq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and
+\[
+\{(q,k,\tilde{v}) \in \R\times(0,1)\times\R \},
+\]
+such that for fixed $q_0$, the level set $\tilde{T} = q_0$ is $\{(q_0,k,\tilde{v})$.
 
 \begin{proof}
 Fix a value of $p$ and consider the function $G(q, k,\tilde{u},\tilde{v}) = \tilde{T}(p,k,\tilde{u},\tilde{v}) - q$ on $\mathcal{\tilde{A}}_1(p)\times\R$. $G^{-1}(0)$ is a graph over $\mathcal{\tilde{A}}_1(p)$ given by $q=\tilde{T}$, so they are diffeomorphic. We will apply the implicit function theorem to show that $G^{-1}(0)$ can also be written as a graph over either $(q,k,\tilde{u})$ or $(q,k,\tilde{v})$, depening on the magnitude of $p$.
@@ -970,7 +886,8 @@ Suppose first that the fixed value of $p$ is greater than or equal to one. We co
 which holds for $\tilde{u} \not\in π + 2π\Z$. As witnessed in Lemma \ref{lem:deriv no zeroes}, $U$ is never zero, and neither are the other three factors present. Hence $\partial \tilde{G} / \partial \tilde{u}$ is never zero on this open set. It remains to check it does not vanish when $\tilde{u} \in π + 2π\Z$. Observe
 \begin{align*}
 \lim_{u\to\infty} u^{-2} U(p,k,u,v)
-&= \lim_{u\to\infty} -(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) + K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \\
+&= \lim_{u\to\infty} \Big\{-(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) \\
+&\qquad+ K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \Big\} \\
 &= V(p,k,v).
 \end{align*}
 As $\tilde{T}$ is an analytic function its derivatives are continuous and so we may compute their value at these points by taking a limit. Therefore
@@ -980,13 +897,14 @@ As $\tilde{T}$ is an analytic function its derivatives are continuous and so we 
 &=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}U\bra{ p,k,u,v } \\
 &=\frac{1}{π} \frac{1}{k} V\bra{ p,k,v },
 \end{align}
-which is also nonzero. By the implicit function theorem, there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range} \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed at $q_0$, then the level set $q_0 = \tilde{T}$ is paramterised by the remaining two coordinates $(k,\tilde{u})$.
+which is also nonzero. By the implicit function theorem, there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range } \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed at $q_0$, then the level set $q_0 = \tilde{T}$ is paramterised by the remaining two coordinates $(k,\tilde{u})$.
 
 When $p \leq 1$, we employ the following symmetry.
 \begin{align*}
-T_0(p,k,u,v)
+T_0&(p,k,u,v) \\
 &= 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} \\
-&= -p\left\{ -4\left[ E F(\iu v;k) - K E(\iu v;k) \right] + \frac{4}{p}\left[ E F(\iu u;k) - K E(\iu u;k) \right] + 4\iu K \frac{ w(\iu v) + \frac{1}{p}w(\iu u)}{u-v} \right\}\\
+&= -p\Big\{ -4\left[ E F(\iu v;k) - K E(\iu v;k) \right] + \frac{4}{p}\left[ E F(\iu u;k) - K E(\iu u;k) \right] \\
+&\hspace{8cm}+ 4\iu K \frac{ w(\iu v)+ \frac{1}{p}w(\iu u)}{u-v} \Big\}\\
 &= -p T_0\bra{ \tfrac{1}{p}, k, v, u },
 \end{align*}
 so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing. Again the implicit function theorem gives the result.
@@ -1048,7 +966,6 @@ The difference between these two paths is homologous to a loop anticlockwise aro
 \[
 \int_{γ'_+} Θ^P - \int_{γ_+} Θ^P = \int_{\S^1} = -2π\iu.
 \]
-
 Likewise if we consider the difference between the path $γ_-$ and its pullback $γ'_-$ we again have a anticlockwise loop of the upper unit circle.
 
 \makefigure{The principal path $γ_-$ in black and its pullback $γ'_-$ under $λ$ in red. \label{fig:deck_T_-1}}{thesis_graphics_temp/deck_T_-1.png}
@@ -1057,11 +974,13 @@ Hence
 \[
 \int_{γ'_-} Θ^P - \int_{γ_-} Θ^P = \int_{\S^1} = -2π\iu.
 \]
-Putting these together we conclude that the value of $T_0$ changes by $1-p$ under this transformation.
-\[
-2π\iu (T_0 \circ λ - T_0) = \bra{ p\int_{γ'_-} Θ^P - \int_{γ'_+} Θ^P } - \bra{ p\int_{γ_-} Θ^P - \int_{γ_+} Θ^P } = p(-2π\iu) - (-2π\iu) = 2π\iu (1-p).
-\]
-
+Putting these together we conclude that the value of $T_0$ changes by $1-p$ under this transformation:
+\begin{align*}
+2π\iu (T_0 \circ λ - T_0)
+&= \bra{ p\int_{γ'_-} Θ^P - \int_{γ'_+} Θ^P } - \bra{ p\int_{γ_-} Θ^P - \int_{γ_+} Θ^P } \\
+&= p(-2π\iu) - (-2π\iu) \\
+&= 2π\iu (1-p).
+\end{align*}
 To infer the effect of the transformation on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently altered their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$, $\iu v$. In particular,
 \[
 0 = f(μ),\;\; \iu u = f(1),\;\; \iu v = f(-1),\;\; \infty = f(ν),
@@ -1069,11 +988,11 @@ To infer the effect of the transformation on $\tilde{T}$ however, we also must t
 and as one tranverses the unit circle clockwise, one traverses the imaginary axis in the $z$-plane upwards. Correspondingly, $0 < u < v$.
 
 As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n,m$. The value of $2\atan(ku)$ will be between $0$ and $π$, so after the transformation $\tilde{u}$ will be in the range $(2πn +π, 2π(n+1))$. In otherwords its winding number has incresed by $1$. The same can be said for $\tilde{v}$. Putting these two parts together
-\[
+\begin{align*}
 \tilde{T} \circ \tilde{λ} - \tilde{T}
-= \bra{ T_0\circ λ + 2(p(m+1)-(n+1)) } - \bra{ T_0 + 2(pm-n) }
-= 1-p  +2(p-1) = p-1.
-\]
+&= \bra{ T_0\circ λ + 2(p(m+1)-(n+1)) } - \bra{ T_0 + 2(pm-n) } \\
+&= 1-p  +2(p-1) = p-1.
+\end{align*}
 This relation is a difference of analytic functions on an open set, so by continuation it applies everywhere. Thus the effect of the covering transformation $\tilde{λ}$ on $\tilde{T}$ is to increase its value by $p-1$.
 
 
@@ -1114,7 +1033,7 @@ The space of marked curves $\mathcal{C}_1(1)$ is diffeomorphic to
 \[
 \{ (q,k,[\tilde{x}]_{\tilde{λ}}) \in \R \times (0,1) \times \bra{\R/π\Z} \},
 \]
-where $[\tilde{x}]_{\tilde{λ}}$ refers to the equivalence relation \eqref{eqn:annuli actions}, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is
+where $[\tilde{x}]_{\tilde{λ}}$ refers to the equivalence relation \eqref{eqn:annuli action}, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is
 \[
 \mathcal{S}_1(1) = \{ \mathcal{C}_1(1) \mid q \in \Q \}.
 \]
@@ -1132,7 +1051,7 @@ Focusing just on the $\tilde{x}$ component, this identifies any $\tilde{x} \in \
 
 These two theorems complete our quest to gain an understanding of the subspace of spectral curves $\mathcal{S}_1$ within $\mathcal{C}_1$. First we charactersied when a marked curve is a spetral curve by way of a necessary and sufficient condition: that the two real valued functions $S(α,β)$ and $T(α,β)$ take rational values. The first condition, $S\in\Q^+$, lead immediately to a dense disjoint collection of subspaces $\mathcal{C}_1(p)$ on which the condition was met, where $p$ was the value of $S$.
 
-Then we moved to the universal cover $\mathcal{\tilde{A}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multivalued function $T$. We then considered the subspaces of $\mathcal{\tilde{A}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be strips in Lemma \ref{}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
+Then we moved to the universal cover $\mathcal{\tilde{A}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multivalued function $T$. We then considered the subspaces of $\mathcal{\tilde{A}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be strips in Lemma \ref{lem:T_graph}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
 
 The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group was shown to be $\Z\langle\tilde{λ}\rangle$ and its action was described by \eqref{eqn:group action}. This allowed us to describe the quotients in the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of strips within $\mathcal{C}_1$. As can be seen in the pictures below, and proved rigourously in the next chapter, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'.
 
@@ -1173,7 +1092,7 @@ We now turn our attention to the nonexact differentials. Suppose that for fixed 
 = \frac{n'(nx - my)}{m'}
 = \frac{n'}{m'},
 \]
-So we can solve \eqref{} for a differential $Ψ^P$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any closing differential on the curve, we may write it as $Θ = bΘ^E + kΘ^P$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and its integrals are $2π\iu e, 2π\iu f$. Taking its integrals over $γ_+$ and $γ_-$ and eliminating $b$ leads to
+So we can solve \eqref{eqn:period differential scaling} for a differential $Ψ^P$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any differential that satisfies the closing conditions, we may write it as $Θ = bΘ^E + kΘ^P$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and let its integrals over $γ_+$ and $γ_-$ be $2π\iu e, 2π\iu f$. Eliminating $b$ leads to
 \begin{align*}
 \frac{n'}{m'} &= \frac{nf - me}{km} \\
 n'k\bra{\frac{m}{\gcd(m,m')}} &= (nf - me)\bra{\frac{m'}{\gcd(m,m')}} \\
@@ -1219,7 +1138,7 @@ one would guess that it is induced by $(α,β) \mapsto (-α,-β)$. Indeed this c
 χ: Σ(α,β) &\to Σ(-α,-β) \\
 (ζ, η) &\mapsto (-ζ,-η)
 \end{align*}
-interchanges $1$ and $-1$, effectively swapping the roles of $u$ and $v$. The pullback of the differentials under the involution $χ$ would preserve the integrality of their integrals and so spectral data on $Σ(α,β)$ be transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \T^2 \to \S^3$ arises as the gauge transformation between the connections at $1$ and $-1$, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
+interchanges $1$ and $-1$, effectively swapping the roles of $u$ and $v$. The pullback of the differentials under the involution $χ$ would preserve the integrality of their integrals and so spectral data on $Σ(α,β)$ be transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises as the gauge transformation between the connections at $1$ and $-1$, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
 
 This can be seen directly in the genus zero case. Remember the form of the harmonic map
 \[
@@ -1279,10 +1198,10 @@ It follows from \eqref{eqn:f} that
 = \frac{1}{k}(\iu u)^{-1},
 \]
 or concisely that $v= - (ku)^{-1}$. This is exactly the formula for the change of $u,v$ under the label swapping involution, as it should be because $χ$ is in effect swapping $(α,-α)$ amongst doing other things. Hence using the formula for the label swapping involution in addition to the $1/p$ symmetry
-\[
+\begin{align*}
 T_0\bra{1,k,u,-(ku)^{-1}}
-= T_0\bra{1,k,-(ku)^{-1},u} + 1-p
-= T_0\bra{1,k,-(ku)^{-1},u}
-= -T_0\bra{1,k,u,-(ku)^{-1}},
-\]
+&= T_0\bra{1,k,-(ku)^{-1},u} + 1-p \\
+&= T_0\bra{1,k,-(ku)^{-1},u} \\
+&= -T_0\bra{1,k,u,-(ku)^{-1}},
+\end{align*}
 from which we deduce that $T_0$ is zero. Therefore we have shown that $\{(α,-α)\}$ is the only annulus of $\mathcal{S}_1(1)$ where $T_0$ is zero, and these correspond to harmonic maps to the sphere.

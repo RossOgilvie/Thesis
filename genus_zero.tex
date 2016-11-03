@@ -1,6 +1,6 @@
 %!TEX root = thesis.tex
 
-\chapter{Genus Zero}
+\chapter{The Genus Zero Moduli Space}
 \label{chp:Genus Zero}
 
 The moduli space of spectral data where the spectral curve is genus zero is an instructive case.
@@ -75,10 +75,10 @@ and thus $a+\iu b$ is a period. The converse, that $f(w)=I$ if $w$ is a period, 
 
 We have reduced the task of finding the periods of $f$ to that of solving $f(w)=I$. Since $X$ and $Y$ are linearly independent matrices, it follows from \eqref{eqn:su2 product} that the set $\{I,X,Y,XY\}$ is as well. An element $w\in\C$ is a period of $f$ exactly when
 \begin{align*}
-f(w) = I \cos(4w_R\norm{X})&\cos(4w_I\norm{Y})
+I = f(w) = I \cos&(4w_R\norm{X})\cos(4w_I\norm{Y})
 - \hat{X}\sin(4w_R\norm{X})\cos(4w_I\norm{Y}) \\
 &+ \hat{Y}\cos(4w_R\norm{X})\sin(4w_I\norm{Y})
-- \hat{X}\hat{Y}\sin(4w_R\norm{X})\sin(4w_I\norm{Y}) = I
+- \hat{X}\hat{Y}\sin(4w_R\norm{X})\sin(4w_I\norm{Y})
 \end{align*}
 Squaring the coefficients of $\hat{Y}$ and $\hat{X}\hat{Y}$ and adding them together shows that $\sin^2(4w_I\norm{Y}) = 0$. Doing likewise for the coefficients of $\hat{X}$ and $\hat{X}\hat{Y}$ shows that $\sin^2(4w_R\norm{X}) = 0$. Let $4w_R\norm{X} = πk$ and $4w_I\norm{Y} = πl$. Then the remaining term, the coefficient of $I$, forces
 \[
@@ -144,18 +144,20 @@ and for the loop from $z=0$ to $τ$ it is
 \begin{align*}
 H^2(ζ)
 &= \exp (- G\bar{τ} + G^*τ - ζ^{-1}Fτ + ζ F^*\bar{τ}) \\
-&= \exp \left\{ ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X} \begin{pmatrix}
+&= \exp \Bigg\{ ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}  \\
+&\hspace{1.5cm}\times\begin{pmatrix}
 0 & - (1 + \iu xe^{\iu δ}) + (-1 + \iu x e^{\iu δ})ζ \\
 (1+\iu xe^{-\iu δ}) + (1-\iu xe^{-\iu δ})ζ & 0
-\end{pmatrix}\right\}.
+\end{pmatrix}\Bigg\}.
 \end{align*}
 We note that setting $τ=1$ above recovers the formula for $H^1(ζ)$, so we shall do all our computations with $H^2$. Also, by rotating the vectors $X$ and $Y$ into the $σ_2σ_3$-plane we have ensured that the holonomy matrices are off-diagonal. Thus their eigenvalues and eigenspaces are easy to write down.
 
 To find the spectral curve, we find the values of $ζ$ for which the two eigenlines of $H^2(ζ)$ coincide. If $B(ζ)$ is defined by $H^2(ζ) = \exp B(ζ)$, then the eigenspaces of $H^2(ζ)$ and $B(ζ)$ are the same, so we may do our computation with the latter. The matrix $B(ζ)$ is off-diagonal, so $u(ζ) = (u_1(ζ)\; u_2(ζ))^T$ is an eigenvector if and only if
-\[
+\vspace{0.2cm}
+\begin{longeqn}
 -ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α) u_2(ζ)^2
 = ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ) u_1(ζ)^2.
-\]
+\end{longeqn}
 where $α$ is a point that is always inside the unit circle, given by
 \[
 α = \frac{1+\iu x e^{\iu δ}}{-1+\iu x e^{\iu δ}}
@@ -163,10 +165,13 @@ where $α$ is a point that is always inside the unit circle, given by
 \labelthis{eqn:def branch point genus zero}
 \]
 Following \eqref{eqn:eigneline curve}, points of the eigenline curve in $\CP^1 \times\CP^1$ are of the form
-\begin{align*}
-&\bra{ζ, \left[\pm \sqrt{-ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] } \\
-&\qquad= \bra{ζ, \left[\pm \sqrt{-(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] }.
-\end{align*}
+\begin{longeqn}
+\bra{ζ, \left[\pm \sqrt{-ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] } \\
+\end{longeqn}
+\vspace{-0.2cm}
+\[
+= \bra{ζ, \left[\pm \sqrt{-(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] }.
+\]
 From this we can see where and to what order the eigenlines coincide. The plus-minus sign produces two distinct lines unless one of the components of the homogeneous coordinates has a root, with the order of coincidence the same as the order of the root. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 + \iu x e^{-\iu δ}$ never vanish. Hence the eigenlines coincide only over $α$ and $\cji{α}$, and only to first order. The spectral curve is therefore $η^2 = (ζ-α)(1-\bar{α}ζ)$, a genus zero hyperelliptic curve without singularities.
 
 Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some nonrigorous intutition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is the Cayley transform, a M\"obius transformation of the upper half plane to the unit disc. One can write the inverse transformation as
@@ -282,11 +287,11 @@ q^i = ζ^{-1}\bra{s^i - \bar{s}^i ζ}η + C,
 for some constant $C$ and $s^i \in \Z\langle r^1, r^2 \rangle$. If the deformation is given by a parameterised path $α(t)$, we may differentiate with respect to a deformation parameter $t$ to deduce
 \begin{align*}
 \dot q^i
-= \frac{1}{ζη} &\left[
+&= \frac{1}{ζη} \left[
 - \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i}
 + \bra{ (1+α\bar{α})\dot{s}^i + α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i + \frac{1}{2}\bra{\dot{α}\bar{α}+α\dot{\bar{α}}}s^i }ζ
 \right. \\
-&\qquad \left.
+&\quad \left.
 - \bra{ (1+α\bar{α})\dot{\bar{s}}^i + \bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i + \frac{1}{2}\bra{\dot{α}\bar{α}+α\dot{\bar{α}}}\bar{s}^i }ζ^2
 + \bra{\bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i} ζ^3
 \right].
@@ -313,9 +318,10 @@ b^i(ζ) \frac{dζ}{ζ^2η} := dq^i
 \labelthis{eqn:b genus zero}
 \]
 These polynomials are also cubic and are real with respect to $ρ$. They also satisfy the residue condition \eqref{eqn:residue condition}. If we take $b^i$ and $c^i$ and substitute them into $b^1c^2 - b^2 c^1$, this is the left hand side of equation \eqref{eqn:Q}. Dividing by $P$ leaves the polynomial $Q$,
-\[
-Q = \frac{\pi^2}{4}\frac{1}{\abs{1-α^2}}\bra{n^1m^2-n^2m^1} \left[ - 2\iu α \bra{\Re\frac{\dot{α}}{1-α^2}} + (1-α\bar{α}) \bra{\Im\frac{\dot{α}}{1-α^2}} ζ + 2\iu \bar{α}\bra{\Re \frac{\dot{α}}{1-α^2}}ζ^2\right].
-\]
+\begin{align*}
+Q = \frac{\pi^2}{4}&\frac{1}{\abs{1-α^2}}\bra{n^1m^2-n^2m^1} \\
+&\times\left[ - 2\iu α \bra{\Re\frac{\dot{α}}{1-α^2}} + (1-α\bar{α}) \bra{\Im\frac{\dot{α}}{1-α^2}} ζ + 2\iu \bar{α}\bra{\Re \frac{\dot{α}}{1-α^2}}ζ^2\right].
+\end{align*}
 This is a real quadratic polynomial, but the form of its coefficients hold some further information. At a fixed $α$, we see that $Q_0$ can only take values on a real line, whereas we may have expected that it may take any complex value. This is in accordance with the remark that $Q_0$ determines the change in the conformal parameter (see \eqref{eqn:Q0 change conformal}) and the observation above that during a deformation the conformal parameter $τ$ moves along an arc in the upper half plane.
 
 When $α\neq 0$, the conditions of Lemma \ref{lem:tangent generic} are met.

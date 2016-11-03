@@ -1,17 +1,17 @@
 %!TEX root = thesis.tex
 
-\chapter{Moduli Boundary}
+\chapter{The Boundary of the Moduli Space}
 \label{chp:Moduli Boundary}
 
 The boundary of $\mathcal{A} = \{ (α,β) \in D^2 \mid α \neq β\}$, can be thought of as composed of two pieces. On the outside we have the places where one or both of $α,β$ are in the unit circle. Fix a value of $p$. This is a `ball' in the space $(α,β)\in D^2$, as for any particular value of
 \[
-u = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
+t = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
 \]
 $α$ ranges over an arc of a circle, and likewise does $β$ as constrained by the equation
 \[
 \frac{\abs{1-β}}{\abs{1+β}} = \frac{\sqrt{p}}{u},
 \]
-where the product of these two equations is just the definition of $p$. Hence for any $u$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. As $u$ approaches $0$, this forces the branch points to $S_0 := (1,-1)$, and likewise at $u \to \infty$, $S_\infty := (-1,1)$. In the reverse direction, $α = \pm 1$ if and only if $β = \mp 1$. Hence, these two points divide the unit circle into disconnected upper and lower halves: $\S^1_+$ and $\S^1_-$ respectively.
+where the product of these two equations is just the definition of $p$. Hence for any $t$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. As $t$ approaches $0$, this forces the branch points to $S_0 := (1,-1)$, and likewise at $t \to \infty$, $S_\infty := (-1,1)$. In the reverse direction, $α = \pm 1$ if and only if $β = \mp 1$. Hence, these two points divide the unit circle into disconnected upper and lower halves: $\S^1_+$ and $\S^1_-$ respectively.
 
 This ball of constant $p$ is an American football shape; an elongated ball with sharp points at either end, joined by four seams (`\emph{edges}') where both $α$ and $β$ lie in one of $\S^1_\pm$ and four `\emph{faces}' where only one does.
 
@@ -24,7 +24,7 @@ an arc. Though it reveals a counterintuitive aspect of our naming convention, th
 
 
 
-\section{Interior}
+\section{Interior Boundary}
 \label{sec:Interior}
 
 We shall examine first the moduli space on the interior boundary, which we shall call $Δ$. It was already mentioned, but recall the definition of $k$ (eqn \eqref{eqn:def_k}),
@@ -120,7 +120,7 @@ which tends to $1$ as $p\to 0$, and $-1$ as $p \to \infty$. This is somewhat sup
 
 
 
-\section{Exterior}
+\section{Exterior Boundary}
 \label{sec:Exterior}
 
 We bgein with two calculations that will shows that, as $β$ moves onto the unit circle, there is a correspondence between the limit of genus one spectral data and genus zero spectral data. First we show that the spectral curves and differentials are related by a pullback operation. Then we will show that the closing conditions are preserved.
@@ -332,5 +332,5 @@ DIAGRAM.
 Note the swirliness around the special points $α = β = e^{\iu b_0}$ and $α = β = e^{-\iu b_0}$. These points correspond to the intersection of the diagonal from the previous section and the exterior boundary of this section. In particular, the spirals that were observed in that other case are also present here, as they must be.
 
 TODO\todo{}
-Argument about why two discs are sufficent. 
+Argument about why two discs are sufficent.
 Show that the limit of $Ψ,\tilde{Ψ}$ are well defined because the sign ambiguity cancels? It does for $Ψ$ it seems.

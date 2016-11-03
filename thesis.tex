@@ -1,4 +1,3 @@
-% \documentclass{article}
 \documentclass{report}
 
 \usepackage{thesis_style}
@@ -6,8 +5,13 @@
 \begin{document}
 
 \include{titlepage}
+\setcounter{page}{1}
+\pagenumbering{roman}
 \include{frontmatter}
 \tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
 
 \setcounter{chapter}{-1}  % start chapter numbering at 0
 \include{preliminaries}
@@ -18,9 +22,9 @@
 
 
 % APPENDICES
-% \appendix
-% \include{glossary}
-% \include{elliptic_integral}
+\appendix
+\include{glossary}
+\include{elliptic_integral}
 % \include{misc}
 
 % \bibliography{library}
