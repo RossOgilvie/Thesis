@@ -153,11 +153,10 @@ H^2(ζ)
 We note that setting $τ=1$ above recovers the formula for $H^1(ζ)$, so we shall do all our computations with $H^2$. Also, by rotating the vectors $X$ and $Y$ into the $σ_2σ_3$-plane we have ensured that the holonomy matrices are off-diagonal. Thus their eigenvalues and eigenspaces are easy to write down.
 
 To find the spectral curve, we find the values of $ζ$ for which the two eigenlines of $H^2(ζ)$ coincide. If $B(ζ)$ is defined by $H^2(ζ) = \exp B(ζ)$, then the eigenspaces of $H^2(ζ)$ and $B(ζ)$ are the same, so we may do our computation with the latter. The matrix $B(ζ)$ is off-diagonal, so $u(ζ) = (u_1(ζ)\; u_2(ζ))^T$ is an eigenvector if and only if
-\vspace{0.2cm}
-\begin{longeqn}
--ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α) u_2(ζ)^2
+\begin{multline*}
+-ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α) u_2(ζ)^2 \\
 = ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ) u_1(ζ)^2.
-\end{longeqn}
+\end{multline*}
 where $α$ is a point that is always inside the unit circle, given by
 \[
 α = \frac{1+\iu x e^{\iu δ}}{-1+\iu x e^{\iu δ}}
@@ -165,13 +164,19 @@ where $α$ is a point that is always inside the unit circle, given by
 \labelthis{eqn:def branch point genus zero}
 \]
 Following \eqref{eqn:eigneline curve}, points of the eigenline curve in $\CP^1 \times\CP^1$ are of the form
-\begin{longeqn}
-\bra{ζ, \left[\pm \sqrt{-ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] } \\
-\end{longeqn}
+\begin{multline*}
+\Bigg( ζ, \Big[\pm \sqrt{-ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α)} \\
+: \sqrt{ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \Big] \Bigg)
+\end{multline*}
 \vspace{-0.2cm}
 \[
-= \bra{ζ, \left[\pm \sqrt{-(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \right] }.
+= \Bigg( ζ, \Big[\pm \sqrt{-(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \Big] \Bigg).
 \]
+% \begin{align*}
+% \Bigg( ζ, \Big[\pm &\sqrt{-ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1 - \iu x e^{\iu δ})(ζ-α)} \\
+% &\hspace{3cm}: \sqrt{ζ^{-1}(κτ + \bar{κτ}ζ)\norm{X}(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \Big] \Bigg) \\
+% &= \Bigg( ζ, \Big[\pm \sqrt{-(1 - \iu x e^{\iu δ})(ζ-α)} : \sqrt{(1+\iu xe^{-\iu δ}) (1-\bar{α}ζ)} \Big] \Bigg).
+% \end{align*}
 From this we can see where and to what order the eigenlines coincide. The plus-minus sign produces two distinct lines unless one of the components of the homogeneous coordinates has a root, with the order of coincidence the same as the order of the root. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 + \iu x e^{-\iu δ}$ never vanish. Hence the eigenlines coincide only over $α$ and $\cji{α}$, and only to first order. The spectral curve is therefore $η^2 = (ζ-α)(1-\bar{α}ζ)$, a genus zero hyperelliptic curve without singularities.
 
 Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some nonrigorous intutition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is the Cayley transform, a M\"obius transformation of the upper half plane to the unit disc. One can write the inverse transformation as
@@ -246,7 +251,7 @@ The final piece of the spectral data, though one that we do not treat extensivel
 
 
 
-We have computed the spectral data for all maps $f$ of the form \eqref{eqn:genus zero simple map} and noted that they were all and exactly the spectral data with a genus zero spectral curve. Let us turn then to describing the moduli space $\mathcal{M}_0$, of triples $(Σ,Θ^1,Θ^2)$, as a whole. We have seen that the marked curve $Σ$ is completely determined by its sole branch point $α$ in the unit disc $D$. And for every $α$ we may choose $Θ^1$ and $Θ^2$ from a rank two lattice. However by condition \ref{P:linear independence} they must be real linearly independent. Given a basis of the lattice of differentials, such as $Ψ^1, Ψ^2$ in \eqref{eqn:genus zero differential basis} above, we may represent our choice of lattice points in terms of two pairs of integers. As a matrix equation, this takes the form
+We have computed the spectral data for all maps $f$ of the form \eqref{eqn:genus zero simple map} and noted that they were all and exactly the spectral data with a genus zero spectral curve. Let us turn then to describing the moduli space $\mathcal{M}_0$, of triples $(Σ,Θ^1,Θ^2)$, as a whole. We have seen that the spectral curve $Σ$ is completely determined by its sole branch point $α$ in the unit disc $D$. And for every $α$ we may choose $Θ^1$ and $Θ^2$ from a rank two lattice. However by condition \ref{P:linear independence} they must be real linearly independent. Given a basis of the lattice of differentials, such as $Ψ^1, Ψ^2$ in \eqref{eqn:genus zero differential basis} above, we may represent our choice of lattice points in terms of two pairs of integers. As a matrix equation, this takes the form
 \begin{align*}
 \begin{pmatrix}
 Θ^1 \\ Θ^2
@@ -260,9 +265,9 @@ c & d
 Ψ^1 \\ Ψ^2
 \end{pmatrix}.
 \end{align*}
-Then linear independence is equivalent to the integer matrix having non-zero determinant. This provides a concise way to refer to the choice of differentials, as a matrix in $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. The moduli space $\mathcal{M}_0$ can be described succintly as the product $D \times \Mat_2^*\Z$. One should bear in mind that this is not a cannonical identification, as it is dependent on the choice of basis.
+Then linear independence is equivalent to the integer matrix having non-zero determinant. This provides a concise way to refer to the choice of differentials, as a matrix in $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. The moduli space $\mathcal{M}_0$ can be described succintly as the product $D \times \Mat_2^*\Z$. One should bear in mind that this is not a canonical identification, as it is dependent on the choice of basis.
 
-This matrix formulation is also well suited to talk about changes of the conformal parameter. Recall that the conformal parameter of the domain of the harmonic map may be computed by taking the ratio of the principal parts of the two differentials of the corresponding spectral data. Observe that if $(Σ,Θ^1,Θ^2)$ is a triple of spectral data, with conformal paramter $τ$, then so too is $(Σ, cΘ^1 + dΘ^2, aΘ^1 +b Θ^2)$, for integers $a,b,c,d \in\Z$, and that the new conformal parameter is
+This matrix formulation is also well suited to talk about changes of the conformal parameter. Recall that the conformal parameter of the domain of the harmonic map may be computed by taking the ratio of the principal parts of the two differentials of the corresponding spectral data. If $(Σ,Θ^1,Θ^2)$ is a triple of spectral data, with conformal paramter $τ$, then so too is $(Σ, cΘ^1 + dΘ^2, aΘ^1 +b Θ^2)$, for integers $a,b,c,d \in\Z$, and the new conformal parameter is
 \[
 \frac{a+bτ}{c+dτ}.
 \labelthis{eqn:conformal covering change}
@@ -280,34 +285,34 @@ so as $α$ moves in the unit disc, $τ$ sweeps out the upper half of the unit ci
 
 The previous chapter developed a method for computing the deformations of spectral data. In the genus zero case, it is clear that given a triple of spectral data one can freely move the sole branch point $α$ in the unit disc, and the path of $α$ uniquely determines the deformation. An infinitesimal deformation therefore is determined by the value of the derviative of the branch point, $\dot{α}$. However, let us work through the description of infinitesimal deformations from the previous chapter, via the defintions of the functions $\dot{q}^i$ and $Q$ (equations \eqref{eqn:def q dot} and \eqref{eqn:Q}), to gain some familiarity with its workings.
 
-Because the spectral curve $Σ$ is simply connected in the present situation, all differentials on it are exact. Thus we shall not need to solve \eqref{eqn:EMPDi} to find the polynomials $\hat{c}^i$, and thereby $\dot{q}^i = ζ^{-1}η^{-1} \hat{c}^i$. Instead we may directly compute the functions $q^i$ and differentiate along a deformation. Starting from equation \eqref{eqn:genus zero differential}, the integration is immediate:
+Because the spectral curve $Σ$ is simply connected in the present situation, all differentials on it are exact. Thus we shall not need to solve \eqref{eqn:EMPDi} to find the polynomials $\hat{c}^i$. Instead we may directly compute the functions $q^i$ and differentiate along a deformation to obtain $\dot{q}^i = ζ^{-1}η^{-1} \hat{c}^i$. Starting from equation \eqref{eqn:genus zero differential}, the integration is immediate:
 \[
 q^i = ζ^{-1}\bra{s^i - \bar{s}^i ζ}η + C,
 \]
 for some constant $C$ and $s^i \in \Z\langle r^1, r^2 \rangle$. If the deformation is given by a parameterised path $α(t)$, we may differentiate with respect to a deformation parameter $t$ to deduce
-\begin{align*}
+\begin{multline*}
 \dot q^i
-&= \frac{1}{ζη} \left[
+= \frac{1}{ζη} \left[
 - \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i}
 + \bra{ (1+α\bar{α})\dot{s}^i + α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i + \frac{1}{2}\bra{\dot{α}\bar{α}+α\dot{\bar{α}}}s^i }ζ
 \right. \\
-&\quad \left.
+\left.
 - \bra{ (1+α\bar{α})\dot{\bar{s}}^i + \bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i + \frac{1}{2}\bra{\dot{α}\bar{α}+α\dot{\bar{α}}}\bar{s}^i }ζ^2
 + \bra{\bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i} ζ^3
 \right].
-\end{align*}
-Note that this is a cubic polynomial that is imaginary with respect to the involution $ρ$, as expected. We wish to factorise it, but to do so we first need to simplify the expressions appearing in the coefficients. By labourious calculation, using the specific form of $s^i$, the first order coefficient may be shown to be equal to the conjugate of the zeroeth order coefficient.
+\end{multline*}
+Note that this is a cubic polynomial that is imaginary with respect to the involution $ρ$, as expected. We wish to factorise it, but to do so we first need to simplify the expressions appearing in the coefficients. By labourious calculation, using the specific form of $s^i$, the coefficient of $ζ^1$ may be shown to be equal to the conjugate of the coefficient of $ζ^0$.
 
 (If one wishes to verify this calculation for oneself, it is recommended to first check for $s^i$ equal to $\abs{1+α}^{-1}$ and then $\iu\abs{1-α}^{-1}$. As $s^i$ is in fact an integral combination of the functions $r^1$ and $r^2$, $r^i$ is a real combination of the two suggested functions, and because the expressions in the coefficients are real linear in $s^i$, this check is sufficient.)
 
 We have then
 \begin{align*}
 \dot q^i
-&= \frac{1}{ζη} \left[- \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i}
-- \bra{\bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i} ζ
-+ \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i} ζ^2
+&= \frac{1}{ζη} \Bigg[- \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i}
+- \bra{\bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i} ζ \\
+&\hspace{3.9cm}+ \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i} ζ^2
 + \bra{\bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i} ζ^3
-\right] \\
+\Bigg] \\
 &= \frac{1}{ζη} \bra{ζ^2-1} \left[ \bra{α\dot{\bar{s}}^i + \frac{1}{2}\dot{α}\bar{s}^i}
 + \bra{\bar{α}\dot{s}^i + \frac{1}{2}\dot{\bar{α}}s^i} ζ \right]
 \end{align*}
@@ -318,18 +323,18 @@ b^i(ζ) \frac{dζ}{ζ^2η} := dq^i
 \labelthis{eqn:b genus zero}
 \]
 These polynomials are also cubic and are real with respect to $ρ$. They also satisfy the residue condition \eqref{eqn:residue condition}. If we take $b^i$ and $c^i$ and substitute them into $b^1c^2 - b^2 c^1$, this is the left hand side of equation \eqref{eqn:Q}. Dividing by $P$ leaves the polynomial $Q$,
-\begin{align*}
-Q = \frac{\pi^2}{4}&\frac{1}{\abs{1-α^2}}\bra{n^1m^2-n^2m^1} \\
-&\times\left[ - 2\iu α \bra{\Re\frac{\dot{α}}{1-α^2}} + (1-α\bar{α}) \bra{\Im\frac{\dot{α}}{1-α^2}} ζ + 2\iu \bar{α}\bra{\Re \frac{\dot{α}}{1-α^2}}ζ^2\right].
-\end{align*}
+\begin{multline*}
+Q = \frac{\pi^2}{4}\frac{1}{\abs{1-α^2}}\bra{n^1m^2-n^2m^1}\Bigg[ - 2\iu α \bra{\Real\frac{\dot{α}}{1-α^2}} \\
++ (1-α\bar{α}) \bra{\Imag\frac{\dot{α}}{1-α^2}} ζ + 2\iu \bar{α}\bra{\Real \frac{\dot{α}}{1-α^2}}ζ^2\Bigg].
+\end{multline*}
 This is a real quadratic polynomial, but the form of its coefficients hold some further information. At a fixed $α$, we see that $Q_0$ can only take values on a real line, whereas we may have expected that it may take any complex value. This is in accordance with the remark that $Q_0$ determines the change in the conformal parameter (see \eqref{eqn:Q0 change conformal}) and the observation above that during a deformation the conformal parameter $τ$ moves along an arc in the upper half plane.
 
 When $α\neq 0$, the conditions of Lemma \ref{lem:tangent generic} are met.
 In this case, the infinitesimal deformation should be completely specified by $Q$.
 We see that this is indeed the case, as $Q_0$ and $Q_1$ determine the real and imaginary parts of $\dot{α} (1-α^2)^{-1}$ respectively, which exactly determines the value of $\dot{α}$.
-It is somewhat suggestive to note that if $α$ moves along an arc of constant $x$ then $\Re \dot{α}(1-α^2)^{-1}$ is zero, while if it moves along an arc of constant $δ$ then it is $\Im \dot{α}(1-α^2)^{-1}$ that vanishes. Thus the coefficients of $Q$ are not only determining an infinitesimal deformation, they are doing so in a manner that aligns with the geometric properties of the harmonic map.
+It is somewhat suggestive to note that if $α$ moves along an arc of constant $x$ then $\Real \dot{α}(1-α^2)^{-1}$ is zero, while if it moves along an arc of constant $δ$ then it is $\Imag \dot{α}(1-α^2)^{-1}$ that vanishes. Thus the coefficients of $Q$ are not only determining an infinitesimal deformation, they are doing so in a manner that aligns with the geometric properties of the harmonic map.
 
-In the conformal case, when $α=0$, we must refer instead to Lemma \ref{lem:tangent conformal}. Here we see that $Q = Q_1 ζ$ as required. Now however, the deformation is not determined solely by $Q$, as $Q_1 = \Im \dot{α}$ only gives part of the information of $\dot{α}$. However, the infinitesimal deformation is still determined by the polynomials $c^i$,
+In the conformal case, when $α=0$, we must refer instead to Lemma \ref{lem:tangent conformal}. Here we see that $Q = Q_1 ζ$ as required. Now however, the deformation is not determined solely by $Q$, as $Q_1 = \Imag \dot{α}$ only gives part of the information of $\dot{α}$. However, the infinitesimal deformation is still determined by the polynomials $c^i$,
 \[
 c^i(ζ) = \frac{1}{2} \bar{s}^i \dot{α} -\frac{1}{2} s^i \dot{\bar{α}}ζ.
 \]
@@ -337,7 +342,7 @@ The deficit of information in $Q$ is accounted for by a degree of freedom in the
 \[
 \tilde{b}^i(ζ) = \frac{1}{2}s^i + \frac{1}{2}\bar{s}^i ζ.
 \]
-In Lemma \ref{lem:tangent conformal}, given a solution to \eqref{eqn:Q reduced} we are free to add any real multiple of $\tilde{b}^i$. This is exactly the freedom to choose a value of $\Re \dot{α}$, which was not determined by $Q$.
+In Lemma \ref{lem:tangent conformal}, given a solution to \eqref{eqn:Q reduced} we are free to add any real multiple of $\tilde{b}^i$. This is exactly the freedom to choose a value of $\Real \dot{α}$, which was not determined by $Q$.
 
 Finally, there is a formula to compute the energy of harmonic map from its spectral data, given in \cite[Theorem 12.17]{Hitchin1990}. In the non-conformal case
 \[
@@ -349,9 +354,9 @@ E = \pi^2(1+α\bar{α})\frac{m^1 n^2 - n^1 m^2}{\abs{1-α^2}}.
 \]
 One can interpret the fraction as giving the area of the domain of the map, this is the `area' of the parallelogram spanned by the differentials. The factor $1+α\bar{α}$ may be seen as a measure of how far the map is from being conformal. If we compute the derivative of this expression, we observe that
 \[
-\dot E = 0 \Rightarrow \left(\Re α\right)\left( \Re \frac{\dot{α}}{1-α^2} \right) = 0.
+\dot E = 0 \Rightarrow \left(\Real α\right)\left( \Real \frac{\dot{α}}{1-α^2} \right) = 0.
 \]
-The left factor corresponds to the imaginary axis. The right factor corresponds to a circle centered on the real axis that cuts the unit circle perpedicularly. In other words, $\dot E$ is zero precisely when $α$ moves on an arc that preserves $τ$. This is because, for a given conformal class, harmonic maps are minimisers for the energy.
+The left factor corresponds to the imaginary axis. The right factor corresponds to a circle centered on the real axis that cuts the unit circle perpedicularly. In other words, $\dot E$ is zero precisely when $α$ moves on an arc that preserves $τ$. This was to be expected because, for a given conformal class, harmonic maps are minimisers for the energy.
 
 \begin{center}
 \begin{figure}

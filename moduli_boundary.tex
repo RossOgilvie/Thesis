@@ -40,14 +40,14 @@ Let us compute the limits of the integrals (eqns \eqref{eqn:gamma_plus2}, \eqref
 This shows that at $k=1$, $K$ has a logarthimic singularity. We now compute
 \begin{align*}
 \lim_{k\to 1} \int_{γ_+} Θ^2
-&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \Im E(\iu u;k) - \frac{w(\iu u)}{u-v}\right] \\
-&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \bra{\Im E(\iu u;k) - ku} + (ku - u) + \bra{u - \frac{1+u^2}{u-v}} + \frac{1+u^2 - w(\iu u)}{u-v}\right].
+&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \Imag E(\iu u;k) - \frac{w(\iu u)}{u-v}\right] \\
+&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \bra{\Imag E(\iu u;k) - ku} + (ku - u) + \bra{u - \frac{1+u^2}{u-v}} + \frac{1+u^2 - w(\iu u)}{u-v}\right].
 \end{align*}
 We have divided the limit calculation into five terms. We deal with them one at a time. First
 \[
 \lim_{k\to 1} 4 E(k) F(\iu u;k) = 4 \times 1 \times \iu \atan u
 \]
-by lemma \ref{lem:klimit}. Next, we recognise $\Im E(\iu u;k) - ku$ as the function $E_0(u; k)$, which is bounded in magnitude by $K'-E'$. So
+by lemma \ref{lem:klimit}. Next, we recognise $\Imag E(\iu u;k) - ku$ as the function $E_0(u; k)$, which is bounded in magnitude by $K'-E'$. So
 \[
 \lim_{k \to 1} \abs{K(k) E_0(u;k)}
 \leq \lim_{k \to 1} K(K'-E')
@@ -159,9 +159,9 @@ e := (1-k^2 z^2) \frac{dz}{w} \to \frac{dz}{w} = ω,
 where $ω$ is a holomorphic differential. Also recall that the complete elliptic integrals $K(k)$ and $E(k)$ take the value $π/2$ when $k=0$ REF. Thus
 \begin{align*}
 \lim_{β \to ν} Θ^2
-&= \lim_{β\to ν} \left[ 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \right] \\
-&= 2\frac{π}{2} ω - 2\frac{π}{2} \bra{\lim_{k\to 0} e} - 2\frac{π}{2} \lim_{β\to ν} d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= - π\lim_{β\to ν} d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right],
+&= \lim_{β\to ν} \left[ 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \right] \\
+&= 2\frac{π}{2} ω - 2\frac{π}{2} \bra{\lim_{k\to 0} e} - 2\frac{π}{2} \lim_{β\to ν} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= - π\lim_{β\to ν} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right],
 \end{align*}
 which disposes of the transcendental part of $Θ^2$. To convert the remaining term into an expression in terms of $ζ$ and $η$, so that we may normalise as above, recall that $η/ζ$ and
 \[
@@ -169,28 +169,28 @@ which disposes of the transcendental part of $Θ^2$. To convert the remaining te
 \]
 are real scalar multiples of one another. By direct substitution of \eqref{eqn:f},
 \[
-z - \iu\,\Im z_0
-= \frac{1}{ζ-ν} \bra{-ζ(\bar{z}_0 + \iu\,\Im z_0) + (μ\bar{z}_0 + \iu ν\,\Im z_0)}
-= -\frac{\Re z_0}{ζ-ν} \bra{ζ - ν\frac{\iu \,\Im z_0+ μν^{-1}\bar{z}_0}{\iu\,\Im z_0 + \bar{z}_0} }.
+z - \iu\,\Imag z_0
+= \frac{1}{ζ-ν} \bra{-ζ(\bar{z}_0 + \iu\,\Imag z_0) + (μ\bar{z}_0 + \iu ν\,\Imag z_0)}
+= -\frac{\Real z_0}{ζ-ν} \bra{ζ - ν\frac{\iu \,\Imag z_0+ μν^{-1}\bar{z}_0}{\iu\,\Imag z_0 + \bar{z}_0} }.
 \]
-From the definition $z_0 = f(0)$ and \eqref{eqn:f} we see that $μν^{-1}\bar{z}_0 = -z_0$. Then from \eqref{eqn:f_inv}, we recognise the constant inside the bracket as $f^{-1}(\iu\,\Im z_0)$. This may be evaluated by means of a geometric argument. Consider the $z$-plane, and the horizontal line that passes through $-\bar{z}_0$, $\iu \,\Im z_0$, $z_0$ and $\infty$. Under $f^{-1}$ these points are respectively mapped to $\infty$, $f^{-1}(\iu \,\Im z_0)$, $0$ and $ν$. So the line is mapped to a line in the $ζ$-plane that passes through the origin and $ν$. $\iu \,\Im z_0$ also lies on the imaginary axis of the $z$-plane, which is taken to the unit circle. Therefore we see that $f^{-1}(\iu \,\Im z_0) = -ν$.
+From the definition $z_0 = f(0)$ and \eqref{eqn:f} we see that $μν^{-1}\bar{z}_0 = -z_0$. Then from \eqref{eqn:f_inv}, we recognise the constant inside the bracket as $f^{-1}(\iu\,\Imag z_0)$. This may be evaluated by means of a geometric argument. Consider the $z$-plane, and the horizontal line that passes through $-\bar{z}_0$, $\iu \,\Imag z_0$, $z_0$ and $\infty$. Under $f^{-1}$ these points are respectively mapped to $\infty$, $f^{-1}(\iu \,\Imag z_0)$, $0$ and $ν$. So the line is mapped to a line in the $ζ$-plane that passes through the origin and $ν$. $\iu \,\Imag z_0$ also lies on the imaginary axis of the $z$-plane, which is taken to the unit circle. Therefore we see that $f^{-1}(\iu \,\Imag z_0) = -ν$.
 
 PCITURE OF THIS.\todo{}
 
 Using this, we may simplify the factor to
 \[
-z - \iu\,\Im z_0
-= -\frac{\Re z_0}{ζ-ν} \bra{ζ + ν }.
+z - \iu\,\Imag z_0
+= -\frac{\Real z_0}{ζ-ν} \bra{ζ + ν }.
 \]
 For some real number $r$,
 \[
 \lim_{β \to ν} Θ^2
-= r π(\Re z_0)\, d\left[ \frac{η}{ζ}\frac{ζ + ν }{ζ-ν} \right].
+= r π(\Real z_0)\, d\left[ \frac{η}{ζ}\frac{ζ + ν }{ζ-ν} \right].
 \]
 The pull back of this by the normalisation map $N$ is then
 \[
 N^* \lim_{β \to ν} Θ^2
-= r π(\Re z_0)\, d\left[ ζ^{-1}η \sqrt{-\bar{ν}}(ζ + ν) \right],
+= r π(\Real z_0)\, d\left[ ζ^{-1}η \sqrt{-\bar{ν}}(ζ + ν) \right],
 \]
 which also lies in the plane of differentials on the genus zero curve $Σ(α)$ meeting conditions REF. What we have shown is that if we move along a path in $\mathcal{M}_1$, the space of spectral data where the spectral curve has genus one, then the limit of this data as one of the branch points $β$ tends to the unit circles, after normalising the double point that develops on $Σ(α,ν)$, is potentially spectral data on the genus zero marked curve $Σ(α)$, because it meets conditions REF. There are no periods on a curve of genus zero, so REF is automatic. The only ocnditions that we have not yet shown to be satisfied in the limit is REF, the closing conditions.
 
@@ -230,9 +230,9 @@ For the range of $f(1) \in \iu\R$ to be bounded, we must forbid $f(1) \to \infty
 as long as $ν$ does not approach $-1$. Combining these two facts, for $ν \not\to \pm 1$,
 \begin{align*}
 \int_{γ_+(α)} N^* \lim_{β\to ν} Θ^2
-&= \int_{γ_+(α)} 0 - N^* \lim_{β\to ν} 2K  d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= \pm \lim_{β\to ν} \int_{γ_+(α,β)} 0 - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= \pm \lim_{β\to ν} \int_{γ_+(α,β)} 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Im z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= \int_{γ_+(α)} 0 - N^* \lim_{β\to ν} 2K  d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= \pm \lim_{β\to ν} \int_{γ_+(α,β)} 0 - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= \pm \lim_{β\to ν} \int_{γ_+(α,β)} 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
 &= \pm \lim_{β\to ν} \int_{γ_+(α,β)} Θ^2.
 \end{align*}
 Thus the relationship holds for $Θ^2$ as well, and by linear extension all differentials satisfying conditions REF.
