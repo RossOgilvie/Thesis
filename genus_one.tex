@@ -120,7 +120,8 @@ This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, 
 But the right hand side is an element of the unit circle, so again this possibility is ruled out. The proof of smoothness is entirely similiar for
 \begin{align*}
 ν &= \frac{ (α-β)\abs{1-\bar{α}β} - α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} - (1-\bar{α}β)\abs{α-β} }, \\
-z_0 &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} }, \\
+z_0 &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} },
+\labelthis{eqn:def z0} \\
 (z_0)^{-1} &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }, \text{ and} \\
 k &= \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \end{align*}
@@ -951,6 +952,7 @@ z \mapsto \frac{1}{kz}.
 Under the map $f_s \circ f^{-1}$ the point $\iu u$ is taken to $-\iu (ku)^{-1}$ and $\iu v$ is taken to $-\iu (kv)^{-1}$. Thus, under the label-swapping involution $λ$,
 \[
 λ: (p,k,u,v) \mapsto \bra{ p,k, -(ku)^{-1}, -(kv)^{-1} }.
+\labelthis{eqn:def_lambda}
 \]
 This gives us the covering transformations of the universal cover in the following way. Recall that the covering map of the universal cover $\mathcal{\tilde{A}}_1$ over $\mathcal{A}_1$ in part reads $u = \tan \tilde{u}/2$. That is, $\tilde{u} \in 2\atan u + 2π\Z$. If we take a point $(α,β) \in \mathcal{A}_1$ with some $u$ coordinate, the $\tilde{u}$ coordinate of any point of $\mathcal{\tilde{A}}_1$ that lies over $(β,α)$ must be
 \[
@@ -1134,7 +1136,7 @@ It meets conditions \ref{P:poles}--\ref{P:closing} and is exact, so must be an i
 
 Conversely, the integer combinations of differentials that meet the conditions \ref{P:poles}--\ref{P:closing} also meet those conditions. So the space of differentials meeting those conditions are a $\Z\times\Z$-subbundle of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. The differential $Ψ^E$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space $\mathcal{C}_1(p)$. However, for $p\neq 1$ the space of spectral curves $\mathcal{S}_1(p)$ is simply connected, so it is possible to make a consistent choice of paths on this subspace, and thereby to extend these differentials to a frame, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
 
-For $S=1$, take any path component of $\mathcal{S}_1(1)$. It is an annulus. Writing $S=1=n/m$ in as a reduced fraction implies that $m=n=1$. From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1)$ that wraps around the annulus once. If we make a choice of $γ_+,γ_-$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous compuations, each of
+For $S=1$, take any path component of $\mathcal{S}_1(1)$. It is an annulus. Writing $S=1=n/m$ in as a reduced fraction implies that $m=n=1$. From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1)$ that wraps around an annulus once. If we make a choice of $γ_+,γ_-$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous compuations, each of
 \[
 \int_{γ_+} Θ^P, \int_{γ_-} Θ^P
 \]
@@ -1150,70 +1152,128 @@ so that $\tilde{Ψ}^P - Ψ^P = -am'Θ^E = - m' Ψ^E$. Recall that the period of 
 
 PART ABOUT THE MAT2Z OF $\mathcal{M}_1$
 
-There are some symmetries and special cases that also bear mention. First, we have already remarked upon and made use of the symmetry
+There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry
 \[
 T(p,k,u,v) = -p T\bra{ \tfrac{1}{p}, k, v, u },
 \]
-but what is its interpretation? Looking at
+but how should one interpret it geometrically? Looking at the transformation
 \[
 p = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}}
-\mapsto \frac{\abs{1+α}\abs{1+β}}{\abs{1-α}\abs{1-β}},
+\mapsto \frac{1}{p} = \frac{\abs{1+α}\abs{1+β}}{\abs{1-α}\abs{1-β}},
 \]
-one would guess that it is induced by $(α,β) \mapsto (-α,-β)$. Indeed this can be seen to be the case, as $k$ is invariant under such a transformation, and the induced map between the spectral curves
+the natural guess would be that it is induced by $(α,β) \mapsto (-α,-β)$. Indeed this can be seen to be the case, as $k$ is invariant under such a transformation, and the associated map between the spectral curves
 \begin{align*}
 χ: Σ(α,β) &\to Σ(-α,-β) \\
 (ζ, η) &\mapsto (-ζ,-η)
 \end{align*}
-interchanges $1$ and $-1$, effectively swapping the roles of $u$ and $v$. The pullback of the differentials under the involution $χ$ would preserve the integrality of their integrals and so spectral data on $Σ(α,β)$ be transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises as the gauge transformation between the connections at $1$ and $-1$, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
+interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the involution $χ$ preserves the integrality of the periods and the integrals over $γ_+$, $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises from the spectral data as the gauge transformation between the connections corresponding to $ζ=1$ and $ζ=-1$ in \eqref{eqn:flat connections}, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
 
-This can be seen directly in the genus zero case. Remember the form of the harmonic map
+This can be seen directly in the genus zero case, which was treated in Chapter \ref{chp:Genus Zero}. Recall that the equation of any harmonic map corresponding to spectral data with a genus zeo spectral curve may, as in \eqref{eqn:genus zero simple map}, be written
 \[
-g(z) = \exp (4w_R \abs{X}\hat{X}) \cdot \exp (-4w_I \abs{Y}\hat{Y}), \quad
-\hat{X} = \begin{pmatrix}
+g(w_R + \iu w_R) = \exp (-4w_R X) \exp (4w_I Y),
+\]
+for
+\[
+X = \norm{X}\begin{pmatrix}
 0 & 1 \\
 -1 & 0
 \end{pmatrix}, \quad
-\hat{Y} = \begin{pmatrix}
-0 & e^{\iu ω} \\
--e^{-\iu ω} & 0
-\end{pmatrix},
+Y = \norm{Y}\begin{pmatrix}
+0 & e^{\iu δ} \\
+-e^{-\iu δ} & 0
+\end{pmatrix}.
 \]
-for some angle $ω$ between the derivatives in the $1$ and $\iu$ directions, which determines the image up to $SO(4)$ rotation. Under inversion
+The norms, $\norm{X}$ and $\norm{Y}$, come from the identification of $\su_2$ with $\R^3$ using the standard basis $\{σ_1,σ_2,σ_3\}$ defined in \eqref{eqn:su2 basis}. Geometrically, $δ$ is the angle between $X$ and $Y$. Under inversion,
 \[
-g(z)^{-1} = \exp (4w_I \abs{Y}\hat{Y}) \cdot \exp (-4w_R \abs{X}\hat{X}).
+g(w)^{-1} = \exp (-4w_I Y) \exp (4w_R X).
 \]
-In the genus zero case, the map between the spectral curves is $(ζ,η) \mapsto (-ζ,\iu η)$, so that the differentials transform as
+To bring this back into the form of \eqref{eqn:genus zero simple map}, we must perform two operations. First, we must change coordinates on the domain so that the real part is in the first factor. The multiplication $\tilde{w} = \iu w$ accomplishes this:
 \[
-χ^* d \bra{ ζ^{-1}η (bζ - \bar{b}) } = d \bra{ ζ^{-1}η (\iu b ζ + \iu\bar{b}) }.
+g(\tilde{w})^{-1} = \exp (4\tilde{w}_R Y) \exp (4\tilde{w}_I X).
 \]
-In particular, the domain is rotated by $\iu$, so that $w'_I = w_R$ and $w'_R = - w_I$. Rotating so that again the derivative in the real direction is fixed
-\[
-g(z)^{-1} = \exp (-4w_I \abs{Y}\begin{pmatrix}
+Second we must rotate the image so that $-Y$ is aligned with $σ_2$ and $X$ lies in the plane spanned by $σ_2$ and $σ_3$. This may be achived by $\SU(2)$ conjugation:
+\begin{align*}
+&\begin{pmatrix}
+\iu e^{\iu δ/2} & 0 \\
+0 & -\iu e^{-\iu δ/2}
+\end{pmatrix}^{-1}
+\norm{Y}\begin{pmatrix}
+0 & -e^{\iu δ} \\
+e^{-\iu δ} & 0
+\end{pmatrix}
+\begin{pmatrix}
+\iu e^{\iu δ/2} & 0 \\
+0 & -\iu e^{-\iu δ/2}
+\end{pmatrix}
+=
+\norm{Y}\begin{pmatrix}
 0 & 1 \\
 -1 & 0
-\end{pmatrix})
-\cdot \exp (-4w_R \abs{X}\begin{pmatrix}
-0 & -e^{-\iu ω} \\
-e^{\iu ω} & 0
-\end{pmatrix}).
-\]
-Thus we can see that the parameter $ω$ has been changed to $π-ω$. But on the other hand, examining the spectral curve the parameter $ω$ is given by (for some real $x$)
-\[
-\iu x e^{\iu ω} = \frac{α+1}{α-1},
-\]
-which under $α\mapsto -α$,
-\[
-\iu x e^{\iu ω'} = \frac{-α+1}{-α-1} = \bra{ \frac{α+1}{α-1} }^{-1} = \bra{\iu x e^{\iu ω} }^{-1}.
-\]
-Solving for $ω'$ gives $π-ω$, in complete agreement to before.
+\end{pmatrix}
+\\
+&\begin{pmatrix}
+\iu e^{\iu δ/2} & 0 \\
+0 & -\iu e^{-\iu δ/2}
+\end{pmatrix}^{-1}
+\norm{X}\begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\iu e^{\iu δ/2} & 0 \\
+0 & -\iu e^{-\iu δ/2}
+\end{pmatrix}
+=
+\norm{X}\begin{pmatrix}
+0 & e^{\iu(π- δ)} \\
+-e^{\iu (π-δ)} & 0
+\end{pmatrix}.
+\end{align*}
+Thus the angle parameter has become $π-δ$. This angle parameter determines the image of $g$ up to an $SO(4)$ rotation of $\S^3$. In particular, maps with supplementary angle parameters, such as $g$ and $g^{-1}$, have congruent images.
 
-\todo{} THERE is a bunch of fiddling around here to make the two approaches both come to $π-ω$, because the inversion also changes the domain subtlety, and ends up reversing one of the basis vectors. If instead you only cared about the unsigned angle between the vectors (ie up to complementary angle), then you could skip the domain related stuff and just say $-ω$ and $π-ω$ represent the same angle, up to a sign. See how much Emma and John hate the handwaving in this example. Could go either way.
-
-Returning to genus one, a special case of this are the spectral curves that are a fixed point of this transformation. In that case, $χ$ is an extra involution of the spectral curve and hence $β = -α$. These are exactly the genus one spectral curves that meet the conditions for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin identifies a particular one parameter family of these maps as the Gauss maps of Delauney surfaces. We identify in which part of $\mathcal{S}_1$ they reside.
-
-Firstly, as these are fixed points of $p \mapsto p^{-1}$, $p$ is one. The symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The plane $β=-α$ is two dimensional, but we have three parameters $(k,u,v)$ in this relation, so there must be some relation between them. As the four branch points are linear, $μ=\hat{α}$ and $ν = -\hat{α}$. Directly
+Recall that the parameter $x$ was defined by \eqref{eqn:conformal type} to be $\norm{Y}/\norm{X}$. The value of this ratio is inverted for $g^{-1}$. Now using \eqref{eqn:def branch point genus zero} to determine the branch point of the spectral curve associated to $g^{-1}$ we have
 \[
-z_0 = \frac{A+αB}{A-αB} = \frac{1+ \abs{α}}{1-\abs{α}},\quad
+\frac{\frac{1}{x} e^{\iu (π-δ)} - \iu}{\frac{1}{x} e^{\iu (π-δ)} + \iu}
+= \frac{-e^{-\iu δ} - \iu x}{-e^{-\iu δ} + \iu x}
+= \frac{-1 - \iu x e^{\iu δ}}{-1 + \iu x e^{\iu δ}}
+= -\frac{x e^{\iu δ}-\iu}{x e^{\iu δ} + \iu} = -α,
+\]
+which is to say the branch point of the spectral curve associated to $g^{-1}$ is the negative of the branch point of the spectral curve associated to $g$, as asserted above.
+
+One can observe these same effects at the level of spectral data. The map between $Σ(α)$ and $Σ(-α)$ induced by $ζ \mapsto -ζ$ is $χ(ζ,η) = (-ζ,\iu η)$. Pulling back the basis of differentials, defined by \eqref{eqn:genus zero differential basis},
+\begin{align*}
+χ^* Ψ^1
+&= d\, \Big\{ (-ζ)^{-1}(r^1 + \bar{r^1}(-ζ)) \iu η \Big\} \\
+&= d\, \Big\{ ζ^{-1}(-\iu r^1 + \iu\bar{r^1}ζ) η \Big\} \\
+χ^* Ψ^2
+&= d\, \Big\{ ζ^{-1}(-\iu r^2 + \iu\bar{r^2}ζ) η \Big\},
+\end{align*}
+where
+\begin{align*}
+r^1 &= \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} } \\
+r^2 &= \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }.
+\end{align*}
+If $\tilde{r}^1, \tilde{r}^2$ represents the generators of lattice of principal parts of the differentials on $Σ(-α)$, then
+\[
+-\iu r^1
+= -\iu \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} }
+= \frac{π}{2}\bra{ \frac{1}{\abs{1+(-α)}} - \iu \frac{1}{\abs{1-(-α)}} }
+= \tilde{r}^2,
+\]
+and
+\[
+-\iu r^2
+= -\iu \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }
+= -\frac{π}{2}\bra{ \frac{1}{\abs{1+(-α)}} + \iu \frac{1}{\abs{1-(-α)}} }
+= -\tilde{r}^1.
+\]
+Recall the interpretation of span of the principal parts as the universal cover of the domain, with the lattice generated by these differentials corresponding to tthe lattice of periods. The previous equation then shows a rotation by $\iu$, corresponding to how we had to define $\tilde{w} = \iu w$.
+
+Returning to genus one, of special interest are the spectral curves that are a fixed point of this transformation $χ$. For these spectral curves $χ$ is an extra involution and hence $β = -α$. These are exactly the genus one spectral curves that meet the conditions for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin identifies a particular one parameter family of these maps as the Gauss maps of Delauney surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
+
+Firstly, as these are fixed points of $p \mapsto p^{-1}$, $p$ is one. The $χ$-symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The plane $β=-α$ is two dimensional, but we have three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points are linear, $μ=\hat{α}$ and $ν = -\hat{α}$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
+\[
+z_0 = \frac{1+ \abs{α}}{1-\abs{α}},\quad
 k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
 \]
 It follows from \eqref{eqn:f} that
@@ -1223,11 +1283,12 @@ It follows from \eqref{eqn:f} that
 = \frac{1}{k} f(1)^{-1}
 = \frac{1}{k}(\iu u)^{-1},
 \]
-or concisely that $v= - (ku)^{-1}$. This is exactly the formula for the change of $u,v$ under the label swapping involution, as it should be because $χ$ is in effect swapping $(α,-α)$ amongst doing other things. Hence using the formula for the label swapping involution in addition to the $1/p$ symmetry
+or concisely that $v= - (ku)^{-1}$. But $u \mapsto -(ku)^{-1}$ is exactly the formula for the change of $u$ under the label swapping involution $λ$, described by \eqref{eqn:def_lambda}. Thus $χ$ and $λ$ act in the same way on the coordinates $u$ and $v$, as they should because $χ$, among other things, is swapping $α$ and $-α$, the two branch points inside the unit disc. Precomposing $T_0$ with $λ$ shifts its value by $1-p$, which in this case is zero. Hence using this together with the fact that precomposing $T_0$ with $χ$ negates the function shows that at points of $\mathcal{C}_1$ where the branch points are $\{α,-α\}$,
 \begin{align*}
 T_0\bra{1,k,u,-(ku)^{-1}}
 &= T_0\bra{1,k,-(ku)^{-1},u} + 1-p \\
 &= T_0\bra{1,k,-(ku)^{-1},u} \\
 &= -T_0\bra{1,k,u,-(ku)^{-1}},
 \end{align*}
-from which we deduce that $T_0$ is zero. Therefore we have shown that $\{(α,-α)\}$ is the only annulus of $\mathcal{S}_1(1)$ where $T_0$ is zero, and these correspond to harmonic maps to the sphere.
+from which we deduce that $T_0$ is zero. Conversely, annuli of $\mathcal{S}_1(1)$ are determined by the value $T_0$ takes on them.
+Therefore we have shown that $\{(α,-α)\}$ is the only annulus of $\mathcal{S}_1(1)$ where $T_0$ is zero, and these correspond to harmonic maps to the sphere.
