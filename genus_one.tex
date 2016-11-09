@@ -658,17 +658,17 @@ Using these, we rewrite $T_0$ in the following way.
 2π T_0(p,k,u,v) =
 4p& \left[ E F_0(v; k) - K E_0(v; k) \right]
 -4 \left[ E F_0(u; k) - K E_0(u; k) \right] \\
-&- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\} + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
+&- 4 K \left[p\left(\frac{w(\iu v)}{u-v} + kv \right) + \left(\frac{w(\iu u)}{u-v} - ku \right) \right] .
 \labelthis{eqn:T0 rewrite}
 \end{align*}
 
 In Section \ref{sec:EllipticContinuation}, analytic extensions of $F_0(x;k)$ and $E_0(x;k)$ are constructed. They are denoted respectively as $\tilde{F}$ and $\tilde{E}$. Thus the first two brackets of $T_0$ can be lifted to the universal cover by simply swapping to those ready-made functions. The following lemma will establish that the third bracket is analytic, and so lifts to the universal cover without the need for modifcation at all. Therefore we define
 \begin{align*}
 2π \tilde{T}(p,k,\tilde{u},\tilde{v})
-:= 4p &\left[ E \tilde{F}(\tilde{v}) - K \tilde{E}(\tilde{v}) \right]
-- 4 \left[ E \tilde{F}(\tilde{u}) - K \tilde{E}(\tilde{u}) \right] \\
-&- 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
-+ \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] .
+:= 4p &\left[ E \tilde{F}(\tilde{v};k) - K \tilde{E}(\tilde{v};k) \right]
+- 4 \left[ E \tilde{F}(\tilde{u};k) - K \tilde{E}(\tilde{u};k) \right] \\
+&- 4 K \left[p\left(\frac{w(\iu v)}{u-v} + kv \right)
++ \left(\frac{w(\iu u)}{u-v} - ku \right) \right] .
 \end{align*}
 
 \begin{lem}
@@ -789,8 +789,8 @@ From this formula, we factor out the common denominator $[w(\iu u)(u-v)^2]^{-1}$
 \begin{align*}
 V(p,k,v)
 &:= \lim_{u\to\infty} u^{-2} U(p,k,u,v) \\
-&= \lim_{u\to\infty} \Big\{-(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) \\
-&\qquad+ K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \Big\} \\
+&= \lim_{u\to\infty} \Big(-(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) \\
+&\qquad+ K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \Big) \\
 &= -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right].
 \labelthis{eqn:def V}
 \end{align*}
@@ -921,8 +921,8 @@ When $p \leq 1$, we employ the following symmetry.
 \begin{align*}
 T_0&(p,k,u,v) \\
 &= 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} \\
-&= -p\Big\{ -4\left[ E F(\iu v;k) - K E(\iu v;k) \right] + \frac{4}{p}\left[ E F(\iu u;k) - K E(\iu u;k) \right] \\
-&\hspace{8cm}+ 4\iu K \frac{ w(\iu v)+ \frac{1}{p}w(\iu u)}{u-v} \Big\}\\
+&= -p\Big( -4\left[ E F(\iu v;k) - K E(\iu v;k) \right] + \frac{4}{p}\left[ E F(\iu u;k) - K E(\iu u;k) \right] \\
+&\hspace{8cm}+ 4\iu K \frac{ w(\iu v)+ \frac{1}{p}w(\iu u)}{u-v} \Big)\\
 &= -p T_0\bra{ \tfrac{1}{p}, k, v, u },
 \end{align*}
 so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing. Again the implicit function theorem gives the result.
@@ -1090,7 +1090,7 @@ PICTURES OF HELICES\todo{}
 \section{Corollaries}
 \label{sec:Corollaries}
 
-In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are strips, but the components of $\mathcal{S}_1(1)$ are annuli. This section will show several properties of these components. First that although the moduli space of spectral curves is not simply connected, because of the annuli components, the moduli space of spectral data is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case lie within a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a general transformation on the space spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
+In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are strips, but the components of $\mathcal{S}_1(1)$ are annuli. This section will show several properties of these components. First that although the moduli space of spectral curves is not simply connected, because of the annuli components, the moduli space of spectral data is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case lie within a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a general transformation $χ$ on the space spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
 
 Before we can prove that the moduli space of spectral data is simply connected, we must revisit and improve on Lemma \ref{lem:closing_conds}. In that lemma, we see that the rationality of the values of the functions $S$ and $T$ are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data on any marked curve that meets both conditions. However, to examine the moduli of spectral data, we must find a `minimal' set of spectral data from which all other on that curve may generated.
 
@@ -1098,7 +1098,7 @@ Before we can prove that the moduli space of spectral data is simply connected, 
 On any curve $Σ \in \mathcal{S}_1$, there is a pair of differentials $Ψ^E,Ψ^P$ such that every differential that satisfies conditions \ref{P:poles}--\ref{P:closing} is an integer combination of that pair.
 
 \begin{proof}
-The method of proof is similar to that of Lemma \ref{lem:closing_conds}, but the construction must be refined a little. Let $Ψ^E$ be as described in that lemma. Specificcally recall that on a marked curve $Σ(α,β)$, if we write $S(α,β) = n/m$ as a rational number in lowest terms then define
+The method of proof is similar to that of Lemma \ref{lem:closing_conds}, but the construction must be refined a little. Let $Ψ^E$ be as described in that lemma. Specifically recall that on a marked curve $Σ(α,β)$, if we write $S(α,β) = n/m$ as a rational number in lowest terms then define
 \[
 a := \frac{2π\iu n}{2\iu η^+(1)} \text{ and } Ψ^E := a Θ^E.
 \]
@@ -1154,19 +1154,24 @@ PART ABOUT THE MAT2Z OF $\mathcal{M}_1$
 
 There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry
 \[
-T(p,k,u,v) = -p T\bra{ \tfrac{1}{p}, k, v, u },
+T_0(p,k,u,v) = -p T_0\bra{ \tfrac{1}{p}, k, v, u },
 \]
 but how should one interpret it geometrically? Looking at the transformation
 \[
 p = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}}
 \mapsto \frac{1}{p} = \frac{\abs{1+α}\abs{1+β}}{\abs{1-α}\abs{1-β}},
 \]
-the natural guess would be that it is induced by $(α,β) \mapsto (-α,-β)$. Indeed this can be seen to be the case, as $k$ is invariant under such a transformation, and the associated map between the spectral curves
+the natural guess would be that it is induced by
 \begin{align*}
-χ: Σ(α,β) &\to Σ(-α,-β) \\
+χ: \mathcal{A}_1 &\to \mathcal{A}_1 \\
+(α,β) &\mapsto (-α,-β).
+\end{align*}
+Indeed this can be seen to be the case, as $k$ is invariant under such a transformation, and the associated map between the spectral curves
+\begin{align*}
+χ_{(α,β)}: Σ(α,β) &\to Σ(-α,-β) \\
 (ζ, η) &\mapsto (-ζ,-η)
 \end{align*}
-interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the involution $χ$ preserves the integrality of the periods and the integrals over $γ_+$, $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises from the spectral data as the gauge transformation between the connections corresponding to $ζ=1$ and $ζ=-1$ in \eqref{eqn:flat connections}, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
+interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the map $χ_{(α,β)}$ preserves the integrality of the periods and the integrals over $γ_+$, $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises from the spectral data as the gauge transformation between the connections corresponding to $ζ=1$ and $ζ=-1$ in \eqref{eqn:flat connections}, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
 
 This can be seen directly in the genus zero case, which was treated in Chapter \ref{chp:Genus Zero}. Recall that the equation of any harmonic map corresponding to spectral data with a genus zeo spectral curve may, as in \eqref{eqn:genus zero simple map}, be written
 \[
@@ -1229,9 +1234,9 @@ e^{-\iu δ} & 0
 -e^{\iu (π-δ)} & 0
 \end{pmatrix}.
 \end{align*}
-Thus the angle parameter has become $π-δ$. This angle parameter determines the image of $g$ up to an $SO(4)$ rotation of $\S^3$. In particular, maps with supplementary angle parameters, such as $g$ and $g^{-1}$, have congruent images.
+Thus the angle parameter has become $π-δ$. As an aside, as seen in Figure \ref{fig:genus zero maps} this angle parameter determines the image of the harmonic map up to an $SO(4)$ rotation of $\S^3$. In particular, the maps $g$ and $g^{-1}$ have congruent images.
 
-Recall that the parameter $x$ was defined by \eqref{eqn:conformal type} to be $\norm{Y}/\norm{X}$. The value of this ratio is inverted for $g^{-1}$. Now using \eqref{eqn:def branch point genus zero} to determine the branch point of the spectral curve associated to $g^{-1}$ we have
+Recall that the parameter $x$ of $g$ was defined by \eqref{eqn:conformal type} to be $\norm{Y}/\norm{X}$. The value of this ratio is inverted for $g^{-1}$. Now using \eqref{eqn:def branch point genus zero} to determine the branch point of the spectral curve associated to $g^{-1}$ we have
 \[
 \frac{\frac{1}{x} e^{\iu (π-δ)} - \iu}{\frac{1}{x} e^{\iu (π-δ)} + \iu}
 = \frac{-e^{-\iu δ} - \iu x}{-e^{-\iu δ} + \iu x}
@@ -1240,38 +1245,38 @@ Recall that the parameter $x$ was defined by \eqref{eqn:conformal type} to be $\
 \]
 which is to say the branch point of the spectral curve associated to $g^{-1}$ is the negative of the branch point of the spectral curve associated to $g$, as asserted above.
 
-One can observe these same effects at the level of spectral data. The map between $Σ(α)$ and $Σ(-α)$ induced by $ζ \mapsto -ζ$ is $χ(ζ,η) = (-ζ,\iu η)$. Pulling back the basis of differentials, defined by \eqref{eqn:genus zero differential basis},
-\begin{align*}
-χ^* Ψ^1
-&= d\, \Big\{ (-ζ)^{-1}(r^1 + \bar{r^1}(-ζ)) \iu η \Big\} \\
-&= d\, \Big\{ ζ^{-1}(-\iu r^1 + \iu\bar{r^1}ζ) η \Big\} \\
-χ^* Ψ^2
-&= d\, \Big\{ ζ^{-1}(-\iu r^2 + \iu\bar{r^2}ζ) η \Big\},
-\end{align*}
-where
-\begin{align*}
-r^1 &= \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} } \\
-r^2 &= \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }.
-\end{align*}
-If $\tilde{r}^1, \tilde{r}^2$ represents the generators of lattice of principal parts of the differentials on $Σ(-α)$, then
-\[
--\iu r^1
-= -\iu \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} }
-= \frac{π}{2}\bra{ \frac{1}{\abs{1+(-α)}} - \iu \frac{1}{\abs{1-(-α)}} }
-= \tilde{r}^2,
-\]
-and
-\[
--\iu r^2
-= -\iu \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }
-= -\frac{π}{2}\bra{ \frac{1}{\abs{1+(-α)}} + \iu \frac{1}{\abs{1-(-α)}} }
-= -\tilde{r}^1.
-\]
-Recall the interpretation of span of the principal parts as the universal cover of the domain, with the lattice generated by these differentials corresponding to tthe lattice of periods. The previous equation then shows a rotation by $\iu$, corresponding to how we had to define $\tilde{w} = \iu w$.
+% One can observe these same effects at the level of spectral data. The map between $Σ(α)$ and $Σ(-α)$ induced by $ζ \mapsto -ζ$ is $χ(ζ,η) = (-ζ,\iu η)$. Pulling back the basis of differentials, defined by \eqref{eqn:genus zero differential basis},
+% \begin{align*}
+% χ^* Ψ^1
+% &= d\, \Big\{ (-ζ)^{-1}(r^1 + \bar{r^1}(-ζ)) \iu η \Big\} \\
+% &= d\, \Big\{ ζ^{-1}(-\iu r^1 + \iu\bar{r^1}ζ) η \Big\} \\
+% χ^* Ψ^2
+% &= d\, \Big\{ ζ^{-1}(-\iu r^2 + \iu\bar{r^2}ζ) η \Big\},
+% \end{align*}
+% where
+% \begin{align*}
+% r^1 &= \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} } \\
+% r^2 &= \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }.
+% \end{align*}
+% If $\tilde{r}^1, \tilde{r}^2$ represents the generators of lattice of principal parts of the differentials on $Σ(-α)$, then
+% \[
+% -\iu r^1
+% = -\iu \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} + \iu \frac{1}{\abs{1-α}} }
+% = \frac{π}{2}\bra{ \frac{1}{\abs{1+(-α)}} - \iu \frac{1}{\abs{1-(-α)}} }
+% = \tilde{r}^2,
+% \]
+% and
+% \[
+% -\iu r^2
+% = -\iu \frac{π}{2}\bra{ \frac{1}{\abs{1+α}} - \iu \frac{1}{\abs{1-α}} }
+% = -\frac{π}{2}\bra{ \frac{1}{\abs{1+(-α)}} + \iu \frac{1}{\abs{1-(-α)}} }
+% = -\tilde{r}^1.
+% \]
+% Recall the interpretation of span of the principal parts as the universal cover of the domain, with the lattice generated by these differentials corresponding to tthe lattice of periods. The previous equation then shows a rotation by $\iu$, corresponding to how we had to define $\tilde{w} = \iu w$.
 
-Returning to genus one, of special interest are the spectral curves that are a fixed point of this transformation $χ$. For these spectral curves $χ$ is an extra involution and hence $β = -α$. These are exactly the genus one spectral curves that meet the conditions for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin identifies a particular one parameter family of these maps as the Gauss maps of Delauney surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
+Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one spectral curves that meet the conditions \ref{}\todo{REF} for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin \cite[p693]{Hit90} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
 
-Firstly, as these are fixed points of $p \mapsto p^{-1}$, $p$ is one. The $χ$-symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The plane $β=-α$ is two dimensional, but we have three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points are linear, $μ=\hat{α}$ and $ν = -\hat{α}$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
+Firstly, as these are fixed points of $χ$ which sends $p \mapsto p^{-1}$, it follows that $p$ is one. The $χ$-symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points lie on a line, $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
 \[
 z_0 = \frac{1+ \abs{α}}{1-\abs{α}},\quad
 k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
@@ -1283,12 +1288,12 @@ It follows from \eqref{eqn:f} that
 = \frac{1}{k} f(1)^{-1}
 = \frac{1}{k}(\iu u)^{-1},
 \]
-or concisely that $v= - (ku)^{-1}$. But $u \mapsto -(ku)^{-1}$ is exactly the formula for the change of $u$ under the label swapping involution $λ$, described by \eqref{eqn:def_lambda}. Thus $χ$ and $λ$ act in the same way on the coordinates $u$ and $v$, as they should because $χ$, among other things, is swapping $α$ and $-α$, the two branch points inside the unit disc. Precomposing $T_0$ with $λ$ shifts its value by $1-p$, which in this case is zero. Hence using this together with the fact that precomposing $T_0$ with $χ$ negates the function shows that at points of $\mathcal{C}_1$ where the branch points are $\{α,-α\}$,
+or concisely that $v= - (ku)^{-1}$. But $u \mapsto -(ku)^{-1}$ is exactly the formula for the change of $u$ under the label swapping involution $λ$, described by \eqref{eqn:def_lambda}. Thus we see that $χ$ and $λ$ act in the same way on $\{(α,-α) \in \mathcal{A}_1)$, as one would expect because they are both swapping $α$ and $-α$, the two branch points inside the unit disc. Precomposing $T_0$ with $λ$ shifts its value by $1-p$, which in this case is zero. Hence using this together with the fact that precomposing $T_0$ with $χ$ negates the function shows that at a point of $\{(α,-α)\in \mathcal{A}_1\}$,
 \begin{align*}
 T_0\bra{1,k,u,-(ku)^{-1}}
 &= T_0\bra{1,k,-(ku)^{-1},u} + 1-p \\
-&= T_0\bra{1,k,-(ku)^{-1},u} \\
+% &= T_0\bra{1,k,-(ku)^{-1},u} \\
 &= -T_0\bra{1,k,u,-(ku)^{-1}},
 \end{align*}
-from which we deduce that $T_0$ is zero. Conversely, annuli of $\mathcal{S}_1(1)$ are determined by the value $T_0$ takes on them.
-Therefore we have shown that $\{(α,-α)\}$ is the only annulus of $\mathcal{S}_1(1)$ where $T_0$ is zero, and these correspond to harmonic maps to the sphere.
+from which we deduce that $T_0$ is zero. Conversely, the disjoint annuli that constitute $\mathcal{S}_1(1)$ are determined uniquely by the value $T_0$ takes on them.
+Therefore we have shown that $\{Σ(α,-α) \in \mathcal{C}_1\}$ is the only annulus of $\mathcal{S}_1(1)$ where $T_0$ is zero, and these are exactly the harmonic maps to the sphere with a genus one spectral curve.
