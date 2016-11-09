@@ -1,0 +1,32 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\begin{document}
+\begin{tikzpicture}
+\clip (-2.5,-3.5) rectangle (4.5,3.5);
+
+\draw[->] (-2.3,0)--(4.3,0) node[below left,color=black]{$\Real z$};
+\draw[->] (0,-3.3)--(0,3.3) node[below right]{$\Imag z$};
+
+% \foreach \x in {0,...,9}
+%   \draw (1 + 0.11*\x,-0.1) -- (1.055 + 0.11*\x, 0.1) -- (1.11 + 0.11*\x,-0.1);
+% \foreach \x in {0,...,9}
+%   \draw (-1 - 0.11*\x,-0.1) -- (-1.055 - 0.11*\x, 0.1) -- (-1.11 - 0.11*\x,-0.1);
+
+\draw[->,color=blue, thick] (0,-2.7) -- (0,0);
+\draw[color=blue, thick] (0,0) -- (0,2.7);
+\draw[->,color=blue, thick] (0,2.7) arc (90:0:2.7);
+\draw[color=blue, thick] (2.7,0) arc (0:-90:2.7);
+
+\fill (1,0) circle (0.05) node[below]{$1$};
+\fill (2.1,0) circle (0.05) node[below]{$k^{-1}$};
+
+\node[color=blue] at (2.2,2.2) {$C_R$};
+\fill (0,2.7) circle (0.05) node[left]{$iR$};
+\fill (0,-2.7) circle (0.05) node[left]{$-iR$};
+\fill (2.7,0) circle (0.05) node[below right]{$R$};
+
+\end{tikzpicture}
+\end{document}

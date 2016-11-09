@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\begin{document}
+\begin{tikzpicture}
+\clip (-3.5,-3.5) rectangle (3.5,3.5);
+
+\draw[color=gray,step=1.0,dotted] (-3.3,-3.3) grid (3.3,3.3);
+\draw[->] (-3.3,0)--(3.3,0) node[below left]{$\Real w$};
+\draw[->] (0,-3.3)--(0,3.3) node[below right]{$\Imag w$};
+
+\foreach \x in {-1,...,1}
+\foreach \y in {-1,...,1}
+  \fill[color=blue] (2*\x,2*\y) circle (0.05);
+
+\foreach \x in {-2,...,1}
+\foreach \y in {-2,...,1}
+  \fill[color=blue] (2*\x+1,2*\y+1) circle (0.05);
+
+\draw[->, thick] (0,0) -- node[right]{$\kappa_1$} (1,-1);
+\draw[->, thick] (0,0) -- node[left]{$\kappa_2$} (-1,-1);
+\end{tikzpicture}
+\end{document}
