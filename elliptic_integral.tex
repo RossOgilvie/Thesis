@@ -24,7 +24,8 @@ w^2 = (1-z^2)(1-k^2 z^2).
 \]
 Every elliptic curve may be brought to this highly symmetric form, known as {\it Legendre's form}. If the curve carries a reality structure (if it admits an antiholomorphic involution) then $k$ must be real and by a further M\"obius transformation one can arrange for $0 < k < 1$. We may choose to take branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$.
 
-\makefigure{The $z$-plane with branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. The $A$ period is in red and $B$ period is in blue.}{thesis_graphics_temp/branch_cuts.png}
+% \makefigure{The $z$-plane with branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. The $A$ period is in red and $B$ period is in blue.}{thesis_graphics_temp/branch_cuts.png}
+\makefigure{The $z$-plane with branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. The $A$ period is in red and $B$ period is in blue.}{tikz/branch_cuts}
 
 Consider the $A$-period, the anticlockwise loop around the branch points $-1$ and $1$. By the symmetry $w \mapsto -w$, the integral of the holomorphic differential $dz / w $ around this loop is twice the integral from $-1$ to $1$, which itself is twice the integral from $0$ to $1$. Thus this period of the holomorphic differential is $4K$, which earns $K$ the nickname of `quarter-period'.
 
@@ -156,7 +157,8 @@ The functions $F_0$ and $E_0$ are increasing functions, with the following limit
 \begin{proof}
 Consider once again the standard incomplete elliptic integrals. Let the aforementioned semicircular contour be composed of an interval along the imaginary axis from $-\iu R$ to $\iu R$, and let $C_R$ be the semicircular arc in the right half plane from $\iu R$ back down to $-\iu R$. The contour is homologous to a standard $B$ period around $[1,k^{-1}]$.
 
-\makefigure{}{thesis_graphics_temp/contour.png}
+% \makefigure{}{thesis_graphics_temp/contour.png}
+\makefigure{The contour $C_R$}{tikz/contour}
 
 We treat first the integral of the first kind. The contribution coming from the semicircular arc is negligible as $R$ tends to infinity, as can be seen below.
 \begin{align*}

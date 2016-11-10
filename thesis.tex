@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[twoside]{report}
 
 \usepackage{thesis_style}
 
@@ -8,22 +8,29 @@
 \setcounter{page}{1}
 \pagenumbering{roman}
 \include{frontmatter}
+\cleardoublepage
 \tableofcontents
-\newpage
+\cleardoublepage
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
 \setcounter{chapter}{-1}  % start chapter numbering at 0
 \include{preliminaries}
+\cleardoublepage
 \include{deform_lemma_redux}
+\cleardoublepage
 \include{genus_zero}
+\cleardoublepage
 \include{genus_one}
+\cleardoublepage
 \include{moduli_boundary}
 
 
 % APPENDICES
 \appendix
+\cleardoublepage
 \include{glossary}
+\cleardoublepage
 \include{elliptic_integral}
 % \include{misc}
 

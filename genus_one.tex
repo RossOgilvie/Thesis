@@ -3,8 +3,8 @@
 \chapter{The Genus One Moduli Space}
 % \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
 
-\section{Overview}
-\label{sec:Overview}
+% \section{Overview}
+% \label{sec:Overview}
 
 Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{S}_1$. Every marked curve of $\mathcal{C}_1$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods} and that also have integral periods (Condition \ref{P:periods}) but not every curve admits differentials that further meet the closing conditions, Condition \ref{P:closing}. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}_1$ within $\mathcal{C}_1$. We will investigate the topology of $\mathcal{S}_1$ and show it to be a dense collection of leaves of a foliation of $\mathcal{C}_1$. Most connected components will be simply connected, though there is also an exceptional family of annuli. The moduli space $\mathcal{M}_1$ of spectral data will be shown to be a trivial bundle over $\mathcal{S}_1$.
 
@@ -102,8 +102,10 @@ z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 \label{eqn:f_inv}
 \end{align}
 
-\makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$\label{fig:zeta plane}}{thesis_graphics_temp/zeta_plane.png}
-\makefigure{The $z$-plane, with points marked in black. The red labels are their images under $f^{-1}$}{thesis_graphics_temp/z_plane.png}
+% \makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$\label{fig:zeta plane}}{thesis_graphics_temp/zeta_plane.png}
+\maketikzfigure{The $ζ$-plane, with points marked in blue. The black labels are their images under $f$\label{fig:zeta plane}}{tikz/zeta_plane}
+% \makefigure{The $z$-plane, with points marked in black. The red labels are their images under $f^{-1}$}{thesis_graphics_temp/z_plane.png}
+\maketikzfigure{The $z$-plane, with points marked in black. The blue labels are their images under $f^{-1}$}{tikz/z_plane}
 
 \begin{lem}
 \label{lem:coeff_f_smooth}
@@ -312,26 +314,32 @@ And similiarly over the other marked point
 \int_{γ_{-}} Θ^E = -2i η^+(-1) = 2i \abs{1+α}\abs{1+β}.
 \]
 One can use these formulae to define an explicit condition that a marked curve must satisfy. Any exact differential with the properties of \ref{P:poles}--\ref{P:periods} must be a real multiple of $Θ^E$. Let the scaling factor be $a\in\R$. The two closing conditions applied to $a Θ^E$ are then
-\begin{align*}
+\begin{equation}
+\left.
+\begin{aligned}
 2\iu η^+(1) a &\in 2π\iu \Z, \\
 -2\iu η^+(-1) a &\in 2π\iu \Z.
-\end{align*}
+\end{aligned}
+\quad
+\right\}
+\label{eqn:exact closing cond}
+\end{equation}
 Eliminating $a$ from the two equations, there is a common solution for $a$ if and only if
 \[
-S(α,β) := \frac{2\iu η^+(1)}{-2\iu η^-(-1)} = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q^+.
+S(α,β) := \frac{2\iu η^+(1)}{-2\iu η^+(-1)} = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q^+.
 \labelthis{eqn:def_S}
 \]
 In other words, if and only if $S(α,β)$ is a positive rational. This gives the flavour of what we are aiming to achieve. We will produce two explicit functions such that a marked curve admits spectral data exactly when these functions take certain values. The two functions may be interpreted as defining equations for the subspace of spectral curves $\mathcal{S}_1$ within the space of all marked curves $\mathcal{C}_1$.
 
-Before we plow ahead to differentials with periods, there is a simplification we can make. Suppose that we have a triple of spectral data $(Σ,Θ^1,Θ^2)$ such that the differentials $Θ^1,Θ^2$ have imaginary periods $2π\iu n^1, 2π\iu n^2$ respectively. Let $l>0$ be the greatest common denominator of $n^1$ and $n^2$, and by Bezout's identity let $x,y$ be the integers that satisfy
+Before we plow ahead to differentials with periods, there is a simplification we can make. Suppose that we have a triple of spectral data $(Σ,Θ^1,Θ^2)$ such that the differentials $Θ^1,Θ^2$ have imaginary periods $2π\iu l_1, 2π\iu l_2$ respectively. Let $l>0$ be the greatest common denominator of $l_1$ and $l_2$, and by Bezout's identity let $x,y$ be integers that satisfy
 \[
-xn^1 + yn^2 = l.
+xl_1 + yl_2 = l.
 \]
 Then consider the differentials $Ψ^E,Ψ^P$ defined by the following integer combination
 \[
 \vt{Ψ^E}{Ψ^P} =
 \begin{pmatrix}
-\tfrac{n^2}{l}    &   -\tfrac{n^1}{l} \\
+\tfrac{l_2}{l}    &   -\tfrac{l_1}{l} \\
 x                       &   y
 \end{pmatrix}
 \vt{Θ^1}{Θ^2}
@@ -344,42 +352,110 @@ A marked curve admits spectral data if and only if it admits a pair of nonzero d
 \end{lem}
 
 Thus the condition above, $S\in\Q^+$, is a necessary conditon for a spectral curve to admit spectral data. To find a second necessary condition, concerning the existence of a  differential with imaginary period $2π\iu l$, we follow the same line of reasoning. For some real number $b$, we may write $Ψ^P = b Θ^E + l Θ^P$. Fix two paths $γ_+, γ_-$. The two closing conditions applied to $Ψ^P$ are then
-\begin{align*}
-2η^+(1) \iu b + l\int_{γ_+} Θ^P &= 2π\iu Γ^+ \in 2π\iu \Z, \\
--2η^+(-1) \iu b + l\int_{γ_-} Θ^P &= 2π\iu Γ^- \in 2π\iu \Z.
-\end{align*}
-Again elimination of $b$ yields the condition for a common solution to exist. This equation can be written as
+\begin{equation}
+\left.
+\begin{aligned}
+2\iu η^+(1) b + l\int_{γ_+} Θ^P &= 2π\iu Γ^P_+ \in 2π\iu \Z, \\
+-2\iu η^+(-1) b + l\int_{γ_-} Θ^P &= 2π\iu Γ^P_- \in 2π\iu \Z.
+\end{aligned}
+\quad
+\right\}
+\label{eqn:period closing cond}
+\end{equation}
+Again elimination of $b$ yields the condition for a common solution to exist. This condition can be written as
 \[
-2π\iu T(α,β,γ_+,γ_-) := S(α,β) \int_{γ_-} Θ^P - \int_{γ_+} Θ^P = 2π \iu \frac{S(α,β) Γ^- - Γ^+}{l}.
+2π\iu T(α,β,γ_+,γ_-) := S(α,β) \int_{γ_-} Θ^P - \int_{γ_+} Θ^P
+% = 2π \iu \frac{S(α,β) Γ^P_- - Γ^P_+}{l}
+\in 2π\iu \Q,
 \labelthis{eqn:def_T}
 \]
+using the definition of $S(α,β)$ to write $-η^+(1)/η^+(-1)$. We shall prove that these are sufficient conditions.
 
 \begin{lem}
 \label{lem:closing_conds}
-A marked curve admits a pair of nonzero differentials satisfying the closing conditions, one exact and one inexact, if and only if $S\in\Q^+$ and $T\in\Q$ for any paths $γ_+, γ_-$.
+A marked curve admits a pair of nonzero differentials satisfying the closing conditions \ref{P:closing}, one exact and one inexact, if and only if $S\in\Q^+$ and $T\in\Q$ for any paths $γ_+, γ_-$.
 
 \begin{proof}
 From the above discussion, these are a necessary conditions.
 
-For the converse suppose that the are both rational, say $S = n/m$ and $T = n'/m'$. The rationality of $S$ ensures the consistent solution of an $a$, and hence the existence of $Ψ^E = aΘ^E$ satisfying the closing conditions. Explicitly
+For the converse suppose that the are both rational, say $S = n/m$ and $T = n'/m'$. Further assume that $n$ and $m$ are coprime, as we can always take them to be.
+First we will attempt to solve \eqref{eqn:exact closing cond} to produce an exact differential $Ψ^E$. The rationality of $S$ directly ensures the consistent solution of an $a$.
+Explicitly, define
 \[
-a = \frac{2π\iu n}{2\iu η^+(1)} = \frac{2π\iu n}{-2\iu η^+(-1)}\frac{-2\iu η^+(-1)}{2\iu η^+(1)} = \frac{2π\iu n}{-2\iu η^+(-1)} \frac{1}{p} = \frac{2π\iu m}{-2\iu η^+(-1)}.
+a := \frac{2π\iu n}{2\iu η^+(1)}.
 \]
+Then observe that
+\[
+a = \frac{2π\iu n}{2\iu η^+(1)} = \frac{2π\iu n}{-2\iu η^+(-1)}\frac{-2\iu η^+(-1)}{2\iu η^+(1)} = \frac{2π\iu n}{-2\iu η^+(-1)} \frac{m}{n} = \frac{2π\iu m}{-2\iu η^+(-1)},
+\]
+and hence for $Ψ^E := aΘ^E$ its integrals over $γ_+$ and $γ_-$ are
+\begin{align*}
+\int_{γ_{+}} Ψ^E &= a \int_{γ_+} Θ^E = 2\iu η^+(1)a = 2π \iu n \\
+\int_{γ_{-}} Ψ^E &= a \int_{γ_-} Θ^E = -2i η^+(-1)a = 2\iu π m.
+\end{align*}
+This demonstrates the existence of an exact differential $Ψ^E$ that satisfies the closing conditions \ref{P:closing}.
 
-To find a $Ψ^P$, we must first solve
+To find a nonexact differential $Ψ^P$ that also satisfies the closing conditions, we must solve a similiar equation. For some real number $b$ and integer $l$, suppose that $Ψ^P = bΘ^E + l Θ^P$. We must find such $b$ and $l$ so that \eqref{eqn:period closing cond} holds for some integers $Γ^P_+$ and $Γ^P_-$. Recall that $T$ is a rational number $n'/m'$ and so eliminating $b$ from \eqref{eqn:period closing cond} gives
+\begin{align*}
+\frac{1}{2\iu η^+(1)} \bra{2π\iu Γ^P_+ - l\int_{γ_+} Θ^P}
+&= \frac{1}{-2\iu η^+(-1)} \bra{2π\iu Γ^P_- - l\int_{γ_-} Θ^P} \\
+2π\iu Γ^P_+ - l\int_{γ_+} Θ^P
+&= \frac{2\iu η^+(1)}{-2\iu η^+(-1)} \bra{2π\iu Γ^P_- - l\int_{γ_-} Θ^P} \\
+2π\iu \bra{ S Γ^P_- - Γ^P_+ }
+&= l \bra{S \int_{γ_-} Θ^P - \int_{γ_+} Θ^P} \\
+\frac{ n Γ^P_- - m Γ^P_+ }{m}
+&= l \frac{n'}{m'} \\
+m'(n Γ^P_- - m Γ^P_+)
+&= lmn'.
+\labelthis{eqn:period diff existence}
+\end{align*}
+Because later (Lemma \ref{lem:minimal differentials}) we will be interested in minimal solutions to these equations, we see that $l$ must be at least
 \[
-T = \frac{n'}{m'} = \frac{n'm}{m'm} = \frac{n Γ^- - mΓ^+}{lm}.
+l = \frac{m'}{\gcd(m',mn')}.
 \]
-We can see that we may take $l$ to be $m'$. Let $x,y$ be integers such that $xm-ny = 1$. Then we may take
+Take this to be the value of $l$. To then solve this equation for $Γ^P_+$ and $Γ^P_-$, as $n$ and $m$ are coprime let $x,y$ be integers such that $nx - my = 1$. By Bezout's Identity, the solution set is
 \[
-Γ^+ = n'mx,\;\; Γ^- = n'my,
+\Set{ (Γ^P_+, Γ^P_-) = \bra{\frac{mn'}{\gcd(m',mn')}y + mr, \frac{mn'}{\gcd(m',mn')}x + nr} }{ r \in \Z }.
 \]
-to obtain equality of the numerator. Hence the condition for the existence of a consistent solution for $b$ is met. The constant $b$ may be computed as
+Therefore we may take
 \[
-b = \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \int_{γ_+} Θ^P }.
+Γ^P_+ = \frac{mn'}{\gcd(m',mn')}y,\qquad Γ^P_- = \frac{mn'}{\gcd(m',mn')}x,
+\]
+to obtain equality in \eqref{eqn:period diff existence}. Hence, as for the exact differential, we may define
+\[
+b := \frac{1}{2\iu η^+(1)}\bra{ 2π\iu \frac{mn'}{\gcd(m',mn')}y - \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P }.
 \labelthis{eqn:period differential scaling}
 \]
-In summary, we have found real constants $a,b$ and $l$ such that $Ψ^E = aΘ^E, Ψ^P = bΘ^E + lΘ^P$ solve the closing conditions, and so we have demonstrated that the spectral curve admits differentials satisfying conditions \ref{P:poles}--\ref{P:closing}.
+Observe,
+\begin{align*}
+b
+&= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu \frac{mn'}{\gcd(m',mn')}y - \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P } \\
+&= \frac{1}{-2\iu η^+(-1)}\frac{m}{n}\Bigg( 2π\iu \frac{mn'}{\gcd(m',mn')}\frac{nx-1}{m} \\
+&\pushright{ - \frac{m'}{\gcd(m',mn')} \bra{\frac{n}{m}\int_{γ_-} Θ^P - 2π\iu \frac{n'}{m'} } \Bigg) }\\
+%%%%%%%%%%%%%%%%%
+% &= \frac{1}{-2\iu η^+(-1)}\Bigg( 2π\iu \frac{mn'}{\gcd(m',mn')}\frac{my}{n} - \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P \\
+% &\pushright{ + 2π\iu \frac{m}{n}\frac{n'}{\gcd(m',mn')} \Bigg) } \\
+%%%%%%%%%%%%%%%%%
+% &= \frac{1}{-2\iu η^+(-1)}\Bigg( 2π\iu \frac{mn'}{\gcd(m',mn')}\frac{nx-1}{n} - \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P \\
+% &\pushright{ + 2π\iu \frac{mn'}{n\gcd(m',mn')} \Bigg) } \\
+%%%%%%%%%%%%%%%%%
+&= \frac{1}{-2\iu η^+(-1)}\Bigg( 2π\iu \frac{mn'}{\gcd(m',mn')}x - \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P \\
+&\pushright{ - 2π\iu \frac{mn'}{n\gcd(m',mn')} + 2π\iu \frac{mn'}{n\gcd(m',mn')} \Bigg) } \\
+%%%%%%%%%%%%%%%%%
+&= \frac{1}{-2\iu η^+(-1)}\bra{ 2π\iu \frac{mn'}{\gcd(m',mn')}x - \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P}.
+\end{align*}
+With these definitions of $b$ and $l$, it follows that $Ψ^P = b Θ^E + l Θ^P$ satisfy the closing conditions:
+\begin{align*}
+\int_{γ_+} Ψ^P
+&= 2\iu η^+(1) b + l \int_{γ_+} Θ^P \\
+&= 2π\iu \frac{mn'}{\gcd(m',mn')}y - \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P  + \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P \\
+&= 2π\iu \frac{mn'}{\gcd(m',mn')}y \in 2π\iu \Z \\
+\int_{γ_-} Ψ^P
+&= -2\iu η^+(-1) b + l \int_{γ_-} Θ^P \\
+&= 2π\iu \frac{mn'}{\gcd(m',mn')}x - \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P + \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P \\
+&= 2π\iu \frac{mn'}{\gcd(m',mn')}x \in 2π\iu \Z.
+\end{align*}
+In summary, we have found real constants $a$ and $b$ and an integer $l$ such that $Ψ^E = aΘ^E$ and $Ψ^P = bΘ^E + lΘ^P$ satisfy the closing conditions.
 \end{proof}
 \end{lem}
 
@@ -1095,46 +1171,52 @@ In the last section, we deduced the topology of the path components of the modul
 Before we can prove that the moduli space of spectral data is simply connected, we must revisit and improve on Lemma \ref{lem:closing_conds}. In that lemma, we see that the rationality of the values of the functions $S$ and $T$ are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data on any marked curve that meets both conditions. However, to examine the moduli of spectral data, we must find a `minimal' set of spectral data from which all other on that curve may generated.
 
 \begin{lem}
+\label{lem:minimal differentials}
 On any curve $Σ \in \mathcal{S}_1$, there is a pair of differentials $Ψ^E,Ψ^P$ such that every differential that satisfies conditions \ref{P:poles}--\ref{P:closing} is an integer combination of that pair.
 
 \begin{proof}
-The method of proof is similar to that of Lemma \ref{lem:closing_conds}, but the construction must be refined a little. Let $Ψ^E$ be as described in that lemma. Specifically recall that on a marked curve $Σ(α,β)$, if we write $S(α,β) = n/m$ as a rational number in lowest terms then define
-\[
-a := \frac{2π\iu n}{2\iu η^+(1)} \text{ and } Ψ^E := a Θ^E.
-\]
-Suppose that $Θ$ is an exact differential meeting conditions \ref{P:poles}--\ref{P:closing}. We assert that it must be an integer multiple of $Ψ^E$. To see this, note that it is a real scalar of $Θ^E$ and compute its integrals
-\[
-\int_{γ_+} Θ = 2\iu η^+(1) b = 2π\iu \tilde{n}, \qquad
-\int_{γ_-} Θ = -2\iu η^+(-1) b = 2π\iu \tilde{m},
-\]
-for some $b\in\R$, $\tilde{n},\tilde{m} \in \Z$. By the definition of $S(α,β)$
-\[
-S = - \frac{η(1)}{η(-1)} = \frac{\tilde{n}}{\tilde{m}},
-\]
-so we must have that $\tilde{n} = ln, \tilde{m}= lm$ for an integer $l$. It follows that $b= la$ and hence $Θ = l Ψ$.
-
-We now turn our attention to the nonexact differentials. Suppose that for fixed paths $γ_+,γ_-$ the value of $T$ on the marked curve $Σ(α,β)$ is $n'/m'$ in lowest terms. Define $g$ to be $m'/\gcd(m,m')$. Now, similar to lemma \ref{lem:closing_conds}, let $x,y$ be integers with $nx-my = 1$ and $Γ^+ = n'my / \gcd(m,m')$, $Γ^- = n'mx / \gcd(m,m')$. Then
-\[
-\frac{nΓ^- - m Γ^+}{gm}
-= \frac{n n'mx - m n'my}{m'm}
-= \frac{n'(nx - my)}{m'}
-= \frac{n'}{m'},
-\]
-So we can solve \eqref{eqn:period differential scaling} for a differential $Ψ^P$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$. Now if $Θ$ is any differential that satisfies the closing conditions, we may write it as $Θ = bΘ^E + kΘ^P$ for $b\in\R$ and $k\in \Z$. Its period is $2π\iu k$ and let its integrals over $γ_+$ and $γ_-$ be $2π\iu e, 2π\iu f$. Eliminating $b$ leads to
+The method of proof is similar to that of Lemma \ref{lem:closing_conds}. As $Σ$ is a spectral curve, if we fix paths $γ_+,γ_-$ we know that the functions $S$ and $T$ take rational values. Let $S = n/m$ and $T= n'/m'$, where $n$ and $m$ are coprime. Recall the defintions of $Ψ^E$ and $Ψ^P$ as derived in that lemma, namely $Ψ^E = a Θ^E$ and $Ψ^P = b Θ^E + l Θ^P$, for constants
 \begin{align*}
-\frac{n'}{m'} &= \frac{nf - me}{km} \\
-n'k\bra{\frac{m}{\gcd(m,m')}} &= (nf - me)\bra{\frac{m'}{\gcd(m,m')}} \\
-&= (nf-me)g.
+a &:= \frac{2π\iu n}{2\iu η^+(1)}, \\
+l &:= \frac{m'}{\gcd(m',mn')}, \\
+b &:= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu \frac{mn'}{\gcd(m',mn')}y - \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P }.
 \end{align*}
-Now, by construction $g$ is coprime to $m$. Also, $m'$ is coprime to $n'$, so $g$ is also. Hence we see that $g$ must divide $k$. Finally, consider the differential
+We shall prove this lemma first for exact differentials. Suppose that $Θ$ is an exact differential meeting conditions \ref{P:poles}--\ref{P:closing}. We assert that it must be an integer multiple of $Ψ^E$. To see this, note that it is a real scalar of $Θ^E$ and compute its integrals over $γ_+$ and $γ_-$
+\begin{align*}
+\int_{γ_+} Θ &= a' \int_{γ_+} Θ^E = 2\iu η^+(1) a' =: 2π\iu Γ_+ \\
+\int_{γ_-} Θ &= a' \int_{γ_-} Θ^E = -2\iu η^+(-1) a' =: 2π\iu Γ_-,
+\end{align*}
+for some $a'\in\R$ and $Γ_+, Γ_- \in \Z$. By the definition of $S(α,β)$
 \[
-Θ - \frac{k}{g}Ψ^P.
+S = \frac{n}{m} = - \frac{η(1)}{η(-1)} = \frac{Γ_+}{Γ_-},
+\]
+so since $n/m$ is a simplified fraction we must have that $Γ_+ = cn$ and $Γ_- = cm$ for an integer $c$. It follows that $a' = ca$ and hence $Θ = c Ψ^E$.
+
+% We now turn our attention to a non-exact differentials. Similar to Lemma \ref{lem:closing_conds}, let $x,y$ be integers with $nx-my = 1$. Then
+% \[
+% \frac{nΓ^- - m Γ^+}{gm}
+% = \frac{n n'mx - m n'my}{m'm}
+% = \frac{n'(nx - my)}{m'}
+% = \frac{n'}{m'},
+% \]
+% So we can solve \eqref{eqn:period differential scaling} for a differential $Ψ^P$ with period $2π\iu g$ and integrals $2π\iu Γ^+, 2π\iu Γ^-$.
+
+Now if $Θ$ is any differential that satisfies the closing conditions, we may write it as $Θ = b'Θ^E + l'Θ^P$ for $b'\in\R$ and $l'\in \Z$. Its imaginary period is $2π\iu l'$ and let its integrals over $γ_+$ and $γ_-$ be $2π\iu Γ_+$ and $2π\iu Γ_-$. Similar to Lemma \ref{lem:closing_conds}, eliminating $b'$ from \eqref{eqn:period closing cond} leads to
+\begin{align*}
+% \frac{n'}{m'} &= \frac{nΓ_- - mΓ_+}{l'm} \\
+l'mn' &= m'(nΓ_- - mΓ_+) \\
+l'\frac{mn'}{\gcd(m',mn')} &= \frac{m'}{\gcd(m',mn')}(nΓ_- - mΓ_+) \\
+&= l(nΓ_- - mΓ_+)
+\end{align*}
+Now, by construction $l$ is coprime to $mn'$. Hence we see that $l$ must divide $l'$. Finally, consider the differential
+\[
+Θ - \frac{l'}{l}Ψ^P.
 \]
 It meets conditions \ref{P:poles}--\ref{P:closing} and is exact, so must be an integer multiple of $Ψ^E$ by the first part of this proof. Rearranging, we have written $Θ$ as an integer combination of $Ψ^E$ and $Ψ^P$.
 \end{proof}
 \end{lem}
 
-Conversely, the integer combinations of differentials that meet the conditions \ref{P:poles}--\ref{P:closing} also meet those conditions. So the space of differentials meeting those conditions are a $\Z\times\Z$-subbundle of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. The differential $Ψ^E$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space $\mathcal{C}_1(p)$. However, for $p\neq 1$ the space of spectral curves $\mathcal{S}_1(p)$ is simply connected, so it is possible to make a consistent choice of paths on this subspace, and thereby to extend these differentials to a frame, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
+The space of differentials meeting \ref{P:poles}--\ref{P:closing} are a $\Z\times\Z$-subbundle of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. The differential $Ψ^E$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space $\mathcal{C}_1(p)$. However, for $p\neq 1$ the space of spectral curves $\mathcal{S}_1(p)$ is simply connected, so it is possible to make a consistent choice of paths on this subspace, and thereby to extend these differentials to a frame, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
 
 For $S=1$, take any path component of $\mathcal{S}_1(1)$. It is an annulus. Writing $S=1=n/m$ in as a reduced fraction implies that $m=n=1$. From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1)$ that wraps around an annulus once. If we make a choice of $γ_+,γ_-$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous compuations, each of
 \[
@@ -1274,7 +1356,7 @@ which is to say the branch point of the spectral curve associated to $g^{-1}$ is
 % \]
 % Recall the interpretation of span of the principal parts as the universal cover of the domain, with the lattice generated by these differentials corresponding to tthe lattice of periods. The previous equation then shows a rotation by $\iu$, corresponding to how we had to define $\tilde{w} = \iu w$.
 
-Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one spectral curves that meet the conditions \ref{}\todo{REF} for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin \cite[p693]{Hit90} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
+Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one spectral curves that meet the conditions \ref{}\todo{REF} for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin \cite[p693]{Hitchin1990} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
 
 Firstly, as these are fixed points of $χ$ which sends $p \mapsto p^{-1}$, it follows that $p$ is one. The $χ$-symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points lie on a line, $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
 \[

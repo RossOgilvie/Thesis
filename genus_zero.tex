@@ -93,7 +93,8 @@ Thus the lattice of the periods of $f$, expressed in the variable $w$, is genera
 \labelthis{eqn:def kappa12}
 \]
 
-\makefigure{The lattice of periods of $f$. TODO This has the wrong labels }{thesis_graphics_temp/genus_zero_lattice.png}
+% \makefigure{The lattice of periods of $f$. TODO This has the wrong labels }{thesis_graphics_temp/genus_zero_lattice.png}
+\maketikzfigure{The lattice of periods of $f$.}{tikz/genus_zero_lattice}
 
 The geometric meaning of $κ$, $\norm{X}$, and $\norm{Y}$ are now apparent. The parameter $κ$ mediates between the $z$ and $w$ coordinates on $\C$ and so rotational offset angle of the lattice of periods of $f$ with respect to $\langle 1,τ \rangle$. More simply, the parameters $\norm{X}$ and $\norm{Y}$ determine the size of the lattice of periods by \eqref{eqn:def kappa12}. The three parameters must be chosen so that $1$ and $τ$ are points of this lattice of periods $\Z\langle \bar{κ}κ_1,\bar{κ}κ_2 \rangle$.
 That is, there must be integers $n^1,m^1,n^2,m^2$
@@ -193,6 +194,7 @@ is fixed. These are arcs of circles centered on the real axis with radii such th
 In the limit as $α$ approaches the unit circle for fixed $x$, the parameter $δ$ tends to $0$ or $π$ and the image of the harmonic map collapses into a circle, specifically a one-parameter subgroup of $\SU(2)$. A harmonic map to a circle subgroup is a particular case of a conformal map to a totally geodesic $2$-sphere, the class of harmonic tori in $\S^3$ that do not produce spectral curves by the construction of Section \ref{sec:construction}. In Chapter \ref{chp:Moduli Boundary}, we will develop a process whereby we take the limit of a family of spectral curves as it tends towards a curve that has a double point on the unit circle, and that singular curve is normalised to produce a spectral curve of lower genus. The analogous process is not possible here, as the normalisation of $η^2 = e^{-\iu \varphi} (ζ- e^{\iu \varphi})^2$ is the disjoint union of two spheres, which does not fit into our defintion of spectral data (Section \ref{sec:marked curve}). One can however appreciate the moral sentiment common to both these cases, that the development of a double point on the unit circle should be thought of as a fmaily of harmonic maps degenerating to `simpler' harmonic map.
 
 \makefigure{Constant parameter lines.}{thesis_graphics_temp/genus_zero_parameters.png}
+% \maketikzfigure{Constant parameter lines.}{tikz/genus_zero_parameters}
 
 Conversely if $δ$ is fixed, say at $δ=π/2$, but $x$ is allowed to vary then $α$ is given by
 \[

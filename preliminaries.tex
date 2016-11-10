@@ -6,7 +6,12 @@
 %%%%%%%%% I don't want these subsections in the table of contents, because there are too many of them and they're not really important. There is a command at the bottom that turns the ToC back on again
 \stoptocentries
 
-\section{Higgs Field}
+% \section{History}
+
+Introduction to topic, some history, discuss approaches, lay out structure of thesis.
+% TODO
+
+\section{Harmonic Maps to Lie Groups}
 
 Suppose that $M$ is a compact Riemann surface, and $G$ is a Lie group with a bi-invariant metric. Given any smooth map $f: M\to G$, we can pull back the bi-invariant metric connection on $TG$ to a connection we shall denote $A$ on $f^*(TG)$, with associated covariant exterior differential $d_A$. Using the the orientation of the complex structure of $M$, we have the Hodge star operator $* : Ω^1(M) \to Ω^1(M)$. The map $f$ is harmonic iff $d_A^* df$ is zero. Using the Hodge star to express the adjoint, this is equivalent to
 \[
@@ -35,7 +40,7 @@ F_A = d_A^2
 \]
 Together, these two equations
 \[
-d_A'' Φ = 0,\;\; F_A = [{Φ},{Φ}^*]. \labelthis{eqn:Hit1.7}
+d_A'' Φ = 0,\;\; F_A = [Φ \wedge Φ^*]. \labelthis{eqn:Hit1.7}
 \]
 are \cite[(1.7)]{Hitchin1990}. One may consider these equations directly, without the context of a map $f$ and its pullback of the tangent bundle $f^*(TG)$. To do so for a matrix group, consider instead a trivial complex vector bundle $V$ over $M$. Let $Φ$ be a $(1,0)$ section of $\mathfrak{g}(V) \subset \End(V)$ and $d_A$ a connection on $V$. One may also use a gauge theoretical setup, taking a principal $G$-bundle $P$. Then we may take $d_A$ to be a connection on $P$, and $Φ$ to be a $(1,0)$ section of the vector bundle $\ad P$ associated to $P$ via the adjoint representation. The two approaches are reconciled by taking $P$ to be the $G$-frame bundle of $V$. If a pair $(A,Φ)$ satisfies \eqref{eqn:Hit1.7} then the connections
 \[
@@ -48,15 +53,15 @@ are flat. If further they are trivial then it is possible to recover the harmoni
 \]
 it follows that $φ$ is the pull back of the Maurer-Cartan form by $f$. The first of \eqref{eqn:Hit1.7} then gives that $f$ is harmonic. We note that even if the two connections $d_1$ and $d_{-1}$ are not trivial, we may take the universal cover $\C \to M$ and pullback both $Φ$ and $d_A$. In the pullback those connections will be trivial, and so we will have a harmonic map from the plane into $G$.
 
-\section{Construction of a Spectral Curve}
+\section{Spectral Curves}
 \label{sec:construction}
 
-Consider now the case where $M$ a torus and $G=SU(2)$. Hitchin investigated solutions of \eqref{eqn:Hit1.7} and characterised them in terms of a spectral curve construction. We recall that construction now. From a pair $(A,Φ)$ we construct a $\C^\times$ family of flat $SL_2\C$ connections
+Consider now the case where $M$ a torus and $G=\SU(2)$. Hitchin investigated solutions of \eqref{eqn:Hit1.7} and characterised them in terms of a spectral curve construction. We recall that construction now. From a pair $(A,Φ)$ we construct a $\C^\times$ family of flat $\SL_2\C$ connections
 \[
 d_ζ := d_A + ζ^{-1}Φ - ζΦ^*,
 \labelthis{eqn:flat connections}
 \]
-where flatness follows from the two equations. Fix a base point and take a pair of generating loops for the fundamental group. The holonomy representation is described by two matrices $H(ζ)$ and $\tilde{H}(ζ)$ in $SL_2\C$ corresponding to transporting vectors along those loops parallel to $d_ζ$. The eigenvalues $μ$ of $H$ satisfy the quadratic equation
+where flatness follows from the two equations. Fix a base point and take a pair of generating loops for the fundamental group. The holonomy representation is described by two matrices $H(ζ)$ and $\tilde{H}(ζ)$ in $\SL_2\C$ corresponding to transporting vectors along those loops parallel to $d_ζ$. The eigenvalues $μ$ of $H$ satisfy the quadratic equation
 \[
 μ^2 - (\tr H)μ + 1 = 0.
 \]
@@ -74,9 +79,10 @@ Having assemebled this data $(Σ,Θ,\tilde{Θ},E)$, Theorem 8.1 characterises sp
 
 Throughout this thesis, we will consider only nonsingular spectral curves. The primary reason to do this is that our particular focus shall be on spectral curves of low genus, and all such spectral curves are nonsingular, as we demonstrate in Lemma \ref{lem:no singularities}. Such an assumption then allows us to comment when our methods exend more generally without distraction.
 
-\section{Marked Curve}
-\label{sec:marked curve}
+% \section{Marked Curve}
+% \label{sec:marked curve}
 
+Having now constructed a tuple of spectral data, we shall characterise the necessary and sufficient properties a tuple must posses in order to ensure that it corresponds to a harmonic map.
 Consider a (nonsingular) hyperelliptic curve $Σ$ over $\CP^1$ with hyperelliptic involution $σ$ and projection $π:Σ\to\CP^1$, such that $π\circ σ = π$. We call a tuple $(Σ,\{ ξ_0, σ(ξ_0) \}, \{ ξ_1, σ(ξ_1) \})$ a \emph{marked curve} if
 \begin{enumerate}[label=(P.\arabic*')]
 \item\label{P:marked points} $π(ξ_0) = 0$ and $π(ξ_1) = 1$.
@@ -150,8 +156,8 @@ P(ζ) = \prod_{i=0}^{g} (ζ - α_i)(1 -\bar{α}_i ζ).
 \]
 Notice the absence of any factors of the form $β + \bar{β}ζ$ because $P$ has no roots on the unit circle. The nice feature of this scaling is that it is well-behaved if one branch point is zero; the corresponding factor becomes simply $ζ$.
 
-\section{Differentials of the Second Kind}
-\label{sec:prelim diffs}
+% \section{Differentials of the Second Kind}
+% \label{sec:prelim diffs}
 
 We already mentioned that the differentials in the spectral data must be of the second kind. This means that they have at most double poles, but are residue free. Such differential are also required to possess certain symmetries arising from their origin as eigenvalues of connections. For instance, at a fixed $ζ\in\C^\times$ that is not a branch point of the spectral curve, the two eigenvalues of $H(ζ)$ are $μ(ζ)$ and $μ(ζ)^{-1}$. Hence $σ^*μ = μ^{-1}$, and so for $Θ = d \log μ$
 \[
@@ -165,7 +171,7 @@ On a marked curve $Σ$, the conditions a differential $Θ$ must satisfy are
 \item\label{P:reality} Reality: The differential satisfies $ρ^* Θ = - \bar{Θ}$
 \item\label{P:imaginary periods} Imaginary Periods: The differentials have purely imaginary periods
 \end{enumerate}
-On any curve $dζ/η$ is a holomorphic differential, so meromorphic differentials on $Σ$ are of the form $(f(ζ) + η g(ζ))dζ/η$ for $f,g$ meromorphic functions on $\CP^1$ REF MIRANDA. All meromorphic functions on $\CP^1$ are rational functions. Applying the hyperelliptic involution gives
+On any curve $dζ/η$ is a holomorphic differential, so meromorphic differentials on $Σ$ are of the form $(f(ζ) + η g(ζ))dζ/η$ for $f,g$ meromorphic functions on $\CP^1$ \cite[Prop~III.1.10]{Miranda1995}. All meromorphic functions on $\CP^1$ are rational functions. Applying the hyperelliptic involution gives
 \[
 σ^*\bra{ (f(ζ) + η g(ζ))\frac{dζ}{η} } = (-f(ζ) + η g(ζ))\frac{dζ}{η},
 \]
@@ -204,7 +210,7 @@ Finally, having purely imginary periods imposes further linear relations on the 
 \]
 Thus, the $A_i$-period of a real differential is real. If the periods are to be imaginary, these periods must all vanish, which imposes $g$ real constraints. In the choice of $b$ we have initially $2(g+4)$ real degrees of freedom, but they is reduced by half due to the reality, and by a further $2$ because of the relationship between $b_0$ and $b_1$. The $g$ constraints from the imaginary periods leave just $2$ real degrees of freedom in the choice of differential satisfying \ref{P:poles}--\ref{P:imaginary periods}. Thus there is a real 2-plane of differentials with purely imaginary periods, which we shall call $\mathcal{B}_Σ$.
 
-\section{Spectral Data}
+% \section{Spectral Data}
 
 We are now in a position to state fully the conditions for $(Σ,Θ,\tilde{Θ},E)$, $Σ$ a marked curve, $Θ$ and $\tilde{Θ}$ differentials satisfying \ref{P:poles}--\ref{P:imaginary periods} and $E$ a line bundle on $Σ$, must meet in order to correspond to a pair $(A,Φ)$ solving the equations \eqref{eqn:Hit1.7}.
 \begin{enumerate}[resume*]
@@ -215,7 +221,7 @@ We are now in a position to state fully the conditions for $(Σ,Θ,\tilde{Θ},E)
 
 A theorem of Hitchin \cite[Theorem~8.1]{Hitchin1990} provides a correspondence between solutions of \eqref{eqn:Hit1.7} and tuples $(Σ,Θ,\tilde{Θ},E)$ (though such a correspondence necessarily includes singular spectral curves, which we are not considering). If the choice of curve and differentials is fixed, one may still choose $E$ subject to only to condition \ref{P:quaternionic}. There are many such choices, they form a real $g$ dimensional torus in the Jacobian of $Σ$. Variation of $E$ is called an isospectral deformation. On the other hand, if we have a triple $(Σ,Θ,\tilde{Θ})$ satisfying the conditions, then there always exists such a line bundle $E$ completing the tuple. Thus we focus our attention on the problem of deforming the triple $(Σ,Θ,\tilde{Θ})$ and in particular to the structure of the space of such triples.
 
-\section{Closing Conditions}
+% \section{Closing Conditions}
 
 Moreover, \cite[Theorem~8.20]{Hitchin1990} gives an addtional condition on a triple $(Σ,Θ,\tilde{Θ})$ to ensure that the two connections are trivial, and so that the pair $(A,Φ)$ correspond to a harmonic map from the torus into $\S^3$.
 \begin{enumerate}[resume*]
@@ -237,10 +243,10 @@ Then we could define $μ$ to be $\exp(\int Θ)$. The integral of $Θ$ is defined
 \[
 μ(ξ_1)/μ(σ(ξ_1)) = \exp \left(\int_{γ_+} Θ \right) = 1.
 \]
-Together with $μ(ξ_1)μ(σ(ξ_1)) = μ(ξ_1)σ^*μ(ξ_1) = 1$, this implies that $μ(ξ_1),μ(σ(ξ_1)) = \pm 1$. Looking at the construction of solutions of \eqref{eqn:Hit1.7}, we are free to tensor with an element of $H^1(M,\Z_2)$, which we can use to fix the signs to be $+1$ in a unique way. Thus for any $Θ$ that satisfy \eqref{eqn:closing}, there is a unique corresponding $μ$ that satisfies the closing conditions. We therefore use the term closing conditions to describe either formulation. The final part of Theorem 8.20 states that the harmonic map is uniquely determined by its spectral data, up to the action of $SO(4)$ on $SU(3)$.
+Together with $μ(ξ_1)μ(σ(ξ_1)) = μ(ξ_1)σ^*μ(ξ_1) = 1$, this implies that $μ(ξ_1),μ(σ(ξ_1)) = \pm 1$. Looking at the construction of solutions of \eqref{eqn:Hit1.7}, we are free to tensor with an element of $H^1(M,\Z_2)$, which we can use to fix the signs to be $+1$ in a unique way. Thus for any $Θ$ that satisfy \eqref{eqn:closing}, there is a unique corresponding $μ$ that satisfies the closing conditions. We therefore use the term closing conditions to describe either formulation. The final part of Theorem 8.20 states that the harmonic map is uniquely determined by its spectral data, up to the action of $\SO(4)$ on $\SU(2)$.
 
-\section{Geometric Interpretation}
-INTERPRETATION OF SPECTRAL DATA
+% \section{Geometric Interpretation}
+% INTERPRETATION OF SPECTRAL DATA
 
 Given a set of spectral data, we can detect certain features of the corresponding map directly. The most important example of this has occurred several times already. The harmonic map $f$ is a conformal map if and only if $P(0) = 0$. Another example that we shall come across is the case where $f$ takes its image in a totally geodesic $2$-sphere. Such a case occurs exactly when $P$ is an even polynomial, and $Θ,\tilde{Θ}$ and $E$ are invariant under $τ\circ σ$, where $τ$ is the extra involution $τ(ζ,η) = (-ζ,η)$.
 

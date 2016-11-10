@@ -164,9 +164,12 @@ P = F F^1 F^2 \tilde{P},\;\; b^1 = F F^1 G \tilde{b}^1,\;\; b^2 = F F^2 G \tilde
 \]
 Because the spectral curve is nonsingular, $P$ has no repeated factors, and so the polynomials $F,F^1,F^2,\tilde{P}, \tilde{b}^1$ and $\tilde{b^2}$ are pairwise coprime. Be aware that the polynomials $b^1$ and $b^2$ may have higher order roots, so it is not possible to say if $G$ is coprime to $F$, $F^1$ or $F^2$. The common factor of $b^1$ and $b^2$, and therefore any differential on $Σ$ satisfying conditions \ref{P:poles}--\ref{P:imaginary periods}, is the product $FG$. We denote the degrees of the polynomials $F, F^1, F^2$ and $G$ as $d_F,d_1,d_2$ and $d_G$ respectively.
 
-\makefigure{\label{fig:common factors}
+% \makefigure{\label{fig:common factors}
+% The common factors of $P$, $b^1$ and $b^2$ are represented as overlaps between the three circles.}
+% {thesis_graphics_temp/polynomial_common_factors.png}
+\maketikzfigure{\label{fig:common factors}
 The common factors of $P$, $b^1$ and $b^2$ are represented as overlaps between the three circles.}
-{thesis_graphics_temp/polynomial_common_factors.png}
+{tikz/polynomial_common_factors}
 
 We may ask, given these common factors among $P, b^1$ and $b^2$, what, if any, factors do the polynomials $c^i$ and $Q$ possess? Inserting these factorisations into \eqref{eqn:EMPDi}, we observe that
 \[
@@ -212,9 +215,9 @@ iii && 2 & 0 \\ \cline{1-1}\cline{3-4}
 iv && \multicolumn{2}{|c|}{$FG \in \mathcal{P}^k_\R,\, k>2$} \\ \hline
 v & \multicolumn{3}{|c|}{$P_0 = 0$} \\ \hline
 \end{tabular}
-%%%%%%%%%%%%%%%%%%%%
-\newline
-%%%%%%%%%%%%%%%%%%%%
+\end{center}
+The four nonconformal cases may also be described purely in terms of the greatest common factor of $b^1$ and $b^2$.
+\begin{center}
 \begin{tabular}{|c|l|}
 \hline
 Case & Description\\ \hline\hline
