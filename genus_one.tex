@@ -716,7 +716,164 @@ In the limit as $α \to β$, this formula says that $k \to 1$. From the equation
 
 TODO DIAGRAM
 
-Returning to the main thrust of argument, the fact that the parameter space is not simply connected is fundamentally tied to the fact that $T$ is not a single valued function. We have defined a principal branch cut for $T$ and given a formula above, which will be useful for computations, but the more natural way to correct this deficiency is to move to the universal cover. By constructing a lift $\tilde{T}$ of $T$ which is single valued, we will be able to treat the level sets $T\in\Q$ globally and thereby acquire complete description of the topology of the space $\mathcal{S}_1$, significantly more than Theorem \ref{thm:moduli manifold} which shows that it is a surface.
+Returning to the main thrust of argument, the purpose of these new coordinates was to make it reasonable to compute the derivatives of $T$, so let us now do so. In particular, let us now compute the $u$-derivative of $T_0$, a principal branch cut of $T$, from the explicit formula in \eqref{eqn:Teqn}. The $v$-derivative is similar, but we will employ a symmetry in $T_0$ to avoid the need to compute it directly. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
+\[
+\Partial{}{u} F(\iu u; k) = \frac{\iu}{w(\iu u)},\;\;\;
+\Partial{}{u} E(\iu u; k) = \iu\frac{1+k^2 u^2}{w(\iu u)},
+\]
+and we recall the definition $w(\iu u) = \sqrt{(1+u^2)(1+k^2 u^2)}$, so elementarily
+\[
+\Partial{}{u} w(\iu u)
+= \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
+= \frac{(1+k^2)u + 2k^2 u^3}{w(\iu u)}.
+\]
+Equipped with these factors, the calculation of the derivative of $T_0$ is mechanical if tedious.
+% \begin{align*}\label{dTdk}
+% \frac{π}{2}\Partial{T_0}{k}
+% &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
+% \end{align*}
+\[
+\frac{π}{2}\Partial{T_0}{u}
+= -\frac{E}{w(\iu u)} + \frac{pK w(\iu v)}{(u-v)^2} + \frac{K}{w(\iu u)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
+\labelthis{eqn:dTdu}
+\]
+% \begin{equation}\label{dTdv}
+% \frac{π}{2}\Partial{T_0}{v}
+% = \frac{pE}{w(\iu v)} - \frac{K w(\iu u)}{(u-v)^2} - \frac{pK}{w(\iu v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
+% \end{equation}
+% \begin{equation}\label{dTdu'}
+% \frac{π}{2}\Partial{T}{u'}
+% = \frac{E}{w'(u')} + \frac{pK w(\iu v)}{(1-u'v)^2} + \frac{K}{w'(u')(1-u'v)^2}\left[1 + k^2v^2 + - u'v + k^2u'v + (u')^2 + (u')^2v^2 \right]
+% \end{equation}
+% \begin{equation}\label{dTdv'}
+% \frac{π}{2}\Partial{T}{v'}
+% = -\frac{pE}{w'(v')} + \frac{K w(\iu u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
+% \end{equation}
+While $T$ may be a multivalued function on $\mathcal{A}_1$, its derivative is not. The ambiguity present in $T$, which is defined locally only up to a constant, is removed by differentiation. From this formula, we factor out the common denominator $[w(\iu u)(u-v)^2]^{-1}$ to define a function $U$,
+\begin{multline*}
+U(p,k,u,v) := -(u-v)^2 E + pKw(\iu u)w(\iu v) \\
++ K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right].
+\labelthis{eqn:def U}
+\end{multline*}
+We shall need the value of the derivative `at infinity' too, and so let us also define
+\begin{align*}
+V(p,k,v)
+&:= \lim_{u\to\infty} u^{-2} U(p,k,u,v) \\
+&= \lim_{u\to\infty} \Big(-(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) \\
+&\qquad+ K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \Big) \\
+&= -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right].
+\labelthis{eqn:def V}
+\end{align*}
+The following lemma shows these functions $U$ and $V$, and therefore the derivative, are non-vanishing.
+
+\begin{lem}
+    \label{lem:deriv no zeroes}
+The functions $U$ and $V$, defined by \eqref{eqn:def U} and \eqref{eqn:def V} respectively are stricly positive for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
+
+\begin{proof}
+For this proof, we shall draw upon several inequalities that are explained in Section \ref{sec:Inequalities}. Let us prove that $U > 0$. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
+\begin{align*}
+U&(p,k,u,v)\\
+&= -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
+&> -(u-v)^2 K + Kw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
+&= K \left[ w(\iu u)w(\iu v) + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right]
+\end{align*}
+This formula is almost sufficent. The only term that could be negative is the one featuring $uv$. However, a lower bound for the square root terms is
+\[
+w(\iu u) = \sqrt{1 + (1+k^2)u^2 + k^2u^4} > \sqrt{(1+k^2)u^2} = \sqrt{(1+k^2)}\abs{u},
+\]
+so applying this to both $w(\iu u)$ and $w(\iu v)$ gives
+\begin{align*}
+U(p,k,u,v)
+&> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
+&\geq K \left[ 1 + k^2 u^2 v^2 \right].
+\end{align*}
+This is strictly positive, as required. The proof of the positivity of the second function, $V$, is almost immediate. Again using $K>E$,
+\[
+V(p,k,v) > K \left[ -1 + pk w(\iu v) + 1 + k^2 v^2\right].
+\]
+This establishes that $V$ is positive too.
+\end{proof}
+\end{lem}
+
+% This result is of interest because it shows that if $p \leq 1$, then the $v$ and $v'$ derivatives of $T$ are nonzero:
+% \begin{align*}
+% \frac{π}{2}\Partial{T}{v} &= \frac{-p}{w(\iu v)(u-v)^2} U\bra{ \frac{1}{p},k,u,v }, \\
+% \frac{π}{2}\Partial{T}{v'} &= \frac{p}{w'(v')(uv'-1)^2} V\bra{ \frac{1}{p},k,u,v' }.
+% \end{align*}
+% And if $p \geq 1$, then the $u$ and $u'$ derivatives of $T$ are nonzero:
+% \begin{align*}
+% \frac{π}{2}\Partial{T}{u} &= \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v }, \\
+% \frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
+% \end{align*}
+
+Finally in this section, we will compute the range of $T_0$, which will be used in Lemma \ref{} to show that the level sets of $T$ are graphs over the product of this range and $\R^+\times (0,1)$.
+\begin{lem}
+\label{lem:range_T}
+The range of $T_0$ on $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ is $\R$.
+
+\begin{proof}
+Fix $p$, but also fix any value for $k$. By \eqref{eqn:F0_E0_uniform_bounds}, $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$ but independent of $u$ and $v$, such that
+\[
+-C \leq 4p \left[ E F_0(v) - K E_0(v) \right]-4 \left[ E F_0(u) - K E_0(u) \right] \leq C.
+\]
+Substituting this into \eqref{eqn:T0 rewrite},the definition of $T_0$,
+\begin{gather*}
+- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C \\
+\leq
+2π T_0(p,k,u,v)
+\leq \\
+- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] + C,
+\end{gather*}
+and so it is sufficent to show that for any fixed $p$ and $k$ the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
+\[
+\lim_{u \to v^+} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
+= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^+} \frac{1}{u-v} = +\infty.
+\]
+From the other side,
+\[
+\lim_{u \to v^-} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
+= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^-} \frac{1}{u-v} = -\infty.
+\]
+By continuity $T_0$ obtains every value.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{The Topology of the Moduli Space}
+\label{sec:Topology}
+
+Having now constructed the universal cover $\mathcal{\tilde{A}}_1$ of $\mathcal{A}_1$ and pulled back the branch cut $T_0$ of $T$ to well-defined analytic function $\tilde{T}$, we turn our attention to examination of the level sets of $\tilde{T}$. It will be shown in the first part of this section that these are essentially strips that foliate $\mathcal{\tilde{A}}_1(p)$, the subspace of $\mathcal{\tilde{A}}_1$ on which $p$ is a fixed constant. There are three steps to this proof. First we calculate the derivatives of $\tilde{T}$ (immediately below). Second we show that they are everywhere non-vanishing (Lemma \ref{lem:deriv no zeroes}). Finally we show in Lemma \ref{lem:range_T} that the range of $\tilde{T}$ is $\R$. Together, in Lemma \ref{lem:T_graph}, they demonstrate that for any value $q\in\R$ the level set $q = \tilde{T}$ is a graph over two coordinates ($k$ and either $\tilde{u}$ or $\tilde{v}$), and so is diffeomorphic to a strip $(0,1)\times\R$.
+
+In the second part of this section we investigate the effects of the group covering transformations on these level sets of $\tilde{T}$, and thereby find the path connected components of the space of spectral curves $\mathcal{S}_1$.
+
+
+
+
+
+
+the fact that the parameter space is not simply connected is fundamentally tied to the fact that $T$ is not a single valued function. We have defined a principal branch cut for $T$ and given a formula above, which will be useful for computations, but the more natural way to correct this deficiency is to move to the universal cover. By constructing a lift $\tilde{T}$ of $T$ which is single valued, we will be able to treat the level sets $T\in\Q$ globally and thereby acquire complete description of the topology of the space $\mathcal{S}_1$, significantly more than Theorem \ref{thm:moduli manifold} which shows that it is a surface.
 
 \begin{lem}
     \label{lem:mathcal tilde A}
@@ -810,7 +967,7 @@ Then
 \label{eqn:tilde T computable}
 \end{align*}
 using Legendre's relation (see Section \ref{sec:Legendre's Relation}).
-Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular if $p$ is rational, $T \in \Q$ if and only if $\tilde{T} \in \Q$. In the following section, we will find the level sets of $\tilde{T}$ in $\mathcal{\tilde{A}}_1(p)$.
+Thus to do computations with the function $\tilde{T}$, one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular if $p$ is rational, $T \in \Q$ if and only if $\tilde{T} \in \Q$.
 
 
 
@@ -818,155 +975,6 @@ Thus to do computations with the function $\tilde{T}$, one can continue to work 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{The Topology of the Moduli Space}
-\label{sec:Topology}
-
-Having now constructed the universal cover $\mathcal{\tilde{A}}_1$ of $\mathcal{A}_1$ and pulled back the branch cut $T_0$ of $T$ to well-defined analytic function $\tilde{T}$, we turn our attention to examination of the level sets of $\tilde{T}$. It will be shown in the first part of this section that these are essentially strips that foliate $\mathcal{\tilde{A}}_1(p)$, the subspace of $\mathcal{\tilde{A}}_1$ on which $p$ is a fixed constant. There are three steps to this proof. First we calculate the derivatives of $\tilde{T}$ (immediately below). Second we show that they are everywhere non-vanishing (Lemma \ref{lem:deriv no zeroes}). Finally we show in Lemma \ref{lem:range_T} that the range of $\tilde{T}$ is $\R$. Together, in Lemma \ref{lem:T_graph}, they demonstrate that for any value $q\in\R$ the level set $q = \tilde{T}$ is a graph over two coordinates ($k$ and either $\tilde{u}$ or $\tilde{v}$), and so is diffeomorphic to a strip $(0,1)\times\R$.
-
-In the second part of this section we investigate the effects of the group covering transformations on these level sets of $\tilde{T}$, and thereby find the path connected components of the space of spectral curves $\mathcal{S}_1$.
-
-Let us now compute the derivatives of the terms of $T_0$, which we recall was written explictly in \eqref{eqn:Teqn}.
-% In the interest of having manageable formulae, we recall the definition of $w'(\iu t)^2 = (1 + t^2)(k^2 + t^2)$.
-As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
-\[
-\Partial{}{u} F(\iu u; k) = \frac{\iu}{w(\iu u)},\;\;\;
-\Partial{}{u} E(\iu u; k) = \iu\frac{1+k^2 u^2}{w(\iu u)},
-\]
-and recall $w(\iu u) = \sqrt{(1+u^2)(1+k^2 u^2)}$, so that
-\[
-\Partial{}{u} w(\iu u)
-= \Partial{}{u} \sqrt{1+u^2}\sqrt{1+k^2 u^2}
-= \frac{(1+k^2)u + 2k^2 u^3}{w(\iu u)}.
-\]
-% The other derivatives of elliptic integrals are calculated in Section \ref{sec:Derivatives}.
-Equipped with these parts, the calculation of the derivative of $T_0$ is mechanical if tedious.
-% \begin{align*}\label{dTdk}
-% \frac{π}{2}\Partial{T_0}{k}
-% &= \frac{1}{k(1-k^2)}\frac{1}{u-v} \left[ p \sqrt { \frac{1+v^2}{1+k^2v^2}} + \sqrt { \frac{1+u^2}{1+k^2u^2} } \right] \left[ -(1+k^2uv) E + (1-k^2)K \right]
-% \end{align*}
-\[
-\frac{π}{2}\Partial{T_0}{u}
-= -\frac{E}{w(\iu u)} + \frac{pK w(\iu v)}{(u-v)^2} + \frac{K}{w(\iu u)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
-\labelthis{dTdu}
-\]
-% \begin{equation}\label{dTdv}
-% \frac{π}{2}\Partial{T_0}{v}
-% = \frac{pE}{w(\iu v)} - \frac{K w(\iu u)}{(u-v)^2} - \frac{pK}{w(\iu v)(u-v)^2}\left[1 + u^2 - uv + v^2 + k^2 uv + k^2 u^2v^2 \right]
-% \end{equation}
-% While $T$ may be multivalued on $\mathcal{A}_1'$, its derivatives are not: the ambiguity of being locally defined only up to a constant is removed by differentiation. Henceforth we can drop the subscript $0$ on derivatives.
-
-% \begin{equation}\label{dTdu'}
-% \frac{π}{2}\Partial{T}{u'}
-% = \frac{E}{w'(u')} + \frac{pK w(\iu v)}{(1-u'v)^2} + \frac{K}{w'(u')(1-u'v)^2}\left[1 + k^2v^2 + - u'v + k^2u'v + (u')^2 + (u')^2v^2 \right]
-% \end{equation}
-% \begin{equation}\label{dTdv'}
-% \frac{π}{2}\Partial{T}{v'}
-% = -\frac{pE}{w'(v')} + \frac{K w(\iu u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
-% \end{equation}
-From this formula, we factor out the common denominator $[w(\iu u)(u-v)^2]^{-1}$ to define a function $U$. We need the derivative `at infinity' too, and so let us also define
-\begin{align*}
-V(p,k,v)
-&:= \lim_{u\to\infty} u^{-2} U(p,k,u,v) \\
-&= \lim_{u\to\infty} \Big(-(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) \\
-&\qquad+ K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \Big) \\
-&= -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right].
-\labelthis{eqn:def V}
-\end{align*}
-We show these functions $U$ and $V$, and therefore the derivatives, are non-vanishing.
-
-\begin{lem}
-    \label{lem:deriv no zeroes}
-The functions
-\[
-U(p,k,u,v) := -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right]
-\]
-and
-\[
-V(p,k,v) := -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right]
-\]
-have no zeroes for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
-\begin{proof}
-We shall prove this statement by showing that the two functions are in fact always positive. We will draw on several inequalities that are explained in Section \ref{sec:Inequalities}. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
-\begin{align*}
-U&(p,k,u,v)\\
-&= -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
-&> -(u-v)^2 K + Kw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
-&= K \left[ w(\iu u)w(\iu v) + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right]
-\end{align*}
-This formula is almost sufficent. The only term that could be negative is the one featuring $uv$. However, a lower bound for the square root terms is
-\[
-w(\iu u) = \sqrt{1 + (1+k^2)u^2 + k^2u^4} > \sqrt{(1+k^2)u^2} = \sqrt{(1+k^2)}\abs{u},
-\]
-so
-\begin{align*}
-U(p,k,u,v)
-&> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
-&\geq K \left[ 1 + k^2 u^2 v^2 \right].
-\end{align*}
-This is positive, so $U$ is without zeroes. The second function, $V$, is almost immediate. Again using $K>E$,
-\[
-V(p,k,v) > K \left[ -1 + pk w(\iu v) + 1 + k^2 v^2\right].
-\]
-This establishes that $V$ has no zeroes either.
-\end{proof}
-\end{lem}
-
-% This result is of interest because it shows that if $p \leq 1$, then the $v$ and $v'$ derivatives of $T$ are nonzero:
-% \begin{align*}
-% \frac{π}{2}\Partial{T}{v} &= \frac{-p}{w(\iu v)(u-v)^2} U\bra{ \frac{1}{p},k,u,v }, \\
-% \frac{π}{2}\Partial{T}{v'} &= \frac{p}{w'(v')(uv'-1)^2} V\bra{ \frac{1}{p},k,u,v' }.
-% \end{align*}
-% And if $p \geq 1$, then the $u$ and $u'$ derivatives of $T$ are nonzero:
-% \begin{align*}
-% \frac{π}{2}\Partial{T}{u} &= \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v }, \\
-% \frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
-% \end{align*}
-
-\begin{lem}
-\label{lem:range_T}
-The range of $\tilde{T}$ on $\mathcal{A}_1(p)$ is $\R$.
-
-\begin{proof}
-Fix $p$, but also fix any value for $k$. By \eqref{eqn:F0_E0_uniform_bounds}, $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$ but independent of $u$ and $v$, such that
-\[
--C \leq 4p \left[ E F_0(v) - K E_0(v) \right]-4 \left[ E F_0(u) - K E_0(u) \right] \leq C.
-\]
-Substituting this into \eqref{eqn:T0 rewrite},the definition of $T_0$,
-\begin{gather*}
-- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C \\
-\leq
-2π T_0(p,k,u,v)
-\leq \\
-- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] + C,
-\end{gather*}
-and so it is sufficent to show that for any fixed $p$ and $k$ the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
-\[
-\lim_{u \to v^+} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
-= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^+} \frac{1}{u-v} = +\infty.
-\]
-From the other side,
-\[
-\lim_{u \to v^-} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
-= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^-} \frac{1}{u-v} = -\infty.
-\]
-By continuity $T_0$, and therefore $\tilde{T}$, obtains every value.
-\end{proof}
-\end{lem}
 
 
 
@@ -1022,6 +1030,14 @@ T_0&(p,k,u,v) \\
 so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is nonvanishing. Again the implicit function theorem gives the result.
 \end{proof}
 \end{lem}
+
+
+
+
+
+
+
+
 
 With this lemma in hand, we are within striking distance of results about $\mathcal{S}_1$. Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves, which are marked curves that admit spectral data. We will recover $\mathcal{S}_1$ as the quotient of the level sets of $\tilde{T}$ by the group of covering transformations $\mathcal{\tilde{A}}_1$ over $\mathcal{C}_1$.
 
