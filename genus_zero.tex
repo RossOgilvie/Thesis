@@ -6,7 +6,7 @@
 The moduli space of spectral data where the spectral curve is genus zero is an instructive case.
 It is possible to describe this space using only elementary functions, so we will give explicit formulae for all such harmonic maps $f$ and their associated solutions $(A,Φ)$ to \eqref{eqn:Hit1.7} and spectral data $(Σ,Θ^1,Θ^2)$. These formulae will allow us to illustrate the correspondences between certain properties of the map and its spectral data. The process of deriving the spectral data from a formula of a harmonic map also serves as a demonstration of the spectral curve construction that was outlined in Section \ref{sec:construction}. Finally, we may describe the moduli space $\mathcal{M}_0$ as a disjoint union of discs to both give an example of the results of the previous chapter and as a guide for the description of $\mathcal{M}_1$ in the subsequent chapter.
 
-The derivations within this chapter may be divided into three parts. In the first part, we start with equations \eqref{eqn:Hit1.7} and find all translation invariant solutions. Among these solutions, we determine which correspond to harmonic maps from a torus by forcing a periodicity constraint. We then write an explict formula for each harmonic map, and bring it into a standard form by applying rotations. In the second part, we take these harmonic maps and work through the steps of Section \ref{sec:construction} to produce the associated spectral data. Further calculations give rise to formulae for the infinitesimal deformations in terms of derivative of the branch point, and an expression of the energy of the harmonic map.
+The derivations within this chapter may be divided into three parts. In the first part, we start with equations \eqref{eqn:Hit1.7} and find all translation invariant solutions. Among these solutions, we determine which correspond to harmonic maps from a torus by forcing a periodicity constraint. We then write an explicit formula for each harmonic map, and bring it into a standard form by applying rotations. In the second part, we take these harmonic maps and work through the steps of Section \ref{sec:construction} to produce the associated spectral data. Further calculations give rise to formulae for the infinitesimal deformations in terms of derivative of the branch point, and an expression of the energy of the harmonic map.
 
 Let us start then by finding all translation invariant pairs $(A,Φ)$ solving equations \eqref{eqn:Hit1.7}. By translation invariance we mean that, for $z\in\C$ a uniformising coordinate on the torus $M = \C/\Z\langle 1,τ\rangle$, we may write the Higgs field as $Φ = F \,dz$ and the $(0,1)$ part of the connection as $d''_A = d'' + G \,d\bar{z}$ with respect to some trivialisation $d$, for constant traceless matrices $F$ and $G$ (compare to \cite[(9.11)]{Hitchin1990}). With these definitions, equations \eqref{eqn:Hit1.7} become
 \[
@@ -138,7 +138,7 @@ F = κ\norm{X} \begin{pmatrix}
 0 & 1 + \iu xe^{\iu δ} \\ -1-\iu xe^{-\iu δ} & 0
 \end{pmatrix},
 \]
-and likewise $G = \bar{κ}^2 F$. Recall the family of flat connections \eqref{eqn:flat connection translation}. Again, because we can explicitly solve the parallel transport equations, we can easily compute the holonomy matrices. For a connection $d_ζ$, the holomony matrix for the loop from $z=0$ to $1$ is
+and likewise $G = \bar{κ}^2 F$. Recall the family of flat connections \eqref{eqn:flat connection translation}. Again, because we can explicitly solve the parallel transport equations, we can easily compute the holonomy matrices. For a connection $d_ζ$, the holonomy matrix for the loop from $z=0$ to $1$ is
 \[
 H^1(ζ) = \exp (- G + G^* - ζ^{-1}F + ζ F^*),
 \]
@@ -181,7 +181,7 @@ Following \eqref{eqn:eigneline curve}, points of the eigenline curve in $\CP^1 \
 % \end{align*}
 From this we can see where and to what order the eigenlines coincide. The plus-minus sign produces two distinct lines unless one of the components of the homogeneous coordinates has a root, with the order of coincidence the same as the order of the root. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 + \iu x e^{-\iu δ}$ never vanish. Hence the eigenlines coincide only over $α$ and $\cji{α}$, and only to first order. The spectral curve is therefore $η^2 = (ζ-α)(1-\bar{α}ζ)$, a genus zero hyperelliptic curve without singularities.
 
-Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some nonrigorous intutition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is the Cayley transform, a M\"obius transformation of the upper half plane to the unit disc. One can write the inverse transformation as
+Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some non-rigorous intuition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane, \eqref{eqn:def branch point genus zero} is the Cayley transform, a M\"obius transformation of the upper half plane to the unit disc. One can write the inverse transformation as
 \[
 x e^{\iu δ} = \iu \frac{1+α}{1-α}.
 \]
@@ -189,9 +189,9 @@ Taking the magnitude of both sides shows that $x$ is constant along arcs such th
 \[
 \abs{\frac{1+α}{1-α}}
 \]
-is fixed. These are arcs of circles centered on the real axis with radii such that the circle is perpendicular to the unit circle. If $x$ is constant, so too is $τ$, and along this arc the corresponding family of harmonic maps have the same domain but images changing as in Figure \ref{fig:genus zero maps}.
+is fixed. These are arcs of circles centred on the real axis with radii such that the circle is perpendicular to the unit circle. If $x$ is constant, so too is $τ$, and along this arc the corresponding family of harmonic maps have the same domain but images changing as in Figure \ref{fig:genus zero maps}.
 
-In the limit as $α$ approaches the unit circle for fixed $x$, the parameter $δ$ tends to $0$ or $π$ and the image of the harmonic map collapses into a circle, specifically a one-parameter subgroup of $\SU(2)$. A harmonic map to a circle subgroup is a particular case of a conformal map to a totally geodesic $2$-sphere, the class of harmonic tori in $\S^3$ that do not produce spectral curves by the construction of Section \ref{sec:construction}. In Chapter \ref{chp:Moduli Boundary}, we will develop a process whereby we take the limit of a family of spectral curves as it tends towards a curve that has a double point on the unit circle, and that singular curve is normalised to produce a spectral curve of lower genus. The analogous process is not possible here, as the normalisation of $η^2 = e^{-\iu \varphi} (ζ- e^{\iu \varphi})^2$ is the disjoint union of two spheres, which does not fit into our defintion of spectral data (Section \ref{sec:marked curve}). One can however appreciate the moral sentiment common to both these cases, that the development of a double point on the unit circle should be thought of as a fmaily of harmonic maps degenerating to `simpler' harmonic map.
+In the limit as $α$ approaches the unit circle for fixed $x$, the parameter $δ$ tends to $0$ or $π$ and the image of the harmonic map collapses into a circle, specifically a one-parameter subgroup of $\SU(2)$. A harmonic map to a circle subgroup is a particular case of a conformal map to a totally geodesic $2$-sphere, the class of harmonic tori in $\S^3$ that do not produce spectral curves by the construction of Section \ref{sec:construction}. In Chapter \ref{chp:Moduli Boundary}, we will develop a process whereby we take the limit of a family of spectral curves as it tends towards a curve that has a double point on the unit circle, and that singular curve is normalised to produce a spectral curve of lower genus. The analogous process is not possible here, as the normalisation of $η^2 = e^{-\iu \varphi} (ζ- e^{\iu \varphi})^2$ is the disjoint union of two spheres, which does not fit into our definition of spectral data (Section \ref{sec:marked curve}). One can however appreciate the moral sentiment common to both these cases, that the development of a double point on the unit circle should be thought of as a family of harmonic maps degenerating to `simpler' harmonic map.
 
 \makefigure{Constant parameter lines.}{thesis_graphics_temp/genus_zero_parameters.png}
 % \maketikzfigure{Constant parameter lines.}{tikz/genus_zero_parameters}
@@ -200,7 +200,7 @@ Conversely if $δ$ is fixed, say at $δ=π/2$, but $x$ is allowed to vary then $
 \[
 α = \frac{x-1}{x+1},
 \]
-and takes values along the real axis. Throughout this deformation, the image of the corresponding harmonic maps is fixed, it is only the domain that is changing. The two extremes, when $α=-1$ or $1$, correspond to $x=0$ and $\infty$ respectively. In these two limits, one of $\norm{X}$ or $\norm{Y}$ is dwarfing the other, which by \eqref{eqn:def kappa12} shows that in one direction the lattice of periods is becoming negligible. Another way to put this is that the limit of the lattice of periods will be only rank one, not rank two. Thus we should interpret this limit as corresponding to a harmonic map of the cylinder. Towards the end of this chapter, when we compute the energy of these maps, we will see that as we aproach the two points $α=-1, 1$ the torus tends to having infinite area, which supports this interpretation.
+and takes values along the real axis. Throughout this deformation, the image of the corresponding harmonic maps is fixed, it is only the domain that is changing. The two extremes, when $α=-1$ or $1$, correspond to $x=0$ and $\infty$ respectively. In these two limits, one of $\norm{X}$ or $\norm{Y}$ is dwarfing the other, which by \eqref{eqn:def kappa12} shows that in one direction the lattice of periods is becoming negligible. Another way to put this is that the limit of the lattice of periods will be only rank one, not rank two. Thus we should interpret this limit as corresponding to a harmonic map of the cylinder. Towards the end of this chapter, when we compute the energy of these maps, we will see that as we approach the two points $α=-1, 1$ the torus tends to having infinite area, which supports this interpretation.
 
 To summarise, the two parameters $x$ and $δ$ that constitute $α$ control the conformal type of the domain and image of the harmonic map respectively, with the extreme cases corresponding to maps from a cylinder or maps to a circle. We shall see the features of these limits recur in the moduli space $\mathcal{M}_1$, of spectral data with a genus one curve. The limit of a spectral curve when one of its branch points tends towards $\pm 1$ is qualitatively different than when it tends to another point on the unit circle. At $α \in \S^1 \setminus\{\pm 1\}$, the harmonic map degenerates to a simpler map, whereas at $\pm 1$ the spectral data is not well defined in the limit.
 
@@ -215,7 +215,7 @@ Therefore the differential $Θ^2$ corresponding to the eigenvalue of $H^2(ζ)$ i
 \[
 Θ^2 = d\,\log μ^2 = d\, \Big[ ζ^{-1}(κτ + \bar{κτ}ζ) \iu\norm{X} \abs{1 - \iu xe^{\iu δ}} η \Big].
 \]
-Let us pause for a moment to make a small calculation to simplify the coefficients appearing in this equation. First note that by the defintion of $α$, equation \eqref{eqn:def branch point genus zero},
+Let us pause for a moment to make a small calculation to simplify the coefficients appearing in this equation. First note that by the definition of $α$, equation \eqref{eqn:def branch point genus zero},
 \[
 \abs{1-α}
 = \frac{2}{\abs{1 - \iu xe^{\iu δ}}},
@@ -246,7 +246,7 @@ which both lie in a lattice spanned by the basis
 Ψ^2 := d\, \Big\{ ζ^{-1}(r^2 + \bar{r^2}ζ) η \Big\}.
 \labelthis{eqn:genus zero differential basis}
 \]
-Conversely every differential on $Σ$ that satisfies conditions \ref{P:real curve}--\ref{P:closing} belongs to this lattice. Hence we may identify this lattice of differentials with the lattice of periods of the map $f$, lending weight to the interpretation that the pair of differentials in the spectral data determine the winding of the torus onto its image. This same interpretation holds for the general construction of a harmonic map from spectral data, where the domain of the map is constructed as the parallogram spanned by the pair of differentials.
+Conversely every differential on $Σ$ that satisfies conditions \ref{P:real curve}--\ref{P:closing} belongs to this lattice. Hence we may identify this lattice of differentials with the lattice of periods of the map $f$, lending weight to the interpretation that the pair of differentials in the spectral data determine the winding of the torus onto its image. This same interpretation holds for the general construction of a harmonic map from spectral data, where the domain of the map is constructed as the parallelogram spanned by the pair of differentials.
 
 The final piece of the spectral data, though one that we do not treat extensively in this thesis, is the eigenline bundle on $Σ$. As $Σ$ is a sphere, up to isomorphism there is only one line bundle for each degree. By condition \ref{P:quaternionic}, the line bundle $E$ must be degree $-1$, so there is a unique choice.
 
@@ -268,9 +268,9 @@ c & d
 Ψ^1 \\ Ψ^2
 \end{pmatrix}.
 \end{align*}
-Then linear independence is equivalent to the integer matrix having non-zero determinant. This provides a concise way to refer to the choice of differentials, as a matrix in $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. The moduli space $\mathcal{M}_0$ can be described succintly as the product $D \times \Mat_2^*\Z$. One should bear in mind that this is not a canonical identification, as it is dependent on the choice of basis.
+Then linear independence is equivalent to the integer matrix having non-zero determinant. This provides a concise way to refer to the choice of differentials, as a matrix in $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. The moduli space $\mathcal{M}_0$ can be described succinctly as the product $D \times \Mat_2^*\Z$. One should bear in mind that this is not a canonical identification, as it is dependent on the choice of basis.
 
-This matrix formulation is also well suited to talk about changes of the conformal parameter. Recall that the conformal parameter of the domain of the harmonic map may be computed by taking the ratio of the principal parts of the two differentials of the corresponding spectral data. If $(Σ,Θ^1,Θ^2)$ is a triple of spectral data, with conformal paramter $τ$, then so too is $(Σ, cΘ^1 + dΘ^2, aΘ^1 +b Θ^2)$, for integers $a,b,c,d \in\Z$, and the new conformal parameter is
+This matrix formulation is also well suited to talk about changes of the conformal parameter. Recall that the conformal parameter of the domain of the harmonic map may be computed by taking the ratio of the principal parts of the two differentials of the corresponding spectral data. If $(Σ,Θ^1,Θ^2)$ is a triple of spectral data, with conformal parameter $τ$, then so too is $(Σ, cΘ^1 + dΘ^2, aΘ^1 +b Θ^2)$, for integers $a,b,c,d \in\Z$, and the new conformal parameter is
 \[
 \frac{a+bτ}{c+dτ}.
 \labelthis{eqn:conformal covering change}
@@ -279,14 +279,14 @@ But this is just the action of $\Mat_2^*\Z$ on a point $τ$ in the upper half pl
 \[
 τ = \frac{1-x^2 + 2\iu x}{1+x^2},
 \]
-so as $α$ moves in the unit disc, $τ$ sweeps out the upper half of the unit circle. The range of the conformal parameter for any other genus zero harmonic map is the image of this semicircle under some element of $\Mat_2^*\Z$. Hence the possible ranges of the conformal parameter $τ$ under deformation of the harmonic map are semicircles in the upper half plane centered on the real axis with endpoints in $\Q$ (or vertical rays with a rational endpoint, which are a special case).
+so as $α$ moves in the unit disc, $τ$ sweeps out the upper half of the unit circle. The range of the conformal parameter for any other genus zero harmonic map is the image of this semicircle under some element of $\Mat_2^*\Z$. Hence the possible ranges of the conformal parameter $τ$ under deformation of the harmonic map are semicircles in the upper half plane centred on the real axis with endpoints in $\Q$ (or vertical rays with a rational endpoint, which are a special case).
 
 \begin{figure}[ht]
 \centering
 \missingfigure{PICTURE OF THESE RATIONAL HYPERBOLIC ARCS}
 \end{figure}
 
-The previous chapter developed a method for computing the deformations of spectral data. In the genus zero case, it is clear that given a triple of spectral data one can freely move the sole branch point $α$ in the unit disc, and the path of $α$ uniquely determines the deformation. An infinitesimal deformation therefore is determined by the value of the derviative of the branch point, $\dot{α}$. However, let us work through the description of infinitesimal deformations from the previous chapter, via the defintions of the functions $\dot{q}^i$ and $Q$ (equations \eqref{eqn:def q dot} and \eqref{eqn:Q}), to gain some familiarity with its workings.
+The previous chapter developed a method for computing the deformations of spectral data. In the genus zero case, it is clear that given a triple of spectral data one can freely move the sole branch point $α$ in the unit disc, and the path of $α$ uniquely determines the deformation. An infinitesimal deformation therefore is determined by the value of the derivative of the branch point, $\dot{α}$. However, let us work through the description of infinitesimal deformations from the previous chapter, via the definitions of the functions $\dot{q}^i$ and $Q$ (equations \eqref{eqn:def q dot} and \eqref{eqn:Q}), to gain some familiarity with its workings.
 
 Because the spectral curve $Σ$ is simply connected in the present situation, all differentials on it are exact. Thus we shall not need to solve \eqref{eqn:EMPDi} to find the polynomials $\hat{c}^i$. Instead we may directly compute the functions $q^i$ and differentiate along a deformation to obtain $\dot{q}^i = ζ^{-1}η^{-1} \hat{c}^i$. Starting from equation \eqref{eqn:genus zero differential}, the integration is immediate:
 \[
@@ -341,7 +341,7 @@ In the conformal case, when $α=0$, we must refer instead to Lemma \ref{lem:tang
 \[
 c^i(ζ) = \frac{1}{2} \bar{s}^i \dot{α} -\frac{1}{2} s^i \dot{\bar{α}}ζ.
 \]
-The deficit of information in $Q$ is accounted for by a degree of freedom in the solutions to \eqref{eqn:Q reduced}. Observe that the polynomials $b^i$ in \eqref{eqn:b genus zero} factor as $b^i = ζ \tilde{b}^i$, for $\tilde{b}^i \in \mathcal{P}^1_\R$. Explictly,
+The deficit of information in $Q$ is accounted for by a degree of freedom in the solutions to \eqref{eqn:Q reduced}. Observe that the polynomials $b^i$ in \eqref{eqn:b genus zero} factor as $b^i = ζ \tilde{b}^i$, for $\tilde{b}^i \in \mathcal{P}^1_\R$. Explicitly,
 \[
 \tilde{b}^i(ζ) = \frac{1}{2}s^i + \frac{1}{2}\bar{s}^i ζ.
 \]
@@ -351,7 +351,7 @@ Finally, there is a formula to compute the energy of harmonic map from its spect
 \[
 E = \frac{4i}{P_0} (b^1_2 b^2_0 - b^2_2 b^1_0),
 \]
-where the lower indices refer to the coefficients of the polynomial. For example $b^1 = b^1_0 + b^1_2 ζ + \cdots$. In particular, when the genus of the spectral curve is zero the coefficients of the polynomials $b^1$ and $b^2$ are entirely determined by the choice of the four integers $n^1,m^1,n^2, m^2$ and a point $α$ in the unit disc, as in \eqref{eqn:genus zero differential}. After substitution and simplication, one arrives at
+where the lower indices refer to the coefficients of the polynomial. For example $b^1 = b^1_0 + b^1_2 ζ + \cdots$. In particular, when the genus of the spectral curve is zero the coefficients of the polynomials $b^1$ and $b^2$ are entirely determined by the choice of the four integers $n^1,m^1,n^2, m^2$ and a point $α$ in the unit disc, as in \eqref{eqn:genus zero differential}. After substitution and simplification, one arrives at
 \[
 E = \pi^2(1+α\bar{α})\frac{m^1 n^2 - n^1 m^2}{\abs{1-α^2}}.
 \]
@@ -359,7 +359,7 @@ One can interpret the fraction as giving the area of the domain of the map, this
 \[
 \dot E = 0 \Rightarrow \left(\Real α\right)\left( \Real \frac{\dot{α}}{1-α^2} \right) = 0.
 \]
-The left factor corresponds to the imaginary axis. The right factor corresponds to a circle centered on the real axis that cuts the unit circle perpedicularly. In other words, $\dot E$ is zero precisely when $α$ moves on an arc that preserves $τ$. This was to be expected because, for a given conformal class, harmonic maps are minimisers for the energy.
+The left factor corresponds to the imaginary axis. The right factor corresponds to a circle centred on the real axis that cuts the unit circle perpedicularly. In other words, $\dot E$ is zero precisely when $α$ moves on an arc that preserves $τ$. This was to be expected because, for a given conformal class, harmonic maps are minimisers for the energy.
 
 \begin{center}
 \begin{figure}
