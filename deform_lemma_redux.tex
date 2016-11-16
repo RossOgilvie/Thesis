@@ -501,7 +501,7 @@ Take a triple of spectral data $(P,b^1,b^2)\in\mathcal{M}_g$ associated with a n
 \begin{proof}
 In order to solve \eqref{eqn:EMPDi} or \eqref{eqn:Q}, one must first solve their reduced counterparts \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}.
 
-We consider \eqref{eqn:Q reduced} as a linear system in the coefficients of $\tilde{c}^i$, using a confluent Vandermonde matrix as above. Thus there is a unique solution $({\bf \tilde{c}}^1, {\bf \tilde{c}}^2)$ of degree at most $(g+2-d_1, g+2-d_2)$, where $d_i = \deg F^i$. We note that ${\bf\tilde{c}}^2_{g+2-d_2}$ is $R(Q)$ by definition, which by assumption is zero.
+We consider \eqref{eqn:Q reduced} as a linear system in the coefficients of $\tilde{c}^i$, using a confluent Vandermonde matrix as above. Thus there is a unique solution $(\symbf{\tilde{c}}^1, \symbf{\tilde{c}}^2)$ of degree at most $(g+2-d_1, g+2-d_2)$, where $d_i = \deg F^i$. We note that ${\bf\tilde{c}}^2_{g+2-d_2}$ is $R(Q)$ by definition, which by assumption is zero.
 By consideration of the leading order of \eqref{eqn:Q reduced}, if ${\bf\tilde{c}}^2_{g+2-d_2}$ vanishes, so too must ${\bf\tilde{c}}^1_{g+2-d_1}$. Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i {\bf\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree at most $g+1$. We similarly define $\hat{c}^i = (ζ^2 -1)c^i$.
 
 Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} was a necessary condition. It reads
@@ -511,14 +511,14 @@ Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} wa
 \]
 This too can be solved using a (confluent) Vandermonde matrix, if $\tilde{b}^i$ is nonvanishing at the roots of $F^j \tilde{P}$ and vice versa. But by definition they are coprime. This was why it was necessary to force $c^i$ to have $F^i$ as a factor, so that the common factor $F^1$ of $b^i$ and $P$ could be removed from \eqref{eqn:EMPDi}.
 
-One should be concerned that the two equations for $i=1,2$ may give different solutions for $\dot P$, and indeed in general they do. However, neither of the equations have unique solutions, and we shall use the freedom in the choice of solution to find a common solution to both. Let a solution to each equation \eqref{eqn:EMPDi nc FG=1} be $({\bf \dot{P}}^1, {\bf \dot{b}}^1)$ and $({\bf \dot{P}}^2, {\bf \dot{b}}^2)$. The sets of solutions of degree $(2g+2,g+3)$ are
+One should be concerned that the two equations for $i=1,2$ may give different solutions for $\dot P$, and indeed in general they do. However, neither of the equations have unique solutions, and we shall use the freedom in the choice of solution to find a common solution to both. Let a solution to each equation \eqref{eqn:EMPDi nc FG=1} be $(\symbf{\dot{P}}^1, \symbf{\dot{b}}^1)$ and $(\symbf{\dot{P}}^2, \symbf{\dot{b}}^2)$. The sets of solutions of degree $(2g+2,g+3)$ are
 \[
-\Set { \bra{ {\bf \dot{P}}^1 + 2rF^2\tilde{P}, {\bf \dot{b}}^1 + r\tilde{b}^1 } }
+\Set { \bra{ \symbf{\dot{P}}^1 + 2rF^2\tilde{P}, \symbf{\dot{b}}^1 + r\tilde{b}^1 } }
 { r \text{ a real polynomial of degree } d_1 },
 \]
 and
 \[
-\Set { \bra{ {\bf \dot{P}}^2 + 2sF^1\tilde{P}, {\bf \dot{b}}^2 + s\tilde{b}^2 } }
+\Set { \bra{ \symbf{\dot{P}}^2 + 2sF^1\tilde{P}, \symbf{\dot{b}}^2 + s\tilde{b}^2 } }
 { s \text{ a real polynomial of degree } d_2 },
 \]
 respectively. First note that every element of both of these sets take the same value at any root $α$ of $\tilde{P}$. This follows from \eqref{eqn:EMPDi nc FG=1}, which reads
@@ -539,22 +539,22 @@ and thus
 At the $d_1$ roots of $F^1$, we see that every solution $\dot{P}^2$ takes the same value. Let $β$ be such a root, then
 \[
 \dot{P}^2(β)
-= {\bf \dot{P}}^2(β) + 2s(β)F^1(β)\tilde{P}(β)
-= {\bf \dot{P}}^2(β)
+= \symbf{\dot{P}}^2(β) + 2s(β)F^1(β)\tilde{P}(β)
+= \symbf{\dot{P}}^2(β)
 = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)},
 \]
 where we can be sure that $\tilde{b}^2(β) \neq 0$ because it cannot be a root of $b^2$ (if it were, $F\neq 1$). However, the other solutions have different values at $β$, and this provides the following constraint on the choice of $r$:
 \[
-{\bf \dot{P}}^1(β) + 2r(β)F^2(β)\tilde{P}(β) = {\bf \dot{P}}^2(β) = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)}.
+\symbf{\dot{P}}^1(β) + 2r(β)F^2(β)\tilde{P}(β) = \symbf{\dot{P}}^2(β) = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)}.
 \]
 This constraint is nontrivial because $β$ is not a root of $\tilde{P}$ or $F^2$ by the assumption of the non-singularity of the spectral curve. As $F^1$ has $d_1$ distinct roots, there are $d_1$ constraints.
 
-Likewise, at the $d_2$ roots of $F^2$, we acquire constraints on the choice of $s$. It is always possible to meet these constraints (because, for example, the degree of $s$ is $d_2$ and there are only $d_2$ roots of $F^2$), so we see that there is a common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$ to \eqref{eqn:EMPDi reduced}. It is also a solution to \eqref{eqn:EMPDi}.
+Likewise, at the $d_2$ roots of $F^2$, we acquire constraints on the choice of $s$. It is always possible to meet these constraints (because, for example, the degree of $s$ is $d_2$ and there are only $d_2$ roots of $F^2$), so we see that there is a common solution $(\symbf{\dot{P}}, \symbf{\dot{b}}^1, \symbf{\dot{b}}^2)$ to \eqref{eqn:EMPDi reduced}. It is also a solution to \eqref{eqn:EMPDi}.
 
 This solution is still not unique; there remains one degree of freedom. For any real number $s$, we have solutions to \eqref{eqn:EMPDi} of the form
 \begin{align*}
-\dot P &= {\bf \dot{P}} + 2sP  \labelthis{eqn:P soln}\\
-\dot b^i &= {\bf \dot{b}}^i + sb^i
+\dot P &= \symbf{\dot{P}} + 2sP  \labelthis{eqn:P soln}\\
+\dot b^i &= \symbf{\dot{b}}^i + sb^i
 \end{align*}
 However, this freedom is simply the freedom to rescale $P$. We have chosen a preferred scaling of $P$, so our choice of $s$ is determined. Explicitly, if we were to allow other scalings, the formula for $P$ would be, (cf. \eqref{eqn:def P})
 \[
@@ -569,7 +569,7 @@ where $α_k$ are the roots inside the unit circle and $r(t)$ is some real functi
 \end{align*}
 Thus we know the values of $\dot{α}_k$, independent of choice of $s$ in our solution \eqref{eqn:P soln}, because any two solutions $\dot{P}$ differ by a multiple of $P$, which vanishes at every root $α_k$. Alternatively, if we take the lowest order of \eqref{eqn:rescale P},
 \[
-\dot{P}_0 = {\bf \dot{P}}_0 + 2sP_0 = \dot r P_0 + \sum_k (-\dot{α}_k)\prod_{m\neq k} (-α_m),
+\dot{P}_0 = \symbf{\dot{P}}_0 + 2sP_0 = \dot r P_0 + \sum_k (-\dot{α}_k)\prod_{m\neq k} (-α_m),
 \]
 so we may ensure that $r\equiv 1$ by choosing $s$ so that $\dot r = 0$. In short, if we fix a scaling of the spectral curve, then there is a unique solution to \eqref{eqn:EMPDi}.
 
@@ -606,9 +606,9 @@ This lemma, and the lemma to follow, are similar to the first proof. We proceed 
 \[
 \tilde{b}^1\tilde{c}^2 - \tilde{b}^2\tilde{c}^1 = \tilde{Q}\tilde{P}.
 \]
-There is a unique solution to this equation $({\bf \tilde{c}}^1,{\bf \tilde{c}}^2)$ of degree at most $(g+2-d_1-d_G,g+2-d_2-d_G)$. If we multiply these by $F^1$ and $F^2$ respectively, we have solutions to \eqref{eqn:Q} of degree at most $g+2-d_G$ each. If $G$ is linear therefore, this is the unique solution of degree at most $(g+1,g+1)$, but if $G$ is quadratic the space of solutions to \eqref{eqn:Q} is
+There is a unique solution to this equation $(\symbf{\tilde{c}}^1,\symbf{\tilde{c}}^2)$ of degree at most $(g+2-d_1-d_G,g+2-d_2-d_G)$. If we multiply these by $F^1$ and $F^2$ respectively, we have solutions to \eqref{eqn:Q} of degree at most $g+2-d_G$ each. If $G$ is linear therefore, this is the unique solution of degree at most $(g+1,g+1)$, but if $G$ is quadratic the space of solutions to \eqref{eqn:Q} is
 \[
-\Set { (F^1{\bf \tilde{c}}^1 + rF^1\tilde{b}^1, F^2{\bf \tilde{c}}^1 + rF^2\tilde{b}^2 }
+\Set { (F^1\symbf{\tilde{c}}^1 + rF^1\tilde{b}^1, F^2\symbf{\tilde{c}}^1 + rF^2\tilde{b}^2 }
 { r \text{ a real scalar} }.
 \]
 Hence for every $r\in\R$ there is a unique solution $(c^1, c^2)$ to equation \eqref{eqn:Q}. In either case, it was not necessary to have a condition similar to $R(Q)=0$, but conversely the choice of $Q$ was restricted by $Q = G\tilde{Q}$.
@@ -618,7 +618,7 @@ Next we must solve \eqref{eqn:EMPDi reduced}, but the proof above applies again,
 \dot{P} G \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + ζ(ζ^2-1)P' \tilde{c}^i.
 \labelthis{eqn:EMPDi nc G}
 \]
-This has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at the roots of $F^1F^2\tilde{P}$ shows that there is a common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$. Again, a choice of scaling of $P$ forces a unique solution. This solution also satisfies \eqref{eqn:residueTangent}. Hence it is a tangent vector to $\mathcal{M}_g$ at $(b^1,b^2,P)$.
+This has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at the roots of $F^1F^2\tilde{P}$ shows that there is a common solution $(\symbf{\dot{P}}, \symbf{\dot{b}}^1, \symbf{\dot{b}}^2)$. Again, a choice of scaling of $P$ forces a unique solution. This solution also satisfies \eqref{eqn:residueTangent}. Hence it is a tangent vector to $\mathcal{M}_g$ at $(b^1,b^2,P)$.
 \end{proof}
 \end{lem}
 
@@ -640,22 +640,22 @@ We have already demonstrated in \eqref{eqn:Q0 vanish conformal} that $ζ$ necess
 \]
 This is similar to the above case where $G$ was quadratic. The space of solutions is
 \[
-\Set { ({\bf \tilde{c}}^1 + r \tilde{b}^1, {\bf \tilde{c}}^2 + r \tilde{b}^2) }{ r\in \R },
+\Set { (\symbf{\tilde{c}}^1 + r \tilde{b}^1, \symbf{\tilde{c}}^2 + r \tilde{b}^2) }{ r\in \R },
 \]
-where $({\bf \tilde{c}}^1,{\bf \tilde{c}}^2)$ is the unique solution of degree at most $(g+1-d_1, g+1-d_2)$. For every such solution, let $c^i = F^i\tilde{c}^i$ and consider the corresponding \eqref{eqn:EMPDi reduced}, namely
+where $(\symbf{\tilde{c}}^1,\symbf{\tilde{c}}^2)$ is the unique solution of degree at most $(g+1-d_1, g+1-d_2)$. For every such solution, let $c^i = F^i\tilde{c}^i$ and consider the corresponding \eqref{eqn:EMPDi reduced}, namely
 \[
 \dot{P} \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + (ζ^2-1)P' \tilde{c}^i.
 \labelthis{eqn:EMPDi conformal}
 \]
-In what is by now a familiar story, for the dotted quantities there is a common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$. The space of solutions is however
+In what is by now a familiar story, for the dotted quantities there is a common solution $(\symbf{\dot{P}}, \symbf{\dot{b}}^1, \symbf{\dot{b}}^2)$. The space of solutions is however
 \[
 \Set{
-({\bf \dot P} + 2s F^1F^2\tilde{P}, {\bf \dot b}^1 + s F^1\tilde{b}^1, {\bf \dot b}^2 + s F^2\tilde{b}^2)
+(\symbf{\dot P} + 2s F^1F^2\tilde{P}, \symbf{\dot b}^1 + s F^1\tilde{b}^1, \symbf{\dot b}^2 + s F^2\tilde{b}^2)
 }{ s \text{ a real quadratic polynomial} }.
 \]
 There appears not to be a unique tangent vector corresponding to each choice $(Q,r)$. However, unlike the previous two cases, condition \eqref{eqn:residueTangent} is not automatically satisfied. Let $s = s_0 + s_1ζ + \bar{s}_0 ζ^2$. For $i=1$, we see that the condition implies that
 \[
-2 {\bf\dot{P}}_0 b^1_1 - P_1 {\bf \dot{b}}^1_0 + 3 s_0 P_1 b^1_1 = 0,
+2 {\bf\dot{P}}_0 b^1_1 - P_1 \symbf{\dot{b}}^1_0 + 3 s_0 P_1 b^1_1 = 0,
 \]
 which fully determines $s_0$. Can we therefore simultaneously satisfy the condition for $i=2$? Note that \eqref{eqn:EMPDi conformal} in the lowest degree reads
 \[
@@ -669,8 +669,8 @@ b^1_1 \bra{{\bf\dot{P}_0} b^2_1 - 2P_1{\bf\dot{b}^2_0}} &= b^2_1 \bra{{\bf\dot{P
 \end{align*}
 Condition \eqref{eqn:residueTangent} for $i=2$ is therefore
 \begin{align*}
-b^1_1 \bra{2 {\bf\dot{P}_0} b^2_1 - P_1 {\bf \dot{b}^2_0} + 3 s_0 P_1 b^2_1}
-&= 2 {\bf\dot{P}_0} b^1_1b^2_1 - P_1 b^1_1{\bf \dot{b}^2_0} + 3 s_0 P_1 b^1_1b^2_1 \\
+b^1_1 \bra{2 {\bf\dot{P}_0} b^2_1 - P_1 \symbf{\dot{b}^2_0} + 3 s_0 P_1 b^2_1}
+&= 2 {\bf\dot{P}_0} b^1_1b^2_1 - P_1 b^1_1\symbf{\dot{b}^2_0} + 3 s_0 P_1 b^1_1b^2_1 \\
 &= 2 {\bf\dot{P}_0} b^1_1b^2_1 + P_1 b^2_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1b^2_1 \\
 &= b^2_1\bra{2 {\bf\dot{P}_0} b^1_1 - P_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1 } \\
 &= 0.
@@ -678,9 +678,9 @@ b^1_1 \bra{2 {\bf\dot{P}_0} b^2_1 - P_1 {\bf \dot{b}^2_0} + 3 s_0 P_1 b^2_1}
 Hence we have demonstrated that the condition holds for $i=2$ also. Having cleared this hurdle, there is still one free parameter. For any $Q_1$ and $r$, the corresponding tangent vectors that solve \eqref{eqn:EMPDi} are
 \begin{align*}
 \Big\{
-\big(&{\bf \dot P} + 2(s_0+\bar{s}_0ζ^2) F^1F^2\tilde{P} + 2s_1ζ F^1F^2\tilde{P}, \\
-&\qquad{\bf \dot b^1} + (s_0+\bar{s}_0ζ^2) F^1\tilde{b}^1 + s_1ζ F^1\tilde{b}^1, \\
-&\qquad{\bf \dot b^2} + (s_0+\bar{s}_0ζ^2) F^2\tilde{b}^2 + s_1ζ F^2\tilde{b}^2 \,\big)
+\big(&\symbf{\dot P} + 2(s_0+\bar{s}_0ζ^2) F^1F^2\tilde{P} + 2s_1ζ F^1F^2\tilde{P}, \\
+&\qquad\symbf{\dot b^1} + (s_0+\bar{s}_0ζ^2) F^1\tilde{b}^1 + s_1ζ F^1\tilde{b}^1, \\
+&\qquad\symbf{\dot b^2} + (s_0+\bar{s}_0ζ^2) F^2\tilde{b}^2 + s_1ζ F^2\tilde{b}^2 \,\big)
 \qquad\Big\vert s_1 \in \R
 \Big\}.
 \end{align*}
