@@ -115,9 +115,9 @@ z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 \end{align}
 
 % \makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$\label{fig:zeta plane}}{thesis_graphics_temp/zeta_plane.png}
-\maketikzfigure{The $ζ$-plane, with points marked in blue. The black labels are their images under $f$\label{fig:zeta plane}}{tikz/zeta_plane}
+\maketikzfigure{The $ζ$-plane, with points marked in blue. The black labels are their images under $f$\label{fig:zeta plane}. The red line is the circle through the branch points.}{tikz/zeta_plane}
 % \makefigure{The $z$-plane, with points marked in black. The red labels are their images under $f^{-1}$}{thesis_graphics_temp/z_plane.png}
-\maketikzfigure{The $z$-plane, with points marked in black. The blue labels are their images under $f^{-1}$}{tikz/z_plane}
+\maketikzfigure{The $z$-plane, with points marked in black. The blue labels are their images under $f^{-1}$.}{tikz/z_plane}
 
 \begin{lem}
 \label{lem:coeff_f_smooth}
@@ -214,7 +214,7 @@ We are now in a position to compute the periods of our basis $ω,Θ^E,ε$. We ch
 For the loop $A$, start on the positive unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the negative unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For the loop $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the positive sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the positive sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
 
 % \makefigure{$A$ in red and $B$ in blue}{thesis_graphics_temp/zeta_periods.png}
-\maketikzfigure{$A$ in red and $B$ in blue}{tikz/zeta_periods}
+\maketikzfigure{The anticlockwise, real period $A$ in red and the clockwise, imaginary period $B$ in blue.}{tikz/zeta_periods}
 
 The loop $A$ is a real period, which means that the integral of a real differential over $A$ is real. Recall that a differential $Θ$ is real with respect to $ρ$ when $ρ^* Θ = - \bar{Θ}$. By construction, $ρ_* A = -A$. Together, we see that
 \[
@@ -476,31 +476,47 @@ In summary, we have found real constants $a$ and $b$ and an integer $l$ such tha
 
 Thus the space of genus one spectral curves that admit closing spectral data is defined by the equations $S(α,β) \in \Q^+, T(α,β) \in \Q$ inside $\mathcal{A}_1$. In general the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with the integrals of $Θ^E$ lead to an algebraic expression, as we have just seen in \eqref{eqn:def_S}, but the integrals of $Θ^P$ will lead to a transcendental conditions involving incomplete elliptic integrals.
 
-Immediately before this lemma we observed that although the condition $T\in\Q$ is well defined, $T(α,β)$ is a multi-valued function on $\mathcal{A}_1$ which is dependent on the paths of integration. So that we may work with a well-defined function, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$. Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $γ_+$ be the path that begins at $(1,η^-(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,η^+(1))$. Likewise for $γ_-$ from $(-1,η^-(-1))$ to $(-1,η^+(-1))$. These paths are illustrated in figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded.
+Immediately before this lemma we observed that although the condition $T\in\Q$ is well defined, $T(α,β)$ is a multi-valued function on $\mathcal{A}_1$ which is dependent on the paths of integration. So that we may work with a well-defined function, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$. To do so, on each curve we will have to make a choice of paths $γ_+$ and $γ_-$, and we shall refer to these choices as principal paths.
+
+Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve $Σ(α,β)$ corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ be the path that begins at $(1,η^-(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,η^+(1))$.
+
+Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,η^-(-1))$ to $(-1,η^+(-1))$ along the unit and branch point circles that does not cross $ν$. These paths are illustrated in figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded. Note that these paths depend on the order of the branch points $(α,β) \in \mathcal{A}_1$, since $ν$ is defined to be the intersection of the unit and branch point circles which lies between $β$ and $\cji{β}$.
+
+\begin{defn}
+\label{def:def_T_0}
+The principal branch cut $T_0$ of $T$ is defined on $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ to be
+\[
+T_0 (α,β) := T(α,β,\symbf{γ}_+,\symbf{γ}_-) = S(α,β) \int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P.
+\]
+\end{defn}
 
 % \makefigure{$γ_+$ in red and $γ_-$ in black\label{fig:gamma paths}}{thesis_graphics_temp/gamma_pm_zeta.png}
-\maketikzfigure{$γ_+$ in red and $γ_-$ in blue\label{fig:gamma paths}}{tikz/gamma_pm_zeta}
+\maketikzfigure{The principal path $\symbf{γ}_+$, in red, starts at $1$ on the lower sheet, traverses around $α$ and then returns to $1$ on the upper sheet. There is a branch cut between $α$ and $β$. Likewise, the principal path $\symbf{γ}_-$ is marked in blue. \label{fig:gamma paths}}{tikz/gamma_pm_zeta}
 
 As $ν\neq 1$, we know that $f(1) \neq \infty$ and so $f(γ_+)$ lies in the plane (it does not pass through $z=\infty$).
 By design it is easy to describe these paths in terms of the $(z,w)$ coordinates.
 Start from the point $f(1)$ on the imaginary axis and go to the origin. Go out along the real axis, around $z=1$ (which corresponds to $ζ=α$) and back again to the origin. Return along the imaginary axis to $f(1)$. This is illustrated in figure \ref{fig:f gamma paths}.
 
-\makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black\label{fig:f gamma paths}}{thesis_graphics_temp/gamma_pm_z.png}
+% \makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black\label{fig:f gamma paths}}{thesis_graphics_temp/gamma_pm_z.png}
+\makefigure{The paths $f(\symbf{γ}_+)$ in red and $f(\symbf{γ}_-)$ in blue. \label{fig:f gamma paths}}{tikz/gamma_pm_z}
 
-Having fixed a choice of paths, we can write explicit formulae for the value of the integrals on these particular paths.
+Having fixed a choice of paths, we can write explicit formulae for the value of the standard differentials on these particular paths,
 \begin{align*}
-\int_{γ_+} ω
+\int_{\symbf{γ}_+} ω
 &= \bra{2\int_0^{f(1)} - 2\int_0^1} ω
 = 2 F(f(1);k) - 2 K(k) \\
-\int_{γ_+} e
-&= 2 \tilde E(f(1);k) - 2 E(k) \\
-\int_{γ_+} Θ^P
-&= \int_{γ_+} (2Eω - 2Ke) - 2K \int_{γ_+} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K \frac{w(f(1))\,(f(1)-\iu\,\Imag z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}.\labelthis{eqn:gamma_plus}
+\int_{\symbf{γ}_+} e
+&= 2 \tilde E(f(1);k) - 2 E(k),
 \end{align*}
-For the closing condition at $ζ=-1$, we have similarly
+and so give a formula for $Θ^P$ over $\symbf{γ}_+$,
 \begin{multline*}
-\int_{γ_-} Θ^P
+\int_{\symbf{γ}_+} Θ^P
+= \int_{\symbf{γ}_+} (2Eω - 2Ke) - 2K \int_{\symbf{γ}_+} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
+= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K \frac{w(f(1))\,(f(1)-\iu\,\Imag z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}.\labelthis{eqn:gamma_plus}
+\end{multline*}
+For the integral of $Θ^P$ over the path $\symbf{γ}_-$ for $ζ=-1$, we have similarly
+\begin{multline*}
+\int_{\symbf{γ}_-} Θ^P
 = 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) \\
 - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Imag z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{multline*}
@@ -531,7 +547,7 @@ With these two differentials we then attempted to further satisfy \ref{P:closing
 
 
 
-\section{Coordinates for $\mathcal{A}_1$}
+\section{Coordinates for \texorpdfstring{$\mathcal{A}_1$}{A1}}
 \label{sec:Reformulate}
 
 In the previous section, we found a condition for a point of $\mathcal{A}_1$ to correspond a spectral curve, namely the functions $S$ and $T$ must be rationally valued. Thus on $\mathcal{S}_1$, the space of spectral curves, these functions must be (locally) constant. Thus to understand $\mathcal{S}_1$ we should examine the joint level sets of $S$ and $T$ in $\mathcal{A}_1$. To do so, we will invoke the implicit function theorem, for which the necessary computation will be the differentiation of the two functions.
@@ -694,11 +710,11 @@ and thus
 \end{align*}
 We may make these replacements in \eqref{eqn:gamma_plus} and \eqref{eqn:gamma_minus} to yield
 \begin{align*}
-\int_{γ_+} Θ^P
+\int_{\symbf{γ}_+} Θ^P
 = 4 E(k) F(\iu u;k) &- 4 K(k) E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v},
 \labelthis{eqn:gamma_plus2}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\int_{γ_-} Θ^P
+\int_{\symbf{γ}_-} Θ^P
 = 4 E(k) F(\iu v;k) &- 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v},\labelthis{eqn:gamma_minus2}
 \end{align*}
 and hence by the equation \eqref{eqn:def_T} we finally arrive at
@@ -1139,26 +1155,28 @@ The effect of precomposing $\tilde{T}$ with $\tilde{λ}$ is to increase its valu
 = p-1.
 \]
 \begin{proof}
-It is fruitful to consider first the effect of $λ$ on $T_0$ in the $ζ$-plane. Suppose that $μ$ and $ν$ are chosen such that $ν,μ,1$ and $-1$ are arranged clockwise as shown in Figure \ref{fig:deck_T_1}. The principal choice of path $γ_+ = γ_+(α,β)$ is shown in black, whereas the principal choice after swapping the labels of the roots is shown in red. Let it be denoted $γ'_+ = γ_+ \circ λ = γ_+(β,α)$.
+It is fruitful to consider first the effect of $λ$ on $T_0$ in the $ζ$-plane. Suppose that $μ$ and $ν$ are chosen such that $ν,μ,1$ and $-1$ are arranged clockwise as shown in Figure \ref{fig:deck_T_1}. The principal choice of path $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ is shown in black, whereas the principal choice after swapping the labels of the roots is shown in red. Let it be denoted $γ'_+ = \symbf{γ}_+ \circ λ = \symbf{γ}_+(β,α)$.
 
-\makefigure{The principal path $γ_+$ in black and path $γ'_+ = γ_+ \circ λ$ in red. \label{fig:deck_T_1}}{thesis_graphics_temp/deck_T_1.png}
+% \makefigure{The principal path $\symbf{γ}_+$ in black and path $γ'_+ = \symbf{γ}_+ \circ λ$ in red. \label{fig:deck_T_1}}{thesis_graphics_temp/deck_T_1.png}
+\maketikzfigure{The principal path $\symbf{γ}_+$ in red and path $γ'_+ = \symbf{γ}_+ \circ λ$ in blue. \label{fig:deck_T_1}}{tikz/deck_T_1}
 
 The difference between these two paths is homologous to a loop anticlockwise around the upper unit circle. So by the construction of $Θ^P$,
 \[
-\int_{γ'_+} Θ^P - \int_{γ_+} Θ^P = \int_{\S^1} Θ^P = -2π\iu.
+\int_{γ'_+} Θ^P - \int_{\symbf{γ}_+} Θ^P = \int_{\S^1} Θ^P = -2π\iu.
 \]
-Likewise if we consider the difference between the principal path $γ_-$ and the path $γ'_- = γ_- \circ λ$ we again have a anticlockwise loop of the upper unit circle (Figure \ref{fig:deck_T_-1}).
+Likewise if we consider the difference between the principal path $\symbf{γ}_-$ and the path $γ'_- = \symbf{γ}_- \circ λ$ we again have a anticlockwise loop of the upper unit circle (Figure \ref{fig:deck_T_-1}).
 Hence
 \[
-\int_{γ'_-} Θ^P - \int_{γ_-} Θ^P = \int_{\S^1} Θ^P = -2π\iu.
+\int_{γ'_-} Θ^P - \int_{\symbf{γ}_-} Θ^P = \int_{\S^1} Θ^P = -2π\iu.
 \]
 
-\makefigure{The principal path $γ_-$ in black and $γ'_- = γ_- \circ λ$ in red. \label{fig:deck_T_-1}}{thesis_graphics_temp/deck_T_-1.png}
+% \makefigure{The principal path $\symbf{γ}_-$ in black and $γ'_- = \symbf{γ}_- \circ λ$ in red. \label{fig:deck_T_-1}}{thesis_graphics_temp/deck_T_-1.png}
+\maketikzfigure{The principal path $\symbf{γ}_-$ in red and $γ'_- = \symbf{γ}_- \circ λ$ in blue. \label{fig:deck_T_-1}}{tikz/deck_T_-1}
 
 Putting these together we conclude that the value of $T_0$ changes by $1-p$ under this transformation:
 \begin{align*}
 2π\iu (T_0 \circ λ - T_0)
-&= \bra{ p\int_{γ'_-} Θ^P - \int_{γ'_+} Θ^P } - \bra{ p\int_{γ_-} Θ^P - \int_{γ_+} Θ^P } \\
+&= \bra{ p\int_{γ'_-} Θ^P - \int_{γ'_+} Θ^P } - \bra{ p\int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P } \\
 &= p(-2π\iu) - (-2π\iu) \\
 &= 2π\iu (1-p).
 \end{align*}

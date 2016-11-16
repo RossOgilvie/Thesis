@@ -11,7 +11,7 @@
 % \setmainfont{Latin Modern Roman}
 
 %% For unicode characters in math environments
-\usepackage{unicode-math}
+\usepackage[bold-style=ISO]{unicode-math}
 
 \setmathfont{Latin Modern Math}
 \setmathfont[range={\mathcal,\mathscr,\mathbfscr}]{XITS Math}
@@ -20,10 +20,7 @@
 \protected\def\mathbb#1{{\mathchar\numexpr256*\symAMSb+`#1\relax}}
 % the redefinition for the missing \setminus must be delayed
 \AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
-
-%set up pages the way I like them and provide a quick command to do the headings
-% \usepackage{listings}
-% \usepackage{enumerate}
+% \renewcommand{\mathbf}[1]{\symbf{#1}}
 
 % Cool Chapter titles
 \usepackage[explicit]{titlesec}
@@ -63,11 +60,26 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 
+% To make tikz pics in their own tex file, but still be able to \include them
+\usepackage{standalone}
+
 % For commutative diagrams
 \usepackage[heads=littlevee]{diagrams}
 
 % For todo note and missing figures
 \usepackage{todonotes}
+
+% Make references into hyperlinks, but invisibly
+\usepackage[hidelinks]{hyperref}
+% \hypersetup{colorlinks=false}
+
+% To adjust the formatting of captions
+% Have "Figure 1.2" and then a newline before the caption
+\usepackage[labelsep=newline]{caption}
+% To put the caption to the side of a figure
+\usepackage{sidecap}
+% Center the caption vertically
+\sidecaptionvpos{figure}{c}
 
 %%%%%%%%% to stop things appearing in the table of contentns
 \setcounter{tocdepth}{2}
@@ -75,12 +87,13 @@
 \newcommand{\stoptocentries}{\renewcommand{\addcontentsline}[3]{}}
 \newcommand{\starttocentries}{\let\addcontentsline\oldaddcontentsline}
 
+% Adjust the paragraph styling
 \setlength{\parskip}{2ex}
 \setlength{\parindent}{0in}
+
+%%% Set up per chapter numbering
 \numberwithin{equation}{chapter}
 \numberwithin{figure}{chapter}
-% \setcounter{secnumdepth}{0}
-% \newcommand{\nocontentsline}[3]{}
 
 %Add math environs
 \newtheorem{defn}[equation]{Definition}
@@ -89,19 +102,37 @@
 \newtheorem{cor}[equation]{Corollary}
 \newtheorem{remark}[equation]{Remark}
 
+% Force a label on a * equation environment
 \newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
 
 %% A command to make figures with a caption along side
 \newcommand{\makefigure}[2]{
-\begin{figure}[ht]
-\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,center},capbesidewidth=0.4\textwidth}}]{figure}[\FBwidth]
-{\caption{#1}}
-{\includegraphics[width=0.4\textwidth]{#2}}
-\end{figure}
+\begin{SCfigure}
+\includegraphics[width=0.6\textwidth]{#2}
+\caption{#1}
+\end{SCfigure}
 }
 
+%% A command to make tikz figures from external file with a caption along side
+\newcommand{\maketikzfigure}[2]{
+\begin{SCfigure}
+\includestandalone[width=0.6\textwidth]{#2}
+\caption{#1}
+\end{SCfigure}
+}
+
+%% A command to center margin-breaking equations
+\newsavebox{\overlongequation}
+\newenvironment{longeqn}
+{\begin{displaymath}\begin{lrbox}{\overlongequation}$\displaystyle}
+{$\end{lrbox}\makebox[0pt]{\usebox{\overlongequation}}\end{displaymath}}
+
+%% Command to force alignment within align enviroments
+\newcommand{\pushright}[1]{\ifmeasuring@#1\else\omit\hfill$\displaystyle#1$\fi\ignorespaces}
+\newcommand{\pushleft}[1]{\ifmeasuring@#1\else\omit$\displaystyle#1$\hfill\fi\ignorespaces}
+
+
 % make bars really mean overline, which look much better.
-% in an ideal would, i would define \conj
 \renewcommand*{\bar}{\overline}
 %useful commands
 \newcommand{\bra}[1]{\left(#1\right)}
@@ -113,7 +144,6 @@
 \newcommand{\vt}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 \newcommand{\Partial}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\cross}[4]{\left[#1,#2;\, #3, #4\right]}
-\newcommand{\conj}{\overline}
 \newcommand{\cji}[1]{\overline{#1}^{-1}}
 \newcommand{\imply}{\Rightarrow}
 
@@ -141,8 +171,8 @@
 \DeclareMathOperator{\End}{rem}
 \DeclareMathOperator{\pp}{pp.}
 \DeclareMathOperator{\sign}{sign}
-\renewcommand{\Re}{\mathfrak{R}\text{e}\,}
-\renewcommand{\Im}{\mathfrak{I}\text{m}\,}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
 
 \newcommand{\iu}{i}
 
@@ -151,7 +181,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\RInf}{\mathbb{R}\cup\{\infty\}}
-\newcommand{\C}{\mathbb{C}}
+\renewcommand{\C}{\mathbb{C}}
 \newcommand{\RP}{\mathbb{R}\text{P}}
 \newcommand{\CP}{\mathbb{C}\text{P}}
 \renewcommand{\P}{\mathbb{P}}
@@ -159,9 +189,8 @@
 \renewcommand{\S}{\mathbb{S}}
 \renewcommand{\H}{\mathbb{H}}
 % \newcommand{\M}{\mathcal{M}}
-
 \newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SL}{\mathrm{SL}}
 \newcommand{\SO}{\mathrm{SO}}
-
 \newcommand{\su}{\mathfrak{su}}
 \renewcommand{\sl}{\mathfrak{sl}}
