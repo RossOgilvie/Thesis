@@ -83,11 +83,14 @@ Throughout this thesis, we will consider only nonsingular spectral curves. The p
 % \label{sec:marked curve}
 
 Having now constructed a tuple of spectral data, we shall characterise the necessary and sufficient properties a tuple must posses in order to ensure that it corresponds to a harmonic map.
+\begin{defn}
+\label{def:marked curve}
 Consider a (nonsingular) hyperelliptic curve $Σ$ over $\CP^1$ with hyperelliptic involution $σ$ and projection $π:Σ\to\CP^1$, such that $π\circ σ = π$. We call a tuple $(Σ,\{ ξ_0, σ(ξ_0) \}, \{ ξ_1, σ(ξ_1) \})$ a \emph{marked curve} if
 \begin{enumerate}[label=(P.\arabic*')]
-\item\label{P:marked points} $π(ξ_0) = 0$ and $π(ξ_1) = 1$.
-\item\label{P:real involution} there is a real involution $ρ: Σ \to Σ$ such that $ρ\circ σ$ is without fixed points and $π(ρ(ξ)) = \cji{π(ξ)}$.
+    \item\label{P:marked points} $π(ξ_0) = 0$ and $π(ξ_1) = 1$.
+    \item\label{P:real involution} there is a real involution $ρ: Σ \to Σ$ such that $ρ\circ σ$ is without fixed points and $π(ρ(ξ)) = \cji{π(ξ)}$.
 \end{enumerate}
+\end{defn}
 Points where $ξ = σ(ξ)$ are the ramification points of the curve.
 Note that $ξ_0$ and $σ(ξ_0)$ may or may not be distinct points. The condition that $ρ\circ σ$ is without fixed points ensures that the curve is not ramified at any point over the unit circle. Thus there are always two points of both $π^{-1}(1) = \{ ξ_1, σ(ξ_1) \}$ and $π^{-1}(-1)$. We shall use $ρ$ to also denote the real involution $π(ζ) = \cji{ζ}$ on $\CP^1$.
 
@@ -196,10 +199,10 @@ P_1b_0 - 2P_0b_1 = 0.
 \]
 In summary, every differential meeting the three conditions \ref{P:poles}, \ref{P:symmetry} and \ref{P:reality} can be written as
 \[
-Θ = b(ζ)\frac{dζ}{ζ^2η},
+Θ = b(ζ)\frac{dζ}{ζ^2η} = \left( b_0 + b_1 ζ + \dots + b_{g+3} ζ^{g+3} \right) \frac{dζ}{ζ^2η},
 \labelthis{eqn:def b}
 \]
-for some real degree $g+3$ polynomial $b(ζ)$, meeting the condition $P_1b_0 - 2P_0b_1 = 0$ on its coefficents.
+for some real degree $g+3$ polynomial $b(ζ) \in \mathcal{P}^{g+3}_\R$, meeting the condition $P_1b_0 - 2P_0b_1 = 0$ on its coefficents.
 
 Finally, having purely imginary periods imposes further linear relations on the coefficents of $b$. Take a basis of the homology of $Σ$ denoted $A_1,\ldots,A_g,B_1,\ldots,B_g$. Let $A_i$ be the difference of the two lifts to $Σ$ of the arc connecting $α_i$ and $\cji{α}_i$. Such cycles have the property that $ρ_*(A_i) = -A_i$, and along such cycles
 \[

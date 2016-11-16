@@ -6,31 +6,41 @@
 % \section{Overview}
 % \label{sec:Overview}
 
-Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{S}_1$. Every marked curve of $\mathcal{C}_1$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods} and that also have integral periods (Condition \ref{P:periods}) but not every curve admits differentials that further meet the closing conditions, Condition \ref{P:closing}. The closing conditions therefore can be viewed as defining equations for $\mathcal{S}_1$ within $\mathcal{C}_1$. We will investigate the topology of $\mathcal{S}_1$ and show it to be a dense collection of leaves of a foliation of $\mathcal{C}_1$. Most connected components will be simply connected, though there is also an exceptional family of annuli. The moduli space $\mathcal{M}_1$ of spectral data will be shown to be a trivial bundle over $\mathcal{S}_1$.
+% Main result
+Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{C}_1$. The main aim of this chapter is describe the topology of $\mathcal{S}_1$.
+We prove, in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, that there is a foliation of $\mathcal{C}_1$ such that $\mathcal{S}_1$ is a dense collection of leaves of this foliation. The leaves are topologically either strip $(0,1)\times \R$ or annuli. The arrangment of the leaves $\mathcal{S}_1$ are illustrated in Figure \ref{}.
 
-A marked curve is determined by its branch points, and because of the real involution $ρ$, the branch points come in conjugate-inverse pairs.
-Recall from equation \eqref{eqn:def Ag} that $\mathcal{A}_1$ is the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc. The action of $\Z_2$ that interchanges the two points is a free and transitive action. Thus the quotient space $\mathcal{A}_1/\Z_2$ is smooth, and it can be identified with the space of marked curves $\mathcal{C}_1$. $\mathcal{A}_1$ is a two-to-one cover of $\mathcal{C}_1$. We denote the covering map $Σ$, so that
+% Main idea: the closing conditions
+
+For any genus $g$, every marked curve of $\mathcal{C}_g$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods}. In the particular case of marked curves of genus one however, every curve further has differentials that have integral periods (Condition \ref{P:periods}). But not every curve admits differentials that meet the closing conditions, Condition \ref{P:closing}. The closing conditions therefore can be viewed as defining equations for the subspace $\mathcal{S}_1$ within $\mathcal{C}_1$.
+
+The proof of the two theorems therefore proceeds by the construction, in several stages, of covering spaces and parameterisations adapted to the closing conditions.
+Recall from equation \eqref{eqn:def Ag} that $\mathcal{A}_1$ is the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc.
+We identify the quotient space $\mathcal{A}_1/\Z_2$, where $\Z_2$ acts by permuting the coordinates, with the space of marked curves $\mathcal{C}_1$.
+Using $Σ$ to denote the covering map, the curve
 \[
 Σ(α,β) = \{ (ζ,η) \mid η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ) \},
 \]
 is the marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$ and which has the standard scaling \eqref{eqn:def P}.
 
-The main theorems of this chapter are Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, which together describe a foliation of $\mathcal{C}_1$ and identifies the connected components of $\mathcal{S}_1$ as leaves of this foliation. This result is proved by the construction, in several stages, of a parameterisation of the foliation adapted to the closing conditions. First, in \textsection\ref{sec:Differentials} on each marked curve we find the differentials with integral periods. Having found these differentials, in \textsection\ref{sec:closing conditions} we reformulate the closing conditions to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given spectral curve admits spectral data. The first function is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (eqn \eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
+First, in Section \ref{sec:Differentials}, on each marked curve we find the differentials that satisfy \ref{P:real curve}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section \ref{sec:closing conditions} we reformulate the closing conditions \ref{P:closing} to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given spectral curve admits spectral data. The first function, $S$ (defined by \eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by \eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
 
-To analyse the two functions, especially the second, we introduce a new set of coordinates on $\mathcal{A}_1$ that are adapted to calculation (\textsection\ref{sec:Reformulate}). These new coordinates dovetail with the results of \textsection\ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$. We then compute the derivatives of $\tilde{T}$ and use the implicit function theorem to prove that its level sets, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$. Finally, we push this foliation back down to $\mathcal{C}_1$. By uniqueness, $\mathcal{\tilde{A}}_1$ is also the universal cover of $\mathcal{C}_1$, so one recovers $\mathcal{S}_1$ as a quotient by covering transformations (\textsection\ref{sec:Topology}).
+To analyse the two functions we introduce a new set of coordinates on $\mathcal{A}_1$ that are suited to calculation (Section \ref{sec:Reformulate}). These new coordinates dovetail with the results of Section \ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$.
+We then compute the derivatives of $\tilde{T}$ and use the implicit function theorem to prove that its level sets, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$.
+Finally, we push this foliation back down to $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as a quotient by the group of covering transformations $\mathcal{G}$ (Section \ref{sec:Topology}).
 
-To close this chapter, in \textsection\ref{sec:Corollaries}, we show that $\mathcal{M}_1$ is a trivial bundle over $\mathcal{S}_1$. We consider some well-known examples of harmonic maps and show in which component of the moduli space they reside. Building on this, we identify a symmetry of $\mathcal{S}_1$ and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
+To close the chapter, in Section \ref{sec:Corollaries}, we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that it is simply connected. We consider some well-known examples of harmonic maps, the Gauss maps of Delauney surfaces, and identify them with a component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_1$ and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
 
-We have introduced numerous spaces, so we summarise them and their relationship to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. Within each of these spaces, we may consider the subspaces on which the first function has the value $p\in\Q^+$. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$, is the union of those $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. A double-headed arrow indicates a covering map and the $\Z$ or $\Z_2$ over it indicates the group of covering transformations.
+It is convinient to summarise the spaces we have introduced and their relationships to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. Within each of these spaces, we may consider the subspaces on which the function $S$ has the value $p\in\Q^+$. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of the space of spectral curves $\mathcal{S}_1$, is the union of those level sets $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. A double-headed arrow indicates a covering map, with the group of covering transformations written above it.
 \[
 \begin{diagram}
-    \mathcal{\tilde{A}}_1 &\rOnto^{\Z}&  \mathcal{A}_1  &\rOnto^{\Z_2}&  \mathcal{C}_1 \\
+    \mathcal{\tilde{A}}_1 &\rOnto^{2π \Z}&  \mathcal{A}_1  &\rOnto^{\Z_2}&  \mathcal{C}_1 \\
     \uInto  &&  \uInto  &&  \uInto  \\
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \mathcal{\tilde{A}}_1(p)  &\rOnto^{\Z}&  \mathcal{A}_1(p)  &\rOnto^{\Z_2}&  \mathcal{C}_1(p) \\
+    \mathcal{\tilde{A}}_1(p)  &\rOnto^{2π \Z}&  \mathcal{A}_1(p)  &\rOnto^{\Z_2}&  \mathcal{C}_1(p) \\
     \uInto  &&  &&  \uInto  \\
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \mathcal{\tilde{S}}_1(p) =  \coprod_{q\in\Q} \mathcal{\tilde{A}}_1(p,q)  &&  \rOnto  && \mathcal{S}_1(p)
+    \mathcal{\tilde{S}}_1(p) =  \coprod_{q\in\Q} \mathcal{\tilde{A}}_1(p,q)  &&  \rOnto^{\mathcal{G}}  && \mathcal{S}_1(p)
 \end{diagram}
 \]
 
@@ -47,7 +57,7 @@ We have introduced numerous spaces, so we summarise them and their relationship 
 
 \section{The Differentials of an Elliptic Marked Curve}
 \label{sec:Differentials}
-As outlined in the previous section, it will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct the differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions \ref{P:poles}--\ref{P:reality}. The second step is to therefore write down these differentials; the differentials $Θ$ on $Σ$ that have double poles and no residues over $ζ=0,\infty$, that with respect to the hyperelliptic involution $σ$ obey $σ^*Θ = - Θ$, and that are real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$. They form a three dimensional real vector space.
+As outlined in the previous section, it will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct the differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions \ref{P:poles}--\ref{P:reality}. The second step is to therefore write down these differentials; the differentials $Θ$ on $Σ$ that have double poles and no residues over $ζ=0$ and $\infty$, that with respect to the hyperelliptic involution $σ$ obey $σ^*Θ = - Θ$, and that are real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$. They form a three dimensional real vector space $W$.
 
 Next, we use the transformation $f$ to compute the periods of these differentials in terms of the Jacobi elliptic integrals. Finally, we leverage the standard relations among the Jacobi elliptic integrals to describe explicitly the differentials with integral periods, those which meet condition \ref{P:periods}. Any differential that meets all the conditions \ref{P:poles}--\ref{P:periods} may be written as a linear combination of two distinguished differentials, $Θ^E$ and $Θ^P$. The choice of these two differentials on $Σ(α,β)$ varies smoothly in the parameters $(α,β)$. The space of differentials with integral periods will be shown to be trivial bundles over $\mathcal{A}_1$ and $\mathcal{C_1}$.
 
@@ -83,7 +93,9 @@ disagrees with eqn \eqref{eqn:roots_cross_ratio} in this limit, which rules out 
     z & 1 & -1 & k^{-1} & -k^{-1}
   \end{array}
 \]
-The difference between the two is a choice of which root, $α$ or $β$, is mapped to $1$. This is the reason that we work with $\mathcal{A}_1$ and not $\mathcal{C}_1$. On the latter space, there would be no way to consistently make this choice. \todo{improve this point} From our correspondence, equating the cross ratios $[α,\cji{α};β,\cji{β}] = [1,-1;k^{-1},-k^{-1}]$ gives
+The difference between the two is a choice of which root, $α$ or $β$, is mapped to $1$. This is the reason that we work with $\mathcal{A}_1$ and not $\mathcal{C}_1$. On the latter space, there would be no way to consistently make this choice. For example, take a path $t \mapsto Σ(0.5 e^{\iu t}, -0.5 e^{\iu t})$ in $\mathcal{C}_1$. This is a closed loop where the branch points swap as $t$ varies from $0$ to $π$.
+
+From our correspondence, equating the cross ratios $[α,\cji{α};β,\cji{β}] = [1,-1;k^{-1},-k^{-1}]$ gives
 \[
 k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}},
 \labelthis{eqn:def_k}
@@ -141,7 +153,7 @@ Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} an
 
 Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Jacobi elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
 
-Having found the map $f$ that transforms the genus one marked curve $Σ$ into Jacobi normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions \ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions \ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of Section \ref{sec:prelim diffs}, recall that all differentials on a genus one marked curve $Σ$ that have (at most) a double root over $ζ=0$ and $ζ=\infty$ may be written the form
+Having found the map $f$ that transforms the genus one marked curve $Σ$ into Jacobi normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions \ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions \ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of \eqref{eqn:def b}, recall that all differentials on a genus one marked curve $Σ$ that have (at most) a double root over $ζ=0$ and $ζ=\infty$ may be written the form
 \[
 Θ = b(ζ)\frac{dζ}{ζ^2η},
 \]
@@ -201,7 +213,8 @@ We are now in a position to compute the periods of our basis $ω,Θ^E,ε$. We ch
 
 For the loop $A$, start on the positive unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the negative unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For the loop $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the positive sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the positive sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
 
-\makefigure{$A$ in red and $B$ in black}{thesis_graphics_temp/zeta_periods.png}
+% \makefigure{$A$ in red and $B$ in blue}{thesis_graphics_temp/zeta_periods.png}
+\maketikzfigure{$A$ in red and $B$ in blue}{tikz/zeta_periods}
 
 The loop $A$ is a real period, which means that the integral of a real differential over $A$ is real. Recall that a differential $Θ$ is real with respect to $ρ$ when $ρ^* Θ = - \bar{Θ}$. By construction, $ρ_* A = -A$. Together, we see that
 \[
@@ -465,7 +478,8 @@ Thus the space of genus one spectral curves that admit closing spectral data is 
 
 Immediately before this lemma we observed that although the condition $T\in\Q$ is well defined, $T(α,β)$ is a multi-valued function on $\mathcal{A}_1$ which is dependent on the paths of integration. So that we may work with a well-defined function, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$. Let us then make a principal choice of paths, and let the value of $T$ on these principal choices be denoted $T_0$. Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $γ_+$ be the path that begins at $(1,η^-(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,η^+(1))$. Likewise for $γ_-$ from $(-1,η^-(-1))$ to $(-1,η^+(-1))$. These paths are illustrated in figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded.
 
-\makefigure{$γ_+$ in red and $γ_-$ in black\label{fig:gamma paths}}{thesis_graphics_temp/gamma_pm_zeta.png}
+% \makefigure{$γ_+$ in red and $γ_-$ in black\label{fig:gamma paths}}{thesis_graphics_temp/gamma_pm_zeta.png}
+\maketikzfigure{$γ_+$ in red and $γ_-$ in blue\label{fig:gamma paths}}{tikz/gamma_pm_zeta}
 
 As $ν\neq 1$, we know that $f(1) \neq \infty$ and so $f(γ_+)$ lies in the plane (it does not pass through $z=\infty$).
 By design it is easy to describe these paths in terms of the $(z,w)$ coordinates.
@@ -567,7 +581,7 @@ It remains to show that these functions have smooth inverses. As the parameters 
 \[
 \frac{z-z_0}{z + \bar{z_0}},
 \]
-(compare to \eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. To find $z_0$, we will identify it as the intersection of two circles, one arising from $S$ and one arising from the geometry of the Möbius transformation $f$. In \eqref{}, the definition of $S$, there are two ratios. We may use the following trick using the cross ratio to write each ratio in terms of the new coordinates and $z_0$. Observe
+(compare to \eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. To find $z_0$, we will identify it as the intersection of two circles, one arising from $S$ and one arising from the geometry of the Möbius transformation $f$. In \eqref{eqn:def_S}, the definition of $S$, there are two ratios. We may use the following trick using the cross ratio to write each ratio in terms of the new coordinates and $z_0$. Observe
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -747,7 +761,7 @@ V(p,k,v)
 \labelthis{eqn:def V}
 \end{align*}
 The following lemma shows these functions $U$ and $V$, and therefore the $u$-derivative of $T$ also, are non-vanishing.
- 
+
 \begin{lem}
     \label{lem:deriv no zeroes}
 The functions $U$ and $V$, defined by \eqref{eqn:def U} and \eqref{eqn:def V} respectively are strictly positive for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
@@ -789,7 +803,7 @@ This establishes that $V$ is positive too.
 % \frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
 % \end{align*}
 
-Finally in this section, we will compute the range of $T_0$, which will be used in Lemma \ref{} to show that the level sets of $T$ are graphs over the product of this range and $\R^+\times (0,1)$.
+Finally in this section, we will compute the range of $T_0$, which will be used in Lemma \ref{lem:T_graph} to show that certain level sets are graphs over the product of this range and $\R^+\times (0,1)$.
 \begin{lem}
 \label{lem:range_T}
 The range of $T_0$ on $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ is $\R$.
@@ -976,6 +990,7 @@ Then
 using Legendre's relation (see Section \ref{sec:Legendre's Relation}).
 Thus to do computations with the function $\tilde{T}$, for the most part one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular,
 \begin{lem}
+\label{lem:tilde T rational}
 If $p$ is rational, $T\circ\tilde{π} \in \Q$ if and only if $\tilde{T} \in \Q$.
 \end{lem}
 This motivates us to look at the level sets of $\tilde{T}$ as a proxy for looking at the level sets of $T$.
@@ -1048,7 +1063,7 @@ so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is non-vanishin
 
 With this lemma in hand, we are within striking distance of results about $\mathcal{S}_1$. Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves, which are marked curves that admit spectral data. We will recover $\mathcal{S}_1$ as the quotient of the level sets of $\tilde{T}$ by the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{A}}_1$ over $\mathcal{C}_1$.
 
-Define $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{A}}_1$ to be the preimage of $\mathcal{S}_1$ in the universal cover. As we have shown that $\mathcal{S}_1$ is the subspace of $\mathcal{C}_1$ on which $S$ is a positive rational and $T$ is any rational (Lemma \ref{lem:closing_conds}) and that a point in $\mathcal{\tilde{A}}_1$ is the preimage of a point of $\mathcal{S}_1$ exactly when $p$ is a positive rational and $\tilde{T} \in \Q$ (Lemma \ref{}), it follows that
+Define $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{A}}_1$ to be the preimage of $\mathcal{S}_1$ in the universal cover. As we have shown that $\mathcal{S}_1$ is the subspace of $\mathcal{C}_1$ on which $S$ is a positive rational and $T$ is any rational (Lemma \ref{lem:closing_conds}) and that a point in $\mathcal{\tilde{A}}_1$ is the preimage of a point of $\mathcal{S}_1$ exactly when $p$ is a positive rational and $\tilde{T} \in \Q$ (Lemma \ref{lem:tilde T rational}), it follows that
 \[
 \mathcal{\tilde{S}}_1 = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{A}}_1(p,q).
 \]
@@ -1097,6 +1112,7 @@ for some integer $m$. Therefore, these covering transformations lie within the s
 Not every element of this set is a well defined map on $\mathcal{\tilde{A}}_1$ however, because by Lemma \ref{lem:mathcal tilde A} we have that $\tilde{u} < \tilde{v} < \tilde{u} + 2π$. Hence above if we choose $m$, there choice of $n$ is completely determined. We claim that the group of covering transformations $\mathcal{G}$ is generated by
 \[
 \tilde{λ} : (p,k,\tilde{u},\tilde{v}) \mapsto (p,k, 2π\Wind(\tilde{u}) + π + 2\atan (ku), 2π\Wind(\tilde{v}) + π + 2\atan (kv)).
+\labelthis{eqn:tilde lambda action}
 \]
 If we apply this transformation twice, we see that the $\tilde{u}$ coordinate changes thusly
 \begin{align*}
@@ -1165,20 +1181,17 @@ This relation is a difference of analytic functions on an open set, so by contin
 
 
 
-
-
-
-% TODO
-Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{A}}_1(p,q)$, where $\tilde{T} = q$, is to move them into $\mathcal{\tilde{A}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{u},\tilde{v}) \in \mathcal{\tilde{A}}_1(p)$. If $p\leq 1$ let $\tilde{x}$ be $\tilde{u}$ and otherwise take it to be $\tilde{v}$. We know by Lemma \ref{lem:T_graph} that $(q,k,\tilde{x})$, where $q = \tilde{T}(p,k,\tilde{u},\tilde{v})$, are coordinates for $\mathcal{\tilde{A}}_1(p)$. In particular, $\mathcal{\tilde{A}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
+Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{A}}_1(p,q)$, where $\tilde{T} = q$, is to move them into the $\mathcal{\tilde{A}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{u},\tilde{v}) \in \mathcal{\tilde{A}}_1(p)$.
+If $p\leq 1$ let $\tilde{x}$ be $\tilde{u}$ and otherwise take it to be $\tilde{v}$. We know by Lemma \ref{lem:T_graph} that $(q,k,\tilde{x})$, where $q = \tilde{T}(p,k,\tilde{u},\tilde{v})$, are coordinates for $\mathcal{\tilde{A}}_1(p)$. In particular, $\mathcal{\tilde{A}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
 \[
 (p,q,k,\tilde{x}) \mapsto (p, q + (p-1), k, \tilde{x}'),
+\labelthis{eqn:group action}
 \]
 where
 \[
-\tilde{x}' = 2π\Wind(\tilde{x}) + π + 2\atan (k \tan (\tilde{x}/2)).
-\labelthis{eqn:group action}
+\tilde{x}' = 2π\Wind(\tilde{x}) + π + 2\atan (k \tan (\tilde{x}/2)),
 \]
-Thus the group of covering transformations provide an identification between the level set $\mathcal{\tilde{A}}_1(p,q)$ and the level set $\mathcal{\tilde{A}}_1(p,q + l(p-1))$ for any integer $l$.
+which should be compared to the action of $\tilde{λ}$ in the $(p,k,\tilde{u},\tilde{v})$ coordinates in \eqref{eqn:tilde lambda action}. Viewing the cosets of the group of covering transformations as an equivalence relation, for $p\neq 1$ they provide an identification between the level set $\mathcal{\tilde{A}}_1(p,q)$ and the level set $\mathcal{\tilde{A}}_1(p,q + l(p-1))$ for any integer $l$.
 
 \begin{thm}
 \label{thm:topology_curves}
@@ -1191,20 +1204,20 @@ such that the subspace of spectral curves $\mathcal{S}_1(p)$ is
 \mathcal{S}_1(p) = \{ \mathcal{C}_1(p) \mid q \in \Q/ (p-1)\Z \}.
 \]
 \begin{proof}
-Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{A}}_1(p)$ by the group of covering transformations $\Z\langle\tilde{λ}\rangle$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}_1(p)$ is foliated by $\mathcal{\tilde{A}}_1(p,q)$ and we have just shown in \eqref{eqn:group action} how different $\mathcal{\tilde{A}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each of $\R/(p-1)\Z$ to cover the image.
+Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{A}}_1(p)$ by the group of covering transformations $\mathcal{G} = \Z\langle\tilde{λ}\rangle$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}_1(p)$ is foliated by $\mathcal{\tilde{A}}_1(p,q)$ and we have just shown in \eqref{eqn:group action} how different $\mathcal{\tilde{A}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each element of $\R/(p-1)\Z$ to cover the image.
 
-Lemma \ref{lem:T_graph} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of $\mathcal{\tilde{A}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$ under the covering map, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $q \in \Q/(p-1)\Z$.
+Lemma \ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of $\mathcal{\tilde{A}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$ under the covering map, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $q \in \Q/(p-1)\Z$.
 \end{proof}
 \end{thm}
 
-This leaves just one special case.
+This leaves just one special case, where $p=1$. We see that the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set.
 
 \begin{thm}
 \label{thm:topology_curves_p1}
 The space of marked curves $\mathcal{C}_1(1)$ is diffeomorphic to the product of $\R$ and an annulus, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is the restriction of the first component of the product to $\Q$.
 
 \begin{proof}
-In this special case where $p=1$, we see that the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set. From \eqref{eqn:group action}, this relation is $(1,q,k,\tilde{x}) \sim (1, q, k, \tilde{x}')$, where
+From \eqref{eqn:group action}, the equivalence relation is $(1,q,k,\tilde{x}) \sim (1, q, k, \tilde{x}')$, where
 \[
 \tilde{x}' \in  \{ \tilde{x} + 2π\Z \} \cup
 \{ π + 2\atan (k \tan (\tilde{x}/2)) + 2π\Z \}.
@@ -1222,7 +1235,7 @@ the points $(k,0)$ are identified with the points $(k,π)$, and so this strip is
 \end{align*}
 which is a simple translation by $π$. The presence of $k$ in \eqref{eqn:annuli action} skews the translation of $\tilde{x}$ when $k$ is small.
 
-As in the previous theorem, by construction of the coordinates $(p,q,k,\tilde{x})$, a point is in $\mathcal{S}_1 \subset \mathcal{C}_1$ exactly when it is the image of a point where $p$ and $q$ is rational. As $p=1$ in this case, the points of $\mathcal{S}_1(1)$ are those where $q\in\Q$.
+As in the previous theorem, by construction of the coordinates $(p,q,k,\tilde{x})$ and Lemma \ref{lem:tilde T rational}, a point is in $\mathcal{S}_1 \subset \mathcal{C}_1$ exactly when it is the image of a point where $p$ and $q$ are rational. As $p=1$ in this case, the points of $\mathcal{S}_1(1)$ are those where $q\in\Q$.
 \end{proof}
 \end{thm}
 
@@ -1230,7 +1243,7 @@ These two theorems complete our quest to gain an understanding of the subspace o
 
 Then we moved to the universal cover $\mathcal{\tilde{A}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multi-valued function $T$. We then considered the subspaces of $\mathcal{\tilde{A}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be strips in Lemma \ref{lem:T_graph}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
 
-The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group was shown to be $\Z\langle\tilde{λ}\rangle$ and its action was described by \eqref{eqn:group action}. This allowed us to describe the quotients in the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of strips within $\mathcal{C}_1$. As can be seen in the pictures below, and proved rigorously in the next chapter, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'.
+The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group $\mathcal{G}$ was shown to be $\Z\langle\tilde{λ}\rangle$ and its action was described by \eqref{eqn:group action}. This allowed us to describe the quotients in the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of strips within $\mathcal{C}_1$. As can be seen in the pictures below, and proved rigorously in the next chapter, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'.
 
 PICTURES OF HELICES\todo{}
 
@@ -1239,9 +1252,9 @@ PICTURES OF HELICES\todo{}
 \section{Corollaries}
 \label{sec:Corollaries}
 
-In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are strips, but the components of $\mathcal{S}_1(1)$ are annuli. This section will show several properties of these components. First that although the moduli space of spectral curves is not simply connected, because of the annuli components, the moduli space of spectral data is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case lie within a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a general transformation $χ$ on the space spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
+In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are strips, but the components of $\mathcal{S}_1(1)$ are annuli. This section will show several properties of these components. First that although the moduli space of spectral curves $\mathcal{S}_1$ is not simply connected, because of the annuli components, the moduli space of spectral data $\mathcal{M}_1$ is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case can be identified with a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a general transformation $χ$ on the space spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
 
-Before we can prove that the moduli space of spectral data is simply connected, we must revisit and improve on Lemma \ref{lem:closing_conds}. In that lemma, we see that the rationality of the values of the functions $S$ and $T$ are necessary and sufficient conditions for the existence of spectral data. The proof is constructive, in that it finds a set of spectral data on any marked curve that meets both conditions. However, to examine the moduli of spectral data, we must find a `minimal' set of spectral data from which all other on that curve may generated.
+Before we can prove results about the moduli space of spectral data, we must revisit and improve on Lemma \ref{lem:closing_conds}. In that lemma, we saw that the rationality of the values of the functions $S$ and $T$ are necessary and sufficient conditions for the existence of spectral data. The proof was constructive, in that it finds a set of spectral data on any marked curve that meets both conditions. However, to examine the moduli of spectral data, we must find a `minimal' set of spectral data from which all other on that curve may generated.
 
 \begin{lem}
 \label{lem:minimal differentials}
@@ -1290,6 +1303,7 @@ It meets conditions \ref{P:poles}--\ref{P:closing} and is exact, so must be an i
 \end{lem}
 
 The space of differentials meeting \ref{P:poles}--\ref{P:closing} are a $\Z\times\Z$-subbundle of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. The differential $Ψ^E$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space $\mathcal{C}_1(p)$. However, for $p\neq 1$ the space of spectral curves $\mathcal{S}_1(p)$ is simply connected, so it is possible to make a consistent choice of paths on this subspace, and thereby to extend these differentials to a frame, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
+% TODO fix this
 
 For $S=1$, take any path component of $\mathcal{S}_1(1)$. It is an annulus. Writing $S=1=n/m$ in as a reduced fraction implies that $m=n=1$. From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1)$ that wraps around an annulus once. If we make a choice of $γ_+,γ_-$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous computations, each of
 \[
@@ -1326,7 +1340,15 @@ Indeed this can be seen to be the case, as $k$ is invariant under such a transfo
 χ_{(α,β)}: Σ(α,β) &\to Σ(-α,-β) \\
 (ζ, η) &\mapsto (-ζ,-η)
 \end{align*}
-interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the map $χ_{(α,β)}$ preserves the integrality of the periods and the integrals over $γ_+$, $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$. The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises from the spectral data as the gauge transformation between the connections corresponding to $ζ=1$ and $ζ=-1$ in \eqref{eqn:flat connections}, so exchanging these points gives the inverted harmonic map $g(z)^{-1}$.
+interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the map $χ_{(α,β)}$ preserves the integrality of the periods and the integrals over $γ_+$, $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$.
+The exact same reasoning applies in general to marked curves of any genus,
+\begin{align*}
+χ: \mathcal{A}_g &\to \mathcal{A}_g \\
+(α_1,α_2,\dots,α_g) &\mapsto (-α_1,-α_2,\dots,-α_g),
+χ_{(α_1,α_2,\dots,α_g)}: Σ(α_1,α_2,\dots,α_g) &\to Σ(-α_1,-α_2,\dots,-α_g) \\
+(ζ, η) &\mapsto (-ζ,-η).
+\end{align*}
+The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises from the spectral data as the gauge transformation between the connections corresponding to $ζ=1$ and $ζ=-1$ in \eqref{eqn:flat connections}, so exchanging these points with $χ_{(α_1,α_2,\dots,α_g)}$ gives the inverted harmonic map $g(z)^{-1}$.
 
 This can be seen directly in the genus zero case, which was treated in Chapter \ref{chp:Genus Zero}. Recall that the equation of any harmonic map corresponding to spectral data with a genus zero spectral curve may, as in \eqref{eqn:genus zero simple map}, be written
 \[
@@ -1429,7 +1451,7 @@ which is to say the branch point of the spectral curve associated to $g^{-1}$ is
 % \]
 % Recall the interpretation of span of the principal parts as the universal cover of the domain, with the lattice generated by these differentials corresponding to tthe lattice of periods. The previous equation then shows a rotation by $\iu$, corresponding to how we had to define $\tilde{w} = \iu w$.
 
-Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one spectral curves that meet the conditions \ref{}\todo{REF} for the harmonic map to have as their image a totally geodesic two-sphere. Hitchin \cite[p693]{Hitchin1990} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
+Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one spectral curves that meet the conditions for the harmonic map to have as their image a totally geodesic two-sphere (see discussion at end of Section \ref{sec:construction}). Hitchin \cite[p693]{Hitchin1990} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
 
 Firstly, as these are fixed points of $χ$ which sends $p \mapsto p^{-1}$, it follows that $p$ is one. The $χ$-symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points lie on a line, $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
 \[
