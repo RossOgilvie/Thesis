@@ -256,7 +256,7 @@ c &= 2
 where \eqref{eqn:legendre_relation} uses Legendre's relation (see Lemma \ref{lem:Legendres relation}). Thus $Θ^P = 2Eω - 2Kε$, or if we unwind these definitions a little
 \[
 Θ^P = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
-\labelthis{eqn:theta2}
+\labelthis{eqn:thetaP}
 \]
 This equation shows a nice division, with the first two terms providing the desired periods and the last term giving the required poles. Though the choices up to this point may seem arbitrary and contrived, they are not, as we can characterise the differential $Θ^P$ in the following way.
 
@@ -487,6 +487,7 @@ Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,η
 The principal branch cut $T_0$ of $T$ is defined on $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ to be
 \[
 T_0 (α,β) := T(α,β,\symbf{γ}_+,\symbf{γ}_-) = S(α,β) \int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P.
+\labelthis{eqn:def_T_0}
 \]
 \end{defn}
 
@@ -500,7 +501,7 @@ Start from the point $f(1)$ on the imaginary axis and go to the origin. Go out a
 % \makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black\label{fig:f gamma paths}}{thesis_graphics_temp/gamma_pm_z.png}
 \makefigure{The paths $f(\symbf{γ}_+)$ in red and $f(\symbf{γ}_-)$ in blue. \label{fig:f gamma paths}}{tikz/gamma_pm_z}
 
-Having fixed a choice of paths, we can write explicit formulae for the value of the standard differentials on these particular paths,
+Having fixed a choice of paths, we can the integrals of the standard differentials $ω$ and $e$ along these particular paths in terms of elliptic integrals,
 \begin{align*}
 \int_{\symbf{γ}_+} ω
 &= \bra{2\int_0^{f(1)} - 2\int_0^1} ω
@@ -508,7 +509,7 @@ Having fixed a choice of paths, we can write explicit formulae for the value of 
 \int_{\symbf{γ}_+} e
 &= 2 \tilde E(f(1);k) - 2 E(k),
 \end{align*}
-and so give a formula for $Θ^P$ over $\symbf{γ}_+$,
+and so by integrating \eqref{eqn:thetaP} give a formula for $Θ^P$ over $\symbf{γ}_+$,
 \begin{multline*}
 \int_{\symbf{γ}_+} Θ^P
 = \int_{\symbf{γ}_+} (2Eω - 2Ke) - 2K \int_{\symbf{γ}_+} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
@@ -520,18 +521,17 @@ For the integral of $Θ^P$ over the path $\symbf{γ}_-$ for $ζ=-1$, we have sim
 = 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) \\
 - 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Imag z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{multline*}
-
-These two formulae may be substituted into \eqref{eqn:def_T} to compute $T_0$. In the next section however, we will make a change of coordinates that simplifies these formulae.
+These two formulae may be substituted into \eqref{eqn:def_T_0} to compute $T_0$. In the next section however, we will make a change of coordinates that simplifies these formulae.
 
 Previously, the comment was made that the particular algorithm to chose a path is not valid when $ν = \pm 1$. Indeed, the result of this can be seen directly in the formulae we have derived. When $ν$ takes either of these values, then one of $f(1)$ or $f(-1)$ will be infinite. We also note that these integrals are purely imaginary, as we expected on theoretical grounds, because $f(1)$ and $f(-1)$ are purely imaginary, $F(z;k)$ and $E(z ;k)$ take the imaginary axis to itself and
 \[
 (f(1)-z_0)(f(1) + \bar{z}_0) = -(f(1)-z_0)(\overline{f(1) - z_0}) = - \abs{f(1) - z_0}^2.
 \]
-From Definition \eqref{eqn:def_T}, $T_0$ is therefore a real valued function.
+The function $T_0$ is therefore real valued.
 
 To summarise our calculations to this point, we determined that every differential on a marked curve $Σ$ that satisfies conditions \ref{P:poles}--\ref{P:reality} must lie in a real three-dimensional vector space $W$. We found a basis $\{ω,Θ^E,λ\}$ of $W$, gave a basis $A,B$ for the homology of $Σ$ and computed the periods of the basis differentials with respect to this basis. This allowed us to find a differential $Θ^P\in \R\{ω,λ\} \subset W$ that satisfied \ref{P:periods}. We observed that every differential on $Σ$ that meet the conditions \ref{P:poles}--\ref{P:periods} was the sum of a real multiple of $Θ^E$ and an integer multiple of $Θ^P$.
 
-With these two differentials we then attempted to further satisfy \ref{P:closing}. This was not possible for an arbitrary marked curve $Σ$, which lead us to define the functions $S(α,β)$ by \eqref{eqn:def_S} and $T(α,β)$ by \eqref{eqn:def_T}. Lemmata \ref{lem:exist spectral data} and \ref{lem:closing_conds} taken together imply that a marked curve admits spectral data exactly when the functions $S$ and $T$ simultaneously take rational values. The last part of this section noted that $T$ is a multi-valued function, and so took a principal branch cut of it and derived the corresponding explicit formulae.
+With these two differentials we then attempted to further satisfy \ref{P:closing}. This was not possible for an arbitrary marked curve $Σ$, which lead us to define the functions $S(α,β)$ by \eqref{eqn:def_S} and $T(α,β)$ by \eqref{eqn:def_T}. Lemmata \ref{lem:exist spectral data} and \ref{lem:closing_conds} taken together imply that a marked curve admits spectral data exactly when the functions $S$ and $T$ simultaneously take rational values. The last part of this section noted that $T$ is a multi-valued function, and so took a principal branch of it and derived the corresponding explicit formulae.
 
 % Properly understood, $T$ is not a function on the space of spectral curves $\mathcal{A}_1$, but rather it is a function on the space of paths $(γ_+, γ_-)$, which we shall call $\mathcal{P}$. To be more precise, let $\mathcal{P}$ be the space $\{(γ_+, γ_-, Σ, α)\}$ where $α$ is one of the branch points inside the unit circle of some genus one spectral curve $Σ$ and $γ_+$ and $γ_-$ are paths $(0,1) \to Σ$ defined in the following way. $γ_+$ starts at $(1, η^-(1))$, monotonically traverses the unit circle to $μ$ (that is, it does not pause or reverse direction), goes along the branch circle to $α$, encircles it, returns to $μ$ along the branch circle and retraces its path to $(1, η^+(1))$. In an analogous way, $γ_-$ starts at $(-1, η^-(-1))$ and finishes at $(-1, η^+(-1))$. We shall call such paths rigid. Every path on $Σ$ that connects the two points over $1$ or $-1$ is homologous to one of these rigid paths.
 %
@@ -1008,11 +1008,12 @@ Thus to do computations with the function $\tilde{T}$, for the most part one can
 \begin{lem}
 \label{lem:tilde T rational}
 If $p$ is rational, $T\circ\tilde{π} \in \Q$ if and only if $\tilde{T} \in \Q$.
+\hfill\qedsymbol
 \end{lem}
 This motivates us to look at the level sets of $\tilde{T}$ as a proxy for looking at the level sets of $T$.
 Let us make two definitions. Define $\mathcal{\tilde{A}}_1(p)$ to be the subspace of $\mathcal{\tilde{A}}_1$ on which $S \circ \tilde{π} = p$ is a fixed constant. We further denote the subset of $\mathcal{\tilde{A}}_1(p)$ on which the value of $\tilde{T}$ is $q$ by $\mathcal{\tilde{A}}_1(p,q)$.
 
-The spaces $\mathcal{\tilde{A}}_1(p)$ are simple to understand. They are just the points of $\mathcal{\tilde{A}}_1$ where the first coordinate is fixed, and so they are simply covered by the three remaining coordinates $(k,\tilde{u},tilde{v}) \in (0,1)\times\R\times\R$. As demonstrated by the following lemma, the level sets $\mathcal{\tilde{A}}_1(p,q)$ are similarly well behaved.
+The spaces $\mathcal{\tilde{A}}_1(p)$ are simple to understand. They are just the points of $\mathcal{\tilde{A}}_1$ where the first coordinate is fixed, and so they are simply covered by the three remaining coordinates $(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R$. As demonstrated by the following lemma, the level sets $\mathcal{\tilde{A}}_1(p,q)$ are similarly well behaved.
 
 
 
@@ -1068,6 +1069,7 @@ T_0&(p,k,u,v) \\
 &= -p\Big( -4\left[ E F(\iu v;k) - K E(\iu v;k) \right] + \frac{4}{p}\left[ E F(\iu u;k) - K E(\iu u;k) \right] \\
 &\hspace{8cm}+ 4\iu K \frac{ w(\iu v)+ \frac{1}{p}w(\iu u)}{u-v} \Big)\\
 &= -p T_0\bra{ \tfrac{1}{p}, k, v, u },
+\labelthis{eqn:T_0 symmetry}
 \end{align*}
 so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is non-vanishing. Again the implicit function theorem gives the result.
 \end{proof}
@@ -1339,7 +1341,7 @@ so that $\tilde{Ψ}^P - Ψ^P = -am'Θ^E = - m' Ψ^E$. Recall that the period of 
 
 PART ABOUT THE MAT2Z OF $\mathcal{M}_1$
 
-There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry
+There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry in \eqref{eqn:T_0 symmetry},
 \[
 T_0(p,k,u,v) = -p T_0\bra{ \tfrac{1}{p}, k, v, u },
 \]
@@ -1361,10 +1363,10 @@ Indeed this can be seen to be the case, as $k$ is invariant under such a transfo
 interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the map $χ_{(α,β)}$ preserves the integrality of the periods and the integrals over $γ_+$, $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$.
 The exact same reasoning applies in general to marked curves of any genus,
 \begin{align*}
-χ: \mathcal{A}_g &\to \mathcal{A}_g \\
-(α_1,α_2,\dots,α_g) &\mapsto (-α_1,-α_2,\dots,-α_g),
-χ_{(α_1,α_2,\dots,α_g)}: Σ(α_1,α_2,\dots,α_g) &\to Σ(-α_1,-α_2,\dots,-α_g) \\
-(ζ, η) &\mapsto (-ζ,-η).
+χ:&& \mathcal{A}_g &\to \mathcal{A}_g \\
+&&(α_1,α_2,\dots,α_g) &\mapsto (-α_1,-α_2,\dots,-α_g), \\
+χ_{(α_1,α_2,\dots,α_g)}:&& Σ(α_1,α_2,\dots,α_g) &\to Σ(-α_1,-α_2,\dots,-α_g) \\
+&&(ζ, η) &\mapsto (-ζ,\iu^g η).
 \end{align*}
 The harmonic map $g(z) : \mathbb{T}^2 \to \S^3$ arises from the spectral data as the gauge transformation between the connections corresponding to $ζ=1$ and $ζ=-1$ in \eqref{eqn:flat connections}, so exchanging these points with $χ_{(α_1,α_2,\dots,α_g)}$ gives the inverted harmonic map $g(z)^{-1}$.
 
@@ -1429,7 +1431,7 @@ e^{-\iu δ} & 0
 -e^{\iu (π-δ)} & 0
 \end{pmatrix}.
 \end{align*}
-Thus the angle parameter has become $π-δ$. As an aside, as seen in Figure \ref{fig:genus zero maps} this angle parameter determines the image of the harmonic map up to an $SO(4)$ rotation of $\S^3$. In particular, the maps $g$ and $g^{-1}$ have congruent images.
+Thus the angle parameter has become $π-δ$. As an aside, as seen in Figure \ref{fig:genus zero maps} this angle parameter determines the image of the harmonic map up to an $SO(4)$ rotation of $\S^3$. In particular, these maps $g$ and $g^{-1}$ have congruent images.
 
 Recall that the parameter $x$ of $g$ was defined by \eqref{eqn:conformal type} to be $\norm{Y}/\norm{X}$. The value of this ratio is inverted for $g^{-1}$. Now using \eqref{eqn:def branch point genus zero} to determine the branch point of the spectral curve associated to $g^{-1}$ we have
 \[
@@ -1469,9 +1471,9 @@ which is to say the branch point of the spectral curve associated to $g^{-1}$ is
 % \]
 % Recall the interpretation of span of the principal parts as the universal cover of the domain, with the lattice generated by these differentials corresponding to tthe lattice of periods. The previous equation then shows a rotation by $\iu$, corresponding to how we had to define $\tilde{w} = \iu w$.
 
-Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one spectral curves that meet the conditions for the harmonic map to have as their image a totally geodesic two-sphere (see discussion at end of Section \ref{sec:construction}). Hitchin \cite[p693]{Hitchin1990} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
+Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one marked curves that would meet the conditions, if they admit spectral data, for the associated harmonic map to have a totally geodesic two-sphere as its image (see discussion at end of Section \ref{sec:construction}). Hitchin \cite[p693]{Hitchin1990} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
 
-Firstly, as these are fixed points of $χ$ which sends $p \mapsto p^{-1}$, it follows that $p$ is one. The $χ$-symmetry in $T_0$ now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points lie on a line, $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
+Firstly, as these are fixed points of $χ$ which sends $p \mapsto p^{-1}$, it follows that $p$ is one. The symmetry of $T_0$ given by \eqref{eqn:T_0 symmetry} now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points lie on a line it follows that $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
 \[
 z_0 = \frac{1+ \abs{α}}{1-\abs{α}},\quad
 k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
