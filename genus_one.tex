@@ -7,38 +7,39 @@
 % \label{sec:Overview}
 
 % Main result
-Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{C}_1$. The main aim of this chapter is describe the topology of $\mathcal{S}_1$.
-We prove, in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, that there is a foliation of $\mathcal{C}_1$ such that $\mathcal{S}_1$ is a dense collection of leaves of this foliation. The leaves are topologically either strip $(0,1)\times \R$ or annuli. The arrangment of the leaves $\mathcal{S}_1$ are illustrated in Figure \ref{}.
+The aim of this chapter is describe the topology of the moduli space of spectral curves $\mathcal{S}_1$.
+Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{C}_1$.
+We prove, in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, that there is a foliation of $\mathcal{C}_1$ such that $\mathcal{S}_1$ is a dense collection of leaves of this foliation. The leaves are topologically either strips $(0,1)\times \R$ or annuli. The arrangment of the leaves $\mathcal{S}_1$ is illustrated in Figure \ref{}.
 
 % Main idea: the closing conditions
-
-For any genus $g$, every marked curve of $\mathcal{C}_g$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods}. In the particular case of marked curves of genus one however, every curve further has differentials that have integral periods (Condition \ref{P:periods}). But not every curve admits differentials that meet the closing conditions, Condition \ref{P:closing}. The closing conditions therefore can be viewed as defining equations for the subspace $\mathcal{S}_1$ within $\mathcal{C}_1$.
+The closing conditions, Conditions \ref{P:closing}, must be satisfied by the differentials $Θ$ and $\tilde{Θ}$ to ensure that the harmonic map associated to a tuple of spectral data $(Σ,Θ,\tilde{Θ},E)$ has a torus as its domain, as opposed to a plane. For any genus $g$, every marked curve of $\mathcal{C}_g$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods}. In the particular case of marked curves of genus one, every curve further has differentials that have integral periods (Condition \ref{P:periods}). But not every curve admits differentials that meet the closing conditions. The closing conditions therefore can be viewed as defining equations for the subspace $\mathcal{S}_1$ within $\mathcal{C}_1$.
 
 The proof of the two theorems therefore proceeds by the construction, in several stages, of covering spaces and parameterisations adapted to the closing conditions.
-Recall from equation \eqref{eqn:def Ag} that $\mathcal{A}_1$ is the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc.
-We identify the quotient space $\mathcal{A}_1/\Z_2$, where $\Z_2$ acts by permuting the coordinates, with the space of marked curves $\mathcal{C}_1$.
+In the initial three sections of this chapter we work with the parameter sapce $\mathcal{A}_1$, which we recall from equation \eqref{eqn:def Ag} to be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc.
+We identify the quotient space $\mathcal{A}_1/\Z_2$, where $\Z_2$ acts by permutation of the coordinates, with the space of marked curves $\mathcal{C}_1$.
 Using $Σ$ to denote the covering map, the curve
 \[
-Σ(α,β) = \{ (ζ,η) \mid η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ) \},
+Σ(α,β) = \{ (ζ,η) \mid η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ) \} \in \mathcal{C}_1,
 \]
-is the marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$ and which has the standard scaling \eqref{eqn:def P}.
+is the marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$ and the standard scaling given by \eqref{eqn:def P}.
 
-First, in Section \ref{sec:Differentials}, on each marked curve we find the differentials that satisfy \ref{P:real curve}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section \ref{sec:closing conditions} we reformulate the closing conditions \ref{P:closing} to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given spectral curve admits spectral data. The first function, $S$ (defined by \eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by \eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
+For each point of $\mathcal{A}_1$ in Section \ref{sec:Differentials} we give a transformation of the corresponding marked curve to an elliptic curve in Legendre normal form. This allows us to find on each marked curve the differentials that satisfy \ref{P:real curve}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section \ref{sec:closing conditions} we reformulate the closing conditions \ref{P:closing} to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given marked curve admits differentials that further satisfy the closing conditions. A marked curve with a pair of such differentials consitute a tuple of spectral data, and so we call such a curve a spectral curve. The first function, $S$ (defined by \eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by \eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
 
-To analyse the two functions we introduce a new set of coordinates on $\mathcal{A}_1$ that are suited to calculation (Section \ref{sec:Reformulate}). These new coordinates dovetail with the results of Section \ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$.
-We then compute the derivatives of $\tilde{T}$ and use the implicit function theorem to prove that its level sets, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$.
+Tthe functions $S$ and $T$ may be analysed by introducing a new set of coordinates on $\mathcal{A}_1$ that are suited to calculation (Section \ref{sec:Reformulate}).
+These new coordinates allows us to reasonably compute the derivatives of $T$. They also dovetail with the results of Section \ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$.
+We then use the implicit function theorem to prove that the level sets of $S$ and $\tilde{T}$, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$.
 Finally, we push this foliation back down to $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as a quotient by the group of covering transformations $\mathcal{G}$ (Section \ref{sec:Topology}).
 
-To close the chapter, in Section \ref{sec:Corollaries}, we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that it is simply connected. We consider some well-known examples of harmonic maps, the Gauss maps of Delauney surfaces, and identify them with a component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_1$ and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
+To close the chapter, in Section \ref{sec:Corollaries} we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that the total space of the bundle is simply connected. We consider some well-known examples of harmonic maps, namely the Gauss maps of Delauney surfaces, and identify them with a specific connected component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_g$, for any genus $g$, and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
 
-It is convinient to summarise the spaces we have introduced and their relationships to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. Within each of these spaces, we may consider the subspaces on which the function $S$ has the value $p\in\Q^+$. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of the space of spectral curves $\mathcal{S}_1$, is the union of those level sets $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. A double-headed arrow indicates a covering map, with the group of covering transformations written above it.
+We summarise the spaces that we have introduced and their relationships to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. On the next line we consider within each of these spaces the subspaces on which the function $S$ has the value $p\in\Q^+$, denoted by $p$ in paratheses. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of the space of spectral curves $\mathcal{S}_1$, is the union of those level sets $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. The horizontal arrows represent covering maps, labelled with the group of covering transformations, whereas the vertical arrows represent inclusions.
 \[
 \begin{diagram}
     \mathcal{\tilde{A}}_1 &\rOnto^{2π \Z}&  \mathcal{A}_1  &\rOnto^{\Z_2}&  \mathcal{C}_1 \\
-    \uInto  &&  \uInto  &&  \uInto  \\
+    \uTo  &&  \uTo  &&  \uTo  \\
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mathcal{\tilde{A}}_1(p)  &\rOnto^{2π \Z}&  \mathcal{A}_1(p)  &\rOnto^{\Z_2}&  \mathcal{C}_1(p) \\
-    \uInto  &&  &&  \uInto  \\
+    \uTo  &&  &&  \uTo  \\
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \mathcal{\tilde{S}}_1(p) =  \coprod_{q\in\Q} \mathcal{\tilde{A}}_1(p,q)  &&  \rOnto^{\mathcal{G}}  && \mathcal{S}_1(p)
 \end{diagram}
@@ -57,19 +58,30 @@ It is convinient to summarise the spaces we have introduced and their relationsh
 
 \section{The Differentials of an Elliptic Marked Curve}
 \label{sec:Differentials}
-As outlined in the previous section, it will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct the differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions \ref{P:poles}--\ref{P:reality}. The second step is to therefore write down these differentials; the differentials $Θ$ on $Σ$ that have double poles and no residues over $ζ=0$ and $\infty$, that with respect to the hyperelliptic involution $σ$ obey $σ^*Θ = - Θ$, and that are real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$. They form a three dimensional real vector space $W$.
+It will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct such differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions \ref{P:poles}--\ref{P:reality}.
+These conditions are:
+\begin{enumerate}[label=(P.\arabic*)]
+\setcounter{enumi}{3}
+\item
+$Θ$ has double poles and no residues over $ζ=0$ and $\infty$,
+\item
+that with respect to the hyperelliptic involution $σ$, $Θ$ obeys $σ^*Θ = - Θ$, and
+\item
+that $Θ$ is real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$.
+\end{enumerate}
+The second step is to therefore write down set of differentials meeting these three conditions; they form a three dimensional real vector space $W$.
 
 Next, we use the transformation $f$ to compute the periods of these differentials in terms of the Jacobi elliptic integrals. Finally, we leverage the standard relations among the Jacobi elliptic integrals to describe explicitly the differentials with integral periods, those which meet condition \ref{P:periods}. Any differential that meets all the conditions \ref{P:poles}--\ref{P:periods} may be written as a linear combination of two distinguished differentials, $Θ^E$ and $Θ^P$. The choice of these two differentials on $Σ(α,β)$ varies smoothly in the parameters $(α,β)$. The space of differentials with integral periods will be shown to be trivial bundles over $\mathcal{A}_1$ and $\mathcal{C_1}$.
 
-With the standard scaling \eqref{eqn:def P}, any marked curve of genus one may be written as
+Let us get to work. With the standard scaling \eqref{eqn:def P}, any marked curve of genus one may be written as
 \[
-η^2 = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ),
+η^2 = P(ζ) := (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ),
 \]
 with roots $α, \cji{α}, β$ and $\cji{β}$. On the other hand, every elliptic curve may be transformed into the Legendre normal form
 \[
 w^2 = (1-z^2)(1-k^2z^2)
 \]
-where $k$ is a complex number called the elliptic modulus. For a given marked curve, how is one to compute the modulus and therefore determine the appropriate Jacobi form into which to transform? The answer lies in the consideration of the cross ratio of the roots
+where $k$ is a complex number called the elliptic modulus. For a given marked curve, how is one to compute the modulus and therefore determine the appropriate Jacobi form into which to transform? The answer lies in the cross ratio of the roots
 \[
 [α,\cji{α};β,\cji{β}] = \frac{\abs{α-β}^2}{\abs{1-\bar{α}β}^2}. \labelthis{eqn:roots_cross_ratio}
 \]
@@ -85,7 +97,9 @@ This correspondence has three properties that distinguish it from the others. By
 \[
 [1,k^{-1};-1,-k^{-1}] = \frac{4k}{(k+1)^2}
 \]
-disagrees with eqn \eqref{eqn:roots_cross_ratio} in this limit, which rules out this correspondence and the three others with the same cross ratio. Finally, our choice of correspondences takes the unit disc to the right half plane. There is only one other correspondence that has all three of these properties, namely
+disagrees with eqn \eqref{eqn:roots_cross_ratio} in this limit, which rules out this correspondence and the three others with the same cross ratio. Finally, our choice of correspondences takes the interior of the unit disc to the right half plane, which will be our convention throughout this chapter.
+
+There is only one other correspondence that has all three of these properties, namely
 \[
   \begin{array}{l || c|c|c|c}
     ζ & β & \cji{β} & α & \cji{α} \\
@@ -93,7 +107,7 @@ disagrees with eqn \eqref{eqn:roots_cross_ratio} in this limit, which rules out 
     z & 1 & -1 & k^{-1} & -k^{-1}
   \end{array}
 \]
-The difference between the two is a choice of which root, $α$ or $β$, is mapped to $1$. This is the reason that we work with $\mathcal{A}_1$ and not $\mathcal{C}_1$. On the latter space, there would be no way to consistently make this choice. For example, take a path $t \mapsto Σ(0.5 e^{\iu t}, -0.5 e^{\iu t})$ in $\mathcal{C}_1$. This is a closed loop where the branch points swap as $t$ varies from $0$ to $π$.
+The difference between this correspondence and our preferred correspondence is the choice of which root, $α$ or $β$, is mapped to $1$. This is the reason that we must work with $\mathcal{A}_1$ and not $\mathcal{C}_1$. On the latter space, there would be no way to consistently make the choice. For example, take the path $t \mapsto Σ(0.5 e^{\iu t}, -0.5 e^{\iu t})$ in $\mathcal{C}_1$. This is a closed loop where the branch points are interchanged as $t$ varies from $0$ to $π$.
 
 From our correspondence, equating the cross ratios $[α,\cji{α};β,\cji{β}] = [1,-1;k^{-1},-k^{-1}]$ gives
 \[
@@ -102,7 +116,7 @@ k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}},
 \]
 and the map, which we shall call $f$, can be computed from the relation $[α,\cji{α};β,ζ] = [1,-1;k^{-1},f(ζ)]$. Instead of solving this relation for $f$ immediately, we turn to understanding the geometry of the transformation so that we might produce a meaningful expression.
 
-The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ask what is its image under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution $\tilde{ρ}(z)$ in the $z$-plane that exchanges $1,-1$ and $k^{-1},-k^{-1}$ is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore must be the image of the unit circle under $f$.
+The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ponder its image under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution $\tilde{ρ}(z)$ in the $z$-plane that exchanges $1,-1$ and $k^{-1},-k^{-1}$ is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore must be the image of the unit circle under $f$.
 
 As already mentioned, the four roots of the spectral curve lie on a circle (or a line), which we shall call the branch circle. Let two points at the intersection of the branch circle with the unit circle be $μ$ and $ν$, with $μ$ lying between $α$ and $\cji{α}$ and $ν$ lying between $β$ and $\cji{β}$ (see Figure \ref{fig:zeta plane}). Under $f$, the branch circle is mapped to the real axis. Therefore the $f(μ)$ and $f(ν)$ must lie on the intersection of the real and imaginary axes. Hence $f(μ) = 0$ and $f(ν) = \infty$.
 
@@ -123,15 +137,15 @@ z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 \label{lem:coeff_f_smooth}
 The functions $μ,ν,z_0,(z_0)^{-1}$ and $k$ are smooth functions of the parameters $(α,β)\in\mathcal{A}_1$. The function $f(α,β)(ζ)$ is a smooth function of $(α,β,ζ)\in\mathcal{A}_1 \times \CP^1$ whenever $ζ \neq ν$. Further $μ - ν$ is never zero.
 \begin{proof}
-Recall that $μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms of $α,β$ using the cross-ratio relation $[α,\cji{α};β,μ] = [1,-1;k^{-1},0]$. Rearranging gives
+Recall that $μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms of $α$ and $β$ using the cross-ratio relation $[α,\cji{α};β,μ] = [1,-1;k^{-1},0]$. Rearranging gives
 \[
 μ = \frac{ (α-β)\abs{1-\bar{α}β} + α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} + (1-\bar{α}β)\abs{α-β} }.
 \]
-This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. $α-β$ is never zero on $\mathcal{A}_1$ by definition. The factor $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disc, this is impossible. Finally, the denominator is zero exactly when
+This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. The factor $α-β$ is never zero on $\mathcal{A}_1$ by definition. The factor $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disc, this is impossible. Finally, the denominator is zero exactly when
 \[
 \bar{α} = - \frac{1-\bar{α}β}{\abs{1-\bar{α}β}} \frac{\abs{α-β}}{α-β}.
 \]
-But the right hand side is an element of the unit circle, so again this possibility is ruled out. The proof of smoothness is entirely similar for
+But the right hand side is an element of the unit circle, so again this possibility is eliminated. The proof of smoothness is entirely similar for
 \begin{align*}
 ν &= \frac{ (α-β)\abs{1-\bar{α}β} - α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} - (1-\bar{α}β)\abs{α-β} }, \\
 z_0 &= \frac{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} + (1-α\bar{β})\abs{α-β} }{ α(\bar{α}-\bar{β})\abs{1-\bar{α}β} - (1-α\bar{β})\abs{α-β} },
@@ -149,15 +163,17 @@ and this has already shown not to occur on $\mathcal{A}_1$.
 \end{proof}
 \end{lem}
 
-Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the spectral curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ lying over the unit circle $ζ=1$. Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$. At a point $(ζ,η)$ on the positive unit circle in $Σ$, we define the function $η^+$ to be the value of $η$. Algebraically, $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$.
+% TODO: rework this next para
 
-Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Jacobi elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
+Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the marked curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ lying over the unit circle in $\CP^1$. Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$. At a point $(ζ,η)$ on the positive unit circle in $Σ$, we define the function $η^+$ to be the value of $η$. Algebraically, $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$.
 
-Having found the map $f$ that transforms the genus one marked curve $Σ$ into Jacobi normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions \ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions \ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of \eqref{eqn:def b}, recall that all differentials on a genus one marked curve $Σ$ that have (at most) a double root over $ζ=0$ and $ζ=\infty$ may be written the form
+Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Legendre elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
+
+Having found the map $f$ that transforms a genus one marked curve $Σ$ into Legendre normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions \ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions \ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of \eqref{eqn:def b}, recall that all differentials on a genus one marked curve $Σ$ that have (at worst) a double pole over $ζ=0$ and $ζ=\infty$ may be written the form
 \[
 Θ = b(ζ)\frac{dζ}{ζ^2η},
 \]
-for a polynomial $b(ζ)$ of degree $4$. Condition \ref{P:reality} forces $b\in \mathcal{P}^4_\R$, the space of polynomials that are real with respect to $ρ$. Practically, if we write $b(ζ) = b_0 + \dots + b_4 ζ^4$, this condition forces $b_i = b_{4-i}$. Lastly, if we write out the equation of $Σ$ as $η^2 = P(ζ) = P_0 ζ + \dots + P_4 ζ^4$, $Θ$ has no residues exactly when $P_1b_0 - 2P_0b_1 = 0$ (equation \ref{eqn:residue condition}). If we count the degrees of freedom remaining, we may choose $(b_0,b_1)$ from a complex line and $b_2$ to be any real number. Hence for each marked curve $Σ$ there is a real three dimensional vector space $W$ of differentials that meet conditions \ref{P:poles}--\ref{P:reality}.
+for a polynomial $b(ζ)$ of degree $4$. Condition \ref{P:reality} forces $b\in \mathcal{P}^4_\R$, the space of polynomials that are real with respect to $ρ$. Practically, if we write $b(ζ) = b_0 + \dots + b_4 ζ^4$, this condition forces $b_i = b_{4-i}$. Lastly, if we write out the equation of $Σ$ as $η^2 = P(ζ) = P_0 ζ + \dots + P_4 ζ^4$, $Θ$ has no residues exactly when $P_1b_0 - 2P_0b_1 = 0$ (equation \ref{eqn:residue condition}). If we count the degrees of freedom remaining, the last equation shows that we may choose $(b_0,b_1)$ from a complex line, whereas $b_2$ may be any real number. Hence for each marked curve $Σ$ there is a real three dimensional vector space $W$ of differentials that meet conditions \ref{P:poles}--\ref{P:reality}.
 
 This presents an obvious choice of basis, but one that we will not choose. Instead, we shall choose a basis that it suited to computing the periods of the differentials so that we may be able to satisfy condition \ref{P:periods}, that the periods of the differentials lie in $2π\iu$. For this we turn to the the classical theory of elliptic curves, which has long studied differentials and their periods. It is standard to refer to differentials with double poles and no residues as differentials of the second kind. Condition \ref{P:poles} may therefore be rephrased as the differential must be of the second kind and have poles at the points of $\Sigma$ over $ζ=0$ and $\infty$. The standard Jacobi differential of the second kind is defined to be
 \[
@@ -185,7 +201,8 @@ e + d\left[ \frac{w}{z + \bar{z}_0} \right]
 has no pole at $z=\infty$. To check this let $z' = z^{-1}$, and expand $e$ about $z' = 0$.
 \begin{align*}
 w &= kz'^{-2} \bra{1 + O(z'^2) } \\
-e &= kz'^{-2} dz' \bra{1-k^{-2}z'^2}\bra{1 + O(z'^2)} = kz'^{-2} dz' \bra{1 + O(z'^2)},
+e &= -k^2z'^{-2} \bra{1-k^{-2}z'^2} \times -z'^{-2} dz' \times k^{-1}z'^{2} \bra{1 + O(z'^2)} \\
+&= kz'^{-2} dz' \bra{1 + O(z'^2)},
 \end{align*}
 whereas the exact differential has the following expansion
 \begin{align*}
@@ -201,22 +218,25 @@ which shows that their sum is holomorphic at $z=\infty$. Unfortunately, this dif
 so we add a differential of this form to restore the reality. The differential
 \[
 e + d\left[ \frac{w}{z + \bar{z}_0}\right] + C\,d \left[\frac{w}{(z-z_0)(z + \bar{z}_0)}\right]
-= e + d\left[ \frac{w(z - z_0 + C)}{(z-z_0)(z + \bar{z}_0)}\right]
+= e + d\left[ \frac{(z - z_0 + C)w}{(z-z_0)(z + \bar{z}_0)}\right]
 \]
-is real when $z_0 - C$ is an imaginary number. Thus we should choose $C \in \Real z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^E$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part perpendicular to the principal part of $Θ^E$, which introduces a symmetry that we will use later. Hence we take as our third basis differential
+is real when $z_0 - C$ is an imaginary number. Thus we should choose $C \in \Real z_0 + i\R$. The apparent freedom to choose the imaginary part of $C$ is exactly adding a scalar of $Θ^E$ and so will not change the span of the resulting basis. There are two natural choices; taking $z_0 - C$ to be zero, or taking $C$ to be purely real. Both have their merits, but the latter choice ends up being superior as it makes the principal part of this differential perpendicular to the principal part of $Θ^E$, which introduces a symmetry that we will use later. Hence we take as our third basis differential
 \[
 ε := e + d\left[ \frac{w}{z + \bar{z}_0} \right] + \Real z_0\; d\left[ \frac{w}{(z-z_0)(z + \bar{z}_0)} \right]
-= e + d\left[ \frac{w(z - \iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
+= e + d\left[ \frac{(z - \iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right].
+\labelthis{eqn:def ε}
 \]
 
-We are now in a position to compute the periods of our basis $ω,Θ^E,ε$. We choose a basis of homology of the marked curve $Σ$ following way. First, take the branch cuts to be along the branch circle, between $α$ and $β$ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the positive or negative sheet, where as before the positive sheet is where $η$ is positive over $ζ=1$.
+We are now in a position to compute the periods of our basis $\{ ω,Θ^E,ε \}$. We choose a basis of homology of the marked curve $Σ$ following way. First, take the branch cuts to be along the branch circle, between $α$ and $β$ and between $\cji{α}$ and $\cji{β}$, in particular so that they do not cross the unit circle. Under $f$, this corresponds to the standard choice of $[1,k^{-1}]$ and $[-k^{-1},-1]$. We can speak of points of $Σ$ as being on the positive or negative sheet, where as before the positive sheet is where $η$ is positive over $ζ=1$.
 
-For the loop $A$, start on the positive unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the negative unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For the loop $B$, start at the same point we began $A$ and follow the unit circle clockwise. The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the positive sheet. $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the positive sheet. But this is homologous to the standard clockwise loop around $1$ and $k^{-1}$.
+For the loop $A$, start on the positive unit circle at $μ$, traverse in and around $α$ anticlockwise (crossing a branch cut), then cross the negative unit circle and continue anticlockwise around $\cji{α}$ before returning to the starting point. For the loop $B$, start at the same point we began $A$ and follow the unit circle clockwise. These loops are shown in Figure \ref{fig:zeta periods}.
 
 % \makefigure{$A$ in red and $B$ in blue}{thesis_graphics_temp/zeta_periods.png}
-\maketikzfigure{The anticlockwise, real period $A$ in red and the clockwise, imaginary period $B$ in blue.}{tikz/zeta_periods}
+\maketikzfigure{The anticlockwise, real period $A$ in red and the clockwise, imaginary period $B$ in blue. \label{fig:zeta periods}}{tikz/zeta_periods}
 
-The loop $A$ is a real period, which means that the integral of a real differential over $A$ is real. Recall that a differential $Θ$ is real with respect to $ρ$ when $ρ^* Θ = - \bar{Θ}$. By construction, $ρ_* A = -A$. Together, we see that
+The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the positive sheet. The loop $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the positive sheet. But this is homologous to a clockwise loop around $1$ and $k^{-1}$. Thus we have chosen the basis of homology $A,B$ such that their images under $f$ are the standard choice of homology on an elliptic curve in Legendre normal form, as depicted in Figure \ref{fig:standard periods}.
+
+The loop $A$ is a real period, which means that the integral of a real differential over $A$ is real. To prove this, recall that a differential $Θ$ is real with respect to $ρ$ when $ρ^* Θ = - \bar{Θ}$. By construction, $ρ_* A = -A$. Together,
 \[
 \bar{\int_A Θ}
 = \int_A \bar{Θ}
@@ -227,9 +247,21 @@ The loop $A$ is a real period, which means that the integral of a real different
 \]
 which shows the $A$-period of $Θ$ to be real. Likewise, the integral of a real differential over $B$ is always an imaginary number.
 
-We wish to be able to describe the differentials of $W$ that have having imaginary and integral periods. As $Θ^E$ is exact, any real multiple of it fits this description. Suppose there existed $Θ^P\in W$ that had a real period of zero and an imaginary period of $2π\iu$. If we had any other differential in $W$ with vanishing real period and an imaginary period of  $2π\iu l$, then by subtracting $lΘ^P$ the result would be an exact differential, and therefore would have to be a real multiple of $Θ^E$. In short, if we are able to find such a differential $Θ^P$, then any differential meeting conditions \ref{P:poles}--\ref{P:periods} would lie in $\R Θ^E + \Z Θ^P \subset W$.
+We wish to be able to describe the differentials of $W$ that have both imaginary and integral periods.
+\begin{lem}
+On a genus one marked curve $Σ$, suppose there is a differential $Θ^P$ satisfying Conditions \ref{P:poles}--\ref{P:periods} such that
+\[
+\int_B Θ^P = 2π \iu.
+\]
+Then for any other differential $Θ$ satisfying Conditions \ref{P:poles}--\ref{P:periods}, $Θ$ lies in $\R Θ^E + \Z Θ^P \subset W$.
+\begin{proof}
+It is always the case that the real periods of a holomorphic differential on a compact Riemann surface are non-zero \cite[Cor~VIII.4.3]{Miranda1995}. Therefore $\{ ω, Θ^E, Θ^P \}$ is a linearly independent set of differentials in $W$, and thus a basis. By satisfying \ref{P:poles}--\ref{P:reality}, $Θ$ is forced to lie in $W$ and so is a combination of this basis.
 
-Thus we have reduced the problem to finding a differential $Θ^P \in W$ with vanishing $A$-period and a $B$-period of $2π\iu$. The superscript $P$ is a mnemonic for period. Clearly, we may add a real multiple of $Θ^E$ to $Θ^P$ and it will also meet this requirement. Therefore let $Θ^P = aω + bε$, for some real constants $a$ and $b$, be a combination of the other two basis vectors of $W = \R\langle ω,Θ^E,ε\rangle$.
+If $Θ$ were exact, which is to say that its integrals over $A$ and $B$ were zero, it follows immediately that $Θ$ would have to be a real multiple of $Θ^E$. If $Θ$ were non-exact, then by \ref{P:periods} it would have an imaginary period of $2π\iu l$, for some $l \in \Z$. By subtracting $lΘ^P$ the result would be an exact differential, and therefore would have to be a real multiple of $Θ^E$.
+\end{proof}
+\end{lem}
+
+Thus we have reduced the problem of describing differentials on $Σ$ meeting Conditions \ref{P:poles}--\ref{P:periods} to that of finding a differential $Θ^P \in W$ with vanishing $A$-period and a $B$-period of $2π\iu$. The superscript $P$ is a mnemonic for period. Clearly, we may add a real multiple of $Θ^E$ to $Θ^P$ without altering affecting this requirement. Therefore, for some real constants $a$ and $b$, let $Θ^P = aω + bε$ be a combination of the other two basis vectors of $W = \R\langle ω,Θ^E,ε\rangle$.
 
 It is useful at this point to summarise the standard elliptic integrals, the periods of the differentials $ω$ and $e$,
 \begin{align*}
@@ -253,16 +285,16 @@ From the first equation, we can write $a = cE$ and $b = - cK$ for some $c\in \R$
 &= \frac{\pi}{2}c \\
 c &= 2
 \end{align*}
-where \eqref{eqn:legendre_relation} uses Legendre's relation (see Lemma \ref{lem:Legendres relation}). Thus $Θ^P = 2Eω - 2Kε$, or if we unwind these definitions a little
+where \eqref{eqn:legendre_relation} uses Legendre's relation (see Lemma \ref{lem:Legendres relation}). Thus $Θ^P = 2Eω - 2Kε$, or if we unwind the definition of $ε$, \eqref{eqn:def ε},
 \[
-Θ^P = 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right].
+Θ^P = 2E ω - 2Ke - 2K d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right].
 \labelthis{eqn:thetaP}
 \]
 This equation shows a nice division, with the first two terms providing the desired periods and the last term giving the required poles. Though the choices up to this point may seem arbitrary and contrived, they are not, as we can characterise the differential $Θ^P$ in the following way.
 
 \begin{lem}
     \label{lem:theta2_characterisation}
-The differential $Θ^P$ is the unique real differential on the marked curve $Σ$ with double poles and no residues over $ζ=0$ and $\infty$, with periods $0$ and $2π\iu$ over $A$ and $B$, and with principal part over $ζ=0$
+The differential $Θ^P$ is the unique real differential on the marked curve $Σ$ with double poles and no residues over $ζ=0$ and $\infty$, with periods $0$ and $2π\iu$ over $A$ and $B$ respectively, and with its principal part over $ζ=0$ satisfying
 \[
 \pp Θ^P \in \iu \R \pp Θ^E.
 \]
@@ -272,61 +304,62 @@ We first verify that $Θ^P$ has such properties, then verify uniqueness. The onl
 \[
 \pp Θ^E
 = \iu \pp d\bra{\frac{η}{ζ}}
-= \iu r \pp d \bra{ \frac{w}{(z-z_0)(z + \bar{z}_0)} }
+= \iu \pp d \bra{ \frac{rw}{(z-z_0)(z + \bar{z}_0)} }
 = -\iu r \frac{w(z_0)}{z_0 + \bar{z}_0}\frac{dz}{(z-z_0)^2}.
 \]
 On the other hand
 \begin{align*}
 \pp Θ^P
-&= - 2K \pp d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= + 2K \frac{w(z_0)(z_0-\iu\,\Imag z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2} \\
-&= 2K \frac{w(z_0)(\Real z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2}.
+&= - 2K \pp d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= + 2K \frac{(z_0-\iu\,\Imag z_0)w(z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2} \\
+&= 2K (\Real z_0) \frac{w(z_0)}{z_0 + \bar{z}_0} \frac{dz}{(z-z_0)^2}.
 \end{align*}
 To establish uniqueness, suppose that $Θ$ was another such differential. Then $Θ-Θ^P$ would be exact, real and have double poles with no residues. So for some real $s$
 \[
 Θ = Θ^P + s Θ^E.
 \]
-As taking principal part is linear, the third condition forces $s=0$.
+As taking principal part is a linear operation, the third condition forces $s=0$.
 \end{proof}
 \end{lem}
 
 As we have already remarked, having found this pair of differentials any other differential satisfying \ref{P:poles}--\ref{P:periods} may be written in the form $a Θ^E + n Θ^P$ for some $a\in\R$ and $n\in\Z$. We may think of the differentials satisfying \ref{P:poles}--\ref{P:periods} as forming a $\Z\times\R$-bundle over $\mathcal{A}_1$. This pair of differentials $Θ^E$ and $Θ^P$ vary smoothly with respect to $(α,β)$ and are always linearly independent so they trivialises that bundle.
 
-Recall that $\mathcal{A}_1$ double covers $\mathcal{C}_1$; the points $(α,β)$ and $(β,α)$ in $\mathcal{A}_1$ correspond to the same marked curve $Σ\in \mathcal{C}_1$. If we have a section of differentials $Θ : (α,β) \mapsto Ω^1(Σ(α,β))$, this raises the question on how $Θ(α,β)$ and $Θ(β,α)$, which are on the same curve $Σ(α,β)$, differ. We observe directly that $Θ^E = \iu d (η/ζ)$ is invariant under the interchange of $α$ and $β$. Now we may use the characterisation of $Θ^P$ given by Lemma \ref{lem:theta2_characterisation} to conclude the same for it, because
+Recall that $\mathcal{A}_1$ double covers $\mathcal{C}_1$; the points $(α,β)$ and $(β,α)$ in $\mathcal{A}_1$ correspond to the same marked curve $Σ\in \mathcal{C}_1$. Suppose we have a section of differentials $Θ : (α,β) \mapsto Ω^1(Σ(α,β))$. As $Σ(α,β)$ and $Σ(β,α)$ are the same curve, this raises the question of what the difference $Θ(α,β) - Θ(β,α)$ is. Asking this for $Θ^E(α,β)$ and $Θ^P(α,β)$, we observe directly that $Θ^E = \iu d (η/ζ)$ is invariant under the interchange of $α$ and $β$. Now we may use the characterisation given by Lemma \ref{lem:theta2_characterisation} to conclude the same for $Θ^P$, because
 \[
 \pp Θ^P(β,α) \in \iu \R \pp Θ^E(β,α) = \iu \R \pp Θ^E(α,β)
 \]
 and so uniqueness forces $Θ^P(β,α) = Θ^P(α,β)$.
 
-The consequence of this is that $(Θ^E,Θ^P)$ pushes forward to a well-defined basis of the differentials over $\mathcal{C}_1$ as well, and just as for $\mathcal{A}_1$ they trivialise the bundle $\mathcal{B}_1 \to \mathcal{C}_1$. Though we mainly concentrate on the subspace of $\mathcal{A}_1$ of spectral curves that admit spectral data, at the end of this chapter we will consider the space of spectral data within the total space of $(\mathcal{B}_1)^2$.
+The consequence of this is that $\langle Θ^E,Θ^P \rangle$ pushes forward to a well-defined basis of the differentials over $\mathcal{C}_1$ as well, and just as for $\mathcal{A}_1$ they trivialise the bundle $\mathcal{B}_1 \to \mathcal{C}_1$. Though we mainly concentrate on the subspace of $\mathcal{C}_1$ of marked curves that admit spectral data, at the end of this chapter we will consider the space of spectral data within the total space of pairs of differentials $(\R\langle Θ^E,Θ^P \rangle)^2$.
 
 
 \section{The Closing Conditions}
 \label{sec:closing conditions}
-Recall the closing conditions, Condition \ref{P:closing}. These are the conditions that spectral data must meet in order that they correspond to a harmonic map of the torus, rather than a harmonic map of the plane (of finite type). If $(Σ,Θ,\tilde{Θ})$ is a triple of spectral data, $Θ$ satisfies the closing condition at $ζ=1$ if
+The closing conditions, Conditions \ref{P:closing}, are the conditions that spectral data must meet in order that they correspond to a harmonic map of the torus, rather than a harmonic map of the plane (of finite type). If $(Σ,Θ,\tilde{Θ})$ is a triple of spectral data, $Θ$ satisfies the closing condition at $ζ=1$ if
 \[
 \int_{γ_{+}} Θ \in 2π\iu \Z,
 \]
-where $γ_+$ is a path that begins at $(1,η^+(1)^-)$ and ends at $(1,η^+(1))$, the two points on the spectral curve lying over $ζ=1$. Recall that we have defined $η^{\pm}(ζ) = \pmζ\abs{ζ-α}\abs{ζ-β}$ to be the value of $η$ on the positive and negative unit circles in $Σ$ respectively. However, the value of the integral is dependent on the particular path chosen. To see that this condition is none-the-less well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination $aA + bB$ of periods $A$ and $B$. The difference in the values of the integrals is therefore
+where $γ_+$ is a path that begins at $(1,-η^+(1))$ and ends at $(1,η^+(1))$, the two points on the spectral curve lying over $ζ=1$. Recall that we have defined $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$ to be the value of $η$ on the positive unit circle in $Σ$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is none-the-less well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination $aA + bB$ of periods $A$ and $B$. The difference in the values of the integrals is therefore
 \[
 \int_{γ} Θ - \int_{γ'} Θ
 = \int_{γ - γ'} Θ
 = a\int_{A} Θ + b\int_{B} Θ
 = 2π\iu nb,
 \]
-because by the period condition \ref{P:periods} the real period of $Θ$ is zero and its imaginary period is a multiple of $2π\iu$. So although the value of the integral is dependent on the path, the condition that the value must lie in $2π\iu \Z$ is not. Likewise, the closing condition at $ζ=-1$ is defined by taking $γ_-$, a path from $(-1,η^-(-1))$ to $(-1,η^+(-1))$, and requiring the integral of $Θ$ over this path to lie in $2π\iu \Z$ also.
+because by the period condition \ref{P:periods} the real period of $Θ$ is zero and its imaginary period is a multiple of $2π\iu$. So although the value of the integral is dependent on the path, the condition that the value must lie in $2π\iu \Z$ is not. Likewise, the closing condition at $ζ=-1$ is defined by taking $γ_-$, a path from $(-1,-η^+(-1))$ to $(-1,η^+(-1))$, and requiring the integral of $Θ$ over this path to lie in $2π\iu \Z$ also.
 
-We have seen that every marked curve $Σ\in\mathcal{A}_1$ admits differentials that meet Conditions \ref{P:poles}--\ref{P:periods}, but it is not possible to find differentials on every curve that further satisfy Condition \ref{P:closing}. It will be our ongoing aim to find all such curves in $\mathcal{A}_1$.
+We have seen that every marked curve $Σ\in\mathcal{C}_1$ admits differentials that meet Conditions \ref{P:poles}--\ref{P:periods}, but it is not possible to find differentials on every curve that further satisfy Condition \ref{P:closing}. It will be our ongoing aim to find all such curves in $\mathcal{C}_1$.
 
-Let us begin by formulating a condition on $(α,β)$ such that $Σ(α,β)$ admits an exact differential that meets the closing conditions. For an exact differential, such as $Θ^E$, the particular path of integration is irrelevant and the value of the integral is
+Let us begin by formulating a condition on $(α,β)$ which will determine when $Σ(α,β)$ admits an exact differential that meets the closing conditions. For an exact differential, such as $Θ^E$, the particular path of integration is irrelevant and the value of the integral is
 \[
-\int_{γ_{+}} Θ^E = i \left. d\bra{\frac{η}{ζ}} \right|_{(1, η^-(1))}^{(1, η^+(1))} = 2i η^+(1) = 2i \abs{1-α}\abs{1-β}
+\int_{γ_{+}} Θ^E = i \left. d\bra{\frac{η}{ζ}} \right|_{(1, -η^+(1))}^{(1, η^+(1))} = 2i η^+(1) = 2i \abs{1-α}\abs{1-β}
 \]
 And similarly over the other marked point
 \[
 \int_{γ_{-}} Θ^E = -2i η^+(-1) = 2i \abs{1+α}\abs{1+β}.
 \]
-One can use these formulae to define an explicit condition that a marked curve must satisfy. Any exact differential with the properties of \ref{P:poles}--\ref{P:periods} must be a real multiple of $Θ^E$. Let the scaling factor be $a\in\R$. The two closing conditions applied to $a Θ^E$ are then
+Any other exact differential with the properties \ref{P:poles}--\ref{P:periods} must be a real multiple of $Θ^E$.
+For a real scalar $a \in \R$, the two closing conditions applied to $a Θ^E$ are
 \begin{equation}
 \left.
 \begin{aligned}
@@ -342,7 +375,7 @@ Eliminating $a$ from the two equations, there is a common solution for $a$ if an
 S(α,β) := \frac{2\iu η^+(1)}{-2\iu η^+(-1)} = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \in \Q^+.
 \labelthis{eqn:def_S}
 \]
-In other words, if and only if $S(α,β)$ is a positive rational. This gives the flavour of what we are aiming to achieve. We will produce two explicit functions such that a marked curve admits spectral data exactly when these functions take certain values. The two functions may be interpreted as defining equations for the subspace of spectral curves $\mathcal{S}_1$ within the space of all marked curves $\mathcal{C}_1$.
+This gives the flavour of what we are aiming to achieve. We will produce two explicit functions such that a marked curve admits spectral data exactly when these functions take rational values. The two functions may be interpreted as defining equations for the subspace of spectral curves $\mathcal{S}_1$ within the space of all marked curves $\mathcal{C}_1$.
 
 Before we plough ahead to differentials with periods, there is a simplification we can make. Suppose that we have a triple of spectral data $(Σ,Θ^1,Θ^2)$ such that the differentials $Θ^1,Θ^2$ have imaginary periods $2π\iu l_1, 2π\iu l_2$ respectively. Let $l>0$ be the greatest common denominator of $l_1$ and $l_2$, and by Bézout's identity let $x,y$ be integers that satisfy
 \[
@@ -362,9 +395,10 @@ The new pair of differentials are simpler in the sense that their imaginary peri
 \begin{lem}
 \label{lem:exist spectral data}
 A marked curve admits spectral data if and only if it admits a pair of nonzero differentials with imaginary periods $0$ and $2π\iu l$, for some positive integer $l$, that also satisfy the closing conditions \ref{P:closing}.
+\hfill\qedsymbol
 \end{lem}
 
-Thus the condition above, $S\in\Q^+$, is a necessary condition for a spectral curve to admit spectral data. To find a second necessary condition, concerning the existence of a  differential with imaginary period $2π\iu l$, we follow the same line of reasoning. For some real number $b$, we may write $Ψ^P = b Θ^E + l Θ^P$. Fix two paths $γ_+, γ_-$. The two closing conditions applied to $Ψ^P$ are then
+The the condition above, $S\in\Q^+$, is a necessary condition for a spectral curve to admit spectral data. To find a second necessary condition, concerning the existence of a  differential with imaginary period $2π\iu l$, we follow the same line of reasoning. For some real number $b$, we may write $Ψ^P = b Θ^E + l Θ^P$. Fix two paths $γ_+, γ_-$. The two closing conditions applied to $Ψ^P$ are then
 \begin{equation}
 \left.
 \begin{aligned}
@@ -382,20 +416,20 @@ Again elimination of $b$ yields the condition for a common solution to exist. Th
 \in 2π\iu \Q,
 \labelthis{eqn:def_T}
 \]
-using the definition of $S(α,β)$ to substitute for $-η^+(1)/η^+(-1)$. As was shown at the beginning of this section, whether the integral of a differential over $γ_+$ or $γ_-$ lies in $2π\iu \Z$ is independent on the particular path chosen between the marked points. In the same manner, if $S(α,β)$ is rational then the condition $T(α,β,γ_+,γ_-)\in\Q$ is independent of the choice of paths. This is since a different path $γ_+$ or $γ_-$ will change the corresponding integral of $Θ^P$ by a multiple of $2π\iu$ and therefore $T(α,β)$ is defined up to an element of $\Z\langle 1,S(α,β)\rangle \subset \Q$. We may therefore consider $T(α,β)$, without a particular choice of path, as a multi-valued function on $\mathcal{A}_1$.
+using the definition of $S(α,β)$ to substitute for $-η^+(1)/η^+(-1)$. As was shown at the beginning of this section, whether the integral of a differential over $γ_+$ or $γ_-$ lies in $2π\iu \Z$ is independent on the particular path chosen between the marked points. In the same manner, if $S(α,β)$ is rational then the condition $T(α,β,γ_+,γ_-)\in\Q$ is independent of the choice of paths because a different path $γ_+$ or $γ_-$ will change the corresponding integral of $Θ^P$ by a multiple of $2π\iu$. Therefore $T(α,β)$ is defined up to an element of $\Z\langle 1,S(α,β)\rangle \subset \Q$. We may therefore consider $T(α,β)$, without a particular choice of path, as a multi-valued function on $\mathcal{A}_1$.
 
 We shall prove that these two conditions are sufficient.
 
 \begin{lem}
 \label{lem:closing_conds}
-A marked curve admits a pair of nonzero differentials satisfying the closing conditions \ref{P:closing}, one exact and one inexact, if and only if $S\in\Q^+$ and $T\in\Q$ for any paths $γ_+, γ_-$.
+A marked curve admits a pair of nonzero differentials, one exact and one inexact, which both satisfying conditions \ref{P:poles}--\ref{P:periods} and also the closing conditions \ref{P:closing} if and only if $S\in\Q^+$ and $T\in\Q$ for any paths $γ_+, γ_-$.
 
 \begin{proof}
 From the above discussion, these are a necessary conditions.
 
-For the converse suppose that the are both rational, say $S = n/m$ and $T = n'/m'$. Further assume that $n$ and $m$ are coprime, as we can always take them to be.
+For the converse suppose that the two functions are both rational, say $S = n/m$ and $T = n'/m'$. Further assume that $n$ and $m$ are coprime, as we can always take them to be.
 First we will attempt to solve \eqref{eqn:exact closing cond} to produce an exact differential $Ψ^E$. The rationality of $S$ directly ensures the consistent solution of an $a$.
-Explicitly, define
+Namely, we may define
 \[
 a := \frac{2π\iu n}{2\iu η^+(1)}.
 \]
@@ -424,7 +458,7 @@ m'(n Γ^P_- - m Γ^P_+)
 &= lmn'.
 \labelthis{eqn:period diff existence}
 \end{align*}
-To fin a solution to this equation, one could simply take $l=m'$. However, in Lemma \ref{lem:minimal differentials}, we will need the minimal solutions to these equations. To avoid repeating ourselves, let us do the necessary extra work now. By considering the integer factorisation of each side, we see that a solution is only possible if $m'$ divides the right hand side. Therefore, $l$ must be at least
+If one were simply interested in getting a solution to this equation, one could take $l=m'$. However in Lemma \ref{lem:minimal differentials} we will need the minimal solution to this equation. To avoid repeating ourselves, let us do the necessary extra work now. By considering the integer factorisation of each side, we see that a solution is only possible if $m'$ divides the right hand side. Therefore, $l$ must be at least
 \[
 l = \frac{m'}{\gcd(m',mn')}.
 \]
@@ -466,27 +500,27 @@ With these definitions of $b$ and $l$, it follows that $Ψ^P = b Θ^E + l Θ^P$ 
 &= 2π\iu \frac{mn'}{\gcd(m',mn')}y - \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P  + \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P \\
 &= 2π\iu \frac{mn'}{\gcd(m',mn')}y \in 2π\iu \Z \\
 \int_{γ_-} Ψ^P
-&= -2\iu η^+(-1) b + l \int_{γ_-} Θ^P \\
-&= 2π\iu \frac{mn'}{\gcd(m',mn')}x - \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P + \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P \\
-&= 2π\iu \frac{mn'}{\gcd(m',mn')}x \in 2π\iu \Z.
+&= -2\iu η^+(-1) b + l \int_{γ_-} Θ^P
+% &= 2π\iu \frac{mn'}{\gcd(m',mn')}x - \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P + \frac{m'}{\gcd(m',mn')} \int_{γ_-} Θ^P \\
+= 2π\iu \frac{mn'}{\gcd(m',mn')}x \in 2π\iu \Z.
 \end{align*}
 In summary, we have found real constants $a$ and $b$ and an integer $l$ such that $Ψ^E = aΘ^E$ and $Ψ^P = bΘ^E + lΘ^P$ satisfy the closing conditions.
 \end{proof}
 \end{lem}
 
-Thus the space of genus one spectral curves that admit closing spectral data is defined by the equations $S(α,β) \in \Q^+, T(α,β) \in \Q$ inside $\mathcal{A}_1$. In general the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case that we are dealing with the integrals of $Θ^E$ lead to an algebraic expression, as we have just seen in \eqref{eqn:def_S}, but the integrals of $Θ^P$ will lead to a transcendental conditions involving incomplete elliptic integrals.
+Thus the space of genus one spectral curves that admit closing spectral data is defined by the equations $S(α,β) \in \Q^+$ and $T(α,β) \in \Q$ inside $\mathcal{A}_1$. For higher genus spectral curves, the closing conditions are difficult to work with, harder than even the period conditions. In the genus one case the integrals of $Θ^E$ lead to an algebraic expression, as we have just seen in \eqref{eqn:def_S}, but the integrals of $Θ^P$ will lead to a transcendental conditions involving incomplete elliptic integrals.
 
-Immediately before this lemma we observed that although the condition $T\in\Q$ is well defined, $T(α,β)$ is a multi-valued function on $\mathcal{A}_1$ which is dependent on the paths of integration. So that we may work with a well-defined function, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$. To do so, on each curve we will have to make a choice of paths $γ_+$ and $γ_-$, and we shall refer to these choices as principal paths.
+Immediately before this lemma we observed that although the condition $T\in\Q$ is well defined, $T(α,β)$ is a multi-valued function on $\mathcal{A}_1$ which is dependent on the paths of integration. So that we may work with a well-defined function, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$. On each curve we will have to make a choice of paths $γ_+$ and $γ_-$, and we shall refer to these choices as principal paths.
 
-Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve $Σ(α,β)$ corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ be the path that begins at $(1,η^-(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc (though on a different sheet now) to the unit circle, and back to $(1,η^+(1))$.
+Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve $Σ(α,β)$ corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ be the path that begins at $(1,-η^+(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc to the unit circle (though on a different sheet now), and back to $(1,η^+(1))$.
 
-Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,η^-(-1))$ to $(-1,η^+(-1))$ along the unit and branch point circles that does not cross $ν$. These paths are illustrated in figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded. Note that these paths depend on the order of the branch points $(α,β) \in \mathcal{A}_1$, since $ν$ is defined to be the intersection of the unit and branch point circles which lies between $β$ and $\cji{β}$.
+Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,-η^+(-1))$ to $(-1,η^+(-1))$ along the unit and branch point circles that does not cross $ν$. These paths are illustrated in Figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded. Note that these paths depend on the order of the branch points $(α,β) \in \mathcal{A}_1$, since $ν$ is defined to be the intersection of the unit and branch point circles which lies between $β$ and $\cji{β}$.
 
 \begin{defn}
 \label{def:def_T_0}
 The principal branch cut $T_0$ of $T$ is defined on $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ to be
 \[
-T_0 (α,β) := T(α,β,\symbf{γ}_+,\symbf{γ}_-) = S(α,β) \int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P.
+T_0 (α,β) := T(α,β,\symbf{γ}_+,\symbf{γ}_-) = \frac{1}{2π\iu} \bra{S(α,β) \int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P}.
 \labelthis{eqn:def_T_0}
 \]
 \end{defn}
@@ -494,9 +528,9 @@ T_0 (α,β) := T(α,β,\symbf{γ}_+,\symbf{γ}_-) = S(α,β) \int_{\symbf{γ}_-}
 % \makefigure{$γ_+$ in red and $γ_-$ in black\label{fig:gamma paths}}{thesis_graphics_temp/gamma_pm_zeta.png}
 \maketikzfigure{The principal path $\symbf{γ}_+$, in red, starts at $1$ on the lower sheet, traverses around $α$ and then returns to $1$ on the upper sheet. There is a branch cut between $α$ and $β$. Likewise, the principal path $\symbf{γ}_-$ is marked in blue. \label{fig:gamma paths}}{tikz/gamma_pm_zeta}
 
-As $ν\neq 1$, we know that $f(1) \neq \infty$ and so $f(γ_+)$ lies in the plane (it does not pass through $z=\infty$).
+As $ν\neq 1$, we know that $f(1) \neq \infty$ and so $f(γ_+)$ and $f(γ_-)$ lie in the plane (they do not pass through $z=\infty$).
 By design it is easy to describe these paths in terms of the $(z,w)$ coordinates.
-Start from the point $f(1)$ on the imaginary axis and go to the origin. Go out along the real axis, around $z=1$ (which corresponds to $ζ=α$) and back again to the origin. Return along the imaginary axis to $f(1)$. This is illustrated in figure \ref{fig:f gamma paths}.
+For example, we may describe the path $f(γ_+)$ as follows. Start from the point $f(1)$ on the imaginary axis and go to the origin. Go out along the real axis, around $z=1$ (which corresponds to $ζ=α$) and back again to the origin. Return along the imaginary axis to $f(1)$. Both paths are illustrated in Figure \ref{fig:f gamma paths}.
 
 % \makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black\label{fig:f gamma paths}}{thesis_graphics_temp/gamma_pm_z.png}
 \makefigure{The paths $f(\symbf{γ}_+)$ in red and $f(\symbf{γ}_-)$ in blue. \label{fig:f gamma paths}}{tikz/gamma_pm_z}
@@ -509,17 +543,17 @@ Having fixed a choice of paths, we can the integrals of the standard differentia
 \int_{\symbf{γ}_+} e
 &= 2 \tilde E(f(1);k) - 2 E(k),
 \end{align*}
-and so by integrating \eqref{eqn:thetaP} give a formula for $Θ^P$ over $\symbf{γ}_+$,
+and so integrating \eqref{eqn:thetaP} gives a formula for $Θ^P$ over $\symbf{γ}_+$,
 \begin{multline*}
 \int_{\symbf{γ}_+} Θ^P
-= \int_{\symbf{γ}_+} (2Eω - 2Ke) - 2K \int_{\symbf{γ}_+} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K \frac{w(f(1))\,(f(1)-\iu\,\Imag z_0)}{(f(1)-z_0)(f(1) + \bar{z}_0)}.\labelthis{eqn:gamma_plus}
+= \int_{\symbf{γ}_+} (2Eω - 2Ke) - 2K \int_{\symbf{γ}_+} d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \\
+= 4 E(k) F(f(1);k) - 4 K(k) E(f(1);k) - 4K \frac{(f(1)-\iu\,\Imag z_0)\,w(f(1))}{(f(1)-z_0)(f(1) + \bar{z}_0)}.\labelthis{eqn:gamma_plus}
 \end{multline*}
 For the integral of $Θ^P$ over the path $\symbf{γ}_-$ for $ζ=-1$, we have similarly
 \begin{multline*}
 \int_{\symbf{γ}_-} Θ^P
 = 4 E(k) F(f(-1);k) - 4 K(k) E(f(-1);k) \\
-- 4K \frac{w(f(-1))\,(f(-1)-\iu\,\Imag z_0)}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
+- 4K \frac{(f(-1)-\iu\,\Imag z_0)\,w(f(-1))}{(f(-1)-z_0)(f(-1) + \bar{z}_0)}.\labelthis{eqn:gamma_minus}
 \end{multline*}
 These two formulae may be substituted into \eqref{eqn:def_T_0} to compute $T_0$. In the next section however, we will make a change of coordinates that simplifies these formulae.
 
@@ -529,7 +563,7 @@ Previously, the comment was made that the particular algorithm to chose a path i
 \]
 The function $T_0$ is therefore real valued.
 
-To summarise our calculations to this point, we determined that every differential on a marked curve $Σ$ that satisfies conditions \ref{P:poles}--\ref{P:reality} must lie in a real three-dimensional vector space $W$. We found a basis $\{ω,Θ^E,λ\}$ of $W$, gave a basis $A,B$ for the homology of $Σ$ and computed the periods of the basis differentials with respect to this basis. This allowed us to find a differential $Θ^P\in \R\{ω,λ\} \subset W$ that satisfied \ref{P:periods}. We observed that every differential on $Σ$ that meet the conditions \ref{P:poles}--\ref{P:periods} was the sum of a real multiple of $Θ^E$ and an integer multiple of $Θ^P$.
+To summarise our calculations up to this point, we determined that every differential on a marked curve $Σ$ that satisfies conditions \ref{P:poles}--\ref{P:reality} must lie in a real three-dimensional vector space $W$. We found a basis $\{ω,Θ^E,λ\}$ of $W$, gave a basis $A,B$ for the homology of $Σ$ and computed the periods of the basis differentials. This allowed us to find a differential $Θ^P\in \R\{ω,λ\} \subset W$ that satisfied \ref{P:periods}. We observed that every differential on $Σ$ that meet the conditions \ref{P:poles}--\ref{P:periods} was the sum of a real multiple of $Θ^E$ and an integer multiple of $Θ^P$.
 
 With these two differentials we then attempted to further satisfy \ref{P:closing}. This was not possible for an arbitrary marked curve $Σ$, which lead us to define the functions $S(α,β)$ by \eqref{eqn:def_S} and $T(α,β)$ by \eqref{eqn:def_T}. Lemmata \ref{lem:exist spectral data} and \ref{lem:closing_conds} taken together imply that a marked curve admits spectral data exactly when the functions $S$ and $T$ simultaneously take rational values. The last part of this section noted that $T$ is a multi-valued function, and so took a principal branch of it and derived the corresponding explicit formulae.
 
@@ -550,7 +584,7 @@ With these two differentials we then attempted to further satisfy \ref{P:closing
 \section{Coordinates for \texorpdfstring{$\mathcal{A}_1$}{A1}}
 \label{sec:Reformulate}
 
-In the previous section, we found a condition for a point of $\mathcal{A}_1$ to correspond a spectral curve, namely the functions $S$ and $T$ must be rationally valued. Thus on $\mathcal{S}_1$, the space of spectral curves, these functions must be (locally) constant. Thus to understand $\mathcal{S}_1$ we should examine the joint level sets of $S$ and $T$ in $\mathcal{A}_1$. To do so, we will invoke the implicit function theorem, for which the necessary computation will be the differentiation of the two functions.
+In the previous section, we found a condition for a point of $\mathcal{A}_1$ to correspond a spectral curve, namely the functions $S$ and $T$ must be rationally valued. Thus on $\mathcal{S}_1$, the space of spectral curves, these functions must be (locally) constant. Thus to understand $\mathcal{S}_1$ we should examine the joint level sets of $S$ and $T$ in $\mathcal{A}_1$. This will require invoking the implicit function theorem, for which the necessary computation will be the differentiation of the two functions.
 
 It is therefore prudent to adopt a parameterisation of the space of marked curves $\mathcal{A}_1 \subset D\times D$ that is suited to the task of differentiating $T(α,β)$.
 Elliptic integrals are the most difficult part of \eqref{eqn:gamma_plus} to differentiate, so to minimise our labour we choose three coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$. For the final coordinate we shall take $p=S(α,β)$ itself, as then we can enforce the condition $S\in\Q^+$ simply by holding this coordinate constant.
@@ -593,7 +627,7 @@ and where $μ\neq -1$
 \]
 demonstrating that $φ_1$ and $φ_2$ are smooth functions on their respective domains of definition.
 
-It remains to show that these functions have smooth inverses. As the parameters $α$ and $β$ are points in the $ζ$-plane, one method to derive the inverse functions is to express the transformation $f^{-1}(z)$ in term of our new parameters $(p,k,u,v)$. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to how the transformation $f(ζ)$ is determined by $(α,β)$ and $\iu u = f(1)$. As a Möbius transformation is described, up to a scalar, by the points sent to $0$ and $\infty$, $f^{-1}(z)$ is a scalar multiple of
+It remains to show that these functions have smooth inverses. As the parameters $α$ and $β$ are points in the $ζ$-plane, one method to derive the inverse functions is to express the transformation $f^{-1}(z)$ in term of our new parameters $(p,k,u,v)$. Then $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$, entirely analogous to how the transformation $f(ζ)$ is determined by $(α,β)$ and the coordinate $u$ is defined by $\iu u = f(1)$. As a Möbius transformation is described, up to a scalar, by the points sent to $0$ and $\infty$, $f^{-1}(z)$ is a scalar multiple of
 \[
 \frac{z-z_0}{z + \bar{z_0}},
 \]
@@ -654,9 +688,9 @@ f^{-1}(z)
 =  \frac{\iu u + \bar{z_0}}{\iu u - z_0} \frac{z-z_0}{z + \bar{z_0}}
 =  -\frac{\iu v + \bar{z_0}}{\iu v - z_0} \frac{z-z_0}{z + \bar{z_0}}.
 \]
-As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formulae for the branch points in terms of the new parameters. A problem could potentially occur if $z_0$ were to equal $\iu u$ or $\iu v$, in which case the scaling factor would be $0/0$. This could only occur if $\Real z_0 = 0$, which itself only occurs if $u=v$. But we have already noted that this is impossible. Likewise the formula would be ill-defined if $z_0 = -1, -k^{-1}$ (for then $α$ or $β$ would be infinite), but again this occurs only if $\Real z_0 < 0$, which is excluded by our decision to take $z_0$ in the right half-plane.
+As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formulae for the branch points in terms of the new parameters. A problem could potentially occur if $z_0$ were to equal $\iu u$ or $\iu v$, in which case the scaling factor would be $0/0$. This could only occur if $\Real z_0 = 0$, which itself only occurs if $u=v$. But we have already noted that this is impossible. Likewise the formula would be ill-defined if $z_0 = -1$ or $-k^{-1}$ (for then $α$ or $β$ would be infinite), but again this occurs only if $\Real z_0 < 0$, which is excluded by our decision to take $z_0$ in the right half-plane.
 
-Having constructed an inverse for $φ_0$, we must also construct ones for $φ_1$ and $φ_2$. But we may do so by modifying the formula for $x$ and $y$, equation \eqref{eqn:formula xy}, to define them for the primed coordinates $u'$ or $v'$. Such a definition extends smoothly to the points where $u'$ or $v'$ is zero. Using the notation $w'(\iu t)^2 = (1+t^2)(k^2 + t^2)$ we have
+Having constructed an inverse for $φ_0$, we must also construct inverses for $φ_1$ and $φ_2$. But we may do so by modifying the formula for $x$ and $y$, given in equation \eqref{eqn:formula xy}, to define them for the primed coordinates $u'$ or $v'$. Such a definition extends smoothly to the points where $u'$ or $v'$ is zero. Using the notation $w'(\iu t)^2 = (1+t^2)(k^2 + t^2)$ we have
 \begin{align*}
 x
 &= \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v}
@@ -728,7 +762,7 @@ and hence by the equation \eqref{eqn:def_T} we finally arrive at
 \end{align*}
 Be aware that we have omitted the elliptic modulus $k$ in the complete elliptic integrals, as is standard, so that $K=K(k)$ and $E= E(k)$.
 
-The purpose for constructing these new coordinates was to make it feasible to compute the derivatives of $T$, so let us do so now. While $T$ may be a multi-valued function on $\mathcal{A}_1$, its derivative is not. The ambiguity present in $T$, which is defined locally only up to a constant, is removed by differentiation. In particular then let us  compute the $u$-derivative of $T_0$, a principal branch cut of $T$, from the explicit formula in \eqref{eqn:Teqn}. The $v$-derivative is similar, but we will employ a symmetry in $T_0$ to avoid the need to compute it directly. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
+The purpose for constructing these new coordinates was to make it feasible to compute the derivatives of $T$. While $T$ may be a multi-valued function on $\mathcal{A}_1$, its derivative is not. The ambiguity present in $T$, a function defined locally only up to a constant, is removed by differentiation. In particular then let us compute the $u$-derivative of $T_0$, a principal branch cut of $T$, from the explicit formula in \eqref{eqn:Teqn}. The $v$-derivative is similar, but later we will employ a symmetry in $T_0$ to avoid the need to compute it directly. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
 \[
 \Partial{}{u} F(\iu u; k) = \frac{\iu}{w(\iu u)},\;\;\;
 \Partial{}{u} E(\iu u; k) = \iu\frac{1+k^2 u^2}{w(\iu u)},
@@ -776,11 +810,10 @@ V(p,k,v)
 &= -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right].
 \labelthis{eqn:def V}
 \end{align*}
-The following lemma shows these functions $U$ and $V$, and therefore the $u$-derivative of $T$ also, are non-vanishing.
-
+The final lemma of this section shows these functions $U$ and $V$, and therefore the $u$-derivative of $T$ as well, are non-vanishing.
 \begin{lem}
     \label{lem:deriv no zeroes}
-The functions $U$ and $V$, defined by \eqref{eqn:def U} and \eqref{eqn:def V} respectively are strictly positive for $p \geq 1$, $k\in (0,1)$, $u,v \in \R$.
+The functions $U$ and $V$, defined by \eqref{eqn:def U} and \eqref{eqn:def V} respectively are strictly positive for $p \geq 1$, $k\in (0,1)$, and $u,v \in \R$.
 
 \begin{proof}
 For this proof, we shall draw upon several inequalities that are explained in Section \ref{sec:Inequalities}. Let us prove that $U > 0$. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
@@ -800,7 +833,7 @@ U(p,k,u,v)
 &> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
 &\geq K \left[ 1 + k^2 u^2 v^2 \right].
 \end{align*}
-This is strictly positive, as required. The proof of the positivity of the second function, $V$, is almost immediate. Again using $K>E$,
+As $K > π/2$, this is strictly positive, as required. The proof of the positivity of the second function, $V$, is almost immediate. Again using $K>E$,
 \[
 V(p,k,v) > K \left[ -1 + pk w(\iu v) + 1 + k^2 v^2\right].
 \]
@@ -819,37 +852,6 @@ This establishes that $V$ is positive too.
 % \frac{π}{2}\Partial{T}{u'} &= \frac{-1}{w'(u')(1-u'v)^2} V\bra{ p,k,v,u' }.
 % \end{align*}
 
-Finally in this section, we will compute the range of $T_0$, which will be used in Lemma \ref{lem:T_graph} to show that certain level sets are graphs over the product of this range and $\R^+\times (0,1)$.
-\begin{lem}
-\label{lem:range_T}
-The range of $T_0$ on $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ is $\R$.
-
-\begin{proof}
-Fix $p$, but also fix any value for $k$. By \eqref{eqn:F0_E0_uniform_bounds}, $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$ but independent of $u$ and $v$, such that
-\[
--C \leq 4p \left[ E F_0(v) - K E_0(v) \right]-4 \left[ E F_0(u) - K E_0(u) \right] \leq C.
-\]
-Substituting this into \eqref{eqn:T0 rewrite},the definition of $T_0$,
-\begin{gather*}
-- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C \\
-\leq
-2π T_0(p,k,u,v)
-\leq \\
-- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] + C,
-\end{gather*}
-and so it is sufficient to show that for any fixed $p$ and $k$ the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
-\[
-\lim_{u \to v^+} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
-= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^+} \frac{1}{u-v} = +\infty.
-\]
-From the other side,
-\[
-\lim_{u \to v^-} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
-= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^-} \frac{1}{u-v} = -\infty.
-\]
-By continuity $T_0$ obtains every value.
-\end{proof}
-\end{lem}
 
 
 
@@ -1004,13 +1006,55 @@ Then
 \labelthis{eqn:tilde T computable}
 \end{align*}
 using Legendre's relation (see Section \ref{sec:Legendre's Relation}).
-Thus to do computations with the function $\tilde{T}$, for the most part one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. In particular,
+Thus to do computations with the function $\tilde{T}$, for the most part one can continue to work with the function $T_0$ downstairs on $\mathcal{A}_1$ and keep track of the winding numbers. For example, the following lemma uses this fact to motivate us looking at the level sets of $\tilde{T}$ as a proxy for looking at the level sets of $T$.
 \begin{lem}
 \label{lem:tilde T rational}
 If $p$ is rational, $T\circ\tilde{π} \in \Q$ if and only if $\tilde{T} \in \Q$.
 \hfill\qedsymbol
 \end{lem}
-This motivates us to look at the level sets of $\tilde{T}$ as a proxy for looking at the level sets of $T$.
+
+This relationship between $\tilde{T}$ and $T_0$ is also used in the next lemma to show that the range of $\tilde{T}$ is $\R$, which is used in Lemma \ref{lem:T_graph}.
+\begin{lem}
+\label{lem:range_T}
+The range of $\tilde{T}$ on $\mathcal{\tilde{A}}_1$ is $\R$.
+
+\begin{proof}
+We shall prove below that the range of $T_0$ on $\mathcal{\tilde{A}}_1 \setminus \{ν = \pm 1\}$ is $\R$. Because on each component of the preimage of $\mathcal{\tilde{A}}_1 \setminus \{ν = \pm 1\}$ in $\mathcal{\tilde{A}}_1$ equation \eqref{eqn:tilde T computable} tells us that $\tilde{T}$ and $T_0\circ π$ differ by a constant, it follows that the range of $\tilde{T}$ is also $\R$.
+
+Fix $p$, but also fix any value for $k$. By \eqref{eqn:F0_E0_uniform_bounds}, the magnitude $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$ but independent of $u$ and $v$, such that
+\[
+-C \leq 4p \left[ E F_0(v) - K E_0(v) \right]-4 \left[ E F_0(u) - K E_0(u) \right] \leq C.
+\]
+Substituting this into \eqref{eqn:T0 rewrite},the definition of $T_0$,
+\begin{gather*}
+- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] - C \\
+\leq
+2π T_0(p,k,u,v)
+\leq \\
+- 4 K \left[\frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u) \right] + C,
+\end{gather*}
+and so it is sufficient to show that for any fixed $p$ and $k$ the bracketed expression has range equal to the real line. But this is easy to show. Consider the limit as $u \to v^+$,
+\[
+\lim_{u \to v^+} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
+= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^+} \frac{1}{u-v} = +\infty.
+\]
+From the other side,
+\[
+\lim_{u \to v^-} \frac{pw(\iu v) + w(\iu u)}{u-v} + k(pv-u)
+= k(p-1)v + (p+1) w(\iu v)\lim_{u \to v^-} \frac{1}{u-v} = -\infty.
+\]
+By continuity $T_0$ obtains every value.
+\end{proof}
+\end{lem}
+
+
+
+
+
+
+
+
+
 Let us make two definitions. Define $\mathcal{\tilde{A}}_1(p)$ to be the subspace of $\mathcal{\tilde{A}}_1$ on which $S \circ \tilde{π} = p$ is a fixed constant. We further denote the subset of $\mathcal{\tilde{A}}_1(p)$ on which the value of $\tilde{T}$ is $q$ by $\mathcal{\tilde{A}}_1(p,q)$.
 
 The spaces $\mathcal{\tilde{A}}_1(p)$ are simple to understand. They are just the points of $\mathcal{\tilde{A}}_1$ where the first coordinate is fixed, and so they are simply covered by the three remaining coordinates $(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R$. As demonstrated by the following lemma, the level sets $\mathcal{\tilde{A}}_1(p,q)$ are similarly well behaved.
