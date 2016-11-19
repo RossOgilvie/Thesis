@@ -1366,24 +1366,80 @@ It meets conditions \ref{P:poles}--\ref{P:closing} and is exact, so must be an i
 \end{proof}
 \end{lem}
 
-The space of differentials meeting \ref{P:poles}--\ref{P:closing} are a $\Z\times\Z$-subbundle of the $\Z\times\R$-bundle $\mathcal{B}$ over $\mathcal{S}_1$. The differential $Ψ^E$ is a well defined function on all of $\mathcal{C}_1(p)$, but $Ψ^P$ is not. Its definition depends on the paths $γ_+$ and $γ_-$, and there is no consistent way to make a smooth choice of paths on the whole space $\mathcal{C}_1(p)$. However, for $p\neq 1$ the space of spectral curves $\mathcal{S}_1(p)$ is simply connected, so it is possible to make a consistent choice of paths on this subspace, and thereby to extend these differentials to a frame, showing it to be diffeomorphic to $\Z^2 \times \mathcal{S}_1(p) \simeq \Z^2 \,\times\, (\Q/(1-p)\Z)\times(0,1)\times\R$.
-% TODO fix this
-
-For $S=1$, take any path component of $\mathcal{S}_1(1)$. It is an annulus. Writing $S=1=n/m$ in as a reduced fraction implies that $m=n=1$. From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1)$ that wraps around an annulus once. If we make a choice of $γ_+,γ_-$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? Let $Ψ^P = b Θ^E + m' Θ^P$ be the initial differential, and let $\tilde{Ψ}^P  = b' Θ^E + m' Θ^P$ be its continuation to $\ell(1)$. From our previous computations, each of
+Morally, the differentials $Ψ^E$ and $Ψ^P$ should therefore be used locally as a frame for the space of differentials meeting \ref{P:poles}--\ref{P:closing}.
+Before we can make this precise however there is a technical point that must be addressed, namely that $\mathcal{S}_1$ is only an immersed submanifold.
+This causes issues if one tries to describe bundles over $\mathcal{S}_1$ as subspaces of bundles over $\mathcal{C}_1$.
+For example, we demonstrated at the end of Section \ref{}, using Lemma \ref{}, that the differentials meeting conditions \ref{P:poles}--\ref{P:imaginary} form a $\R\times\Z$-bundle over $\mathcal{C}_1$ framed by $(Θ^E,Θ^P)$.
+If we try to consider $Ψ^E$ as a section of this bundle restricted to $\mathcal{S}_1$ then it is not even a continuous function!
+Indeed, consider a sequence of points
 \[
-\int_{γ_+} Θ^P, \int_{γ_-} Θ^P
+Σ_k \in \mathcal{S}_1\bra{1+\tfrac{1}{k}},
 \]
-will be incremented, or decremented (depending on the orientation of $\ell$), by $2π\iu$. The difference $\tilde{Ψ}^P - Ψ^P = (b'-b)Θ^E$ can be explicitly computed as
+with a limit $Σ_\infty \in \mathcal{S}_1(1)$. The integers $k$ and $k+1$ are always coprime, so in the above notation $S = n/m = (k+1)/k$ and the differential $Ψ^E(k)$ on $Σ_n$ is defined by,
+\[
+Ψ^E(k) = \frac{2π\iu (k+1)}{2\iu η^+(1)} Θ^E,
+\]
+whereas on the other hand
+\[
+Ψ^E(\infty) = \frac{2π\iu}{2\iu η^+(1)} Θ^E.
+\]
+
+Instead, we must consider bundles over each path connected component of $\mathcal{S}_1$ separately.
+Let us label the path connected components of $\mathcal{S}_1$. Following Theorem \ref{thm:topology_curves}, for each $p\in \Q^+\setminus\{1\}$ and $[q] \in \Q / (p-1) \Z$, there is a strip-like component $\mathcal{S}_1(p,[q]) \diffeo (0,1)\times\R$. And by Theorem \ref{thm:topology_curves_p1}, for $p=1$ there is an annuli component $\mathcal{S}_1(1,q)$ for each rational number $q$. Each of these path connected components of $\mathcal{S}_1$ is a submanifold of $\mathcal{C}_1$.
+
+Therefore, fix a path connected component $\mathcal{X}$ of $\mathcal{S}_1$. For any fixed value of $p \in \Q^+$, the differential $Ψ^E$ is a well-defined smooth function on $\mathcal{C}_1(p)$, and as $\mathcal{X}$ is entirely contained within some $\mathcal{C}_1(p)$ it follows that $Ψ^E$ is well-defined and smooth on $\mathcal{X}$. The same is not neccesarily true for $Ψ^P$.
+Locally though, in a simply connected neighbourhood $\mathcal{U} \subset \mathcal{X}$ it is possible to choose paths $γ_+$ and $γ_-$ on each spectral curve that vary smoothly with changes of the branch points. Hence by Lemma \ref{}, the moduli space differentials satisfying \ref{P:poles}--\ref{P:closing} is the trivial $\Z^2$-bundle over $U$ framed by $Ψ^E$ and $Ψ^P$.
+
+We recall from Chapter \ref{} the definition of the integer matrices $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. There the moduli space of spectral data with a genus zero spectral curve could be described as the product $\mathcal{M}_0 = D \times \Mat_2^*\Z$. Similiarly, we may describe the moduli space of spectral data whose spectral curve lies in $\mathcal{U}$ as $\mathcal{U} \times \Mat_2^*\Z$, where the differentials $(Θ^1,Θ^2)$ on any curve may be described by a matrix via
+\[
+\begin{pmatrix}
+Θ^1 \\ Θ^2
+\end{pmatrix}
+=
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\begin{pmatrix}
+Ψ^E \\ Ψ^P
+\end{pmatrix},
+\]
+using the frame $(Ψ^E,Ψ^P)$. The non-vanishing of the determinant of this matrix is equivalent to Condition \ref{P:linear independence}, that the pair of differentials $(Θ^1,Θ^2)$ is linearly independent.
+
+This establishes the local structure of the moduli space $\mathcal{M}_1$ of spectral data with a genus one spectral curve, and we can now turn our attention to its global structure. Just as we decomposed $\mathcal{S}_1$ into path components $\mathcal{S_1}(p,[q])$ and $\mathcal{S}_1(1,q)$, we may similarly decompose $\mathcal{M}_1$ accordning to the component its spectral curve belongs to. As the path connected components $\mathcal{X} = \mathcal{S}_1(p,[q])$ are simply connected, immediately we have that
+\[
+\mathcal{M}_1(p, [q]) = \mathcal{S}_1(p,[q]) \times \Mat_2^*\Z.
+\]
+
+Let us fix a path component $\mathcal{S}_1(1,q)$ of $\mathcal{S}_1(1)$.
+This component is an annulus and not simply connected.
+Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1,q)$ that wraps around the annulus once. If we make a choice of $γ_+(t),γ_-(t)$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? This is in effect computing the transistion map for the bundle $\mathcal{M}_1(1,q)$.
+
+From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. We may simplify so that it is a reduced fraction. Writing $S=1=n/m$ as a reduced fraction implies that $m=n=1$. The constant $l$ is therefore $m' / \gcd(m',n') = m'$.
+Let $Ψ^P(0) = Ψ^P$ be the initial differential on $Σ(\ell(0))$. As the periods of the differential are integral, they cannot change along the path $\ell$ and so
+\[
+Ψ^P(t) = b(t) Θ^E + Ψ^P.
+\]
+As we move from the start of $\ell$ to the end, from our previous computations \ref{}, each of
+\[
+\int_{γ_+(t)} Θ^P, \int_{γ_-(t)} Θ^P
+\]
+will be incremented, or decremented (depending on the orientation of $\ell$), by $2π\iu$. The difference $Ψ^P(1) - Ψ^P(0) = (b(1)-b(0))Θ^E$ can be explicitly computed as
 \begin{align*}
-b'
-&= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+} Θ^P + 2π\iu} } \\
-&= b - \frac{2π\iu}{2\iu η^+(1)}m' \\
-&= b - am',
+b(1)
+&= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+(0)} Θ^P + 2π\iu} } \\
+&= b(0) - \frac{2π\iu}{2\iu η^+(1)}l \\
+&= - am',
 \end{align*}
-so that $\tilde{Ψ}^P - Ψ^P = -am'Θ^E = - m' Ψ^E$. Recall that the period of $Ψ^P$ is $g = m' / \gcd(m,m') = m'$. This equations shows that every time you loop around the annulus, the non-exact differential shifts by $m' Ψ^E$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus is simply connected. The basis $Ψ^E,Ψ^P$ is not unique, one may add an integer multiple of $Ψ^E$ to $Ψ^P$, but this shows that there is a path in the moduli space between bases that have their non-exact differentials differ by $m'\Z Ψ^E$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus has $m'$ components.
+so that $Ψ^P(1) - Ψ^P(0) = -am' Θ^E = - m' Ψ^E$. This equations shows that every time you loop around the annulus, the non-exact differential $Ψ^P$ shifts by $m' Ψ^E$.
+
+
+Thus the part of the bundle $\mathcal{M}_1$ over this annulus is simply connected. The basis $Ψ^E,Ψ^P$ is not unique, one may add an integer multiple of $Ψ^E$ to $Ψ^P$, but this shows that there is a path in the moduli space between bases that have their non-exact differentials differ by $m'\Z Ψ^E$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus has $m'$ components.
 \todo{rework this. too dense}
 
-PART ABOUT THE MAT2Z OF $\mathcal{M}_1$
+% TODO
+Summary about $\mathcal{M}_1$.
+
 
 There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry in \eqref{eqn:T_0 symmetry},
 \[
