@@ -1274,7 +1274,41 @@ Lemma \ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p
 \end{proof}
 \end{thm}
 
-This leaves just one special case, where $p=1$. We see that the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set.
+This leaves just one special case, where $p=1$. We see that the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set. Specifically, the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1,q)$ given by \eqref{eqn:group action} reads
+\[
+(1,q,k,\tilde{x}) \mapsto (1, q, k, \tilde{x}'),
+\]
+where
+\[
+\tilde{x}' = 2π\Wind(\tilde{x}) + π + 2\atan (k \tan (\tilde{x}/2)),
+\labelthis{eqn:tilde x prime}
+\]
+and so in particular only the fourth coordinates is changed. In the interest of having a clearer picture of this action, in the following lemma we shall reparameterise so that $\tilde{λ}$ acts by a simple translation.
+
+\begin{lem}
+There is a change of coordinates of $\mathcal{\tilde{A}}_1(1,q)$ such that $\tilde{λ}$ acts by translation:
+\[
+(1,q,k,\tilde{y}) \mapsto (1, q, k, \tilde{y} + π).
+\]
+
+\begin{proof}
+As $q$ is fixed by $\tilde{λ}$ and not part of the formula \eqref{eqn:tilde x prime} we can put it aside and focus on $(k,\tilde{x})$.
+
+We observed in the proof of Lemma \ref{} that for fixed $k$ the action of $\tilde{λ}$ on the coordinate $\tilde{x}$ is monotonic. We also know that acting by $\tilde{λ}^2$ is already a translation, it shifts $\tilde{x}$ by $2π$. And the $\mathcal{G}$-orbits of the points where $\tilde{x} = 0$ are $(1,q,k, π\Z)$. What we shall do therefore is to rescale each rectangle $(0,1) \times (2πn - π, 2πn + π)$ so that $\tilde{λ}$ is the constant map $(k,\tilde{y}) \mapsto (k,\tilde{y}+π)$.
+
+
+\[
+\tilde{y} = \begin{cases}
+2πn - 2\atan (k \cot (\tilde{x}/2)) & \text{if } \tilde{x}\in (2πn - π, 2πn) \\
+\tilde{x} & \text{if } \tilde{x}\in [2πn, 2πn+π] \\
+\end{cases}
+\]
+\end{proof}
+\end{lem}
+
+
+
+
 
 \begin{thm}
 \label{thm:topology_curves_p1}
