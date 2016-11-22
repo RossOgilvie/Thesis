@@ -9,13 +9,13 @@
 % Main result
 The aim of this chapter is describe the topology of the moduli space of spectral curves $\mathcal{S}_1$.
 Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{C}_1$.
-We prove, in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, that there is a foliation of $\mathcal{C}_1$ such that $\mathcal{S}_1$ is a dense collection of leaves of this foliation. The leaves are topologically either strips $(0,1)\times \R$ or annuli. The arrangment of the leaves $\mathcal{S}_1$ is illustrated in Figure \ref{}.
+We prove, in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, that there is a foliation of $\mathcal{C}_1$ such that $\mathcal{S}_1$ is a dense collection of leaves of this foliation. The leaves are topologically either strips $(0,1)\times \R$ or annuli. The arrangement of the leaves $\mathcal{S}_1$ is illustrated in Figure \ref{}.
 
 % Main idea: the closing conditions
 The closing conditions, Conditions \ref{P:closing}, must be satisfied by the differentials $Θ$ and $\tilde{Θ}$ to ensure that the harmonic map associated to a tuple of spectral data $(Σ,Θ,\tilde{Θ},E)$ has a torus as its domain, as opposed to a plane. For any genus $g$, every marked curve of $\mathcal{C}_g$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods}. In the particular case of marked curves of genus one, every curve further has differentials that have integral periods (Condition \ref{P:periods}). But not every curve admits differentials that meet the closing conditions. The closing conditions therefore can be viewed as defining equations for the subspace $\mathcal{S}_1$ within $\mathcal{C}_1$.
 
-The proof of the two theorems therefore proceeds by the construction, in several stages, of covering spaces and parameterisations adapted to the closing conditions.
-In the initial three sections of this chapter we work with the parameter sapce $\mathcal{A}_1$, which we recall from equation \eqref{eqn:def Ag} to be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc.
+The proof of the two theorems therefore proceeds by the construction, in several stages, of covering spaces and parametrisations adapted to the closing conditions.
+In the initial three sections of this chapter we work with the parameter space $\mathcal{A}_1$, which we recall from equation \eqref{eqn:def Ag} to be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc.
 We identify the quotient space $\mathcal{A}_1/\Z_2$, where $\Z_2$ acts by permutation of the coordinates, with the space of marked curves $\mathcal{C}_1$.
 Using $Σ$ to denote the covering map, the curve
 \[
@@ -23,16 +23,16 @@ Using $Σ$ to denote the covering map, the curve
 \]
 is the marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$ and the standard scaling given by \eqref{eqn:def P}.
 
-For each point of $\mathcal{A}_1$ in Section \ref{sec:Differentials} we give a transformation of the corresponding marked curve to an elliptic curve in Legendre normal form. This allows us to find on each marked curve the differentials that satisfy \ref{P:real curve}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section \ref{sec:closing conditions} we reformulate the closing conditions \ref{P:closing} to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given marked curve admits differentials that further satisfy the closing conditions. A marked curve with a pair of such differentials consitute a tuple of spectral data, and so we call such a curve a spectral curve. The first function, $S$ (defined by \eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by \eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
+For each point of $\mathcal{A}_1$ in Section \ref{sec:Differentials} we give a transformation of the corresponding marked curve to an elliptic curve in Legendre normal form. This allows us to find on each marked curve the differentials that satisfy \ref{P:real curve}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section \ref{sec:closing conditions} we reformulate the closing conditions \ref{P:closing} to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given marked curve admits differentials that further satisfy the closing conditions. A marked curve with a pair of such differentials constitute a tuple of spectral data, and so we call such a curve a spectral curve. The first function, $S$ (defined by \eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by \eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
 
-Tthe functions $S$ and $T$ may be analysed by introducing a new set of coordinates on $\mathcal{A}_1$ that are suited to calculation (Section \ref{sec:Reformulate}).
+The functions $S$ and $T$ may be analysed by introducing a new set of coordinates on $\mathcal{A}_1$ that are suited to calculation (Section \ref{sec:Reformulate}).
 These new coordinates allows us to reasonably compute the derivatives of $T$. They also dovetail with the results of Section \ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$.
 We then use the implicit function theorem to prove that the level sets of $S$ and $\tilde{T}$, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$.
 Finally, we push this foliation back down to $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as a quotient by the group of covering transformations $\mathcal{G}$ (Section \ref{sec:Topology}).
 
-To close the chapter, in Section \ref{sec:Corollaries} we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that the total space of the bundle is simply connected. We consider some well-known examples of harmonic maps, namely the Gauss maps of Delauney surfaces, and identify them with a specific connected component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_g$, for any genus $g$, and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
+To close the chapter, in Section \ref{sec:Corollaries} we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that the total space of the bundle is simply connected. We consider some well-known examples of harmonic maps, namely the Gauss maps of Delaunay surfaces, and identify them with a specific connected component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_g$, for any genus $g$, and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
 
-We summarise the spaces that we have introduced and their relationships to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. On the next line we consider within each of these spaces the subspaces on which the function $S$ has the value $p\in\Q^+$, denoted by $p$ in paratheses. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of the space of spectral curves $\mathcal{S}_1$, is the union of those level sets $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. The horizontal arrows represent covering maps, labelled with the group of covering transformations, whereas the vertical arrows represent inclusions.
+We summarise the spaces that we have introduced and their relationships to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. On the next line we consider within each of these spaces the subspaces on which the function $S$ has the value $p\in\Q^+$, denoted by $p$ in parentheses. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of the space of spectral curves $\mathcal{S}_1$, is the union of those level sets $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. The horizontal arrows represent covering maps, labelled with the group of covering transformations, whereas the vertical arrows represent inclusions.
 \[
 \begin{diagram}
     \mathcal{\tilde{A}}_1 &\rOnto^{2π \Z}&  \mathcal{A}_1  &\rOnto^{\Z_2}&  \mathcal{C}_1 \\
@@ -586,7 +586,7 @@ With these two differentials we then attempted to further satisfy \ref{P:closing
 
 In the previous section, we found a condition for a point of $\mathcal{A}_1$ to correspond a spectral curve, namely the functions $S$ and $T$ must be rationally valued. Thus on $\mathcal{S}_1$, the space of spectral curves, these functions must be (locally) constant. Thus to understand $\mathcal{S}_1$ we should examine the joint level sets of $S$ and $T$ in $\mathcal{A}_1$. This will require invoking the implicit function theorem, for which the necessary computation will be the differentiation of the two functions.
 
-It is therefore prudent to adopt a parameterisation of the space of marked curves $\mathcal{A}_1 \subset D\times D$ that is suited to the task of differentiating $T(α,β)$.
+It is therefore prudent to adopt a parametrisation of the space of marked curves $\mathcal{A}_1 \subset D\times D$ that is suited to the task of differentiating $T(α,β)$.
 Elliptic integrals are the most difficult part of \eqref{eqn:gamma_plus} to differentiate, so to minimise our labour we choose three coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$. For the final coordinate we shall take $p=S(α,β)$ itself, as then we can enforce the condition $S\in\Q^+$ simply by holding this coordinate constant.
 
 However, these coordinates $(p,k,u,v)$ only cover part of $\mathcal{A}_1$, since $f$ is a Möbius function $\CP^1 \to \CP^1$ and so, for example, there will be points of $\mathcal{A}_1$ where $\iu u = f(1)$ is infinite. To cover these cases we must introduce the additional coordinates $u' = u^{-1}$ and $v' = v^{-1}$. The purpose of Lemma \ref{lem:change of parameters} is that verify that these are in fact coordinates for $\mathcal{A}_1$ and that together they cover it.
@@ -1103,7 +1103,7 @@ As $\tilde{T}$ is an analytic function its derivatives are continuous and so we 
 &=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}U\bra{ p,k,u,v } \\
 &=\frac{1}{π} \frac{1}{k} V\bra{ p,k,v },
 \end{align*}
-which is also nonzero by Lemma \ref{lem:deriv no zeroes}. The implicit function theorem states that there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range } \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed, then the level set $\mathcal{\tilde{A}}_1(p,q)$ is parameterised by the remaining two coordinates $(k,\tilde{u})$.
+which is also nonzero by Lemma \ref{lem:deriv no zeroes}. The implicit function theorem states that there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range } \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed, then the level set $\mathcal{\tilde{A}}_1(p,q)$ is parametrised by the remaining two coordinates $(k,\tilde{u})$.
 
 When $p \leq 1$, we employ the following symmetry.
 \begin{align*}
@@ -1155,46 +1155,85 @@ Under the map $f_s \circ f^{-1}$ the point $\iu u$ is taken to $-\iu (ku)^{-1}$ 
 λ: (p,k,u,v) \mapsto \bra{ p,k, -(ku)^{-1}, -(kv)^{-1} }.
 \labelthis{eqn:def_lambda}
 \]
-
-We can now divide the covering transformations of the universal cover over $\mathcal{C}_1$ into two types: those that pushforward to $\mathcal{A}_1$ to give the identity and those that pushforward to give $λ$. Recall that the projection of the universal cover $\mathcal{\tilde{A}}_1$ to $\mathcal{A}_1$ in part reads $u = \tan \tilde{u}/2$. That is, $\tilde{u} \in 2\atan u + 2π\Z$. So the covering transformations that push forward to the identity are simply
+To gain a geometric understanding of $λ$, we imagine should again consider $u$ and $u' = u^{-1}$ as coordinates on $\RP^1$. The action of $λ$ above on $u$ is then a distorted rotation of the circle. To see this clearly, we may rescale $u$ in the following manner. Let $U=\sqrt{k} u$ and $U' = \tfrac{1}{\sqrt{k}} u'$. Then
 \[
-\left\{ (p,k,\tilde{u},\tilde{v}) \mapsto (p,k,\tilde{u} + 2π n,\tilde{v} +2π n) \mid\vert n \in \Z \right\}.
+U
+\mapsto \sqrt{k} λ\bra{\frac{U}{\sqrt{k}} }
+% = -\sqrt{k} \frac{1}{k}\frac{1}{\frac{U}{\sqrt{k}}}
+= - \frac{1}{U} = -U',
+\]
+which is half-rotation of the circle.
+
+DIAGRAM %TODO
+
+We shall use this rescaled coordinate $U$, and likewise $V = \sqrt{k} v$, to construct coordinates on $\mathcal{\tilde{A}}_1$ such that the covering transformations are simply translations. The fact that these should be translations is motivated by the fact that translating the line $\R$ rotates the quotient $\R/\Z$.
+
+In analogy to Lemma \ref{lem:mathcal tilde A}, we define coordinates $\tilde{U}$ and $\tilde{V}$ on $\mathcal{\tilde{A}}_1$ to be
+\begin{align*}
+U = \tan \frac{\tilde{U}}{2},       &\quad
+    U' = \cot \frac{\tilde{U}}{2},  \\
+V = \tan \frac{\tilde{V}}{2},       &\quad
+    V' = \cot \frac{\tilde{V}}{2}.
+\end{align*}
+Using $U = \sqrt{k}u$, the change of coordinates from $\tilde{u}$ to $\tilde{U}$ is
+\begin{align*}
+    \tan \frac{\tilde{U}}{2} &= U = \sqrt{k} u = \sqrt{k} \tan \frac{\tilde{u}}{2} \\
+    \tilde{U} &= 2π\Wind(\tilde{u}) + 2 \atan \left[ \sqrt{k} \tan \frac{\tilde{u}}{2} \right],
+\end{align*}
+and similarly
+\[
+\tilde{V} = 2π\Wind(\tilde{v}) + 2 \atan \left[ \sqrt{k} \tan \frac{\tilde{v}}{2} \right].
+\]
+Observe that these formula fix certain points, namely multiples of $\Z$.
+Hence $\tilde{u}$ and $\tilde{U}$ have the same winding number $\Wind$.
+Recall also from Lemma \ref{lem:mathcal tilde A} that the domain is restricted to $\tilde{u} < \tilde{v} < \tilde{u} + 2π$.
+Since $\tan$ and $\atan$ are increasing functions, it follows that the transformation is order preserving, so that $\tilde{U} < \tilde{V} < \tilde{V} + 2π$ as well.
+
+These coordinates $\tilde{U}$ and $\tilde{V}$ can be used interchangably with $\tilde{u}$ and $\tilde{v}$. Consider for example the coordinates $(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{A}}_1$ defined in Lemma \ref{lem:mathcal tilde A}.
+The determinant of the Jacobian of the change of coordinates to $(p,k,\tilde{U},\tilde{V})$ is
+\[
+\det \mathrm{Jac}\,
+= \begin{vmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 \\
+0 & \Partial{\tilde{U}}{k} & \Partial{\tilde{U}}{\tilde{u}} & 0 \\
+0 & \Partial{\tilde{V}}{k} & 0 & \Partial{\tilde{V}}{\tilde{v}}
+\end{vmatrix}
+= \frac{\sqrt{k}}{\cos^2 \tfrac{\tilde{u}}{2} + k \sin^2 \tfrac{\tilde{u}}{2}} \times \frac{\sqrt{k}}{\cos^2 \tfrac{\tilde{v}}{2} + k \sin^2 \tfrac{\tilde{v}}{2}} \neq 0,
+\]
+so this is indeed a valid change of coordinates. The same is true for the coordinates on $\mathcal{\tilde{A}}_1(p)$ provided by Lemma \ref{}. For $p \leq 1$, we may change coordinates from $(p,q,k,\tilde{u})$ to $(p,q,k,\tilde{U})$, and for $p \geq 1$ from $(p,q,k,\tilde{v})$ to $(p,q,k,\tilde{V})$.
+
+First let us use the coordinate $(p,k,\tilde{U},\tilde{V})$ on $\mathcal{\tilde{A}}_1$ to find the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{A}}_1 \to \mathcal{C}_1$. We can now divide the covering transformations into two types: those that pushforward to $\mathcal{A}_1$ to give the identity and those that pushforward to give $λ$. Recall that the projection of the universal cover $\mathcal{\tilde{A}}_1$ to $\mathcal{A}_1$ in part reads $U = \tan \tilde{U}/2$. This is the standard covering of the circle by $\R$, so the covering transformations that push forward to the identity are simply
+\[
+\left\{ (p,k,\tilde{U},\tilde{V}) \mapsto (p,k,\tilde{U} + 2π n,\tilde{V} +2π n) \mid\vert n \in \Z \right\}.
 \]
 
-To find those covering transformations of $\mathcal{G}$ that pushforward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $u$ coordinate. Then the $\tilde{u}$ coordinate of any point of $\mathcal{\tilde{A}}_1$ that lies over $(β,α)$ must be
+To find those covering transformations of $\mathcal{G}$ that pushforward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $U$ coordinate. Then the $\tilde{U}$ coordinate of any point of $\mathcal{\tilde{A}}_1$ that lies over $(β,α)$ must be
 \[
-2\atan \bra{ -\frac{1}{ku} } + 2π\Z
-= 2\bra{\pm\frac{π}{2} + \atan (ku)} + 2π\Z
-= 2πm + π + 2\atan (ku)
+2\atan \bra{ -\frac{1}{U} } + 2π\Z
+= 2\bra{\pm\frac{π}{2} + \atan U} + 2π\Z
+= 2πm + π + \tilde{U}
 \]
 for some integer $m$. Therefore, these covering transformations lie within the set
 \[
-\Set {(p,k,\tilde{u},\tilde{v}) \mapsto (p,k, 2πm + π + 2\atan (ku), 2πn + π + 2\atan (kv))} {m,n \in \Z}.
+\Set {(p,k,\tilde{U},\tilde{V}) \mapsto (p,k, 2πm + π + \tilde{U}, 2πn + π + \tilde{V})} {m,n \in \Z}.
 \]
-Not every element of this set is a well defined map on $\mathcal{\tilde{A}}_1$ however, because by Lemma \ref{lem:mathcal tilde A} we have that $\tilde{u} < \tilde{v} < \tilde{u} + 2π$. Hence above if we choose $m$, there choice of $n$ is completely determined. We claim that the group of covering transformations $\mathcal{G}$ is generated by
+Not every element of this set is a well defined map on $\mathcal{\tilde{A}}_1$ however, because we require that $\tilde{U} < \tilde{V} < \tilde{U} + 2π$. Hence above we must choose $m=n$. The group of covering transformations $\mathcal{G}$ is generated by
 \[
-\tilde{λ} : (p,k,\tilde{u},\tilde{v}) \mapsto (p,k, 2π\Wind(\tilde{u}) + π + 2\atan (ku), 2π\Wind(\tilde{v}) + π + 2\atan (kv)).
+\tilde{λ} : (p,k,\tilde{U},\tilde{U}) \mapsto (p,k, \tilde{U} + π, \tilde{V} + π).
 \labelthis{eqn:tilde lambda action}
 \]
-If we apply this transformation twice, we see that the $\tilde{u}$ coordinate changes thusly
-\begin{align*}
-2π\Wind(\tilde{u}) + 2\atan u
-&\mapsto 2π\Wind(\tilde{u}) + π + 2\atan (ku) \\
-&\mapsto 2π\Wind(\tilde{u}) + π + 2\atan \bra{ -\frac{k}{ku} } \\
-&= 2π\Wind(\tilde{u}) + 2π + 2\atan u = \tilde{u} + 2π,
-\end{align*}
-and ditto for $\tilde{v}$. Hence $\tilde{λ}^2$ generates the subgroup of transformations that pushforward to the identity transformation on $\mathcal{A}_1$. It is unsurprising that this subgroup is index $2$ in $\mathcal{G}$, because the group of covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ has just two elements.
+If we apply this transformation twice, we see that $\tilde{λ}^2$ generates the subgroup of transformations that pushforward to the identity transformation on $\mathcal{A}_1$. It is unsurprising that this subgroup is index $2$ in $\mathcal{G}$, because the group of covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ has just two elements.
 
-If we apply $\tilde{λ}$ an odd number of times, say $2n+1$ times, the $\tilde{u}$ coordinate becomes
-\[
-2π\Wind(\tilde{u} + 2πn) + π + 2\atan (ku)
-= 2π\Wind(\tilde{u}) + 2πn + π + 2\atan (ku),
-\]
-and applying the same for $\tilde{v}$ shows that $\tilde{λ}$ is in fact a generator for $\mathcal{G}$.
+
+
+
+
 
 If we wish to see the effect of the covering transformations as restricted to $\mathcal{\tilde{S}}_1$, we must determine how the value of $\tilde{T}$ changes when it is precomposed with $\tilde{λ}$, since $\mathcal{\tilde{S}}_1$ is a collection of its level sets.
 
 \begin{lem}
+\label{lem:T shift}
 The effect of precomposing $\tilde{T}$ with $\tilde{λ}$ is to increase its value by $p-1$. That is,
 \[
 \tilde{T} \circ \tilde{λ} - \tilde{T}
@@ -1232,7 +1271,7 @@ To infer the effect of the transformation on $\tilde{T}$ however, we also must t
 \]
 and as one traverses the unit circle clockwise in the $ζ$-plane, one traverses the imaginary axis in the $z$-plane upwards. The clockwise arrangement of $μ,1,-1$ and $ν$ therefore corresponds to $0 < u < v < \infty$.
 
-As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n,m$. The value of $2\atan(ku)$ will be between $0$ and $π$, so after the transformation $\tilde{u}$ will be in the range $(2πn +π, 2π(n+1))$. In other words its winding number has increased by $1$. The same can be said for $\tilde{v}$. Combining the effect of $λ$ on $T_0$ with the change of winding number, \eqref{eqn:tilde T computable} shows
+As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n$ and $m$. Hence $\tilde{U}$ and $\tilde{V}$ also lie in those two intervals respectively. Under applying the transformation $\tilde{λ}$, $\tilde{U}$ will have been translated by $π$ and so lie in $(2π(n+1) - π, 2π(n+1))$. In other words its winding number has increased by $1$. The same can be said for $\tilde{V}$. As $\tilde{u}$ and $\tilde{v}$ have the same winding numebrs as $\tilde{U}$ and $\tilde{V}$, combining the effect of $λ$ on $T_0$ with the change of winding number in \eqref{eqn:tilde T computable} shows
 \begin{align*}
 \tilde{T} \circ \tilde{λ} - \tilde{T}
 &= \bra{ T_0\circ λ + 2(p(m+1)-(n+1)) } - \bra{ T_0 + 2(pm-n) } \\
@@ -1243,25 +1282,19 @@ This relation is a difference of analytic functions on an open set, so by contin
 \end{proof}
 \end{lem}
 
-
-
-Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{A}}_1(p,q)$, where $\tilde{T} = q$, is to move them into the $\mathcal{\tilde{A}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{u},\tilde{v}) \in \mathcal{\tilde{A}}_1(p)$.
-If $p\leq 1$ let $\tilde{x}$ be $\tilde{u}$ and otherwise take it to be $\tilde{v}$. We know by Lemma \ref{lem:T_graph} that $(q,k,\tilde{x})$, where $q = \tilde{T}(p,k,\tilde{u},\tilde{v})$, are coordinates for $\mathcal{\tilde{A}}_1(p)$. In particular, $\mathcal{\tilde{A}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
+Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{A}}_1(p,q)$, where $\tilde{T} = q$, is to move them into the $\mathcal{\tilde{A}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{U},\tilde{V}) \in \mathcal{\tilde{A}}_1(p)$.
+If $p\leq 1$ let $\tilde{X}$ be $\tilde{U}$ and otherwise take it to be $\tilde{V}$. We know by Lemma \ref{lem:T_graph} and the above change of coordinates that $(q,k,\tilde{U})$, where $q = \tilde{T}$, are coordinates for $\mathcal{\tilde{A}}_1(p)$. In particular, $\mathcal{\tilde{A}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
 \[
-(p,q,k,\tilde{x}) \mapsto (p, q + (p-1), k, \tilde{x}'),
+(p,q,k,\tilde{X}) \mapsto (p, q + (p-1), k, \tilde{X} + π).
 \labelthis{eqn:group action}
 \]
-where
-\[
-\tilde{x}' = 2π\Wind(\tilde{x}) + π + 2\atan (k \tan (\tilde{x}/2)),
-\]
-which should be compared to the action of $\tilde{λ}$ in the $(p,k,\tilde{u},\tilde{v})$ coordinates in \eqref{eqn:tilde lambda action}. Viewing the cosets of the group of covering transformations as an equivalence relation, for $p\neq 1$ they provide an identification between the level set $\mathcal{\tilde{A}}_1(p,q)$ and the level set $\mathcal{\tilde{A}}_1(p,q + l(p-1))$ for any integer $l$.
+Viewing the cosets of the group of covering transformations as an equivalence relation, for $p\neq 1$ they provide an identification between the level set $\mathcal{\tilde{A}}_1(p,q)$ and the level set $\mathcal{\tilde{A}}_1(p,q + l(p-1))$ for any integer $l$.
 
 \begin{thm}
 \label{thm:topology_curves}
 For $p\neq 1$, the space of marked curves $\mathcal{C}_1(p)$ is diffeomorphic to
 \[
-\{ (q,k,\tilde{x}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
+\{ (q,k,\tilde{X}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
 \]
 such that the subspace of spectral curves $\mathcal{S}_1(p)$ is
 \[
@@ -1276,64 +1309,26 @@ Lemma \ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p
 
 This leaves just one special case, where $p=1$. We see that the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set. Specifically, the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1,q)$ given by \eqref{eqn:group action} reads
 \[
-(1,q,k,\tilde{x}) \mapsto (1, q, k, \tilde{x}'),
+(1,q,k,\tilde{X}) \mapsto (1, q, k, \tilde{X} + π),
 \]
-where
-\[
-\tilde{x}' = 2π\Wind(\tilde{x}) + π + 2\atan (k \tan (\tilde{x}/2)),
-\labelthis{eqn:tilde x prime}
-\]
-and so in particular only the fourth coordinates is changed. In the interest of having a clearer picture of this action, in the following lemma we shall reparameterise so that $\tilde{λ}$ acts by a simple translation.
-
-\begin{lem}
-There is a change of coordinates of $\mathcal{\tilde{A}}_1(1,q)$ such that $\tilde{λ}$ acts by translation:
-\[
-(1,q,k,\tilde{y}) \mapsto (1, q, k, \tilde{y} + π).
-\]
-
-\begin{proof}
-As $q$ is fixed by $\tilde{λ}$ and not part of the formula \eqref{eqn:tilde x prime} we can put it aside and focus on $(k,\tilde{x})$.
-
-We observed in the proof of Lemma \ref{} that for fixed $k$ the action of $\tilde{λ}$ on the coordinate $\tilde{x}$ is monotonic. We also know that acting by $\tilde{λ}^2$ is already a translation, it shifts $\tilde{x}$ by $2π$. And the $\mathcal{G}$-orbits of the points where $\tilde{x} = 0$ are $(1,q,k, π\Z)$. What we shall do therefore is to rescale each rectangle $(0,1) \times (2πn - π, 2πn + π)$ so that $\tilde{λ}$ is the constant map $(k,\tilde{y}) \mapsto (k,\tilde{y}+π)$.
-
-
-\[
-\tilde{y} = \begin{cases}
-2πn - 2\atan (k \cot (\tilde{x}/2)) & \text{if } \tilde{x}\in (2πn - π, 2πn) \\
-\tilde{x} & \text{if } \tilde{x}\in [2πn, 2πn+π] \\
-\end{cases}
-\]
-\end{proof}
-\end{lem}
-
-
-
-
+and so in particular only the fourth coordinates is changed. Using these coordinates $(1,q,k,\tilde{X})$ on $\mathcal{\tilde{A}}_1(1)$, it is trivial to deduce the quotient by $\mathcal{G}$.
 
 \begin{thm}
 \label{thm:topology_curves_p1}
-The space of marked curves $\mathcal{C}_1(1)$ is diffeomorphic to the product of $\R$ and an annulus, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is the restriction of the first component of the product to $\Q$.
+The space of marked curves $\mathcal{C}_1(1)$ is diffeomorphic to
+\[
+\{ (q,k,x) \in \R \times (0,1) \times \R/π\Z \},
+\]
+the product of $\R$ and an annulus, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is the restriction of the first component of the product to $\Q$.
 
 \begin{proof}
-From \eqref{eqn:group action}, the equivalence relation is $(1,q,k,\tilde{x}) \sim (1, q, k, \tilde{x}')$, where
+The orbit of a point $(1,q,k,\tilde{X})$ of $\mathcal{\tilde{A}}_1(1)$ is
 \[
-\tilde{x}' \in  \{ \tilde{x} + 2π\Z \} \cup
-\{ π + 2\atan (k \tan (\tilde{x}/2)) + 2π\Z \}.
-\labelthis{eqn:annuli action}
+(1,q,k,\tilde{X}+π\Z),
 \]
-Focusing just on the $(k,\tilde{x})$ components, this identifies any $(k,\tilde{x}) \in (0,1)\times\R$ with a unique value in $(0,1)\times[0,π)$. Further, because
-\[
-π + 2 \atan (k \tan 0) = π + 2 \atan 0 = π,
-\]
-the points $(k,0)$ are identified with the points $(k,π)$, and so this strip is wound into an annulus. This proves the first part of the theorem. We may comment that for points where $k\approx 1$, the action of $\tilde{λ}$ simplifies to
-\begin{align*}
-\tilde{λ}(1,q,1,\tilde{x})
-&\approx (1,q,1, 2π\Wind(\tilde{x}) + π + 2\atan \tan (\tilde{x}/2)) \\
-&= (1,q,1, \tilde{x} + π),
-\end{align*}
-which is a simple translation by $π$. The presence of $k$ in \eqref{eqn:annuli action} skews the translation of $\tilde{x}$ when $k$ is small.
+so the quotient sends $\tilde{X} \in \R$ to $x \in \R/π\Z$.
 
-As in the previous theorem, by construction of the coordinates $(p,q,k,\tilde{x})$ and Lemma \ref{lem:tilde T rational}, a point is in $\mathcal{S}_1 \subset \mathcal{C}_1$ exactly when it is the image of a point where $p$ and $q$ are rational. As $p=1$ in this case, the points of $\mathcal{S}_1(1)$ are those where $q\in\Q$.
+As in the previous theorem, by construction of the coordinates $(p,q,k,\tilde{X})$ and Lemma \ref{lem:tilde T rational}, a point is in $\mathcal{S}_1 \subset \mathcal{C}_1$ exactly when it is the image of a point where $p$ and $q$ are rational. As $p=1$ in this case, the points of $\mathcal{S}_1(1)$ are those where $q\in\Q$.
 \end{proof}
 \end{thm}
 
@@ -1364,6 +1359,7 @@ The method of proof is similar to that of Lemma \ref{lem:closing_conds}. As $Σ$
 a &:= \frac{2π\iu n}{2\iu η^+(1)}, \\
 l &:= \frac{m'}{\gcd(m',mn')}, \\
 b &:= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu \frac{mn'}{\gcd(m',mn')}y - \frac{m'}{\gcd(m',mn')} \int_{γ_+} Θ^P }.
+\labelthis{eqn:def Psi coeff}
 \end{align*}
 We shall prove this lemma first for exact differentials. Suppose that $Θ$ is an exact differential meeting conditions \ref{P:poles}--\ref{P:closing}. We assert that it must be an integer multiple of $Ψ^E$. To see this, note that it is a real scalar of $Θ^E$ and compute its integrals over $γ_+$ and $γ_-$
 \begin{align*}
@@ -1400,39 +1396,40 @@ It meets conditions \ref{P:poles}--\ref{P:closing} and is exact, so must be an i
 \end{proof}
 \end{lem}
 
-Morally, the differentials $Ψ^E$ and $Ψ^P$ should therefore be used locally as a frame for the space of differentials meeting \ref{P:poles}--\ref{P:closing}.
+Morally, the differentials $Ψ^E$ and $Ψ^P$ should be used locally as a frame for the space of differentials meeting \ref{P:poles}--\ref{P:closing}.
 Before we can make this precise however there is a technical point that must be addressed, namely that $\mathcal{S}_1$ is only an immersed submanifold.
 This causes issues if one tries to describe bundles over $\mathcal{S}_1$ as subspaces of bundles over $\mathcal{C}_1$.
-For example, we demonstrated at the end of Section \ref{}, using Lemma \ref{}, that the differentials meeting conditions \ref{P:poles}--\ref{P:imaginary} form a $\R\times\Z$-bundle over $\mathcal{C}_1$ framed by $(Θ^E,Θ^P)$.
+For example, we demonstrated at the end of Section \ref{sec:Differentials}, using Lemma \ref{lem:theta2_characterisation}, that the differentials meeting conditions \ref{P:poles}--\ref{P:imaginary periods} form a $\R\times\Z$-bundle over $\mathcal{C}_1$ framed by $\langle Θ^E,Θ^P \rangle$.
 If we try to consider $Ψ^E$ as a section of this bundle restricted to $\mathcal{S}_1$ then it is not even a continuous function!
 Indeed, consider a sequence of points
 \[
-Σ_k \in \mathcal{S}_1\bra{1+\tfrac{1}{k}},
+Σ_j \in \mathcal{S}_1\bra{1+j^{-1}},
 \]
-with a limit $Σ_\infty \in \mathcal{S}_1(1)$. The integers $k$ and $k+1$ are always coprime, so in the above notation $S = n/m = (k+1)/k$ and the differential $Ψ^E(k)$ on $Σ_n$ is defined by,
+with a limit $Σ_\infty \in \mathcal{S}_1(1)$. The integers $j$ and $j+1$ are always coprime, so in the above notation $S = n/m = (j+1)/j$ and the differential $Ψ^E_j$ on $Σ_j$ is defined by,
 \[
-Ψ^E(k) = \frac{2π\iu (k+1)}{2\iu η^+(1)} Θ^E,
+Ψ^E_j = \frac{2π\iu (j+1)}{2\iu η^+(1)} Θ^E,
 \]
 whereas on the other hand
 \[
-Ψ^E(\infty) = \frac{2π\iu}{2\iu η^+(1)} Θ^E.
+Ψ^E_\infty = \frac{2π\iu}{2\iu η^+(1)} Θ^E.
 \]
 
 Instead, we must consider bundles over each path connected component of $\mathcal{S}_1$ separately.
 Let us label the path connected components of $\mathcal{S}_1$. Following Theorem \ref{thm:topology_curves}, for each $p\in \Q^+\setminus\{1\}$ and $[q] \in \Q / (p-1) \Z$, there is a strip-like component $\mathcal{S}_1(p,[q]) \diffeo (0,1)\times\R$. And by Theorem \ref{thm:topology_curves_p1}, for $p=1$ there is an annuli component $\mathcal{S}_1(1,q)$ for each rational number $q$. Each of these path connected components of $\mathcal{S}_1$ is a submanifold of $\mathcal{C}_1$.
 
-Therefore, fix a path connected component $\mathcal{X}$ of $\mathcal{S}_1$. For any fixed value of $p \in \Q^+$, the differential $Ψ^E$ is a well-defined smooth function on $\mathcal{C}_1(p)$, and as $\mathcal{X}$ is entirely contained within some $\mathcal{C}_1(p)$ it follows that $Ψ^E$ is well-defined and smooth on $\mathcal{X}$. The same is not neccesarily true for $Ψ^P$.
-Locally though, in a simply connected neighbourhood $\mathcal{U} \subset \mathcal{X}$ it is possible to choose paths $γ_+$ and $γ_-$ on each spectral curve that vary smoothly with changes of the branch points. Hence by Lemma \ref{}, the moduli space differentials satisfying \ref{P:poles}--\ref{P:closing} is the trivial $\Z^2$-bundle over $U$ framed by $Ψ^E$ and $Ψ^P$.
+Therefore, fix a path connected component $\mathcal{X}$ of $\mathcal{S}_1$. For any fixed value of $p \in \Q^+$, the differential $Ψ^E$ is a well-defined smooth function on $\mathcal{C}_1(p)$, and as $\mathcal{X}$ is entirely contained within some $\mathcal{C}_1(p)$ it follows that $Ψ^E$ is well-defined and smooth on $\mathcal{X}$. The same is not necessarily true for $Ψ^P$.
+Locally though, in a simply connected neighbourhood $\mathcal{U} \subset \mathcal{X}$ it is possible to choose paths $γ_+$ and $γ_-$ on each spectral curve that vary smoothly with changes of the branch points. Hence by Lemma \ref{lem:minimal differentials}, the moduli space of differentials satisfying \ref{P:poles}--\ref{P:closing} is the trivial $\Z^2$-bundle over $\mathcal{U}$ framed by $Ψ^E$ and $Ψ^P$.
 
-We recall from Chapter \ref{} the definition of the integer matrices $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. There the moduli space of spectral data with a genus zero spectral curve could be described as the product $\mathcal{M}_0 = D \times \Mat_2^*\Z$. Similiarly, we may describe the moduli space of spectral data whose spectral curve lies in $\mathcal{U}$ as $\mathcal{U} \times \Mat_2^*\Z$, where the differentials $(Θ^1,Θ^2)$ on any curve may be described by a matrix via
+From this we may establish the local structure of $\mathcal{M}_1$.
+We recall from Chapter \ref{chp:Genus Zero} the definition of the integer matrices $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. There the moduli space of spectral data with a genus zero spectral curve could be described as the product $\mathcal{M}_0 = D \times \Mat_2^*\Z$. Similarly, we may describe the moduli space of spectral data whose spectral curve lies in $\mathcal{U}$ as $\mathcal{U} \times \Mat_2^*\Z$, where the differentials $(Θ^1,Θ^2)$ on any curve may be described by a matrix via
 \[
 \begin{pmatrix}
 Θ^1 \\ Θ^2
 \end{pmatrix}
 =
 \begin{pmatrix}
-a & b \\
-c & d
+a^1 & b^1 \\
+a^2 & b^2
 \end{pmatrix}
 \begin{pmatrix}
 Ψ^E \\ Ψ^P
@@ -1440,40 +1437,81 @@ c & d
 \]
 using the frame $(Ψ^E,Ψ^P)$. The non-vanishing of the determinant of this matrix is equivalent to Condition \ref{P:linear independence}, that the pair of differentials $(Θ^1,Θ^2)$ is linearly independent.
 
-This establishes the local structure of the moduli space $\mathcal{M}_1$ of spectral data with a genus one spectral curve, and we can now turn our attention to its global structure. Just as we decomposed $\mathcal{S}_1$ into path components $\mathcal{S_1}(p,[q])$ and $\mathcal{S}_1(1,q)$, we may similarly decompose $\mathcal{M}_1$ accordning to the component its spectral curve belongs to. As the path connected components $\mathcal{X} = \mathcal{S}_1(p,[q])$ are simply connected, immediately we have that
+With the local structure established, we can now turn our attention to the global structure of $\mathcal{M}_1$. Just as we decomposed $\mathcal{S}_1$ into path components $\mathcal{S_1}(p,[q])$ and $\mathcal{S}_1(1,q)$, we may similarly decompose $\mathcal{M}_1$ according to which component its spectral curve belongs. As the path connected components $\mathcal{X} = \mathcal{S}_1(p,[q])$ are simply connected, immediately we have that
 \[
 \mathcal{M}_1(p, [q]) = \mathcal{S}_1(p,[q]) \times \Mat_2^*\Z.
 \]
 
-Let us fix a path component $\mathcal{S}_1(1,q)$ of $\mathcal{S}_1(1)$.
-This component is an annulus and not simply connected.
-Consider a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1,q)$ that wraps around the annulus once. If we make a choice of $γ_+(t),γ_-(t)$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$, what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$? This is in effect computing the transistion map for the bundle $\mathcal{M}_1(1,q)$.
+For $p=1$, let us fix a path component $\mathcal{S}_1(1,q)$ of $\mathcal{S}_1(1)$.
+This component is an annulus and not simply connected. The differential $Ψ^P$ is not well-defined on all of $\mathcal{S}_1(1,q)$ because its defintion depends on a choice of paths $γ_+$ and $γ_-$, and it is not possible to make a choice of paths that varies continuous as the branch points of the spectral curve are moved. For example, recall the path $t \mapsto Σ(0.5 e^{\iu t}, -0.5 e^{\iu t})$ in $\mathcal{C}_1$. If one takes $γ_+$ to be a path that wraps around $ζ = 0.5$ on $Σ(0)$ (as the principal choice of path $\symbf{γ}_+$ does), then as $t$ is increased to $π$, the path now passes around the other branch point $ζ=-0.5$ on $Σ(π) = Σ(0)$.
 
-From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. We may simplify so that it is a reduced fraction. Writing $S=1=n/m$ as a reduced fraction implies that $m=n=1$. The constant $l$ is therefore $m' / \gcd(m',n') = m'$.
-Let $Ψ^P(0) = Ψ^P$ be the initial differential on $Σ(\ell(0))$. As the periods of the differential are integral, they cannot change along the path $\ell$ and so
+Consider therefore a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1,q)$ that wraps around the annulus once. If we make a choice of $γ_+(t),γ_-(t)$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$ then note in particular that $γ_+(0)$ and $γ_+(1)$ will be different paths on the same curve. One may ask: what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$?
+
+From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. We may simplify so that it is a reduced fraction. Writing $S=1=n/m$ as a reduced fraction implies that $m=n=1$. The constant $l$, the period of $Ψ^P$, is therefore $m' / \gcd(m',n') = m'$.
+Let $Ψ^P(0) = b(0)Θ^E + m' Θ^P$ be the initial differential on $Σ(\ell(0))$. As the periods of the differential are integral, they cannot change along the path $\ell$ and so
 \[
-Ψ^P(t) = b(t) Θ^E + Ψ^P.
+Ψ^P(t) = b(t) Θ^E + m' Θ^P.
 \]
-As we move from the start of $\ell$ to the end, from our previous computations \ref{}, each of
+As we move from the start of $\ell$ to the end, from our previous computation in Lemma \ref{lem:T shift}, each of
 \[
-\int_{γ_+(t)} Θ^P, \int_{γ_-(t)} Θ^P
+\int_{γ_+(t)} Θ^P \text{ and } \int_{γ_-(t)} Θ^P
 \]
-will be incremented, or decremented (depending on the orientation of $\ell$), by $2π\iu$. The difference $Ψ^P(1) - Ψ^P(0) = (b(1)-b(0))Θ^E$ can be explicitly computed as
+will be incremented, or decremented (depending on the orientation of $\ell$), by $2π\iu$. The difference $Ψ^P(1) - Ψ^P(0) = (b(1)-b(0))Θ^E$ can be explicitly computed from \eqref{eqn:def Psi coeff} as
 \begin{align*}
 b(1)
+&= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+(1)} Θ^P} } \\
 &= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+(0)} Θ^P + 2π\iu} } \\
 &= b(0) - \frac{2π\iu}{2\iu η^+(1)}l \\
-&= - am',
+&= b(0) - am',
 \end{align*}
 so that $Ψ^P(1) - Ψ^P(0) = -am' Θ^E = - m' Ψ^E$. This equations shows that every time you loop around the annulus, the non-exact differential $Ψ^P$ shifts by $m' Ψ^E$.
 
+Translating this into a statement about $\Mat_2^*\Z$, given a tuple of spectral data $(Σ,Θ^1,Θ^2)$ in $\mathcal{M}_1(1,q)$, we may write $Θ^i = a_i Ψ^E + l_i Ψ^P$ for integers $a_i$ and $l_i$. One is free to vary $Σ$ within $\mathcal{S}_1(1,q)$, but the effect of looping around on the differentials is
+\begin{align*}
+\begin{pmatrix}
+Θ^1 \\ Θ^2
+\end{pmatrix}
+&=
+\begin{pmatrix}
+a_1 & l_1 \\
+a_2 & l_2
+\end{pmatrix}
+\begin{pmatrix}
+Ψ^E \\ Ψ^P
+\end{pmatrix} \\
+&\mapsto
+\begin{pmatrix}
+a_1 & l_1 \\
+a_2 & l_2
+\end{pmatrix}
+\begin{pmatrix}
+    Ψ^E \\ Ψ^P - m' Ψ^E
+    \end{pmatrix} \\
+&=
+\begin{pmatrix}
+a_1 & l_1 \\
+a_2 & l_2
+\end{pmatrix}
+\begin{pmatrix}
+    1 & 0 \\
+    -m' & 1
+\end{pmatrix}
+\begin{pmatrix}
+    Ψ^E \\ Ψ^P
+    \end{pmatrix}.
+\end{align*}
+In short, if $B$ is the subgroup of $\Mat_2^*\Z$ of matrices of the form
+\[
+\begin{pmatrix}
+1 & 0 \\
+m'\Z & 1
+\end{pmatrix},
+\]
+then the connected components of $\mathcal{M}_1(1,q)$ are enumerated by the right $B$-orbits of $\Mat_2^*\Z$.
 
-Thus the part of the bundle $\mathcal{M}_1$ over this annulus is simply connected. The basis $Ψ^E,Ψ^P$ is not unique, one may add an integer multiple of $Ψ^E$ to $Ψ^P$, but this shows that there is a path in the moduli space between bases that have their non-exact differentials differ by $m'\Z Ψ^E$. Thus the part of the bundle $\mathcal{M}_1$ over this annulus has $m'$ components.
-\todo{rework this. too dense}
+Finally, we can prove the space $\mathcal{M}_1(1,q)$ is simply connected. Given any closed loop $\ell$ in it, we may project this loop down to $\mathcal{S}_1(1,q)$. If the projection of the loop is null-homotopic, then it is contained in a simply connected neighbourhood $\mathcal{U}$ of $\mathcal{S}_1(1,q)$ and we may use the frame $\langle Ψ^E,Ψ^P \rangle$ to lift to a null-homotopy of $\ell$ in $\mathcal{M}_1(1,q)$. If the projection is non-trivial, then it winds a certain number of times around the annulus. The above calculation shows that if the differentials are unchanged from the beginning to end of the path, then $l_1=l_2 = 0$, and the differentials are both multiples of $Θ^E$, which by \ref{P:linear independence} contradicts their linear independence.
 
-% TODO
-Summary about $\mathcal{M}_1$.
-
+It is therefore the case that each connected component of $\mathcal{M}_1(1,q)$ is diffeomorphic to the universal cover of the annulus $\mathcal{S}_1(1,q)$, which is to say that they are strips $(0,1)\times \R$. This was also the case for the connected components of $\mathcal{M}_1(p,[q])$. In summary, $\mathcal{M}_1$ is the disjoint union of infinitely many copies $(0,1)\times\R$.
 
 There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry in \eqref{eqn:T_0 symmetry},
 \[
