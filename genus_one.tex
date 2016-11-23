@@ -7,10 +7,47 @@
 % \label{sec:Overview}
 
 % Main result
-The aim of this chapter is describe the topology of the moduli space of spectral curves $\mathcal{S}_1$.
-Recall that the space of smooth, genus one marked curves is denoted $\mathcal{C}_1$, and the space of those curves that admit spectral data is $\mathcal{S}_1 \subset \mathcal{C}_1$.
-We prove, in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, that there is a foliation of $\mathcal{C}_1$ such that $\mathcal{S}_1$ is a dense collection of leaves of this foliation. The leaves are topologically either strips $(0,1)\times \R$ or annuli. The arrangement of the leaves $\mathcal{S}_1$ is illustrated in Figure \ref{}.
+The aim of this chapter is describe the topology of the moduli space of spectral curves $\mathcal{S}_1$, which we consider as a subspace of $\mathcal{C}_1$, the space of marked curves.
+We will construct the universal cover $\mathcal{\tilde{C}}_1$ of $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as the quotient of a certain subspace $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{C}}_1$ by the group of covering transformations.
+Moreover, we will prove that the path connected components of $\mathcal{S}_1$ are indexed by two rational numbers $p > 0$ and $q$. For $p\neq 1$ the components are strips $(0,1)\times \R$, whereas for $p=1$ the components are annuli.
 
+The key to finding $\mathcal{\tilde{S}}_1$ is the constuction of coordinates on $\mathcal{\tilde{C}}_1$ such that the group of covering transformation acts as translations and also that $p$ and $q$ are coordinates. In the first instance, we have
+\[
+\mathcal{\tilde{A}}_1 \diffeo
+\Set{ (p,k,\tilde{U},\tilde{V}) \in \R^+ \times (0,1) \times \R^2 }
+{ \tilde{U} < \tilde{V} < \tilde{U} + 2π }.
+\]
+The group $\mathcal{G}$ of covering transformations is $\Z\langle \tilde{λ} \rangle$, where the transformation $\tilde{λ}$ acts on $\mathcal{\tilde{A}}_1$ by
+\[
+\tilde{λ} : \bra{p,k,\tilde{U},\tilde{V}} \mapsto \bra{p,k,\tilde{U} + π,\tilde{V} + π}.
+\]
+In Lemma \ref{}, we divide $\mathcal{\tilde{C}}_1$ into two pieces and show that for $p \leq 1$ we may use $(p,q,k,\tilde{U})$ as coordinates, and that for $p \geq 1$ we may use $(p,q,k,\tilde{V})$. In a neighbourhood of $p=1$ it is possible to use either set of coordinates. The space $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$
+
+When the transformation $\tilde{λ}$ acts on a point of $\mathcal{\tilde{A}}_1$, it shifts its $q$-coordinate by $p-1$.
+
+On $\mathcal{\tilde{A}}_1(p) \diffeo \R\times(0,1)\times\R$, the subspace of $\mathcal{\tilde{A}}_1$ where $p$ is fixed, the group of covering transformations $\mathcal{G} = \Z\langle \tilde{λ}\rangle$ acts as a translation,
+\[
+\tilde{λ} : (q,k,\tilde{X}) \in  \mapsto \bra{ q + (p-1) ,k, \tilde{X} +π }.
+\]
+For $p\neq 1$ therefore, in Theorem \ref{thm:topology_curves} we have that
+\[
+\mathcal{C}_1(p)
+\diffeo \mathcal{\tilde{A}}_1(p) / \mathcal{G}
+= \left\{ ([q],k,\tilde{X}) \in \R/(p-1)\Z \times (0,1) \times \R \right\},
+\]
+and $\mathcal{S}_1(p)$ is the subset where $[q] \in \Q/(p-1)\Z$. The path connected components of $\mathcal{S}_1(p)$ are strips $(0,1)\times \R$. For $p=1$, by contrast, Theorem \ref{thm:topology_curves_p1} shows that
+\[
+\mathcal{C}_1(1)
+\diffeo \mathcal{\tilde{A}}_1(1) / \mathcal{G}
+= \left\{ (q,k,[\tilde{X}]) \in \R \times (0,1) \times \R/π\Z \right\},
+\]
+where again $\mathcal{S}_1$ is the subset where $q$ is rational. This time the path connected components are annuli $(0,1) \times \R/π\Z$.
+
+In either case, we have a foliation of $\mathcal{C}_1(p)$ such that $\mathcal{S}_1(p)$ is a dense collection of leaves. Though the topology `jumps' at $p=1$, we can understand the foliation as changing continuously in $p$. As $k$ is unaffected by the quotient, we may leave it aside and focus on $(q,\tilde{X})$. Visualise for large $p$ the foliation of $\mathcal{C}_1(p)$ as consisting of vertical lines on the cylinder. As $p$ decreases towards $1$, these lines twist around like helices. At $p=1$ these helices are now horizontal and `snap' into circular bands around the cylinder. When $p < 1$ we again have helices of the opposite handedness, tending towards vertical lines again as $p$ tends to $0$.
+
+DIAGRAM
+
+TO REWRITE:
 % Main idea: the closing conditions
 The closing conditions, Conditions \ref{P:closing}, must be satisfied by the differentials $Θ$ and $\tilde{Θ}$ to ensure that the harmonic map associated to a tuple of spectral data $(Σ,Θ,\tilde{Θ},E)$ has a torus as its domain, as opposed to a plane. For any genus $g$, every marked curve of $\mathcal{C}_g$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods}. In the particular case of marked curves of genus one, every curve further has differentials that have integral periods (Condition \ref{P:periods}). But not every curve admits differentials that meet the closing conditions. The closing conditions therefore can be viewed as defining equations for the subspace $\mathcal{S}_1$ within $\mathcal{C}_1$.
 
@@ -1166,7 +1203,7 @@ which is half-rotation of the circle.
 
 DIAGRAM %TODO
 
-We shall use this rescaled coordinate $U$, and likewise $V = \sqrt{k} v$, to construct coordinates on $\mathcal{\tilde{A}}_1$ such that the covering transformations are simply translations. The fact that these should be translations is motivated by the fact that translating the line $\R$ rotates the quotient $\R/\Z$.
+We shall use this rescaled coordinate $U$, and likewise $V = \sqrt{k} v$, to construct coordinates on $\mathcal{\tilde{A}}_1$ such that the covering transformations are simply translations. This is motivated by the fact that translating the line $\R$ rotates the quotient $\R/\Z$.
 
 In analogy to Lemma \ref{lem:mathcal tilde A}, we define coordinates $\tilde{U}$ and $\tilde{V}$ on $\mathcal{\tilde{A}}_1$ to be
 \begin{align*}
@@ -1203,12 +1240,13 @@ The determinant of the Jacobian of the change of coordinates to $(p,k,\tilde{U},
 \]
 so this is indeed a valid change of coordinates. The same is true for the coordinates on $\mathcal{\tilde{A}}_1(p)$ provided by Lemma \ref{}. For $p \leq 1$, we may change coordinates from $(p,q,k,\tilde{u})$ to $(p,q,k,\tilde{U})$, and for $p \geq 1$ from $(p,q,k,\tilde{v})$ to $(p,q,k,\tilde{V})$.
 
-First let us use the coordinate $(p,k,\tilde{U},\tilde{V})$ on $\mathcal{\tilde{A}}_1$ to find the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{A}}_1 \to \mathcal{C}_1$. We can now divide the covering transformations into two types: those that pushforward to $\mathcal{A}_1$ to give the identity and those that pushforward to give $λ$. Recall that the projection of the universal cover $\mathcal{\tilde{A}}_1$ to $\mathcal{A}_1$ in part reads $U = \tan \tilde{U}/2$. This is the standard covering of the circle by $\R$, so the covering transformations that push forward to the identity are simply
+First let us use the coordinate $(p,k,\tilde{U},\tilde{V})$ on $\mathcal{\tilde{A}}_1$ to find the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{A}}_1 \to \mathcal{C}_1$. We can divide the covering transformations into two types: those that push forward to $\mathcal{A}_1$ to give the identity and those that push forward to give $λ$. Recall that the projection of the universal cover $\mathcal{\tilde{A}}_1$ to $\mathcal{A}_1$ in part reads $U = \tan \tilde{U}/2$. This is the standard covering of the circle by $\R$, so the covering transformations that push forward to the identity are simply
 \[
-\left\{ (p,k,\tilde{U},\tilde{V}) \mapsto (p,k,\tilde{U} + 2π n,\tilde{V} +2π n) \mid\vert n \in \Z \right\}.
+\Set{ (p,k,\tilde{U},\tilde{V}) \mapsto (p,k,\tilde{U} + 2π n,\tilde{V} +2π n) }
+{ n \in \Z }.
 \]
 
-To find those covering transformations of $\mathcal{G}$ that pushforward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $U$ coordinate. Then the $\tilde{U}$ coordinate of any point of $\mathcal{\tilde{A}}_1$ that lies over $(β,α)$ must be
+To find those covering transformations of $\mathcal{G}$ that push forward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $U$ coordinate. Then the $\tilde{U}$ coordinate of any point of $\mathcal{\tilde{A}}_1$ that lies over $(β,α)$ must be
 \[
 2\atan \bra{ -\frac{1}{U} } + 2π\Z
 = 2\bra{\pm\frac{π}{2} + \atan U} + 2π\Z
@@ -1220,10 +1258,10 @@ for some integer $m$. Therefore, these covering transformations lie within the s
 \]
 Not every element of this set is a well defined map on $\mathcal{\tilde{A}}_1$ however, because we require that $\tilde{U} < \tilde{V} < \tilde{U} + 2π$. Hence above we must choose $m=n$. The group of covering transformations $\mathcal{G}$ is generated by
 \[
-\tilde{λ} : (p,k,\tilde{U},\tilde{U}) \mapsto (p,k, \tilde{U} + π, \tilde{V} + π).
+\tilde{λ} : (p,k,\tilde{U},\tilde{U}) \mapsto (p,k, \tilde{U} + π, \tilde{V} + π),
 \labelthis{eqn:tilde lambda action}
 \]
-If we apply this transformation twice, we see that $\tilde{λ}^2$ generates the subgroup of transformations that pushforward to the identity transformation on $\mathcal{A}_1$. It is unsurprising that this subgroup is index $2$ in $\mathcal{G}$, because the group of covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ has just two elements.
+and we may write $\mathcal{G} = \Z\langle \tilde{λ}\rangle$. If we apply this transformation twice, we see that $\tilde{λ}^2$ generates the subgroup of transformations that pushforward to the identity transformation on $\mathcal{A}_1$. It is unsurprising that this subgroup is index $2$ in $\mathcal{G}$, because the group of covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ has just two elements.
 
 
 
@@ -1240,7 +1278,7 @@ The effect of precomposing $\tilde{T}$ with $\tilde{λ}$ is to increase its valu
 = p-1.
 \]
 \begin{proof}
-It is fruitful to consider first the effect of $λ$ on $T_0$ in the $ζ$-plane. Suppose that $μ$ and $ν$ are chosen such that $ν,μ,1$ and $-1$ are arranged clockwise as shown in Figure \ref{fig:deck_T_1}. The principal choice of path $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ is shown in black, whereas the principal choice after swapping the labels of the roots is shown in red. Let it be denoted $γ'_+ = \symbf{γ}_+ \circ λ = \symbf{γ}_+(β,α)$.
+It is fruitful to consider first the effect of $λ$ on $T_0$ in the $ζ$-plane. Suppose that $μ$ and $ν$ are chosen such that $ν,μ,1$ and $-1$ are arranged clockwise as shown in Figure \ref{fig:deck_T_1}. The principal choice of path $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ is shown in red, whereas the principal choice after swapping the labels of the roots is shown in blue. Let it be denoted $γ'_+ = \symbf{γ}_+ \circ λ = \symbf{γ}_+(β,α)$.
 
 % \makefigure{The principal path $\symbf{γ}_+$ in black and path $γ'_+ = \symbf{γ}_+ \circ λ$ in red. \label{fig:deck_T_1}}{thesis_graphics_temp/deck_T_1.png}
 \maketikzfigure{The principal path $\symbf{γ}_+$ in red and path $γ'_+ = \symbf{γ}_+ \circ λ$ in blue. \label{fig:deck_T_1}}{tikz/deck_T_1}
@@ -1249,7 +1287,7 @@ The difference between these two paths is homologous to a loop anticlockwise aro
 \[
 \int_{γ'_+} Θ^P - \int_{\symbf{γ}_+} Θ^P = \int_{\S^1} Θ^P = -2π\iu.
 \]
-Likewise if we consider the difference between the principal path $\symbf{γ}_-$ and the path $γ'_- = \symbf{γ}_- \circ λ$ we again have a anticlockwise loop of the upper unit circle (Figure \ref{fig:deck_T_-1}).
+Likewise if we consider the difference between the principal path $\symbf{γ}_-$ and the path $γ'_- = \symbf{γ}_- \circ λ$ we again have a anticlockwise loop of the upper unit circle, shown in Figure \ref{fig:deck_T_-1}.
 Hence
 \[
 \int_{γ'_-} Θ^P - \int_{\symbf{γ}_-} Θ^P = \int_{\S^1} Θ^P = -2π\iu.
@@ -1271,7 +1309,7 @@ To infer the effect of the transformation on $\tilde{T}$ however, we also must t
 \]
 and as one traverses the unit circle clockwise in the $ζ$-plane, one traverses the imaginary axis in the $z$-plane upwards. The clockwise arrangement of $μ,1,-1$ and $ν$ therefore corresponds to $0 < u < v < \infty$.
 
-As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n$ and $m$. Hence $\tilde{U}$ and $\tilde{V}$ also lie in those two intervals respectively. Under applying the transformation $\tilde{λ}$, $\tilde{U}$ will have been translated by $π$ and so lie in $(2π(n+1) - π, 2π(n+1))$. In other words its winding number has increased by $1$. The same can be said for $\tilde{V}$. As $\tilde{u}$ and $\tilde{v}$ have the same winding numebrs as $\tilde{U}$ and $\tilde{V}$, combining the effect of $λ$ on $T_0$ with the change of winding number in \eqref{eqn:tilde T computable} shows
+As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n$ and $m$. Hence $\tilde{U}$ and $\tilde{V}$ also lie in those two intervals respectively. Under applying the transformation $\tilde{λ}$, the coordinate $\tilde{U}$ will be translated by $π$ and so lie in $(2π(n+1) - π, 2π(n+1))$. In other words its winding number has increased by $1$. The same can be said for $\tilde{V}$. As $\tilde{u}$ and $\tilde{v}$ have the same winding numebrs as $\tilde{U}$ and $\tilde{V}$, combining in \eqref{eqn:tilde T computable} the effect of $λ$ on $T_0$ with the change of winding number shows
 \begin{align*}
 \tilde{T} \circ \tilde{λ} - \tilde{T}
 &= \bra{ T_0\circ λ + 2(p(m+1)-(n+1)) } - \bra{ T_0 + 2(pm-n) } \\
@@ -1294,11 +1332,11 @@ Viewing the cosets of the group of covering transformations as an equivalence re
 \label{thm:topology_curves}
 For $p\neq 1$, the space of marked curves $\mathcal{C}_1(p)$ is diffeomorphic to
 \[
-\{ (q,k,\tilde{X}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
+\{ ([q],k,\tilde{X}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
 \]
 such that the subspace of spectral curves $\mathcal{S}_1(p)$ is
 \[
-\mathcal{S}_1(p) = \{ \mathcal{C}_1(p) \mid q \in \Q/ (p-1)\Z \}.
+\mathcal{S}_1(p) = \{ \mathcal{C}_1(p) \mid [q] \in \Q/ (p-1)\Z \}.
 \]
 \begin{proof}
 Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{A}}_1(p)$ by the group of covering transformations $\mathcal{G} = \Z\langle\tilde{λ}\rangle$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}_1(p)$ is foliated by $\mathcal{\tilde{A}}_1(p,q)$ and we have just shown in \eqref{eqn:group action} how different $\mathcal{\tilde{A}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each element of $\R/(p-1)\Z$ to cover the image.

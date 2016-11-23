@@ -1,4 +1,9 @@
 \documentclass{standalone}
+
+\usepackage{fontspec}
+\usepackage[bold-style=ISO]{unicode-math}
+\setmathfont{Latin Modern Math}
+
 \usepackage{tikz}
 
 \begin{document}
@@ -17,7 +22,7 @@
     arc (-62:-83:5.8);
 \draw[color=red,->] (0.72,0.27)
     arc (-90:-277:0.08)
-    node[above, color=red]{$\gamma_+$}
+    node[above, color=red]{$\symbf{\gamma}_+$}
     arc (-82:-58:5.6)
     arc (21:-2:3.1);
 
@@ -44,10 +49,10 @@
 % points
 \fill (3,0) circle (0.05) node[left, color=black]{$1$};
 \fill (-3,0) circle (0.05) node[right, color=black]{$-1$};
-\fill (2.82,1.04) circle (0.05) node[above=4, color=black]{$\mu$};
-\fill (-2.82,1.04) circle (0.05) node[above=4, color=black]{$\nu$};
-\fill (1,0.38) circle (0.05) node[below=3, color=black]{$\alpha$};
-\fill (-1,0.38) circle (0.05) node[below=3, color=black]{$\beta$};
+\fill (2.82,1.04) circle (0.05) node[above=5pt, color=black]{$\mu$};
+\fill (-2.82,1.04) circle (0.05) node[above=5pt, color=black]{$\nu$};
+\fill (1,0.38) circle (0.05) node[below=3pt, color=black]{$\alpha$};
+\fill (-1,0.38) circle (0.05) node[below=3pt, color=black]{$\beta$};
 
 \end{tikzpicture}
 \end{document}
