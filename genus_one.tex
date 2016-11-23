@@ -11,49 +11,49 @@ The aim of this chapter is describe the topology of the moduli space of spectral
 We will construct the universal cover $\mathcal{\tilde{C}}_1$ of $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as the quotient of a certain subspace $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{C}}_1$ by the group of covering transformations.
 Moreover, we will prove that the path connected components of $\mathcal{S}_1$ are indexed by two rational numbers $p > 0$ and $q$. For $p\neq 1$ the components are strips $(0,1)\times \R$, whereas for $p=1$ the components are annuli.
 
-The key to finding $\mathcal{\tilde{S}}_1$ is the constuction of coordinates on $\mathcal{\tilde{C}}_1$ such that the group of covering transformation acts as translations and also that $p$ and $q$ are coordinates. In the first instance, we have
+The difference between a genus one marked curve and a spectral curve is that the latter possesses differentials that satisfy the closing conditions, Conditions \ref{P:closing}, in addition to satisfying Conditions \ref{P:real curve}--\ref{P:periods}. For any genus $g$, every marked curve of $\mathcal{C}_g$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods}. In the particular case of marked curves of genus one, every curve further has differentials that have integral periods (Condition \ref{P:periods}). But not every curve admits differentials that meet the closing conditions. In Section \ref{sec:closing conditions}, we produce two functions $S$ and $T$ on $\mathcal{C}_1$ such that a curve belongs to $\mathcal{S}_1$ precisely when $S$ and $T$ are rationally valued.
+
+The key to finding $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$, is the constuction of coordinates on $\mathcal{\tilde{C}}_1$ such that $p = S$ and $q = T$ are coordinates. In order to be able to take the quotient, we also desire the group of covering transformation to act as translations in these coordinates. To satisfy the second requirement, we will construct
 \[
-\mathcal{\tilde{A}}_1 \diffeo
+\mathcal{\tilde{C}}_1 \diffeo
 \Set{ (p,k,\tilde{U},\tilde{V}) \in \R^+ \times (0,1) \times \R^2 }
 { \tilde{U} < \tilde{V} < \tilde{U} + 2π }.
 \]
-The group $\mathcal{G}$ of covering transformations is $\Z\langle \tilde{λ} \rangle$, where the transformation $\tilde{λ}$ acts on $\mathcal{\tilde{A}}_1$ by
+The group $\mathcal{G}$ of covering transformations is proved to be $\Z\langle \tilde{λ} \rangle$, where the transformation $\tilde{λ}$ acts on $\mathcal{\tilde{C}}_1$ by
 \[
 \tilde{λ} : \bra{p,k,\tilde{U},\tilde{V}} \mapsto \bra{p,k,\tilde{U} + π,\tilde{V} + π}.
 \]
-In Lemma \ref{}, we divide $\mathcal{\tilde{C}}_1$ into two pieces and show that for $p \leq 1$ we may use $(p,q,k,\tilde{U})$ as coordinates, and that for $p \geq 1$ we may use $(p,q,k,\tilde{V})$. In a neighbourhood of $p=1$ it is possible to use either set of coordinates. The space $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$
-
-When the transformation $\tilde{λ}$ acts on a point of $\mathcal{\tilde{A}}_1$, it shifts its $q$-coordinate by $p-1$.
-
-On $\mathcal{\tilde{A}}_1(p) \diffeo \R\times(0,1)\times\R$, the subspace of $\mathcal{\tilde{A}}_1$ where $p$ is fixed, the group of covering transformations $\mathcal{G} = \Z\langle \tilde{λ}\rangle$ acts as a translation,
+In Lemma \ref{lem:T_graph}, we divide $\mathcal{\tilde{C}}_1$ into two pieces and show that for $p \leq 1$ we may use $(p,q,k,\tilde{U})$ as coordinates, and that for $p \geq 1$ we may use $(p,q,k,\tilde{V})$. In a neighbourhood of $p=1$ it is possible to use either set of coordinates.
+If $\mathcal{\tilde{C}}_1(p,q)$ is the subspace of $\mathcal{\tilde{C}}_1$ where the coordinates $p$ and $q$ are fixed, the space $\mathcal{\tilde{S}}_1$ is then the union of points whose $p$ and $q$ coordinates lie in $\Q$,
 \[
-\tilde{λ} : (q,k,\tilde{X}) \in  \mapsto \bra{ q + (p-1) ,k, \tilde{X} +π }.
+\mathcal{\tilde{S}}_1 =  \coprod_{p \in \Q^+, q\in\Q} \mathcal{\tilde{C}}_1(p,q).
 \]
+
+As the covering transformations do not change $p$, we may consider the quotient on the $\mathcal{G}$-invariant submanifold $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
+When the transformation $\tilde{λ}$ acts on a point of $\mathcal{\tilde{C}}_1$, it shifts its $q$-coordinate by $p-1$ (Lemma \ref{lem:T shift}).
 For $p\neq 1$ therefore, in Theorem \ref{thm:topology_curves} we have that
 \[
 \mathcal{C}_1(p)
-\diffeo \mathcal{\tilde{A}}_1(p) / \mathcal{G}
+\diffeo \mathcal{\tilde{C}}_1(p) / \mathcal{G}
 = \left\{ ([q],k,\tilde{X}) \in \R/(p-1)\Z \times (0,1) \times \R \right\},
 \]
-and $\mathcal{S}_1(p)$ is the subset where $[q] \in \Q/(p-1)\Z$. The path connected components of $\mathcal{S}_1(p)$ are strips $(0,1)\times \R$. For $p=1$, by contrast, Theorem \ref{thm:topology_curves_p1} shows that
+where $\tilde{X}$ stands for either $\tilde{U}$ or $\tilde{V}$ depending on the magnitude of $p$. The moduli space $\mathcal{S}_1(p)$ is therefore the subset where $[q] \in \Q/(p-1)\Z$. For $p=1$, by contrast, Theorem \ref{thm:topology_curves_p1} shows that
 \[
 \mathcal{C}_1(1)
-\diffeo \mathcal{\tilde{A}}_1(1) / \mathcal{G}
+\diffeo \mathcal{\tilde{C}}_1(1) / \mathcal{G}
 = \left\{ (q,k,[\tilde{X}]) \in \R \times (0,1) \times \R/π\Z \right\},
 \]
-where again $\mathcal{S}_1$ is the subset where $q$ is rational. This time the path connected components are annuli $(0,1) \times \R/π\Z$.
+where again we recover $\mathcal{S}_1(1)$ as the subset where $q$ is rational.
 
-In either case, we have a foliation of $\mathcal{C}_1(p)$ such that $\mathcal{S}_1(p)$ is a dense collection of leaves. Though the topology `jumps' at $p=1$, we can understand the foliation as changing continuously in $p$. As $k$ is unaffected by the quotient, we may leave it aside and focus on $(q,\tilde{X})$. Visualise for large $p$ the foliation of $\mathcal{C}_1(p)$ as consisting of vertical lines on the cylinder. As $p$ decreases towards $1$, these lines twist around like helices. At $p=1$ these helices are now horizontal and `snap' into circular bands around the cylinder. When $p < 1$ we again have helices of the opposite handedness, tending towards vertical lines again as $p$ tends to $0$.
+In either case, we have a foliation of $\mathcal{C}_1(p)$ such that $\mathcal{S}_1(p)$ is a dense collection of leaves. Though the topology of the components `jumps' from strips to annuli to at $p=1$, we can understand the foliation as changing continuously in $p$. As $k$ is unaffected by the quotient, we may leave it aside and consider only $(q,\tilde{X}) \in \R \times \R$ in Figure \ref{fig:level set quotient}. For each $p$, $\mathcal{G}$ acts as translations $(q + (p-1)\Z, \tilde{X} + π\Z)$. Rotate each plane so that these translations are in the vertical direction. The lines of constant $q$ now make an angle $\atan \tfrac{p-1}{π}$ to vertical. We may therefore quotient this space into a cylinder, and for $p\neq 1$ the lines of constant $q$ become helices on this cylinder. The parameter $p$ changes the slope of helices. When $p=1$ however the line of constant $q$ are in the direction of translation and close into circles. This exceptional case of $p=1$ is the transition from left-handed to right-handed helices.
 
-DIAGRAM
+\makefigure{$q,\tilde{X}$ axes in black, direction of the translation $\tilde{λ}$ in blue, lines of constant $q$ in grey.
+\label{fig:level set quotient}}
+{thesis_graphics_temp/level_set_quotient.png}
 
-TO REWRITE:
-% Main idea: the closing conditions
-The closing conditions, Conditions \ref{P:closing}, must be satisfied by the differentials $Θ$ and $\tilde{Θ}$ to ensure that the harmonic map associated to a tuple of spectral data $(Σ,Θ,\tilde{Θ},E)$ has a torus as its domain, as opposed to a plane. For any genus $g$, every marked curve of $\mathcal{C}_g$ admits differentials satisfying Conditions \ref{P:real curve}--\ref{P:imaginary periods}. In the particular case of marked curves of genus one, every curve further has differentials that have integral periods (Condition \ref{P:periods}). But not every curve admits differentials that meet the closing conditions. The closing conditions therefore can be viewed as defining equations for the subspace $\mathcal{S}_1$ within $\mathcal{C}_1$.
-
-The proof of the two theorems therefore proceeds by the construction, in several stages, of covering spaces and parametrisations adapted to the closing conditions.
+The proof of the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1} therefore proceeds by the construction, in several stages, of the coordinates adapted to the closing conditions and the action of the covering transformations.
 In the initial three sections of this chapter we work with the parameter space $\mathcal{A}_1$, which we recall from equation \eqref{eqn:def Ag} to be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc.
-We identify the quotient space $\mathcal{A}_1/\Z_2$, where $\Z_2$ acts by permutation of the coordinates, with the space of marked curves $\mathcal{C}_1$.
+We take the quotient space $\mathcal{A}_1/\Z_2$, where $\Z_2$ acts by permutation of the coordinates, as a model for the space of marked curves $\mathcal{C}_1$.
 Using $Σ$ to denote the covering map, the curve
 \[
 Σ(α,β) = \{ (ζ,η) \mid η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ) \} \in \mathcal{C}_1,
@@ -63,22 +63,22 @@ is the marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$ and the sta
 For each point of $\mathcal{A}_1$ in Section \ref{sec:Differentials} we give a transformation of the corresponding marked curve to an elliptic curve in Legendre normal form. This allows us to find on each marked curve the differentials that satisfy \ref{P:real curve}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section \ref{sec:closing conditions} we reformulate the closing conditions \ref{P:closing} to produce two real valued functions on $\mathcal{A}_1$ that are valued in $\Q$ exactly when a given marked curve admits differentials that further satisfy the closing conditions. A marked curve with a pair of such differentials constitute a tuple of spectral data, and so we call such a curve a spectral curve. The first function, $S$ (defined by \eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by \eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
 
 The functions $S$ and $T$ may be analysed by introducing a new set of coordinates on $\mathcal{A}_1$ that are suited to calculation (Section \ref{sec:Reformulate}).
-These new coordinates allows us to reasonably compute the derivatives of $T$. They also dovetail with the results of Section \ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$.
-We then use the implicit function theorem to prove that the level sets of $S$ and $\tilde{T}$, denoted $\mathcal{\tilde{A}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{A}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{A}}_1$.
+These new coordinates allows us to reasonably compute the derivatives of $T$. They also dovetail with the results of Section \ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{C}}_1$, the universal cover of $\mathcal{A}_1$.
+We then use the implicit function theorem to prove that the level sets of $S$ and $\tilde{T}$, denoted $\mathcal{\tilde{C}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{C}}_1$ (Lemma \ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$.
 Finally, we push this foliation back down to $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as a quotient by the group of covering transformations $\mathcal{G}$ (Section \ref{sec:Topology}).
 
-To close the chapter, in Section \ref{sec:Corollaries} we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that the total space of the bundle is simply connected. We consider some well-known examples of harmonic maps, namely the Gauss maps of Delaunay surfaces, and identify them with a specific connected component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_g$, for any genus $g$, and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
+To close the chapter, in Section \ref{sec:Corollaries} we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that the total space of the bundle is simply connected. We consider some well-known examples of harmonic maps, namely the Gauss maps of Delaunay surfaces, and identify them with a specific path connected component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_g$, for any genus $g$, and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
 
-We summarise the spaces that we have introduced and their relationships to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by its universal cover $\mathcal{\tilde{A}}_1$. On the next line we consider within each of these spaces the subspaces on which the function $S$ has the value $p\in\Q^+$, denoted by $p$ in parentheses. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of the space of spectral curves $\mathcal{S}_1$, is the union of those level sets $\mathcal{\tilde{A}}_1(p,q)$ on which $\tilde{T}$ is rational. The horizontal arrows represent covering maps, labelled with the group of covering transformations, whereas the vertical arrows represent inclusions.
+We summarise the spaces that we have introduced and their relationships to one another in the diagram below. One starts out with the space of marked curves $\mathcal{C}_1$ in the top right corner. It is covered by the parameter space $\mathcal{A}_1$, which is in turn covered by the universal cover $\mathcal{\tilde{C}}_1$. On the next line we consider within each of these spaces the subspaces on which the function $S$ has the value $p\in\Q^+$, denoted by $p$ in parentheses. On the bottom line we have the statement that $\mathcal{\tilde{S}}_1$, the preimage of the space of spectral curves $\mathcal{S}_1$, is the union of those level sets $\mathcal{\tilde{C}}_1(p,q)$ on which $\tilde{T}$ is rational. The horizontal arrows represent covering maps, labelled with the group of covering transformations, whereas the vertical arrows represent inclusions.
 \[
 \begin{diagram}
-    \mathcal{\tilde{A}}_1 &\rOnto^{2π \Z}&  \mathcal{A}_1  &\rOnto^{\Z_2}&  \mathcal{C}_1 \\
+    \mathcal{\tilde{C}}_1 &\rOnto^{2π \Z}&  \mathcal{A}_1  &\rOnto^{\Z_2}&  \mathcal{C}_1 \\
     \uTo  &&  \uTo  &&  \uTo  \\
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \mathcal{\tilde{A}}_1(p)  &\rOnto^{2π \Z}&  \mathcal{A}_1(p)  &\rOnto^{\Z_2}&  \mathcal{C}_1(p) \\
+    \mathcal{\tilde{C}}_1(p)  &\rOnto^{2π \Z}&  \mathcal{A}_1(p)  &\rOnto^{\Z_2}&  \mathcal{C}_1(p) \\
     \uTo  &&  &&  \uTo  \\
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \mathcal{\tilde{S}}_1(p) =  \coprod_{q\in\Q} \mathcal{\tilde{A}}_1(p,q)  &&  \rOnto^{\mathcal{G}}  && \mathcal{S}_1(p)
+    \mathcal{\tilde{S}}_1(p) =  \coprod_{q\in\Q} \mathcal{\tilde{C}}_1(p,q)  &&  \rOnto^{\mathcal{G}}  && \mathcal{S}_1(p)
 \end{diagram}
 \]
 
@@ -761,7 +761,7 @@ consists of only those points where $μ=ν=1$ or $μ=ν=-1$, and Lemma \ref{lem:
 
 Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in \eqref{eqn:y_prime_version}.
 
-Now that we have establish that these are valid changes of coordinates, we can get to work using them. First we will show how to compute $T_0$ in these coordinates, and then develop related coordinates for the universal cover $\mathcal{\tilde{A}}_1$. Recall that we defined a principal branch cut $T_0$ of $T$ on $\mathcal{A}_1\setminus\{ν=\pm 1\}$. This is exactly the domain of $φ_0$, and in equation \eqref{eqn:formula xy} we have a formula for the inverse.
+Now that we have establish that these are valid changes of coordinates, we can get to work using them. First we will show how to compute $T_0$ in these coordinates, and then develop related coordinates for the universal cover $\mathcal{\tilde{C}}_1$. Recall that we defined a principal branch cut $T_0$ of $T$ on $\mathcal{A}_1\setminus\{ν=\pm 1\}$. This is exactly the domain of $φ_0$, and in equation \eqref{eqn:formula xy} we have a formula for the inverse.
 
 To rewrite $T_0$ in terms of $(p,k,u,v)$, we must compute the factors in the last terms of equations \eqref{eqn:gamma_plus} and \eqref{eqn:gamma_minus}. Note that in the previous lemma we have denoted $\Im z_0$ by $y$, and that by definition $\iu u = f(1)$ and $\iu v = f(-1)$. Therefore, by direct computation
 \begin{align*}
@@ -915,17 +915,17 @@ This establishes that $V$ is positive too.
 \section{The Topology of the Moduli Space}
 \label{sec:Topology}
 
-The purpose of this chapter overall is to describe the set of genus one spectral curves $\mathcal{S}_1$. The coordinates constructed in the previous chapter are apt for computation, but because $T$ is a multi-valued function, any work on its level sets in $\mathcal{A}_1$ will be limited to local results. The way forward is to transition to $\mathcal{\tilde{A}}_1$, the universal cover of $\mathcal{A}_1$, which is covered by coordinates $(p,k,\tilde{u},\tilde{v})$. The universal cover allows us to pull back the multi-valued function $T$ to a single valued function $\tilde{T}$. This global function $\tilde{T}$ will allow us to gain global results about $\mathcal{S}_1$.
+The purpose of this chapter overall is to describe the set of genus one spectral curves $\mathcal{S}_1$. The coordinates constructed in the previous chapter are apt for computation, but because $T$ is a multi-valued function, any work on its level sets in $\mathcal{A}_1$ will be limited to local results. The way forward is to transition to $\mathcal{\tilde{C}}_1$, the universal cover of $\mathcal{A}_1$, which is covered by coordinates $(p,k,\tilde{u},\tilde{v})$. The universal cover allows us to pull back the multi-valued function $T$ to a single valued function $\tilde{T}$. This global function $\tilde{T}$ will allow us to gain global results about $\mathcal{S}_1$.
 
 More precisely,
-in Lemma \ref{lem:T_graph} we demonstrate that for any values $p \in \R^+$, $q\in\R$ the level set $\mathcal{\tilde{A}}_1(p,q)$ defined by $p = S$ and $q = \tilde{T}$ is a graph over two of the coordinates. This follows by an application of the implicit function theorem and relies on the non-vanishing result from Lemma \ref{lem:deriv no zeroes}. Hence each level set is diffeomorphic to a strip $(0,1)\times\R$.
-% Moreover, that lemma shows that for fixed $p$ these strips $\mathcal{\tilde{A}}_1(p,q)$ foliate $\mathcal{\tilde{A}}_1(p)$, the subspace of $\mathcal{\tilde{A}}_1$ on which $p$ is a fixed constant.
+in Lemma \ref{lem:T_graph} we demonstrate that for any values $p \in \R^+$, $q\in\R$ the level set $\mathcal{\tilde{C}}_1(p,q)$ defined by $p = S$ and $q = \tilde{T}$ is a graph over two of the coordinates. This follows by an application of the implicit function theorem and relies on the non-vanishing result from Lemma \ref{lem:deriv no zeroes}. Hence each level set is diffeomorphic to a strip $(0,1)\times\R$.
+% Moreover, that lemma shows that for fixed $p$ these strips $\mathcal{\tilde{C}}_1(p,q)$ foliate $\mathcal{\tilde{C}}_1(p)$, the subspace of $\mathcal{\tilde{C}}_1$ on which $p$ is a fixed constant.
 
-It follows from the observation that $\tilde{T}$ is rational exactly when $T$ is that the preimage of $\mathcal{S}_1$ in the universal cover $\mathcal{\tilde{A}}_1$, which we denote $\mathcal{\tilde{S}}_1$, may be written as the disjoint union of level sets,
+It follows from the observation that $\tilde{T}$ is rational exactly when $T$ is that the preimage of $\mathcal{S}_1$ in the universal cover $\mathcal{\tilde{C}}_1$, which we denote $\mathcal{\tilde{S}}_1$, may be written as the disjoint union of level sets,
 \[
-\mathcal{\tilde{S}}_1 = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{A}}_1(p,q).
+\mathcal{\tilde{S}}_1 = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{C}}_1(p,q).
 \]
-The second half of this section seeks to recover $\mathcal{S}_1$ from $\mathcal{\tilde{S}}_1$. To do so, we investigate the action of the group $\mathcal{G}$, the covering transformations of $\mathcal{\tilde{A}}_1$ over $\mathcal{C}_1$, on these level sets. This culminates in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, wherein we take the quotient by this group and thereby enumerate the path connected components of $\mathcal{S}_1$, the moduli space of genus one spectral curves, and describe the topology of each component.
+The second half of this section seeks to recover $\mathcal{S}_1$ from $\mathcal{\tilde{S}}_1$. To do so, we investigate the action of the group $\mathcal{G}$, the covering transformations of $\mathcal{\tilde{C}}_1$ over $\mathcal{C}_1$, on these level sets. This culminates in Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}, wherein we take the quotient by this group and thereby enumerate the path connected components of $\mathcal{S}_1$, the moduli space of genus one spectral curves, and describe the topology of each component.
 
 
 
@@ -956,10 +956,10 @@ The fact that the parameter space is not simply connected is fundamentally tied 
     \label{lem:mathcal tilde A}
 The universal cover of $\mathcal{A}_1$ is
 \[
-\mathcal{\tilde{A}}_1 =
+\mathcal{\tilde{C}}_1 =
 \{(p, k,\tilde{u},\tilde{v}) \in \R^+\times(0,1)\times\R\times\R \mid  \tilde{u} < \tilde{v} < \tilde{u} + 2π \},
 \]
-with the projection map $\tilde{π} : \mathcal{\tilde{A}}_1 \to \mathcal{A}_1$ is given by
+with the projection map $\tilde{π} : \mathcal{\tilde{C}}_1 \to \mathcal{A}_1$ is given by
 \begin{align*}
     p &= p, \\
     k &= k, \\
@@ -970,11 +970,11 @@ with the projection map $\tilde{π} : \mathcal{\tilde{A}}_1 \to \mathcal{A}_1$ i
 \end{align*}
 
 \begin{proof}
-The justification of this definition of $\mathcal{\tilde{A}}_1$ precedes in two steps. First, we have already observed that $\mathcal{A}_1$ embeds into $\R^+ \times (0,1) \times \mathbb{T}^2$. The universal cover of this larger space is $\R^+\times(0,1)\times\R^2$, with the covering map given above using the standard $2π$-periodic $\tan$ mapping of $\R$ to $\S^1$. The second step is to recall that $\mathcal{A}_1$ is the complement of the hyperplane $u-v = 0$. When pulled back to the universal cover, this hyperplane becomes a collection of hyperplanes $\tilde{u}-\tilde{v} \in 2π\Z$. Thus we may take a simply connected region of the complement $\tilde{u}-\tilde{v} \not\in 2π\Z$ to cover $\mathcal{A}_1$ and this is $\mathcal{\tilde{A}}_1$ above.
+The justification of this definition of $\mathcal{\tilde{C}}_1$ precedes in two steps. First, we have already observed that $\mathcal{A}_1$ embeds into $\R^+ \times (0,1) \times \mathbb{T}^2$. The universal cover of this larger space is $\R^+\times(0,1)\times\R^2$, with the covering map given above using the standard $2π$-periodic $\tan$ mapping of $\R$ to $\S^1$. The second step is to recall that $\mathcal{A}_1$ is the complement of the hyperplane $u-v = 0$. When pulled back to the universal cover, this hyperplane becomes a collection of hyperplanes $\tilde{u}-\tilde{v} \in 2π\Z$. Thus we may take a simply connected region of the complement $\tilde{u}-\tilde{v} \not\in 2π\Z$ to cover $\mathcal{A}_1$ and this is $\mathcal{\tilde{C}}_1$ above.
 \end{proof}
 \end{lem}
 
-It is straightforward to lift $T_0$, defined on $\mathcal{A}_1\setminus\{ν = \pm 1\} \subset \mathcal{A}_1$, to a single valued function $\tilde{T}$ on $\mathcal{\tilde{A}}_1$. Recall the definitions of $F_0$ and $E_0$ from \ref{defn:F0 and E0}:
+It is straightforward to lift $T_0$, defined on $\mathcal{A}_1\setminus\{ν = \pm 1\} \subset \mathcal{A}_1$, to a single valued function $\tilde{T}$ on $\mathcal{\tilde{C}}_1$. Recall the definitions of $F_0$ and $E_0$ from \ref{defn:F0 and E0}:
 \[
 F_0(x ;k) = \Imag F(\iu x; k), \qquad
 E_0(x ;k) = \Imag F(\iu x; k) - kx.
@@ -1053,10 +1053,10 @@ If $p$ is rational, $T\circ\tilde{π} \in \Q$ if and only if $\tilde{T} \in \Q$.
 This relationship between $\tilde{T}$ and $T_0$ is also used in the next lemma to show that the range of $\tilde{T}$ is $\R$, which is used in Lemma \ref{lem:T_graph}.
 \begin{lem}
 \label{lem:range_T}
-The range of $\tilde{T}$ on $\mathcal{\tilde{A}}_1$ is $\R$.
+The range of $\tilde{T}$ on $\mathcal{\tilde{C}}_1$ is $\R$.
 
 \begin{proof}
-We shall prove below that the range of $T_0$ on $\mathcal{\tilde{A}}_1 \setminus \{ν = \pm 1\}$ is $\R$. Because on each component of the preimage of $\mathcal{\tilde{A}}_1 \setminus \{ν = \pm 1\}$ in $\mathcal{\tilde{A}}_1$ equation \eqref{eqn:tilde T computable} tells us that $\tilde{T}$ and $T_0\circ π$ differ by a constant, it follows that the range of $\tilde{T}$ is also $\R$.
+We shall prove below that the range of $T_0$ on $\mathcal{\tilde{C}}_1 \setminus \{ν = \pm 1\}$ is $\R$. Because on each component of the preimage of $\mathcal{\tilde{C}}_1 \setminus \{ν = \pm 1\}$ in $\mathcal{\tilde{C}}_1$ equation \eqref{eqn:tilde T computable} tells us that $\tilde{T}$ and $T_0\circ π$ differ by a constant, it follows that the range of $\tilde{T}$ is also $\R$.
 
 Fix $p$, but also fix any value for $k$. By \eqref{eqn:F0_E0_uniform_bounds}, the magnitude $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$ but independent of $u$ and $v$, such that
 \[
@@ -1092,9 +1092,9 @@ By continuity $T_0$ obtains every value.
 
 
 
-Let us make two definitions. Define $\mathcal{\tilde{A}}_1(p)$ to be the subspace of $\mathcal{\tilde{A}}_1$ on which $S \circ \tilde{π} = p$ is a fixed constant. We further denote the subset of $\mathcal{\tilde{A}}_1(p)$ on which the value of $\tilde{T}$ is $q$ by $\mathcal{\tilde{A}}_1(p,q)$.
+Let us make two definitions. Define $\mathcal{\tilde{C}}_1(p)$ to be the subspace of $\mathcal{\tilde{C}}_1$ on which $S \circ \tilde{π} = p$ is a fixed constant. We further denote the subset of $\mathcal{\tilde{C}}_1(p)$ on which the value of $\tilde{T}$ is $q$ by $\mathcal{\tilde{C}}_1(p,q)$.
 
-The spaces $\mathcal{\tilde{A}}_1(p)$ are simple to understand. They are just the points of $\mathcal{\tilde{A}}_1$ where the first coordinate is fixed, and so they are simply covered by the three remaining coordinates $(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R$. As demonstrated by the following lemma, the level sets $\mathcal{\tilde{A}}_1(p,q)$ are similarly well behaved.
+The spaces $\mathcal{\tilde{C}}_1(p)$ are simple to understand. They are just the points of $\mathcal{\tilde{C}}_1$ where the first coordinate is fixed, and so they are simply covered by the three remaining coordinates $(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R$. As demonstrated by the following lemma, the level sets $\mathcal{\tilde{C}}_1(p,q)$ are similarly well behaved.
 
 
 
@@ -1106,15 +1106,15 @@ If $p \leq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ 
 \[
 \{(q,k,\tilde{u}) \in \R\times(0,1)\times\R \},
 \]
-such that fixing a value $q$ gives the level set $\mathcal{\tilde{A}}_1(p,q)$, on which $S\circ \tilde{π} = p$ and $\tilde{T} = q$. Likewise, if $p \geq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and
+such that fixing a value $q$ gives the level set $\mathcal{\tilde{C}}_1(p,q)$, on which $S\circ \tilde{π} = p$ and $\tilde{T} = q$. Likewise, if $p \geq 1$ then there is a diffeomorphism between $\tilde{\mathcal{A}_1}(p)$ and
 \[
 \{(q,k,\tilde{v}) \in \R\times(0,1)\times\R \},
 \]
-such that again fixing a value $q$ gives the level set $\mathcal{\tilde{A}}_1(p,q)$.
+such that again fixing a value $q$ gives the level set $\mathcal{\tilde{C}}_1(p,q)$.
 In either case, the level sets are strips $(0,1)\times \R$.
 
 \begin{proof}
-Fix a value of $p$ and consider the function $G(q, k,\tilde{u},\tilde{v}) = \tilde{T}(p,k,\tilde{u},\tilde{v}) - q$ on $\mathcal{\tilde{A}}_1(p)\times\R$. $G^{-1}(0)$ is a graph over $\mathcal{\tilde{A}}_1(p)$ given by $q=\tilde{T}$, so they are diffeomorphic. We will apply the implicit function theorem to show that $G^{-1}(0)$ can also be written as a graph over either $(q,k,\tilde{u})$ or $(q,k,\tilde{v})$, depending on the magnitude of $p$.
+Fix a value of $p$ and consider the function $G(q, k,\tilde{u},\tilde{v}) = \tilde{T}(p,k,\tilde{u},\tilde{v}) - q$ on $\mathcal{\tilde{C}}_1(p)\times\R$. $G^{-1}(0)$ is a graph over $\mathcal{\tilde{C}}_1(p)$ given by $q=\tilde{T}$, so they are diffeomorphic. We will apply the implicit function theorem to show that $G^{-1}(0)$ can also be written as a graph over either $(q,k,\tilde{u})$ or $(q,k,\tilde{v})$, depending on the magnitude of $p$.
 
 Suppose first that the fixed value of $p$ is greater than or equal to one. We compute the following formula for the derivative of $G$ with respect to $\tilde{u}$.
 \begin{align*}
@@ -1140,7 +1140,7 @@ As $\tilde{T}$ is an analytic function its derivatives are continuous and so we 
 &=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}U\bra{ p,k,u,v } \\
 &=\frac{1}{π} \frac{1}{k} V\bra{ p,k,v },
 \end{align*}
-which is also nonzero by Lemma \ref{lem:deriv no zeroes}. The implicit function theorem states that there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range } \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed, then the level set $\mathcal{\tilde{A}}_1(p,q)$ is parametrised by the remaining two coordinates $(k,\tilde{u})$.
+which is also nonzero by Lemma \ref{lem:deriv no zeroes}. The implicit function theorem states that there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range } \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed, then the level set $\mathcal{\tilde{C}}_1(p,q)$ is parametrised by the remaining two coordinates $(k,\tilde{u})$.
 
 When $p \leq 1$, we employ the following symmetry.
 \begin{align*}
@@ -1160,23 +1160,23 @@ so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is non-vanishin
 
 
 
-With this lemma in hand, we are within striking distance of results about $\mathcal{S}_1$. Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves, which are marked curves that admit spectral data. We will recover $\mathcal{S}_1$ as the quotient of the level sets of $\tilde{T}$ by the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{A}}_1$ over $\mathcal{C}_1$.
+With this lemma in hand, we are within striking distance of results about $\mathcal{S}_1$. Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves, which are marked curves that admit spectral data. We will recover $\mathcal{S}_1$ as the quotient of the level sets of $\tilde{T}$ by the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{C}}_1$ over $\mathcal{C}_1$.
 
-Define $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{A}}_1$ to be the preimage of $\mathcal{S}_1$ in the universal cover. As we have shown that $\mathcal{S}_1$ is the subspace of $\mathcal{C}_1$ on which $S$ is a positive rational and $T$ is any rational (Lemma \ref{lem:closing_conds}) and that a point in $\mathcal{\tilde{A}}_1$ is the preimage of a point of $\mathcal{S}_1$ exactly when $p$ is a positive rational and $\tilde{T} \in \Q$ (Lemma \ref{lem:tilde T rational}), it follows that
+Define $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{C}}_1$ to be the preimage of $\mathcal{S}_1$ in the universal cover. As we have shown that $\mathcal{S}_1$ is the subspace of $\mathcal{C}_1$ on which $S$ is a positive rational and $T$ is any rational (Lemma \ref{lem:closing_conds}) and that a point in $\mathcal{\tilde{C}}_1$ is the preimage of a point of $\mathcal{S}_1$ exactly when $p$ is a positive rational and $\tilde{T} \in \Q$ (Lemma \ref{lem:tilde T rational}), it follows that
 \[
-\mathcal{\tilde{S}}_1 = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{A}}_1(p,q).
+\mathcal{\tilde{S}}_1 = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{C}}_1(p,q).
 \]
 
-There are several topological implications of the previous lemma. First, each level set $\mathcal{\tilde{A}}_1(p,q)$ is connected. More precisely each of these is diffeomorphic to a product of $(0,1)$ and $\R$. Therefore the above disjoint union is the decomposition of $\mathcal{\tilde{S}}_1$ into its path connected components. By varying the value of $q$, we see that the $\mathcal{\tilde{A}}_1(p,q)$ foliate $\mathcal{\tilde{A}}_1(p)$, so $\mathcal{\tilde{S}}_1$ is arranged densely in $\mathcal{\tilde{A}}_1(p)$, analogously to how $\Q$ is arranged densely in $\R$.
+There are several topological implications of the previous lemma. First, each level set $\mathcal{\tilde{C}}_1(p,q)$ is connected. More precisely each of these is diffeomorphic to a product of $(0,1)$ and $\R$. Therefore the above disjoint union is the decomposition of $\mathcal{\tilde{S}}_1$ into its path connected components. By varying the value of $q$, we see that the $\mathcal{\tilde{C}}_1(p,q)$ foliate $\mathcal{\tilde{C}}_1(p)$, so $\mathcal{\tilde{S}}_1$ is arranged densely in $\mathcal{\tilde{C}}_1(p)$, analogously to how $\Q$ is arranged densely in $\R$.
 
-To understand the topology of $\mathcal{S}_1$, we must understand the action of the covering transformations of $\mathcal{\tilde{A}}_1 \to \mathcal{A}_1 \to \mathcal{C}_1$ as restricted to $\tilde{\mathcal{S}}_1$, and so we must first describe the group of covering transformations $\mathcal{G}$. The covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ are easy to understand; besides the identity, there is only
+To understand the topology of $\mathcal{S}_1$, we must understand the action of the covering transformations of $\mathcal{\tilde{C}}_1 \to \mathcal{A}_1 \to \mathcal{C}_1$ as restricted to $\tilde{\mathcal{S}}_1$, and so we must first describe the group of covering transformations $\mathcal{G}$. The covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ are easy to understand; besides the identity, there is only
 \[
 % ZUUL
 λ : (α,β) \mapsto (β,α),
 \]
 which swaps the labelling of the branch points inside the unit disc. We will use $λ$ as a stepping stone to $\mathcal{G}$.
 
-% There are two types of transformations to understand, the transformations of $\mathcal{\tilde{A}}_1$ over $\mathcal{A}_1$ and the transformations of the two fold covering of $\mathcal{A}_1$ over $\mathcal{C}_1$. The first sort are easy to understand; they are generated by the translation
+% There are two types of transformations to understand, the transformations of $\mathcal{\tilde{C}}_1$ over $\mathcal{A}_1$ and the transformations of the two fold covering of $\mathcal{A}_1$ over $\mathcal{C}_1$. The first sort are easy to understand; they are generated by the translation
 % \[
 % (p, k,\tilde{u},\tilde{v}) \mapsto (p, k, \tilde{u} + 2π, \tilde{v} + 2π).
 % \]
@@ -1203,9 +1203,9 @@ which is half-rotation of the circle.
 
 DIAGRAM %TODO
 
-We shall use this rescaled coordinate $U$, and likewise $V = \sqrt{k} v$, to construct coordinates on $\mathcal{\tilde{A}}_1$ such that the covering transformations are simply translations. This is motivated by the fact that translating the line $\R$ rotates the quotient $\R/\Z$.
+We shall use this rescaled coordinate $U$, and likewise $V = \sqrt{k} v$, to construct coordinates on $\mathcal{\tilde{C}}_1$ such that the covering transformations are simply translations. This is motivated by the fact that translating the line $\R$ rotates the quotient $\R/\Z$.
 
-In analogy to Lemma \ref{lem:mathcal tilde A}, we define coordinates $\tilde{U}$ and $\tilde{V}$ on $\mathcal{\tilde{A}}_1$ to be
+In analogy to Lemma \ref{lem:mathcal tilde A}, we define coordinates $\tilde{U}$ and $\tilde{V}$ on $\mathcal{\tilde{C}}_1$ to be
 \begin{align*}
 U = \tan \frac{\tilde{U}}{2},       &\quad
     U' = \cot \frac{\tilde{U}}{2},  \\
@@ -1226,7 +1226,7 @@ Hence $\tilde{u}$ and $\tilde{U}$ have the same winding number $\Wind$.
 Recall also from Lemma \ref{lem:mathcal tilde A} that the domain is restricted to $\tilde{u} < \tilde{v} < \tilde{u} + 2π$.
 Since $\tan$ and $\atan$ are increasing functions, it follows that the transformation is order preserving, so that $\tilde{U} < \tilde{V} < \tilde{V} + 2π$ as well.
 
-These coordinates $\tilde{U}$ and $\tilde{V}$ can be used interchangably with $\tilde{u}$ and $\tilde{v}$. Consider for example the coordinates $(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{A}}_1$ defined in Lemma \ref{lem:mathcal tilde A}.
+These coordinates $\tilde{U}$ and $\tilde{V}$ can be used interchangably with $\tilde{u}$ and $\tilde{v}$. Consider for example the coordinates $(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{C}}_1$ defined in Lemma \ref{lem:mathcal tilde A}.
 The determinant of the Jacobian of the change of coordinates to $(p,k,\tilde{U},\tilde{V})$ is
 \[
 \det \mathrm{Jac}\,
@@ -1238,15 +1238,15 @@ The determinant of the Jacobian of the change of coordinates to $(p,k,\tilde{U},
 \end{vmatrix}
 = \frac{\sqrt{k}}{\cos^2 \tfrac{\tilde{u}}{2} + k \sin^2 \tfrac{\tilde{u}}{2}} \times \frac{\sqrt{k}}{\cos^2 \tfrac{\tilde{v}}{2} + k \sin^2 \tfrac{\tilde{v}}{2}} \neq 0,
 \]
-so this is indeed a valid change of coordinates. The same is true for the coordinates on $\mathcal{\tilde{A}}_1(p)$ provided by Lemma \ref{}. For $p \leq 1$, we may change coordinates from $(p,q,k,\tilde{u})$ to $(p,q,k,\tilde{U})$, and for $p \geq 1$ from $(p,q,k,\tilde{v})$ to $(p,q,k,\tilde{V})$.
+so this is indeed a valid change of coordinates. The same is true for the coordinates on $\mathcal{\tilde{C}}_1(p)$ provided by Lemma \ref{}. For $p \leq 1$, we may change coordinates from $(p,q,k,\tilde{u})$ to $(p,q,k,\tilde{U})$, and for $p \geq 1$ from $(p,q,k,\tilde{v})$ to $(p,q,k,\tilde{V})$.
 
-First let us use the coordinate $(p,k,\tilde{U},\tilde{V})$ on $\mathcal{\tilde{A}}_1$ to find the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{A}}_1 \to \mathcal{C}_1$. We can divide the covering transformations into two types: those that push forward to $\mathcal{A}_1$ to give the identity and those that push forward to give $λ$. Recall that the projection of the universal cover $\mathcal{\tilde{A}}_1$ to $\mathcal{A}_1$ in part reads $U = \tan \tilde{U}/2$. This is the standard covering of the circle by $\R$, so the covering transformations that push forward to the identity are simply
+First let us use the coordinate $(p,k,\tilde{U},\tilde{V})$ on $\mathcal{\tilde{C}}_1$ to find the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{C}}_1 \to \mathcal{C}_1$. We can divide the covering transformations into two types: those that push forward to $\mathcal{A}_1$ to give the identity and those that push forward to give $λ$. Recall that the projection of the universal cover $\mathcal{\tilde{C}}_1$ to $\mathcal{A}_1$ in part reads $U = \tan \tilde{U}/2$. This is the standard covering of the circle by $\R$, so the covering transformations that push forward to the identity are simply
 \[
 \Set{ (p,k,\tilde{U},\tilde{V}) \mapsto (p,k,\tilde{U} + 2π n,\tilde{V} +2π n) }
 { n \in \Z }.
 \]
 
-To find those covering transformations of $\mathcal{G}$ that push forward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $U$ coordinate. Then the $\tilde{U}$ coordinate of any point of $\mathcal{\tilde{A}}_1$ that lies over $(β,α)$ must be
+To find those covering transformations of $\mathcal{G}$ that push forward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $U$ coordinate. Then the $\tilde{U}$ coordinate of any point of $\mathcal{\tilde{C}}_1$ that lies over $(β,α)$ must be
 \[
 2\atan \bra{ -\frac{1}{U} } + 2π\Z
 = 2\bra{\pm\frac{π}{2} + \atan U} + 2π\Z
@@ -1256,7 +1256,7 @@ for some integer $m$. Therefore, these covering transformations lie within the s
 \[
 \Set {(p,k,\tilde{U},\tilde{V}) \mapsto (p,k, 2πm + π + \tilde{U}, 2πn + π + \tilde{V})} {m,n \in \Z}.
 \]
-Not every element of this set is a well defined map on $\mathcal{\tilde{A}}_1$ however, because we require that $\tilde{U} < \tilde{V} < \tilde{U} + 2π$. Hence above we must choose $m=n$. The group of covering transformations $\mathcal{G}$ is generated by
+Not every element of this set is a well defined map on $\mathcal{\tilde{C}}_1$ however, because we require that $\tilde{U} < \tilde{V} < \tilde{U} + 2π$. Hence above we must choose $m=n$. The group of covering transformations $\mathcal{G}$ is generated by
 \[
 \tilde{λ} : (p,k,\tilde{U},\tilde{U}) \mapsto (p,k, \tilde{U} + π, \tilde{V} + π),
 \labelthis{eqn:tilde lambda action}
@@ -1320,13 +1320,13 @@ This relation is a difference of analytic functions on an open set, so by contin
 \end{proof}
 \end{lem}
 
-Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{A}}_1(p,q)$, where $\tilde{T} = q$, is to move them into the $\mathcal{\tilde{A}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{U},\tilde{V}) \in \mathcal{\tilde{A}}_1(p)$.
-If $p\leq 1$ let $\tilde{X}$ be $\tilde{U}$ and otherwise take it to be $\tilde{V}$. We know by Lemma \ref{lem:T_graph} and the above change of coordinates that $(q,k,\tilde{U})$, where $q = \tilde{T}$, are coordinates for $\mathcal{\tilde{A}}_1(p)$. In particular, $\mathcal{\tilde{A}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
+Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{C}}_1(p,q)$, where $\tilde{T} = q$, is to move them into the $\mathcal{\tilde{C}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{U},\tilde{V}) \in \mathcal{\tilde{C}}_1(p)$.
+If $p\leq 1$ let $\tilde{X}$ be $\tilde{U}$ and otherwise take it to be $\tilde{V}$. We know by Lemma \ref{lem:T_graph} and the above change of coordinates that $(q,k,\tilde{U})$, where $q = \tilde{T}$, are coordinates for $\mathcal{\tilde{C}}_1(p)$. In particular, $\mathcal{\tilde{C}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
 \[
 (p,q,k,\tilde{X}) \mapsto (p, q + (p-1), k, \tilde{X} + π).
 \labelthis{eqn:group action}
 \]
-Viewing the cosets of the group of covering transformations as an equivalence relation, for $p\neq 1$ they provide an identification between the level set $\mathcal{\tilde{A}}_1(p,q)$ and the level set $\mathcal{\tilde{A}}_1(p,q + l(p-1))$ for any integer $l$.
+Viewing the cosets of the group of covering transformations as an equivalence relation, for $p\neq 1$ they provide an identification between the level set $\mathcal{\tilde{C}}_1(p,q)$ and the level set $\mathcal{\tilde{C}}_1(p,q + l(p-1))$ for any integer $l$.
 
 \begin{thm}
 \label{thm:topology_curves}
@@ -1339,17 +1339,17 @@ such that the subspace of spectral curves $\mathcal{S}_1(p)$ is
 \mathcal{S}_1(p) = \{ \mathcal{C}_1(p) \mid [q] \in \Q/ (p-1)\Z \}.
 \]
 \begin{proof}
-Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{A}}_1(p)$ by the group of covering transformations $\mathcal{G} = \Z\langle\tilde{λ}\rangle$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{A}}_1(p)$ is foliated by $\mathcal{\tilde{A}}_1(p,q)$ and we have just shown in \eqref{eqn:group action} how different $\mathcal{\tilde{A}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each element of $\R/(p-1)\Z$ to cover the image.
+Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{C}}_1(p)$ by the group of covering transformations $\mathcal{G} = \Z\langle\tilde{λ}\rangle$. By Lemma \ref{lem:T_graph}, $\mathcal{\tilde{C}}_1(p)$ is foliated by $\mathcal{\tilde{C}}_1(p,q)$ and we have just shown in \eqref{eqn:group action} how different $\mathcal{\tilde{C}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each element of $\R/(p-1)\Z$ to cover the image.
 
-Lemma \ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of $\mathcal{\tilde{A}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$ under the covering map, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $q \in \Q/(p-1)\Z$.
+Lemma \ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of $\mathcal{\tilde{C}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$ under the covering map, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $q \in \Q/(p-1)\Z$.
 \end{proof}
 \end{thm}
 
-This leaves just one special case, where $p=1$. We see that the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set. Specifically, the action of $\tilde{λ}$ on $\mathcal{\tilde{A}}_1(1,q)$ given by \eqref{eqn:group action} reads
+This leaves just one special case, where $p=1$. We see that the action of $\tilde{λ}$ on $\mathcal{\tilde{C}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set. Specifically, the action of $\tilde{λ}$ on $\mathcal{\tilde{C}}_1(1,q)$ given by \eqref{eqn:group action} reads
 \[
 (1,q,k,\tilde{X}) \mapsto (1, q, k, \tilde{X} + π),
 \]
-and so in particular only the fourth coordinates is changed. Using these coordinates $(1,q,k,\tilde{X})$ on $\mathcal{\tilde{A}}_1(1)$, it is trivial to deduce the quotient by $\mathcal{G}$.
+and so in particular only the fourth coordinates is changed. Using these coordinates $(1,q,k,\tilde{X})$ on $\mathcal{\tilde{C}}_1(1)$, it is trivial to deduce the quotient by $\mathcal{G}$.
 
 \begin{thm}
 \label{thm:topology_curves_p1}
@@ -1360,7 +1360,7 @@ The space of marked curves $\mathcal{C}_1(1)$ is diffeomorphic to
 the product of $\R$ and an annulus, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is the restriction of the first component of the product to $\Q$.
 
 \begin{proof}
-The orbit of a point $(1,q,k,\tilde{X})$ of $\mathcal{\tilde{A}}_1(1)$ is
+The orbit of a point $(1,q,k,\tilde{X})$ of $\mathcal{\tilde{C}}_1(1)$ is
 \[
 (1,q,k,\tilde{X}+π\Z),
 \]
@@ -1372,7 +1372,7 @@ As in the previous theorem, by construction of the coordinates $(p,q,k,\tilde{X}
 
 These two theorems complete our quest to gain an understanding of the subspace of spectral curves $\mathcal{S}_1$ within $\mathcal{C}_1$. First we characterised when a marked curve is a spectral curve by way of a necessary and sufficient condition: that the two real valued functions $S(α,β)$ and $T(α,β)$ take rational values. The first condition, $S\in\Q^+$, lead immediately to a dense disjoint collection of subspaces $\mathcal{C}_1(p)$ on which the condition was met, where $p$ was the value of $S$.
 
-Then we moved to the universal cover $\mathcal{\tilde{A}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multi-valued function $T$. We then considered the subspaces of $\mathcal{\tilde{A}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be strips in Lemma \ref{lem:T_graph}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{A}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
+Then we moved to the universal cover $\mathcal{\tilde{C}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multi-valued function $T$. We then considered the subspaces of $\mathcal{\tilde{C}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be strips in Lemma \ref{lem:T_graph}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
 
 The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group $\mathcal{G}$ was shown to be $\Z\langle\tilde{λ}\rangle$ and its action was described by \eqref{eqn:group action}. This allowed us to describe the quotients in the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of strips within $\mathcal{C}_1$. As can be seen in the pictures below, and proved rigorously in the next chapter, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'.
 

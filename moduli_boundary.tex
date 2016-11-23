@@ -263,18 +263,18 @@ The argument of Lemma \ref{lem:change of parameters} is still valid in the limit
 
 PICTURE OF TRIANGLES \todo{}
 
-Recall that the universal cover of $\mathcal{S}(p)$ is $\mathcal{\tilde{S}}(p)$ and may be described as a collection of level sets of a function $\tilde{T}$ on the universal cover $\mathcal{\tilde{A}}(p)$ of $\mathcal{A}(p)$, where
+Recall that the universal cover of $\mathcal{S}(p)$ is $\mathcal{\tilde{S}}(p)$ and may be described as a collection of level sets of a function $\tilde{T}$ on the universal cover $\mathcal{\tilde{C}}(p)$ of $\mathcal{A}(p)$, where
 \[
-\mathcal{\tilde{A}}(p) =
+\mathcal{\tilde{C}}(p) =
 \{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  \tilde{u} < \tilde{v} < \tilde{u} + 2π \},
 \]
-with the projection map $\mathcal{\tilde{A}}(p) \to \mathcal{A}(p)$ given by
+with the projection map $\mathcal{\tilde{C}}(p) \to \mathcal{A}(p)$ given by
 \[
 k = k, \quad
 u = \tan \frac{\tilde{u}}{2}, \quad
 v = \tan \frac{\tilde{v}}{2}.
 \]
-From the $(u,v)$ description of the boundary space, we can immediately see that the boundary of $\mathcal{\tilde{A}}(p)$ where $k=0$ and neither of $\tilde{u}$ or $\tilde{v}$ lie in $π + 2π\Z$ corresponds to marked curves where $β$ lies in $\S^1 \setminus \{\pm 1\}$. We may extend $\tilde{T}$ to these points by taking the limit as $k\to 0$ to see where the boundary of the level sets lie, and therefore which parts of $\mathcal{M}_1$ have limits as spectral data on a genus zero curve. By \eqref{eqn:tilde T computable}, $\tilde{T}$ may be computed as the sum of a constant and the function $T_0$. But
+From the $(u,v)$ description of the boundary space, we can immediately see that the boundary of $\mathcal{\tilde{C}}(p)$ where $k=0$ and neither of $\tilde{u}$ or $\tilde{v}$ lie in $π + 2π\Z$ corresponds to marked curves where $β$ lies in $\S^1 \setminus \{\pm 1\}$. We may extend $\tilde{T}$ to these points by taking the limit as $k\to 0$ to see where the boundary of the level sets lie, and therefore which parts of $\mathcal{M}_1$ have limits as spectral data on a genus zero curve. By \eqref{eqn:tilde T computable}, $\tilde{T}$ may be computed as the sum of a constant and the function $T_0$. But
 \[
 T_0 = p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2,
 \]
@@ -296,7 +296,7 @@ and similarly
 \]
 And obviously as $u$ and $v$ near one another, the value of $T_0$ becomes unbounded. Thus the boundary of face is given by three values,
 
-\makefigure{A diagram of $\mathcal{\tilde{A}}(p)$ for $k=0$. Values of $\tilde{T}$ indicated with blue.}{thesis_graphics_temp/boundary_tilde_T_values.png}
+\makefigure{A diagram of $\mathcal{\tilde{C}}(p)$ for $k=0$. Values of $\tilde{T}$ indicated with blue.}{thesis_graphics_temp/boundary_tilde_T_values.png}
 
 Note however that If both $u$ and $v$ approach an infinite value simultaneously, which corresponds to a corner point of the above diagram, then the value of $T_0$ depends on the limit of the ratio of $u$ to $v$. In fact, this dependence is monotonic. Let $u = t \sign u$ and $v = rt\sign v$ for $r$ a positive constant and $t$ a positive parameter. Then
 \[
@@ -306,7 +306,7 @@ Note however that If both $u$ and $v$ approach an infinite value simultaneously,
 \]
 which is monotonic, except for at its vertical asymptote. The vertical asymptote only occurs when $r = \sign u / \sign v = 1$, ie $u=v$. But this is excluded from the domain. Thus the values of $T_0$ in the corners covers the range of values between the values on the edges. Together with the fact that $T_0$ has no extrema on the faces, we can use this observation as a hueristic to describe the level sets on each face.
 
-\makefigure{The level sets of $\tilde{T}$ on part of $\mathcal{\tilde{A}}(p)$ for $k=0$ }{thesis_graphics_temp/boundary_level_sets.png}
+\makefigure{The level sets of $\tilde{T}$ on part of $\mathcal{\tilde{C}}(p)$ for $k=0$ }{thesis_graphics_temp/boundary_level_sets.png}
 \todo{only $p>1$ version shown}
 
 In particular, there are no closed level sets and the arcs foliate the face. Therefore, when we translate this in terms of the pair of discs $α\in D$ and $ν$ in the upper or lowever unit circle, the arcs must start and end on the boundary of the disc and foliate the disc. Thus the corners must represent $α$ close to the unit disc. To deduce where, we make the following observation. Let $ν = \exp \iu b$, for $b \in (-π, π)$, and $α = (1-ε) \exp \iu a$, for $ε$ small and $a \in (-π, π]$. Then
