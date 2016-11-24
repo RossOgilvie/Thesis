@@ -501,8 +501,8 @@ Take a triple of spectral data $(P,b^1,b^2)\in\mathcal{M}_g$ associated with a n
 \begin{proof}
 In order to solve \eqref{eqn:EMPDi} or \eqref{eqn:Q}, one must first solve their reduced counterparts \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}.
 
-We consider \eqref{eqn:Q reduced} as a linear system in the coefficients of $\tilde{c}^i$, using a confluent Vandermonde matrix as above. Thus there is a unique solution $(\symbf{\tilde{c}}^1, \symbf{\tilde{c}}^2)$ of degree at most $(g+2-d_1, g+2-d_2)$, where $d_i = \deg F^i$. We note that ${\bf\tilde{c}}^2_{g+2-d_2}$ is $R(Q)$ by definition, which by assumption is zero.
-By consideration of the leading order of \eqref{eqn:Q reduced}, if ${\bf\tilde{c}}^2_{g+2-d_2}$ vanishes, so too must ${\bf\tilde{c}}^1_{g+2-d_1}$. Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i {\bf\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree at most $g+1$. We similarly define $\hat{c}^i = (ζ^2 -1)c^i$.
+We consider \eqref{eqn:Q reduced} as a linear system in the coefficients of $\tilde{c}^i$, using a confluent Vandermonde matrix as above. Thus there is a unique solution $(\symbf{\tilde{c}}^1, \symbf{\tilde{c}}^2)$ of degree at most $(g+2-d_1, g+2-d_2)$, where $d_i = \deg F^i$. We note that $\symbf{\tilde{c}}^2_{g+2-d_2}$ is $R(Q)$ by definition, which by assumption is zero.
+By consideration of the leading order of \eqref{eqn:Q reduced}, if $\symbf{\tilde{c}}^2_{g+2-d_2}$ vanishes, so too must $\symbf{\tilde{c}}^1_{g+2-d_1}$. Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i \symbf{\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree at most $g+1$. We similarly define $\hat{c}^i = (ζ^2 -1)c^i$.
 
 Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} was a necessary condition. It reads
 \[
@@ -655,7 +655,7 @@ In what is by now a familiar story, for the dotted quantities there is a common 
 \]
 There appears not to be a unique tangent vector corresponding to each choice $(Q,r)$. However, unlike the previous two cases, condition \eqref{eqn:residueTangent} is not automatically satisfied. Let $s = s_0 + s_1ζ + \bar{s}_0 ζ^2$. For $i=1$, we see that the condition implies that
 \[
-2 {\bf\dot{P}}_0 b^1_1 - P_1 \symbf{\dot{b}}^1_0 + 3 s_0 P_1 b^1_1 = 0,
+2 \symbf{\dot{P}}_0 b^1_1 - P_1 \symbf{\dot{b}}^1_0 + 3 s_0 P_1 b^1_1 = 0,
 \]
 which fully determines $s_0$. Can we therefore simultaneously satisfy the condition for $i=2$? Note that \eqref{eqn:EMPDi conformal} in the lowest degree reads
 \[
@@ -664,15 +664,15 @@ which fully determines $s_0$. Can we therefore simultaneously satisfy the condit
 and \eqref{eqn:Q conformal} in the lowest degree yields
 \begin{align*}
 b^1_1 c^2_0 &= b^2_1 c^1_0 \\
-b^1_1 \bra{{\bf\dot{P}_0} b^2_1 - 2P_1{\bf\dot{b}^2_0}} &= b^2_1 \bra{{\bf\dot{P}_0} b^1_1 - 2P_1{\bf\dot{b}^1_0}} \\
-2b^1_1 {\bf\dot{b}^2_0} &= 2 b^2_1 {\bf\dot{b}^1_0}.
+b^1_1 \bra{\symbf{\dot{P}_0} b^2_1 - 2P_1\symbf{\dot{b}^2_0}} &= b^2_1 \bra{\symbf{\dot{P}_0} b^1_1 - 2P_1\symbf{\dot{b}^1_0}} \\
+2b^1_1 \symbf{\dot{b}^2_0} &= 2 b^2_1 \symbf{\dot{b}^1_0}.
 \end{align*}
 Condition \eqref{eqn:residueTangent} for $i=2$ is therefore
 \begin{align*}
-b^1_1 \bra{2 {\bf\dot{P}_0} b^2_1 - P_1 \symbf{\dot{b}^2_0} + 3 s_0 P_1 b^2_1}
-&= 2 {\bf\dot{P}_0} b^1_1b^2_1 - P_1 b^1_1\symbf{\dot{b}^2_0} + 3 s_0 P_1 b^1_1b^2_1 \\
-&= 2 {\bf\dot{P}_0} b^1_1b^2_1 + P_1 b^2_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1b^2_1 \\
-&= b^2_1\bra{2 {\bf\dot{P}_0} b^1_1 - P_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1 } \\
+b^1_1 \bra{2 \symbf{\dot{P}_0} b^2_1 - P_1 \symbf{\dot{b}^2_0} + 3 s_0 P_1 b^2_1}
+&= 2 \symbf{\dot{P}_0} b^1_1b^2_1 - P_1 b^1_1\symbf{\dot{b}^2_0} + 3 s_0 P_1 b^1_1b^2_1 \\
+&= 2 \symbf{\dot{P}_0} b^1_1b^2_1 + P_1 b^2_1 \symbf{\dot{b}^1_0} + 3 s_0 P_1 b^1_1b^2_1 \\
+&= b^2_1\bra{2 \symbf{\dot{P}_0} b^1_1 - P_1 \symbf{\dot{b}^1_0} + 3 s_0 P_1 b^1_1 } \\
 &= 0.
 \end{align*}
 Hence we have demonstrated that the condition holds for $i=2$ also. Having cleared this hurdle, there is still one free parameter. For any $Q_1$ and $r$, the corresponding tangent vectors that solve \eqref{eqn:EMPDi} are
