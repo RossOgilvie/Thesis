@@ -154,12 +154,16 @@ There is only one other correspondence that has all three of these properties, n
 \]
 The difference between this correspondence and our preferred correspondence is the choice of which root, $α$ or $β$, is mapped to $1$. This is the reason that we must work with $\mathcal{A}_1$ and not $\mathcal{C}_1$. On the latter space, there would be no way to consistently make the choice. For example, take the path $t \mapsto Σ(0.5 e^{\iu t}, -0.5 e^{\iu t})$ in $\mathcal{C}_1$. This is a closed loop where the branch points are interchanged as $t$ varies from $0$ to $π$.
 
-From our correspondence, equating the cross ratios $[α,\cji{α};β,\cji{β}] = [1,-1;k^{-1},-k^{-1}]$ gives
+From our correspondence, equating the cross ratios $[α,\cji{α};β,\cji{β}]$ and\\ $[1,-1;k^{-1},-k^{-1}]$ gives
 \[
 k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}},
 \labelthis{eqn:def_k}
 \]
-and the map, which we shall call $f$, can be computed from the relation $[α,\cji{α};β,ζ] = [1,-1;k^{-1},f(ζ)]$. Instead of solving this relation for $f$ immediately, we turn to understanding the geometry of the transformation so that we might produce a meaningful expression.
+and the map, which we shall call $f$, can be computed from the relation
+\[
+[α,\cji{α};β,ζ] = [1,-1;k^{-1},f(ζ)].
+\]
+Instead of solving this relation for $f$ immediately, we turn to understanding the geometry of the transformation so that we might produce a meaningful expression.
 
 The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ponder its image under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution $\tilde{ρ}(z)$ in the $z$-plane that exchanges $1,-1$ and $k^{-1},-k^{-1}$ is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore must be the image of the unit circle under $f$.
 
@@ -629,7 +633,7 @@ With these two differentials we then attempted to further satisfy \ref{P:closing
 \section{Coordinates for \texorpdfstring{$\mathcal{A}_1$}{A1}}
 \label{sec:Reformulate}
 
-In the previous section, we found a condition for a point of $\mathcal{A}_1$ to correspond a spectral curve, namely the functions $S$ and $T$ must be rationally valued. Thus on $\mathcal{S}_1$, the space of spectral curves, these functions must be (locally) constant. Thus to understand $\mathcal{S}_1$ we should examine the joint level sets of $S$ and $T$ in $\mathcal{A}_1$. This will require invoking the implicit function theorem, for which the necessary computation will be the differentiation of the two functions.
+In the previous section, we found a condition for a point of $\mathcal{A}_1$ to correspond a spectral curve, namely the functions $S$ and $T$ must be rationally valued. Thus on $\mathcal{S}_1$, the space of spectral curves, these functions must be (locally) constant. To understand $\mathcal{S}_1$ we should therefore be examining the joint level sets of $S$ and $T$. This will require invoking the implicit function theorem, for which the necessary computation will be the differentiation of the two functions.
 
 It is therefore prudent to adopt a parametrisation of the space of marked curves $\mathcal{A}_1 \subset D\times D$ that is suited to the task of differentiating $T(α,β)$.
 Elliptic integrals are the most difficult part of \eqref{eqn:gamma_plus} to differentiate, so to minimise our labour we choose three coordinates to be $k$, $\iu u = f(1)$ and $\iu v = f(-1)$. For the final coordinate we shall take $p=S(α,β)$ itself, as then we can enforce the condition $S\in\Q^+$ simply by holding this coordinate constant.
@@ -840,30 +844,31 @@ Equipped with the derivatives of these factors, the calculation of the derivativ
 % \frac{π}{2}\Partial{T}{v'}
 % = -\frac{pE}{w'(v')} + \frac{K w(\iu u)}{(uv'-1)^2} + \frac{pK}{w'(v')(uv'-1)^2}\left[1 + k^2u^2 - uv' + k^2uv' + (v')^2 + u^2(v')^2 \right]
 % \end{equation}
-From this formula, we factor out the common denominator $[w(\iu u)(u-v)^2]^{-1}$ to define a function $U$,
+From this formula, we factor out the common denominator $[w(\iu u)(u-v)^2]^{-1}$ to define a function $L$,
 \begin{multline*}
-U(p,k,u,v) := -(u-v)^2 E + pKw(\iu u)w(\iu v) \\
+L(p,k,u,v) := -(u-v)^2 E + pKw(\iu u)w(\iu v) \\
 + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right].
-\labelthis{eqn:def U}
+\labelthis{eqn:def L}
 \end{multline*}
 We shall need the value of the derivative `at infinity' too, and so let us also define
 \begin{align*}
-V(p,k,v)
-&:= \lim_{u\to\infty} u^{-2} U(p,k,u,v) \\
+L'(p,k,v)
+&:= \lim_{u\to\infty} u^{-2} L(p,k,u,v) \\
 &= \lim_{u\to\infty} \Big(-(1-u^{-1}v)^2 E + pKw(\iu v) \cdot u^{-2}w(\iu u) \\
 &\qquad+ K\left[ u^{-2} + 1 - u^{-1}v + k^2 u^{-1}v + u^{-2}v^2 + k^2 v^2 \right] \Big) \\
 &= -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right].
-\labelthis{eqn:def V}
+\labelthis{eqn:def L'}
 \end{align*}
-The final lemma of this section shows these functions $U$ and $V$, and therefore the $u$-derivative of $T$ as well, are non-vanishing.
+The final lemma of this section shows these functions $L$ and $L'$ are non-vanishing, which will be used to later prove that certain derivatives of $T$ are non-vanishing also. The lemma below is not sufficient to establish this latter fact by itself, because $T_0$ is only defined in the $(p,k,u,v)$ coordinate patch.
+
 \begin{lem}
-    \label{lem:deriv no zeroes}
-The functions $U$ and $V$, defined by \eqref{eqn:def U} and \eqref{eqn:def V} respectively are strictly positive for $p \geq 1$, $k\in (0,1)$, and $u,v \in \R$.
+\label{lem:deriv no zeroes}
+The functions $L$ and $L'$, defined by \eqref{eqn:def L} and \eqref{eqn:def L'} respectively are strictly positive for $p \geq 1$, $k\in (0,1)$, and $u,v \in \R$.
 
 \begin{proof}
-For this proof, we shall draw upon several inequalities that are explained in Section \ref{sec:Inequalities}. Let us prove that $U > 0$. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
+For this proof, we shall draw upon several inequalities that are explained in Section \ref{sec:Inequalities}. The first step is to eliminate $E$. We apply the crude estimate that $K>E$, from \eqref{eqn:K_E_values}, and also the assumption that $p\geq 1$ to simplify
 \begin{align*}
-U&(p,k,u,v)\\
+L&(p,k,u,v)\\
 &= -(u-v)^2 E + pKw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
 &> -(u-v)^2 K + Kw(\iu u)w(\iu v) + K\left[ 1 + u^2 - uv + k^2 uv + v^2 + k^2 u^2 v^2 \right] \\
 &= K \left[ w(\iu u)w(\iu v) + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right]
@@ -874,15 +879,15 @@ w(\iu u) = \sqrt{1 + (1+k^2)u^2 + k^2u^4} > \sqrt{(1+k^2)u^2} = \sqrt{(1+k^2)}\a
 \]
 so applying this to both $w(\iu u)$ and $w(\iu v)$ gives
 \begin{align*}
-U(p,k,u,v)
+L(p,k,u,v)
 &> K \left[ (1+k^2)\abs{uv} + 1 + (1 + k^2) uv + k^2 u^2 v^2 \right] \\
 &\geq K \left[ 1 + k^2 u^2 v^2 \right].
 \end{align*}
-As $K > π/2$, this is strictly positive, as required. The proof of the positivity of the second function, $V$, is almost immediate. Again using $K>E$,
+As $K > π/2$, this is strictly positive, as required. The proof of the positivity of the second function, $L'$, is almost immediate. Again using $K>E$,
 \[
-V(p,k,v) > K \left[ -1 + pk w(\iu v) + 1 + k^2 v^2\right].
+L'(p,k,v) > K \left[ -1 + pk w(\iu v) + 1 + k^2 v^2\right].
 \]
-This establishes that $V$ is positive too.
+This establishes that $L'$ is positive too.
 \end{proof}
 \end{lem}
 
@@ -926,7 +931,7 @@ This establishes that $V$ is positive too.
 The purpose of this chapter overall is to describe the set of genus one spectral curves $\mathcal{S}_1$. The coordinates constructed in the previous chapter are apt for computation, but because $T$ is a multi-valued function, any work on its level sets in $\mathcal{A}_1$ will be limited to local results. The way forward is to transition to $\mathcal{\tilde{C}}_1$, the universal cover of $\mathcal{A}_1$, which is covered by coordinates $(p,k,\tilde{u},\tilde{v})$. The universal cover allows us to pull back the multi-valued function $T$ to a single valued function $\tilde{T}$. This global function $\tilde{T}$ will allow us to gain global results about $\mathcal{S}_1$.
 
 More precisely,
-in Lemma \ref{lem:T_graph} we demonstrate that for any values $p \in \R^+$, $q\in\R$ the level set $\mathcal{\tilde{C}}_1(p,q)$ defined by $p = S$ and $q = \tilde{T}$ is a graph over two of the coordinates. This follows by an application of the implicit function theorem and relies on the non-vanishing result from Lemma \ref{lem:deriv no zeroes}. Hence each level set is diffeomorphic to a strip $(0,1)\times\R$.
+in Lemma \ref{lem:T_graph} we demonstrate that for any values $p \in \R^+$, $q\in\R$ the level set $\mathcal{\tilde{C}}_1(p,q)$ defined by $p = S$ and $q = \tilde{T}$ is a graph over two of the coordinates. This follows by an application of the implicit function theorem and relies on the non-vanishing result from Lemma \ref{lem:deriv no zeroes}. Hence each level set is diffeomorphic to a ribbon $(0,1)\times\R$.
 % Moreover, that lemma shows that for fixed $p$ these strips $\mathcal{\tilde{C}}_1(p,q)$ foliate $\mathcal{\tilde{C}}_1(p)$, the subspace of $\mathcal{\tilde{C}}_1$ on which $p$ is a fixed constant.
 
 It follows from the observation that $\tilde{T}$ is rational exactly when $T$ is that the preimage of $\mathcal{S}_1$ in the universal cover $\mathcal{\tilde{C}}_1$, which we denote $\mathcal{\tilde{S}}_1$, may be written as the disjoint union of level sets,
@@ -1119,7 +1124,7 @@ such that fixing a value $q$ gives the level set $\mathcal{\tilde{C}}_1(p,q)$, o
 \{(q,k,\tilde{v}) \in \R\times(0,1)\times\R \},
 \]
 such that again fixing a value $q$ gives the level set $\mathcal{\tilde{C}}_1(p,q)$.
-In either case, the level sets are strips $(0,1)\times \R$.
+In either case, the level sets are ribbons $(0,1)\times \R$.
 
 \begin{proof}
 Fix a value of $p$ and consider the function $G(q, k,\tilde{u},\tilde{v}) = \tilde{T}(p,k,\tilde{u},\tilde{v}) - q$ on $\mathcal{\tilde{C}}_1(p)\times\R$. $G^{-1}(0)$ is a graph over $\mathcal{\tilde{C}}_1(p)$ given by $q=\tilde{T}$, so they are diffeomorphic. We will apply the implicit function theorem to show that $G^{-1}(0)$ can also be written as a graph over either $(q,k,\tilde{u})$ or $(q,k,\tilde{v})$, depending on the magnitude of $p$.
@@ -1130,23 +1135,23 @@ Suppose first that the fixed value of $p$ is greater than or equal to one. We co
 = \Partial{\tilde{T}}{\tilde{u}}
 &= \frac{du}{d\tilde{u}}\Partial{T_0}{u} \\
 &= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \Partial{T_0}{u} \\
-&= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \times \frac{2}{π} \times \frac{1}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
+&= \frac{1}{2}\sec^2\bfrac{\tilde{u}}{2} \times \frac{2}{π} \times \frac{1}{w(\iu u)(u-v)^2} L\bra{ p,k,u,v } \\
 &= \frac{1}{π}\frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v },
 \end{align*}
-which holds for $\tilde{u} \not\in π + 2π\Z$, using \eqref{eqn:def U}. As witnessed in Lemma \ref{lem:deriv no zeroes}, $U$ is never zero, and neither are the other three factors present. Hence $\partial \tilde{G} / \partial \tilde{u}$ is never zero on this open set.
+which holds for $\tilde{u} \not\in π + 2π\Z$, using \eqref{eqn:def L}. As witnessed in Lemma \ref{lem:deriv no zeroes}, $L$ is never zero, and neither are the other three factors present. Hence $\partial \tilde{G} / \partial \tilde{u}$ is never zero on this open set.
 
 
-It remains to check it does not vanish when $\tilde{u} \in π + 2π\Z$. Recall the definition of $V$ from \eqref{eqn:def V},
+It remains to check it does not vanish when $\tilde{u} \in π + 2π\Z$. Recall the definition of $L'$ from \eqref{eqn:def L'},
 \[
-V(p,k,v) :=
-\lim_{u\to\infty} u^{-2} U(p,k,u,v).
+L'(p,k,v) :=
+\lim_{u\to\infty} u^{-2} L(p,k,u,v).
 \]
 As $\tilde{T}$ is an analytic function its derivatives are continuous and so we may compute their value at these points by taking a limit. Therefore
 \begin{align*}
 \lim_{\tilde{u}\to π + 2π\Z} \Partial{G}{\tilde{u}}
-&=\frac{1}{π} \lim_{u \to \infty} \frac{1 + u^2}{w(\iu u)(u-v)^2} U\bra{ p,k,u,v } \\
-&=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}U\bra{ p,k,u,v } \\
-&=\frac{1}{π} \frac{1}{k} V\bra{ p,k,v },
+&=\frac{1}{π} \lim_{u \to \infty} \frac{1 + u^2}{w(\iu u)(u-v)^2} L\bra{ p,k,u,v } \\
+&=\frac{1}{π} \lim_{u \to \infty} \frac{(1 + u^2)u^2}{w(\iu u)(u-v)^2} \times u^{-2}L\bra{ p,k,u,v } \\
+&=\frac{1}{π} \frac{1}{k} L'\bra{ p,k,v },
 \end{align*}
 which is also nonzero by Lemma \ref{lem:deriv no zeroes}. The implicit function theorem states that there is a function $h$ such that $G^{-1}(0)$ is a graph of the form $\{ (q, k, \tilde{u}, h(q,k,\tilde{u})) \mid q \in \text{Range } \tilde{T}, k \in (0,1), \tilde{u}\in\R \}$. By Lemma \ref{lem:range_T}, the range of $\tilde{T}$ is $\R$. Finally, if we hold $q$ fixed, then the level set $\mathcal{\tilde{C}}_1(p,q)$ is parametrised by the remaining two coordinates $(k,\tilde{u})$.
 
@@ -1230,9 +1235,9 @@ and similarly
 \tilde{V} = 2π\Wind(\tilde{v}) + 2 \atan \left[ \sqrt{k} \tan \frac{\tilde{v}}{2} \right].
 \]
 Observe that these formula fix certain points, namely multiples of $\Z$.
-Hence $\tilde{u}$ and $\tilde{U}$ have the same winding number $\Wind$.
-Recall also from Lemma \ref{lem:mathcal tilde C} that the domain is restricted to $\tilde{u} < \tilde{v} < \tilde{u} + 2π$.
-Since $\tan$ and $\atan$ are increasing functions, it follows that the transformation is order preserving, so that $\tilde{U} < \tilde{V} < \tilde{V} + 2π$ as well.
+Hence $\tilde{u}$ and $\tilde{U}$ have the same winding number.
+Recall also from Lemma \ref{lem:mathcal tilde C} that the range of the coordinates $\tilde{u}$ and $\tilde{v}$ is restricted to $\tilde{u} < \tilde{v} < \tilde{u} + 2π$.
+Since $\tan$ and $\atan$ are increasing functions, it follows that the transformation is order preserving, so we may derive that $\tilde{U} < \tilde{V} < \tilde{V} + 2π$ as well.
 
 These coordinates $\tilde{U}$ and $\tilde{V}$ can be used interchangably with $\tilde{u}$ and $\tilde{v}$. Consider for example the coordinates $(p,k,\tilde{u},\tilde{v})$ on $\mathcal{\tilde{C}}_1$ defined in Lemma \ref{lem:mathcal tilde C}.
 The determinant of the Jacobian of the change of coordinates to $(p,k,\tilde{U},\tilde{V})$ is
@@ -1254,13 +1259,12 @@ First let us use the coordinate $(p,k,\tilde{U},\tilde{V})$ on $\mathcal{\tilde{
 { n \in \Z }.
 \]
 
-To find those covering transformations of $\mathcal{G}$ that push forward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $U$ coordinate. Then the $\tilde{U}$ coordinate of any point of $\mathcal{\tilde{C}}_1$ that lies over $(β,α)$ must be
+To find those covering transformations of $\mathcal{G}$ that push forward to $λ$, take a point $(α,β) \in \mathcal{A}_1$ with some $U$ coordinate. Then the $\tilde{U}$ coordinate of any point of $\mathcal{\tilde{C}}_1$ that lies over $(β,α)$ must lie in
 \[
 2\atan \bra{ -\frac{1}{U} } + 2π\Z
 = 2\bra{\pm\frac{π}{2} + \atan U} + 2π\Z
-= 2πm + π + \tilde{U}
 \]
-for some integer $m$. Therefore, these covering transformations lie within the set
+and so is $2πm + π + \tilde{U}$ for some integer $m$. Therefore, these covering transformations lie within the set
 \[
 \Set {(p,k,\tilde{U},\tilde{V}) \mapsto (p,k, 2πm + π + \tilde{U}, 2πn + π + \tilde{V})} {m,n \in \Z}.
 \]
@@ -1331,7 +1335,7 @@ This relation is a difference of analytic functions on an open set, so by contin
 Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{C}}_1(p,q)$, where $\tilde{T} = q$, is to move them into the $\mathcal{\tilde{C}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{U},\tilde{V}) \in \mathcal{\tilde{C}}_1(p)$.
 If $p\leq 1$ let $\tilde{X}$ be $\tilde{U}$ and otherwise take it to be $\tilde{V}$. We know by Lemma \ref{lem:T_graph} and the above change of coordinates that $(q,k,\tilde{U})$, where $q = \tilde{T}$, are coordinates for $\mathcal{\tilde{C}}_1(p)$. In particular, $\mathcal{\tilde{C}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
 \[
-(p,q,k,\tilde{X}) \mapsto (p, q + (p-1), k, \tilde{X} + π).
+\bra{p,q,k,\tilde{X}} \mapsto \bra{p, q + (p-1), k, \tilde{X} + π}.
 \labelthis{eqn:group action}
 \]
 Viewing the cosets of the group of covering transformations as an equivalence relation, for $p\neq 1$ they provide an identification between the level set $\mathcal{\tilde{C}}_1(p,q)$ and the level set $\mathcal{\tilde{C}}_1(p,q + l(p-1))$ for any integer $l$.
@@ -1340,7 +1344,7 @@ Viewing the cosets of the group of covering transformations as an equivalence re
 \label{thm:topology_curves}
 For $p\neq 1$, the space of marked curves $\mathcal{C}_1(p)$ is diffeomorphic to
 \[
-\{ ([q],k,\tilde{X}) \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \},
+\left\{ \bra{[q],k,\tilde{X}} \in \bra{\R/ (p-1)\Z} \times (0,1) \times \R \right\},
 \]
 such that the subspace of spectral curves $\mathcal{S}_1(p)$ is
 \[
@@ -1355,7 +1359,7 @@ Lemma \ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p
 
 This leaves just one special case, where $p=1$. We see that the action of $\tilde{λ}$ on $\mathcal{\tilde{C}}_1(1)$ fixes the value of $\tilde{T}$ and so does not identify different level sets $q=\tilde{T}$. Instead, the group action creates an equivalence relation on each level set. Specifically, the action of $\tilde{λ}$ on $\mathcal{\tilde{C}}_1(1,q)$ given by \eqref{eqn:group action} reads
 \[
-(1,q,k,\tilde{X}) \mapsto (1, q, k, \tilde{X} + π),
+\bra{1,q,k,\tilde{X}} \mapsto \bra{1, q, k, \tilde{X} + π}.
 \]
 and so in particular only the fourth coordinates is changed. Using these coordinates $(1,q,k,\tilde{X})$ on $\mathcal{\tilde{C}}_1(1)$, it is trivial to deduce the quotient by $\mathcal{G}$.
 
@@ -1363,16 +1367,16 @@ and so in particular only the fourth coordinates is changed. Using these coordin
 \label{thm:topology_curves_p1}
 The space of marked curves $\mathcal{C}_1(1)$ is diffeomorphic to
 \[
-\{ (q,k,x) \in \R \times (0,1) \times \R/π\Z \},
+\left\{ \bra{q,k,\left[\tilde{X}\right]} \in \R \times (0,1) \times \R/π\Z \right\},
 \]
 the product of $\R$ and an annulus, such that the subspace of spectral curves $\mathcal{S}_1(1)$ is the restriction of the first component of the product to $\Q$.
 
 \begin{proof}
 The orbit of a point $(1,q,k,\tilde{X})$ of $\mathcal{\tilde{C}}_1(1)$ is
 \[
-(1,q,k,\tilde{X}+π\Z),
+\bra{1,q,k,\tilde{X}+π\Z},
 \]
-so the quotient sends $\tilde{X} \in \R$ to $x \in \R/π\Z$.
+so the quotient sends $\tilde{X} \in \R$ to $\left[\tilde{X}\right] \in \R/π\Z$.
 
 As in the previous theorem, by construction of the coordinates $(p,q,k,\tilde{X})$ and Lemma \ref{lem:tilde T rational}, a point is in $\mathcal{S}_1 \subset \mathcal{C}_1$ exactly when it is the image of a point where $p$ and $q$ are rational. As $p=1$ in this case, the points of $\mathcal{S}_1(1)$ are those where $q\in\Q$.
 \end{proof}
@@ -1380,9 +1384,11 @@ As in the previous theorem, by construction of the coordinates $(p,q,k,\tilde{X}
 
 These two theorems complete our quest to gain an understanding of the subspace of spectral curves $\mathcal{S}_1$ within $\mathcal{C}_1$. First we characterised when a marked curve is a spectral curve by way of a necessary and sufficient condition: that the two real valued functions $S(α,β)$ and $T(α,β)$ take rational values. The first condition, $S\in\Q^+$, lead immediately to a dense disjoint collection of subspaces $\mathcal{C}_1(p)$ on which the condition was met, where $p$ was the value of $S$.
 
-Then we moved to the universal cover $\mathcal{\tilde{C}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multi-valued function $T$. We then considered the subspaces of $\mathcal{\tilde{C}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be strips in Lemma \ref{lem:T_graph}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
+Then we moved to the universal cover $\mathcal{\tilde{C}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multi-valued function $T$. We then considered the subspaces of $\mathcal{\tilde{C}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be ribbons in Lemma \ref{lem:T_graph}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
 
-The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group $\mathcal{G}$ was shown to be $\Z\langle\tilde{λ}\rangle$ and its action was described by \eqref{eqn:group action}. This allowed us to describe the quotients in the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of strips within $\mathcal{C}_1$. As can be seen in the pictures below, and proved rigorously in the next chapter, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$. We shall see that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'.
+The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group $\mathcal{G}$ was shown to be $\Z\langle\tilde{λ}\rangle$ and its action, described by \eqref{eqn:group action}, was that of translations. This allowed us to describe the quotients in the two Theorems \ref{thm:topology_curves} and \ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of ribbons within $\mathcal{C}_1$. As can be seen in the computer plots below, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$.
+
+We saw in the introduction to this chapter that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'. This idea is investigated further in the following chapter by considering the limit case as $k \to 1$.
 
 PICTURES OF HELICES\todo{}
 
@@ -1391,7 +1397,7 @@ PICTURES OF HELICES\todo{}
 \section{Corollaries}
 \label{sec:Corollaries}
 
-In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are strips, but the components of $\mathcal{S}_1(1)$ are annuli. This section will show several properties of these components. First that although the moduli space of spectral curves $\mathcal{S}_1$ is not simply connected, because of the annuli components, the moduli space of spectral data $\mathcal{M}_1$ is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case can be identified with a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a general transformation $χ$ on the space spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
+In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are ribbons, but the components of $\mathcal{S}_1(1)$ are annuli. This section will show several properties of these components. First that although the moduli space of spectral curves $\mathcal{S}_1$ is not simply connected, because of the annuli components, the moduli space of spectral data $\mathcal{M}_1$ is simply connected. Second we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral case can be identified with a particular path component of $\mathcal{S}_1(1)$. Finally, we shall extend the extra symmetry exhibited by harmonic maps to the $2$-sphere to a general transformation $χ$ on the space spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero.
 
 Before we can prove results about the moduli space of spectral data, we must revisit and improve on Lemma \ref{lem:closing_conds}. In that lemma, we saw that the rationality of the values of the functions $S$ and $T$ are necessary and sufficient conditions for the existence of spectral data. The proof was constructive, in that it finds a set of spectral data on any marked curve that meets both conditions. However, to examine the moduli of spectral data, we must find a `minimal' set of spectral data from which all other on that curve may generated.
 
@@ -1414,7 +1420,7 @@ We shall prove this lemma first for exact differentials. Suppose that $Θ$ is an
 \end{align*}
 for some $a'\in\R$ and $Γ_+, Γ_- \in \Z$. By the definition of $S(α,β)$
 \[
-S = \frac{n}{m} = - \frac{η(1)}{η(-1)} = \frac{Γ_+}{Γ_-},
+S = \frac{n}{m} = - \frac{η^+(1)}{η^+(-1)} = \frac{Γ_+}{Γ_-},
 \]
 so since $n/m$ is a simplified fraction we must have that $Γ_+ = cn$ and $Γ_- = cm$ for an integer $c$. It follows that $a' = ca$ and hence $Θ = c Ψ^E$.
 
@@ -1451,17 +1457,17 @@ Indeed, consider a sequence of points
 \[
 Σ_j \in \mathcal{S}_1\bra{1+j^{-1}},
 \]
-with a limit $Σ_\infty \in \mathcal{S}_1(1)$. The integers $j$ and $j+1$ are always coprime, so in the above notation $S = n/m = (j+1)/j$ and the differential $Ψ^E_j$ on $Σ_j$ is defined by,
+with a limit $Σ_\infty \in \mathcal{S}_1(1)$. The integers $j$ and $j+1$ are always coprime, so in the above notation $S = n/m = (j+1)/j$ and the differential $Ψ^E_j$ on $Σ_j$ is defined by
 \[
 Ψ^E_j = \frac{2π\iu (j+1)}{2\iu η^+(1)} Θ^E,
 \]
-whereas on the other hand
+which does not have a well defined limit, whereas on the other hand
 \[
 Ψ^E_\infty = \frac{2π\iu}{2\iu η^+(1)} Θ^E.
 \]
 
 Instead, we must consider bundles over each path connected component of $\mathcal{S}_1$ separately.
-Let us label the path connected components of $\mathcal{S}_1$. Following Theorem \ref{thm:topology_curves}, for each $p\in \Q^+\setminus\{1\}$ and $[q] \in \Q / (p-1) \Z$, there is a strip-like component $\mathcal{S}_1(p,[q]) \diffeo (0,1)\times\R$. And by Theorem \ref{thm:topology_curves_p1}, for $p=1$ there is an annuli component $\mathcal{S}_1(1,q)$ for each rational number $q$. Each of these path connected components of $\mathcal{S}_1$ is a submanifold of $\mathcal{C}_1$.
+Let us label the path connected components of $\mathcal{S}_1$. Following Theorem \ref{thm:topology_curves}, for each $p\in \Q^+\setminus\{1\}$ and $[q] \in \Q / (p-1) \Z$, there is a ribbon-like component $\mathcal{S}_1(p,[q]) \diffeo (0,1)\times\R$. And by Theorem \ref{thm:topology_curves_p1}, for $p=1$ there is an annuli component $\mathcal{S}_1(1,q)$ for each rational number $q$. Each of these path connected components of $\mathcal{S}_1$ is a submanifold of $\mathcal{C}_1$.
 
 Therefore, fix a path connected component $\mathcal{X}$ of $\mathcal{S}_1$. For any fixed value of $p \in \Q^+$, the differential $Ψ^E$ is a well-defined smooth function on $\mathcal{C}_1(p)$, and as $\mathcal{X}$ is entirely contained within some $\mathcal{C}_1(p)$ it follows that $Ψ^E$ is well-defined and smooth on $\mathcal{X}$. The same is not necessarily true for $Ψ^P$.
 Locally though, in a simply connected neighbourhood $\mathcal{U} \subset \mathcal{X}$ it is possible to choose paths $γ_+$ and $γ_-$ on each spectral curve that vary smoothly with changes of the branch points. Hence by Lemma \ref{lem:minimal differentials}, the moduli space of differentials satisfying \ref{P:poles}--\ref{P:closing} is the trivial $\Z^2$-bundle over $\mathcal{U}$ framed by $Ψ^E$ and $Ψ^P$.
@@ -1557,7 +1563,7 @@ then the connected components of $\mathcal{M}_1(1,q)$ are enumerated by the righ
 
 Finally, we can prove the space $\mathcal{M}_1(1,q)$ is simply connected. Given any closed loop $\ell$ in it, we may project this loop down to $\mathcal{S}_1(1,q)$. If the projection of the loop is null-homotopic, then it is contained in a simply connected neighbourhood $\mathcal{U}$ of $\mathcal{S}_1(1,q)$ and we may use the frame $\langle Ψ^E,Ψ^P \rangle$ to lift to a null-homotopy of $\ell$ in $\mathcal{M}_1(1,q)$. If the projection is non-trivial, then it winds a certain number of times around the annulus. The above calculation shows that if the differentials are unchanged from the beginning to end of the path, then $l_1=l_2 = 0$, and the differentials are both multiples of $Θ^E$, which by \ref{P:linear independence} contradicts their linear independence.
 
-It is therefore the case that each connected component of $\mathcal{M}_1(1,q)$ is diffeomorphic to the universal cover of the annulus $\mathcal{S}_1(1,q)$, which is to say that they are strips $(0,1)\times \R$. This was also the case for the connected components of $\mathcal{M}_1(p,[q])$. In summary, $\mathcal{M}_1$ is the disjoint union of infinitely many copies $(0,1)\times\R$.
+It is therefore the case that each connected component of $\mathcal{M}_1(1,q)$ is diffeomorphic to the universal cover of the annulus $\mathcal{S}_1(1,q)$, which is to say that they are ribbons $(0,1)\times \R$. This was also the case for the connected components of $\mathcal{M}_1(p,[q])$. In summary, $\mathcal{M}_1$ is the disjoint union of infinitely many copies $(0,1)\times\R$.
 
 There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry in \eqref{eqn:T_0 symmetry},
 \[
