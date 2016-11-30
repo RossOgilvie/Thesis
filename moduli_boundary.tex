@@ -3,25 +3,61 @@
 \chapter{The Boundary of the Moduli Space}
 \label{chp:Moduli Boundary}
 
-The boundary of genus one marked curves $\mathcal{C}_1$ can be thought of as composed of two pieces. The points of the boundary correspond to singular curves. On the outer piece we have curves with one or two nodal singularities over the unit circle. On the inner piece we have the curves with two nodes; one inside and one outside the unit circle. Where the boundary of the inner piece intersects the outer piece corresponds to a curve with a tacnode over the unit circle, in other words its equation is $η^2 = ν(ζ-ν)$
+Throughout this thesis we have made the assumption that the spectral curves are non-singular. In Chapter \ref{chp:Deformation} we saw that the moduli space of spectral data $\mathcal{M}_g$, and in particular $\mathcal{M}_1$ where the spectral curve is genus one, was two dimensional. Therefore non-isospectral deformation of the spectral data are possible. In the previous chapter, we proved that $\mathcal{M}_1$ was composed of ribbons $(0,1)\times \R$ and annuli. In this chapter we examine the limiting behaviour of the spectral data along the edges of $\mathcal{M}_1$, which we shall see correspond to the degeneration of the spectral curve to a singular curve.
 
-Fix a value of $p$. This is a `ball' in the space $(α,β)\in D^2$, as for any particular value of
-\[
-t = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
-\]
-$α$ ranges over an arc of a circle, and likewise does $β$ as constrained by the equation
-\[
-\frac{\abs{1-β}}{\abs{1+β}} = \frac{\sqrt{p}}{u},
-\]
-where the product of these two equations is just the definition of $p$. Hence for any $t$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. As $t$ approaches $0$, this forces the branch points to $S_0 := (1,-1)$, and likewise at $t \to \infty$, $S_\infty := (-1,1)$. In the reverse direction, $α = \pm 1$ if and only if $β = \mp 1$. Hence, these two points divide the unit circle into disconnected upper and lower halves: $\S^1_+$ and $\S^1_-$ respectively.
+Recall the methodology of Chapter \ref{chp:Genus One} where we expended our efforts primarily in studying the topology of the space $\mathcal{S}_1$ of spectral curves and then secondarily showed that all spectral data on a curve may be constructed from a lattice of differentials.
+We adopt a parallel approach in this chapter, with our focus on determining how the space $\mathcal{S}_1$ of spectral curves behaves as a subset of the space $\mathcal{C}_1$ of genus one marked curves at the boundary of $\mathcal{C}_1$. This will allow us to prove some of the structure visible in the computer plots of Figure \ref{}.
+We recall that $\mathcal{S}_1$ is the subset of $\mathcal{C}_1$ where function $S$ and multi-valued function $T$ take rational values. An essential part of this chapter is to compute the limits of these functions.
 
-This ball of constant $p$ is an American football shape; an elongated ball with sharp points at either end, joined by four seams (`\emph{edges}') where both $α$ and $β$ lie in one of $\S^1_\pm$ and four `\emph{faces}' where only one does.
+The boundary of the space $\mathcal{C}_1$ of genus one marked curves can be decomposed into two pieces, and the bahaviour on each peice is markedly different. On the exterior piece we have curves with one or two nodal singularities over the unit circle. We will show that these curve correspond to curve of $\mathcal{S}_0$, that this limit of spectral data on a genus one curve is spectral data on a genus zero curve. On the interior piece we have the curves with a node inside the unit disc (by the reality condition there must be a node outside the unit disc also). The moduli space $\mathcal{S}_1$ acculumates on this boundary, but the spectral data does not have a well-defined limit. Where the boundary of the interior piece intersects the exterior piece corresponds to a curve with a tacnode over the unit circle, in other words its equation is $η^2 = \bar{ν}^2(ζ-ν)^4$ for $ν \in \S^1$. We will see that the boundary of the moduli space appears to encircle these points.
 
-For other piece of the boundary, on the interior, we have the plane $α=β$. If again we fix $p$, then the intersection of this plane and the ball is $(α,α)$, where $α$ is constrained to
+Recall that in order to work with the space of marked curve we introduced a covering parameter space $\mathcal{A}_1 = \{ (α,β) \in D\times D \vert α \neq β \}$. The two points $α$ and $β$ in the unit disc correspond to the branch points of the marked curve. Let $\bar{\mathcal{A}_1}$ be the closure of $\mathcal{A}_1$ in $\bar{D} \times\bar{D}$, the product of two closed discs. We decompose the boundary $\partial \mathcal{A}_1 = \bar{\mathcal{A}_1} \setminus \mathcal{A}_1$ into the exterior piece,
 \[
-p = \frac{\abs{1-α}^2}{\abs{1+α}^2},
+\mathcal{E} :=
+\big\{ (α,β) \in \S^1 \times \bar{D} \big\}
+\cup
+\left\{ (α,β) \in \bar{D} \times \S^1 \right\},
 \]
-an arc. Though it reveals a counterintuitive aspect of our naming convention, the interior and exterior boundaries intersect at two points, $(α,α)$ and $(\bar{α},\bar{α})$ for some point $α\in\S^1_+$. We denote these intersection points as $P_+, P_-$ respectively. If one is visualising the ball as a solid $3$-ball and the exterior boundary as its surface sphere, then one could imagine $P_\pm$ as polar points and the interior boundary as an axis that run between them.
+and the interior, diagonal piece,
+\[
+\mathcal{D} :=
+\left\{ (α,α) \in D \times D \right\}.
+\]
+
+On $\mathcal{A}_1$ we defined a function $S$,
+\[
+S(α,β) := \frac{ \abs {1-α} \abs{1-β}}{ \abs{1+α}\abs{1+β}},
+\tag{\ref{eqn:def_S}}
+\]
+such that a marked curve $Σ(α,β)$ could only be a spectral curve if $S(α,β)$ was rational. It follows that the value of $S$ must be fixed during a deformation. We will therefore focus on the subsets where $S = p$ is fixed, which we notate with a parenthetical $p$ (for example, $\mathcal{A}_1(p)$). We can see that $\mathcal{A}_1(p)$ is topologically a $3$-ball with a line through it removed. For any value of $t \in \R^+$, considered the subset of the space $(α,β)\in D^2$ defined by the pair of equations
+\[
+\sqrt{p}\, t := \frac{\abs{1-α}}{\abs{1+α}},
+\text{ and }
+\frac{\sqrt{p}}{t} = \frac{\abs{1-β}}{\abs{1+β}}.
+\labelthis{eqn:t slice}
+\]
+Each of these equations constrains the point $α$ or $β$ to an arc in the disc. The product of these two equations is just the definition of $S$. Hence each value of $t \in \R^+$ gives a distinct cross-section of $\mathcal{A}_1(p)$ and we have given each cross section as the product of two arcs. This shows how $\mathcal{A}_1(p)$ sits in a $3$-ball.
+
+Naïvely, we would expect that the exterior boundary $\mathcal{E}(p)$ of $\mathcal{A}_1(p)$ to be composed of two faces meeting along an edge. Each face should correspond to the points where just one of the branch points lies in the unit circle. For example, one face should correspond to the points of $\mathcal{E}(p)$ where $α \in \S^1$ and $β\in D$. Counting real degrees of freedom we have one from the choice of $α$, two from the choice of $β$, but loss one from the constraint $S = p$ for a total of two. The other face likewise should be where $β \in \S^1$ and $α \in D$. The edge would be the point where both branch point lie in the unit circle.
+
+Instead there are four faces. As $t$ approaches either $0$ or $\infty$, the arcs described by the pair of equations \eqref{eqn:t slice} diminish in length. As $t$ approaches $0$, this forces the branch points $(α,β)$ towards $S_0 := (1,-1)$, and likewise as $t$ approaches $\infty$ the branch points tend to $S_\infty := (-1,1)$. These two points are common to every $\bar{\mathcal{A}_1(p)}$ (the closure of $\mathcal{A}_1(p)$), but are not part of any $\bar{\mathcal{A}_1}(p)$ as $S$ is not defined at either point. In the reverse direction for $(α,β) \in \bar{\mathcal{A}_1}(p)$, $α \approx \pm 1$ if and only if $β \approx \mp 1$.
+
+Hence, it is not possible to move $α$ from the upper unit circle $\S^1_+$ to the lower unit circle $\S^1_-$ through $\bar{\mathcal{A}_1}(p)$ while keeping $α$ in the unit circle and $β$ in the open unit disc. Thus the subset of $\mathcal{E}(p)$ where $α\in \S^1$ and $β \in D$ is divided into two faces, where $α$ is in the upper and lower halves of the unit circle. Likewise there is are two face where $α$ is in the open unit disc and $β$ lies in the upper or lower unit circle respectively.
+
+Therefore the space $\bar{\mathcal{A}_1}(p)$ on which the function $S$ is constant is an American football shape. It is an elongated ball with sharp points $S_0$ and $S_\infty$ at either end. These two endpoints are joined by four \emph{edges} where both $α$ and $β$ lie in either the upper or lower unit circles. Between the edges lie four \emph{faces} where only one branch point lies in the unit circle.
+
+On the interior boundary $\mathcal{D}$ of $\bar{\mathcal{A}_1}$ the branch points are equal: $α=β$. The intersection of this plane $α=β$ and $\bar{\mathcal{A}_1}(p)$ consists of points of the form $(α,α)$, where $α\in D$ is constrained by
+\[
+p = \frac{\abs{1-α}^2}{\abs{1+α}^2}.
+\label{eqn:mathcal D slice}
+\]
+For each value of $p$ this is the equation of an arc in the disc. Therefore $\mathcal{D}(p)$ is a line through $\bar{\mathcal{A}_1}(p)$. The two endpoints of $\mathcal{D}(p)$ are points in $\S^1_+ \times \S^1_+$ and $\S^1_- \times \S^1_-$ respectively. One can imagine the interior boundary as an axis that run between two edges on the exterior boundary $\mathcal{E}(p)$.
+
+
+
+
+
+
 
 
 
@@ -29,93 +65,145 @@ an arc. Though it reveals a counterintuitive aspect of our naming convention, th
 \section{Interior Boundary}
 \label{sec:Interior}
 
-We shall examine first the moduli space on the interior boundary, which we shall call $Δ$. It was already mentioned, but recall the definition of $k$ (eqn \eqref{eqn:def_k}),
+We shall examine first the moduli space on the interior boundary $\mathcal{D}$. It was already mentioned, but recall the definition of $k$ (eqn \eqref{eqn:def_k}),
 \[
 k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \]
 As $α\to β$, this tends to $1$. In the coordinates $(p,k,u,v)$, we have fixed $p$ and $k=1$, so $Δ$ is covered by the two coordinates $u,v$. However, this space is one-dimensional, so these coordinates are providing a natural blowup of this space. To see why, consider that as $α\to β$, the branch point circle straightens to a line. The double point is therefore the intersection of the arc $Δ$ with the line joining $μ,ν$. There are many such lines that give the same intersection, representing the different directions that $α$ may approach $β$. The changing the positions of $μ,ν$ on the unit circle changes the relative positions of $\iu u,\iu v$ on the imaginary axis, so the locations of $u,v$ are recording the direction of approach in this limit. \todo{this is truly terrible}
 
-Let us compute the limits of the integrals (eqns \eqref{eqn:gamma_plus2}, \eqref{eqn:gamma_minus2}) as $k \to 1$. This is not trivial, because as $k\to 1$, $K(k) \to \infty$. We shall see however that the integrals remain finite, atleast in some places. Recall the inequality \eqref{eqn:K_bound}
+To find $\mathcal{S}_1(p)$ we must look at the level sets of the multi-valued function $T$. Recall from \eqref{eqn:def_T_0}, \eqref{eqn:gamma_plus2} and \eqref{eqn:gamma_minus2}
+\begin{align*}
+T_0 (α,β) &:= T(α,β,\symbf{γ}_+,\symbf{γ}_-) = \frac{1}{2π\iu} \bra{S(α,β) \int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P}, \\
+\int_{\symbf{γ}_+} Θ^P
+&= 4 E(k) F(\iu u;k) - 4 K(k) E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v}, \text{ and }\\
+\int_{\symbf{γ}_-} Θ^P
+&= 4 E(k) F(\iu v;k) - 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v},
+\end{align*}
+Let us compute the limit of $T_0$ as $k \to 1$. This is not trivial, because as $k\to 1$, $K(k) \to \infty$. We shall see however that the integrals remain finite, atleast in some places.
+
+\begin{lem}
+The limit as $k\to 1$ of the integral of $Θ^P$ over $\symbf{γ}_+$ is given by
+\[
+\lim_{k\to 1} \int_{\symbf{γ}_+} Θ^P
+= 4 \iu \atan u + 4\iu \lim_{k\to 1} K \frac{1+uv}{u-v}.
+\]
+
+\begin{proof}
+As $k \to 1$ the complete elliptic integral of the first kind $K(k)$ has a logarithmic singularity. Specifically we have the inequality
 \[
 \ln 4 \leq K + \frac{1}{2}\ln (1-k) + \frac{1}{2}\ln (1+k) \leq \frac{π}{2}.
+\tag{\ref{eqn:K_bound}}
 \]
-This shows that at $k=1$, $K$ has a logarthimic singularity. We now compute
+Our method for evaluating the above limit is to rewrite \eqref{eqn:gamma_plus2} as a sum of terms, most of which vanish. Observe that
 \begin{align*}
-\lim_{k\to 1} \int_{γ_+} Θ^2
-&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \Imag E(\iu u;k) - \frac{w(\iu u)}{u-v}\right] \\
-&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \bra{\Imag E(\iu u;k) - ku} + (ku - u) + \bra{u - \frac{1+u^2}{u-v}} + \frac{1+u^2 - w(\iu u)}{u-v}\right].
+4 K & E(\iu u;k) - 4\iu K \frac{w(\iu u)}{u-v}
+= 4 \iu K \left[ \Imag E(\iu u;k) - \frac{w(\iu u)}{u-v} \right] \\
+&= 4 \iu K \left[ \bra{\Imag E(\iu u;k) - ku} + (ku - u) + \bra{u - \frac{1+u^2}{u-v}} + \frac{1+u^2 - w(\iu u)}{u-v} \right].
 \end{align*}
-We have divided the limit calculation into five terms. We deal with them one at a time. First
+We can now compute the limit of each grouping. In the first grouping we recognise from Definition \ref{defn:F0 and E0} that $\Imag E(\iu u;k) - ku$ is the function $E_0(u; k)$. This function is bounded independent of $u$ by
+\[
+- (K' - E') \leq E_0(u; k) \leq K' - E',
+\tag{\ref{eqn:F0_E0_uniform_bounds}}
+\]
+where recall $K' = K(\sqrt{1-k^2})$ and $E' = E(\sqrt{1-k^2})$ are elliptic integrals of the complementary modulus. It therefore follows
+\begin{align*}
+\lim_{k \to 1} \abs{K(k) \bra{\Imag E(\iu u;k) - ku}}
+&\leq \lim_{k \to 1} K(K'-E') \\
+&= \lim_{k \to 1} -\frac{π}{2} + K'E \\
+% &= -\frac{π}{2} + \frac{π}{2}\times 1 \\
+&= 0,
+\end{align*}
+where we used Legendre's relation $KE' + K'E - KK' = \frac{1}{2}π$ in the second step. By applying inequality \eqref{eqn:K_bound} the second grouping is also zero,
+\begin{align*}
+(\ln 4)(k-1)u &\leq (k-1)u K + \frac{1}{2}(k-1)u\ln (1-k) + \frac{1}{2}(k-1)u\ln (1+k) \leq \frac{π}{2}(k-1)u \\
+0 &\leq u\lim_{k \to 1} (k-1)K + 0 + 0 \leq 0,
+\end{align*}
+using the elementary limit $x \ln x \to 0$ as $x \to 0^+$. Finally, the fourth grouping is dispatched by the following manipulation:
+\begin{align*}
+\lim_{k\to 1} K \frac{1+u^2 - w(\iu u)}{u-v}
+&= \lim_{k\to 1} 4 \iu K \frac{(1+u^2)\bra{ (1+u^2) - (1+k^2u^2)} }{(u-v)(1+u^2 + w(\iu u))} \\
+&= \lim_{k\to 1} 4 \iu K (1 - k^2) \frac{(1+u^2)u^2}{(u-v)(1+u^2 + w(\iu u))} \\
+&= 0.
+\end{align*}
+The resuses the fact that $(k-1) K$ vanishes as $k$ approaches $1$, which was established above.
+
+Combining these three parts shows that
+\begin{align*}
+\lim_{k\to 1} \int_{\symbf{γ}_+} Θ^2
+&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \Imag E(\iu u;k) - \frac{w(\iu u)}{u-v}\right] \\
+&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ u - \frac{1+u^2}{u-v}\right].
+\end{align*}
+It remains to compute the first limit. But $E(k)$ is well defined at $k=1$, where it takes the value $1$, so by Lemma \ref{lem:klimit} we have
 \[
 \lim_{k\to 1} 4 E(k) F(\iu u;k) = 4 \times 1 \times \iu \atan u
 \]
-by lemma \ref{lem:klimit}. Next, we recognise $\Imag E(\iu u;k) - ku$ as the function $E_0(u; k)$, which is bounded in magnitude by $K'-E'$. So
-\[
-\lim_{k \to 1} \abs{K(k) E_0(u;k)}
-\leq \lim_{k \to 1} K(K'-E')
-= \lim_{k \to 1} -\frac{π}{2} + K'E
-= -\frac{π}{2} + \frac{π}{2}\times 1 = 0,
-\]
-where we used Legendre's relation in the second step. The next term is likewise zero, coming from the inequality on $K$
-\begin{align*}
-\ln 4 u(k-1) &\leq (K + \frac{1}{2}\ln (1-k) + \frac{1}{2}\ln (1+k))u(k-1) \leq \frac{π}{2} u(k-1) \\
-0 &\leq \lim_{k\to 1} K u(k-1) + 0 \leq 0.
-\end{align*}
-We will skipping to the last term
-\begin{align*}
-\lim_{k\to 1} 4 \iu K \frac{1+u^2 - w(\iu u)}{u-v}
-&= \lim_{k\to 1} 4 \iu K \frac{(1+u^2)\bra{ (1+u^2) - (1+k^2u^2)} }{(u-v)(1+u^2 + w(\iu u))} \\
-&= \lim_{k\to 1} 4 \iu K (1 - k^2) \frac{(1+u^2)u^2}{(u-v)(1+u^2 + w(\iu u))} \\
-&=0.
-\end{align*}
-What remains is
+After rearranging the term on the right into a single fraction, we have demonstrated that
 \[
 \lim_{k\to 1} \int_{γ_+} Θ^2
-= 4 \iu \atan u + 4\iu \lim_{k\to 1} K \frac{1+uv}{u-v} .
+= 4 \iu \atan u + 4\iu \lim_{k\to 1} K \frac{1+uv}{u-v}.
 \]
-At this point we have played our hand in terms of using expressions of $k$ to cancel the singularity of $K$. Indeed, for most values of $u,v$ this limit will diverge. However, if that fraction we to tend to zero as $k$ went to one, then we could still arive at a finite value. Suppose that is tending to one very rapidly, say $k = 1 - \exp (-1/ε)$ for $ε \to 0$. Then if $u$ and $v$ are functions of $ε$ chosen such that for some constant $λ$
+\end{proof}
+\end{lem}
+
+In the same way, we have that
 \[
-\frac{1+uv}{u-v} = λε,
+\lim_{k\to 1} \int_{\symbf{γ}_-} Θ^2
+= 4 \iu \atan v - 4\iu \lim_{k \to 1} K \frac{1+uv}{u-v}.
+\]
+Together they show that the limit of the principal cut $T_0$ on $\bar{\mathcal{A}}_1(p)$ as $k$ tends to one is
+\begin{align*}
+π \lim_{k\to 1} T_0(p,k,u,v)
+&= p \bra {2 \atan v - 2 \lim_{k \to 1} K \frac{1+uv}{u-v} } - \bra{ 2 \atan u + 2 \lim_{k\to 1} K \frac{1+uv}{u-v} } \\
+&= 2p \atan v - 2 \atan u - 2(p+1) \lim_{k \to 1} K \frac{1+uv}{u-v}
+\end{align*}
+For most values of $u$ and $v$ this limit will diverge. This means that we can chose neighbourhoods of $(p,1,u,v)$ where the function $T_0$ is arbitrarily large. Therefore there are no paths in the space $\mathcal{S}_1(p)$ with such a point as its limit. Colloqically, it is not possible to deform spectral data into such a singular curve.
+
+However, if the fractional term were to tend to zero as $k$ went to one then it may still be possible to tend towards a finite value. As $K$ has a logarithmic singular, let us rescale $k$ so that $k$ tends to $1$ very rapidly. Set $k = 1 - \exp (-1/ε)$ for $ε \to 0$. Then treating $K$ as a function of $ε$, the inequality \eqref{eqn:K_bound} reads
+\[
+\ln 4 \leq K\bra{1 - \exp (-1/ε)} - \frac{1}{2}\frac{1}{ε} + \frac{1}{2}\ln \bra{2 - \exp (-1/ε)} \leq \frac{π}{2},
+\]
+so that $K \sim \frac{1}{2} ε^{-1}$ to first order. Then if we choose $u$ and $v$ to be functions of $ε$ such that for some constant $C$
+\[
+\frac{1+uv}{u-v} = Cε,
 \]
 then
 \[
-lim_{k \to 1} K \frac{1+uv}{u-v}
-= 2λ lim_{ε \to 0} Kε
-= \frac{λ}{2}.
+\lim_{k \to 1} K \frac{1+uv}{u-v}
+= C \lim_{ε \to 0} Kε
+= \frac{C}{2}.
 \]
 So
 \[
-\lim_{k\to 1} \int_{γ_+} Θ^2
-= 4 \iu \atan u + 2\iu λ.
+π \lim_{ε\to 0} T_0(p,k(ε),u(ε),v(ε))
+= 2p \atan v(0) - 2 \atan u(0) - (p+1) C.
 \]
-The same approach works for the $γ_-$ integral,
-\[
-\lim_{k\to 1} \int_{γ_-} Θ^2
-= 4 \iu \atan v - 2\iu λ.
-\]
-Note that the choice of $u,v$ forces $1+uv \to 0$, so that in the limit we have that $v = -u^{-1}$. So together we have, for $u>0$,
-\[
-π T_0 = -πp + 2(p-1) \atan u + (p+1)λ.
-\]
-Things are particularly clear if we move the the universal cover, where $u = \tan (\tilde{u}/2)$
-\[
-π \tilde{T} = (p-1) \tilde{u} + (p+1)λ.
-\]
-In the universal cover, the realtion $uv=-1$ becomes $\tilde{v} = π + \tilde{u}$. The level surfaces of constant $\tilde{T} = q$ are clearly straight lines of $\tilde{u}$ and $λ$,
-\[
-λ = \frac{1-p}{1+p}\tilde{u} + π \frac{q}{1+p}.
-\]
-One interpretation of this is that as $\tilde{u}$ increases by $2π$, we have circled the line $k=1$, and the steepness at which the moduli space approaches this point, governed by $λ$, has increased. So as we repeated wrap around the interior boundary, the moduli space swirls around, accumulating at a single point. This justifies our earlier assertion that the moduli space is similiar to a helicoid.
-
-Where is this point? Looking back at the equations that determine $z_0$, we have eqn \eqref{eqn:z_0_circle}
+Note that any such choice of $u$ and $v$ as functions of $ε$ forces $1+uv \to 0$, so that in the limit we have that $v(0) = -u(0)^{-1}$. One naturally asks to which points $(α,α) \in \mathcal{D}(p)$ these points $(p,1,u,-u^{-1})$ correspond. Recall that the point $z_0$ was essential to computing the transistion from $(p,k,u,v)$ to $(α,β)$. Under the map $f$ that took a marked curve to its Legendre normal form, $z_0$ was the image of $0$. Looking back at the equations that determine $z_0$, we have \eqref{eqn:z_0_circle} for $z_0 = x + \iu y$
 \[
 x^2 + y^2 = y(u+v) - uv.
 \]
-Knowing that $uv \to -1$, means that $\pm 1$ lie on this circle, the circle through $\iu u, \iu v, z_0, -\bar{z}_0$. Transforming by $f^{-1}$, that in turn means that $α$ lies on the real axis. Using the condition for $p$, we have explicitly that
+Knowing that $uv = -1$ implies that $\pm 1 \in C$ lies on this circle. We also know that this is the circle through $\iu u, \iu v, z_0$ and $-\bar{z}_0$. Transforming by $f^{-1}$ send $1$ to $α$, $\iu u$ to $1$, $\iu v$ to $0$ and $z_0$ to $0$. Therefore the image of this circle is the real line, and thus $α\in \R$. Using the condition that the value of $S$ is fixed, we may solve \eqref{eqn:mathcal D slice} explicitly to derive
 \[
-α = \frac{1 - \sqrt{p}}{1+\sqrt{p}},
+α = \frac{1 - \sqrt{p}}{1+\sqrt{p}}.
 \]
-which tends to $1$ as $p\to 0$, and $-1$ as $p \to \infty$. This is somewhat suprising. Hueristically, $\mathcal{S}(p)$ is a dense collection of surfaces in the $3$-space $\mathcal{C}(p)$, and it would make sense for the intersection to therefore be a dense collection of points in the arc $Δ$. Instead, there is only a single point that all the surfaces gather upon.
+We see then that the points $\Set{(p,1,u,-u^{-1}) }{u \in \R}$ blow-down to a single point in $\mathcal{D}(p)$. This should be a suprise if we consider the following hueristic. The subset $\mathcal{S}_1(p)$ is a dense collection of surfaces in the $3$-space $\mathcal{C}_1(p)$. Generically, each surface should intersect the line $\mathcal{D}(p)$ at discrete points. One may have anticipated then that limit of points in $\mathcal{D}(p)$ of paths in $\mathcal{S}_1(p)$ would be a dense collection of points in the line $\mathcal{D}(p)$. Instead, there is only a single point that deformations may tend towards.
+
+%
+%
+% We can say more about the structure of the moduli space in a neighbourhood of $\mathcal{D}(p)$ using \eqref{}. The parameters $(u,C)$ and $(u',C)$, for $u' = u^{-1}$, may be interpreted as coordinates on a cylinder, which is a blow-up of the point of $\mathcal{D}(p)$ found above where the limit $T_0$ is finite. The structure is particularly clear if we move the the universal cover, given by Lemma \ref{}. In particular $u = \tan (\tilde{u}/2)$ and $v = \tan (\tilde{v}/2)$ and hence the relation $uv=-1$ becomes $\tilde{v} = π + \tilde{u}$. Then using \eqref{} to lift $T_0$ to the function $\tilde{T}$, we have
+% \[
+% π \tilde{T}(p,1,\tilde{u},\tilde{u} + π) = (p-1) \tilde{u} - (p+1)C + pπ.
+% \]
+% We now have coordinates $(\tilde{u},C) \in \R^2$ on the universal cover of the cylinder. The level surfaces of constant $\tilde{T} = q$ are clearly straight lines of $\tilde{u}$ and $C$,
+% \[
+% C = \frac{1-p}{1+p}\tilde{u} - π \frac{q-p}{1+p}.
+% \]
+% Under the group $\mathcal{G} = \z\langle \tilde{λ} \rangle$ of covering transformations of the universal cover $\mathcal{\tilde{C}}_1$ over $\mathcal{C}_1$, we have seen for $k \approx 1$ that $\tilde{λ}$ fixes $p$, acts on $\tilde{u}$ by a translation by $π$, and increases $q$ by $p-1$. Therefore its effect on $C$ is
+% \[
+% \tilde{λ} : C \mapsto \frac{1-p}{1+p}(\tilde{u} + π) - π \frac{q + (p-1) - p}{1+p} = C
+% \]
+%
+% One interpretation of this is that as $\tilde{u}$ increases by $2π$, we have circled the line $k=1$, and the steepness at which the moduli space approaches this point, governed by $λ$, has increased. So as we repeated wrap around the interior boundary, the moduli space swirls around, accumulating at a single point. This justifies our earlier assertion that the moduli space is similiar to a helicoid.
+
 
 
 

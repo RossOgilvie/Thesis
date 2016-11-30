@@ -1,6 +1,7 @@
 %!TEX root = thesis.tex
 
 \chapter{The Genus One Moduli Space}
+\label{chp:Genus One}
 % \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
 % \epigraph{Perfection is a journey, not a destination -- Me}
 
@@ -807,7 +808,7 @@ We may make these replacements in \eqref{eqn:gamma_plus} and \eqref{eqn:gamma_mi
 \labelthis{eqn:gamma_plus2}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \int_{\symbf{γ}_-} Θ^P
-= 4 E(k) F(\iu v;k) &- 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v},\labelthis{eqn:gamma_minus2}
+= 4 E(k) F(\iu v;k) &- 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v}, \labelthis{eqn:gamma_minus2}
 \end{align*}
 and hence by the equation \eqref{eqn:def_T} we finally arrive at
 \begin{align*}
@@ -1056,7 +1057,7 @@ Then
 % - 4 K \left[p\left\{\frac{w(\iu v)}{u-v} + kv \right\}
 % + \left\{\frac{w(\iu u)}{u-v} - ku \right\} \right] \\
 %%%%%%%%%%%%%%%%%%%%%%%%
-&= T_0(p,k,u,v) + 4p \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{v}) \\
+&= 2π T_0(p,k,u,v) + 4p \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{v}) \\
 &\qquad - 4 \left[ 2EK' - 2K(K'-E') \right]\Wind(\tilde{u}) \\
 %%%%%%%%%%%%%%%%%%%%%%%%
 \tilde{T}(p,k,\tilde{u},\tilde{v})
@@ -1398,7 +1399,19 @@ The final step was to push these level sets back down to $\mathcal{C}_1$. To do 
 
 We saw in the introduction to this chapter that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'. This idea is investigated further in the following chapter by considering the limit case as $k \to 1$.
 
-PICTURES OF HELICES\todo{}
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p1.png}
+    \caption{Select components of the moduli space $\mathcal{S}_1(1)$, namely those components on which $T$ is $-3$, $-1$, $0$, $1$, or $3$. The component on which $T$ is $0$ is the disc in the middle.}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+    \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p05.png}
+    \caption{One component of the moduli space $\mathcal{S}_1(0.5)$. Notice that the ribbon is wrapped in a left handed direction around a central axis.}
+\end{center}
+\end{figure}
 
 
 
