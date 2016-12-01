@@ -9,7 +9,7 @@ The aim of this chapter is describe the topology of the moduli space of spectral
 We will construct the universal cover $\mathcal{\tilde{C}}_1$ of $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as the quotient of a certain subspace $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{C}}_1$ by the group of covering transformations.
 Moreover, we will prove that the path connected components of $\mathcal{S}_1$ are indexed by two rational numbers $p > 0$ and $q$. For $p\neq 1$ the components are ribbons $(0,1)\times \R$, whereas for $p=1$ the components are annuli.
 
-The key to describing the topology of $\mathcal{S}_1$ lies in the construction of two coordinate charts covering $\mathcal{\tilde{C}}_1$ such that the group of covering transformations acts as translations and such that the preimage $\mathcal{\tilde{S}}_1$ of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$ is the subset where certain coordinates take rational values. To accomplish the first goal, we will construct a global coordinate chart on $\mathcal{\tilde{C}}_1$,
+The key to describing the topology of $\mathcal{S}_1$ lies in the construction of coordinate charts for subspaces of $\mathcal{\tilde{C}}_1$ with the dual properties that the group of covering transformations acts as translations and also that the preimage $\mathcal{\tilde{S}}_1$ of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$ is the subset where certain coordinates take rational values. To accomplish the first goal, we will construct a global coordinate chart on $\mathcal{\tilde{C}}_1$,
 \[
 \mathcal{\tilde{C}}_1 =
 \Set{ \bra{p,k,\tilde{U},\tilde{V}} \in \R^+ \times (0,1) \times \R \times \R }
@@ -24,30 +24,31 @@ The group $\mathcal{G}$ of covering transformations is proved to be $\Z\langle \
 \]
 Therefore we see that $\mathcal{C}_1 = \mathcal{\tilde{C}}_1 / \mathcal{G}$ is the product of $\R^+\times(0,1)$ and a cylinder.
 
-Within $\mathcal{\tilde{C}}_1$ we must characterise $\mathcal{\tilde{S}}_1$. We will produce two functions $S$ and $\tilde{T}$ on $\mathcal{\tilde{C}}_1$, with ranges $\R^+$ and $\R$ respectively, such that a marked curve belongs to $\mathcal{\tilde{S}}_1$ precisely when $S$ and $\tilde{T}$ are rationally valued.
+Within $\mathcal{\tilde{C}}_1$ we must characterise $\mathcal{\tilde{S}}_1$. We will produce two functions $S$ and $\tilde{T}$ on $\mathcal{\tilde{C}}_1$, with ranges $\R^+$ and $\R$ respectively, such that a marked curve belongs to $\mathcal{\tilde{S}}_1$ precisely when both $S$ and $\tilde{T}$ are rationally valued.
 In fact, the first coordinate introduced by \eqref{eqn:intro coords} is already given by the function $S$.
 If $\mathcal{\tilde{C}}_1(p,q)$ is the level set $S = p$ and $\tilde{T} = q$ in $\mathcal{\tilde{C}}_1$, the space $\mathcal{\tilde{S}}_1$ is the union
 \[
 \mathcal{\tilde{S}}_1 =  \coprod_{p \in \Q^+, q\in\Q} \mathcal{\tilde{C}}_1(p,q).
 \]
-Crucially, the value of $S$ is fixed by the action of $\tilde{λ}$ and precomposing $\tilde{T}$ with $\tilde{λ}$ increases its value by $S-1$ (Lemma \ref{lem:T shift}). Thus $\tilde{λ}$ maps $\mathcal{\tilde{C}}_1(p,q)$ to $\mathcal{\tilde{C}}_1(p,q + p-1)$. If $p$ and $q$ are rational, so too is $q + (p-1)$ and hence the group $\mathcal{G} = \Z\langle \tilde{λ}\rangle$ of covering transformations restricts to give a group action on $\mathcal{\tilde{S}}_1$.
+Crucially, the value of $S$ is fixed by the action of $\tilde{λ}$ and precomposing $\tilde{T}$ with $\tilde{λ}$ increases its value by $S-1$ (Lemma \ref{lem:T shift}). Thus $\tilde{λ}$ maps $\mathcal{\tilde{C}}_1(p,q)$ to $\mathcal{\tilde{C}}_1(p,q + p-1)$. If $p$ and $q$ are rational, so too is $q + (p-1)$ and hence the group $\mathcal{G} = \Z\langle \tilde{λ}\rangle$ of covering transformations restricts to give a group action on $\mathcal{\tilde{S}}_1$. We can therefore conclude that $\mathcal{S}_1 \diffeo \mathcal{\tilde{S}}_1 / \mathcal{G}$.
 
 DIAGRAM of the strip in the plane, labelled with the translation. Have the level sets for $p > 1, p=1, p<1$ drawn in, approximtely correctly (ie with a wiggle and the correct shift) so you can see the shifting in action
 
-In order to produce a coordinate charts where both goals are met, that is $\tilde{λ}$ acts as translation and $\mathcal{\tilde{S}}_1$ is the union of coordinate planes, in Lemma \ref{lem:T_graph} we divide $\mathcal{\tilde{C}}_1$ into two pieces and show on each piece there is a coordinate chart where $q=\tilde{T}$ may be used as a coordinate in place of $\tilde{U}$ or $\tilde{V}$. Specifically there exists some $ε >0$ such that the subset of $\mathcal{\tilde{C}}_1$ where $p < 1 + ε$ is parametrised by
+As $p$ is rational it is constant along any path in $\mathcal{\tilde{S}}_1$. We may therefore restrict ourselves to the submanifolds $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
+Further, the covering transformations do not change $p$ so these are $\mathcal{G}$-invariant submanifolds. The three remaining coordinates $(k,\tilde{U},\tilde{V})$ form a global coordinate chart for each $\mathcal{\tilde{C}}_1(p)$. However, in order to produce a coordinate chart where both goals are met, that is $\tilde{λ}$ acts as translation and $\mathcal{\tilde{S}}_1(p) := \mathcal{\tilde{S}}_1 \cap \mathcal{\tilde{C}}_1(p)$ is the union of coordinate planes, in Lemma \ref{lem:T_graph} we show that for each $p$ there is a coordinate chart where $q=\tilde{T}$ may be used as a coordinate in place of either $\tilde{U}$ or $\tilde{V}$. Specifically for $p \leq 1$,
 \[
-\left\{ \bra{p,q,k,\tilde{U}} \in (0,1+ε) \times \R \times (0,1) \times \R \right\}
+\left\{ \bra{q,k,\tilde{U}} \in \R \times (0,1) \times \R \right\}
 \]
-whereas the subset where $p > 1-ε$ is parametrised by
+is a coordinate chart covering $\mathcal{\tilde{C}}_1(p)$, whereas for $p \geq 1$ a coordinate chart covering $\mathcal{\tilde{C}}_1(p)$ is
 \[
-\left\{ \bra{p,q,k,\tilde{V}} \in (1-ε,\infty) \times \R \times (0,1) \times \R \right\}.
+\left\{ \bra{q,k,\tilde{V}} \in \R \times (0,1) \times \R \right\}.
 \]
 If we let $\tilde{X}$ stand for either $\tilde{U}$ or $\tilde{V}$ depending on the magnitude of $p$, then the action of $\tilde{λ}$ in each coordinate chart reads
 \[
 \tilde{λ} : \bra{p,q,k,\tilde{X}} \mapsto \bra{p,q + (p-1),k,\tilde{X} + π}.
 \]
-As the covering transformations do not change $p$, we may consider the quotient of the $\mathcal{G}$-invariant submanifold $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
-For $p\neq 1$ therefore, in Theorem \ref{thm:topology_curves} we have that
+
+The main result of the chapter takes the quotient of each of these submanifolds $\mathcal{\tilde{C}}_1(p)$ by the group of covering transformations $\mathcal{G}$. For $p\neq 1$, in Theorem \ref{thm:topology_curves} we have that
 \[
 \mathcal{C}_1(p)
 \diffeo \mathcal{\tilde{C}}_1(p) / \mathcal{G}
@@ -1400,17 +1401,27 @@ The final step was to push these level sets back down to $\mathcal{C}_1$. To do 
 We saw in the introduction to this chapter that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'. This idea is investigated further in the following chapter by considering the limit case as $k \to 1$.
 
 \begin{figure}
-\begin{center}
-    \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p1.png}
-    \caption{Select components of the moduli space $\mathcal{S}_1(1)$, namely those components on which $T$ is $-3$, $-1$, $0$, $1$, or $3$. The component on which $T$ is $0$ is the disc in the middle.}
-\end{center}
+    \begin{center}
+        \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p05.png}
+        \caption{One component of the moduli space $\mathcal{S}_1(0.5)$. Notice that the ribbon is wrapped in a left handed direction around a central axis.}
+        \label{fig:p05 plot}
+    \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
-    \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p05.png}
-    \caption{One component of the moduli space $\mathcal{S}_1(0.5)$. Notice that the ribbon is wrapped in a left handed direction around a central axis.}
+    \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p1.png}
+    \caption{Select components of the moduli space $\mathcal{S}_1(1)$, namely those components on which $T$ is $-3$, $-1$, $0$, $1$, or $3$. The component on which $T$ is $0$ is the disc in the middle.}
+    \label{fig:p1 plot}
 \end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p2.png}
+        \caption{One component of the moduli space $\mathcal{S}_1(2)$. Notice, contra Figure \ref{fig:p05 plot}, that the ribbon is wrapped in a right handed direction around a central axis.}
+        \label{fig:p2 plot}
+    \end{center}
 \end{figure}
 
 
