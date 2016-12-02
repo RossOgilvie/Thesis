@@ -5,11 +5,12 @@
 % \epigraph{All analytic functions are alike; each non-analytic function is non-analytic in its own way.}
 % \epigraph{Perfection is a journey, not a destination -- Me}
 
-The aim of this chapter is describe the topology of the moduli space of spectral curves $\mathcal{S}_1$, which we consider as a subspace of $\mathcal{C}_1$, the space of marked curves.
+The aim of this chapter is describe the topology of the moduli space of spectral curves $\mathcal{S}_1$, which we consider as a subspace of the space of marked curves $\mathcal{C}_1$.
 We will construct the universal cover $\mathcal{\tilde{C}}_1$ of $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as the quotient of a certain subspace $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{C}}_1$ by the group of covering transformations.
-Moreover, we will prove that the path connected components of $\mathcal{S}_1$ are indexed by two rational numbers $p > 0$ and $q$. For $p\neq 1$ the components are ribbons $(0,1)\times \R$, whereas for $p=1$ the components are annuli.
+Recall that a deformation of spectral data is a defined to be a path in the moduli space.
+We will prove that the path connected components of $\mathcal{S}_1$ are indexed by two rational numbers $p > 0$ and $q$. For $p\neq 1$ the components are ribbons $(0,1)\times \R$, whereas for $p=1$ the components are annuli.
 
-The key to describing the topology of $\mathcal{S}_1$ lies in the construction of coordinate charts for subspaces of $\mathcal{\tilde{C}}_1$ with the dual properties that the group of covering transformations acts as translations and also that the preimage $\mathcal{\tilde{S}}_1$ of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$ is the subset where certain coordinates take rational values. To accomplish the first goal, we will construct a global coordinate chart on $\mathcal{\tilde{C}}_1$,
+The key to describing the topology of $\mathcal{S}_1$ lies in the construction of coordinate charts for subspaces of $\mathcal{\tilde{C}}_1$ with the dual properties that the group of covering transformations acts by translation and also that the components of the preimage $\mathcal{\tilde{S}}_1$ of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$ are the subsets where one of the coordinates takes rational values. To accomplish the first goal, we will construct a global coordinate chart on $\mathcal{\tilde{C}}_1$,
 \[
 \mathcal{\tilde{C}}_1 =
 \Set{ \bra{p,k,\tilde{U},\tilde{V}} \in \R^+ \times (0,1) \times \R \times \R }
@@ -34,8 +35,8 @@ Crucially, the value of $S$ is fixed by the action of $\tilde{λ}$ and precompos
 
 DIAGRAM of the strip in the plane, labelled with the translation. Have the level sets for $p > 1, p=1, p<1$ drawn in, approximtely correctly (ie with a wiggle and the correct shift) so you can see the shifting in action
 
-As $p$ is rational it is constant along any path in $\mathcal{\tilde{S}}_1$. We may therefore restrict ourselves to the submanifolds $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
-Further, the covering transformations do not change $p$ so these are $\mathcal{G}$-invariant submanifolds. The three remaining coordinates $(k,\tilde{U},\tilde{V})$ form a global coordinate chart for each $\mathcal{\tilde{C}}_1(p)$. However, in order to produce a coordinate chart where both goals are met, that is $\tilde{λ}$ acts as translation and $\mathcal{\tilde{S}}_1(p) := \mathcal{\tilde{S}}_1 \cap \mathcal{\tilde{C}}_1(p)$ is the union of coordinate planes, in Lemma \ref{lem:T_graph} we show that for each $p$ there is a coordinate chart where $q=\tilde{T}$ may be used as a coordinate in place of either $\tilde{U}$ or $\tilde{V}$. Specifically for $p \leq 1$,
+As $p$ is rational it is constant along any path in $\mathcal{\tilde{S}}_1$. When working with the path connected components of $\mathcal{\tilde{S}}_1$ we may therefore restrict ourselves to the submanifolds $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
+Further, the covering transformations do not change $p$ so these submanifolds are $\mathcal{G}$-invariant. The three remaining coordinates $(k,\tilde{U},\tilde{V})$ form a global coordinate chart for each $\mathcal{\tilde{C}}_1(p)$. However, in order to produce a coordinate chart where both goals are met, that is $\tilde{λ}$ acts as translation and $\mathcal{\tilde{S}}_1(p) := \mathcal{\tilde{S}}_1 \cap \mathcal{\tilde{C}}_1(p)$ is the union of coordinate planes, in Lemma \ref{lem:T_graph} we show that for each $p$ there is a coordinate chart where $q=\tilde{T}$ may be used as a coordinate in place of either $\tilde{U}$ or $\tilde{V}$. Specifically for $p \leq 1$,
 \[
 \left\{ \bra{q,k,\tilde{U}} \in \R \times (0,1) \times \R \right\}
 \]
@@ -43,7 +44,7 @@ is a coordinate chart covering $\mathcal{\tilde{C}}_1(p)$, whereas for $p \geq 1
 \[
 \left\{ \bra{q,k,\tilde{V}} \in \R \times (0,1) \times \R \right\}.
 \]
-If we let $\tilde{X}$ stand for either $\tilde{U}$ or $\tilde{V}$ depending on the magnitude of $p$, then the action of $\tilde{λ}$ in each coordinate chart reads
+This shows that the above union of $\mathcal{\tilde{C}}_1(p,q)$ was a deomposition of $\mathcal{\tilde{S}}_1$ into path connected components. If we let $\tilde{X}$ stand for either $\tilde{U}$ or $\tilde{V}$ depending on the magnitude of $p$, then the action of $\tilde{λ}$ in each coordinate chart reads
 \[
 \tilde{λ} : \bra{p,q,k,\tilde{X}} \mapsto \bra{p,q + (p-1),k,\tilde{X} + π}.
 \]

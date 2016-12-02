@@ -3,58 +3,56 @@
 \chapter{The Boundary of the Moduli Space}
 \label{chp:Moduli Boundary}
 
-Throughout this thesis we have made the assumption that the spectral curves are non-singular. In this chapter we examine two different limiting cases of $\mathcal{S}_1$ as the spectral curves develop nodal singularities.
-In the previous chapter, we proved that $\mathcal{S}_1$ was composed of ribbons $(0,1)\times \R$ and annuli $(0,1) \times \S^1$, where the $(0,1)$ factor is given by the coordinate $k$. The two boundaries of the moduli space $\mathcal{S}_1$ that we will consider are $k=0$ and $1$.
+Throughout this thesis we have restricted ourselves to the study of non-singular spectral curves. In this chapter we examine two different limiting cases of $\mathcal{S}_1$ in which the spectral curves develop nodal singularities.
+In the previous chapter, we proved that $\mathcal{S}_1$ was composed of ribbons $(0,1)\times \R$ and annuli $(0,1) \times \S^1$ where the $(0,1)$ factor is given by the coordinate $k$. We will consider the limits as $k \to 0$ and $k \to 1$ as the two boundaries of the moduli space $\mathcal{S}_1$. This is the appropriate notion of boundary for this space for two reasons. Firstly, we are interested in deformations which are paths in the moduli space so it is natural to study limits along a path in $\mathcal{S}_1$, and secondly $\mathcal{S}_1$ is dense in the space of marked curves so the usual topological definition of boundary is trivial.
 
-We will show that in the case corresponding to $k \to 0$ that we can identify the limit of a path in $\mathcal{S}_1$ with a genus zero spectral curve in $\mathcal{S}_0$, by normalisation of the singular curve. Further, over these paths in $\mathcal{S}_1$ the limits of spectral data of $\mathcal{M}_1$ is well-defined, and we may pull-back the differentials to obtain spectral data in $\mathcal{M}_0$. Finally from Figures \ref{fig:p05 plot} and \ref{fig:p2 plot} we can see that the ouside boundary 'spirals' around the intersection the axis and the edge of the picture. We will prove this observation to be true generally.
+We will show that in the case corresponding to $k \to 0$, which we shall call the exterior boundary, that we can identify the limit of a path in $\mathcal{S}_1$ with a genus zero spectral curve in $\mathcal{S}_0$ by normalisation of the singular curve. Further, over these paths in $\mathcal{S}_1$ the limits of spectral data $(Σ,Θ^1,Θ^2) \in \mathcal{M}_1$ are well-defined, and we may pull-back the differentials to the normalisation to obtain spectral data in $\mathcal{M}_0$. Finally from Figures \ref{fig:p05 plot} and \ref{fig:p2 plot}, which each depict a single component of $\mathcal{S}_1$, we can see that the exterior edge `spirals' towards the tip of the central axis. We will prove this observation to be true generally.
 
-On the other hand, in the case corresponding to $k \to 1$, the spectral curves tend to a single nodal curve determined by the value of the function $S$, defined by \eqref{eqn:def_S}. This point is the vertex of the conical screw, which is especially visible in Figure \ref{fig:p1 plot}. The limit of spectral data is not well-defined as $k \to 1$.
+On the other hand, in the case corresponding to $k \to 1$ which we shall call the interior boundary the spectral curves of each path connected component may only tend to a particular nodal curve. This curve is determined by the value of the function $S$, defined by \eqref{eqn:def_S}, which is constant on each component. This nodal curve corresponds to the vertex of the conical spiral, which is especially visible at the centre of Figure \ref{fig:p1 plot}. The limit of spectral data is not well-defined as $k \to 1$, so there is no analogous interpretation of these limits in $\mathcal{M}_1$.
 
-Recall the methodology of Chapter \ref{chp:Genus One} where we expended our efforts primarily in studying the topology of the space $\mathcal{S}_1$ of spectral curves and then secondarily showed that all spectral data on a curve may be constructed from a lattice of differentials.
-We adopt a parallel approach in this chapter, with our focus on determining how the space $\mathcal{S}_1$ of spectral curves behaves as a subset of the space $\mathcal{C}_1$ of genus one marked curves at the boundary of $\mathcal{C}_1$. This will allow us to prove some of the structure visible in the computer plots of .
-We recall that $\mathcal{S}_1$ is the subset of $\mathcal{C}_1$ where function $S$ and multi-valued function $T$ take rational values. An essential part of this chapter is to compute the limits of these functions.
+Recall the methodology of Chapter \ref{chp:Genus One} where we expended our efforts primarily in studying the topology of the space $\mathcal{S}_1$ of spectral curves and then secondarily showed how to construct all spectral data on a curve from a lattice of differentials.
+We adopt a parallel approach in this chapter, with our focus on determining the behaviour of the space $\mathcal{S}_1$ of spectral curves as a subset of the space $\mathcal{C}_1$ of genus one marked curves at the boundary of $\mathcal{C}_1$. We recall that $\mathcal{S}_1$ is the subset of $\mathcal{C}_1$ where the function $S$ and the multi-valued function $T$ take rational values. An essential part of this chapter is to compute the limits of these functions. We also compute the limits of the basis $Θ^E$ and $Θ^P$ of the real vector space of differentials with imaginary periods, from which the results about spectral data will follow.
 
-The boundary of the space $\mathcal{C}_1$ can be decomposed into two pieces,, TODO corresponding the two limits of $k$. We shall refer to the limit as $k \to 0$ as the exterior boundary. Points we have curves with one or two nodal singularities over the unit circle. We will show that these curve correspond to curve of $\mathcal{S}_0$, that this limit of spectral data on a genus one curve is spectral data on a genus zero curve. On the interior piece we have the curves with a node inside the unit disc (by the reality condition there must be a node outside the unit disc also). The moduli space $\mathcal{S}_1$ acculumates on this boundary, but the spectral data does not have a well-defined limit. Where the boundary of the interior piece intersects the exterior piece corresponds to a curve with a tacnode over the unit circle, in other words its equation is $η^2 = \bar{ν}^2(ζ-ν)^4$ for $ν \in \S^1$. We will see that the boundary of the moduli space appears to encircle these points.
-
-Recall that in order to work with the space of marked curve we introduced a covering parameter space $\mathcal{A}_1 = \{ (α,β) \in D\times D \vert α \neq β \}$. The two points $α$ and $β$ in the unit disc correspond to the branch points of the marked curve. Let $\bar{\mathcal{A}_1}$ be the closure of $\mathcal{A}_1$ in $\bar{D} \times\bar{D}$, the product of two closed discs. We decompose the boundary $\partial \mathcal{A}_1 = \bar{\mathcal{A}_1} \setminus \mathcal{A}_1$ into the exterior piece,
+Recall that in order to work with the space of marked curve we introduced a covering parameter space $\mathcal{A}_1 = \{ (α,β) \in D\times D \,\vert\, α \neq β \}$. The two points $α$ and $β$ correspond to the branch points of the marked curve that lie within the unit disc. Let $\bar{\mathcal{A}_1}$ be the closure of $\mathcal{A}_1$ in $\bar{D} \times\bar{D}$, the product of two closed discs. The exterior part of the boundary $\partial \mathcal{A}_1 = \bar{\mathcal{A}_1} \setminus \mathcal{A}_1$ is
 \[
 \mathcal{E} :=
 \big\{ (α,β) \in \S^1 \times \bar{D} \big\}
 \cup
-\left\{ (α,β) \in \bar{D} \times \S^1 \right\},
+\left\{ (α,β) \in \bar{D} \times \S^1 \right\}.
 \]
-and the interior, diagonal piece,
+These points correspond to curves with one or two nodal singularities over the unit circle. The interior part of $\partial \mathcal{A}_1$ is
 \[
 \mathcal{D} :=
 \left\{ (α,α) \in D \times D \right\}.
 \]
+Here we have curves with a node inside the unit disc (and by the reality condition there is a node outside the unit disc too). Where the closure of the interior boundary intersects the exterior boundary corresponds to curves with a tacnode over the unit circle, in other words their equations are $η^2 = \bar{ν}^2(ζ-ν)^4$ for some $ν \in \S^1$.
 
 On $\mathcal{A}_1$ we defined a function $S$,
 \[
 S(α,β) := \frac{ \abs {1-α} \abs{1-β}}{ \abs{1+α}\abs{1+β}},
 \tag{\ref{eqn:def_S}}
 \]
-such that a marked curve $Σ(α,β)$ could only be a spectral curve if $S(α,β)$ was rational. It follows that the value of $S$ must be fixed during a deformation. We will therefore focus on the subsets where $S = p$ is fixed, which we notate with a parenthetical $p$ (for example, $\mathcal{A}_1(p)$). We can see that $\mathcal{A}_1(p)$ is topologically a $3$-ball with a line through it removed. For any value of $t \in \R^+$, considered the subset of the space $(α,β)\in D^2$ defined by the pair of equations
+such that a marked curve $Σ(α,β)$ could only be a spectral curve if $S(α,β)$ was rational. It follows that the value of $S$ must be fixed during a deformation. We will therefore focus on the subsets where $S = p$ is fixed, which we notate with a parenthetical $p$, for example $\mathcal{A}_1(p)$. We can see that $\mathcal{A}_1(p)$ is topologically a $3$-ball with a line through it removed by the following choice of parameters. For any value of $t \in \R^+$, consider the subset of the space $(α,β)\in D \times D$ defined by the pair of equations
 \[
 \sqrt{p}\, t := \frac{\abs{1-α}}{\abs{1+α}},
 \text{ and }
 \frac{\sqrt{p}}{t} = \frac{\abs{1-β}}{\abs{1+β}}.
 \labelthis{eqn:t slice}
 \]
-Each of these equations constrains the point $α$ or $β$ to an arc in the disc. The product of these two equations is just the definition of $S$. Hence each value of $t \in \R^+$ gives a distinct cross-section of $\mathcal{A}_1(p)$ and we have given each cross section as the product of two arcs. This shows how $\mathcal{A}_1(p)$ sits in a $3$-ball.
+Each of these equations constrains the point $α$ or $β$ to an arc in the disc. The product of these two equations is just the definition of $S$. Hence each value of $t \in \R^+$ gives a distinct cross-section of $\mathcal{A}_1(p)$ and each cross section is the product of two arcs. This shows how $\mathcal{A}_1(p)$ sits in a $3$-ball.
 
-Naïvely, we would expect that the exterior boundary $\mathcal{E}(p)$ of $\mathcal{A}_1(p)$ to be composed of two faces meeting along an edge. Each face should correspond to the points where just one of the branch points lies in the unit circle. For example, one face should correspond to the points of $\mathcal{E}(p)$ where $α \in \S^1$ and $β\in D$. Counting real degrees of freedom we have one from the choice of $α$, two from the choice of $β$, but loss one from the constraint $S = p$ for a total of two. The other face likewise should be where $β \in \S^1$ and $α \in D$. The edge would be the point where both branch point lie in the unit circle.
+Naïvely, we would expect that the exterior boundary $\mathcal{E}(p)$ of $\mathcal{A}_1(p)$ to be composed of two faces meeting along an edge. Each face should correspond to the points where just one of the branch points lies in the unit circle. For example, one face should correspond to the points of $\mathcal{E}(p)$ where $α \in \S^1$ and $β\in D$. Taking into account the constraint $S=p$, this subset is $2$-dimensional. The other face likewise should be where $β \in \S^1$ and $α \in D$. The edge would be the point where both branch points lie in the unit circle.
 
-Instead there are four faces. As $t$ approaches either $0$ or $\infty$, the arcs described by the pair of equations \eqref{eqn:t slice} diminish in length. As $t$ approaches $0$, this forces the branch points $(α,β)$ towards $S_0 := (1,-1)$, and likewise as $t$ approaches $\infty$ the branch points tend to $S_\infty := (-1,1)$. These two points are common to every $\bar{\mathcal{A}_1(p)}$ (the closure of $\mathcal{A}_1(p)$), but are not part of any $\bar{\mathcal{A}_1}(p)$ as $S$ is not defined at either point. In the reverse direction for $(α,β) \in \bar{\mathcal{A}_1}(p)$, $α \approx \pm 1$ if and only if $β \approx \mp 1$.
+Instead there are four faces, which can be seen directly from the above parameterisation of $\mathcal{A}_1(p)$. Each cross-section is a square. By varying $t$ we may say that the space $\bar{\mathcal{A}_1}(p)$ on which the function $S$ is constant is an American football shape. It is an elongated ball with endpoints at $t=0$ and $t=\infty$. These endpoints are joined by four \emph{edges} where both $α$ and $β$ lie in either the upper or lower unit circles. Between the edges lie four \emph{faces} where only one branch point lies in the unit circle. Inside the ball is the region where both brach points are in $\mathcal{D}$.
+
+Another approach to understanding the space is to consider $t$ as it approaches either $0$ or $\infty$. The arcs described by the pair of equations \eqref{eqn:t slice} then diminish in length. As $t$ approaches $0$, this forces the branch points $(α,β)$ towards $S_0 := (1,-1)$, and likewise as $t$ approaches $\infty$ the branch points tend to $S_\infty := (-1,1)$. These two points are common to every $\bar{\mathcal{A}_1(p)}$ (the closure of $\mathcal{A}_1(p)$), but are not part of any $\bar{\mathcal{A}_1}(p)$ as $S$ is not defined at either point. In the reverse direction for $(α,β) \in \bar{\mathcal{A}_1}(p)$ we have that $α \approx \pm 1$ if and only if $β \approx \mp 1$.
 
 Hence, it is not possible to move $α$ from the upper unit circle $\S^1_+$ to the lower unit circle $\S^1_-$ through $\bar{\mathcal{A}_1}(p)$ while keeping $α$ in the unit circle and $β$ in the open unit disc. Thus the subset of $\mathcal{E}(p)$ where $α\in \S^1$ and $β \in D$ is divided into two faces, where $α$ is in the upper and lower halves of the unit circle. Likewise there is are two face where $α$ is in the open unit disc and $β$ lies in the upper or lower unit circle respectively.
-
-Therefore the space $\bar{\mathcal{A}_1}(p)$ on which the function $S$ is constant is an American football shape. It is an elongated ball with sharp points $S_0$ and $S_\infty$ at either end. These two endpoints are joined by four \emph{edges} where both $α$ and $β$ lie in either the upper or lower unit circles. Between the edges lie four \emph{faces} where only one branch point lies in the unit circle.
 
 On the interior boundary $\mathcal{D}$ of $\bar{\mathcal{A}_1}$ the branch points are equal: $α=β$. The intersection of this plane $α=β$ and $\bar{\mathcal{A}_1}(p)$ consists of points of the form $(α,α)$, where $α\in D$ is constrained by
 \[
 p = \frac{\abs{1-α}^2}{\abs{1+α}^2}.
-\label{eqn:mathcal D slice}
+\labelthis{eqn:mathcal D slice}
 \]
 For each value of $p$ this is the equation of an arc in the disc. Therefore $\mathcal{D}(p)$ is a line through $\bar{\mathcal{A}_1}(p)$. The two endpoints of $\mathcal{D}(p)$ are points in $\S^1_+ \times \S^1_+$ and $\S^1_- \times \S^1_-$ respectively. One can imagine the interior boundary as an axis that run between two edges on the exterior boundary $\mathcal{E}(p)$.
 
@@ -70,13 +68,14 @@ For each value of $p$ this is the equation of an arc in the disc. Therefore $\ma
 \section{Interior Boundary}
 \label{sec:Interior}
 
-We shall examine first the moduli space on the interior boundary $\mathcal{D}$. It was already mentioned, but recall the definition of $k$ (eqn \eqref{eqn:def_k}),
-\[
-k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
-\]
-As $α\to β$, this tends to $1$. In the coordinates $(p,k,u,v)$, we have fixed $p$ and $k=1$, so $Δ$ is covered by the two coordinates $u,v$. However, this space is one-dimensional, so these coordinates are providing a natural blowup of this space. To see why, consider that as $α\to β$, the branch point circle straightens to a line. The double point is therefore the intersection of the arc $Δ$ with the line joining $μ,ν$. There are many such lines that give the same intersection, representing the different directions that $α$ may approach $β$. The changing the positions of $μ,ν$ on the unit circle changes the relative positions of $\iu u,\iu v$ on the imaginary axis, so the locations of $u,v$ are recording the direction of approach in this limit. \todo{this is truly terrible}
+We shall examine first the moduli space on the interior boundary $\mathcal{D}$. We would like to be able to reuse the formula for $T_0$ from the previous chapter so that we may compute the limit of its level sets by computing a suitable limit of the function itself. However, the coordinates $(p,k,u,v)$ on $\mathcal{C}_1$ provided by Lemma \ref{} do not extend to coordinates on its closure. Recall that these coordinates embed $\mathcal{C}_1$ into $\R^+ \times (0,1) \times \T^2$. We would be inclined to identify $\mathcal{D}(p)$ with the subset of $[0,\infty]\times [0,1] \times \mathbb{T}^2$ where $p$ is fixed and $k=1$.
+However this would imply that $\mathcal{D}(p)$ is parameterised by the two coordinates $(u,v)$ and so would be two dimensional. But $\mathcal{D}(p)$ is just one-dimensional.
 
-To find $\mathcal{S}_1(p)$ we must look at the level sets of the multi-valued function $T$. Recall from \eqref{eqn:def_T_0}, \eqref{eqn:gamma_plus2} and \eqref{eqn:gamma_minus2}
+Instead, these coordinates are describing a covering space of $\mathcal{D}(p)$ that we can consider as a blowup of this space. We may provide geometric motivation by working through the construction of the $(p,k,u,v)$ coordinates. The branch point circle was defined to be the circle that passes through $α,β,\cji{α}$ and $\cji{β}$. As $α \to β$, it straightens into a line, which is entirely determined by its intersections $μ$ and $ν$ with the unit circle. The point $α=β$ in $\mathcal{D}(p)$ is therefore the intersection of the arc given by \eqref{eqn:mathcal D slice} with the line joining $μ$ and $ν$. There are many such lines that give the same intersection, and each one encodes a different direction that $α$ may approach $β$.
+
+Recall that under the map $f$ which transforms the marked curve into Legendre normal form, the unit circle is mapped to the imaginary axis. The coordinates $u$ and $v$ are defined by $\iu u = f(1)$ and $\iu v = f(-1)$. Similarly, the points $μ$ and $ν$ are mapped to $0$ and $\infty$ respectively. By changing the positions of $μ$ and $ν$ on the unit circle one changes the positions of $\iu u$ and $\iu v$ on the imaginary axis. Conversely therefore $u$ and $v$ encode the positions of $μ$ and $ν$, and hence also the direction of approach of $α \to β$.
+
+To find $\mathcal{S}_1(p)$ we must look at the level sets of the multi-valued function $T$. We shall work with a principal branch cut $T_0$. Recall from \eqref{eqn:def_T_0}, \eqref{eqn:gamma_plus2} and \eqref{eqn:gamma_minus2}
 \begin{align*}
 T_0 (α,β) &:= T(α,β,\symbf{γ}_+,\symbf{γ}_-) = \frac{1}{2π\iu} \bra{S(α,β) \int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P}, \\
 \int_{\symbf{γ}_+} Θ^P
@@ -84,6 +83,7 @@ T_0 (α,β) &:= T(α,β,\symbf{γ}_+,\symbf{γ}_-) = \frac{1}{2π\iu} \bra{S(α,
 \int_{\symbf{γ}_-} Θ^P
 &= 4 E(k) F(\iu v;k) - 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v},
 \end{align*}
+where the paths $\symbf{γ}_+$ and $\symbf{γ}_-$ have been chosen acording to an algorthim described in \ref{}.
 Let us compute the limit of $T_0$ as $k \to 1$. This is not trivial, because as $k\to 1$, $K(k) \to \infty$. We shall see however that the integrals remain finite, atleast in some places.
 
 \begin{lem}
@@ -155,15 +155,15 @@ In the same way, we have that
 \lim_{k\to 1} \int_{\symbf{γ}_-} Θ^2
 = 4 \iu \atan v - 4\iu \lim_{k \to 1} K \frac{1+uv}{u-v}.
 \]
-Together they show that the limit of the principal cut $T_0$ on $\bar{\mathcal{A}}_1(p)$ as $k$ tends to one is
+Together they show that the limit of the principal cut $T_0$ as $k$ tends to one is
 \begin{align*}
 π \lim_{k\to 1} T_0(p,k,u,v)
 &= p \bra {2 \atan v - 2 \lim_{k \to 1} K \frac{1+uv}{u-v} } - \bra{ 2 \atan u + 2 \lim_{k\to 1} K \frac{1+uv}{u-v} } \\
 &= 2p \atan v - 2 \atan u - 2(p+1) \lim_{k \to 1} K \frac{1+uv}{u-v}
 \end{align*}
-For most values of $u$ and $v$ this limit will diverge. This means that we can chose neighbourhoods of $(p,1,u,v)$ where the function $T_0$ is arbitrarily large. Therefore there are no paths in the space $\mathcal{S}_1(p)$ with such a point as its limit. Colloqically, it is not possible to deform spectral data into such a singular curve.
+For most values of $u$ and $v$ this limit will diverge. This means that we can chose neighbourhoods of $(p,1,u,v)$ where the function $T_0$ is arbitrarily large. Therefore there are no paths in the space $\mathcal{S}_1(p)$ with such a point as their limit. Colloqically, it is not possible to deform spectral data into such a singular curve.
 
-However, if the fractional term were to tend to zero as $k$ went to one then it may still be possible to tend towards a finite value. As $K$ has a logarithmic singular, let us rescale $k$ so that $k$ tends to $1$ very rapidly. Set $k = 1 - \exp (-1/ε)$ for $ε \to 0$. Then treating $K$ as a function of $ε$, the inequality \eqref{eqn:K_bound} reads
+However, if the fractional term were to tend to zero as $k$ went to one then it may still be possible to tend towards a finite value. As $K$ has a logarithmic singularity, let us rescale $k$ so that $k$ tends to $1$ very rapidly. Set $k = 1 - \exp (-1/ε)$ for $ε \to 0$. Then treating $K$ as a function of $ε$, the inequality \eqref{eqn:K_bound} reads
 \[
 \ln 4 \leq K\bra{1 - \exp (-1/ε)} - \frac{1}{2}\frac{1}{ε} + \frac{1}{2}\ln \bra{2 - \exp (-1/ε)} \leq \frac{π}{2},
 \]
@@ -182,15 +182,20 @@ So
 π \lim_{ε\to 0} T_0(p,k(ε),u(ε),v(ε))
 = 2p \atan v(0) - 2 \atan u(0) - (p+1) C.
 \]
-Note that any such choice of $u$ and $v$ as functions of $ε$ forces $1+uv \to 0$, so that in the limit we have that $v(0) = -u(0)^{-1}$. One naturally asks to which points $(α,α) \in \mathcal{D}(p)$ these points $(p,1,u,-u^{-1})$ correspond. Recall that the point $z_0$ was essential to computing the transistion from $(p,k,u,v)$ to $(α,β)$. Under the map $f$ that took a marked curve to its Legendre normal form, $z_0$ was the image of $0$. Looking back at the equations that determine $z_0$, we have \eqref{eqn:z_0_circle} for $z_0 = x + \iu y$
+Note that any such choice of $u$ and $v$ as functions of $ε$ forces $1+uv \to 0$, so that in the limit we have that $v(0) = -u(0)^{-1}$. One naturally asks to which points $(α,α) \in \mathcal{D}(p)$ these points $(p,1,u,-u^{-1})$ correspond. Recall that the point $z_0$ was essential to computing the transistion from $(p,k,u,v)$ to $(α,β)$. Under the map $f$ that took a marked curve to its Legendre normal form, $z_0$ was the image of $0$. Looking back at the equations that determine $z_0 = x + \iu y$, equation \eqref{eqn:z_0_circle} states
 \[
 x^2 + y^2 = y(u+v) - uv.
 \]
-Knowing that $uv = -1$ implies that $\pm 1 \in C$ lies on this circle. We also know that this is the circle through $\iu u, \iu v, z_0$ and $-\bar{z}_0$. Transforming by $f^{-1}$ send $1$ to $α$, $\iu u$ to $1$, $\iu v$ to $0$ and $z_0$ to $0$. Therefore the image of this circle is the real line, and thus $α\in \R$. Using the condition that the value of $S$ is fixed, we may solve \eqref{eqn:mathcal D slice} explicitly to derive
+Knowing that $uv = -1$ implies that $\pm 1 \in \C$ lies on this circle, pictured in Figure \ref{fig:z_plane_k1_limit}. We also know that this is the circle through $\iu u, \iu v, z_0$ and $-\bar{z}_0$. Applying the transformation $f^{-1}$ sends $\iu u$ to $1$, $\iu v$ to $-1$ and $z_0$ to $0$. Therefore the image of this circle is the real line. Further, it sends $1$ to $α$ and thus $α\in \R$.
+
+\maketikzfigure{The $z$-plane, with points marked in black. The blue labels are their images under $f^{-1}$. The red circle is mapped to the real line. \label{fig:z_plane_k1_limit}}{tikz/z_plane_k1_limit}
+
+Using the condition that the value of $S$ is fixed, we may solve \eqref{eqn:mathcal D slice} explicitly to derive
 \[
 α = \frac{1 - \sqrt{p}}{1+\sqrt{p}}.
 \]
-We see then that the points $\Set{(p,1,u,-u^{-1}) }{u \in \R}$ blow-down to a single point in $\mathcal{D}(p)$. This should be a suprise if we consider the following hueristic. The subset $\mathcal{S}_1(p)$ is a dense collection of surfaces in the $3$-space $\mathcal{C}_1(p)$. Generically, each surface should intersect the line $\mathcal{D}(p)$ at discrete points. One may have anticipated then that limit of points in $\mathcal{D}(p)$ of paths in $\mathcal{S}_1(p)$ would be a dense collection of points in the line $\mathcal{D}(p)$. Instead, there is only a single point that deformations may tend towards.
+We see then that the points $\Set{(p,1,u,-u^{-1}) }{u \in \R \cup \{\infty\}}$ blow-down to a single point in $\mathcal{D}(p)$. This should be a suprise if we consider the following hueristic. The subset $\mathcal{S}_1(p)$ is a dense collection of surfaces in the $3$-space $\mathcal{C}_1(p)$. Generically, each surface should intersect the line $\mathcal{D}(p)$ at discrete points. One may have anticipated then that limit of paths in $\mathcal{S}_1(p)$ would be a dense collection of points in the line $\mathcal{D}(p)$. Instead, for each $p$ there is only a single point on the interior boundary that deformations may tend towards.
+% This is the vertex at the centre of Figures \ref{fig:p05 plot}--\ref{fig:p2 plot}.
 
 %
 %
