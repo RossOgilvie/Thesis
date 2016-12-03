@@ -1483,7 +1483,8 @@ It meets conditions \ref{P:poles}--\ref{P:closing} and is exact, so must be an i
 \end{proof}
 \end{lem}
 
-Morally, the differentials $Ψ^E$ and $Ψ^P$ should be used locally as a frame for the space of differentials meeting \ref{P:poles}--\ref{P:closing}.
+Morally, the differentials $Ψ^E$ and $Ψ^P$ should be used locally as a frame for the space of differentials meeting \ref{P:poles}--\ref{P:closing}. These differentials form a lattice, so each fibre of the bundle $\mathcal{M}_1$ over $\mathcal{S}_1$ is a discrete space. The global structure of the bundle is therefore given by the monodromy action on the lattice; which determines fibres connect to one another.
+
 Before we can make this precise however there is a technical point that must be addressed, namely that $\mathcal{S}_1$ is only an immersed submanifold.
 This causes issues if one tries to describe bundles over $\mathcal{S}_1$ as subspaces of bundles over $\mathcal{C}_1$.
 For example, we demonstrated at the end of Section \ref{sec:Differentials}, using Lemma \ref{lem:theta2_characterisation}, that the differentials meeting conditions \ref{P:poles}--\ref{P:imaginary periods} form a $\R\times\Z$-bundle over $\mathcal{C}_1$ framed by $\langle Θ^E,Θ^P \rangle$.
@@ -1501,14 +1502,14 @@ which does not have a well defined limit, whereas on the other hand
 Ψ^E_\infty = \frac{2π\iu}{2\iu η^+(1)} Θ^E.
 \]
 
-Instead, we must consider bundles over each path connected component of $\mathcal{S}_1$ separately.
-Let us label the path connected components of $\mathcal{S}_1$. Following Theorem \ref{thm:topology_curves}, for each $p\in \Q^+\setminus\{1\}$ and $[q] \in \Q / (p-1) \Z$, there is a ribbon-like component $\mathcal{S}_1(p,[q]) \diffeo (0,1)\times\R$. And by Theorem \ref{thm:topology_curves_p1}, for $p=1$ there is an annuli component $\mathcal{S}_1(1,q)$ for each rational number $q$. Each of these path connected components of $\mathcal{S}_1$ is a submanifold of $\mathcal{C}_1$.
+Instead, we must consider bundles over each path connected component of $\mathcal{S}_1$ separately, each of which is an embedded submanifold of $\mathcal{C}_1$.
+Let us label the path connected components of $\mathcal{S}_1$. Following Theorem \ref{thm:topology_curves}, for each $p\in \Q^+\setminus\{1\}$ and $[q] \in \Q / (p-1) \Z$, there is a ribbon-like component $\mathcal{S}_1(p,[q]) \diffeo (0,1)\times\R$. By Theorem \ref{thm:topology_curves_p1}, for $p=1$ there is an annuli component $\mathcal{S}_1(1,q)$ for each rational number $q$.
 
-Therefore, fix a path connected component $\mathcal{X}$ of $\mathcal{S}_1$. For any fixed value of $p \in \Q^+$, the differential $Ψ^E$ is a well-defined smooth function on $\mathcal{C}_1(p)$, and as $\mathcal{X}$ is entirely contained within some $\mathcal{C}_1(p)$ it follows that $Ψ^E$ is well-defined and smooth on $\mathcal{X}$. The same is not necessarily true for $Ψ^P$.
+To examine the local triviality of the bundle $\mathcal{M}_1$ over each component, fix a path connected component $\mathcal{X}$ of $\mathcal{S}_1$. For any fixed value of $p \in \Q^+$, the differential $Ψ^E$ is a well-defined smooth function on $\mathcal{C}_1(p)$, and as $\mathcal{X}$ is entirely contained within some $\mathcal{C}_1(p)$ it follows that $Ψ^E$ is well-defined and smooth on $\mathcal{X}$. The same is not necessarily true for $Ψ^P$.
 Locally though, in a simply connected neighbourhood $\mathcal{U} \subset \mathcal{X}$ it is possible to choose paths $γ_+$ and $γ_-$ on each spectral curve that vary smoothly with changes of the branch points. Hence by Lemma \ref{lem:minimal differentials}, the moduli space of differentials satisfying \ref{P:poles}--\ref{P:closing} is the trivial $\Z^2$-bundle over $\mathcal{U}$ framed by $Ψ^E$ and $Ψ^P$.
 
 From this we may establish the local structure of $\mathcal{M}_1$.
-We recall from Chapter \ref{chp:Genus Zero} the definition of the integer matrices $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. There the moduli space of spectral data with a genus zero spectral curve could be described as the product $\mathcal{M}_0 = D \times \Mat_2^*\Z$. Similarly, we may describe the moduli space of spectral data whose spectral curve lies in $\mathcal{U}$ as $\mathcal{U} \times \Mat_2^*\Z$, where the differentials $(Θ^1,Θ^2)$ on any curve may be described by a matrix via
+We recall from Chapter \ref{chp:Genus Zero} the definition of the integer matrices $\Mat_2^*\Z = \Set{ M \in \Mat_2\Z }{\det M \neq 0}$. There the moduli space of spectral data with a genus zero spectral curve was described as the product $\mathcal{M}_0 = D \times \Mat_2^*\Z$. Similarly, we may describe the moduli space of spectral data whose spectral curve lies in $\mathcal{U}$ as $\mathcal{U} \times \Mat_2^*\Z$, where the differentials $(Θ^1,Θ^2)$ on any curve may be described by a matrix via
 \[
 \begin{pmatrix}
 Θ^1 \\ Θ^2
@@ -1534,7 +1535,7 @@ This component is an annulus and not simply connected. The differential $Ψ^P$ i
 
 Consider therefore a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1,q)$ that wraps around the annulus once. If we make a choice of $γ_+(t),γ_-(t)$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$ then note in particular that $γ_+(0)$ and $γ_+(1)$ will be different paths on the same curve. One may ask: if we construct $Ψ^P$ using $γ_+(t)$ and $γ_-(t)$ then what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$?
 
-From \eqref{eqn:group action} it follows that $T = m'/n'$ is well defined and constant on the whole annulus. We may simplify so that it is a reduced fraction. Writing $S=1=n/m$ as a reduced fraction implies that $m=n=1$. The constant $l$, the period of $Ψ^P$, is therefore $m' / \gcd(m',mn') = m'$.
+From \eqref{eqn:group action} it follows that $T = n'/m'$ is well defined and constant on the whole annulus. We may simplify so that it is a reduced fraction. Writing $S=1=n/m$ as a reduced fraction implies that $m=n=1$. The period $l$ of $Ψ^P$ is therefore $m' / \gcd(m',mn') = m'$.
 Let $Ψ^P(0) = b(0)Θ^E + m' Θ^P$ be the differential on $Σ(\ell(0))$. As the periods of the differential are integral, they cannot change along the path $\ell$ and so
 \[
 Ψ^P(t) = b(t) Θ^E + m' Θ^P.
@@ -1543,7 +1544,7 @@ As we move from the start of $\ell$ to the end, from our previous computation in
 \[
 \int_{γ_+(t)} Θ^P \text{ and } \int_{γ_-(t)} Θ^P
 \]
-will be incremented, or decremented (depending on the orientation of $\ell$), by $2π\iu$. The difference $Ψ^P(1) - Ψ^P(0) = (b(1)-b(0))Θ^E$ can be explicitly computed from \eqref{eqn:def Psi coeff} as
+will be incremented or decremented (depending on the orientation of $\ell$) by $2π\iu$. The difference $Ψ^P(1) - Ψ^P(0) = (b(1)-b(0))Θ^E$ can be explicitly computed from \eqref{eqn:def Psi coeff} as
 \begin{align*}
 b(1)
 &= \frac{1}{2\iu η^+(1)}\bra{ 2π\iu y n'm - m' \bra{\int_{γ_+(1)} Θ^P} } \\
@@ -1553,12 +1554,7 @@ b(1)
 \end{align*}
 so that $Ψ^P(1) - Ψ^P(0) = -am' Θ^E = - m' Ψ^E$. This equations shows that every time you loop around the annulus, the non-exact differential $Ψ^P$ shifts by $m' Ψ^E$.
 
-If $m'=0$, which is to say that $T=0$, then $Ψ^P$ is a well-defined function of $\mathcal{S}_1(1,1)$ after all. As in the case where $p\neq 1$ we have that $\langle Ψ^E, Ψ^P \rangle$ is a frame for the differentials over this component and
-\[
-\mathcal{M}_1(1, 1) = \mathcal{S}_1(1,1) \times \Mat_2^*\Z.
-\]
-
-Suppose now further to $p=1$ that $q\neq 0$. Translating the shift of $Ψ^P$ into a statement about $\Mat_2^*\Z$, given a tuple of spectral data $(Σ,Θ^1,Θ^2)$ in $\mathcal{M}_1(1,q)$, we may write $Θ^i = a_i Ψ^E + l_i Ψ^P$ for integers $a_i$ and $l_i$. One is free to vary $Σ$ within $\mathcal{S}_1(1,q)$, but the effect of looping around on the differentials is
+Translating the shift of $Ψ^P$ into a statement about $\Mat_2^*\Z$, given a tuple of spectral data $(Σ,Θ^1,Θ^2)$ in $\mathcal{M}_1(1,q)$, we may write $Θ^i = a_i Ψ^E + l_i Ψ^P$ for integers $a_i$ and $l_i$. One is free to vary $Σ$ within $\mathcal{S}_1(1,q)$, but the effect of looping around on the differentials is
 \begin{align*}
 \begin{pmatrix}
 Θ^1 \\ Θ^2
@@ -1601,25 +1597,21 @@ m'\Z & 1
 \]
 then the connected components of $\mathcal{M}_1(1,q)$ are enumerated by the right $B_q$-orbits of $\Mat_2^*\Z$.
 
-Finally, we can prove the space $\mathcal{M}_1(1,q)$ is simply connected for $q \neq 1$. Given any closed loop $\ell$ in it, we may project this loop down to $\mathcal{S}_1(1,q)$. If the projection of the loop is null-homotopic, then it is contained in a simply connected neighbourhood $\mathcal{U}$ of $\mathcal{S}_1(1,q)$ and we may use the frame $\langle Ψ^E,Ψ^P \rangle$ to lift to a null-homotopy of $\ell$ in $\mathcal{M}_1(1,q)$. If the projection is non-trivial, then it winds a certain number of times around the annulus. The above calculation shows that if the differentials are unchanged from the beginning to end of the path then either $m' = 0$ or $l_1=l_2 = 0$. The former is excluded by the assumption $q \neq 1$ and the latter implies that the differentials are both multiples of $Θ^E$, which by \ref{P:linear independence} contradicts their linear independence.
+Finally, we can prove the space $\mathcal{M}_1(1,q)$ is simply connected. Given any closed loop $\ell$ in it, we may project this loop down to $\mathcal{S}_1(1,q)$. If the projection of the loop is null-homotopic, then it is contained in a simply connected neighbourhood $\mathcal{U}$ of $\mathcal{S}_1(1,q)$ and we may use the frame $\langle Ψ^E,Ψ^P \rangle$ to lift to a null-homotopy of $\ell$ in $\mathcal{M}_1(1,q)$. If the projection is non-trivial, then it winds a certain number of times around the annulus. The above calculation shows that if the differentials are unchanged from the beginning to end of the path then either $m' = 0$ or $l_1=l_2 = 0$. The former is excluded because by definition $n'/m' = q$ and so $m'$ is never zero. The latter implies that the differentials are both multiples of $Θ^E$, which by \ref{P:linear independence} contradicts their linear independence. Therefore every closed loop in $\mathcal{M}_1(1,q)$ is null-homotopic.
 
-It is therefore the case that each connected component of $\mathcal{M}_1(1,q)$, for $q \neq 0$, is diffeomorphic to the universal cover of the annulus $\mathcal{S}_1(1,q)$, which is to say that each of them is a ribbon $(0,1)\times \R$. The connected components of $\mathcal{M}_1(p,[q])$ were also ribbons. In summary, $\mathcal{M}_1$ is the disjoint union
-\begin{align*}
+It is therefore the case that each connected component of $\mathcal{M}_1(1,q)$ is diffeomorphic to the universal cover of the annulus $\mathcal{S}_1(1,q)$, which is to say that each of them is a ribbon $(0,1)\times \R$. The connected components of $\mathcal{M}_1(p,[q])$ were also ribbons. In summary, $\mathcal{M}_1$ is the disjoint union
+\begin{gather*}
 \mathcal{M}_1
-&=
-\Big[ \mathcal{S}_1(1,0) \times \Mat_2^*\Z \Big]
-\amalg
-\coprod_{q \in \Z, q\neq 0} \mathcal{M}_1(1,q)\\
-&\hspace{2cm}\amalg \coprod_{\substack{p \in \Q^+, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
-\mathcal{S}_1(p,[q]) \times \Mat_2^*\Z \\
-&=
-\Big[ \mathcal{S}_1(1,0) \times \Mat_2^*\Z \Big]
-\amalg
-\coprod_{q \in \Z, q\neq 0} \Big[ (0,1)\times\R \times \bra{\Mat_2^*\Z / B_q} \Big] \\
-&\hspace{2cm}\amalg
+=
+\coprod_{q \in \Z} \mathcal{M}_1(1,q)
+\;\;\amalg \coprod_{\substack{p \in \Q^+, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
+\mathcal{M}_1(p,[q]) \\
+=
+\coprod_{q \in \Z} \Big[ (0,1)\times\R \times \bra{\Mat_2^*\Z / B_q} \Big]
+\;\amalg
 \coprod_{\substack{p \in \Q^+, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
 \Big[ (0,1)\times\R \times \Mat_2^*\Z \Big].
-\end{align*}
+\end{gather*}
 
 
 There are some symmetries and special cases that also bear mention. First, we have already remarked upon, and made use of, the symmetry in \eqref{eqn:T_0 symmetry},
