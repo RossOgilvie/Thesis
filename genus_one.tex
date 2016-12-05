@@ -33,7 +33,7 @@ If $\mathcal{\tilde{C}}_1(p,q)$ is the level set $S = p$ and $\tilde{T} = q$ in 
 \]
 Crucially, the value of $S$ is fixed by the action of $\tilde{λ}$ and precomposing $\tilde{T}$ with $\tilde{λ}$ increases its value by $S-1$ (Lemma \ref{lem:T shift}). Thus $\tilde{λ}$ maps $\mathcal{\tilde{C}}_1(p,q)$ to $\mathcal{\tilde{C}}_1(p,q + p-1)$. If $p$ and $q$ are rational, so too is $q + (p-1)$ and hence the group $\mathcal{G} = \Z\langle \tilde{λ}\rangle$ of covering transformations restricts to give a group action on $\mathcal{\tilde{S}}_1$. We can therefore conclude that $\mathcal{S}_1 \diffeo \mathcal{\tilde{S}}_1 / \mathcal{G}$.
 
-DIAGRAM of the strip in the plane, labelled with the translation. Have the level sets for $p > 1, p=1, p<1$ drawn in, approximtely correctly (ie with a wiggle and the correct shift) so you can see the shifting in action
+\maketikzfigure{Sketch of some level sets of $\tilde{T}$ on a cross-section of $\mathcal{\tilde{A}}_1$. The transformation $\tilde{λ}$ acts as a translation in the given direction. It take level sets to level sets.}{tikz/universal_level_sets}
 
 As $p$ is rational it is constant along any path in $\mathcal{\tilde{S}}_1$. When working with the path connected components of $\mathcal{\tilde{S}}_1$ we may therefore restrict ourselves to the submanifolds $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
 Further, the covering transformations do not change $p$ so these submanifolds are $\mathcal{G}$-invariant. The three remaining coordinates $(k,\tilde{U},\tilde{V})$ form a global coordinate chart for each $\mathcal{\tilde{C}}_1(p)$. However, in order to produce a coordinate chart where both goals are met, that is $\tilde{λ}$ acts as translation and $\mathcal{\tilde{S}}_1(p) := \mathcal{\tilde{S}}_1 \cap \mathcal{\tilde{C}}_1(p)$ is the union of coordinate planes, in Lemma \ref{lem:T_graph} we show that for each $p$ there is a coordinate chart where $q=\tilde{T}$ may be used as a coordinate in place of either $\tilde{U}$ or $\tilde{V}$. Specifically for $p \leq 1$,
@@ -224,9 +224,10 @@ and this has already shown not to occur on $\mathcal{A}_1$.
 \end{proof}
 \end{lem}
 
-% TODO: rework this next para
-
-Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the marked curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ lying over the unit circle in $\CP^1$. Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$. At a point $(ζ,η)$ on the positive unit circle in $Σ$, we define the function $η^+$ to be the value of $η$. Algebraically, $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$.
+Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the marked curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ lying over the unit circle in $\CP^1$.
+At a point $(ζ,η)$ over the unit circle in $Σ$, we have that the value of $η$ is $\pm ζ\abs{ζ-α}\abs{ζ-β}$. lgebraically, $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$.
+Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$.
+we define the function $η^+$ to be the value of $η$.
 
 Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Legendre elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
 
@@ -955,7 +956,7 @@ The second half of this section seeks to recover $\mathcal{S}_1$ from $\mathcal{
 
 
 
-To motivate the definition of the universal cover in Lemma \ref{lem:mathcal tilde C}, and to provide context for Figures \ref{}, we will deduce the topology of $\mathcal{A}_1$ from the coordinates $(p,k,u,v)$ introduced in the previous section.
+To motivate the definition of the universal cover in Lemma \ref{lem:mathcal tilde C}, and to provide context for Figures \ref{fig:p05 plot}--\ref{fig:p2 plot}, we will deduce the topology of $\mathcal{A}_1$ from the coordinates $(p,k,u,v)$ introduced in the previous section.
 These coordinates embed $\mathcal{A}_1$ into $\R^+\times(0,1)\times \mathbb{T}^2$ in the following way.
 The first two factors $\R^+ \times (0,1)$ are obvious, they come from $p \in R^+$ and $k\in (0,1)$. To see the torus part, consider
 \[
@@ -971,8 +972,6 @@ A more instructive way of visualising $\mathcal{A}_1(p)$ is to think of it as a 
 k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \]
 In the limit as $α \to β$, this formula says that $k \to 1$. From the equation of $S$, the subspace of $D\times D$ where $α=β$ and $S(α,β) = p$ is an arc. In this visualisation we are imagining this arc as the central axis of the cylinder. In Section \ref{sec:Interior}, the interesting structure of the moduli space in this limit will be investigated.
-
-TODO DIAGRAM
 
 The fact that the parameter space is not simply connected is fundamentally tied to the fact that $T$ is not a single valued function. We have defined a principal branch cut $T_0$ of $T$ and given a formula, but the more natural way to correct this deficiency is to move to the universal cover. By constructing a lift $\tilde{T}$ of $T$ which is single valued, we will be able to treat the level sets $T\in\Q$ globally and thereby acquire complete description of the topology of the space $\mathcal{S}_1$, significantly more than Theorem \ref{thm:moduli manifold} which is a local result showing it to be a surface.
 
@@ -1223,9 +1222,9 @@ U
 % = -\sqrt{k} \frac{1}{k}\frac{1}{\frac{U}{\sqrt{k}}}
 = - \frac{1}{U} = -U',
 \]
-which is half-rotation of the circle.
+which is half-rotation of the circle (as shown in Figure \ref{fig:circle rotation}).
 
-DIAGRAM %TODO
+\maketikzfigure{The circle on the left is $\RP^1$ with four points marked. The map $U \mapsto -U^{-1}$ is applied to produce the circle on the right, with corresponding points coloured the same. We can see that the circle on the right is rotated by $π$. \label{fig:circle rotation}}{tikz/circle_rotation}
 
 We shall use this rescaled coordinate $U$, and likewise $V = \sqrt{k} v$, to construct coordinates on $\mathcal{\tilde{C}}_1$ such that the covering transformations are simply translations. This is motivated by the fact that translating the line $\R$ rotates the quotient $\R/\Z$.
 
@@ -1402,27 +1401,21 @@ The final step was to push these level sets back down to $\mathcal{C}_1$. To do 
 We saw in the introduction to this chapter that the parameter $p$ can be thought of as controlling the slope of the helicoids, with $p=1$ being the intermediate case between right and left handed spirals where the slope is `flat' and the helicoids `close up'. This idea is investigated further in the following chapter by considering the limit case as $k \to 1$.
 
 \begin{figure}
-    \begin{center}
-        \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p05.png}
-        \caption{One component of the moduli space $\mathcal{S}_1(0.5)$. Notice that the ribbon is wrapped in a left handed direction around a central axis.}
-        \label{fig:p05 plot}
-    \end{center}
+    \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p05.png}
+    \caption{One component of the moduli space $\mathcal{S}_1(0.5)$. Notice that the ribbon is wrapped in a left handed direction around a central axis.}
+    \label{fig:p05 plot}
 \end{figure}
 
 \begin{figure}
-\begin{center}
     \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p1.png}
     \caption{Select components of the moduli space $\mathcal{S}_1(1)$, namely those components on which $T$ is $-3$, $-1$, $0$, $1$, or $3$. The component on which $T$ is $0$ is the disc in the middle.}
     \label{fig:p1 plot}
-\end{center}
 \end{figure}
 
 \begin{figure}
-    \begin{center}
-        \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p2.png}
-        \caption{One component of the moduli space $\mathcal{S}_1(2)$. Notice, contra Figure \ref{fig:p05 plot}, that the ribbon is wrapped in a right handed direction around a central axis.}
-        \label{fig:p2 plot}
-    \end{center}
+    \includegraphics[width=\textwidth]{thesis_graphics/moduli_plot_p2.png}
+    \caption{One component of the moduli space $\mathcal{S}_1(2)$. Notice, contra Figure \ref{fig:p05 plot}, that the ribbon is wrapped in a right handed direction around a central axis.}
+    \label{fig:p2 plot}
 \end{figure}
 
 
@@ -1430,7 +1423,7 @@ We saw in the introduction to this chapter that the parameter $p$ can be thought
 \section{Corollaries}
 \label{sec:Corollaries}
 
-In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are ribbons, but the components of $\mathcal{S}_1(1)$ are annuli. In this section we will first investigate the moduli space $\mathcal{M}_1$ of spectral data $(Σ,Θ^1,Θ^2)$. Over each component of $\mathcal{S}_1(p)$, for $p\neq 1$, it is a trivial bundle. Its structure over the components of $\mathcal{S}_1(1)$ is more complicated, but it is either a trivial bundle or else the total space is simply connected.
+In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are ribbons, but the components of $\mathcal{S}_1(1)$ are annuli. In this section we will first investigate the moduli space $\mathcal{M}_1$ of spectral data $(Σ,Θ^1,Θ^2)$. Over each component of $\mathcal{S}_1(p)$, for $p\neq 1$, it is a trivial bundle. Its bundle structure over the components of $\mathcal{S}_1(1)$ is more complicated, but we will prove that the total space of the bundle is simply connected.
 
 Second, we shall extend the symmetry exhibited in \eqref{eqn:T_0 symmetry} to a general transformation $χ$ on the space of spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero. Finally, we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral curve can be identified with a particular path component of $\mathcal{S}_1(1)$.
 
@@ -1542,7 +1535,7 @@ Let $Ψ^P(0) = b(0)Θ^E + m' Θ^P$ be the differential on $Σ(\ell(0))$. As the 
 \]
 As we move from the start of $\ell$ to the end, from our previous computation in Lemma \ref{lem:T shift}, each of
 \[
-\int_{γ_+(t)} Θ^P \text{ and } \int_{γ_-(t)} Θ^P
+\int_{γ_+(t)} Θ^P \;\text{ and } \int_{γ_-(t)} Θ^P
 \]
 will be incremented or decremented (depending on the orientation of $\ell$) by $2π\iu$. The difference $Ψ^P(1) - Ψ^P(0) = (b(1)-b(0))Θ^E$ can be explicitly computed from \eqref{eqn:def Psi coeff} as
 \begin{align*}
@@ -1554,31 +1547,31 @@ b(1)
 \end{align*}
 so that $Ψ^P(1) - Ψ^P(0) = -am' Θ^E = - m' Ψ^E$. This equations shows that every time you loop around the annulus, the non-exact differential $Ψ^P$ shifts by $m' Ψ^E$.
 
-Translating the shift of $Ψ^P$ into a statement about $\Mat_2^*\Z$, given a tuple of spectral data $(Σ,Θ^1,Θ^2)$ in $\mathcal{M}_1(1,q)$, we may write $Θ^i = a_i Ψ^E + l_i Ψ^P$ for integers $a_i$ and $l_i$. One is free to vary $Σ$ within $\mathcal{S}_1(1,q)$, but the effect of looping around on the differentials is
+Translating the shift of $Ψ^P$ into a statement about $\Mat_2^*\Z$, given a tuple of spectral data $(Σ,Θ^1,Θ^2)$ in $\mathcal{M}_1(1,q)$, we may write $Θ^i = b_i Ψ^E + l_i Ψ^P$ for integers $b_i$ and $l_i$. One is free to vary $Σ$ within $\mathcal{S}_1(1,q)$, but the effect of looping around on the differentials is
 \begin{align*}
 \begin{pmatrix}
 Θ^1 \\ Θ^2
 \end{pmatrix}
 &=
 \begin{pmatrix}
-a_1 & l_1 \\
-a_2 & l_2
+b_1 & l_1 \\
+b_2 & l_2
 \end{pmatrix}
 \begin{pmatrix}
 Ψ^E \\ Ψ^P
 \end{pmatrix} \\
 &\mapsto
 \begin{pmatrix}
-a_1 & l_1 \\
-a_2 & l_2
+b_1 & l_1 \\
+b_2 & l_2
 \end{pmatrix}
 \begin{pmatrix}
     Ψ^E \\ Ψ^P - m' Ψ^E
     \end{pmatrix} \\
 &=
 \begin{pmatrix}
-a_1 & l_1 \\
-a_2 & l_2
+b_1 & l_1 \\
+b_2 & l_2
 \end{pmatrix}
 \begin{pmatrix}
     1 & 0 \\
@@ -1597,19 +1590,19 @@ m'\Z & 1
 \]
 then the connected components of $\mathcal{M}_1(1,q)$ are enumerated by the right $B_q$-orbits of $\Mat_2^*\Z$.
 
-Finally, we can prove the space $\mathcal{M}_1(1,q)$ is simply connected. Given any closed loop $\ell$ in it, we may project this loop down to $\mathcal{S}_1(1,q)$. If the projection of the loop is null-homotopic, then it is contained in a simply connected neighbourhood $\mathcal{U}$ of $\mathcal{S}_1(1,q)$ and we may use the frame $\langle Ψ^E,Ψ^P \rangle$ to lift to a null-homotopy of $\ell$ in $\mathcal{M}_1(1,q)$. If the projection is non-trivial, then it winds a certain number of times around the annulus. The above calculation shows that if the differentials are unchanged from the beginning to end of the path then either $m' = 0$ or $l_1=l_2 = 0$. The former is excluded because by definition $n'/m' = q$ and so $m'$ is never zero. The latter implies that the differentials are both multiples of $Θ^E$, which by \ref{P:linear independence} contradicts their linear independence. Therefore every closed loop in $\mathcal{M}_1(1,q)$ is null-homotopic.
+Finally, we can prove the space $\mathcal{M}_1(1,q)$ is simply connected. Given any closed path $\ell$ in it, we may project this loop down to $\mathcal{S}_1(1,q)$. If the projection of the loop is null-homotopic, then it is contained in a simply connected neighbourhood $\mathcal{U}$ of $\mathcal{S}_1(1,q)$ and we may use the frame $\langle Ψ^E,Ψ^P \rangle$ to lift to a null-homotopy of $\ell$ in $\mathcal{M}_1(1,q)$. If the projection is non-trivial, then it winds a certain number of times around the annulus. The above calculation shows that if the differentials are unchanged from the beginning to end of the path then either $m' = 0$ or $l_1=l_2 = 0$. The former is excluded because by definition $n'/m' = q$ and so $m'$ is never zero. The latter implies that the differentials are both multiples of $Θ^E$, which by \ref{P:linear independence} contradicts their linear independence. This demonstrates that every closed path in $\mathcal{M}_1(1,q)$ is null-homotopic, and so it is simply connected.
 
 It is therefore the case that each connected component of $\mathcal{M}_1(1,q)$ is diffeomorphic to the universal cover of the annulus $\mathcal{S}_1(1,q)$, which is to say that each of them is a ribbon $(0,1)\times \R$. The connected components of $\mathcal{M}_1(p,[q])$ were also ribbons. In summary, $\mathcal{M}_1$ is the disjoint union
 \begin{gather*}
 \mathcal{M}_1
 =
 \coprod_{q \in \Z} \mathcal{M}_1(1,q)
-\;\;\amalg \coprod_{\substack{p \in \Q^+, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
+\;\;\amalg \coprod_{\substack{p \in \Q^+,\, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
 \mathcal{M}_1(p,[q]) \\
 =
 \coprod_{q \in \Z} \Big[ (0,1)\times\R \times \bra{\Mat_2^*\Z / B_q} \Big]
 \;\amalg
-\coprod_{\substack{p \in \Q^+, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
+\coprod_{\substack{p \in \Q^+,\, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
 \Big[ (0,1)\times\R \times \Mat_2^*\Z \Big].
 \end{gather*}
 
@@ -1744,9 +1737,11 @@ which is to say the branch point of the spectral curve associated to $g^{-1}$ is
 % \]
 % Recall the interpretation of span of the principal parts as the universal cover of the domain, with the lattice generated by these differentials corresponding to tthe lattice of periods. The previous equation then shows a rotation by $\iu$, corresponding to how we had to define $\tilde{w} = \iu w$.
 
-Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one marked curves that would meet the conditions, if they admit spectral data, for the associated harmonic map to have a totally geodesic two-sphere as its image (see discussion at end of Section \ref{sec:construction}). Hitchin \cite[p693]{Hitchin1990} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify where in $\mathcal{S}_1$ they reside.
+Returning to genus one spectral curves, of special interest are the spectral curves that are a fixed point of this transformation $χ: Σ(α,β) \mapsto Σ(-α,-β)$. For these spectral curves $χ_{(α,β)}$ is an extra involution and hence $β=-α$. These are exactly the genus one marked curves that would meet the conditions, if they admit spectral data, for the associated harmonic map to have a totally geodesic two-sphere as its image (see discussion at end of Section \ref{sec:construction}). Hitchin \cite[p693]{Hitchin1990} identifies a particular one parameter family of these maps as the Gauss maps of Delaunay surfaces. We shall show that all such marked curves in fact admit spectral data and further identify in which component of $\mathcal{S}_1$ they reside.
 
-Firstly, as these are fixed points of $χ$ which sends $p \mapsto p^{-1}$, it follows that $p$ is one. The symmetry of $T_0$ given by \eqref{eqn:T_0 symmetry} now reads $T_0(1,k,u,v) = - T_0(1,k,v,u)$. The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$ in this equation, so there must be some relation between them. As the four branch points lie on a line it follows that $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
+Suppose that $Σ(α,-α)$ is a curve that is fixed by $χ$. As $χ$ sends $p \mapsto p^{-1}$, it follows that $p$ is one. To show that $Σ(α,-α)$ admits spectral data it remains to shows that $T$ is rationally valued at this point $(α,-α) \in \mathcal{A}_1$.
+Computing the value of $T$ from its principal branch cut $T_0$ requires us to know which coordinates $(1,k,u,v)$ correspond to $(α,-α)$.
+The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$, so there must be some relation between them. As the four branch points lie on a line it follows that $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
 \[
 z_0 = \frac{1+ \abs{α}}{1-\abs{α}},\quad
 k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
@@ -1758,7 +1753,7 @@ It follows from \eqref{eqn:f} that
 = \frac{1}{k} f(1)^{-1}
 = \frac{1}{k}(\iu u)^{-1},
 \]
-or concisely that $v= - (ku)^{-1}$. But $u \mapsto -(ku)^{-1}$ is exactly the formula for the change of $u$ under the label swapping involution $λ$, described by \eqref{eqn:def_lambda}. Thus we see that $χ$ and $λ$ act in the same way on $\{(α,-α) \in \mathcal{A}_1)$, as one would expect because they are both swapping $α$ and $-α$, the two branch points inside the unit disc. Precomposing $T_0$ with $λ$ shifts its value by $1-p$, which in this case is zero. Hence using this together with the fact that precomposing $T_0$ with $χ$ negates the function shows that at a point of $\{(α,-α)\in \mathcal{A}_1\}$,
+or concisely that $v= - (ku)^{-1}$. But $u \mapsto -(ku)^{-1}$ is exactly the formula for the change of $u$ under the label swapping involution $λ$, described by \eqref{eqn:def_lambda}. Thus we see that $χ$ and $λ$ act in the same way on $\{(α,-α) \in \mathcal{A}_1)$, as one would expect because they are both swapping $α$ and $-α$, the two branch points inside the unit disc. Precomposing $T_0$ with $λ$ shifts its value by $1-p$, which in this case is zero. Hence using this together with the fact that precomposing $T_0$ with $χ$ negates the function shows that at a point of $\{(α,-α) = (1,k,u,-(ku)^{-1})\in \mathcal{A}_1\}$,
 \begin{align*}
 T_0\bra{1,k,u,-(ku)^{-1}}
 &= T_0\bra{1,k,-(ku)^{-1},u} + 1-p \\
