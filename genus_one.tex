@@ -33,7 +33,7 @@ If $\mathcal{\tilde{C}}_1(p,q)$ is the level set $S = p$ and $\tilde{T} = q$ in 
 \]
 Crucially, the value of $S$ is fixed by the action of $\tilde{λ}$ and precomposing $\tilde{T}$ with $\tilde{λ}$ increases its value by $S-1$ (Lemma \ref{lem:T shift}). Thus $\tilde{λ}$ maps $\mathcal{\tilde{C}}_1(p,q)$ to $\mathcal{\tilde{C}}_1(p,q + p-1)$. If $p$ and $q$ are rational, so too is $q + (p-1)$ and hence the group $\mathcal{G} = \Z\langle \tilde{λ}\rangle$ of covering transformations restricts to give a group action on $\mathcal{\tilde{S}}_1$. We can therefore conclude that $\mathcal{S}_1 \diffeo \mathcal{\tilde{S}}_1 / \mathcal{G}$.
 
-\maketikzfigure{Sketch of some level sets of $\tilde{T}$ on a cross-section of $\mathcal{\tilde{A}}_1$. The transformation $\tilde{λ}$ acts as a translation in the given direction. It take level sets to level sets.}{tikz/universal_level_sets}
+\maketikzfigure{Sketch of some level sets of $\tilde{T}$ on a cross-section of $\mathcal{\tilde{C}}_1$. The transformation $\tilde{λ}$ acts as a translation in the given direction. It maps level sets to level sets. Not that in this figure that the $\tilde{V}$-derivative of $\tilde{T}$ does not vanish.}{tikz/universal_level_sets}
 
 As $p$ is rational it is constant along any path in $\mathcal{\tilde{S}}_1$. When working with the path connected components of $\mathcal{\tilde{S}}_1$ we may therefore restrict ourselves to the submanifolds $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
 Further, the covering transformations do not change $p$ so these submanifolds are $\mathcal{G}$-invariant. The three remaining coordinates $(k,\tilde{U},\tilde{V})$ form a global coordinate chart for each $\mathcal{\tilde{C}}_1(p)$. However, in order to produce a coordinate chart where both goals are met, that is $\tilde{λ}$ acts as translation and $\mathcal{\tilde{S}}_1(p) := \mathcal{\tilde{S}}_1 \cap \mathcal{\tilde{C}}_1(p)$ is the union of coordinate planes, in Lemma \ref{lem:T_graph} we show that for each $p$ there is a coordinate chart where $q=\tilde{T}$ may be used as a coordinate in place of either $\tilde{U}$ or $\tilde{V}$. Specifically for $p \leq 1$,
@@ -65,9 +65,15 @@ where again we recover $\mathcal{S}_1(1)$ as the subset where $q$ is rational.
 
 In either case, we have a foliation of $\mathcal{C}_1(p)$ such that $\mathcal{S}_1(p)$ is a dense collection of leaves. Though the topology of the components changes from ribbons to annuli at $p=1$, we can understand each foliation as belonging to a family parametrised by $p$. As $k$ is unaffected by the quotient, we may consider only $(q,\tilde{X}) \in \R^2$, as shown in Figure \ref{fig:level set quotient}. For each $p$, the translation $\tilde{λ}$ takes $(q,\tilde{X})$ to $(q + (p-1), \tilde{X} + π)$. Let us rotate each plane so that these translations are in the vertical direction. The lines of constant $q$ now make an angle $\atan \tfrac{p-1}{π}$ to the vertical. We may therefore take the quotient of this space, a cylinder, and for $p\neq 1$ the lines of constant $q$ become helices wrapped around this cylinder. The parameter $p$ changes the slope of helices. When $p=1$ however the lines of constant $q$ are in the direction of translation and close up into circles under the group action. This exceptional case $p=1$ is the transition from left-handed to right-handed helices.
 
-\makefigure{$q,\tilde{X}$ axes in black, direction of the translation $\tilde{λ}$ in blue, lines of constant $q$ in grey.
-\label{fig:level set quotient}}
-{thesis_graphics_temp/level_set_quotient.png}
+% \makefigure{$q,\tilde{X}$ axes in black, direction of the translation $\tilde{λ}$ in blue, lines of constant $q$ in grey.
+% \label{fig:level set quotient}}
+% {thesis_graphics_temp/level_set_quotient.png}
+\begin{figure}
+    \includestandalone[width=\textwidth]{tikz/universal_quotient}
+    \caption{On the left, a cross-section of $\mathcal{\tilde{C}}_1(p)$ for fixed $k$, with the $q$ and $\tilde{X}$ axes in black and direction of the translation $\tilde{λ}$ in blue. The grey lines are the lines of constant $q$. The angle $θ$ is given by $\atan \tfrac{p-1}{π}$. In this figure, $p \approx 1 + π > 1$.\\
+    On the right, the result of taking the quotient by $\mathcal{G} = \Z\langle \tilde{λ}\rangle$. The plane has been rolled into a cylinder, and the level sets are helices. As $p$ is changed, the slope of the helices changes also. When $p=1$, they close-up into circles on the cylinder.}
+    \label{fig:level set quotient}
+\end{figure}
 
 Now that we have given a picture of the results of this chapter, let us run through the stages of the proof. The intermediate way-point is the construction of the functions $S$ and $\tilde{T}$, which derive from the closing conditions, Conditions \ref{P:closing}. The difference between a marked curve of genus one, a point of $\mathcal{C}_1$, and a spectral curve, a point of $\mathcal{S}_1$, is that the latter possesses a pair of linearly independent differentials that satisfy the closing conditions. For any genus $g$, every marked curve of $\mathcal{C}_g$ meets Conditions \ref{P:real curve}--\ref{P:simple zeroes} and admits differentials satisfying Conditions \ref{P:poles}--\ref{P:imaginary periods}. Further, in the case of marked curves of genus one, we will show that every curve has differentials with integral periods, Condition \ref{P:periods}. But not every curve admits differentials that meet the closing conditions.
 
@@ -126,7 +132,7 @@ that with respect to the hyperelliptic involution $σ$, $Θ$ obeys $σ^*Θ = - �
 \item
 that $Θ$ is real with respect to $ρ$, which is to say $ρ^* Θ = - \bar{Θ}$.
 \end{enumerate}
-The second step is to therefore write down set of differentials meeting these three conditions; they form a three dimensional real vector space $W$.
+The second step is to therefore write down set of differentials meeting these three conditions; they form a three-dimensional real vector space $W$.
 
 Next, we use the transformation $f$ to compute the periods of these differentials in terms of the Jacobi elliptic integrals. Finally, we leverage the standard relations among the Jacobi elliptic integrals to describe explicitly the differentials with integral periods, those which meet condition \ref{P:periods}. Any differential that meets all the conditions \ref{P:poles}--\ref{P:periods} may be written as a linear combination of two distinguished differentials, $Θ^E$ and $Θ^P$. The choice of these two differentials on $Σ(α,β)$ varies smoothly in the parameters $(α,β)$. The space of differentials with integral periods will be shown to be trivial bundles over $\mathcal{A}_1$ and $\mathcal{C_1}$.
 
@@ -225,9 +231,9 @@ and this has already shown not to occur on $\mathcal{A}_1$.
 \end{lem}
 
 Because of the holomorphic involution $σ: η\to-η$, equations \eqref{eqn:f} and \eqref{eqn:f_inv} almost but not quite specify a relation between $η$ and $w$: there is a free sign choice to make. On the marked curve $Σ = \{ (ζ,η) | η^2 = P(ζ) \}$ there are two disjoint circles in $Σ$ lying over the unit circle in $\CP^1$.
-At a point $(ζ,η)$ over the unit circle in $Σ$, we have that the value of $η$ is $\pm ζ\abs{ζ-α}\abs{ζ-β}$. lgebraically, $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$.
+At a point $(ζ,η)$ over the unit circle in $Σ$, we have that the value of $η$ is $\pm ζ\abs{ζ-α}\abs{ζ-β}$.
 Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$.
-we define the function $η^+$ to be the value of $η$.
+We define the function $η^+$ to be $ζ\abs{ζ-α}\abs{ζ-β}$.
 
 Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Legendre elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
 
@@ -235,7 +241,7 @@ Having found the map $f$ that transforms a genus one marked curve $Σ$ into Lege
 \[
 Θ = b(ζ)\frac{dζ}{ζ^2η},
 \]
-for a polynomial $b(ζ)$ of degree $4$. Condition \ref{P:reality} forces $b\in \mathcal{P}^4_\R$, the space of polynomials that are real with respect to $ρ$. Practically, if we write $b(ζ) = b_0 + \dots + b_4 ζ^4$, this condition forces $b_i = b_{4-i}$. Lastly, if we write out the equation of $Σ$ as $η^2 = P(ζ) = P_0 ζ + \dots + P_4 ζ^4$, $Θ$ has no residues exactly when $P_1b_0 - 2P_0b_1 = 0$ (equation \ref{eqn:residue condition}). If we count the degrees of freedom remaining, the last equation shows that we may choose $(b_0,b_1)$ from a complex line, whereas $b_2$ may be any real number. Hence for each marked curve $Σ$ there is a real three dimensional vector space $W$ of differentials that meet conditions \ref{P:poles}--\ref{P:reality}.
+for a polynomial $b(ζ)$ of degree $4$. Condition \ref{P:reality} forces $b\in \mathcal{P}^4_\R$, the space of polynomials that are real with respect to $ρ$. Practically, if we write $b(ζ) = b_0 + \dots + b_4 ζ^4$, this condition forces $b_i = b_{4-i}$. Lastly, if we write out the equation of $Σ$ as $η^2 = P(ζ) = P_0 ζ + \dots + P_4 ζ^4$, $Θ$ has no residues exactly when $P_1b_0 - 2P_0b_1 = 0$ (equation \ref{eqn:residue condition}). If we count the degrees of freedom remaining, the last equation shows that we may choose $(b_0,b_1)$ from a complex line, whereas $b_2$ may be any real number. Hence for each marked curve $Σ$ there is a real three-dimensional vector space $W$ of differentials that meet conditions \ref{P:poles}--\ref{P:reality}.
 
 This presents an obvious choice of basis, but one that we will not choose. Instead, we shall choose a basis that it suited to computing the periods of the differentials so that we may be able to satisfy condition \ref{P:periods}, that the periods of the differentials lie in $2π\iu$. For this we turn to the the classical theory of elliptic curves, which has long studied differentials and their periods. It is standard to refer to differentials with double poles and no residues as differentials of the second kind. Condition \ref{P:poles} may therefore be rephrased as the differential must be of the second kind and have poles at the points of $\Sigma$ over $ζ=0$ and $\infty$. The standard Jacobi differential of the second kind is defined to be
 \[
@@ -574,9 +580,12 @@ Thus the space of genus one spectral curves that admit closing spectral data is 
 
 Immediately before this lemma we observed that although the condition $T\in\Q$ is well defined, $T(α,β)$ is a multi-valued function on $\mathcal{A}_1$ which is dependent on the paths of integration. So that we may work with a well-defined function, we will make some branch cuts on $\mathcal{A}_1$ and choose a principal branch of $T$. On each curve we will have to make a choice of paths $γ_+$ and $γ_-$, and we shall refer to these choices as principal paths.
 
+\phantomsection
+\label{para:principal paths}
+
 Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve $Σ(α,β)$ corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ be the path that begins at $(1,-η^+(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc to the unit circle (though on a different sheet now), and back to $(1,η^+(1))$.
 
-Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,-η^+(-1))$ to $(-1,η^+(-1))$ along the unit and branch point circles that does not cross $ν$. These paths are illustrated in Figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded. Note that these paths depend on the order of the branch points $(α,β) \in \mathcal{A}_1$, since $ν$ is defined to be the intersection of the unit and branch point circles which lies between $β$ and $\cji{β}$.
+Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,-η^+(-1))$ to $(-1,η^+(-1))$ along the unit and branch circles that does not cross $ν$. These paths are illustrated in Figure \ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded. Note that these paths depend on the order of the branch points $(α,β) \in \mathcal{A}_1$, since $ν$ is defined to be the intersection of the unit and branch circles which lies between $β$ and $\cji{β}$.
 
 \begin{defn}
 \label{def:def_T_0}
@@ -1741,7 +1750,7 @@ Returning to genus one spectral curves, of special interest are the spectral cur
 
 Suppose that $Σ(α,-α)$ is a curve that is fixed by $χ$. As $χ$ sends $p \mapsto p^{-1}$, it follows that $p$ is one. To show that $Σ(α,-α)$ admits spectral data it remains to shows that $T$ is rationally valued at this point $(α,-α) \in \mathcal{A}_1$.
 Computing the value of $T$ from its principal branch cut $T_0$ requires us to know which coordinates $(1,k,u,v)$ correspond to $(α,-α)$.
-The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two dimensional, but there are three parameters $(k,u,v)$, so there must be some relation between them. As the four branch points lie on a line it follows that $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
+The annulus $\{ (α,-α) \in \mathcal{A}_1\}$ is two-dimensional, but there are three parameters $(k,u,v)$, so there must be some relation between them. As the four branch points lie on a line it follows that $μ=\hat{α}$ and $ν = -\hat{α}$, where $\hat{α}$ is the unit vector of $α$. Directly from \eqref{eqn:def z0} and \eqref{eqn:def_k},
 \[
 z_0 = \frac{1+ \abs{α}}{1-\abs{α}},\quad
 k = \bra{ \frac{1- \abs{α}}{1+\abs{α}} }^2.
