@@ -1,18 +1,20 @@
 %\ProvidesPackage{ross}[Local macros by Ross Ogilvie]
 
+%% Nag about syntax errors
+\usepackage[l2tabu, orthodox]{nag}
+
 %% Common packages
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{amsfonts}
 
-%% Set the font
-\usepackage{fontspec}
-% \setmainfont{Latin Modern Roman}
 
+%% Enable font commands of Xetex
 %% For unicode characters in math environments
 \usepackage[bold-style=ISO]{unicode-math}
 
+% \setmainfont{Latin Modern Roman}
 \setmathfont{Latin Modern Math}
 \setmathfont[range={\mathcal,\mathscr,\mathbfscr}]{XITS Math}
 \setmathfont[range={\mathbb}]{TeX Gyre Termes Math}
@@ -20,7 +22,6 @@
 \protected\def\mathbb#1{{\mathchar\numexpr256*\symAMSb+`#1\relax}}
 % the redefinition for the missing \setminus must be delayed
 \AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
-% \renewcommand{\mathbf}[1]{\symbf{#1}}
 
 % Cool Chapter titles
 \usepackage[explicit]{titlesec}
@@ -51,14 +52,11 @@
 %% for chapter quotes
 \usepackage{epigraph}
 
-%%%%%%% For captions beside the figure
-\usepackage{floatrow}
-\usepackage{caption}
-% \captionsetup{labelformat=empty}
 
 % For plots
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
 
 % To make tikz pics in their own tex file, but still be able to \include them
 \usepackage{standalone}
@@ -69,17 +67,28 @@
 % For todo note and missing figures
 \usepackage{todonotes}
 
-% Make references into hyperlinks, but invisibly
-\usepackage[hidelinks]{hyperref}
-% \hypersetup{colorlinks=false}
-
-% To adjust the formatting of captions
-% Have "Figure 1.2" and then a newline before the caption
-\usepackage[labelsep=newline]{caption}
+% For captions beside the figure
+% \usepackage{floatrow}
 % To put the caption to the side of a figure
 \usepackage{sidecap}
 % Center the caption vertically
 \sidecaptionvpos{figure}{c}
+% To adjust the formatting of captions
+% Have "Figure 1.2" and then a newline before the caption
+\usepackage[labelsep=newline]{caption}
+
+
+
+
+% Make references into hyperlinks, but invisibly
+\usepackage[hidelinks]{hyperref}
+
+
+
+
+% NOW FOR SOME COMMANDS
+
+
 
 %%%%%%%%% to stop things appearing in the table of contentns
 \setcounter{tocdepth}{2}
@@ -104,6 +113,9 @@
 
 % Force a label on a * equation environment
 \newcommand{\labelthis}[1]{\addtocounter{equation}{1}\tag{\theequation}\label{#1}}
+
+% Label a paragraph
+\newcommand{\labelpara}[1]{\phantomsection\label{#1}}
 
 %% A command to make figures with a caption along side
 \newcommand{\makefigure}[2]{

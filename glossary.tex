@@ -1,6 +1,7 @@
 %!TEX root = thesis.tex
 \chapter{Glossary}
-Below is a list of notation and terms, with a short description and a reference to their definition. They are arranged alphabetically, first Latin then Greek.
+% Below is a list of notation, with a short description and a reference to their definition.
+% They are arranged alphabetically, first Latin then Greek.
 
 \begin{description}[align=right]
 
@@ -10,7 +11,7 @@ Below is a list of notation and terms, with a short description and a reference 
 
 \item[$b^i$] Every differential on a marked curve of genus $g$ that satisfies \ref{P:poles}--\ref{P:imaginary periods} may be written in the form
 \[
-Θ = b(ζ)ζ^{-2}η^{-1} dζ,
+Θ = b(ζ) \frac{dζ}{ζ^2 η},
 \]
 for a polynomial $b(ζ) \in \mathcal{P}^{g+3}_\R$. The superscript refers to one of the pair of differentials in the spectral data $(Σ,Θ^1,Θ^2)$.
 
@@ -41,7 +42,7 @@ e = (1-k^2z^2) \frac{dz}{w}.
 
 \item[$E(k)$] The complete elliptic integral of the second kind. $E(k) = E(1;k)$.
 
-\item[$E(z;k)$] The incomplete elliptic integral of the second kind.
+\item[$E(z;k)$] The incomplete elliptic integral of the second kind. See Section~\ref{sec:Elliptic Defs}.
 \[
 E(z;k) = \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt.
 \]
@@ -95,9 +96,9 @@ P(ζ) = \prod (ζ - α_j)(1 - \bar{α}_jζ).
 
 \item[$\dot{P}$] The derivative of $P$ with respect to $t$ along a path $\ell(t)$ in $\mathcal{M}_g$.
 
-\item[$\mathcal{P}^k$]
+\item[$\mathcal{P}^k$] The space of polynomials of degree at most $k$. See Definition~\ref{def:mathcal P}.
 
-\item[$\mathcal{P}^k_\R$]
+\item[$\mathcal{P}^k_\R$] The space of polynomials of degree at most $k$ that a real with respect to $ρ$. See Definition~\ref{def:mathcal P}.
 
 \item[$q$] Represents a value of the function $\tilde{T}$. A coordinate on $\mathcal{\tilde{C}}_1$. See Lemma~\ref{lem:T_graph}.
 
@@ -109,9 +110,13 @@ P(ζ) = \prod (ζ - α_j)(1 - \bar{α}_jζ).
 
 \item[$S$] A positive function on $\mathcal{A}_1$ such that a genus one marked curve $Σ(α,β)$ admits an exact differential meeting the closing conditions~\ref{P:closing} only if $S(α,β)$ is rational. See \eqref{eqn:def_S}.
 
-\item[$\mathcal{S}_g$] The moduli space of spectral curves of genus $g$. These are marked curves for which there are a pair of differentials which satisfy \ref{P:poles}--\ref{P:closing}.
+\item[$\mathcal{S}_g$] The moduli space of spectral curves of genus $g$. These are marked curves for which there are a pair of differentials which satisfy \ref{P:poles}--\ref{P:closing}. See \ref{}
 
 \item[$\mathcal{\tilde{S}}_1$] The universal cover of $\mathcal{S}_1$. It is a identified with a subspace of $\mathcal{\tilde{C}}_1$. See \eqref{eqn:def tilde S}.
+
+\item[$\su_2$] The Lie algebra of $\SU_2$.
+
+\item[$\SU_2$] The group of two-by-two special unitary matrices, $A \bar{A}^T = I$.
 
 \item[$T$] A multivalued function on $\mathcal{A}_1$. such that a genus one marked curve $Σ(α,β)$ admits differentials meeting the closing conditions~\ref{P:closing} only if $T(α,β)$ is rational. See \eqref{eqn:def_T}.
 
@@ -121,45 +126,50 @@ P(ζ) = \prod (ζ - α_j)(1 - \bar{α}_jζ).
 
 \item[$\mathbb{T}^2$] The torus.
 
-\item[$u$] A coordinate on $\mathcal{A}_1$, defined by $\iu u = f(1)$.
+\item[$u$] A coordinate on $\mathcal{A}_1$, defined by $\iu u = f(1)$. See Lemma~\ref{lem:change of parameters}.
 
-\item[$u'$] A coordinate on $\mathcal{A}_1$, defined by $u' = u^{-1}$.
+\item[$u'$] A coordinate on $\mathcal{A}_1$, defined by $u' = u^{-1}$. See Lemma~\ref{lem:change of parameters}.
 
-\item[$\tilde{u}$] A coordinate on $\mathcal{\tilde{C}}_1$. See Lemma~\ref{lem:mathcal tilde C}
+\item[$\tilde{u}$] A coordinate on $\mathcal{\tilde{C}}_1$. See Lemma~\ref{lem:mathcal tilde C}.
 
-\item[$U$] A coordinate on $\mathcal{A}_1$ on which $\tilde{λ}$ acts by a translation of $π$. Defined by $U=\sqrt{k} u$.
+\item[$U$] A coordinate on $\mathcal{A}_1$ on which $λ$ acts by a rotation by $π$ radians. Defined by $U=\sqrt{k} u$.
 
-\item[$\tilde{U}$] A coordinate on $\mathcal{\tilde{C}}_1$ defined in relation to $U$ in the same way that $\tilde{u}$ is related to $u$ (via an $\atan$ covering map).
+\item[$\tilde{U}$] A coordinate on $\mathcal{\tilde{C}}_1$ defined in relation to $U$ in the same way that $\tilde{u}$ is related to $u$ (via a half-$\tan$ covering map).
 
-\item[$\mathcal{U}$] The affine space in which the moduli space $\mathcal{M}_g$ of spectral data is embedded via the reduction of a triple of spectral data $(Σ,Θ^1,Θ^2)$ to polynomials $(P,b^1,b^2)$.
+\item[$\mathcal{U}$] An open subset of the affine space $\mathcal{P}^{2g+2}_\R\times \mathcal{P}^{g+3}_\R\times\mathcal{P}^{g+3}_\R$ on which the moduli space $\mathcal{M}_g$ of spectral data is embedded via the reduction of a triple of spectral data $(Σ,Θ^1,Θ^2)$ to polynomials $(P,b^1,b^2)$. See Definition~\ref{def:def U}.
 
-\item[$\mathcal{U}'$] An open subset of $\mathcal{U}$
+\item[$\mathcal{U}'$] An open subset of $\mathcal{U}$. See Definition~\ref{def:subsets U}.
 
-\item[$\mathcal{U}''$] A subset of $\mathcal{U}$
+\item[$\mathcal{U}''$] A subset of $\mathcal{U}$ corresponding to conformal harmonic maps. See Definition~\ref{def:subsets U}
 
-\item[$\mathcal{U}^{(i)}$] A open subset of $\mathcal{U}$
+\item[$\mathcal{U}^{(i)}$] An open dense subset of $\mathcal{U}'$ where the roots of the polynomials $P$, $b^1$ and $b^2$ associated to spectral data have distinct roots. See Definition~\ref{def:subsets U}
 
 \item[$v$] A coordinate on $\mathcal{A}_1$, defined by $\iu v = f(-1)$.
 
 \item[$v'$] A coordinate on $\mathcal{A}_1$, defined by $v' = v^{-1}$.
 
-\item[$\tilde{v}$]
+\item[$\tilde{v}$] A coordinate on $\mathcal{\tilde{C}}_1$. See Lemma~\ref{lem:mathcal tilde C}.
 
-\item[$V$]
+\item[$V$] A coordinate on $\mathcal{A}_1$ on which $λ$ acts by a rotation by $π$ radians. Defined by $V=\sqrt{k} v$.
 
-\item[$\tilde{V}$]
+\item[$\tilde{V}$] A coordinate on $\mathcal{\tilde{C}}_1$ defined in relation to $V$ in the same way that $\tilde{v}$ is related to $v$ (via a half-$\tan$ covering map).
 
-\item[$w(z)$] The equation of an elliptic curve in Jacobi form. $w(z)^2 = (1-z^2)(1-k^2z^2)$.
+\item[$w(z)$] The equation of an elliptic curve in Legendre form. $w(z)^2 = (1-z^2)(1-k^2z^2)$.
 
-\item[$w'(z')$] Variant of $w(z)$ used to concisely write equations in coordinates `at infinity'. $w'(z')^2 = (1-(z')^2)(k^2 - (z')^2)$.
+\item[$w'(z')$] Variant of $w(z)$ used to concisely write equations in the coordinates `at infinity', such as $u'$ and $v'$.
+\[
+w'(z')^2 = (z')^2\,w\bra{(z')^{-1}} =  (1-(z')^2)(k^2 - (z')^2).
+\]
 
-\item[$W$]
+\item[$W$] The vector $3$-space of differentials on a marked curve satisfying conditions \ref{P:poles}--\ref{P:reality}. It has bases $\{ ω, Θ^E, ε \}$ and $\{ ω, Θ^E, Θ^P \}$. See Section~\ref{sec:Differentials}.
 
-\item[$X$]
+\item[$x$]
 
-\item[$Y$]
+\item[$X$] A vector in $\su_2$. A harmonic map $g$ corresponding to a genus zero spectral curve may be brought into the form $g(w_R + \iu w_I) = \exp (-4w_R X) \exp (4w_I Y)$, as in \eqref{eqn:genus zero simple map}.
 
-\item[$z$] A coordinate on $\CP^1$, over which the Jacobi elliptic curve is written.
+\item[$Y$] A vector in $\su_2$. See the glossary entry for $X$.
+
+\item[$z$] A coordinate on $\CP^1$, over which the Legendre elliptic curve is written.
 
 \item[$z_0$] The image of $0$ under $f$. It is crucial to the construction of the map $f^{-1}$ in terms of the parameters $(p,k,u,v)$, and given by \eqref{eqn:formula xy}.
 
@@ -167,21 +177,83 @@ P(ζ) = \prod (ζ - α_j)(1 - \bar{α}_jζ).
 
 
 
-% \item[$$]
 
-% \item[$$]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\item[$\tilde{π}$]
 
-\item[$z'$] A coordinate on $\CP^1$, with $z' = z^{-1}$.
+\item[$α$]
+
+\item[$β$]
+
+\item[$γ_+$]
+
+\item[$\symbf{γ}_+$]
+
+\item[$γ_-$]
+
+\item[$\symbf{γ}_-$]
+
+\item[$δ$] A parameter which determines the image of a harmonic map corresponding to a spectral curve of genus zero. It is defined in \eqref{eqn:def delta} to be the angle between $X$ and $Y$.
+
+\item[$ε$] A differential on a genus one marked curve used to construct a basis of $W$. Defined by \eqref{eqn:def ε}.
 
 \item[$ζ$] A coordinate on $\CP^1$, over which the marked curve is defined.
 
-\item[$η$] The spectral curve is defined by $η^2 = P(ζ)$.
+\item[$η$] A marked curve is given in standard form by $η^2 = P(ζ)$, for $P$ given by \eqref{eqn:def P}.
 
-\item[$η(ζ)^+$] The value of the fibre coordinate over $ζ$, taken so that $η(1)$ is positive. For a point on the unit circle $ζ = e^{\iu θ}$ and a spectral curve in standard form, for odd genus $p$,
+\item[$η^+(ζ)$] The value of the fibre coordinate over $ζ$. For a point $ζ = e^{\iu θ}$ on the unit circle and a spectral curve in standard form, for odd genus $g$,
 \[
-    η(e^{\iu θ})^+ = e^{\iu θ \frac{p+1}{2}} \prod_j \abs{e^{\iu θ} - α_j}.
+η^+(e^{\iu θ}) = e^{\iu θ \frac{g+1}{2}} \prod_j \abs{e^{\iu θ} - α_j}.
 \]
+
+\item[$Θ^E$] An exact differential on a genus one marked curve which satisfies conditions \ref{P:poles}--\ref{P:reality}.
+\[
+Θ^E = \iu\, d \bra{\frac{η}{ζ}}.
+\]
+
+\item[$Θ^P$] A differential on a genus one marked curve which satisfies conditions \ref{P:poles}--\ref{P:periods} and has an imaginary period of $2π\iu$.
+
+\item[$κ$]
+
+\item[$λ$]
+
+\item[$\tilde{λ}$]
+
+\item[$μ$]
+
+\item[$ν$]
+
+\item[$ξ$]
+
+\item[$\tilde{π}$]
+
+\item[$ρ$]
+
+\item[$\tilde{ρ}$]
+
+\item[$σ$]
+
+\item[$σ_1, σ_2, σ_3$]
+
+\item[$Σ$]
+
+\item[$Σ(α,β)$]
+
+\item[$τ$]
+
+\item[$Φ$]
+
+\item[$χ$]
+
+\item[$Ψ^E$]
+
+\item[$Ψ^P$]
+
+\item[$ω$]
+
+
 
 \end{description}
