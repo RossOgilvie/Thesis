@@ -3,7 +3,7 @@
 \chapter{Deformations of Harmonic Maps}
 \label{chp:Deformation}
 
-In this chapter we investigate the tangent space to the moduli space $\mathcal{M}$ of spectral data. We will prove there is an open set $U'$ such that $\mathcal{M}\cap U'$ is a two dimensional manifold. To show this, we fix the genus $g$ of the spectral curve and use \eqref{eqn:def P} and \eqref{eqn:def b} to consider $\mathcal{M}_g$ as a subset of an affine space $U$. Then by considering paths in $\mathcal{M}_g$ we develop equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} that characterise the tangent vectors to these paths. On an open subset $U' \subset U$, we find all solutions to these equations to demonstrate that $T_p\mathcal{M}_g$ is two dimensional (Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} and \ref{lem:tangent conformal}). Having established that the dimension is constant, it naturally follows that $\mathcal{M}_g\cap U'$ is a manifold (Theorem \ref{thm:moduli manifold}).
+In this chapter we investigate the tangent space to the moduli space $\mathcal{M}$ of spectral data. We will prove there is an open set $\mathcal{U}'$ such that $\mathcal{M}\cap \mathcal{U}'$ is a two dimensional manifold. To show this, we fix the genus $g$ of the spectral curve and use \eqref{eqn:def P} and \eqref{eqn:def b} to consider $\mathcal{M}_g$ as a subset of an affine space $\mathcal{U}$. Then by considering paths in $\mathcal{M}_g$ we develop equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} that characterise the tangent vectors to these paths. On an open subset $\mathcal{U}' \subset \mathcal{U}$, we find all solutions to these equations to demonstrate that $T_p\mathcal{M}_g$ is two dimensional (Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} and \ref{lem:tangent conformal}). Having established that the dimension is constant, it naturally follows that $\mathcal{M}_g\cap \mathcal{U}'$ is a manifold (Theorem \ref{thm:moduli manifold}).
 
 \emph{A comment about notation.} Throughout we will use diacritical marks to indicate the factors that a polynomial does or does not have. A polynomial with a circumflex (hat) will be shown to have a factor of $ζ^2-1$, and a tilde will indicate that any common factors have been removed, cf. \eqref{eqn:common factors}. We shall use a dash to denote differentiation with respect to $ζ$ and a dot for differentiation with respect to $t$ evaluated at $t=0$.
 
@@ -22,11 +22,11 @@ for $i=1,2$, where for each $t$ we have that $b^i(t,ζ)$ a member of $\mathcal{P
 
 Equivalently then, we may describe $\ell$ in terms of these polynomials, $\ell(t) = (P(t,ζ),b^1(t,ζ),b^2(t,ζ))$.
 We let $Σ = Σ(0)$ and likewise $b^i(ζ) = b^i(0,ζ)$.
-More generally, omission of the parameter $t$ will correspond to evaluation at the point $t=0$. We use this representation of the spectral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $U$.
+More generally, omission of the parameter $t$ will correspond to evaluation at the point $t=0$. We use this representation of the spectral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $\mathcal{U}$.
 
 \begin{defn}
 \label{def:def U}
-Let $U$ be the open subset of $\mathcal{P}^{2g+2}_\R\times \mathcal{P}^{g+3}_\R\times\mathcal{P}^{g+3}_\R$ of triples of real polynomials $(P,b^1,b^2)$ where
+Let $\mathcal{U}$ be the open subset of $\mathcal{P}^{2g+2}_\R\times \mathcal{P}^{g+3}_\R\times\mathcal{P}^{g+3}_\R$ of triples of real polynomials $(P,b^1,b^2)$ where
 $P$ has only simple zeroes (cf. \ref{P:simple zeroes}) and no zeroes on the unit circle (cf. \ref{P:no real zeroes}), and the polynomials $b^i$ have at most a simple root at $ζ=0$ (cf. \ref{P:poles}).
 \end{defn}
 
@@ -228,7 +228,7 @@ iv & The degree of $\gcd(b^1,b^2)$ is greater than two \\ \hline
 \end{tabular}
 \end{center}
 
-The five sets corresponding to these five cases are disjoint and cover the space $U$. We have seen that the spectral data in case (iv) do not admit any deformations.
+The five sets corresponding to these five cases are disjoint and cover the space $\mathcal{U}$. We have seen that the spectral data in case (iv) do not admit any deformations.
 With regards to case (v), by equation \eqref{eqn:residue condition}, if $P_0$ vanishes at a point of $\mathcal{M}_g$ then so too must $b^1_0$ and $b^2_0$. Thus the intersection of $\mathcal{M}_g$ and the points of case (v) is contained in the set the points where $ζ$ divides $\gcd(b^1,b^2)$. The discussion following \eqref{eqn:Q0 vanish conformal} shows that deformations are only possible at a point in case (v) if $\gcd(b^1,b^2) = ζ$ exactly, otherwise no deformations can exist.
 
 In general, points of $\mathcal{M}_g$ where case (iii) holds are singularities of a deformation \cite{Schmidt2016} and are not considered further in this thesis. We shall note only that there are no such points of $\mathcal{M}_g$ when the genus $g$ of the spectral curve is zero or one.
@@ -242,27 +242,27 @@ We shall now give a similar short proof to show that the differentials of a genu
 The coefficient of $c$ above, the bracketed expression, is never zero and so $c$ is determined by $d$. Hence $b^1$ is determined up to a real scalar. This demonstrates any two differentials with the same factor $F$ are real linearly dependent, which contradicts \ref{P:linear independence}.
 
 \begin{defn}
-Let $U'$ be the subset of points of the two cases (i) and (ii).
-We denote the points of case (i) as $U^{(i)}$ and the points of case (v) where $\gcd(b^1,b^2) = ζ$ as $U''$.
+Let $\mathcal{U}'$ be the subset of points of the two cases (i) and (ii).
+We denote the points of case (i) as $\mathcal{U}^{(i)}$ and the points of case (v) where $\gcd(b^1,b^2) = ζ$ as $\mathcal{U}''$.
 \end{defn}
 
-The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap U'$ is a manifold. We also show that the points of $\mathcal{M}_g\cap U''$ are smooth points of $\mathcal{M}_g$.
-We may characterise $U'$ as the set
+The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap \mathcal{U}'$ is a manifold. We also show that the points of $\mathcal{M}_g\cap \mathcal{U}''$ are smooth points of $\mathcal{M}_g$.
+We may characterise $\mathcal{U}'$ as the set
 \[
-U' = \Set{ (P,b^1,b^2) \in U } { \gcd(P,b^1,b^2) = 1 \text{ and } \gcd(b^1,b^2) \in \mathcal{P}^l_\R \text{ for } l \leq 2 }.
+\mathcal{U}' = \Set{ (P,b^1,b^2) \in \mathcal{U} } { \gcd(P,b^1,b^2) = 1 \text{ and } \gcd(b^1,b^2) \in \mathcal{P}^l_\R \text{ for } l \leq 2 }.
 \labelthis{eqn:def U'}
 \]
-The set $U'$ is open because the points of cases (iii), (iv) and (v) form a closed subset of the space $U$, the space of triples of real polynomials satifying the conditions of Definition \ref{def:def U}. To see that this complement $U\setminus U'$ is closed, we write it as
+The set $\mathcal{U}'$ is open because the points of cases (iii), (iv) and (v) form a closed subset of the space $\mathcal{U}$, the space of triples of real polynomials satifying the conditions of Definition \ref{def:def U}. To see that this complement $\mathcal{U}\setminus \mathcal{U}'$ is closed, we write it as
 \begin{align*}
-&\Set{(P,b^1,b^2) \in U}{ \gcd(b^1,b^2) \in\mathcal{P}^k_\R,\,k > 2 } \\
+&\Set{(P,b^1,b^2) \in \mathcal{U}}{ \gcd(b^1,b^2) \in\mathcal{P}^k_\R,\,k > 2 } \\
 &\qquad\cup
-\Set{(P,b^1,b^2) \in U}{ \gcd(P,b^1,b^2) \in\mathcal{P}^l_\R,\,l \geq 2 } \\
+\Set{(P,b^1,b^2) \in \mathcal{U}}{ \gcd(P,b^1,b^2) \in\mathcal{P}^l_\R,\,l \geq 2 } \\
 &\qquad\cup
-\Set{(P,b^1,b^2) \in U}{ P_0 = 0 },
+\Set{(P,b^1,b^2) \in \mathcal{U}}{ P_0 = 0 },
 \end{align*}
 which is the union of three closed sets.
 
-At each point of $U'$ and $U''$ that lies in $\mathcal{M}_g$, $F^i$ must divide $c^i$ and $G$ must divide $Q$. Let us therefore define
+At each point of $\mathcal{U}'$ and $\mathcal{U}''$ that lies in $\mathcal{M}_g$, $F^i$ must divide $c^i$ and $G$ must divide $Q$. Let us therefore define
 \[
 c^i = F^i \tilde{c}^i, \text{ and } Q = G\tilde{Q}.
 \labelthis{eqn:def c Q tilde}
@@ -370,20 +370,20 @@ But $c^2$ is degree $g+1$, and $c^2 = F^2\tilde{c}^2$. Therefore the degree of $
 \label{def:def R}
 Recall the confluent Vandermonde matrix $V(B)$ and vector $h(B,C/A)$ defined in \eqref{eqn:linear system}. We define the function $R$ to be
 \begin{align*}
-R : U^{(i)} \times \R^3 &\to \C \\
+R : \mathcal{U}^{(i)} \times \R^3 &\to \C \\
 ((P,b^1,b^2), Q) &\mapsto \text{ the last entry of } \left[V( \tilde{b}^2 )\right]^{-1}
 h\bra{\tilde{b}^2, \frac{Q\tilde{P}}{\tilde{b}^1} }.
 \end{align*}
-When the point of $U^{(i)}$ is understood, we shall abbreviate this to $R(Q)$.
+When the point of $\mathcal{U}^{(i)}$ is understood, we shall abbreviate this to $R(Q)$.
 \end{defn}
 
 This function $R$ is simply the function that gives the value of the degree $n$ coefficient of $\tilde{c}^2$; the condition that $R((P,b^1,b^2),Q) = 0$ is equivalent to the condition that there is a solution $\tilde{c}^2$ to \eqref{eqn:Q reduced} of degree $n-1$ or less.
 Likewise, evaluating \eqref{eqn:Q reduced} at the roots of $\tilde{b}^1$ leads to a solution $\tilde{c}^1$ of degree $g+2 - d_1$. From the highest order term of \eqref{eqn:Q reduced}, if $\tilde{c}^2$ is degree $n-1$ or lower, then $\tilde{c}^1$ will be degree $g + 1 - d_1$ or lower without any further restrictions on $Q$.
 
-It is important to note that $R$ is linear function in the coefficients of $Q$, so that the solutions of $R(Q)=0$ form a linear space. Intuitively, because $R$ is a complex valued function, we would expect this linear space of $Q$ to be real-codimension two. However, $R$ satisfies the following reality type condition, and thus $R(Q)=0$ puts only one real constraint on $Q$. In other words, at any point of $U^{(i)}$ there is a two real-dimensional plane of real quadratic polynomials $Q$ that satisfy $R(Q) = 0$.
+It is important to note that $R$ is linear function in the coefficients of $Q$, so that the solutions of $R(Q)=0$ form a linear space. Intuitively, because $R$ is a complex valued function, we would expect this linear space of $Q$ to be real-codimension two. However, $R$ satisfies the following reality type condition, and thus $R(Q)=0$ puts only one real constraint on $Q$. In other words, at any point of $\mathcal{U}^{(i)}$ there is a two real-dimensional plane of real quadratic polynomials $Q$ that satisfy $R(Q) = 0$.
 
 \begin{lem}
-At every point $(P,b^1,b^2)$ of $U^{(i)}$, $R((P,b^1,b^2), Q)$ satisfies the relation
+At every point $(P,b^1,b^2)$ of $\mathcal{U}^{(i)}$, $R((P,b^1,b^2), Q)$ satisfies the relation
 \[
 \bar{R} = (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i }  R,
 \labelthis{eqn:R reality}
@@ -427,7 +427,7 @@ so that the conjugate of $R$ is
 &= (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i }  R.
 \end{align*}
 
-To extend this argument to a point $p = (P,b^1,b^2)$ where the roots of $\tilde{b}^2$ are not distinct, we may construct a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ of $U^{(i)}$ that converge to the point $p$, but such that $b^2(p_k)(ζ)$ has distinct roots for every $k$. We will show that on this sequence $\lim_{k\to\infty} R(p_k,Q) = R(p,Q)$, and therefore
+To extend this argument to a point $p = (P,b^1,b^2)$ where the roots of $\tilde{b}^2$ are not distinct, we may construct a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ of $\mathcal{U}^{(i)}$ that converge to the point $p$, but such that $b^2(p_k)(ζ)$ has distinct roots for every $k$. We will show that on this sequence $\lim_{k\to\infty} R(p_k,Q) = R(p,Q)$, and therefore
 \begin{align*}
 \bar{R(p,Q)}
 = \lim_{k\to\infty} \bar{R(p_k,Q)}
@@ -435,7 +435,7 @@ To extend this argument to a point $p = (P,b^1,b^2)$ where the roots of $\tilde{
 &= (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i } R(p,Q).
 \end{align*}
 
-Suppose that we are at a point $p = (P,b^1,b^2)$ of $U^{(i)}$ where $\tilde{b}^2$ has a double root $β$. Considering the subvariety of $U^{(i)}$ where $F^2 = \gcd(P,b^2)$ is fixed, we may find a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ converging to $p$ with the property that $\gcd(P(p_k),b^2(p_k)) = F^2$ and such that the roots of each polynomial $\tilde{b}^2(p_k)$ are distinct. Let us label the two simple roots of $\tilde{b}^2(p_k)$ that coalesce at $p$ to form the double root $β$ as $β_1(k),β_2(k)$.
+Suppose that we are at a point $p = (P,b^1,b^2)$ of $\mathcal{U}^{(i)}$ where $\tilde{b}^2$ has a double root $β$. Considering the subvariety of $\mathcal{U}^{(i)}$ where $F^2 = \gcd(P,b^2)$ is fixed, we may find a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ converging to $p$ with the property that $\gcd(P(p_k),b^2(p_k)) = F^2$ and such that the roots of each polynomial $\tilde{b}^2(p_k)$ are distinct. Let us label the two simple roots of $\tilde{b}^2(p_k)$ that coalesce at $p$ to form the double root $β$ as $β_1(k),β_2(k)$.
 In other words, these are the two roots of $\tilde{b}^2(p_k)$ such that $\lim_{k\to\infty} β_1(p_k) = \lim_{k\to\infty} β_2(p_k) = β$. The corresponding rows of the Vandermonde matrix $V(\tilde{b}^2(p_k))$ in the system \eqref{eqn:Q reduced linear} are
 \[
 \begin{bmatrix}
@@ -474,7 +474,7 @@ The limit of the above as $k \to \infty$ is precisely the confluent Vandermonde 
 
 Combining these row operations with the fact that inversion of a matrix is continuous and that the roots of a polynomial are continuous functions of coefficients \cite[Theorem V.4A]{Whitney1972}, this shows that limit of the solutions $\tilde{c}^2(p_k)$ is just the solution $\tilde{c}^2(p)$. In particular, the last component of $\tilde{c}^2(p)$ is $R(p,Q)$, and this is therefore the limit of $R(p_k,Q)$ as $k\to\infty$.
 
-Hence we have established \eqref{eqn:R reality} at all points of $U^{(i)}$.
+Hence we have established \eqref{eqn:R reality} at all points of $\mathcal{U}^{(i)}$.
 \end{proof}
 \end{lem}
 
@@ -688,16 +688,16 @@ But our free choice of $s_1\in\R$ is only adding multiples of $(2P,b^1,b^2)$, wh
 \end{proof}
 \end{lem}
 
-Though the details of the above three lemmata vary, we see that in every case they tell essentially the same story: starting with a polynomial $Q$ it is possible to recover a tangent vector to $\mathcal{M}_g$. It is also interesting to note that in each case there was a choice of two real parameters, and for each choice of those parameters there was a unique tangent vector. Conversely, given any tangent vector $(\dot P, \dot{b}^1, \dot{b}^2)$ to $\mathcal{M}_g$ there is a unique pair of polynomials $(\hat{c}^1,\hat{c}^2)$, as remarked in the paragraph following \eqref{eqn:EMPDi}, and thus a unique polynomial $Q$ from \eqref{eqn:Q}. Hence this pairing between parameters and tangent vectors is bijective, and we may identify the tangent space to $\mathcal{M}_g$ with these two real parameters. This suggests that $\mathcal{M}_g \cap U'$ itself is a surface.
+Though the details of the above three lemmata vary, we see that in every case they tell essentially the same story: starting with a polynomial $Q$ it is possible to recover a tangent vector to $\mathcal{M}_g$. It is also interesting to note that in each case there was a choice of two real parameters, and for each choice of those parameters there was a unique tangent vector. Conversely, given any tangent vector $(\dot P, \dot{b}^1, \dot{b}^2)$ to $\mathcal{M}_g$ there is a unique pair of polynomials $(\hat{c}^1,\hat{c}^2)$, as remarked in the paragraph following \eqref{eqn:EMPDi}, and thus a unique polynomial $Q$ from \eqref{eqn:Q}. Hence this pairing between parameters and tangent vectors is bijective, and we may identify the tangent space to $\mathcal{M}_g$ with these two real parameters. This suggests that $\mathcal{M}_g \cap \mathcal{U}'$ itself is a surface.
 
 \begin{thm}
 \label{thm:moduli manifold}
-The open subset $\mathcal{M}_g \cap U'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold. Further, the points of $\mathcal{M}_g \cap U''$ are also smooth points of $\mathcal{M}_g$.
+The open subset $\mathcal{M}_g \cap \mathcal{U}'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold. Further, the points of $\mathcal{M}_g \cap \mathcal{U}''$ are also smooth points of $\mathcal{M}_g$.
 
 \begin{proof}
-Recall the defintion of $U'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i) or (ii). That is, $U'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is one and $\gcd(b^1,b^2)$ lies in $\mathcal{P}^k_\R$ for some $k \leq 2$.
+Recall the defintion of $\mathcal{U}'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i) or (ii). That is, $\mathcal{U}'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is one and $\gcd(b^1,b^2)$ lies in $\mathcal{P}^k_\R$ for some $k \leq 2$.
 
-At any point $p\in \mathcal{M}_g \cap U'$, take a simply connected open neighbourhood $V\subset U$. On this neighbourhood, define the map $Ψ : V \to \R^{4g+9}$ by
+At any point $p\in \mathcal{M}_g \cap \mathcal{U}'$, take a simply connected open neighbourhood $\mathcal{V}\subset \mathcal{U}$. On this neighbourhood, define the map $Ψ : \mathcal{V} \to \R^{4g+9}$ by
 \begin{align*}
 Ψ(P,b^2,b^2) = \Big(
 & \int_{A_1} Θ^1, \dots, \int_{A_g} Θ^1, \int_{B_1} Θ^1, \dots, \int_{B_g} Θ^1, \\
@@ -708,19 +708,19 @@ At any point $p\in \mathcal{M}_g \cap U'$, take a simply connected open neighbou
 \end{align*}
 where $A_i, B_i$ are the real and imaginary periods of the curve $η^2 = P(ζ)$, $γ_+,γ_-$ are the paths in the curve between the points of $ζ=1$ and $ζ=-1$, and $α_k$ are the roots of $P$ inside the unit circle. Because $V$ is simply connected, the choice of paths $\{A_k\}, \{B_k\}, γ_+, γ_-$ may be made smoothly. The components of $Ψ$ are the conditions that spectral data must satisfy. In particular, the first $4g$ components of $Ψ$ are the periods of the differentials, the next four components are the integrals in the closing conditions \eqref{eqn:closing}, followed by the conditions to have no residues \eqref{eqn:residue condition} and the last component of $Ψ$ is our prefered scaling of the spectral curve.
 
-Hence each connected components of $\mathcal{M}_g \cap V$ is contained in a level set of $Ψ$,
+Hence each connected components of $\mathcal{M}_g \cap \mathcal{V}$ is contained in a level set of $Ψ$,
 \begin{align*}
-\mathcal{M}_g \cap V
+\mathcal{M}_g \cap \mathcal{V}
 \subset Ψ^{-1}\big( &0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,0,\dots,0,2π\iu\Z,\dots,2π\iu\Z, \\
 &\quad 2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,0,0,1 \big).
 \end{align*}
-The point $p$ of $\mathcal{M}_g \cap V$ falls under either Lemma \ref{lem:tangent generic} or \ref{lem:tangent G}. In both cases we computed that the kernel of $dΨ_p$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point $p$. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap U'$ is a two dimensional manifold.
+The point $p$ of $\mathcal{M}_g \cap \mathcal{V}$ falls under either Lemma \ref{lem:tangent generic} or \ref{lem:tangent G}. In both cases we computed that the kernel of $dΨ_p$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point $p$. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap \mathcal{U}'$ is a two dimensional manifold.
 
-The proof of the second part of the theorem is entirely similar. Recall that $U''$ is the subset of points of $U$ where $P(0) = 0$ and $\gcd(b^1,b^2)=ζ$. Take a point $p\in\mathcal{M}_g\cap U''$ and a simply connected open neighobourhood $V\subset U$ of $p$ as before. We may use the same definition of $Ψ$, and by the implicit function theorem and Lemma \ref{lem:tangent conformal} it follows that $p$ is also a smooth point of $\mathcal{M}_g$.
+The proof of the second part of the theorem is entirely similar. Recall that $\mathcal{U}''$ is the subset of points of $\mathcal{U}$ where $P(0) = 0$ and $\gcd(b^1,b^2)=ζ$. Take a point $p\in\mathcal{M}_g\cap \mathcal{U}''$ and a simply connected open neighobourhood $\mathcal{V}\subset \mathcal{U}$ of $p$ as before. We may use the same definition of $Ψ$, and by the implicit function theorem and Lemma \ref{lem:tangent conformal} it follows that $p$ is also a smooth point of $\mathcal{M}_g$.
 \end{proof}
 \end{thm}
 
-By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within $U^{(i)}$ and $U''$, while those with a genus one spectral curve may also be case (ii). Either way, $\mathcal{M}_0$ and $\mathcal{M}_1$ are smooth at every point and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
+By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within $\mathcal{U}^{(i)}$ and $\mathcal{U}''$, while those with a genus one spectral curve may also be case (ii). Either way, $\mathcal{M}_0$ and $\mathcal{M}_1$ are smooth at every point and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
 
 To close this chapter, let us give a geometric interpretation to the polynomial $Q$. Recall that the conformal type of the domain of a harmonic map is given by the ratios of the principal parts of the differentials of its spectral data. Let the conformal type be denoted $τ$. For a nonconformal harmonic map we have that $b^2_0 = τ b^1_0$. Consideration of the constant terms of \eqref{eqn:EMPDi} reveal that
 \[
