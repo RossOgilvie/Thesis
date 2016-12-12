@@ -34,7 +34,7 @@ f(w) = \exp( -4w_R X ) \exp( 4 w_I Y ).
 \]
 The matrix exponential of an $\su_2$ matrix is of course an $\SU(2)$ matrix, and a line through the origin of $\su_2$, such as $\Set{-4w_R X }{w_R \in \R}$, is mapped to a one parameter subgroup of $\SU(2)$, a circle. As we vary $w_R$, the image of $\exp (-4w_R X)$ is a circle and so for a fixed value of $w_I$, the image of $f$ is the right translation of this circle by $\exp (4w_I Y)$. The same is true if we fix $w_R$ and vary $w_I$. Immediately therefore we can see \eqref{eqn:genus zero simple map} as the product of two circles, and hence the image is a torus.
 
-Not all solutions to \ref{eqn:Hit1.7} correspond to harmonic maps of the torus $M = \C/\Z\langle 1,τ\rangle$, and thus far this map $f$ is only a map from the plane $\C$ to $\SU(2)$. It induces a map on the torus $M$ when it periodic with respect to the lattice $\Z\langle 1,τ\rangle$. Thus we must show firstly that the map is periodic and then determine for which matrices $X,Y$ and rotations $κ$ these periods lie in the lattice. To do so we will need to know how to compute explicitly the matrix exponential of an $\su_2$ matrix.
+Not all solutions to \eqref{eqn:Hit1.7} correspond to harmonic maps of the torus $M = \C/\Z\langle 1,τ\rangle$, and thus far this map $f$ is only a map from the plane $\C$ to $\SU(2)$. It induces a map on the torus $M$ when it periodic with respect to the lattice $\Z\langle 1,τ\rangle$. Thus we must show firstly that the map is periodic and then determine for which matrices $X,Y$ and rotations $κ$ these periods lie in the lattice. To do so we will need to know how to compute explicitly the matrix exponential of an $\su_2$ matrix.
 
 Calculations with $\su_2$ matrices are far more pleasant when one leverages their underlying geometry.
 We may identify $\su_2$ with $\R^3 = \R\langle i,j,k\rangle$ via the standard basis of $\su_2$
@@ -93,7 +93,6 @@ Thus the lattice of the periods of $f$, expressed in the variable $w$, is genera
 \labelthis{eqn:def kappa12}
 \]
 
-% \makefigure{The lattice of periods of $f$. TODO This has the wrong labels }{thesis_graphics_temp/genus_zero_lattice.png}
 \maketikzfigure{The lattice of periods of $f$.}{tikz/genus_zero_lattice}
 
 The geometric meaning of $κ$, $\norm{X}$, and $\norm{Y}$ are now apparent. The parameter $κ$ mediates between the $z$ and $w$ coordinates on $\C$ and so rotational offset angle of the lattice of periods of $f$ with respect to $\langle 1,τ \rangle$. More simply, the parameters $\norm{X}$ and $\norm{Y}$ determine the size of the lattice of periods by \eqref{eqn:def kappa12}. The three parameters must be chosen so that $1$ and $τ$ are points of this lattice of periods $\Z\langle \bar{κ}κ_1,\bar{κ}κ_2 \rangle$.
@@ -123,14 +122,27 @@ Y
 \end{pmatrix}.
 \labelthis{eqn:def delta}
 \]
-Using the inner product on $\su_2$, we may consider $δ$ as the angle between $X$ and $Y$. This transformation of $f$ into a standard form shows that the image of $f$ is determined by the angle $δ$, up to rotation of $\S^3$. The image is not determined uniquely by $δ$ though, as can be seen in Figure \ref{fig:genus zero maps}, $δ$ and $π-δ$ are the same. Indeed, if one reverses $w_R$, then this has the effect of changing $X$ to $-X$, and the angle between $-X$ and $Y$ is the supplement of $δ$.
+Using the inner product on $\su_2$, we may consider $δ$ as the angle between $X$ and $Y$. This transformation of $f$ into a standard form shows that the image of $f$ is determined by the angle $δ$, up to rotation of $\S^3$. The image is not determined uniquely by $δ$ though, as can be seen in Figure \ref{fig:genus0 linked}, $δ$ and $π-δ$ are the same. Indeed, if one reverses $w_R$, then this has the effect of changing $X$ to $-X$, and the angle between $-X$ and $Y$ is the supplement of $δ$.
 
-\begin{figure}[ht]
-\centering
-\missingfigure{}
-\caption{PICTURES OF THE MAPS FOR DIFFERENT DELTAS
-\label{fig:genus zero maps}
-}
+\begin{figure}
+    \includegraphics[width=\textwidth]{thesis_graphics/genus0_plot_pi4.png}
+    \caption{The image of a harmonic map of the form \eqref{eqn:genus zero simple map} with $δ=π/4$. It is visualised by sterographic projection of $\S^3$.}
+    \label{fig:genus0 plot pi4}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=\textwidth]{thesis_graphics/genus0_plot_pi2.png}
+    \caption{The image of a harmonic map of the form \eqref{eqn:genus zero simple map} with $δ=π/2$. The image is congruent to the Clifford torus, and it divides $\S^3$ into two congruent solid tori.}
+    \label{fig:genus0 plot pi2}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=\textwidth]{thesis_graphics/genus0_plot_pi32.png}
+    \caption{The image of a harmonic map of the form \eqref{eqn:genus zero simple map} with $δ=π/32$. Notice how it is very thin. In the limit as $δ \to 0$, the image collapses to a circle.}
+    \label{fig:genus0 plot pi32}
+\end{figure}
+\begin{figure}
+    \includegraphics[width=\textwidth]{thesis_graphics/genus0_linked.png}
+    \caption{The image of two harmonic maps of the form \eqref{eqn:genus zero simple map} with $δ=π/4$ (black) and $3π/4$ (blue). The two images are congruent and share a common circle $\Set{\exp(ω σ_2)}{ω \in \R}$, drawn in red. In fact all tori of the form \eqref{eqn:genus zero simple map} are tangent along this circle. It is the circle towards which the torus in Figure \ref{fig:genus0 plot pi32} is tending. Every point of $\S^3$ except those on this circle belongs to exactly one image, so varying the parameter $δ$ sweeps out all of $\S^3$.}
+    \label{fig:genus0 linked}
 \end{figure}
 
 We now turn to computing the spectral data associated to one of these harmonic maps. We may unwind the substitutions to express $F$ as
@@ -190,18 +202,17 @@ Taking the magnitude of both sides shows that $x$ is constant along arcs such th
 \[
 \abs{\frac{1+α}{1-α}}
 \]
-is fixed. These are arcs of circles centred on the real axis with radii such that the circle is perpendicular to the unit circle. If $x$ is constant, so too is $τ$, and along this arc the corresponding family of harmonic maps have the same domain but images changing as in Figure \ref{fig:genus zero maps}.
+is fixed. These are arcs of circles centred on the real axis with radii such that the circle is perpendicular to the unit circle. If $x$ is constant, so too is $τ$, and along this arc the corresponding family of harmonic maps have the same domain but images changing as in Figures \ref{fig:genus0 plot pi4}--\ref{fig:genus0 linked}.
 
 In the limit as $α$ approaches the unit circle for fixed $x$, the parameter $δ$ tends to $0$ or $π$ and the image of the harmonic map collapses into a circle, specifically a one-parameter subgroup of $\SU(2)$. A harmonic map to a circle subgroup is a particular case of a conformal map to a totally geodesic $2$-sphere, the class of harmonic tori in $\S^3$ that do not produce spectral curves by the construction of Section \ref{sec:construction}. In Chapter \ref{chp:Moduli Boundary}, we will develop a process whereby we take the limit of a family of spectral curves as it tends towards a curve that has a double point on the unit circle, and that singular curve is normalised to produce a spectral curve of lower genus. The analogous process is not possible here, as the normalisation of $η^2 = e^{-\iu \varphi} (ζ- e^{\iu \varphi})^2$ is the disjoint union of two spheres, which does not fit into our definition of spectral data (Definition \ref{def:marked curve}). One can however appreciate the moral sentiment common to both these cases, that the development of a double point on the unit circle should be thought of as a family of harmonic maps degenerating to `simpler' harmonic map.
 
-\makefigure{Constant parameter lines.}{thesis_graphics_temp/genus_zero_parameters.png}
-% \maketikzfigure{Constant parameter lines.}{tikz/genus_zero_parameters}
+\maketikzfigure{A plot of the unit disc with lines of constant $δ$ shown in red and lines of constant $x$ shown in blue. Notice that they are perpendicular. The lines of constant $x$ are arcs of circles centered on the real axis.}{tikz/genus_zero_parameters}
 
 Conversely if $δ$ is fixed, say at $δ=π/2$, but $x$ is allowed to vary then $α$ is given by
 \[
 α = \frac{x-1}{x+1},
 \]
-and takes values along the real axis. Throughout this deformation, the image of the corresponding harmonic maps is fixed, it is only the domain that is changing. The two extremes, when $α=-1$ or $1$, correspond to $x=0$ and $\infty$ respectively. In these two limits, one of $\norm{X}$ or $\norm{Y}$ is dwarfing the other, which by \eqref{eqn:def kappa12} shows that in one direction the lattice of periods is becoming negligible. Another way to put this is that the limit of the lattice of periods will be only rank one, not rank two. Thus we should interpret this limit as corresponding to a harmonic map of the cylinder. Towards the end of this chapter, when we compute the energy of these maps, we will see that as we approach the two points $α=-1, 1$ the torus tends to having infinite area, which supports this interpretation.
+and takes values along the real axis. Throughout this deformation, the image of the corresponding harmonic maps is fixed, it is only the domain that is changing. The two extremes, when $α=-1$ or $1$, correspond to $x=0$ and $\infty$ respectively. In these two limits, one of $\norm{X}$ or $\norm{Y}$ is dwarfing the other, which by \eqref{eqn:def kappa12} shows that in one direction the lattice of periods is becoming negligible. Another way to put this is that the limit of the lattice of periods will be only rank one, not rank two. Thus we should interpret this limit as corresponding to a harmonic map of the cylinder. Towards the end of this chapter, when we compute the energy of these maps, we will see that as we approach the two points $α=-1$ and $1$ the torus tends to having infinite area, which supports this interpretation.
 
 To summarise, the two parameters $x$ and $δ$ that constitute $α$ control the conformal type of the domain and image of the harmonic map respectively, with the extreme cases corresponding to maps from a cylinder or maps to a circle. We shall see the features of these limits recur in the moduli space $\mathcal{M}_1$, of spectral data with a genus one curve. The limit of a spectral curve when one of its branch points tends towards $\pm 1$ is qualitatively different than when it tends to another point on the unit circle. At $α \in \S^1 \setminus\{\pm 1\}$, the harmonic map degenerates to a simpler map, whereas at $\pm 1$ the spectral data is not well defined in the limit.
 
