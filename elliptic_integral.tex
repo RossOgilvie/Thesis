@@ -6,14 +6,14 @@
 %%%%%%%%% I don't want these subsections in the table of contents, because there are too many of them and they're not really important. There is a command at the bottom that turns the ToC back on again
 \stoptocentries
 
-The purpose of this appendix is to provide background information about elliptic integrals. It contains their definitions and the basic properties, as well as some results that are used in the body of the thesis. It is not a comprehensive treatment, specifically elliptic integrals of the third kind are not treated, and incomplete integrals are only treated for an imaginary argument.
+The purpose of this appendix is to provide background information about elliptic integrals. It contains their definitions and basic properties, as well as some results that are used in the body of the thesis. It is not a comprehensive treatment, specifically elliptic integrals of the third kind are not treated, and incomplete integrals are only treated for an imaginary argument.
 
 \section{Definitions and Periods}
 \label{sec:Elliptic Defs}
-Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor `elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. This topic has a long history, at least two hundred years, and consequently there are several competing conventions. In this thesis we shall use the Legendre elliptic integrals, (sometimes also called Jacobi elliptic integrals, of a modulus $k$. Every elliptic integral may be reduced to a combination of Legendre elliptic integrals \cite{armitage2006elliptic,Hancock1910}.
+Elliptic integrals are the integrals of differentials on elliptic curves (curves of genus one). The descriptor `elliptic' comes from the problem of finding the arc length of an ellipse, and elliptic integrals are in turn the origin of the term elliptic curve. This topic has a long history, at least two hundred years, and consequently there are several competing conventions. In this thesis we shall use the Legendre elliptic integrals, sometimes also called Jacobi elliptic integrals, of a modulus $k$. A history of the development of elliptic integral, first by Legendre and taken up by Jacobi and Abel, may be found in \cite{Bottazzini2013}. Every elliptic integral may be reduced to a combination of Legendre elliptic integrals \cite{armitage2006elliptic,Hancock1910}.
 
 \begin{defn}
-The incomplete elliptic integral of the first kind is defined as
+The incomplete elliptic integral of the first kind is defined to be
 \[
 F(z;k) = \int_0^z \frac{dt}{\sqrt{(1-t^2)(1-k^2 t^2)}}.
 \]
@@ -23,7 +23,7 @@ Of particular interest are \emph{complete} elliptic integrals, where $z=1$. The 
 \[
 w^2 = (1-z^2)(1-k^2 z^2).
 \]
-Every elliptic curve may be brought to this highly symmetric form, known as {\emph Legendre's form}. If the curve carries a reality structure (if it admits an antiholomorphic involution) then $k$ must be real and by a further M\"obius transformation one can arrange for $0 < k < 1$. We may choose to take branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$.
+Every elliptic curve may be brought to this highly symmetric form, known as \emph{Legendre's form}. If the curve carries a reality structure (if it admits an antiholomorphic involution) then $k$ must be real and by a further Möbius transformation one can arrange for $0 < k < 1$. We may choose to take branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$.
 
 % \makefigure{The $z$-plane with branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. The $A$ period is in red and $B$ period is in blue.}{thesis_graphics_temp/branch_cuts.png}
 \makefigure{The $z$-plane with branch cuts along $[1,k^{-1}]$ and $[-1,-k^{-1}]$. The $A$ period is in red and $B$ period is in blue. \label{fig:standard periods}}{tikz/branch_cuts}
@@ -32,7 +32,7 @@ Consider the $A$-period, the anticlockwise loop around the branch points $-1$ an
 
 \makefigure{The torus $w^2 = (1-z^2)(1-k^2 z^2)$ with $A$-period in red (in the centre) and $B$-period in blue.  The upper and lower halves of the torus correspond to the two sheets of $\C$.}{{torus_lagrange.sk}.pdf}
 
-To complete a basis of homology, choose the other period, $B$, to be a clockwise loop around $1$ and $k^{-1}$. To compute the integral around this loop, one employs a trick called {\emph Jacobi's imaginary transformation} that makes the following a quadratic substitution \cite{Whittaker2000}. Let $t^{-2} = 1-k'^2 s^2$, where $k'^2 = 1 - k^2$. Then
+To complete a basis of homology, choose the other period, $B$, to be a clockwise loop around $1$ and $k^{-1}$. To compute the integral around this loop, one employs a trick called \emph{Jacobi's imaginary transformation} that makes the following quadratic substitution \cite{Whittaker2000}. Let $z^{-2} = 1-k'^2 s^2$, where $k'^2 = 1 - k^2$. Then
 \begin{align*}
 dz &= \frac{k'^2 s}{(1-k'^2 s^2)^{3/2}}\;ds, \\
 w &= \pm \frac{i k'^2 s \sqrt {1-s^2}}{1-k'^2 s^2}
@@ -43,10 +43,10 @@ so that
 &= \int_1^0 \frac{ds}{(+\iu)\sqrt{(1-s^2)(1-k'^2 s^2)}} + \int_0^1 \frac{ds}{(-\iu)\sqrt{(1-s^2)(1-k'^2 s^2)}}\\
 &= 2\iu K(k')
 \end{align*}
-Often $K(k')$ is abbreviated to simply $K'$, and this should not be confused with the derivative of $K$. $k'$ is called the complementary modulus.
+Often $K(k')$ is abbreviated to simply $K'$, and this should not be confused with the derivative of $K$. This auxillary parameter $k'$ is called the complementary modulus.
 
 
-We need also in this thesis to consider periods of differentials of the second kind. The standard differential of the second kind is characterised by having a double pole at $t=\infty$ with no residue. Analogously to the integrals of the first kind,
+We need also in this thesis to consider periods of differentials of the second kind. The standard differential of the second kind is characterised by having a double pole at infinity with no residue. Analogously to the integrals of the first kind,
 
 \begin{defn}
 The incomplete elliptic integral of the second kind is
@@ -126,7 +126,7 @@ In particular, as $k \to 1$, the complete elliptic integral of the first kind ha
 \[
 \lim_{k \to 1} \left[ K + \frac{1}{2}\ln(1-k) \right] = \frac{3}{2}\ln 2.
 \]
-A similar result, \cite{Anderson} inequality (1), ties the integral of the second kind to that of the first type:
+A similar result, inequality (1) in \cite{Anderson}, ties the integral of the second kind to that of the first kind,
 \[
 \frac{π}{4}k^2 \leq E - (1-k^2)K \leq k^2.
 \labelthis{eqn:E_bound}
@@ -226,7 +226,7 @@ It immediately follows from this lemma that we have the following bounds indepen
 - (K' - E') \leq &E_0(x; k) \leq K' - E'.
 \labelthis{eqn:F0_E0_uniform_bounds}
 \end{align*}
-It can also be useful to bound their growth independently of $k$. As the integrands are monotonically decreasing functions of $k$, for $x>0$ so too are $F_0$ and $E_0$. In the extreme cases that $k$ is $0$ or $1$, the following lemma applies.
+It can also be useful to bound the growth of the two functions independently of $k$. As the integrands are monotonically decreasing functions of $k$, for $x>0$ so too are $F_0$ and $E_0$. In the extreme cases that $k$ is $0$ or $1$, the following lemma applies.
 
 \begin{lem} \label{lem:klimit}
 The elliptic integrals degenerate to the following elementary functions as $k$ approaches $0$ or $1$. Uniformly in $x$,
@@ -261,7 +261,8 @@ These inequalities serve to show that the integrals are dominated by functions i
 \end{proof}
 \end{lem}
 
-PLOT OF FUNCTIONS FOR k=0, 0.5, 1 \todo{this}
+\makefigure{Plot of $F_0(x;0.5)$ (black) and its upper and lower bounds. For each value of $k$ the function $F_0(x;k)$ is bounded, but as $k\to 0$ it tends to the unbounded $\asinh x$.}{thesis_graphics/elliptic_bounds_F0.png}
+\makefigure{Plot of $E_0(x;0.5)$ (black) and its upper and lower bounds. Like $F_0$, it is bounded for each value of $k$, but unbounded in the limit $k \to 0$.}{thesis_graphics/elliptic_bounds_E0.png}
 
 
 
@@ -278,7 +279,7 @@ PLOT OF FUNCTIONS FOR k=0, 0.5, 1 \todo{this}
 
 \section{Derivatives}
 \label{sec:Derivatives}
-The aim of this section is to compute the derivatives of the elliptic integrals. The derivatives of the incomplete integrals with respect to the variable $z$ are trivial because they are simply parameter integrals
+The purpose of this section is to compute the derivatives of the elliptic integrals. The derivatives of the incomplete integrals with respect to the variable $z$ are trivial because they are simply parameter integrals
 \begin{align}
     \Partial{}{z} F(z;k) &= \frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}, \label{eqn:dFdz} \\
     \Partial{}{z} E(z;k) &= \sqrt{\frac{1-k^2 z^2}{1-z^2}}. \label{eqn:dEdz}
@@ -286,9 +287,9 @@ The aim of this section is to compute the derivatives of the elliptic integrals.
 The derivatives of elliptic integrals with respect to the modulus are again elliptic integrals. In the interest of being concise, the correct combinations are presented ex nihilo. One may do the computation from scratch by differentiating the integrand and then subtracting terms to cancel off the poles and zeroes until only an exact differential remains. Differentiation under the integral sign is permitted because the integrals are dominated, as established in Lemma \ref{lem:klimit}. We compute the difference between the $k$ derivative of $dz/w$ and a certain combination of elliptic integrand terms.
 \begin{align*}
 \Partial{}{k}\bra{\frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}}
-- \frac{1}{k(1-k^2)}\sqrt{\frac{1-k^2 z^2}{1-z^2}}
-+ \frac{1}{k}\frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}}
-= \frac{-k}{1-k^2} \Partial{}{z} z\sqrt{\frac{1-z^2}{1 - k^2z^2}}.
+&- \frac{1}{k(1-k^2)}\sqrt{\frac{1-k^2 z^2}{1-z^2}}
++ \frac{1}{k}\frac{1}{\sqrt{(1-z^2)(1-k^2 z^2)}} \\
+&= \frac{-k}{1-k^2} \Partial{}{z} z\sqrt{\frac{1-z^2}{1 - k^2z^2}}.
 \end{align*}
 Integrating and rearranging gives
 \begin{align*}
@@ -325,7 +326,8 @@ We can recover the well known formulae for the derivatives of the complete ellip
 
 \section{Legendre's Relation}
 \label{sec:Legendre's Relation}
-There is a surprising relation between the complete elliptic integrals. The standard proof is reproduced below \todo{find citation}.
+There is a useful relation between the complete elliptic integrals. It can be used to construct a basis of differentials with normalised periods. It also links the behaviour of the elliptic integrals at $k=0$ and $k=1$. In the computation of certain limits one could directly apply bounds, but it can often be more expedient to use Legendre's relation to transform the limiting term into a well behaved function.
+The standard proof of Legendre's relation is reproduced below.
 
 \begin{lem}[Legendre's relation]
 \label{lem:Legendres relation}
@@ -340,7 +342,7 @@ We shall prove Legendre's relation in two stages. First we shall differentiate t
 \]
 so
 \begin{align*}
-    \frac{d}{dk}\bra{ KE' + K'E - KK'}
+    \frac{d}{dk}&\bra{ KE' + K'E - KK'}\\
     &= \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}E' -\frac{k}{k'}K\bra{\frac{1}{k'}E' - \frac{1}{k'} K'} \\
     &\quad -\frac{k}{k'}\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'}E + K'\bra{\frac{1}{k}E - \frac{1}{k} K} \\
     &\quad - \bra{\frac{1}{k(1-k^2)}E - \frac{1}{k}K}K' +  \frac{k}{k'}K\bra{\frac{1}{k'(1-k'^2)}E' - \frac{1}{k'}K'} \\
@@ -351,7 +353,7 @@ so
     % %%%%%%%%%%%%%%%%%%%%%%
     &= 0.
 \end{align*}
-Thus we have shown that the relation is a constant. Determining the value of the constant is somewhat delicate. One could na\"ively attempt to set $k=0$, but then $k'=1$ and $K'$ is infinite. And conversely, if we were to set $k=1$, then $K$ would be infinite. Instead, let us take the limit as $k \to 0$,
+Thus we have shown that the relation is constant. Determining the value of the constant is somewhat delicate. One could naïvely attempt to set $k=0$, but then $k'=1$ and $K'$ is infinite. And conversely, if we were to set $k=1$, then $K$ would be infinite. Instead, let us take the limit as $k \to 0$,
 \[
 \lim_{k \to 0} KE' + K'E - KK' = \frac{π}{2} + \lim_{k \to 0} (E - K) K'.
 \]
@@ -368,7 +370,6 @@ Since $k^2 \ln k$ goes to $0$ as $k$ does, the limit is established. Hence the c
 \end{proof}
 \end{lem}
 
-This relation is useful in two ways. First, it can be used to construct a basis of differentials with normalised periods. And secondly, it links the behaviour of the elliptic integrals at $k=0$ and $k=1$. In the computation of certain limits one could directly apply bounds, but it can often be more expedient to use Lengendre's relation to transform the limiting term into a well behaved function.
 
 
 
