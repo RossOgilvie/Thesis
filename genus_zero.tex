@@ -13,6 +13,7 @@ Let us start then by finding all translation invariant pairs $(A,Φ)$ solving eq
 [F,G] = 0\;\; \text{and}\;\; [G,G^*] = [F,F^*].
 \]
 If $F$ commutes with its conjugate-transpose then so too does $G$, and they are simultaneously diagonalisable by an $\SU(2)$ matrix. This case corresponds to a conformal map from the torus to a $2$-sphere, which does not produce a spectral curve \cite[Prop~3.14]{Hitchin1990}. Assume therefore that $[F,F^*] \neq 0$. The first equation implies that $F$ and $G$ commute, so we may write $G = λF$. Then $(\abs{λ}^2 - 1)[F,F^*] = 0$ implies that $\abs{λ}=1$. Let $κ\in\S^1$ be such that $\bar{κ}^2=λ$.
+\labelpara{para:}
 
 Hence a translation invariant solution to \eqref{eqn:Hit1.7} is given by a constant traceless matrix $F$ and a complex number $κ\in\S^1$, with $G = \bar{κ}^2 F$. Recall equation \eqref{eqn:flat connections}, that for any solution for \eqref{eqn:Hit1.7} there is an $\S^1$ family of flat unitary connections, which are given in this case by
 \[
@@ -26,6 +27,7 @@ After factorising, we write the harmonic map as
 \[
 f(z) = \exp[ (κz + \bar{κ}\bar{z})(-\bar{κ}F + κF^*) ]
 \exp[ (κz - \bar{κ}\bar{z})(-\bar{κ}F - κF^*) ].
+\labelthis{eqn:genus zero map}
 \]
 We may simplify this formula by making the following substitutions. On $\C$, make the change of coordinates $w = κz$ and let $w = w_R + \iu w_I$ be the sum of its real and imaginary parts. We note that $\sl_2\C$ can be decomposed as a direct sum $\su_2 \oplus \iu \su_2$. If we decompose $\bar{κ}F = X + \iu Y$ for $X,Y\in \su_2$ then we may replace the two expressions $-\bar{κ}F + κF^*$ and $-\bar{κ}F - κF^*$ by the real and imaginary parts of $κF$. With these substitutions, the above formula becomes
 \[

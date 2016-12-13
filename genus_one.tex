@@ -197,9 +197,7 @@ z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 \label{eqn:f_inv}
 \end{align}
 
-% \makefigure{The $ζ$-plane, with points marked in red. The black labels are their images under $f$\label{fig:zeta plane}}{thesis_graphics_temp/zeta_plane.png}
-\maketikzfigure{The $ζ$-plane, with points marked in blue. The black labels are their images under $f$\label{fig:zeta plane}. The red line is the circle through the branch points.}{tikz/zeta_plane}
-% \makefigure{The $z$-plane, with points marked in black. The red labels are their images under $f^{-1}$}{thesis_graphics_temp/z_plane.png}
+\maketikzfigure{The $ζ$-plane, with points marked in blue. The black labels are their images under $f$. The red line is the circle through the branch points. \label{fig:zeta plane}}{tikz/zeta_plane}
 \maketikzfigure{The $z$-plane, with points marked in black. The blue labels are their images under $f^{-1}$.}{tikz/z_plane}
 
 \begin{lem}
@@ -635,7 +633,7 @@ Previously, the comment was made that the particular algorithm to chose a path i
 \]
 The function $T_0$ is therefore real valued.
 
-To summarise our calculations up to this point, we determined that every differential on a marked curve $Σ$ that satisfies conditions~\ref{P:poles}--\ref{P:reality} must lie in a real three-dimensional vector space $W$. We found a basis $\{ω,Θ^E,λ\}$ of $W$, gave a basis $A,B$ for the homology of $Σ$ and computed the periods of the basis differentials. This allowed us to find a differential $Θ^P\in \R\{ω,λ\} \subset W$ that satisfied~\ref{P:periods}. We observed that every differential on $Σ$ that meet the conditions~\ref{P:poles}--\ref{P:periods} was the sum of a real multiple of $Θ^E$ and an integer multiple of $Θ^P$.
+To summarise our calculations up to this point, we determined that every differential on a marked curve $Σ$ that satisfies conditions~\ref{P:poles}--\ref{P:reality} must lie in a real three-dimensional vector space $W$. We found a basis $\{ω,Θ^E,ε\}$ of $W$, gave a basis $A,B$ for the homology of $Σ$ and computed the periods of the basis differentials. This allowed us to find a differential $Θ^P\in \R\{ω,ε\} \subset W$ that satisfied~\ref{P:periods}. We observed that every differential on $Σ$ that meet the conditions~\ref{P:poles}--\ref{P:periods} was the sum of a real multiple of $Θ^E$ and an integer multiple of $Θ^P$.
 
 With these two differentials we then attempted to further satisfy~\ref{P:closing}. This was not possible for an arbitrary marked curve $Σ$, which lead us to define the functions $S(α,β)$ by~\eqref{eqn:def_S} and $T(α,β)$ by~\eqref{eqn:def_T}. Lemmata~\ref{lem:exist spectral data} and~\ref{lem:closing_conds} taken together imply that a marked curve admits spectral data exactly when the functions $S$ and $T$ simultaneously take rational values. The last part of this section noted that $T$ is a multi-valued function, and so took a principal branch of it and derived the corresponding explicit formulae.
 
@@ -1635,6 +1633,7 @@ the natural guess would be that it is induced by
 \begin{align*}
 χ: \mathcal{A}_1 &\to \mathcal{A}_1 \\
 (α,β) &\mapsto (-α,-β).
+\labelthis{eqn:def chi}
 \end{align*}
 Indeed this can be seen to be the case, as $k$ is invariant under such a transformation, and the associated map between the spectral curves
 \begin{align*}
