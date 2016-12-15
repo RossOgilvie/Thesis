@@ -21,6 +21,8 @@ for a polynomial $b(ζ) \in \mathcal{P}^{g+3}_\R$. The superscript refers to one
 
 \item[$B$] The standard imaginary period of a elliptic marked curve. See Figure~\ref{fig:standard periods}.
 
+\item[$\mathcal{B}_g$] The rank two bundle of differentials satisfying Conditions~\ref{P:poles}--\ref{P:imaginary periods} over $\mathcal{C}_g$.
+
 \item[$c^i$] A real polynomial of degree $g+1$ defined by factoring $\hat{c}^i$. $c^i = (ζ^2-1) \hat{c}^i$.
 
 \item[$\hat{c}^i$] An infinitesimal deformation of differential $Θ^i = dq$ satisfying~\ref{P:poles}--\ref{P:periods} may be encoded as a meromorphic function with certain poles,
@@ -49,11 +51,12 @@ E(z;k) = \int_0^z \sqrt{\frac{1-k^2 t^2}{1-t^2}} \;dt.
 
 \item[$E_0(x;k)$] A variant of $E(z;k)$ focused on imaginary arguments and which is well-behaved at infinity. $E_0 (x ; k) := \Imag E(\iu x; k) - kx$
 
-\item[$f(ζ)$] In genus one, the Möbius transformation that takes the standard form of the spectral curve~\eqref{eqn:genus one curve} to the Legendre form. See~\eqref{eqn:f}.
+\item[$f(ζ)$] In genus one, the Möbius transformation that takes the standard form of the spectral curve~\eqref{eqn:genus one curve} to the Jacobi form. See~\eqref{eqn:f}.
 
-\item[$f_s(ζ)$] In genus one, another the Möbius transformation that takes the standard form of the spectral curve~\eqref{eqn:genus one curve} to the Legendre form. See page~\pageref{para:def f_s}.
+\item[$f_s(ζ)$] In genus one, another the Möbius transformation that takes the standard form of the spectral curve~\eqref{eqn:genus one curve} to the Jacobi form. See page~\pageref{para:def f_s}.
 
 \item[$F$] The common factor of $P$, $b^1$ and $b^2$.
+
 \item[$F^i$] The common factor of $P/F$ and $b^i/F$.
 
 \item[$F(z;k)$] The incomplete elliptic integral of the first kind. See Section~\ref{sec:Elliptic Defs}.
@@ -154,7 +157,7 @@ P(ζ) = \prod (ζ - α_j)(1 - \bar{α}_jζ).
 
 \item[$\tilde{V}$] A coordinate on $\mathcal{\tilde{C}}_1$ defined in relation to $V$ in the same way that $\tilde{v}$ is related to $v$ (via a half-$\tan$ covering map).
 
-\item[$w(z)$] The equation of an elliptic curve in Legendre form. $w(z)^2 = (1-z^2)(1-k^2z^2)$.
+\item[$w(z)$] The equation of an elliptic curve in Jacobi form. $w(z)^2 = (1-z^2)(1-k^2z^2)$.
 
 \item[$w'(z')$] Variant of $w(z)$ used to concisely write equations in the coordinates `at infinity', such as $u'$ and $v'$.
 \[
@@ -170,7 +173,7 @@ w'(z')^2 = (z')^2\,w\bra{(z')^{-1}} =  (1-(z')^2)(k^2 - (z')^2).
 
 \item[$Y$] A vector in $\su_2$. See the glossary entry for $X$.
 
-\item[$z$] A coordinate on $\CP^1$, over which the Legendre elliptic curve is written.
+\item[$z$] A coordinate on $\CP^1$, over which the Jacobi elliptic curve is written.
 
 \item[$z_0$] The image of $0$ under $f$. It is crucial to the construction of the map $f^{-1}$ in terms of the parameters $(p,k,u,v)$, and given by~\eqref{eqn:formula xy}.
 
@@ -205,9 +208,9 @@ w'(z')^2 = (z')^2\,w\bra{(z')^{-1}} =  (1-(z')^2)(k^2 - (z')^2).
 
 \item[$η$] A marked curve is given in standard form by $η^2 = P(ζ)$, for $P$ given by~\eqref{eqn:def P}.
 
-\item[$η^+(ζ)$] The value of the fibre coordinate over $ζ$. For a point $ζ = e^{\iu θ}$ on the unit circle and a spectral curve in standard form, for odd genus $g$,
+\item[$η^+(ζ)$] The value of the fibre coordinate over $ζ \in \S^1$. For a point $ζ$ on the unit circle and a spectral curve in standard form, for odd genus $g$,
 \[
-η^+(e^{\iu θ}) = e^{\iu θ \frac{g+1}{2}} \prod_j \abs{e^{\iu θ} - α_j}.
+η^+(e^{\iu θ}) = ζ^{\frac{g+1}{2}} \prod_j \abs{ζ - α_j}.
 \]
 
 \item[$Θ^E$] An exact differential on a genus one marked curve which satisfies conditions~\ref{P:poles}--\ref{P:periods}.
@@ -223,7 +226,7 @@ w'(z')^2 = (z')^2\,w\bra{(z')^{-1}} =  (1-(z')^2)(k^2 - (z')^2).
 
 \item[$\tilde{λ}$] The translation on $\mathcal{\tilde{C}}_1$ that generates the group of covering transformation of $\mathcal{\tilde{C}}_1$ over $\mathcal{C}_1$. See~\eqref{eqn:tilde lambda action}.
 
-\item[$μ$] In the genus one case, the branch points lie on a circle. $μ$ is the intersection of the branch circle with the unit circle that lies between $α$ and $\cji{α}$. See Figure~\ref{fig:zeta plane}.
+\item[$μ$] In the genus one case, the branch points lie on a circle. The point $μ$ is the intersection of the branch circle with the unit circle that lies between $α$ and $\cji{α}$. See Figure~\ref{fig:zeta plane}.
 
 \item[$ν$] The intersection of the branch circle with the unit circle that lies between $β$ and $\cji{β}$. See Figure~\ref{fig:zeta plane}.
 
@@ -241,7 +244,7 @@ w'(z')^2 = (z')^2\,w\bra{(z')^{-1}} =  (1-(z')^2)(k^2 - (z')^2).
 
 \item[$Σ$] A marked curve. See Definition~\ref{def:marked curve}.
 
-\item[$Σ(α,β)$] The genus one marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$.
+\item[$Σ(α,β)$] The genus one marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$. This can also be viewed as the covering map $\mathcal{A}_1$ over $\mathcal{C}_1$.
 
 \item[$τ$] The conformal parameter of the torus. See~\eqref{eqn:Q0 change conformal} or~\eqref{eqn:conformal type}.
 
@@ -249,9 +252,9 @@ w'(z')^2 = (z')^2\,w\bra{(z')^{-1}} =  (1-(z')^2)(k^2 - (z')^2).
 
 \item[$χ$] An involution on $\mathcal{A}_g$ that take branch points to their negatives. See~\eqref{eqn:def chi}.
 
-\item[$Ψ^E$] An exact differential on a genus one marked curve that satisfies conditions~\ref{P:poles}--\ref{P:closing}. See Lemma~\ref{lem:closing_conds}.
+\item[$Ψ^E$] An exact differential on a genus one marked curve that satisfies Conditions~\ref{P:poles}--\ref{P:closing}. See Lemma~\ref{lem:closing_conds}.
 
-\item[$Ψ^P$] A differential on a genus one marked curve that satisfies conditions~\ref{P:poles}--\ref{P:closing} and has imaginary period $2π\iu$. See Lemma~\ref{lem:closing_conds}.
+\item[$Ψ^P$] A differential on a genus one marked curve that satisfies Conditions~\ref{P:poles}--\ref{P:closing} and has imaginary period $2π\iu$. See Lemma~\ref{lem:closing_conds}.
 
 \item[$ω$] A holomorphic differential on a genus one marked curve given by $dz/w$.
 

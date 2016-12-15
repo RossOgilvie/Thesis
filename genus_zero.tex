@@ -128,7 +128,7 @@ Using the inner product on $\su_2$, we may consider $δ$ as the angle between $X
 
 \begin{figure}
     \includegraphics[width=\textwidth]{thesis_graphics/genus0_plot_pi4.png}
-    \caption{The image of a harmonic map of the form \eqref{eqn:genus zero simple map} with $δ=π/4$. It is visualised by sterographic projection of $\S^3$.}
+    \caption{The image of a harmonic map of the form \eqref{eqn:genus zero simple map} with $δ=π/4$. It is visualised by stereographic projection of $\S^3$.}
     \label{fig:genus0 plot pi4}
 \end{figure}
 \begin{figure}
@@ -196,7 +196,7 @@ Following \eqref{eqn:eigneline curve}, points of the eigenline curve in $\CP^1 \
 % \end{align*}
 From this we can see where and to what order the eigenlines coincide. The plus-minus sign produces two distinct lines unless one of the components of the homogeneous coordinates has a root, with the order of coincidence the same as the order of the root. As $\iu x e^{\iu δ}$ is always in the left half of the complex plane, $1 - \iu x e^{\iu δ}$ and its conjugate $1 + \iu x e^{-\iu δ}$ never vanish. Hence the eigenlines coincide only over $α$ and $\cji{α}$, and only to first order. The spectral curve is therefore $η^2 = (ζ-α)(1-\bar{α}ζ)$, a genus zero hyperelliptic curve without singularities.
 
-Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some non-rigorous intuition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane then \eqref{eqn:def branch point genus zero} is the Cayley transform, a M\"obius transformation of the upper half plane to the unit disc. One can write the inverse transformation as
+Let us explore how variation of the parameter $α$ may alter the properties of the harmonic map $f$, and provide some non-rigorous intuition about the limit as $α$ approaches the unit circle. From \eqref{eqn:def branch point genus zero}, we can see how the two continuous parameters $δ$ and $x$ have been incorporated into the definition of $α$. If we treat $xe^{\iu δ}$ as a point in the upper half plane then \eqref{eqn:def branch point genus zero} is the Cayley transform, a Möbius transformation of the upper half plane to the unit disc. One can write the inverse transformation as
 \[
 x e^{\iu δ} = \iu \frac{1+α}{1-α}.
 \]
@@ -208,7 +208,7 @@ is fixed. These are arcs of circles centred on the real axis with radii such tha
 
 In the limit as $α$ approaches the unit circle for fixed $x$, the parameter $δ$ tends to $0$ or $π$ and the image of the harmonic map collapses into a circle, specifically a one-parameter subgroup of $\SU(2)$. In Chapter \ref{chp:Moduli Boundary}, we will develop a process whereby we take the limit of a family of spectral curves as it tends towards a curve that has a double point on the unit circle, and that singular curve is normalised to produce a spectral curve of lower genus. The analogous process is not possible here, as the normalisation of $η^2 = e^{-\iu \varphi} (ζ- e^{\iu \varphi})^2$ is the disjoint union of two spheres, which does not fit into our definition of spectral data (Definition \ref{def:marked curve}). One can however appreciate the moral sentiment common to both these cases, that the development of a double point on the unit circle should be thought of as a family of harmonic maps degenerating to `simpler' harmonic map.
 
-\maketikzfigure{A plot of the unit disc with lines of constant $δ$ shown in red and lines of constant $x$ shown in blue. Notice that they are perpendicular. The lines of constant $x$ are arcs of circles centered on the real axis.}{tikz/genus_zero_parameters}
+\maketikzfigure{A plot of the unit disc with lines of constant $δ$ shown in red and lines of constant $x$ shown in blue. Notice that they are perpendicular. The lines of constant $x$ are arcs of circles centred on the real axis.}{tikz/genus_zero_parameters}
 
 Conversely if $δ$ is fixed, say at $δ=π/2$, but $x$ is allowed to vary then $α$ is given by
 \[
@@ -289,13 +289,13 @@ This matrix formulation is also well suited to talk about changes of the conform
 \frac{a+bτ}{c+dτ}.
 \labelthis{eqn:conformal covering change}
 \]
-But this is just the action of $\Mat_2^*\Z$ on a point $τ$ in the upper half plane by M\"obius transformations. The conformal type of the domain of the harmonic map corresponding to $(Σ, Ψ^1, Ψ^2)$, where $Ψ^1$ and $Ψ^2$ is the basis \eqref{eqn:genus zero differential basis} given above, is equivalent to
+But this is just the action of $\Mat_2^*\Z$ on a point $τ$ in the upper half plane by Möbius transformations. The conformal type of the domain of the harmonic map corresponding to $(Σ, Ψ^1, Ψ^2)$, where $Ψ^1$ and $Ψ^2$ is the basis \eqref{eqn:genus zero differential basis} given above, is equivalent to
 \[
 τ = \frac{1-x^2 + 2\iu x}{1+x^2},
 \]
 so as $α$ moves in the unit disc, $τ$ sweeps out the upper half of the unit circle. The range of the conformal parameter for any other genus zero harmonic map is the image of this semicircle under some element of $\Mat_2^*\Z$. Hence the possible ranges of the conformal parameter $τ$ under deformation of the harmonic map are semicircles in the upper half plane centred on the real axis with endpoints in $\Q$ (or vertical rays with a rational endpoint, which are a special case), as shown in Figure \ref{fig:conformal type arcs}.
 
-\maketikzfigure{The upper half plane. The conformal parameter $τ$ may vary along a semicircle with rational endpoints. The blue semicircle is the conformal type of the domain of the harmonic map corresponding to $(Σ, Ψ^1, Ψ^2)$ as one moves the branch point $α\in D$. \label{fig:conformal type arcs}}{tikz/comformal_type_arcs}
+\maketikzfigure{The upper half plane. The conformal parameter $τ$ may vary along a semicircle with rational endpoints. The blue semicircle is the conformal type of the domain of the harmonic map corresponding to $(Σ, Ψ^1, Ψ^2)$ as one moves the branch point $α\in D$. \label{fig:conformal type arcs}}{tikz/conformal_type_arcs}
 
 The previous chapter developed a method for computing the deformations of spectral data. In the genus zero case, it is clear that given a triple of spectral data one can freely move the sole branch point $α$ in the unit disc, and the path of $α$ uniquely determines the deformation. An infinitesimal deformation therefore is determined by the value of the derivative of the branch point, $\dot{α}$. However, let us work through the description of infinitesimal deformations from the previous chapter, via the definitions of the functions $\dot{q}^i$ and $Q$ (equations \eqref{eqn:def q dot} and \eqref{eqn:Q}), to gain some familiarity with its workings.
 
@@ -303,7 +303,7 @@ Because the spectral curve $Σ$ is simply connected in the present situation, al
 \[
 q^i = ζ^{-1}\bra{s^i - \bar{s}^i ζ}η + C,
 \]
-for some constant $C$ and $s^i \in \Z\langle r^1, r^2 \rangle$. If the deformation is given by a parameterised path $α(t)$, we may differentiate with respect to a deformation parameter $t$ to deduce
+for some constant $C$ and $s^i \in \Z\langle r^1, r^2 \rangle$. If the deformation is given by a parametrised path $α(t)$, we may differentiate with respect to a deformation parameter $t$ to deduce
 \begin{multline*}
 \dot q^i
 = \frac{1}{ζη} \left[
@@ -358,7 +358,7 @@ The deficit of information in $Q$ is accounted for by a degree of freedom in the
 \]
 In Lemma \ref{lem:tangent conformal}, given a solution to \eqref{eqn:Q reduced} we are free to add any real multiple of $\tilde{b}^i$. This is exactly the freedom to choose a value of $\Real \dot{α}$, which was not determined by $Q$.
 
-Finally, there is a formula to compute the energy of harmonic map from its spectral data, given in \cite[Theorem 12.17]{Hitchin1990}. In the non-conformal case
+Finally, there is a formula to compute the energy of harmonic map from its spectral data, given in \cite[Theorem 12.17]{Hitchin1990}. In the nonconformal case
 \[
 E = \frac{4i}{P_0} (b^1_2 b^2_0 - b^2_2 b^1_0),
 \]
@@ -370,7 +370,7 @@ One can interpret the fraction as giving the area of the domain of the map, this
 \[
 \dot E = 0 \Rightarrow \left(\Real α\right)\left( \Real \frac{\dot{α}}{1-α^2} \right) = 0.
 \]
-The left factor corresponds to the imaginary axis. The right factor corresponds to a circle centred on the real axis that cuts the unit circle perpedicularly. In other words, $\dot E$ is zero precisely when $α$ moves on an arc that preserves $τ$. This was to be expected because, for a given conformal class, harmonic maps are minimisers for the energy.
+The left factor corresponds to the imaginary axis. The right factor corresponds to a circle centred on the real axis that cuts the unit circle perpendicularly. In other words, $\dot E$ is zero precisely when $α$ moves on an arc that preserves $τ$. This was to be expected because, for a given conformal class, harmonic maps are minimisers for the energy.
 
 \begin{center}
 \begin{figure}

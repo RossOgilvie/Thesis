@@ -10,7 +10,7 @@ We will construct the universal cover $\mathcal{\tilde{C}}_1$ of $\mathcal{C}_1$
 Recall that a deformation of spectral data is a defined to be a path in the moduli space.
 We will prove that the path connected components of $\mathcal{S}_1$ are indexed by two rational numbers $p > 0$ and $q$. For $p\neq 1$ the components are ribbons $(0,1)\times \R$, whereas for $p=1$ the components are annuli.
 
-The key to describing the topology of $\mathcal{S}_1$ lies in the construction of coordinate charts for subspaces of $\mathcal{\tilde{C}}_1$ with the dual properties that the group of covering transformations acts by translation and also that the components of the preimage $\mathcal{\tilde{S}}_1$ of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$ are the subsets where one of the coordinates takes rational values. To accomplish the first goal, we will construct a global coordinate chart on $\mathcal{\tilde{C}}_1$,
+The key to describing the topology of $\mathcal{S}_1$ lies in the construction of coordinate charts for $\mathcal{\tilde{C}}_1$ with the dual properties that the group of covering transformations acts by translation and also that the components of the preimage $\mathcal{\tilde{S}}_1$ of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$ are the subsets where two of the coordinates take rational values. To accomplish the first goal, we will construct a global coordinate chart on $\mathcal{\tilde{C}}_1$,
 \[
 \mathcal{\tilde{C}}_1 =
 \Set{ \bra{p,k,\tilde{U},\tilde{V}} \in \R^+ \times (0,1) \times \R \times \R }
@@ -33,7 +33,7 @@ If $\mathcal{\tilde{C}}_1(p,q)$ is the level set $S = p$ and $\tilde{T} = q$ in 
 \]
 Crucially, the value of $S$ is fixed by the action of $\tilde{λ}$ and precomposing $\tilde{T}$ with $\tilde{λ}$ increases its value by $S-1$ (Lemma~\ref{lem:T shift}). Thus $\tilde{λ}$ maps $\mathcal{\tilde{C}}_1(p,q)$ to $\mathcal{\tilde{C}}_1(p,q + p-1)$. If $p$ and $q$ are rational, so too is $q + (p-1)$ and hence the group $\mathcal{G} = \Z\langle \tilde{λ}\rangle$ of covering transformations restricts to give a group action on $\mathcal{\tilde{S}}_1$. We can therefore conclude that $\mathcal{S}_1 \diffeo \mathcal{\tilde{S}}_1 / \mathcal{G}$.
 
-\maketikzfigure{Sketch of some level sets of $\tilde{T}$ on a cross-section of $\mathcal{\tilde{C}}_1$. The transformation $\tilde{λ}$ acts as a translation in the given direction. It maps level sets to level sets. Not that in this figure that the $\tilde{V}$-derivative of $\tilde{T}$ does not vanish.}{tikz/universal_level_sets}
+\maketikzfigure{Sketch of some level sets of $\tilde{T}$ on a cross-section of $\mathcal{\tilde{C}}_1$. The transformation $\tilde{λ}$ acts as a translation in the given direction. It maps level sets to level sets. Note that in this figure that the $\tilde{V}$-derivative of $\tilde{T}$ does not vanish.}{tikz/universal_level_sets}
 
 As $p$ is rational it is constant along any path in $\mathcal{\tilde{S}}_1$. When working with the path connected components of $\mathcal{\tilde{S}}_1$ we may therefore restrict ourselves to the submanifolds $\mathcal{\tilde{C}}_1(p)$ of $\mathcal{\tilde{C}}_1$ where $p$ is fixed.
 Further, the covering transformations do not change $p$ so these submanifolds are $\mathcal{G}$-invariant. The three remaining coordinates $(k,\tilde{U},\tilde{V})$ form a global coordinate chart for each $\mathcal{\tilde{C}}_1(p)$. However, in order to produce a coordinate chart where both goals are met, that is $\tilde{λ}$ acts as translation and $\mathcal{\tilde{S}}_1(p) := \mathcal{\tilde{S}}_1 \cap \mathcal{\tilde{C}}_1(p)$ is the union of coordinate planes, in Lemma~\ref{lem:T_graph} we show that for each $p$ there is a coordinate chart where $q=\tilde{T}$ may be used as a coordinate in place of either $\tilde{U}$ or $\tilde{V}$. Specifically for $p \leq 1$,
@@ -44,7 +44,7 @@ is a coordinate chart covering $\mathcal{\tilde{C}}_1(p)$, whereas for $p \geq 1
 \[
 \left\{ \bra{q,k,\tilde{V}} \in \R \times (0,1) \times \R \right\}.
 \]
-This shows that the above union of $\mathcal{\tilde{C}}_1(p,q)$ was a deomposition of $\mathcal{\tilde{S}}_1$ into path connected components. If we let $\tilde{X}$ stand for either $\tilde{U}$ or $\tilde{V}$ depending on the magnitude of $p$, then the action of $\tilde{λ}$ in each coordinate chart reads
+This shows that the above union of $\mathcal{\tilde{C}}_1(p,q)$ was a decomposition of $\mathcal{\tilde{S}}_1$ into path connected components. If we let $\tilde{X}$ stand for either $\tilde{U}$ or $\tilde{V}$ depending on the magnitude of $p$, then the action of $\tilde{λ}$ in each coordinate chart reads
 \[
 \tilde{λ} : \bra{p,q,k,\tilde{X}} \mapsto \bra{p,q + (p-1),k,\tilde{X} + π}.
 \]
@@ -75,7 +75,7 @@ In either case, we have a foliation of $\mathcal{C}_1(p)$ such that $\mathcal{S}
     \label{fig:level set quotient}
 \end{figure}
 
-Now that we have given a picture of the results of this chapter, let us run through the stages of the proof. The intermediate way-point is the construction of the functions $S$ and $\tilde{T}$, which derive from the closing conditions, Conditions~\ref{P:closing}. The difference between a marked curve of genus one, a point of $\mathcal{C}_1$, and a spectral curve, a point of $\mathcal{S}_1$, is that the latter possesses a pair of linearly independent differentials that satisfy the closing conditions. For any genus $g$, every marked curve of $\mathcal{C}_g$ meets Conditions~\ref{P:real curve}--\ref{P:simple zeroes} and admits differentials satisfying Conditions~\ref{P:poles}--\ref{P:imaginary periods}. Further, in the case of marked curves of genus one, we will show that every curve has differentials with integral periods, Condition~\ref{P:periods}. But not every curve admits differentials that meet the closing conditions.
+Now that we have given a picture of the results of this chapter, let us run through the stages of the proof. The intermediate way-point is the construction of the functions $S$ and $\tilde{T}$, which derive from the closing conditions, Conditions~\ref{P:closing}. The difference between a marked curve of genus one, a point of $\mathcal{C}_1$, and a spectral curve, a point of $\mathcal{S}_1$, is that the latter possesses a pair of linearly independent differentials that satisfy the closing conditions. For any genus $g$, every marked curve of $\mathcal{C}_g$ meets Conditions~\ref{P:real curve}--\ref{P:simple zeroes} and admits a plane $\mathcal{B}_Σ$ of differentials satisfying Conditions~\ref{P:poles}--\ref{P:imaginary periods}. Further, in the case of marked curves of genus one, we will show that every curve has differentials with integral periods, Condition~\ref{P:periods}. But not every curve admits differentials that meet the closing conditions.
 
 We therefore proceed by the construction of coordinates adapted to the closing conditions and the action of the covering transformations.
 In the initial three sections of this chapter we work with the parameter space $\mathcal{A}_1$, which we recall from equation~\eqref{eqn:def Ag} to be the space $\{ (α,β) \in D^2 \mid α \neq β \}$, where $D$ is the open unit disc.
@@ -86,11 +86,11 @@ Using $Σ$ to denote the covering map, the curve
 \]
 is the marked curve with branch points $\{α,\cji{α},β,\cji{β}\}$ and the standard scaling given by~\eqref{eqn:def P}.
 
-For each point of $\mathcal{A}_1$, in Section~\ref{sec:Differentials} we give a transformation of the corresponding marked curve to an elliptic curve in Legendre normal form. This allows us to find on each marked curve the differentials that satisfy~\ref{P:real curve}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section~\ref{sec:closing conditions} we reformulate the closing conditions~\ref{P:closing} to produce a function $S$ and a multi-valued function $T$ on $\mathcal{A}_1$, such that they are valued in $\Q$ exactly when a given marked curve admits differentials that further satisfy the closing conditions. A marked curve with a pair of such differentials constitute a tuple of spectral data, and so we call such a curve a spectral curve. The first function, $S$ (defined by~\eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by~\eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
+For each point of $\mathcal{A}_1$, in Section~\ref{sec:Differentials} we give a transformation of the corresponding marked curve to an elliptic curve in Jacobi normal form. This allows us to find on each marked curve the differentials that satisfy~\ref{P:poles}--\ref{P:imaginary periods} and have integral periods. Having found these differentials, in Section~\ref{sec:closing conditions} we reformulate the closing conditions~\ref{P:closing} to produce a function $S$ and a multi-valued function $T$ on $\mathcal{A}_1$, such that they are valued in $\Q$ exactly when a given marked curve admits differentials that further satisfy the closing conditions. A marked curve with a pair of such differentials constitute a triple of spectral data, and so we call such a curve a spectral curve. The first function, $S$ (defined by~\eqref{eqn:def_S}), is strictly positive and has an explicit algebraic formula; its level sets foliate $\mathcal{A}_1$ into solid tori. The second function, $T$ (defined by~\eqref{eqn:def_T}), is however multi-valued and transcendental; it is dependent on paths of integration on the curve, and its formula contains elliptic integrals.
 
 The functions $S$ and $T$ may be analysed by introducing a new set of coordinates on $\mathcal{A}_1$ that are suited to calculation (Section~\ref{sec:Reformulate}).
 These new coordinates allows us to reasonably compute the derivatives of $T$. They also dovetail with the results of Section~\ref{sec:EllipticContinuation}, allowing us to lift $T$ to a  single valued function $\tilde{T}$ on $\mathcal{\tilde{C}}_1$, the universal cover of $\mathcal{A}_1$.
-We then use the implicit function theorem to prove that the level sets of $S$ and $\tilde{T}$, denoted $\mathcal{\tilde{C}}_1(p,q)$, are graphs and foliate the space $\mathcal{\tilde{C}}_1$ (Lemma~\ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$, as a union as above.
+We then use the implicit function theorem to prove that the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $S$ and $\tilde{T}$ are graphs and foliate the space $\mathcal{\tilde{C}}_1$ (Lemma~\ref{lem:T_graph}). This allows for an explicit description of $\mathcal{\tilde{S}}_1$, the preimage of $\mathcal{S}_1$ in $\mathcal{\tilde{C}}_1$, as a union as above.
 Finally, we push this foliation back down to $\mathcal{C}_1$ and recover $\mathcal{S}_1$ as a quotient by the group of covering transformations $\mathcal{G}$ (Section~\ref{sec:Topology}).
 
 To close the chapter, in Section~\ref{sec:Corollaries} we show that the moduli space of spectral data $\mathcal{M}_1$ is not a trivial bundle over $\mathcal{S}_1$, as $\mathcal{M}_0$ was over $\mathcal{S}_0$. We show however that the total space of the bundle is simply connected. We also consider some well-known examples of harmonic maps, namely the Gauss maps of Delaunay surfaces, and identify them with a specific path connected component of $\mathcal{S}_1$. Building on this, we identify a symmetry of $\mathcal{S}_g$, for any genus $g$, and provide a geometrical interpretation. We illustrate this interpretation for the analogous symmetry of genus zero spectral curves using the explicit equations for harmonic maps derived in the previous chapter.
@@ -121,7 +121,7 @@ We summarise the spaces that we have introduced and their relationships to one a
 
 \section{The Differentials of an Elliptic Marked Curve}
 \label{sec:Differentials}
-It will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct such differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Legendre normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions~\ref{P:poles}--\ref{P:reality}.
+It will be necessary to have explicit formulae for the differentials on a marked curve $Σ$ that have integral periods. In this section, we construct such differentials in four stages. First, we give a coordinate transformation $f$ of the marked curve $Σ$ to the Jacobi normal form of an elliptic curve. On any marked curve it is possible to find differentials that meet conditions~\ref{P:poles}--\ref{P:reality}.
 These conditions are:
 \begin{enumerate}[label=(P.\arabic*)]
 \setcounter{enumi}{3}
@@ -141,7 +141,7 @@ Let us get to work. With the standard scaling~\eqref{eqn:def P}, any marked curv
 η^2 = P(ζ) := (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ),
 \labelthis{eqn:genus one curve}
 \]
-with roots $α, \cji{α}, β$ and $\cji{β}$. On the other hand, every elliptic curve may be transformed into the Legendre normal form
+with roots $α, \cji{α}, β$ and $\cji{β}$. On the other hand, every elliptic curve may be transformed into the Jacobi normal form
 \[
 w^2 = (1-z^2)(1-k^2z^2)
 \]
@@ -149,7 +149,7 @@ where $k$ is a complex number called the elliptic modulus. For a given marked cu
 \[
 [α,\cji{α};β,\cji{β}] = \frac{\abs{α-β}^2}{\abs{1-\bar{α}β}^2}. \labelthis{eqn:roots_cross_ratio}
 \]
-This is a real quantity, and so the four roots lie on a circle (or a line). Thus the roots of the Legendre form do also, which forces $k$ to be real. Any transformation between the curves must take branch points to branch points, so we must decide on a correspondence for the roots. There are twenty-four possible choices, but we choose the correspondence
+This is a real quantity, and so the four roots lie on a circle (or a line). Thus the roots of the Jacobi form do also, which forces $k$ to be real. Any transformation between the curves must take branch points to branch points, so we must decide on a correspondence for the roots. There are twenty-four possible choices, but we choose the correspondence
 \[
   \begin{array}{ l||c|c|c|c}
     ζ & α & \cji{α} & β & \cji{β} \\
@@ -158,7 +158,7 @@ This is a real quantity, and so the four roots lie on a circle (or a line). Thus
   \end{array}
   \labelthis{eqn:choice f}
 \]
-This correspondence has three properties that distinguish it from the others. By convention, $k \in (0,1)$, which rules out sixteen of the choices. Second, consider the behaviour of the curve as $k\to 1$. The Legendre form of the curve develops two nodes at $z=\pm 1$. This corresponds to forming nodes $α=β$ and $\cji{α} = \cji{β}$. But the value of
+This correspondence has three properties that distinguish it from the others. By convention, $k \in (0,1)$, which rules out sixteen of the choices. Second, consider the behaviour of the curve as $k\to 1$. The Jacobi form of the curve develops two nodes at $z=\pm 1$. This corresponds to forming nodes $α=β$ and $\cji{α} = \cji{β}$. But the value of
 \[
 [1,k^{-1};-1,-k^{-1}] = \frac{4k}{(k+1)^2}
 \]
@@ -187,7 +187,7 @@ Instead of solving this relation for $f$ immediately, we turn to understanding t
 
 The unit circle in the $ζ$-plane plays an important role in the definition of a spectral curve, so it is natural to ponder its image under $f$. The involution $ρ(ζ)$ fixes the unit circle, and exchanges the pairs of branch points $α,\cji{α}$ and $β,\cji{β}$. The corresponding antiholomorphic involution $\tilde{ρ}(z)$ in the $z$-plane that exchanges $1,-1$ and $k^{-1},-k^{-1}$ is $z\mapsto -\bar{z}$. Its fixed point set is the imaginary axis, which therefore must be the image of the unit circle under $f$.
 
-As already mentioned, the four roots of the spectral curve lie on a circle (or a line), which we shall call the branch circle. Let two points at the intersection of the branch circle with the unit circle be $μ$ and $ν$, with $μ$ lying between $α$ and $\cji{α}$ and $ν$ lying between $β$ and $\cji{β}$ (see Figure~\ref{fig:zeta plane}). Under $f$, the branch circle is mapped to the real axis. Therefore the $f(μ)$ and $f(ν)$ must lie on the intersection of the real and imaginary axes. Hence $f(μ) = 0$ and $f(ν) = \infty$.
+As already mentioned, the four roots of the spectral curve lie on a circle (or a line), which we shall call the branch circle. Let the two points at the intersection of the branch circle with the unit circle be $μ$ and $ν$, with $μ$ lying between $α$ and $\cji{α}$ and $ν$ lying between $β$ and $\cji{β}$ (see Figure~\ref{fig:zeta plane}). Under $f$, the branch circle is mapped to the real axis. Therefore the $f(μ)$ and $f(ν)$ must lie on the intersection of the real and imaginary axes. Hence $f(μ) = 0$ and $f(ν) = \infty$.
 
 A Möbius transformation, such as $f$, is determined up to scaling by the points it sends to $0$ and $\infty$, in this case $μ$ and $ν$. One other point is therefore needed to determine this scaling. We write $z_0 := f(0)$. Using the reality structure $\tilde{ρ}(z)$, we have $f(\infty) = -\bar{z_0}$. These points allow us to write concise formulae for $f$ and $f^{-1}$
 \begin{align}
@@ -202,13 +202,13 @@ z = f(ζ) &= -\bar{z}_0 \frac{ζ - μ}{ζ - ν},
 
 \begin{lem}
 \label{lem:coeff_f_smooth}
-The functions $μ,ν,z_0,(z_0)^{-1}$ and $k$ are smooth functions of the parameters $(α,β)\in\mathcal{A}_1$. The function $f(α,β)(ζ)$ is a smooth function of $(α,β,ζ)\in\mathcal{A}_1 \times \CP^1$ whenever $ζ \neq ν$. Further $μ - ν$ is never zero.
+The functions $μ,ν,z_0,(z_0)^{-1}$ and $k$ are smooth functions of the parameters $(α,β)\in\mathcal{A}_1$. The function $f(α,β)(ζ)$ is a smooth function of $(α,β,ζ)\in\mathcal{A}_1 \times \CP^1$ whenever $ζ \neq ν$. Further, $μ - ν$ is never zero.
 \begin{proof}
 Recall that $μ$ is the point such that $f(μ) = 0$. We may find a formula for $μ$ in terms of $α$ and $β$ using the cross-ratio relation $[α,\cji{α};β,μ] = [1,-1;k^{-1},0]$. Rearranging gives
 \[
 μ = \frac{ (α-β)\abs{1-\bar{α}β} + α(1-\bar{α}β)\abs{α-β} }{ \bar{α}(α-β)\abs{1-\bar{α}β} + (1-\bar{α}β)\abs{α-β} }.
 \]
-This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. The factor $α-β$ is never zero on $\mathcal{A}_1$ by definition. The factor $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α,β$ are inside the unit disc, this is impossible. Finally, the denominator is zero exactly when
+This could fail to be a smooth function if $α-β$ or $1-\bar{α}β$ were zero, or if the denominator was zero. The factor $α-β$ is never zero on $\mathcal{A}_1$ by definition. The factor $1-\bar{α}β$ is zero if and only $\cji{α}=β$ and, as both $α$ and $β$ are inside the unit disc, this is impossible. Finally, the denominator is zero exactly when
 \[
 \bar{α} = - \frac{1-\bar{α}β}{\abs{1-\bar{α}β}} \frac{\abs{α-β}}{α-β}.
 \]
@@ -235,9 +235,9 @@ At a point $(ζ,η)$ over the unit circle in $Σ$, we have that the value of $η
 Thus there is a notion of the `positive' unit circle, the one on which $η$ is positive over $ζ=1$.
 We define the function $η^+$ to be $ζ\abs{ζ-α}\abs{ζ-β}$.
 
-Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Legendre elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
+Under the transformation $f$ the unit circle is mapped to the imaginary axis. At the points over the imaginary axis in the Jacobi elliptic curve, those points $(z,w)$ for which $z=\iu u$, we have that $w = \pm \sqrt{1+u^2}\sqrt{1+k^2u^2}$. Again, it is possible to make a consistent choice of sign along these two disjoint circles. For the sake of being concrete, we choose the transformation between elliptic curves to map the positive unit circle to points over the imaginary axis where $w$ is positive. In a slight abuse of notation, we shall also use $f$ to denote the map between elliptic curves.
 
-Having found the map $f$ that transforms a genus one marked curve $Σ$ into Legendre normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions~\ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions~\ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of~\eqref{eqn:def b}, recall that all differentials on a genus one marked curve $Σ$ that have (at worst) a double pole over $ζ=0$ and $ζ=\infty$ may be written the form
+Having found the map $f$ that transforms a genus one marked curve $Σ$ into Jacobi normal form, we may now turn our attention to the other part of the spectral data, the differentials that satisfy conditions~\ref{P:poles}--\ref{P:periods}. Let us first find the vector space of differentials that satisfy just conditions~\ref{P:poles}--\ref{P:reality}, and write a basis for this space. Following the notation of~\eqref{eqn:def b}, recall that all differentials on a genus one marked curve $Σ$ that have (at worst) a double pole over $ζ=0$ and $ζ=\infty$ may be written the form
 \[
 Θ = b(ζ)\frac{dζ}{ζ^2η},
 \]
@@ -255,7 +255,7 @@ Every differential of the second kind may be written as the linear combination o
 and an exact differential \cite[Art. 167]{Hancock1910}.
 
 Note that the holomorphic differential $ω$ lies in the space $W$ and so makes for an obvious first basis vector. It accounts for every possible choice of $b_2$.
-In genus one, there is a real and exact differential with double poles over $ζ=0,\infty$, namely
+In genus one, there is a real and exact differential with double poles over $ζ=0$ and $\infty$, namely
 \[
 Θ^E := \iu\; d\left( \frac{η}{ζ} \right).
 % = \iu\left[ -αβ + \frac{1}{2}\left(α(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ - \frac{1}{2}\left(\bar{α}(1+\abs{β}^2) + β(1+\abs{α}^2)\right)ζ^3 + \bar{α}\bar{β}ζ^4 \right]\frac{dζ}{ζ^2η}.
@@ -302,7 +302,7 @@ For the loop $A$, start on the positive unit circle at $μ$, traverse in and aro
 % \makefigure{$A$ in red and $B$ in blue}{thesis_graphics_temp/zeta_periods.png}
 \maketikzfigure{The anticlockwise, real period $A$ in red and the clockwise, imaginary period $B$ in blue. \label{fig:zeta periods}}{tikz/zeta_periods}
 
-The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the positive sheet. The loop $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the positive sheet. But this is homologous to a clockwise loop around $1$ and $k^{-1}$. Thus we have chosen the basis of homology $A,B$ such that their images under $f$ are the standard choice of homology on an elliptic curve in Legendre normal form, as depicted in Figure~\ref{fig:standard periods}.
+The image of $A$ under $f$ is the anticlockwise loop around $-1$ and $1$ with the left to right part of the path on the positive sheet. The loop $f(B)$ is simply a traversal of the imaginary axis from bottom to top on the positive sheet. But this is homologous to a clockwise loop around $1$ and $k^{-1}$. Thus we have chosen the basis of homology $A,B$ such that their images under $f$ are the standard choice of homology on an elliptic curve in Jacobi normal form, as depicted in Figure~\ref{fig:standard periods}.
 
 The loop $A$ is a real period, which means that the integral of a real differential over $A$ is real. To prove this, recall that a differential $Θ$ is real with respect to $ρ$ when $ρ^* Θ = - \bar{Θ}$. By construction, $ρ_* A = -A$. Together,
 \[
@@ -375,7 +375,7 @@ We first verify that $Θ^P$ has such properties, then verify uniqueness. The onl
 = \iu \pp d \bra{ \frac{rw}{(z-z_0)(z + \bar{z}_0)} }
 = -\iu r \frac{w(z_0)}{z_0 + \bar{z}_0}\frac{dz}{(z-z_0)^2}.
 \]
-On the other hand
+And on other side we have
 \begin{align*}
 \pp Θ^P
 &= - 2K \pp d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \\
@@ -390,7 +390,7 @@ As taking principal part is a linear operation, the third condition forces $s=0$
 \end{proof}
 \end{lem}
 
-As we have already remarked, having found this pair of differentials any other differential satisfying~\ref{P:poles}--\ref{P:periods} may be written in the form $a Θ^E + n Θ^P$ for some $a\in\R$ and $n\in\Z$. We may think of the differentials satisfying~\ref{P:poles}--\ref{P:periods} as forming a $\Z\times\R$-bundle over $\mathcal{A}_1$. This pair of differentials $Θ^E$ and $Θ^P$ vary smoothly with respect to $(α,β)$ and are always linearly independent so they trivialises that bundle.
+As we have already remarked, having found this pair of differentials any other differential satisfying~\ref{P:poles}--\ref{P:periods} may be written in the form $a Θ^E + n Θ^P$ for some $a\in\R$ and $n\in\Z$. We may think of the differentials satisfying~\ref{P:poles}--\ref{P:imaginary periods} as forming a rank 2 real vector bundle over $\mathcal{A}_1$ spanned by $Θ^E$ and $Θ^P$, and those differentials satisfying~\ref{P:poles}--\ref{P:periods} as forming a $\Z\times\R$-subbundle. This pair of differentials $Θ^E$ and $Θ^P$ vary smoothly with respect to $(α,β)$ and are always linearly independent so they trivialises that bundle.
 
 Recall that $\mathcal{A}_1$ double covers $\mathcal{C}_1$; the points $(α,β)$ and $(β,α)$ in $\mathcal{A}_1$ correspond to the same marked curve $Σ\in \mathcal{C}_1$. Suppose we have a section of differentials $Θ : (α,β) \mapsto Ω^1(Σ(α,β))$. As $Σ(α,β)$ and $Σ(β,α)$ are the same curve, this raises the question of what the difference $Θ(α,β) - Θ(β,α)$ is. Asking this for $Θ^E(α,β)$ and $Θ^P(α,β)$, we observe directly that $Θ^E = \iu d (η/ζ)$ is invariant under the interchange of $α$ and $β$. Now we may use the characterisation given by Lemma~\ref{lem:theta2_characterisation} to conclude the same for $Θ^P$, because
 \[
@@ -398,7 +398,10 @@ Recall that $\mathcal{A}_1$ double covers $\mathcal{C}_1$; the points $(α,β)$ 
 \]
 and so uniqueness forces $Θ^P(β,α) = Θ^P(α,β)$.
 
-The consequence of this is that $\langle Θ^E,Θ^P \rangle$ pushes forward to a well-defined basis of the differentials over $\mathcal{C}_1$ as well, and just as for $\mathcal{A}_1$ they trivialise the bundle $\mathcal{B}_1 \to \mathcal{C}_1$. Though we mainly concentrate on the subspace of $\mathcal{C}_1$ of marked curves that admit spectral data, at the end of this chapter we will consider the space of spectral data within the total space of pairs of differentials $(\R\langle Θ^E,Θ^P \rangle)^2$.
+The consequence of this is that $\langle Θ^E,Θ^P \rangle$ pushes forward to a well-defined basis of the differentials over $\mathcal{C}_1$ as well, and just as for $\mathcal{A}_1$ they trivialise the bundle $\mathcal{B}_1 \to \mathcal{C}_1$. Though we mainly concentrate on the subspace of $\mathcal{C}_1$ of marked curves that admit spectral data, at the end of this chapter we will consider the space of spectral data within the total space of pairs of differentials
+\[
+\mathcal{B}_1 \times \mathcal{B}_1 = (\R\langle Θ^E,Θ^P \rangle)^2.
+\]
 
 
 \section{The Closing Conditions}
@@ -407,7 +410,7 @@ The closing conditions, Conditions~\ref{P:closing}, are the conditions that spec
 \[
 \int_{γ_{+}} Θ \in 2π\iu \Z,
 \]
-where $γ_+$ is a path that begins at $(1,-η^+(1))$ and ends at $(1,η^+(1))$, the two points on the spectral curve lying over $ζ=1$. Recall that we have defined $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$ to be the value of $η$ on the positive unit circle in $Σ$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is none-the-less well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination $aA + bB$ of periods $A$ and $B$. The difference in the values of the integrals is therefore
+where $γ_+$ is a path that begins at $(1,-η^+(1))$ and ends at $(1,η^+(1))$, the two points on the spectral curve lying over $ζ=1$. Recall that we have defined $η^+(ζ) = ζ\abs{ζ-α}\abs{ζ-β}$ to be the value of $η$ on the positive unit circle in $Σ$. However, the value of the integral is dependent on the particular path chosen. To see that this condition is none-the-less well defined, suppose that $γ$ and $γ'$ are two paths between the two points over $ζ=1$. Their difference $γ-γ'$ is a closed loop and homologous to an integral combination $aA + bB$ of the periods $A$ and $B$. The difference in the values of the integrals is therefore
 \[
 \int_{γ} Θ - \int_{γ'} Θ
 = \int_{γ - γ'} Θ
@@ -445,11 +448,11 @@ S(α,β) := \frac{2\iu η^+(1)}{-2\iu η^+(-1)} = \frac{\abs{1-α}\abs{1-β}}{\a
 \]
 This gives the flavour of what we are aiming to achieve. We will produce two explicit functions such that a marked curve admits spectral data exactly when these functions take rational values. The two functions may be interpreted as defining equations for the subspace of spectral curves $\mathcal{S}_1$ within the space of all marked curves $\mathcal{C}_1$.
 
-Before we plough ahead to differentials with periods, there is a simplification we can make. Suppose that we have a triple of spectral data $(Σ,Θ^1,Θ^2)$ such that the differentials $Θ^1,Θ^2$ have imaginary periods $2π\iu l_1, 2π\iu l_2$ respectively. Let $l>0$ be the greatest common denominator of $l_1$ and $l_2$, and by Bézout's identity let $x,y$ be integers that satisfy
+Before we plough ahead to differentials with periods, there is a simplification we can make. Suppose that we have a triple of spectral data $(Σ,Θ^1,Θ^2)$ such that the differentials $Θ^1$ and $Θ^2$ have imaginary periods $2π\iu l_1$ and $2π\iu l_2$ respectively. Let $l>0$ be the greatest common denominator of $l_1$ and $l_2$, and by Bézout's identity let $x$ and $y$ be integers that satisfy
 \[
 xl_1 + yl_2 = l.
 \]
-Then consider the differentials $Ψ^E,Ψ^P$ defined by the following integer combination
+Then consider the differentials $Ψ^E$ and $Ψ^P$ defined by the following integer combination
 \[
 \vt{Ψ^E}{Ψ^P} =
 \begin{pmatrix}
@@ -530,7 +533,7 @@ If one were simply interested in getting a solution to this equation, one could 
 \[
 l = \frac{m'}{\gcd(m',mn')}.
 \]
-We may then divide through by $m'$. To then solve this equation for $Γ^P_+$ and $Γ^P_-$, as $n$ and $m$ are coprime let $x,y$ be integers such that $nx - my = 1$. By Bézout's Identity, the solution set is
+We may then divide through by $m'$. To then solve this equation for $Γ^P_+$ and $Γ^P_-$, as $n$ and $m$ are coprime let $x$ and $y$ be integers such that $nx - my = 1$. By Bézout's Identity, the solution set is
 \[
 \Set{ (Γ^P_+, Γ^P_-) = \bra{\frac{mn'}{\gcd(m',mn')}y + mr, \frac{mn'}{\gcd(m',mn')}x + nr} }{ r \in \Z }.
 \]
@@ -582,9 +585,9 @@ Immediately before this lemma we observed that although the condition $T\in\Q$ i
 
 \labelpara{para:principal paths}
 
-Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve $Σ(α,β)$ corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ be the path that begins at $(1,-η^+(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc to the unit circle (though on a different sheet now), and back to $(1,η^+(1))$.
+Consider the open dense subset $\mathcal{A}_1 \setminus \{ν = \pm 1\}$ of $\mathcal{A}_1$. On any marked curve $Σ(α,β)$ corresponding to a point of $\mathcal{A}_1 \setminus \{ν = \pm 1\}$, let $\symbf{γ}_+ = \symbf{γ}_+(α,β)$ be the path that begins at $(1,-η^+(1))$, traverses the unit circle to the point $μ$ without crossing $ν$, follows the branch circle to $α$, circles this branch point anticlockwise, goes back along the arc to the unit circle (though on a different sheet now), and back to $(1,η^+(1))$. This path is illustrated in Figure~\ref{fig:gamma paths}.
 
-Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,-η^+(-1))$ to $(-1,η^+(-1))$ along the unit and branch circles that does not cross $ν$. These paths are illustrated in Figure~\ref{fig:gamma paths}. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded. Note that these paths depend on the order of the branch points $(α,β) \in \mathcal{A}_1$, since $ν$ is defined to be the intersection of the unit and branch circles which lies between $β$ and $\cji{β}$.
+Likewise choose $\symbf{γ}_- = \symbf{γ}_-(α,β)$ to be the path from $(-1,-η^+(-1))$ to $(-1,η^+(-1))$ along the unit and branch circles that does not cross $ν$. In the case $ν=\pm 1$, it would be impossible to `avoid' $ν$, so this case had to be excluded. Note that these paths depend on the order of the branch points $(α,β) \in \mathcal{A}_1$, since $ν$ is defined to be the intersection of the unit and branch circles which lies between $β$ and $\cji{β}$.
 
 \begin{defn}
 \label{def:def_T_0}
@@ -605,7 +608,7 @@ For example, we may describe the path $f(γ_+)$ as follows. Start from the point
 % \makefigure{$f(γ_+)$ in red and $f(γ_-)$ in black\label{fig:f gamma paths}}{thesis_graphics_temp/gamma_pm_z.png}
 \makefigure{The paths $f(\symbf{γ}_+)$ in red and $f(\symbf{γ}_-)$ in blue. \label{fig:f gamma paths}}{tikz/gamma_pm_z}
 
-Having fixed a choice of paths, we can the integrals of the standard differentials $ω$ and $e$ along these particular paths in terms of elliptic integrals,
+Having fixed a choice of paths, we can express the integrals of the differentials $ω$ and $e$ along these particular paths in terms of Legendre elliptic integrals,
 \begin{align*}
 \int_{\symbf{γ}_+} ω
 &= \bra{2\int_0^{f(1)} - 2\int_0^1} ω
@@ -661,7 +664,7 @@ Elliptic integrals are the most difficult part of~\eqref{eqn:gamma_plus} to diff
 
 However, these coordinates $(p,k,u,v)$ only cover part of $\mathcal{A}_1$, since $f$ is a Möbius function $\CP^1 \to \CP^1$ and so, for example, there will be points of $\mathcal{A}_1$ where $\iu u = f(1)$ is infinite. To cover these cases we must introduce the additional coordinates $u' = u^{-1}$ and $v' = v^{-1}$. The purpose of Lemma~\ref{lem:change of parameters} is that verify that these are in fact coordinates for $\mathcal{A}_1$ and that together they cover it.
 
-After having established this coordinate change, the remainder of the section is devoted to calculations. First we rewrite the formulae derived thus far in terms of our new coordinates: equations~\eqref{eqn:gamma_plus2} and~\eqref{eqn:gamma_minus2} are rewrites of~\eqref{eqn:gamma_plus} and~\eqref{eqn:gamma_minus} respectively. From these it is feasible to compute the $u$-derivative of $T_0$,~\eqref{eqn:dTdu}, and in thereby in Lemma~\ref{lem:deriv no zeroes} prove that the derivative does not vanish. In keeping with the methodology of that lemma, which leans on inequalities among the standard elliptic integrals, we also prove that the range of $T_0$ is the whole real line.
+After having established this coordinate change, the remainder of the section is devoted to calculations. First we rewrite the formulae derived thus far in terms of our new coordinates: equations~\eqref{eqn:gamma_plus2} and~\eqref{eqn:gamma_minus2} are rewrites of~\eqref{eqn:gamma_plus} and~\eqref{eqn:gamma_minus} respectively. From these it is feasible to compute the $u$-derivative of $T_0$,~\eqref{eqn:dTdu}, and in thereby in Lemma~\ref{lem:deriv no zeroes} we essentially prove that the derivative does not vanish.
 
 \begin{lem}
 \label{lem:change of parameters}
@@ -701,7 +704,7 @@ It remains to show that these functions have smooth inverses. As the parameters 
 \[
 \frac{z-z_0}{z + \bar{z_0}},
 \]
-(compare to~\eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. To find $z_0$, we will identify it as the intersection of two circles, one arising from $S$ and one arising from the geometry of the Möbius transformation $f$. In~\eqref{eqn:def_S}, the definition of $S$, there are two ratios. We may use the following trick using the cross ratio to write each ratio in terms of the new coordinates and $z_0$. Observe
+(cf.~\eqref{eqn:f_inv}). Thus the construction of $f^{-1}$ proceeds in two steps; first find $z_0$, then determine the correct scaling factor. To find $z_0$, we will identify it as the intersection of two circles: one arising from $S$ and one arising from the geometry of the Möbius transformation $f$. In~\eqref{eqn:def_S}, the definition of $S$, there are two ratios. We may use the following trick using the cross ratio to write each ratio in terms of the new coordinates and $z_0$. Observe
 \[
 \abs{\frac{α-1}{α+1}}
 = \abs{\frac{α-1}{α+1}} \abs{\frac{0+1}{0-1}}
@@ -737,7 +740,7 @@ x^2 + y^2 + 2y \frac{puw(\iu v) - vw(\iu u)}{w(\iu u)-pw(\iu v)} + \frac{v^2w(\i
 \]
 which is centred on the imaginary axis.
 
-On the other hand, in the $ζ$-plane the points $-1,0$ and $1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and that is invariant under the real involution $ρ$. Applying the Möbius transformation $f$ we can therefore say that $\iu v, z_0$ and $\iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Therefore $z_0$ lies on the circle
+On the other hand, in the $ζ$-plane the points $-1$, $0$, and $1$ all lie on a straight line that is perpendicular to the unit circle at both $-1$ and $1$, and that is invariant under the real involution $ρ$. Applying the Möbius transformation $f$ we can therefore say that $\iu v$, $z_0$, and $\iu u$ all lie on a circle that is perpendicular to the imaginary axis and symmetric under reflection in the imaginary axis. Therefore $z_0$ lies on the circle
 \[
 x^2 + \bra{ y - \frac{u+v}{2} }^2 = \frac{(u-v)^2}{4},
 \]
@@ -750,7 +753,7 @@ Thus we have determined two circles that $z_0$ lies on. As these two circles are
 x = \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v},\; y = \frac{puw(\iu v) + vw(\iu u)}{pw(\iu v) + w(\iu u)},
 \labelthis{eqn:formula xy}
 \]
-where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α,β$ inside the unit circle. Note that these are smooth functions of $(p,k,u,v)$, because the term under the square root and the denominators are strictly positive functions, and $u-v$ is not zero by the definition of the codomain of $φ_0$.
+where the sign of $x$ is chosen to make $z_0$ lie in the right half of the $z$-plane. This choice amounts to choosing the branch points $α$ and $β$ inside the unit circle. Note that these are smooth functions of $(p,k,u,v)$, because the term under the square root and the denominators are strictly positive functions, and $u-v$ is not zero by the definition of the codomain of $φ_0$.
 
 Having found $z_0$ in terms of $(p,k,u,v)$ it remains to find the correct scaling of $f^{-1}$. We use the fact that $f^{-1}(\iu u) = 1$ and $f^{-1}(\iu v) = -1$ to conclude
 \[
@@ -760,7 +763,7 @@ f^{-1}(z)
 \]
 As was previously presented, one can simply take $α = f^{-1}(1)$ and $β = f^{-1}(k^{-1})$ to give formulae for the branch points in terms of the new parameters. A problem could potentially occur if $z_0$ were to equal $\iu u$ or $\iu v$, in which case the scaling factor would be $0/0$. This could only occur if $\Real z_0 = 0$, which itself only occurs if $u=v$. But we have already noted that this is impossible. Likewise the formula would be ill-defined if $z_0 = -1$ or $-k^{-1}$ (for then $α$ or $β$ would be infinite), but again this occurs only if $\Real z_0 < 0$, which is excluded by our decision to take $z_0$ in the right half-plane.
 
-Having constructed an inverse for $φ_0$, we must also construct inverses for $φ_1$ and $φ_2$. But we may do so by modifying the formula for $x$ and $y$, given in equation~\eqref{eqn:formula xy}, to define them for the primed coordinates $u'$ or $v'$. Such a definition extends smoothly to the points where $u'$ or $v'$ is zero. Using the notation $w'(\iu t)^2 = (1+t^2)(k^2 + t^2)$ we have
+Now that we have constructed an inverse for $φ_0$, we must also construct inverses for $φ_1$ and $φ_2$. But we may do so by modifying the formula for $x$ and $y$, given in equation~\eqref{eqn:formula xy}, to define them for the primed coordinates $u'$ or $v'$. Such a definition extends smoothly to the points where $u'$ or $v'$ is zero. Using the notation $w'(\iu t)^2 = (1+t^2)(k^2 + t^2)$ we have
 \begin{align*}
 x
 &= \frac{\sqrt{pw(\iu u)w(\iu v)}}{pw(\iu v) + w(\iu u)} \abs{u-v}
@@ -782,7 +785,7 @@ Having made these changes in formula for $z_0$, the same formula for $f^{-1}$ ap
 
 It is interesting to see that it was necessary to exclude the plane where $u=v$ (or $u'v=1$ or $uv'=1$), for otherwise $x$ would be zero, $z_0$ would be equal to $-\bar{z_0}$ and $f^{-1}(z)$ would be a constant function. We shall see later that these points correspond to the diagonal $\{α=β\} \subset D\times D$ and represent a degeneration of marked curves.
 
-Finally, it is simple to see that the three domains cover $\mathcal{A}_1$. If there was some point $(α,β) \in \mathcal{A}_1$ that was not covered, then one could compute $μ(α,β)$ and $ν(α,β)$. But the intersection
+Finally, it remains to be demonstrated that the three domains cover $\mathcal{A}_1$. If there was some point $(α,β) \in \mathcal{A}_1$ that was not covered, then one could compute $μ(α,β)$ and $ν(α,β)$. But the intersection
 \[
 \{ν = \pm 1\}
 \cap \{μ = 1 \text{ or } ν = -1 \}
@@ -792,11 +795,11 @@ consists of only those points where $μ=ν=1$ or $μ=ν=-1$, and Lemma~\ref{lem:
 \end{proof}
 \end{lem}
 
-Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1,0,-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in~\eqref{eqn:y_prime_version}.
+Though standard, it is perhaps still of some interest to consider the above geometrical argument in the limit $u\to\infty$ to assure ourselves that nothing singular is happening. Suppose that $u' = 0$, which is to say geometrically that $1$ is mapped to infinity by $f$. Then the transformation $f$ takes the line through $1$, $0$, and $-1$ to a line perpendicular to the imaginary axis, cutting at $f(-1)$. This line is therefore horizontal and so $z_0$ and $\iu v$ have the same imaginary parts. This gives $y=v$ directly, as can be observed by setting $u'=0$ in~\eqref{eqn:y_prime_version}.
 
-Now that we have establish that these are valid changes of coordinates, we can get to work using them. First we will show how to compute $T_0$ in these coordinates, and then develop related coordinates for the universal cover $\mathcal{\tilde{C}}_1$. Recall that we defined a principal branch cut $T_0$ of $T$ on $\mathcal{A}_1\setminus\{ν=\pm 1\}$. This is exactly the domain of $φ_0$, and in equation~\eqref{eqn:formula xy} we have a formula for the inverse.
+Now that we have establish that these are valid changes of coordinates, we can put them to work. First we will show how to compute $T_0$ in these coordinates, and then develop related coordinates for the universal cover $\mathcal{\tilde{C}}_1$. Recall that we defined a principal branch cut $T_0$ of $T$ on $\mathcal{A}_1\setminus\{ν=\pm 1\}$. This is exactly the domain of $φ_0$, and in equation~\eqref{eqn:formula xy} we have a formula for the inverse.
 
-To rewrite $T_0$ in terms of $(p,k,u,v)$, we must compute the factors in the last terms of equations~\eqref{eqn:gamma_plus} and~\eqref{eqn:gamma_minus}. Note that in the previous lemma we have denoted $\Im z_0$ by $y$, and that by definition $\iu u = f(1)$ and $\iu v = f(-1)$. Therefore, by direct computation
+To rewrite $T_0$ in terms of $(p,k,u,v)$, we must compute the factors in the last terms of equations~\eqref{eqn:gamma_plus} and~\eqref{eqn:gamma_minus}. Note that in the previous lemma we have denoted $\Imag z_0$ by $y$, and that by definition $\iu u = f(1)$ and $\iu v = f(-1)$. Therefore, by direct computation
 \begin{align*}
 u-y &= \frac{w(\iu u)(u-v)}{pw(\iu v) + w(\iu u)} &
 \abs{\iu u - z_0}^2 &= \frac{w(\iu u)(u-v)^2}{pw(\iu v) + w(\iu u)} \\
@@ -832,7 +835,7 @@ and hence by the equation~\eqref{eqn:def_T} we finally arrive at
 \end{align*}
 Be aware that we have omitted the elliptic modulus $k$ in the complete elliptic integrals, as is standard, so that $K=K(k)$ and $E= E(k)$.
 
-The purpose for constructing these new coordinates was to make it feasible to compute the derivatives of $T$. While $T$ may be a multi-valued function on $\mathcal{A}_1$, its derivative is not. The ambiguity present in $T$, a function defined locally only up to a constant, is removed by differentiation. In particular then let us compute the $u$-derivative of $T_0$, a principal branch cut of $T$, from the explicit formula in~\eqref{eqn:Teqn}. The $v$-derivative is similar, but later we will employ a symmetry in $T_0$ to avoid the need to compute it directly. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
+The purpose for constructing these new coordinates was to make it feasible to compute the derivatives of $T$. While $T$ may be a multi-valued function on $\mathcal{A}_1$, its derivative is not. For a fixed value of $p$ the ambiguity present in $T$ is locally a constant, which is removed by differentiation. In particular then let us compute the $u$-derivative of $T_0$, a principal branch cut of $T$, from the explicit formula in~\eqref{eqn:Teqn}. The $v$-derivative is similar, but later we will employ a symmetry in $T_0$ to avoid the need to compute it directly. As $F(z;k)$ and $E(z;k)$ are parameter integrals in $z$, we have that
 \[
 \Partial{}{u} F(\iu u; k) = \frac{\iu}{w(\iu u)},\;\;\;
 \Partial{}{u} E(\iu u; k) = \iu\frac{1+k^2 u^2}{w(\iu u)},
@@ -880,7 +883,7 @@ L'(p,k,v)
 &= -E + pkKw(\iu v) + K\left[ 1 + k^2v^2 \right].
 \labelthis{eqn:def L'}
 \end{align*}
-The final lemma of this section shows these functions $L$ and $L'$ are non-vanishing, which will be used to later prove that certain derivatives of $T$ are non-vanishing also. The lemma below is not sufficient to establish this latter fact by itself, because $T_0$ is only defined in the $(p,k,u,v)$ coordinate patch.
+The final lemma of this section shows these functions $L$ and $L'$ are non-vanishing, which will be used to later prove that certain derivatives of $T$ are non-vanishing also. The lemma below is not completely sufficient to establish this latter fact by itself, because $T_0$ is only defined in the $(p,k,u,v)$ coordinate patch.
 
 \begin{lem}
 \label{lem:deriv no zeroes}
@@ -955,7 +958,7 @@ More precisely,
 in Lemma~\ref{lem:T_graph} we demonstrate that for any values $p \in \R^+$, $q\in\R$ the level set $\mathcal{\tilde{C}}_1(p,q)$ defined by $p = S$ and $q = \tilde{T}$ is a graph over two of the coordinates. This follows by an application of the implicit function theorem and relies on the non-vanishing result from Lemma~\ref{lem:deriv no zeroes}. Hence each level set is diffeomorphic to a ribbon $(0,1)\times\R$.
 % Moreover, that lemma shows that for fixed $p$ these strips $\mathcal{\tilde{C}}_1(p,q)$ foliate $\mathcal{\tilde{C}}_1(p)$, the subspace of $\mathcal{\tilde{C}}_1$ on which $p$ is a fixed constant.
 
-It follows from the observation that $\tilde{T}$ is rational exactly when $T$ is that the preimage of $\mathcal{S}_1$ in the universal cover $\mathcal{\tilde{C}}_1$, which we denote $\mathcal{\tilde{S}}_1$, may be written as the disjoint union of level sets,
+It will follow from the observation that $\tilde{T}$ is rational exactly when $T$ is that the preimage $\mathcal{\tilde{S}}_1$ of $\mathcal{S}_1$ in the universal cover $\mathcal{\tilde{C}}_1$ may be written as the disjoint union of level sets,
 \[
 \mathcal{\tilde{S}}_1 = \coprod_{p\in \Q^+,\; q\in \Q} \mathcal{\tilde{C}}_1(p,q).
 \]
@@ -973,7 +976,7 @@ The first two factors $\R^+ \times (0,1)$ are obvious, they come from $p \in R^+
 \{(u,v') \in \R \times \R \} \cup
 \{(u',v') \in \R \times \R \}
 \]
-with the identifications $u' = u^{-1}$ and $v'=v^{-1}$. This is the product of two circles, which is to say a torus $\mathbb{T}^2$. Specifically $\mathcal{A}_1$ is the subset of this torus where $u\neq v$. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus. Moreover, consider the subsets $\mathcal{A}_1(p)$ of the parameter space $\mathcal{A}_1$ for which the coordinate $p$ is fixed. This shows that topologically it is the product of an interval and an annulus, a feature not as easily seen from the $α,β$ description.
+with the identifications $u' = u^{-1}$ and $v'=v^{-1}$. This is the product of two circles, which is to say a torus $\mathbb{T}^2$. Specifically $\mathcal{A}_1$ is the subset of this torus where $u\neq v$. The line $u=v$ can be represented as the line where the toroidal and poloidal angles are equal, and removing this line leaves an annulus. Moreover, consider the subsets $\mathcal{A}_1(p)$ of the parameter space $\mathcal{A}_1$ for which the coordinate $p$ is fixed. This shows that topologically it is the product of an interval and an annulus, a feature not as easily seen from the $(α,β)$ description.
 
 A more instructive way of visualising $\mathcal{A}_1(p)$ is to think of it as a solid cylinder with a line along the central axis removed. One should think of the `radius' of point being given by $1-k$, so that the central axis is identified with the value $k=1$. To motivate this, consider formula~\eqref{eqn:def_k} for $k$.
 \[
@@ -1087,7 +1090,7 @@ This relationship between $\tilde{T}$ and $T_0$ is also used in the next lemma t
 The range of $\tilde{T}$ on $\mathcal{\tilde{C}}_1$ is $\R$.
 
 \begin{proof}
-We shall prove below that the range of $T_0$ on $\mathcal{\tilde{C}}_1 \setminus \{ν = \pm 1\}$ is $\R$. Because on each component of the preimage of $\mathcal{\tilde{C}}_1 \setminus \{ν = \pm 1\}$ in $\mathcal{\tilde{C}}_1$ equation~\eqref{eqn:tilde T computable} tells us that $\tilde{T}$ and $T_0\circ π$ differ by a constant, it follows that the range of $\tilde{T}$ is also $\R$.
+We shall prove below that the range of $T_0$ on $\mathcal{\tilde{C}}_1 \setminus \{ν = \pm 1\}$ is $\R$. Because on each component of the preimage of $\mathcal{\tilde{C}}_1 \setminus \{ν = \pm 1\}$ in $\mathcal{\tilde{C}}_1$ equation~\eqref{eqn:tilde T computable} tells us that $\tilde{T}$ and $T_0\circ \tilde{π}$ differ by a constant, it follows that the range of $\tilde{T}$ is also $\R$.
 
 Fix $p$, but also fix any value for $k$. By~\eqref{eqn:F0_E0_uniform_bounds}, the magnitude $\abs{F_0(x;k)}$ is bounded by $K'$ and $\abs{E_0(x;k)}$ is bounded by $K'-E'$. Thus there is some constant, dependent on both $p$ and $k$ but independent of $u$ and $v$, such that
 \[
@@ -1191,7 +1194,7 @@ so that it is now the $\tilde{v}$ derivative of $\tilde{T}$ that is non-vanishin
 
 
 
-With this lemma in hand, we are within striking distance of results about $\mathcal{S}_1$. Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves, which are marked curves that admit spectral data. We will recover $\mathcal{S}_1$ as the quotient of the level sets of $\tilde{T}$ by the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{C}}_1$ over $\mathcal{C}_1$.
+With this lemma in hand, we are within striking distance of results about $\mathcal{S}_1$. Recall that $\mathcal{S}_1 \subset \mathcal{C}_1$ is the set of spectral curves, those marked curves that admit spectral data. We will recover $\mathcal{S}_1$ as the quotient of the level sets of $\tilde{T}$ by the group $\mathcal{G}$ of covering transformations $\mathcal{\tilde{C}}_1$ over $\mathcal{C}_1$.
 
 Define $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{C}}_1$ to be the preimage of $\mathcal{S}_1$ in the universal cover. As we have shown that $\mathcal{S}_1$ is the subspace of $\mathcal{C}_1$ on which $S$ is a positive rational and $T$ is any rational (Lemma~\ref{lem:closing_conds}) and that a point in $\mathcal{\tilde{C}}_1$ is the preimage of a point of $\mathcal{S}_1$ exactly when $p$ is a positive rational and $\tilde{T} \in \Q$ (Lemma~\ref{lem:tilde T rational}), it follows that
 \[
@@ -1201,7 +1204,7 @@ Define $\mathcal{\tilde{S}}_1 \subset \mathcal{\tilde{C}}_1$ to be the preimage 
 
 There are several topological implications of the previous lemma. First, each level set $\mathcal{\tilde{C}}_1(p,q)$ is connected. More precisely each of these is diffeomorphic to a product of $(0,1)$ and $\R$. Therefore the above disjoint union is the decomposition of $\mathcal{\tilde{S}}_1$ into its path connected components. By varying the value of $q$, we see that the $\mathcal{\tilde{C}}_1(p,q)$ foliate $\mathcal{\tilde{C}}_1(p)$, so $\mathcal{\tilde{S}}_1$ is arranged densely in $\mathcal{\tilde{C}}_1(p)$, analogously to how $\Q$ is arranged densely in $\R$.
 
-To understand the topology of $\mathcal{S}_1$, we must understand the action of the covering transformations of $\mathcal{\tilde{C}}_1 \to \mathcal{A}_1 \to \mathcal{C}_1$ as restricted to $\tilde{\mathcal{S}}_1$, and so we must first describe the group of covering transformations $\mathcal{G}$. The covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ are easy to understand; besides the identity, there is only
+To understand the topology of $\mathcal{S}_1$, we must understand the action of the covering transformations of $\mathcal{\tilde{C}}_1 \to \mathcal{A}_1 \to \mathcal{C}_1$ as restricted to $\tilde{\mathcal{S}}_1$, and so we must first describe the group of covering transformations $\mathcal{G}$. The covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ are easy to understand; besides the identity there is only
 \[
 % ZUUL
 λ : (α,β) \mapsto (β,α),
@@ -1217,7 +1220,7 @@ which swaps the labelling of the branch points inside the unit disc. We will use
 \labelpara{para:def f_s}
 
 Let us describe $λ$ in terms of the $(p,k,u,v)$ coordinates.
-By inspection of the definitions of $p = S(α,β)$ and $k = k(α,β)$,~\eqref{eqn:def_S} and~\eqref{eqn:def_k}, they are unchanged if the labelling of the branch points is exchanged. We therefore must say what happens to $u$ and $v$. Recall that $\iu u = f(1)$ and $\iu v = f(-1)$. Our construction thus far relies on a definition of $f$ that sends $α$ to $1$ and $β$ to $k^{-1}$. Let $f_s$ be the Möbius transformation which instead standardises the branch points of the marked curve in the other way, taking $β$ to $1$ and $α$ to $k^{-1}$. Equivalently, $f_s$ is the result of first swapping the order of branch points $(α,β)$ and then applying $f$. Consider the composition of $f_s \circ f^{-1}$. It is a Möbius transformation that exchanges $1$ and $k^{-1}$ and also $-1$ and $-k^{-1}$. It therefore must be the map
+By inspection of the definitions of $p = S(α,β)$ and $k = k(α,β)$, equations \eqref{eqn:def_S} and \eqref{eqn:def_k}, they are unchanged if the labelling of the branch points is exchanged. We therefore must say what happens to $u$ and $v$. Recall that $\iu u = f(1)$ and $\iu v = f(-1)$. Our construction thus far relies on a definition of $f$ that sends $α$ to $1$ and $β$ to $k^{-1}$. Let $f_s$ be the Möbius transformation which instead standardises the branch points of the marked curve in the other way, taking $β$ to $1$ and $α$ to $k^{-1}$. Equivalently, $f_s$ is the result of first swapping the order of branch points $(α,β)$ and then applying $f$. Consider the composition of $f_s \circ f^{-1}$. It is a Möbius transformation that exchanges $1$ and $k^{-1}$ and also $-1$ and $-k^{-1}$. It therefore must be the map
 \[
 z \mapsto \frac{1}{kz}.
 \]
@@ -1235,7 +1238,7 @@ U
 \]
 which is half-rotation of the circle (as shown in Figure~\ref{fig:circle rotation}).
 
-\maketikzfigure{The circle on the left is $\RP^1$ with four points marked. The map $U \mapsto -U^{-1}$ is applied to produce the circle on the right, with corresponding points coloured the same. We can see that the circle on the right is rotated by $π$. \label{fig:circle rotation}}{tikz/circle_rotation}
+\maketikzfigure{The circle on the left is $\RP^1$ with four points marked. The map $U \mapsto -U^{-1}$ is applied to produce the circle on the right, with corresponding points coloured the same. We can see that the circle on the right is rotated by half. \label{fig:circle rotation}}{tikz/circle_rotation}
 
 We shall use this rescaled coordinate $U$, and likewise $V = \sqrt{k} v$, to construct coordinates on $\mathcal{\tilde{C}}_1$ such that the covering transformations are simply translations. This is motivated by the fact that translating the line $\R$ rotates the quotient $\R/\Z$.
 
@@ -1291,10 +1294,10 @@ and so is $2πm + π + \tilde{U}$ for some integer $m$. Therefore, these coverin
 \]
 Not every element of this set is a well defined map on $\mathcal{\tilde{C}}_1$ however, because we require that $\tilde{U} < \tilde{V} < \tilde{U} + 2π$. Hence above we must choose $m=n$. The group of covering transformations $\mathcal{G}$ is generated by
 \[
-\tilde{λ} : (p,k,\tilde{U},\tilde{U}) \mapsto (p,k, \tilde{U} + π, \tilde{V} + π),
+\tilde{λ} : (p,k,\tilde{U},\tilde{V}) \mapsto (p,k, \tilde{U} + π, \tilde{V} + π),
 \labelthis{eqn:tilde lambda action}
 \]
-and we may write $\mathcal{G} = \Z\langle \tilde{λ}\rangle$. If we apply this transformation twice, we see that $\tilde{λ}^2$ generates the subgroup of transformations that pushforward to the identity transformation on $\mathcal{A}_1$. It is unsurprising that this subgroup is index $2$ in $\mathcal{G}$, because the group of covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ has just two elements.
+and we may write $\mathcal{G} = \Z\langle \tilde{λ}\rangle$. If we apply this transformation twice, we see that $\tilde{λ}^2$ generates the subgroup of transformations that pushforward to the identity transformation on $\mathcal{A}_1$. It is unsurprising that this subgroup is index two in $\mathcal{G}$ because the group of covering transformations of $\mathcal{A}_1$ over $\mathcal{C}_1$ has just two elements.
 
 
 
@@ -1336,13 +1339,13 @@ Putting these together we conclude that the value of $T_0$ changes by $1-S$ unde
 &= S(-2π\iu) - (-2π\iu) \\
 &= 2π\iu (1-S).
 \end{align*}
-To infer the effect of the transformation on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u},\tilde{v}$ may have changed, and consequently any alteration to their winding numbers. If the points $μ,ν$ have been arranged as described, then this restricts the arrangement of $\iu u$, $\iu v$. By definition,
+To infer the effect of the transformation on $\tilde{T}$ however, we also must take into account how the coordinates $\tilde{u}$ and $\tilde{v}$ may have changed, and consequently any alteration to their winding numbers. If the points $μ$ and $ν$ have been arranged as described, then this restricts the arrangement of $\iu u$ and $\iu v$. By definition,
 \[
 0 = f(μ),\;\; \iu u = f(1),\;\; \iu v = f(-1),\;\; \infty = f(ν),
 \]
-and as one traverses the unit circle clockwise in the $ζ$-plane, one traverses the imaginary axis in the $z$-plane upwards. The clockwise arrangement of $μ,1,-1$ and $ν$ therefore corresponds to $0 < u < v < \infty$.
+and as one traverses the unit circle clockwise in the $ζ$-plane, one traverses the imaginary axis in the $z$-plane upwards. The clockwise arrangement of $μ$, $1$, $-1$, and $ν$ therefore corresponds to $0 < u < v < \infty$.
 
-As $u,v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n$ and $m$. Hence $\tilde{U}$ and $\tilde{V}$ also lie in those two intervals respectively. Under applying the transformation $\tilde{λ}$, the coordinate $\tilde{U}$ will be translated by $π$ and so lie in $(2π(n+1) - π, 2π(n+1))$. In other words its winding number has increased by $1$. The same can be said for $\tilde{V}$. As $\tilde{u}$ and $\tilde{v}$ have the same winding numbers as $\tilde{U}$ and $\tilde{V}$, combining in~\eqref{eqn:tilde T computable} the effect of $λ$ on $T_0$ with the change of winding number shows
+As $u$ and $v$ are both positive, it must be that $\tilde{u} \in (2πn, 2πn + π)$ and $\tilde{v} \in (2πm, 2πm + π)$ for some integers $n$ and $m$. Hence $\tilde{U}$ and $\tilde{V}$ also lie in those two intervals respectively. Under applying the transformation $\tilde{λ}$, the coordinate $\tilde{U}$ will be translated by $π$ and so lie in $(2π(n+1) - π, 2π(n+1))$. In other words its winding number has increased by $1$. The same can be said for $\tilde{V}$. As $\tilde{u}$ and $\tilde{v}$ have the same winding numbers as $\tilde{U}$ and $\tilde{V}$, combining the effect of $λ$ on $T_0$ with the change of winding number in \eqref{eqn:tilde T computable} shows
 \begin{align*}
 \tilde{T} \circ \tilde{λ} - \tilde{T}
 &= \bra{ T_0\circ λ + 2(S(m+1)-(n+1)) } - \bra{ T_0 + 2(Sm-n) } \\
@@ -1354,7 +1357,7 @@ This relation a between analytic functions on an open set, so by continuation it
 \end{lem}
 
 Thus the effect of the covering transformation $\tilde{λ}$ on points in the level set $\mathcal{\tilde{C}}_1(p,q)$, where $\tilde{T} = q$, is to move them into the $\mathcal{\tilde{C}}_1(p,q + p-1)$ level set. To be precise, fix a value for $p$ and take a point $(p,k,\tilde{U},\tilde{V}) \in \mathcal{\tilde{C}}_1(p)$.
-If $p\leq 1$ let $\tilde{X}$ be $\tilde{U}$ and otherwise take it to be $\tilde{V}$. We know by Lemma~\ref{lem:T_graph} and the above change of coordinates that $(q,k,\tilde{U})$, where $q = \tilde{T}$, are coordinates for $\mathcal{\tilde{C}}_1(p)$. In particular, $\mathcal{\tilde{C}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
+If $p\leq 1$ let $\tilde{X}$ be $\tilde{U}$ and otherwise take it to be $\tilde{V}$. We know by Lemma~\ref{lem:T_graph} and the above change of coordinates that $(q,k,\tilde{X})$, where $q = \tilde{T}$, are coordinates for $\mathcal{\tilde{C}}_1(p)$. In particular, $\mathcal{\tilde{C}}_1(p)$ is foliated by the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $\tilde{T}$. Under the covering transformation $\tilde{λ}$,
 \[
 \bra{p,q,k,\tilde{X}} \mapsto \bra{p, q + (p-1), k, \tilde{X} + π}.
 \labelthis{eqn:group action}
@@ -1374,7 +1377,7 @@ such that the subspace of spectral curves $\mathcal{S}_1(p)$ is
 \begin{proof}
 Fix $p\neq 1$ and consider $\mathcal{C}_1(p)$. It is the quotient of $\mathcal{\tilde{C}}_1(p)$ by the group of covering transformations $\mathcal{G} = \Z\langle\tilde{λ}\rangle$. By Lemma~\ref{lem:T_graph}, $\mathcal{\tilde{C}}_1(p)$ is foliated by $\mathcal{\tilde{C}}_1(p,q)$ and we have just shown in~\eqref{eqn:group action} how different $\mathcal{\tilde{C}}_1(p,q)$ can be identified if their values of $q$ differ by a multiple of $p-1$. Hence it is sufficient to take one representative from each element of $\R/(p-1)\Z$ to cover the image.
 
-Lemma~\ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of $\mathcal{\tilde{C}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$ under the covering map, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $q \in \Q/(p-1)\Z$.
+Lemma~\ref{lem:tilde T rational} also demonstrates that $\mathcal{\tilde{S}}_1(p)$ is the union of those level sets $\mathcal{\tilde{C}}_1(p,q)$ with $q \in \Q$. $\mathcal{S}_1(p)$ is the image of $\mathcal{\tilde{S}}_1(p)$ under the covering map, so it is the subset of $\mathcal{C}_1(p)$ where $q$ is in the image of $\Q$, that is $q \in \Q/(p-1)\Z$.
 \end{proof}
 \end{thm}
 
@@ -1407,9 +1410,9 @@ These two theorems complete our quest to gain an understanding of the subspace o
 
 Then we moved to the universal cover $\mathcal{\tilde{C}}_1$, so that we could construct a well defined pullback $\tilde{T}$ of the multi-valued function $T$. We then considered the subspaces of $\mathcal{\tilde{C}}_1(p)$ where $\tilde{T}$ was constant. These were shown to be ribbons in Lemma~\ref{lem:T_graph}. The function $\tilde{T}$ is rational exactly when $T$ is, so the preimage of $\mathcal{S}_1$ in its universal cover is the union of the level sets $\mathcal{\tilde{C}}_1(p,q)$ of $p = S$ and $q = \tilde{T}$ where $p$ and $q$ are rational.
 
-The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group $\mathcal{G}$ was shown to be $\Z\langle\tilde{λ}\rangle$ and its action, described by~\eqref{eqn:group action}, was that of translations. This allowed us to describe the quotients in the two Theorems~\ref{thm:topology_curves} and~\ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of ribbons within $\mathcal{C}_1$. As can be seen in the computer plots below, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$.
+The final step was to push these level sets back down to $\mathcal{C}_1$. To do this, one must quotient out by the action of the group of covering transformations. This group $\mathcal{G}$ was shown to be $\Z\langle\tilde{λ}\rangle$ and its action, described by~\eqref{eqn:group action}, was that of translations. This allowed us to describe the quotients in the two Theorems~\ref{thm:topology_curves} and~\ref{thm:topology_curves_p1}. For $p$ not equal to one, $\mathcal{S}_1(p)$ is a dense collection of ribbons within $\mathcal{C}_1$. As can be seen in Figures~\ref{fig:p05 plot}--\ref{fig:p2 plot} below, they should be thought of as being intertwined around a central axis, similar to a family of helicoids. But for $p$ equal to one, instead we have a dense collection of annuli $\mathcal{S}_1(1)$.
 
-Unlike helicoids however, cross-sections perpendicular to the central axis to not meet the axis. Instead they spiral infinitely closer. In this respect, the behave like the cone of a spiral. This aspect is especially prominent in Figure~\ref{fig:p1 plot}, which one could think of as a family of cones with a common vertex (though the plotting software has difficulty for $k\approx 1$, so the `cones' appear to be heading towards the white hole in the middle of the figure but are cut off. The centre of this white hole is the vertex). This vertex structure is proved in Section \ref{sec:Interior}.
+Unlike helicoids however, cross-sections perpendicular to the central axis to not meet the axis. Instead they spiral infinitely closer. In this respect, the behave like the cone of a spiral. This aspect is especially prominent in Figure~\ref{fig:p1 plot}, which one could think of as a family of cones with a common vertex (though the plotting software has difficulty for $k\approx 1$, so the `cones' appear to be heading towards the white hole in the middle of the figure but are truncated. The centre of this white hole is the vertex). This vertex structure is proved in Section \ref{sec:Interior}.
 
 We saw in the introduction to this chapter that the parameter $p$ can be thought of as controlling the slope of the level sets as they wind around the central axis. From this point of view, $p=1$ is the intermediate case between right and left handed spirals where the slope is `flat' and the level sets `close up'.
 
@@ -1436,7 +1439,7 @@ We saw in the introduction to this chapter that the parameter $p$ can be thought
 \section{Corollaries}
 \label{sec:Corollaries}
 
-In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are ribbons, but the components of $\mathcal{S}_1(1)$ are annuli. In this section we will first investigate the moduli space $\mathcal{M}_1$ of spectral data $(Σ,Θ^1,Θ^2)$. Over each component of $\mathcal{S}_1(p)$, for $p\neq 1$, it is a trivial bundle. Its bundle structure over the components of $\mathcal{S}_1(1)$ is more complicated, but we will prove that the total space of the bundle is simply connected.
+In the last section, we deduced the topology of the path components of the moduli space of spectral curves. Most components are ribbons, but the components of $\mathcal{S}_1(1)$ are annuli. In this section we will first investigate the moduli space $\mathcal{M}_1$ of spectral data $(Σ,Θ^1,Θ^2)$. For $p\neq 1$, over each component of $\mathcal{S}_1(p)$ it is a trivial bundle. Its bundle structure over the components of $\mathcal{S}_1(1)$ is more complicated, but we will prove that the total space of the bundle is simply connected.
 
 Second, we shall extend the symmetry exhibited in~\eqref{eqn:T_0 symmetry} to a general transformation $χ$ on the space of spectral curves of a fixed genus $\mathcal{S}_g$ and give a geometric interpretation. We will illustrate this interpretation by observing how it applies to the space $\mathcal{S}_0$ of spectral curves with genus zero. Finally, we will examine the special case of harmonic maps to a $2$-sphere and show that those with a genus one spectral curve can be identified with a particular path component of $\mathcal{S}_1(1)$.
 
@@ -1444,10 +1447,10 @@ Before we can prove results about the moduli space of spectral data, we must rev
 
 \begin{lem}
 \label{lem:minimal differentials}
-On any curve $Σ \in \mathcal{S}_1$, there is a pair of differentials $Ψ^E,Ψ^P$ such that every differential that satisfies conditions~\ref{P:poles}--\ref{P:closing} is an integer combination of that pair.
+On any curve $Σ \in \mathcal{S}_1$, there is a pair of differentials $Ψ^E$ and $Ψ^P$ such that every differential that satisfies conditions~\ref{P:poles}--\ref{P:closing} is an integer combination of that pair.
 
 \begin{proof}
-The method of proof is similar to that of Lemma~\ref{lem:closing_conds}. As $Σ$ is a spectral curve, if we fix paths $γ_+,γ_-$ we know that the functions $S$ and $T$ take rational values. Let $S = n/m$ and $T= n'/m'$, where $n$ and $m$ are coprime. Recall the definitions of $Ψ^E$ and $Ψ^P$ as derived in that lemma, namely $Ψ^E = a Θ^E$ and $Ψ^P = b Θ^E + l Θ^P$, for constants
+The method of proof is similar to that of Lemma~\ref{lem:closing_conds}. As $Σ$ is a spectral curve, if we fix paths $γ_+$ and $γ_-$ we know that the functions $S$ and $T$ take rational values. Let $S = n/m$ and $T= n'/m'$, where $n$ and $m$ are coprime. Recall the definitions of $Ψ^E$ and $Ψ^P$ as derived in that lemma, namely $Ψ^E = a Θ^E$ and $Ψ^P = b Θ^E + l Θ^P$, for constants
 \begin{align*}
 a &:= \frac{2π\iu n}{2\iu η^+(1)}, \\
 l &:= \frac{m'}{\gcd(m',mn')}, \\
@@ -1465,7 +1468,7 @@ S = \frac{n}{m} = - \frac{η^+(1)}{η^+(-1)} = \frac{Γ_+}{Γ_-},
 \]
 so since $n/m$ is a simplified fraction we must have that $Γ_+ = cn$ and $Γ_- = cm$ for an integer $c$. It follows that $a' = ca$ and hence $Θ = c Ψ^E$.
 
-% We now turn our attention to a non-exact differentials. Similar to Lemma~\ref{lem:closing_conds}, let $x,y$ be integers with $nx-my = 1$. Then
+% We now turn our attention to a non-exact differentials. Similar to Lemma~\ref{lem:closing_conds}, let $x$ and $y$ be integers with $nx-my = 1$. Then
 % \[
 % \frac{nΓ^- - m Γ^+}{gm}
 % = \frac{n n'mx - m n'my}{m'm}
@@ -1493,7 +1496,7 @@ Morally, the differentials $Ψ^E$ and $Ψ^P$ should be used locally as a frame f
 
 Before we can make this precise however there is a technical point that must be addressed, namely that $\mathcal{S}_1$ is only an immersed submanifold.
 This causes issues if one tries to describe bundles over $\mathcal{S}_1$ as subspaces of bundles over $\mathcal{C}_1$.
-For example, we demonstrated at the end of Section~\ref{sec:Differentials}, using Lemma~\ref{lem:theta2_characterisation}, that the differentials meeting conditions~\ref{P:poles}--\ref{P:imaginary periods} form a $\R\times\Z$-bundle over $\mathcal{C}_1$ framed by $\langle Θ^E,Θ^P \rangle$.
+For example, we demonstrated at the end of Section~\ref{sec:Differentials}, using Lemma~\ref{lem:theta2_characterisation}, that the differentials meeting conditions~\ref{P:poles}--\ref{P:imaginary periods} form a rank two vector bundle $\mathcal{B}_1$ over $\mathcal{C}_1$ framed by $\langle Θ^E,Θ^P \rangle$.
 If we try to consider $Ψ^E$ as a section of this bundle restricted to $\mathcal{S}_1$ then it is not even a continuous function!
 Indeed, consider a sequence of points
 \[
@@ -1508,7 +1511,7 @@ which does not have a well defined limit, whereas on the other hand
 Ψ^E_\infty = \frac{2π\iu}{2\iu η^+(1)} Θ^E.
 \]
 
-Instead, we must consider bundles over each path connected component of $\mathcal{S}_1$ separately, each of which is an embedded submanifold of $\mathcal{C}_1$.
+Instead, we must consider bundles over each path connected component of $\mathcal{S}_1$ separately, each of which is an embedded submanifold of $\mathcal{C}_1$. This is the more natural choice anyway if one recalls that deformations have been defined to be paths in the moduli space.
 Let us label the path connected components of $\mathcal{S}_1$. Following Theorem~\ref{thm:topology_curves}, for each $p\in \Q^+\setminus\{1\}$ and $[q] \in \Q / (p-1) \Z$, there is a ribbon-like component $\mathcal{S}_1(p,[q]) \diffeo (0,1)\times\R$. By Theorem~\ref{thm:topology_curves_p1}, for $p=1$ there is an annuli component $\mathcal{S}_1(1,q)$ for each rational number $q$.
 
 To examine the local triviality of the bundle $\mathcal{M}_1$ over each component, fix a path connected component $\mathcal{X}$ of $\mathcal{S}_1$. For any fixed value of $p \in \Q^+$, the differential $Ψ^E$ is a well-defined smooth function on $\mathcal{C}_1(p)$, and as $\mathcal{X}$ is entirely contained within some $\mathcal{C}_1(p)$ it follows that $Ψ^E$ is well-defined and smooth on $\mathcal{X}$. The same is not necessarily true for $Ψ^P$.
@@ -1522,8 +1525,8 @@ We recall from Chapter~\ref{chp:Genus Zero} the definition of the integer matric
 \end{pmatrix}
 =
 \begin{pmatrix}
-a^1 & b^1 \\
-a^2 & b^2
+b_1 & l_1 \\
+b_2 & l_2
 \end{pmatrix}
 \begin{pmatrix}
 Ψ^E \\ Ψ^P
@@ -1537,9 +1540,9 @@ With the local structure established, we can now turn our attention to the globa
 \]
 
 For $p=1$, let us fix a path component $\mathcal{S}_1(1,q)$ of $\mathcal{S}_1(1)$.
-This component is an annulus and not simply connected. The differential $Ψ^P$ is not well-defined on all of $\mathcal{S}_1(1,q)$ because its definition depends on a choice of paths $γ_+$ and $γ_-$, and it is not possible to make a choice of paths that varies continuous as the branch points of the spectral curve are moved. For example, recall the family of curves $t \mapsto Σ(0.5 e^{\iu t}, -0.5 e^{\iu t})$ in $\mathcal{C}_1$. If one takes $γ_+$ to be a path that wraps around $ζ = 0.5$ on $Σ(0)$ (as the principal choice of path $\symbf{γ}_+$ does), then as $t$ is increased to $π$, the path now passes around the other branch point $ζ=-0.5$ on $Σ(π) = Σ(0)$.
+This component is an annulus and not simply connected. The differential $Ψ^P$ is not well-defined on all of $\mathcal{S}_1(1,q)$ because its definition depends on a choice of paths $γ_+$ and $γ_-$, and it is not possible to make a choice of paths that varies continuously as the branch points of the spectral curve are moved. For example, recall the family of curves $t \mapsto Σ(0.5 e^{\iu t}, -0.5 e^{\iu t})$ in $\mathcal{C}_1$. If one takes $γ_+$ to be a path that wraps around $ζ = 0.5$ on $Σ(0)$ (as the principal choice of path $\symbf{γ}_+$ does), then as $t$ is increased to $π$, the path now passes around the other branch point $ζ=-0.5$ on the same spectral curve $Σ(π) = Σ(0)$.
 
-Consider therefore a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1,q)$ that wraps around the annulus once. If we make a choice of $γ_+(t),γ_-(t)$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$ then note in particular that $γ_+(0)$ and $γ_+(1)$ will be different paths on the same curve. One may ask: if we construct $Ψ^P$ using $γ_+(t)$ and $γ_-(t)$ then what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$?
+Consider therefore a nontrivial loop $\ell : [0,1] \to \mathcal{S}_1(1,q)$ that wraps around the annulus once. If we make a choice of $γ_+(t)$ and $γ_-(t)$ on each $Σ(\ell(t))$ such that the paths vary smoothly in $t$ then note in particular that $γ_+(0)$ and $γ_+(1)$ will be different paths on the same curve. One may ask: if we construct $Ψ^P$ using $γ_+(t)$ and $γ_-(t)$ then what will be the change in $Ψ^P$ when we return to $\ell(1) = \ell(0)$?
 
 From~\eqref{eqn:group action} it follows that $T = n'/m'$ is well defined and constant on the whole annulus. We may simplify so that it is a reduced fraction. Writing $S=1=n/m$ as a reduced fraction implies that $m=n=1$. The period $l$ of $Ψ^P$ is therefore $m' / \gcd(m',mn') = m'$.
 Let $Ψ^P(0) = b(0)Θ^E + m' Θ^P$ be the differential on $Σ(\ell(0))$. As the periods of the differential are integral, they cannot change along the path $\ell$ and so
@@ -1609,13 +1612,13 @@ It is therefore the case that each connected component of $\mathcal{M}_1(1,q)$ i
 \begin{gather*}
 \mathcal{M}_1
 =
-\coprod_{q \in \Z} \mathcal{M}_1(1,q)
-\;\;\amalg \coprod_{\substack{p \in \Q^+,\, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
+\coprod_{q \in \Q} \mathcal{M}_1(1,q)
+\;\;\amalg \coprod_{\substack{p \in \Q^+,\, p \neq 1\\ [q] \in \Q/(p-1)\Z}}
 \mathcal{M}_1(p,[q]) \\
 =
-\coprod_{q \in \Z} \Big[ (0,1)\times\R \times \bra{\Mat_2^*\Z / B_q} \Big]
+\coprod_{q \in \Q} \Big[ (0,1)\times\R \times \bra{\Mat_2^*\Z / B_q} \Big]
 \;\amalg
-\coprod_{\substack{p \in \Q^+,\, p \neq 1\\ [q] \in \Z/(p-1)\Z}}
+\coprod_{\substack{p \in \Q^+,\, p \neq 1\\ [q] \in \Q/(p-1)\Z}}
 \Big[ (0,1)\times\R \times \Mat_2^*\Z \Big].
 \end{gather*}
 
@@ -1640,7 +1643,7 @@ Indeed this can be seen to be the case, as $k$ is invariant under such a transfo
 χ_{(α,β)}: Σ(α,β) &\to Σ(-α,-β) \\
 (ζ, η) &\mapsto (-ζ,-η)
 \end{align*}
-interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the map $χ_{(α,β)}$ preserves the integrality of the periods and the integrals over $γ_+$, $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$.
+interchanges $1$ and $-1$, in effect swapping the roles of $u = -\iu f(1)$ and $v = -\iu f(-1)$. The pullback of the differentials under the map $χ_{(α,β)}$ preserves the integrality of the periods and the integrals over $γ_+$ and $γ_-$ and so spectral data on $Σ(α,β)$ is transformed into spectral data on $Σ(-α,-β)$.
 The exact same reasoning applies in general to marked curves of any genus,
 \begin{align*}
 χ:&& \mathcal{A}_g &\to \mathcal{A}_g \\
