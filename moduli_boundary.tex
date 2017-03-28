@@ -3,23 +3,44 @@
 \chapter{The Boundary of the Moduli Space}
 \label{chp:Moduli Boundary}
 
-The boundary of $\mathcal{A} = \{ (α,β) \in D^2 \mid α \neq β\}$, can be thought of as composed of two pieces. On the outside we have the places where one or both of $α,β$ are in the unit circle. Fix a value of $p$. This is a `ball' in the space $(α,β)\in D^2$, as for any particular value of
-\[
-t = \frac{1}{\sqrt{p}} \frac{\abs{1-α}}{\abs{1+α}},
-\]
-$α$ ranges over an arc of a circle, and likewise does $β$ as constrained by the equation
-\[
-\frac{\abs{1-β}}{\abs{1+β}} = \frac{\sqrt{p}}{u},
-\]
-where the product of these two equations is just the definition of $p$. Hence for any $t$ we have the cross section given as the product of two arcs, with the length of the arcs diminishing as $u$ approaches $0$ or $\infty$. As $t$ approaches $0$, this forces the branch points to $S_0 := (1,-1)$, and likewise at $t \to \infty$, $S_\infty := (-1,1)$. In the reverse direction, $α = \pm 1$ if and only if $β = \mp 1$. Hence, these two points divide the unit circle into disconnected upper and lower halves: $\S^1_+$ and $\S^1_-$ respectively.
+Throughout this thesis we have restricted ourselves to the study of nonsingular spectral curves. In this chapter we examine two different limiting cases of $\mathcal{S}_1$ in which the spectral curves develop nodal singularities.
+In the previous chapter, we proved that $\mathcal{S}_1$ was composed of ribbons $(0,1)\times \R$ and annuli $(0,1) \times \S^1$ where the $(0,1)$ factor is given by the coordinate $k$. We will consider the limits as $k \to 0$ and $k \to 1$ as the two boundaries of the moduli space $\mathcal{S}_1$. This is the appropriate notion of boundary for this space for two reasons. Firstly, $\mathcal{S}_1$ is dense in the space of marked curves so the usual topological definition of boundary is trivial, and secondly we are interested in deformations which are paths in the moduli space so it is natural to study limits along a path in $\mathcal{S}_1$.
 
-This ball of constant $p$ is an American football shape; an elongated ball with sharp points at either end, joined by four seams (`\emph{edges}') where both $α$ and $β$ lie in one of $\S^1_\pm$ and four `\emph{faces}' where only one does.
+We will show that in the case corresponding to $k \to 0$, which we shall call the exterior boundary, that we can identify the limit of a path in $\mathcal{S}_1$ with a genus zero spectral curve in $\mathcal{S}_0$ by normalisation of the singular curve. Further, over these paths in $\mathcal{S}_1$ the limits of spectral data $(Σ,Θ^1,Θ^2) \in \mathcal{M}_1$ are well-defined, and we may pull back the differentials to the normalisation to obtain spectral data in $\mathcal{M}_0$. On the other hand, in the case corresponding to $k \to 1$ which we shall call the interior boundary the spectral curves of each path connected component may only tend to a particular nodal curve. This curve is determined by the value of the function $S$, defined by~\eqref{eqn:def_S}, which is constant on each component. This nodal curve corresponds to the vertex of the conical spiral, which is especially visible at the centre of Figure~\ref{fig:p1 plot}. The limit of spectral data is not well-defined as $k \to 1$, so there is no analogous interpretation of these limits in $\mathcal{M}_1$.
 
-For other piece of the boundary, on the interior, we have the plane $α=β$. If again we fix $p$, then the intersection of this plane and the ball is $(α,α)$, where $α$ is constrained to
+Recall the methodology of Chapter~\ref{chp:Genus One} where we expended our efforts primarily in studying the topology of the space $\mathcal{S}_1$ of spectral curves and then secondarily showed how to construct all spectral data on a curve from a lattice of differentials.
+We adopt a parallel approach in this chapter, with our focus on determining the behaviour of the space $\mathcal{S}_1$ of spectral curves as a subset of the space $\mathcal{C}_1$ of genus one marked curves at the boundary of $\mathcal{C}_1$. We recall that $\mathcal{S}_1$ is the subset of $\mathcal{C}_1$ where the function $S$ and the multi-valued function $T$ take rational values. An essential part of this chapter is to compute the limits of these functions. We also compute the limits of the basis $Θ^E$ and $Θ^P$ of the real vector bundle $\mathcal{B}_1$ of differentials with imaginary periods, from which the results about spectral data will follow.
+
+Recall that in order to work with the space of marked curve we introduced a covering parameter space $\mathcal{A}_1 = \{ (α,β) \in D\times D \,\vert\, α \neq β \}$. The two points $α$ and $β$ correspond to the branch points of the marked curve that lie within the unit disc. Let $\bar{\mathcal{A}_1}$ be the closure of $\mathcal{A}_1$ in $\bar{D} \times\bar{D}$, the product of two closed discs.
+Consider the elliptic modulus $k$ of a marked curve as a function of its branch points, as given by equation~\eqref{eqn:def_k}
 \[
-p = \frac{\abs{1-α}^2}{\abs{1+α}^2},
+k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
 \]
-an arc. Though it reveals a counterintuitive aspect of our naming convention, the interior and exterior boundaries intersect at two points, $(α,α)$ and $(\bar{α},\bar{α})$ for some point $α\in\S^1_+$. We denote these intersection points as $P_+, P_-$ respectively. If one is visualising the ball as a solid $3$-ball and the exterior boundary as its surface sphere, then one could imagine $P_\pm$ as polar points and the interior boundary as an axis that run between them.
+As $k \to 1$ we must have $\abs{α-β}$ tending to zero, and hence $α$ tending to $β$.
+We call this the interior boundary,
+\[
+\mathcal{D} :=
+\left\{ (α,α) \in D \times D \right\}.
+\]
+These points correspond to curves with a node inside the unit disc (and by the reality condition there is a node outside the unit disc too). As $k\to 0$, we have that
+\[
+\abs{1-\bar{α}β}^2 = \abs{α-β}^2 \Leftrightarrow \bra{1-\abs{α}^2}\bra{1-\abs{β}^2} = 0,
+\]
+so this extreme of $k$ occurs as a branch point tends to the unit circle. We will refer to this case as the exterior boundary. These points correspond to curves with one or two nodal singularities over the unit circle. We will focus on the case where just a single branch point tends to the unit circle because these are the ones that correspond to spectral data of genus zero spectral curves. We may identify the limit with two branch points in the unit circle with a harmonic map to a circle. This was seen explicitly in Chapter~\ref{chp:Genus Zero}, where as the branch point $α\in D$ of the genus zero spectral curve tended to the unit circle, the parameter $δ$ tended to zero and the image of the harmonic map degenerated to a circle.
+
+There is one further feature of the exterior boundary which bears consideration. On $\mathcal{A}_1$ we defined a function $S$,
+\[
+S(α,β) := \frac{ \abs {1-α} \abs{1-β}}{ \abs{1+α}\abs{1+β}},
+\tag{\ref{eqn:def_S}}
+\]
+such that a marked curve $Σ(α,β)$ could only be a spectral curve if $S(α,β)$ was rational. It follows that the value of $S$ must be fixed during a deformation. If we consider the limit as $α \to 1$, in order to hold $S$ constant we would have to send $β$ to $-1$. Similarly, if we send $α$ to $-1$ this forces $β$ to $1$. Therefore there are two points $(1,-1)$ and $(-1,1)$ in the closure $\bar{\mathcal{A}}_1$ that are common to the the closure of every $\mathcal{A}_1(p)$. As one may expect, spectral data is not well-behaved close to these points and indeed in Lemma~\ref{lem:closing limit} we will have to exclude taking limits of branch points to $\pm 1$ in order to preserve the closing conditions. This relates back to the similar limit $α\to \pm 1$ in the genus case, where we observed that this limit corresponded to a map from a cylinder.
+
+
+
+
+
+
+
 
 
 
@@ -27,93 +48,159 @@ an arc. Though it reveals a counterintuitive aspect of our naming convention, th
 \section{Interior Boundary}
 \label{sec:Interior}
 
-We shall examine first the moduli space on the interior boundary, which we shall call $Δ$. It was already mentioned, but recall the definition of $k$ (eqn \eqref{eqn:def_k}),
+We shall examine first the moduli space on the interior boundary $\mathcal{D}$. On the interior boundary $\mathcal{D}$ of $\bar{\mathcal{A}_1}$ the branch points are equal: $α=β$. At such point the function $S$ reduces to
 \[
-k = \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}.
+S = \frac{\abs{1-α}^2}{\abs{1+α}^2}.
+\labelthis{eqn:mathcal D slice}
 \]
-As $α\to β$, this tends to $1$. In the coordinates $(p,k,u,v)$, we have fixed $p$ and $k=1$, so $Δ$ is covered by the two coordinates $u,v$. However, this space is one-dimensional, so these coordinates are providing a natural blowup of this space. To see why, consider that as $α\to β$, the branch point circle straightens to a line. The double point is therefore the intersection of the arc $Δ$ with the line joining $μ,ν$. There are many such lines that give the same intersection, representing the different directions that $α$ may approach $β$. The changing the positions of $μ,ν$ on the unit circle changes the relative positions of $\iu u,\iu v$ on the imaginary axis, so the locations of $u,v$ are recording the direction of approach in this limit. \todo{this is truly terrible}
+For each value of $S = p$ this is the equation of an arc in the disc. Therefore the subsets $\mathcal{D}(p)$ of $\mathcal{D}$ on which $S=p$ are lines in $\bar{\mathcal{A}_1}$.
 
-Let us compute the limits of the integrals (eqns \eqref{eqn:gamma_plus2}, \eqref{eqn:gamma_minus2}) as $k \to 1$. This is not trivial, because as $k\to 1$, $K(k) \to \infty$. We shall see however that the integrals remain finite, atleast in some places. Recall the inequality \eqref{eqn:K_bound}
+We would like to be able to reuse the formula for $T_0$ from the previous chapter so that we may compute the limit of its level sets by computing a suitable limit of the function itself. However, the coordinates $(p,k,u,v)$ on $\mathcal{C}_1$ provided by Lemma~\ref{lem:change of parameters} do not extend to coordinates on its closure.
+Recall that these coordinates embed $\mathcal{C}_1$ into $\R^+ \times (0,1) \times \mathbb{T}^2$. We would be inclined to identify $\mathcal{D}(p)$ with the subset of $\R^+ \times [0,1] \times \mathbb{T}^2$ where $p$ is fixed and $k=1$, which would imply that $\mathcal{D}(p)$ is parametrised by the two coordinates $(u,v)$ and so would be two-dimensional. However $\mathcal{D}(p)$ is just one-dimensional.
+
+Instead, these coordinates are describing a covering space of $\mathcal{D}(p)$ that we may think of as a blowup. The geometric motivation for this point of view is provided by working through the construction of the $(p,k,u,v)$ coordinates. The branch circle was defined to be the circle that passes through $α,β,\cji{α}$ and $\cji{β}$. As $α \to β$, the branch circle straightens into a line, which is entirely determined by its intersections $μ$ and $ν$ with the unit circle. The point $α=β$ in $\mathcal{D}(p)$ is therefore the intersection of the arc given by~\eqref{eqn:mathcal D slice} with the line joining $μ$ and $ν$. There are many such lines that give the same intersection, and each one encodes a different direction that $α$ may approach $β$.
+
+Recall that under the map $f$ which transforms the marked curve into Jacobi normal form, the unit circle is mapped to the imaginary axis. The coordinates $u$ and $v$ are defined by $\iu u = f(1)$ and $\iu v = f(-1)$. Similarly, the points $μ$ and $ν$ are mapped to $0$ and $\infty$ respectively. By changing the positions of $μ$ and $ν$ on the unit circle one changes the positions of $\iu u$ and $\iu v$ on the imaginary axis. Conversely therefore $u$ and $v$ encode the positions of $μ$ and $ν$, and hence also the direction of approach of $α \to β$.
+
+To find $\mathcal{S}_1(p)$ we must look at the level sets of the multi-valued function $T$. We shall work with a principal branch cut $T_0$. Recall from~\eqref{eqn:def_T_0},~\eqref{eqn:gamma_plus2} and~\eqref{eqn:gamma_minus2}
+\begin{align*}
+T_0 (α,β) &:= T(α,β,\symbf{γ}_+,\symbf{γ}_-) = \frac{1}{2π\iu} \bra{S(α,β) \int_{\symbf{γ}_-} Θ^P - \int_{\symbf{γ}_+} Θ^P}, \\
+\int_{\symbf{γ}_+} Θ^P
+&= 4 E(k) F(\iu u;k) - 4 K(k) E(\iu u;k) + 4\iu K \frac{w(\iu u)}{u-v}, \text{ and }\\
+\int_{\symbf{γ}_-} Θ^P
+&= 4 E(k) F(\iu v;k) - 4 K(k) E(\iu v;k) - 4\iu K \frac{w(\iu v)}{u-v},
+\end{align*}
+where the paths $\symbf{γ}_+$ and $\symbf{γ}_-$ have been chosen acording to an algorithm described on page \pageref{para:principal paths}.
+Let us compute the limit of $T_0$ as $k \to 1$. This is not trivial, because as $k\to 1$, $K(k) \to \infty$. We shall see however that the integrals remain finite, at least in some places.
+
+\begin{lem}
+The limit as $k\to 1$ of the integral of $Θ^P$ over $\symbf{γ}_+$ is given by
+\[
+\lim_{k\to 1} \int_{\symbf{γ}_+} Θ^P
+= 4 \iu \atan u + 4\iu \lim_{k\to 1} K \frac{1+uv}{u-v}.
+\]
+
+\begin{proof}
+As $k \to 1$ the complete elliptic integral of the first kind $K(k)$ has a logarithmic singularity. Specifically we have the inequality
 \[
 \ln 4 \leq K + \frac{1}{2}\ln (1-k) + \frac{1}{2}\ln (1+k) \leq \frac{π}{2}.
+\tag{\ref{eqn:K_bound}}
 \]
-This shows that at $k=1$, $K$ has a logarthimic singularity. We now compute
+Our method for evaluating the above limit is to rewrite~\eqref{eqn:gamma_plus2} as a sum of terms, most of which vanish. Observe that
 \begin{align*}
-\lim_{k\to 1} \int_{γ_+} Θ^2
-&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \Imag E(\iu u;k) - \frac{w(\iu u)}{u-v}\right] \\
-&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \bra{\Imag E(\iu u;k) - ku} + (ku - u) + \bra{u - \frac{1+u^2}{u-v}} + \frac{1+u^2 - w(\iu u)}{u-v}\right].
+4 K & E(\iu u;k) - 4\iu K \frac{w(\iu u)}{u-v}
+= 4 \iu K \left[ \Imag E(\iu u;k) - \frac{w(\iu u)}{u-v} \right] \\
+&= 4 \iu K \left[ \bra{\Imag E(\iu u;k) - ku} + (ku - u) + \bra{u - \frac{1+u^2}{u-v}} + \frac{1+u^2 - w(\iu u)}{u-v} \right].
 \end{align*}
-We have divided the limit calculation into five terms. We deal with them one at a time. First
+We can now compute the limit of each grouping. In the first grouping we recognise from Definition~\ref{defn:F0 and E0} that $\Imag E(\iu u;k) - ku$ is the function $E_0(u; k)$. This function is bounded independent of $u$ by
+\[
+- (K' - E') \leq E_0(u; k) \leq K' - E',
+\tag{\ref{eqn:F0_E0_uniform_bounds}}
+\]
+where recall $K' = K(\sqrt{1-k^2})$ and $E' = E(\sqrt{1-k^2})$ are elliptic integrals of the complementary modulus. It therefore follows
+\begin{align*}
+\lim_{k \to 1} \abs{K(k) \bra{\Imag E(\iu u;k) - ku}}
+&\leq \lim_{k \to 1} K(K'-E') \\
+&= \lim_{k \to 1} -\frac{π}{2} + K'E \\
+% &= -\frac{π}{2} + \frac{π}{2}\times 1 \\
+&= 0,
+\end{align*}
+where we used Legendre's relation $KE' + K'E - KK' = \frac{1}{2}π$ in the second step. By applying inequality~\eqref{eqn:K_bound} the second grouping is also zero,
+\begin{align*}
+(\ln 4)(k-1)u &\leq (k-1)u K + \frac{1}{2}(k-1)u\ln (1-k) + \frac{1}{2}(k-1)u\ln (1+k) \leq \frac{π}{2}(k-1)u \\
+0 &\leq u\lim_{k \to 1} (k-1)K + 0 + 0 \leq 0,
+\end{align*}
+using the elementary limit $x \ln x \to 0$ as $x \to 0^+$. Finally, the fourth grouping is dispatched by the following manipulation:
+\begin{align*}
+\lim_{k\to 1} K \frac{1+u^2 - w(\iu u)}{u-v}
+&= \lim_{k\to 1} 4 \iu K \frac{(1+u^2)\bra{ (1+u^2) - (1+k^2u^2)} }{(u-v)(1+u^2 + w(\iu u))} \\
+&= \lim_{k\to 1} 4 \iu K (1 - k^2) \frac{(1+u^2)u^2}{(u-v)(1+u^2 + w(\iu u))} \\
+&= 0.
+\end{align*}
+The reuses the fact that $(k-1) K$ vanishes as $k$ approaches $1$, which was established above.
+
+Combining these three parts shows that
+\begin{align*}
+\lim_{k\to 1} \int_{\symbf{γ}_+} Θ^P
+&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ \Imag E(\iu u;k) - \frac{w(\iu u)}{u-v}\right] \\
+&= \lim_{k\to 1} 4 E(k) F(\iu u;k) - \lim_{k\to 1} 4 \iu K(k) \left[ u - \frac{1+u^2}{u-v}\right].
+\end{align*}
+It remains to compute the first limit. But $E(k)$ is well defined at $k=1$, where it takes the value $1$, so by Lemma~\ref{lem:klimit} we have
 \[
 \lim_{k\to 1} 4 E(k) F(\iu u;k) = 4 \times 1 \times \iu \atan u
 \]
-by lemma \ref{lem:klimit}. Next, we recognise $\Imag E(\iu u;k) - ku$ as the function $E_0(u; k)$, which is bounded in magnitude by $K'-E'$. So
+After rearranging the term on the right into a single fraction, we have demonstrated that
 \[
-\lim_{k \to 1} \abs{K(k) E_0(u;k)}
-\leq \lim_{k \to 1} K(K'-E')
-= \lim_{k \to 1} -\frac{π}{2} + K'E
-= -\frac{π}{2} + \frac{π}{2}\times 1 = 0,
+\lim_{k\to 1} \int_{γ_+} Θ^P
+= 4 \iu \atan u + 4\iu \lim_{k\to 1} K \frac{1+uv}{u-v}.
 \]
-where we used Legendre's relation in the second step. The next term is likewise zero, coming from the inequality on $K$
-\begin{align*}
-\ln 4 u(k-1) &\leq (K + \frac{1}{2}\ln (1-k) + \frac{1}{2}\ln (1+k))u(k-1) \leq \frac{π}{2} u(k-1) \\
-0 &\leq \lim_{k\to 1} K u(k-1) + 0 \leq 0.
-\end{align*}
-We will skipping to the last term
-\begin{align*}
-\lim_{k\to 1} 4 \iu K \frac{1+u^2 - w(\iu u)}{u-v}
-&= \lim_{k\to 1} 4 \iu K \frac{(1+u^2)\bra{ (1+u^2) - (1+k^2u^2)} }{(u-v)(1+u^2 + w(\iu u))} \\
-&= \lim_{k\to 1} 4 \iu K (1 - k^2) \frac{(1+u^2)u^2}{(u-v)(1+u^2 + w(\iu u))} \\
-&=0.
-\end{align*}
-What remains is
+\end{proof}
+\end{lem}
+
+In the same way, we have that
 \[
-\lim_{k\to 1} \int_{γ_+} Θ^2
-= 4 \iu \atan u + 4\iu \lim_{k\to 1} K \frac{1+uv}{u-v} .
+\lim_{k\to 1} \int_{\symbf{γ}_-} Θ^P
+= 4 \iu \atan v - 4\iu \lim_{k \to 1} K \frac{1+uv}{u-v}.
 \]
-At this point we have played our hand in terms of using expressions of $k$ to cancel the singularity of $K$. Indeed, for most values of $u,v$ this limit will diverge. However, if that fraction we to tend to zero as $k$ went to one, then we could still arive at a finite value. Suppose that is tending to one very rapidly, say $k = 1 - \exp (-1/ε)$ for $ε \to 0$. Then if $u$ and $v$ are functions of $ε$ chosen such that for some constant $λ$
+Together they show that the limit of the principal cut $T_0$ as $k$ tends to one is
+\begin{align*}
+π \lim_{k\to 1} T_0(p,k,u,v)
+&= p \bra {2 \atan v - 2 \lim_{k \to 1} K \frac{1+uv}{u-v} } - \bra{ 2 \atan u + 2 \lim_{k\to 1} K \frac{1+uv}{u-v} } \\
+&= 2p \atan v - 2 \atan u - 2(p+1) \lim_{k \to 1} K \frac{1+uv}{u-v}
+\end{align*}
+For most values of $u$ and $v$ this limit will diverge. This means that we can chose neighbourhoods of $(p,1,u,v)$ where the function $T_0$ is arbitrarily large. Therefore there are no paths in the space $\mathcal{S}_1(p)$ with such a point as their limit. Colloquially, it is not possible to deform spectral data into such a singular curve.
+
+However, if the fractional term were to tend to zero as $k$ went to one then it may still be possible to tend towards a finite value. As $K$ has a logarithmic singularity, let us rescale $k$ so that $k$ tends to $1$ very rapidly. Set $k = 1 - \exp (-1/ε)$ for $ε \to 0$. Then treating $K$ as a function of $ε$, the inequality~\eqref{eqn:K_bound} reads
 \[
-\frac{1+uv}{u-v} = λε,
+\ln 4 \leq K\bra{1 - \exp (-1/ε)} - \frac{1}{2}\frac{1}{ε} + \frac{1}{2}\ln \bra{2 - \exp (-1/ε)} \leq \frac{π}{2},
+\]
+so that $K \sim \frac{1}{2} ε^{-1}$ to first order. Then if we choose $u$ and $v$ to be functions of $ε$ such that for some constant $C$
+\[
+\frac{1+uv}{u-v} = Cε,
 \]
 then
 \[
-lim_{k \to 1} K \frac{1+uv}{u-v}
-= 2λ lim_{ε \to 0} Kε
-= \frac{λ}{2}.
+\lim_{k \to 1} K \frac{1+uv}{u-v}
+= C \lim_{ε \to 0} Kε
+= \frac{C}{2}.
 \]
 So
 \[
-\lim_{k\to 1} \int_{γ_+} Θ^2
-= 4 \iu \atan u + 2\iu λ.
+π \lim_{ε\to 0} T_0(p,k(ε),u(ε),v(ε))
+= 2p \atan v(0) - 2 \atan u(0) - (p+1) C.
 \]
-The same approach works for the $γ_-$ integral,
-\[
-\lim_{k\to 1} \int_{γ_-} Θ^2
-= 4 \iu \atan v - 2\iu λ.
-\]
-Note that the choice of $u,v$ forces $1+uv \to 0$, so that in the limit we have that $v = -u^{-1}$. So together we have, for $u>0$,
-\[
-π T_0 = -πp + 2(p-1) \atan u + (p+1)λ.
-\]
-Things are particularly clear if we move the the universal cover, where $u = \tan (\tilde{u}/2)$
-\[
-π \tilde{T} = (p-1) \tilde{u} + (p+1)λ.
-\]
-In the universal cover, the realtion $uv=-1$ becomes $\tilde{v} = π + \tilde{u}$. The level surfaces of constant $\tilde{T} = q$ are clearly straight lines of $\tilde{u}$ and $λ$,
-\[
-λ = \frac{1-p}{1+p}\tilde{u} + π \frac{q}{1+p}.
-\]
-One interpretation of this is that as $\tilde{u}$ increases by $2π$, we have circled the line $k=1$, and the steepness at which the moduli space approaches this point, governed by $λ$, has increased. So as we repeated wrap around the interior boundary, the moduli space swirls around, accumulating at a single point. This justifies our earlier assertion that the moduli space is similiar to a helicoid.
-
-Where is this point? Looking back at the equations that determine $z_0$, we have eqn \eqref{eqn:z_0_circle}
+Note that any such choice of $u$ and $v$ as functions of $ε$ forces $1+uv \to 0$, so that in the limit we have that $v(0) = -u(0)^{-1}$. One naturally asks to which points $(α,α) \in \mathcal{D}(p)$ these points $(p,1,u,-u^{-1})$ correspond. Recall that the point $z_0$ was essential to computing the transition from $(p,k,u,v)$ to $(α,β)$. Under the map $f$ that took a marked curve to its Jacobi normal form, $z_0$ was the image of $0$. Looking back at the equations that determine $z_0 = x + \iu y$, equation~\eqref{eqn:z_0_circle} states
 \[
 x^2 + y^2 = y(u+v) - uv.
 \]
-Knowing that $uv \to -1$, means that $\pm 1$ lie on this circle, the circle through $\iu u, \iu v, z_0, -\bar{z}_0$. Transforming by $f^{-1}$, that in turn means that $α$ lies on the real axis. Using the condition for $p$, we have explicitly that
+Knowing that $uv = -1$ implies that $\pm 1 \in \C$ lies on this circle, pictured in Figure~\ref{fig:z_plane_k1_limit}. We also know that this is the circle through $\iu u$, $\iu v$, $z_0$, and $-\bar{z}_0$. Applying the transformation $f^{-1}$ sends $\iu u$ to $1$, $\iu v$ to $-1$, and $z_0$ to $0$. Therefore the image of this circle is the real line. Further, it sends $1$ to $α$ and thus $α\in \R$.
+
+\maketikzfigure{The $z$-plane, with points marked in black. The blue labels are their images under $f^{-1}$. The red circle is mapped to the real line. \label{fig:z_plane_k1_limit}}{tikz/z_plane_k1_limit}
+
+Using the condition that the value of $S$ is fixed, we may solve~\eqref{eqn:mathcal D slice} explicitly to derive
 \[
-α = \frac{1 - \sqrt{p}}{1+\sqrt{p}},
+α = \frac{1 - \sqrt{p}}{1+\sqrt{p}}.
 \]
-which tends to $1$ as $p\to 0$, and $-1$ as $p \to \infty$. This is somewhat suprising. Hueristically, $\mathcal{S}(p)$ is a dense collection of surfaces in the $3$-space $\mathcal{C}(p)$, and it would make sense for the intersection to therefore be a dense collection of points in the arc $Δ$. Instead, there is only a single point that all the surfaces gather upon.
+We see then that the points $\Set{(p,1,u,-u^{-1}) }{u \in \R \cup \{\infty\}}$ blow-down to a single point in $\mathcal{D}(p)$. This should be a surprise if we consider the following heuristic. The subset $\mathcal{S}_1(p)$ is a dense collection of surfaces in the $3$-space $\mathcal{C}_1(p)$. Generically, each surface should intersect the line $\mathcal{D}(p)$ at discrete points. One may have anticipated then that limit of paths in $\mathcal{S}_1(p)$ would be a dense collection of points in the line $\mathcal{D}(p)$. Instead, for each $p$ there is only a single point on the interior boundary that deformations may tend towards.
+% This is the vertex at the centre of Figures~\ref{fig:p05 plot}--\ref{fig:p2 plot}.
+
+%
+%
+% We can say more about the structure of the moduli space in a neighbourhood of $\mathcal{D}(p)$ using~\eqref{}. The parameters $(u,C)$ and $(u',C)$, for $u' = u^{-1}$, may be interpreted as coordinates on a cylinder, which is a blow-up of the point of $\mathcal{D}(p)$ found above where the limit $T_0$ is finite. The structure is particularly clear if we move the the universal cover, given by Lemma~\ref{}. In particular $u = \tan (\tilde{u}/2)$ and $v = \tan (\tilde{v}/2)$ and hence the relation $uv=-1$ becomes $\tilde{v} = π + \tilde{u}$. Then using~\eqref{} to lift $T_0$ to the function $\tilde{T}$, we have
+% \[
+% π \tilde{T}(p,1,\tilde{u},\tilde{u} + π) = (p-1) \tilde{u} - (p+1)C + pπ.
+% \]
+% We now have coordinates $(\tilde{u},C) \in \R^2$ on the universal cover of the cylinder. The level surfaces of constant $\tilde{T} = q$ are clearly straight lines of $\tilde{u}$ and $C$,
+% \[
+% C = \frac{1-p}{1+p}\tilde{u} - π \frac{q-p}{1+p}.
+% \]
+% Under the group $\mathcal{G} = \z\langle \tilde{λ} \rangle$ of covering transformations of the universal cover $\mathcal{\tilde{C}}_1$ over $\mathcal{C}_1$, we have seen for $k \approx 1$ that $\tilde{λ}$ fixes $p$, acts on $\tilde{u}$ by a translation by $π$, and increases $q$ by $p-1$. Therefore its effect on $C$ is
+% \[
+% \tilde{λ} : C \mapsto \frac{1-p}{1+p}(\tilde{u} + π) - π \frac{q + (p-1) - p}{1+p} = C
+% \]
+%
+% One interpretation of this is that as $\tilde{u}$ increases by $2π$, we have circled the line $k=1$, and the steepness at which the moduli space approaches this point, governed by $λ$, has increased. So as we repeated wrap around the interior boundary, the moduli space swirls around, accumulating at a single point. This justifies our earlier assertion that the moduli space is similar to a helicoid.
+
 
 
 
@@ -123,9 +210,21 @@ which tends to $1$ as $p\to 0$, and $-1$ as $p \to \infty$. This is somewhat sup
 \section{Exterior Boundary}
 \label{sec:Exterior}
 
-We bgein with two calculations that will shows that, as $β$ moves onto the unit circle, there is a correspondence between the limit of genus one spectral data and genus zero spectral data. First we show that the spectral curves and differentials are related by a pullback operation. Then we will show that the closing conditions are preserved.
+In this section we establish a correspondence between the limit of genus one spectral data and genus zero spectral data in the case that one pair of branch points of the spectral curve accumulates on the unit circle. The limit of the genus one marked curve is singular, and after normalising we have a genus zero marked curve. We obtain differentials on the genus zero curve by pulling back those of the singular curve via the normalisation map. By computing explicitly the limits of differentials, we will see that this operation preserves Conditions~\ref{P:poles}--\ref{P:reality}. As there are no periods on a genus zero curve, Condition~\ref{P:periods} is automatic. It will then remain to show that the closing conditions~\ref{P:closing} are preserved, which is proved in Lemma~\ref{lem:closing limit}.
 
-Recall that a marked curves of genus one may be written as $Σ(α,β) = \{ (ζ,η) \mid η^2 = P(ζ) = (ζ-α)(1-\bar{α}ζ)(ζ-β)(1-\bar{β}ζ) \}$ for $α,β$ distinct points inside the unit disc. On every such curve the plane of differentials satisfying conditions REF is spanned by the differentials $Θ^1$ and $Θ^2$. Let use take the limit as $β \to \S^1$. We note that $ν\in\S^1$ was defined to be the point of intersection between the unit circle and the circle on which $α,\cji{α},β$ and $\cji{β}$ lie, more specifically the point of intersection that lies between $β$ and $\cji{β}$. Thus, we can also express the limit $β \to \S^1$ as $β \to ν$.
+Recall that a marked curve of genus one is described by two distinct points $α$ and $β$ inside the unit disc. As has been remarked upon several times now, there is no way to consistently assign labels to these branch points on $\mathcal{C}_1$. Instead one works with its double cover $\mathcal{A}_1$, the space of pairs $(α,β)$. In the limit that one of these points tends to the unit circle, the elliptic modulus of the marked curve tends to zero. For example, for $β \to ν \in \S^1$,
+\[
+k
+= \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}
+\to \frac{\abs{ν}\abs{\bar{ν}-\bar{α}}-\abs{α-ν}}{\abs{1-\bar{α}ν}+\abs{α-ν}} = 0.
+\]
+Many of the formulae in the preceding chapters rely on the map $f$ which brings the marked curve from the form~\eqref{eqn:def P} to Jacobi normal form. In Jacobi normal form, the branch points of the elliptic curve are $\pm 1$ and $\pm k^{-1}$. In particular, in the limit that $k \to 0$ we see that the two points $\pm k^{-1}$ move together at infinity. However, the map $f$ always takes the branch point label $α$ to $1$ and $\cji{α}$ to $-1$. Thus as $α$ tends to the unit circle where it will meet $\cji{α}$, the corresponding branch points in the Jacobi normal form do not form a double point. This is an example of the well-known phenomenon where the configuration of points in a limit can depend on the coordinates used.
+
+It for this reason that we will consider only the limit as $β$ tends to the unit circle. This is sufficient however, because we will be proving results about the differentials $Θ^E$ and $Θ^P$.
+In Section~\ref{sec:Differentials} for each point of $(α,β) \in \mathcal{A}_1$ we constructed an exact differential $Θ^E$ and a differential $Θ^P$ with imaginary period $2π\iu$ on the marked curve $Σ(α,β)$ such that the plane of differentials $\mathcal{B}_Σ$ satisfying conditions~\ref{P:poles}--\ref{P:imaginary periods} is spanned by the differentials $Θ^E$ and $Θ^P$. The content of Lemma~\ref{lem:theta2_characterisation} was that this construction was actually independent of the labelling of branch points. Therefore, any result we obtain in the limit as $β \to \S^1$ immediately applies to $α$ in the same limit.
+One may alternatively recall from~\eqref{eqn:choice f} that there was a freedom in the choice of $f$ of which point $α$ or $β$ to send to $1$. The choice $f_s$ that instead sends $β$ to $1$ is just as valid, and it would be possible to carry out the entire analysis of this thesis using $f_s$ in place of $f$. One would then have a set of formulae that they could use to compute limits as $α \to \S^1$.
+
+On a point of notation, recall that $ν\in\S^1$ was defined to be the point of intersection between the unit circle and the branch circle on which $α,\cji{α},β$ and $\cji{β}$ lie, more specifically the point of intersection that lies between $β$ and $\cji{β}$. Thus as $β$ tends to the unit circle it and $\cji{β}$ necessarily tend towards the point $ν$. We use $ν$ to represent the limiting value of $β$.
 
 In this limit as $β \to ν$, the curve $Σ(α,β)$ becomes a nodal curve
 \[
@@ -137,200 +236,228 @@ which has a genus zero normalisation
 \]
 where the normalisation map is given by
 \begin{align*}
-N : Σ(α) &\to Σ(α,ν) \\
+N_{(α,ν)} : Σ(α) &\to Σ(α,ν) \\
 (ζ,η)  &\mapsto (ζ,\sqrt{-\bar{ν}}(ζ-ν) η).
 \end{align*}
-The presence of the square root represents an unavoidable sign issue inherent in this normalisation map. On both curves, $η$ takes real values at the two points of lying over $ζ=1$. By the hyperelliptic involution $σ$, these two values necessarily have opposite signs. One may try to choose the sign of $\sqrt{-\bar{ν}}$ in such a way that the normalisation map sends the point over $ζ=1$ on $Σ(α)$ where $η$ is positive to the point on $Σ(α,ν)$ where $η$ is positive. However, there is no way to smoothly make this choice as $ν$ is allowed to vary, as after $ν$ traverses the unit circle once the sign of $\sqrt{-\bar{ν}}$ will have been reversed. Further, this kind of identification does not even make sense when $ν=1$, as there is only one point over $ζ=1$ on $Σ(α,1)$. The consequence of this is that we will only be able to identify certain differentials associated to each curve (and so also their integrals) up to a sign.
+The presence of the square root represents an unavoidable sign issue inherent in this normalisation map. On both curves $η$ takes real values at the two points of lying over $ζ=1$. By the hyperelliptic involution $σ$, these two values necessarily have opposite signs. One may try to choose the sign of $\sqrt{-\bar{ν}}$ in such a way that the normalisation map sends the point over $ζ=1$ on $Σ(α)$ where $η$ is positive to the point on $Σ(α,ν)$ where $η$ is positive. However, there is no way to smoothly make this choice as $ν$ is allowed to vary, as after $ν$ traverses the unit circle once the sign of $\sqrt{-\bar{ν}}$ will have been reversed. Further, this kind of identification does not even make sense when $ν=1$, as there is only one point over $ζ=1$ on $Σ(α,1)$. The consequence of this is that the above formula actually defines two different normalisation maps that differ by composition with the hyperelliptic involution $σ$. Our results will not depend on the choice of sign though, so either map is as good as the other.
 
-Under this map $N$, the exact differential $Θ^1$ on $Σ(α,ν)$ pulls back to
+Under this map $N_{(α,ν)}$, the exact differential $Θ^E$ on $Σ(α,ν)$ pulls back to
 \[
-N^* Θ^1 = N^* \iu\; d \bra{\frac{η}{ζ}} = \iu\; d \bra{ ζ^{-1}η\sqrt{-\bar{ν}}(ζ-ν) } ,
+N_{(α,ν)}^* Θ^E = N_{(α,ν)}^* \iu\; d \bra{\frac{η}{ζ}} = \iu\; d \bra{ ζ^{-1}η\sqrt{-\bar{ν}}(ζ-ν) } ,
 \]
-which is of the form \eqref{eqn:genus zero diffs}, so it is a genus zero differential that meets conditions REF. To compute the limit and pullback of $Θ^2$ is more involved. First note that
-\[
-k
-= \frac{\abs{1-\bar{α}β}-\abs{α-β}}{\abs{1-\bar{α}β}+\abs{α-β}}
-\to \frac{\abs{ν}\abs{\bar{ν}-\bar{α}}-\abs{α-ν}}{\abs{1-\bar{α}ν}+\abs{α-ν}} = 0.
-\]
-This enable us to compute the limit of the first two terms of \eqref{eqn:theta2}. In particular, recall \eqref{eqn:def_e}, the definition of the differential $e$
+which is of the form~\eqref{eqn:genus zero differential}. That is to say, it is a genus zero differential that meets conditions~\ref{P:poles}--\ref{P:imaginary periods}. To compute the limit and pullback of $Θ^P$ is more involved. Recall form above that $k \to 0$ as $β$ approaches the unit circle.
+This enables us to compute the limit of the first two terms of~\eqref{eqn:thetaP}. In particular, Definition~\eqref{eqn:def_e} of the differential $e$ reads
 \[
 e := (1-k^2 z^2) \frac{dz}{w} \to \frac{dz}{w} = ω,
 \]
-where $ω$ is a holomorphic differential. Also recall that the complete elliptic integrals $K(k)$ and $E(k)$ take the value $π/2$ when $k=0$ REF. Thus
+where $ω$ is a holomorphic differential. Also recall that the complete elliptic integrals $K(k)$ and $E(k)$ take the value $π/2$ when $k=0$, see~\eqref{eqn:K_E_values}. Thus from~\eqref{eqn:thetaP},
 \begin{align*}
-\lim_{β \to ν} Θ^2
-&= \lim_{β\to ν} \left[ 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \right] \\
-&= 2\frac{π}{2} ω - 2\frac{π}{2} \bra{\lim_{k\to 0} e} - 2\frac{π}{2} \lim_{β\to ν} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= - π\lim_{β\to ν} d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right],
+\lim_{β \to ν} Θ^P
+&= \lim_{β\to ν} \left( 2E ω - 2Ke - 2K d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \right) \\
+&= 2\frac{π}{2} ω - 2\frac{π}{2} \bra{\lim_{k\to 0} e} - 2\frac{π}{2} \lim_{β\to ν} d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= - π\lim_{β\to ν} d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right],
 \end{align*}
-which disposes of the transcendental part of $Θ^2$. To convert the remaining term into an expression in terms of $ζ$ and $η$, so that we may normalise as above, recall that $η/ζ$ and
+which disposes of the transcendental part of $Θ^P$. We wish to convert this remaining term into an expression in terms of $ζ$ and $η$, so that we may normalise as above. Because $z_0 = f(0)$ and $-\bar{z}_0 = f(\infty)$, by consideration of their respective poles we may deduce that
 \[
-\frac{w}{(z- z_0)(z+\bar{z}_0)},
+\frac{w}{(z- z_0)(z+\bar{z}_0)} = r \frac{η}{ζ},
 \]
-are real scalar multiples of one another. By direct substitution of \eqref{eqn:f},
-\[
+for some scalar $r$ which may depend on $α$ and $β$. Further, they are both real functions with respect to the antiholomorphic involution so $r$ must also be real. By direct substitution of~\eqref{eqn:f}, the other factor becomes
+\begin{align*}
 z - \iu\,\Imag z_0
-= \frac{1}{ζ-ν} \bra{-ζ(\bar{z}_0 + \iu\,\Imag z_0) + (μ\bar{z}_0 + \iu ν\,\Imag z_0)}
-= -\frac{\Real z_0}{ζ-ν} \bra{ζ - ν\frac{\iu \,\Imag z_0+ μν^{-1}\bar{z}_0}{\iu\,\Imag z_0 + \bar{z}_0} }.
+&= \frac{1}{ζ-ν} \bra{-ζ(\bar{z}_0 + \iu\,\Imag z_0) + (μ\bar{z}_0 + \iu ν\,\Imag z_0)} \\
+&= -\frac{\Real z_0}{ζ-ν} \bra{ζ - ν\frac{\iu \,\Imag z_0+ μν^{-1}\bar{z}_0}{\iu\,\Imag z_0 + \bar{z}_0} }. \labelthis{eqn:i Im z0 factor}
+\end{align*}
+From the definition $z_0 = f(0)$ and~\eqref{eqn:f} we see that $μν^{-1}\bar{z}_0 = -z_0$. Making this substitution, we recognise from~\eqref{eqn:f_inv} that the second term inside the bracket above is $f^{-1}(\iu\,\Imag z_0)$.
+
+We may evaluate this expression by means of a geometric argument, illustrated by Figure~\ref{fig:Imz0}. Consider the $z$-plane, and the horizontal line that passes through $\iu \,\Imag z_0$. On the following points of this line, we know that $f^{-1}$ acts by
+\[
+\begin{array}{r || c|c|c|c}
+z & -\bar{z}_0 & \iu \,\Imag z_0 & z_0 & \infty \\
+\hline
+ζ = f^{-1}(z) & \infty & f^{-1}(\iu \,\Imag z_0) & 0 & ν
+\end{array}
 \]
-From the definition $z_0 = f(0)$ and \eqref{eqn:f} we see that $μν^{-1}\bar{z}_0 = -z_0$. Then from \eqref{eqn:f_inv}, we recognise the constant inside the bracket as $f^{-1}(\iu\,\Imag z_0)$. This may be evaluated by means of a geometric argument. Consider the $z$-plane, and the horizontal line that passes through $-\bar{z}_0$, $\iu \,\Imag z_0$, $z_0$ and $\infty$. Under $f^{-1}$ these points are respectively mapped to $\infty$, $f^{-1}(\iu \,\Imag z_0)$, $0$ and $ν$. So the line is mapped to a line in the $ζ$-plane that passes through the origin and $ν$. $\iu \,\Imag z_0$ also lies on the imaginary axis of the $z$-plane, which is taken to the unit circle. Therefore we see that $f^{-1}(\iu \,\Imag z_0) = -ν$.
-
-PCITURE OF THIS.\todo{}
-
-Using this, we may simplify the factor to
+Hence $f^{-1}(\iu \,\Imag z_0)$ lies on a line in the $ζ$-plane through the origin and $ν$. On the other hand, $\iu \,\Imag z_0$ lies on the imaginary axis of the $z$-plane, and the imaginary axis is taken to the unit circle by $f^{-1}$. Therefore it must be that $f^{-1}(\iu \,\Imag z_0) = -ν$, the intersection of these two lines.
+Using this expression, we may simplify~\eqref{eqn:i Im z0 factor} to
 \[
 z - \iu\,\Imag z_0
 = -\frac{\Real z_0}{ζ-ν} \bra{ζ + ν }.
 \]
-For some real number $r$,
+
+\begin{figure}
+    \includestandalone[width=\textwidth]{tikz/Imz0}
+    \caption{On the left the $z$-plane and on the right the $ζ$-plane. The transformation $f^{-1}$ takes points of the $z$-plane to the $ζ$-plane. The imaginary axis is mapped to the unit circle, the real axis is mapped to the branch circle, and the horizontal line through $\iu\, \Imag z_0$ is mapped to the line through the origin and $ν$.}
+    \label{fig:Imz0}
+\end{figure}
+
+Returning to our calculation of the limit of $Θ^P$, we have that
 \[
-\lim_{β \to ν} Θ^2
-= r π(\Real z_0)\, d\left[ \frac{η}{ζ}\frac{ζ + ν }{ζ-ν} \right].
+\lim_{β \to ν} Θ^P
+= r π(\Real z_0)\, d\left[ \frac{η}{ζ} \times \frac{ζ + ν }{ζ-ν} \right].
 \]
 The pull back of this by the normalisation map $N$ is then
 \[
-N^* \lim_{β \to ν} Θ^2
+N_{(α,ν)}^* \lim_{β \to ν} Θ^P
 = r π(\Real z_0)\, d\left[ ζ^{-1}η \sqrt{-\bar{ν}}(ζ + ν) \right],
 \]
-which also lies in the plane of differentials on the genus zero curve $Σ(α)$ meeting conditions REF. What we have shown is that if we move along a path in $\mathcal{M}_1$, the space of spectral data where the spectral curve has genus one, then the limit of this data as one of the branch points $β$ tends to the unit circles, after normalising the double point that develops on $Σ(α,ν)$, is potentially spectral data on the genus zero marked curve $Σ(α)$, because it meets conditions REF. There are no periods on a curve of genus zero, so REF is automatic. The only ocnditions that we have not yet shown to be satisfied in the limit is REF, the closing conditions.
+which also lies in the plane of differentials on the genus zero curve $Σ(α)$ meeting conditions~\ref{P:poles}--\ref{P:reality}. What we have shown is that if we move along a path in the space $\mathcal{M}_1$ of spectral data where one of the branch points $β$ tends to the unit circle, then after normalising the double point that develops on $Σ(α,ν)$ the limit of this spectral data is potentially spectral data on the genus zero marked curve $Σ(α)$ because it meets conditions~\ref{P:poles}--\ref{P:reality}. There are no periods on a curve of genus zero, so~\ref{P:periods} is automatic. The only conditions that we have not yet shown to be satisfied in the limit is~\ref{P:closing}, the closing conditions. In fact, we will prove a more general proposition.
 
-The closing conditions are that certain integrals of the differentials must lie in $2π\iu \Z$. In particular, locally in $\mathcal{M}_1$ they are constant and so are unchanged under the limit. What we will show then is the more general proposition that if $Ψ$ is a differential satisfying REFs \todo{not the closing conditions}, then
+\begin{lem}
+\label{lem:closing limit}
+Suppose that $Θ$ is a smooth section $Θ : (α,β) \mapsto Ω^1(Σ(α,β))$ of differentials satisfying~\ref{P:poles}--\ref{P:periods}. Then for $ν \neq \pm 1$,
 \[
-\int_{γ_+(α)} N^* \lim_{β\to ν} Ψ = \pm \lim_{β\to ν} \int_{γ_+(α,β)} Ψ,
+\int_{γ_+(α)} N_{(α,ν)}^* \lim_{β\to ν} Θ = \pm \lim_{β\to ν} \int_{\symbf{γ}_+(α,β)} Θ,
+\labelthis{eqn:sym limit}
 \]
-where $γ_+(α)$ is a path between the points over $ζ=1$ on $Σ(α)$ and $γ_+(α,β)$ is the path between $ζ=1$ on $Σ(α,β)$. The ambiguity in sign is exactly the ambiguity in the choice of sign of the square root discussed above. We will show a similar result for the other closing condition, over the path $γ_-$. The method of proof will be to show this for $Θ^1$ and $Θ^2$ and then because any such $Ψ$ may be expressed as a smooth combination of these, the general result will follow.
+where $γ_+(α)$ is a smooth family of paths between the two points over $ζ=1$ on $Σ(α)$ and $\symbf{γ}_+(α,β)$ are the principal paths between the two points over $ζ=1$ on $Σ(α,β)$, defined on page~\ref{para:principal paths}. The ambiguity in sign is exactly the ambiguity in the choice of sign of the square root discussed above.
 
-For exact differentials, such as $Θ^1$, one may compute both sides explicitly and compare. Consider the exact differential $d\left[ g(α,β)(ζ) + η h(α,β)(ζ) \right]$ on $Σ(α,β)$. On one hand we have
+The same result holds for paths $γ_-(α)$ between the two points over $ζ=1$ on $Σ(α)$ and principal paths $\symbf{γ}_-(α,β)$ between the two points over $ζ=1$ on $Σ(α,β)$.
+
+\begin{proof}
+The method of proof will be to show this for $Θ^E$ and $Θ^P$ and then because any $Θ$ meeting~\ref{P:poles}--\ref{P:periods} may be expressed as a smooth combination of these, the general result will follow.
+For exact differentials, such as $Θ^E$, one may compute both sides explicitly and compare. Consider the exact differential $d\left[ g(α,β)(ζ) + η h(α,β)(ζ) \right]$ on $Σ(α,β)$, for smooth sections $g,h : (α,β) \to M^0(Σ(α,β))$ of meromorphic functions. On the left hand side we have
 \begin{align*}
-\int_{γ_+(α)} N^* \lim_{β\to ν} d\left[ g(α,β)(ζ) + η h(α,β)(ζ) \right]
-&= \int_{γ_+(α)} N^* d\left[ g(α,ν)(ζ) + η h(α,ν)(ζ)\right] \\
-&= \int_{γ_+(α)} d\left[ g(α,ν)(ζ) + η \sqrt{-\bar{ν}}(ζ-ν) h(α,ν)(ζ)\right] \\
-&= 2 η(1) \sqrt{-\bar{ν}}(1-ν) h(α,ν)(1), \\
-&= 2 \abs{1-α} \sqrt{-\bar{ν}}(1-ν) h(α,ν)(1),
+    \int_{γ_+(α)} N_{(α,ν)}^* \lim_{β\to ν} d&\left[ g(α,β)(ζ) + η h(α,β)(ζ) \right] \\
+    &= \int_{γ_+(α)} N_{(α,ν)}^* d\left[ g(α,ν)(ζ) + η h(α,ν)(ζ)\right] \\
+    &= \int_{γ_+(α)} d\left[ g(α,ν)(ζ) + η \sqrt{-\bar{ν}}(ζ-ν) h(α,ν)(ζ)\right] \\
+    &= \left[ g(α,ν)(ζ) + η \sqrt{-\bar{ν}}(ζ-ν) h(α,ν)(ζ)\right]^{(1,η(1))}_{(1,-η(1))} \\
+    &= 2 η(1) \sqrt{-\bar{ν}}(1-ν) h(α,ν)(1), \\
+    &= 2 \abs{1-α} \sqrt{-\bar{ν}}(1-ν) h(α,ν)(1),
 \end{align*}
-and on the other hand
+and on the right hand side
 \begin{align*}
-\lim_{β\to ν} \int_{γ_+(α,β)} d\left[ g(α,β)(ζ) + η h(α,β)(ζ) \right]
-&= \lim_{β\to ν} 2 η(1) h(α,β)(1) \\
-&= \lim_{β\to ν} 2 \abs{1-α}\abs{1-β} h(α,β)(1) \\
-&= 2 \abs{1-α}\abs{1-ν} h(α,β)(1),
+    \lim_{β\to ν} \int_{\symbf{γ}_+(α,β)} d\left[ g(α,β)(ζ) + η h(α,β)(ζ) \right]
+    &= \lim_{β\to ν} 2 η(1) h(α,β)(1) \\
+    &= \lim_{β\to ν} 2 \abs{1-α}\abs{1-β} h(α,β)(1) \\
+    &= 2 \abs{1-α}\abs{1-ν} h(α,β)(1),
 \end{align*}
-which are the same up to a sign as $\sqrt{-\bar{ν}}(1-ν) = \pm \abs{1-ν}$. A similar calculation holds for $γ_-$. This establishes the relationship for $Θ^1$. For $Θ^2$, we must deal with its elliptic integral terms. But from \eqref{eqn:gamma_plus} we have that
+which are the same up to a sign as $\sqrt{-\bar{ν}}(1-ν) = \pm \abs{1-ν}$. A similar calculation holds for $γ_-$. This establishes the relationship for $Θ^E$.
+
+For $Θ^P$, we must deal with its elliptic integral terms. But from~\eqref{eqn:gamma_plus} we have that
 \[
 \int_{γ_+} 2E\tilde {ω} - 2K e = 4 E(k) F(f(1);k)- 4K(k) \tilde E(f(1);k).
 \]
-We refer to Lemma \ref{lem:klimit}, which computes the limits of incomplete elliptic integrals as $k\to 0$. That lemma states that so long as $f(1)$ is contained in a compact set,
+We refer to Lemma~\ref{lem:klimit}, which computes the limits of incomplete elliptic integrals as $k\to 0$. That lemma proves that so long as $f(1)$ is contained in a compact set, that we may pass the limit through to the integrand and that the incomplete elliptic integrals degenerate to $\asinh$. In this situation that implies,
 \[
 \lim_{k\to 0} \int_{γ_+} 2E\tilde {ω} - 2K e = 2π \left[ \asinh (-\iu f(1)) - \asinh (-\iu f(1)) \right] = 0.
 \]
-For the range of $f(1) \in \iu\R$ to be bounded, we must forbid $f(1) \to \infty$. Translating this into the $ζ$-plane by applying $f^{-1}$, we have that $ν$ must not approach $1$. From \eqref{eqn:gamma_minus}, by the same reasoning,
+For the range of $f(1) \in \iu\R$ to be bounded, we must forbid $f(1) \to \infty$. Translating this into the $ζ$-plane by applying $f^{-1}$, we have that $ν$ must not approach $1$. From~\eqref{eqn:gamma_minus}, by the same reasoning,
 \[
 \lim_{k\to 0} \int_{γ_-} 2E\tilde {ω} - 2K e = 2π \left[ \asinh (-\iu f(-1)) - \asinh (-\iu f(-1)) \right] = 0,
 \]
-as long as $ν$ does not approach $-1$. Combining these two facts, for $ν \not\to \pm 1$,
+as long as $ν$ does not approach $-1$. Combining these two facts, for $ν \neq \pm 1$,
 \begin{align*}
-\int_{γ_+(α)} N^* \lim_{β\to ν} Θ^2
-&= \int_{γ_+(α)} 0 - N^* \lim_{β\to ν} 2K  d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= \pm \lim_{β\to ν} \int_{γ_+(α,β)} 0 - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= \pm \lim_{β\to ν} \int_{γ_+(α,β)} 2E ω - 2Ke - 2K d\left[ \frac{w(z-\iu\,\Imag z_0)}{(z-z_0)(z + \bar{z}_0)} \right] \\
-&= \pm \lim_{β\to ν} \int_{γ_+(α,β)} Θ^2.
+\int_{γ_+(α)} N_{(α,ν)}^* \lim_{β\to ν} Θ^P
+&= \int_{γ_+(α)} 0 - N_{(α,ν)}^* \lim_{β\to ν} 2K  d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= \pm \lim_{β\to ν} \int_{\symbf{γ}_+(α,β)} 0 - 2K d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= \pm \lim_{β\to ν} \int_{\symbf{γ}_+(α,β)} 2E ω - 2Ke - 2K d\left[ \frac{(z-\iu\,\Imag z_0)w}{(z-z_0)(z + \bar{z}_0)} \right] \\
+&= \pm \lim_{β\to ν} \int_{\symbf{γ}_+(α,β)} Θ^P.
 \end{align*}
-Thus the relationship holds for $Θ^2$ as well, and by linear extension all differentials satisfying conditions REF.
+Thus the relationship~\eqref{eqn:sym limit} holds for $Θ^P$ as well, and by linear extension all differentials satisfying conditions~\ref{P:poles}--\ref{P:periods}.
+\end{proof}
+\end{lem}
 
-Therefore, the limit of spectral data in $\mathcal{M}_1$ is spectral data in $\mathcal{M}_0$. It is natural to ask if we can give an give a geometric construction that connects the two spaces. To do this, we will take the partial closure of $\mathcal{M}_1$ and identify some points in the boundary with some points in $\mathcal{M}_0$. Recall that $\mathcal{M}_1$ was described by first describing the space of spectral curves $\mathcal{S}$, that is the space of marked curves that admit differentials satisfying the period and closing conditions REF, as well as the usual conditions REF which may be satisfied on any marked curve. This space was disjointly decomposed into pieces $\mathcal{S}(p)$, for $p\in\Q$ on which the function
+This lemma is sufficient to finalise the correspondence. The only conditions that we had left to satisfy were the the closing conditions~\ref{P:closing}, that the integrals of the differentials over paths $γ_+$ and $γ_-$ must lie in $2π\iu \Z$. In particular, take a path $\ell(t)$ of spectral data $(Σ(α(t),β(t)), Θ^1(t), Θ^2(t))$ in $\mathcal{M}_1$, such that as $t\to t_0$ we have $β(t) \to ν(t_0) \neq \pm 1$. Along the path these integrals over $γ_+$ and $γ_-$ are constant and so are unchanged in the limit. The above lemma has proved that the integrals of the pulled-back differentials are equal, up to a sign, to the limit of the integrals on the genus one curves. They therefore lie in $2π\iu \Z$ also. In other words, the corresponding differentials on the normalised marked curve $Σ(α)$ satisfy~\ref{P:poles}--\ref{P:closing} if the differentials on $Σ(α,β)$ do. The corresponding spectral data in $\mathcal{M}_0$ is
 \[
-p(α,β) = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}}
+\bra{ Σ(α(t_0)), N^* Θ^1(t_0), N^* Θ^2(t_0) }.
 \]
-was constant. Each piece $\mathcal{S}(p)$ was considered as a subspace of the space $\mathcal{C}(p)$ of marked curves. However, to describe marked curves, we introduced a parameter space $\mathcal{A}_1(p)$ where the branch points inside the unit circle were considered as an ordered pair,
-\[
-\mathcal{A}_1 = \{ (α, β) \in D^2 \mid α \neq β \}.
-\]
-This parameter space is (by definition) a two-to-one cover of the space $\mathcal{C}(p)$ of marked curves $Σ(α,β)$ for which $p(α,β)$ is fixed at $p$. It is clear  to take the partial closure of this space within $\C^2$ to say that the space where one of the branch points lies on the unit circle is $D\times\S^1 \coprod \S^1\times D$. By Lemma \ref{lem:change of parameters}, we know that we may equivalently describe $\mathcal{A}_1(p)$ as the space
-\[
-\mathcal{A}'(p) = \Set{ (k,u,v) \in (0,1) \times (\RInf) \times (\RInf) }{ u \neq v}.
-\]
-Unfortunately however, this correspondence between pairs $(α,β)$ and triples $(k,u,v)$ does not extend to the limit where one branch point lies in the unit circle. To understand why, recall that the coordinates $(k,u,v)$ derive from the map $f$ that sends $α$ to $1$ and $β$ to $k^{-1}$. As a branch point moves towards the unit circle, so does its conjugate-inverse partner. However, in the image under $f$ there is no way to express $α$ and $\cji{α}$ moving together because their corresponding points are $1$ and $-1$ and are fixed. We consider only $β\to\S^1$, but note that this is not a loss of generality, because the labelling of branch points as $α$ and $β$ is arbitrary and is removed when we push back down to $\mathcal{S}(p)$.
 
-We shall then identify curves $Σ(α,ν)$ with points $(α,ν)\in D\times \S^1$ with points $(u,v) \in \R^2 \setminus \{u=v\}$, which we view as boundary points of $\mathcal{A}'(p)$ where $k$ is zero. First, how can one describe the space of $(α,ν)\in D\times \S^1$ where $p$ is fixed? Observe that for any given $ν$,
-\[
-p = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \Leftrightarrow \frac{\abs{1-α}}{\abs{1+α}} = p \frac{\abs{1+ν}}{\abs{1-ν}}.
-\]
-As we have seen several times now, curves in the unit disc where the ratio of the distances to $1$ and $-1$ are fixed are circles centered on the real axis and perpendicular to the unit circle. The collection of such circles foliate the disc as the ratio changes value between $0$ and infinity. For $ν = \pm 1$, there are no such $α$ in the unit disc. As $ν$ moves from $1$ to $-1$ along the unit circle, the value of $\abs{1+ν} / \abs{1-ν}$ varies from $\infty$ to $0$. In this way, the parameter space is two discs, one where $ν$ is in the upper half of the unit circle and one where it is in the lower half.
 
-\makefigure{A diagram of the space $D \times S^1$ and the subspace of fixed $p$. Points on the inner circle are values of $ν\in\S^1$. To each of these values there is a disc of values $α\in D$, of which a few have been given. Within each disc is an arc, on which $(α,ν)$ gives a fixed value of $p$.}{thesis_graphics_temp/boundary_wheel_disc.png}
 
-The argument of Lemma \ref{lem:change of parameters} is still valid in the limit $k=0$ when $u,v \neq \infty$. However, if $u=\infty$ then that would force $β = f^{-1}(k^{-1}) = f^{-1}(\infty) = f^{-1}(\iu u) = 1$ and we have already seen that there is no corresponding $α$ in $\mathcal{A}_1(p)$. Likewise for $v=\infty$.
-
-PICTURE OF TRIANGLES \todo{}
-
-Recall that the universal cover of $\mathcal{S}(p)$ is $\mathcal{\tilde{S}}(p)$ and may be described as a collection of level sets of a function $\tilde{T}$ on the universal cover $\mathcal{\tilde{A}}(p)$ of $\mathcal{A}(p)$, where
-\[
-\mathcal{\tilde{A}}(p) =
-\{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  \tilde{u} < \tilde{v} < \tilde{u} + 2π \},
-\]
-with the projection map $\mathcal{\tilde{A}}(p) \to \mathcal{A}(p)$ given by
-\[
-k = k, \quad
-u = \tan \frac{\tilde{u}}{2}, \quad
-v = \tan \frac{\tilde{v}}{2}.
-\]
-From the $(u,v)$ description of the boundary space, we can immediately see that the boundary of $\mathcal{\tilde{A}}(p)$ where $k=0$ and neither of $\tilde{u}$ or $\tilde{v}$ lie in $π + 2π\Z$ corresponds to marked curves where $β$ lies in $\S^1 \setminus \{\pm 1\}$. We may extend $\tilde{T}$ to these points by taking the limit as $k\to 0$ to see where the boundary of the level sets lie, and therefore which parts of $\mathcal{M}_1$ have limits as spectral data on a genus zero curve. By \eqref{eqn:tilde T computable}, $\tilde{T}$ may be computed as the sum of a constant and the function $T_0$. But
-\[
-T_0 = p\int_{γ_-} Θ^2 - \int_{γ_+} Θ^2,
-\]
-and we have already seen how to take the limit of these integrals. In particular, these integrals have well defined limits when $f(1)$ and $f(-1)$ are remain finite, but these values are eaxctly $\iu u$ and $\iu v$ respectively, which are both in $\iu \R$ on these faces. Recalling equation \eqref{eqn:Teqn}, and the above limits
-\begin{align*}
-2π\iu \lim_{k\to 0} T_0
-&= \lim_{k\to 0} \left\{ 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} \right\} \\
-&= 0 - 0 - 4\iu \frac{π}{2} \frac{p \sqrt{1+v^2} + \sqrt{1+u^2}}{u-v} \\
-\lim_{k\to 0} T_0
-&= - \frac{p \sqrt{1+v^2} + \sqrt{1+u^2}}{u-v}.
-\end{align*}
-It is fruitful to understanding the level sets to understand the limit of this function at the points where $u$ or $v$ is infinite.
-\[
-\lim_{u \to \pm \infty} T_0(p, 0,u,v) = - \lim_{u \to \pm \infty} \frac{\abs{u}}{u} = - \sign u,
-\]
-and similarly
-\[
-\lim_{v \to \pm \infty} T_0(p, 0,u,v) = - \lim_{v \to \pm \infty} \frac{p\abs{u}}{-v} = p\sign v.
-\]
-And obviously as $u$ and $v$ near one another, the value of $T_0$ becomes unbounded. Thus the boundary of face is given by three values,
-
-\makefigure{A diagram of $\mathcal{\tilde{A}}(p)$ for $k=0$. Values of $\tilde{T}$ indicated with blue.}{thesis_graphics_temp/boundary_tilde_T_values.png}
-
-Note however that If both $u$ and $v$ approach an infinite value simultaneously, which corresponds to a corner point of the above diagram, then the value of $T_0$ depends on the limit of the ratio of $u$ to $v$. In fact, this dependence is monotonic. Let $u = t \sign u$ and $v = rt\sign v$ for $r$ a positive constant and $t$ a positive parameter. Then
-\[
-\lim_{t \to +\infty} T_0(p, 0,u,v)
-= - \lim_{t \to +\infty} \frac{p \sqrt{1+r^2 t^2} + \sqrt{1+t^2}}{t(\sign u - r \sign v)}
-= - \frac{p r + 1}{\sign u - r \sign v},
-\]
-which is monotonic, except for at its vertical asymptote. The vertical asymptote only occurs when $r = \sign u / \sign v = 1$, ie $u=v$. But this is excluded from the domain. Thus the values of $T_0$ in the corners covers the range of values between the values on the edges. Together with the fact that $T_0$ has no extrema on the faces, we can use this observation as a hueristic to describe the level sets on each face.
-
-\makefigure{The level sets of $\tilde{T}$ on part of $\mathcal{\tilde{A}}(p)$ for $k=0$ }{thesis_graphics_temp/boundary_level_sets.png}
-\todo{only $p>1$ version shown}
-
-In particular, there are no closed level sets and the arcs foliate the face. Therefore, when we translate this in terms of the pair of discs $α\in D$ and $ν$ in the upper or lowever unit circle, the arcs must start and end on the boundary of the disc and foliate the disc. Thus the corners must represent $α$ close to the unit disc. To deduce where, we make the following observation. Let $ν = \exp \iu b$, for $b \in (-π, π)$, and $α = (1-ε) \exp \iu a$, for $ε$ small and $a \in (-π, π]$. Then
-\[
-\frac{\abs{1-α}} {\abs{1+α}} = \frac{\abs{1-e^{\iu a}}} {\abs{1+e^{\iu a}}} + O(ε) = \abs{\tan \frac{a}{2}} + O(ε),
-\]
-so that
-\[
-p = \abs{\tan \frac{a}{2}}\abs{\tan \frac{b}{2}} + O(ε).
-\]
-Let $b_0$ be the special angle for which $\tan(b_0/2) = \sqrt{p}$. When $\abs{b} = b_0$, then $\abs{a} \approx b_0$ also. Also, when $\abs{b} > b_0$, then necessarily for sufficently small $ε$ we must have $\abs{a} < b_0$. This divides the unit circle into four segments, divided by the points $1$, $-1$, $e^{\iu b_0}$ and $e^{-\iu b_0}$. We label these segements as in the following diagram
-
-\makefigure{The four segments are label, anticlockwise from $1$, $\S^1_{UR}$, $\S^1_{UL}$, $\S^1_{LL}$ and $\S^1_{LR}$}{thesis_graphics_temp/boundary_circle_segments.png}
-
-using the mnenomic that for the first letter $U$ stands for the upper unit circle, $L$ for the lower unit circle, and for the second letter $L$ stands for points left of $e^{\iu b_0}$ and $R$ for points to its right. Observe that $μ = e^{\iu a} + O(ε)$ also. Using the geometric properties of the function $f$, that it sends the unit circle to the imaginary axis (specifically $μ$ to $0$, $ν$ to $\infty$, $1$ to $\iu u$ and $-1$ to $\iu v$) and it send the unit disc to the right half plane, one may compute the following correspondences between $μ$ and $ν$ in the four segements of the unit circle and $(u,v)$ in $\R^2$, for $ε$ close to $0$.
-
-\includegraphics[width=0.9\textwidth]{thesis_graphics_temp/boundary_corner_table.png}
-
-From this table we may translate the level set diagram from the faces to the discs
-
-DIAGRAM.
-
-Note the swirliness around the special points $α = β = e^{\iu b_0}$ and $α = β = e^{-\iu b_0}$. These points correspond to the intersection of the diagonal from the previous section and the exterior boundary of this section. In particular, the spirals that were observed in that other case are also present here, as they must be.
-
-TODO\todo{}
-Argument about why two discs are sufficent.
-Show that the limit of $Ψ,\tilde{Ψ}$ are well defined because the sign ambiguity cancels? It does for $Ψ$ it seems.
+% Therefore, the limit of spectral data in $\mathcal{M}_1$ is spectral data in $\mathcal{M}_0$. It is natural to ask if we can give an give a geometric construction that connects the two spaces. To do this, we will take the partial closure of $\mathcal{M}_1$ and identify some points in the boundary with some points in $\mathcal{M}_0$. Recall that $\mathcal{M}_1$ was described by first describing the space of spectral curves $\mathcal{S}$, that is the space of marked curves that admit differentials satisfying the period and closing conditions REF, as well as the usual conditions REF which may be satisfied on any marked curve. This space was disjointly decomposed into pieces $\mathcal{S}(p)$, for $p\in\Q$ on which the function
+% \[
+% p(α,β) = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}}
+% \]
+% was constant. Each piece $\mathcal{S}(p)$ was considered as a subspace of the space $\mathcal{C}(p)$ of marked curves. However, to describe marked curves, we introduced a parameter space $\mathcal{A}_1(p)$ where the branch points inside the unit circle were considered as an ordered pair,
+% \[
+% \mathcal{A}_1 = \{ (α, β) \in D^2 \mid α \neq β \}.
+% \]
+% This parameter space is (by definition) a two-to-one cover of the space $\mathcal{C}(p)$ of marked curves $Σ(α,β)$ for which $p(α,β)$ is fixed at $p$. It is clear  to take the partial closure of this space within $\C^2$ to say that the space where one of the branch points lies on the unit circle is $D\times\S^1 \coprod \S^1\times D$. By Lemma~\ref{lem:change of parameters}, we know that we may equivalently describe $\mathcal{A}_1(p)$ as the space
+% \[
+% \mathcal{A}'(p) = \Set{ (k,u,v) \in (0,1) \times (\RInf) \times (\RInf) }{ u \neq v}.
+% \]
+% Unfortunately however, this correspondence between pairs $(α,β)$ and triples $(k,u,v)$ does not extend to the limit where one branch point lies in the unit circle. To understand why, recall that the coordinates $(k,u,v)$ derive from the map $f$ that sends $α$ to $1$ and $β$ to $k^{-1}$. As a branch point moves towards the unit circle, so does its conjugate-inverse partner. However, in the image under $f$ there is no way to express $α$ and $\cji{α}$ moving together because their corresponding points are $1$ and $-1$ and are fixed. We consider only $β\to\S^1$, but note that this is not a loss of generality, because the labelling of branch points as $α$ and $β$ is arbitrary and is removed when we push back down to $\mathcal{S}(p)$.
+%
+% We shall then identify curves $Σ(α,ν)$ with points $(α,ν)\in D\times \S^1$ with points $(u,v) \in \R^2 \setminus \{u=v\}$, which we view as boundary points of $\mathcal{A}'(p)$ where $k$ is zero. First, how can one describe the space of $(α,ν)\in D\times \S^1$ where $p$ is fixed? Observe that for any given $ν$,
+% \[
+% p = \frac{\abs{1-α}\abs{1-β}}{\abs{1+α}\abs{1+β}} \Leftrightarrow \frac{\abs{1-α}}{\abs{1+α}} = p \frac{\abs{1+ν}}{\abs{1-ν}}.
+% \]
+% As we have seen several times now, curves in the unit disc where the ratio of the distances to $1$ and $-1$ are fixed are circles centered on the real axis and perpendicular to the unit circle. The collection of such circles foliate the disc as the ratio changes value between $0$ and infinity. For $ν = \pm 1$, there are no such $α$ in the unit disc. As $ν$ moves from $1$ to $-1$ along the unit circle, the value of $\abs{1+ν} / \abs{1-ν}$ varies from $\infty$ to $0$. In this way, the parameter space is two discs, one where $ν$ is in the upper half of the unit circle and one where it is in the lower half.
+%
+% \makefigure{A diagram of the space $D \times S^1$ and the subspace of fixed $p$. Points on the inner circle are values of $ν\in\S^1$. To each of these values there is a disc of values $α\in D$, of which a few have been given. Within each disc is an arc, on which $(α,ν)$ gives a fixed value of $p$.}{thesis_graphics_temp/boundary_wheel_disc.png}
+%
+% The argument of Lemma~\ref{lem:change of parameters} is still valid in the limit $k=0$ when $u,v \neq \infty$. However, if $u=\infty$ then that would force $β = f^{-1}(k^{-1}) = f^{-1}(\infty) = f^{-1}(\iu u) = 1$ and we have already seen that there is no corresponding $α$ in $\mathcal{A}_1(p)$. Likewise for $v=\infty$.
+%
+% PICTURE OF TRIANGLES \todo{}
+%
+% Recall that the universal cover of $\mathcal{S}(p)$ is $\mathcal{\tilde{S}}(p)$ and may be described as a collection of level sets of a function $\tilde{T}$ on the universal cover $\mathcal{\tilde{C}}(p)$ of $\mathcal{A}(p)$, where
+% \[
+% \mathcal{\tilde{C}}(p) =
+% \{(k,\tilde{u},\tilde{v}) \in (0,1)\times\R\times\R \mid  \tilde{u} < \tilde{v} < \tilde{u} + 2π \},
+% \]
+% with the projection map $\mathcal{\tilde{C}}(p) \to \mathcal{A}(p)$ given by
+% \[
+% k = k, \quad
+% u = \tan \frac{\tilde{u}}{2}, \quad
+% v = \tan \frac{\tilde{v}}{2}.
+% \]
+% From the $(u,v)$ description of the boundary space, we can immediately see that the boundary of $\mathcal{\tilde{C}}(p)$ where $k=0$ and neither of $\tilde{u}$ or $\tilde{v}$ lie in $π + 2π\Z$ corresponds to marked curves where $β$ lies in $\S^1 \setminus \{\pm 1\}$. We may extend $\tilde{T}$ to these points by taking the limit as $k\to 0$ to see where the boundary of the level sets lie, and therefore which parts of $\mathcal{M}_1$ have limits as spectral data on a genus zero curve. By~\eqref{eqn:tilde T computable}, $\tilde{T}$ may be computed as the sum of a constant and the function $T_0$. But
+% \[
+% T_0 = p\int_{γ_-} Θ^P - \int_{γ_+} Θ^P,
+% \]
+% and we have already seen how to take the limit of these integrals. In particular, these integrals have well defined limits when $f(1)$ and $f(-1)$ are remain finite, but these values are eaxctly $\iu u$ and $\iu v$ respectively, which are both in $\iu \R$ on these faces. Recalling equation~\eqref{eqn:Teqn}, and the above limits
+% \begin{align*}
+% 2π\iu \lim_{k\to 0} T_0
+% &= \lim_{k\to 0} \left\{ 4p \left[ E F(\iu v;k) - K E(\iu v;k) \right] - 4\left[ E F(\iu u;k) - K E(\iu u;k) \right] - 4\iu K \frac{p w(\iu v) + w(\iu u)}{u-v} \right\} \\
+% &= 0 - 0 - 4\iu \frac{π}{2} \frac{p \sqrt{1+v^2} + \sqrt{1+u^2}}{u-v} \\
+% \lim_{k\to 0} T_0
+% &= - \frac{p \sqrt{1+v^2} + \sqrt{1+u^2}}{u-v}.
+% \end{align*}
+% It is fruitful to understanding the level sets to understand the limit of this function at the points where $u$ or $v$ is infinite.
+% \[
+% \lim_{u \to \pm \infty} T_0(p, 0,u,v) = - \lim_{u \to \pm \infty} \frac{\abs{u}}{u} = - \sign u,
+% \]
+% and similarly
+% \[
+% \lim_{v \to \pm \infty} T_0(p, 0,u,v) = - \lim_{v \to \pm \infty} \frac{p\abs{u}}{-v} = p\sign v.
+% \]
+% And obviously as $u$ and $v$ near one another, the value of $T_0$ becomes unbounded. Thus the boundary of face is given by three values,
+%
+% \makefigure{A diagram of $\mathcal{\tilde{C}}(p)$ for $k=0$. Values of $\tilde{T}$ indicated with blue.}{thesis_graphics_temp/boundary_tilde_T_values.png}
+%
+% Note however that If both $u$ and $v$ approach an infinite value simultaneously, which corresponds to a corner point of the above diagram, then the value of $T_0$ depends on the limit of the ratio of $u$ to $v$. In fact, this dependence is monotonic. Let $u = t \sign u$ and $v = rt\sign v$ for $r$ a positive constant and $t$ a positive parameter. Then
+% \[
+% \lim_{t \to +\infty} T_0(p, 0,u,v)
+% = - \lim_{t \to +\infty} \frac{p \sqrt{1+r^2 t^2} + \sqrt{1+t^2}}{t(\sign u - r \sign v)}
+% = - \frac{p r + 1}{\sign u - r \sign v},
+% \]
+% which is monotonic, except for at its vertical asymptote. The vertical asymptote only occurs when $r = \sign u / \sign v = 1$, ie $u=v$. But this is excluded from the domain. Thus the values of $T_0$ in the corners covers the range of values between the values on the edges. Together with the fact that $T_0$ has no extrema on the faces, we can use this observation as a hueristic to describe the level sets on each face.
+%
+% \makefigure{The level sets of $\tilde{T}$ on part of $\mathcal{\tilde{C}}(p)$ for $k=0$ }{thesis_graphics_temp/boundary_level_sets.png}
+% \todo{only $p>1$ version shown}
+%
+% In particular, there are no closed level sets and the arcs foliate the face. Therefore, when we translate this in terms of the pair of discs $α\in D$ and $ν$ in the upper or lowever unit circle, the arcs must start and end on the boundary of the disc and foliate the disc. Thus the corners must represent $α$ close to the unit disc. To deduce where, we make the following observation. Let $ν = \exp \iu b$, for $b \in (-π, π)$, and $α = (1-ε) \exp \iu a$, for $ε$ small and $a \in (-π, π]$. Then
+% \[
+% \frac{\abs{1-α}} {\abs{1+α}} = \frac{\abs{1-e^{\iu a}}} {\abs{1+e^{\iu a}}} + O(ε) = \abs{\tan \frac{a}{2}} + O(ε),
+% \]
+% so that
+% \[
+% p = \abs{\tan \frac{a}{2}}\abs{\tan \frac{b}{2}} + O(ε).
+% \]
+% Let $b_0$ be the special angle for which $\tan(b_0/2) = \sqrt{p}$. When $\abs{b} = b_0$, then $\abs{a} \approx b_0$ also. Also, when $\abs{b} > b_0$, then necessarily for sufficently small $ε$ we must have $\abs{a} < b_0$. This divides the unit circle into four segments, divided by the points $1$, $-1$, $e^{\iu b_0}$ and $e^{-\iu b_0}$. We label these segements as in the following diagram
+%
+% \makefigure{The four segments are label, anticlockwise from $1$, $\S^1_{UR}$, $\S^1_{UL}$, $\S^1_{LL}$ and $\S^1_{LR}$}{thesis_graphics_temp/boundary_circle_segments.png}
+%
+% using the mnenomic that for the first letter $U$ stands for the upper unit circle, $L$ for the lower unit circle, and for the second letter $L$ stands for points left of $e^{\iu b_0}$ and $R$ for points to its right. Observe that $μ = e^{\iu a} + O(ε)$ also. Using the geometric properties of the function $f$, that it sends the unit circle to the imaginary axis (specifically $μ$ to $0$, $ν$ to $\infty$, $1$ to $\iu u$ and $-1$ to $\iu v$) and it send the unit disc to the right half plane, one may compute the following correspondences between $μ$ and $ν$ in the four segements of the unit circle and $(u,v)$ in $\R^2$, for $ε$ close to $0$.
+%
+% \includegraphics[width=0.9\textwidth]{thesis_graphics_temp/boundary_corner_table.png}
+%
+% From this table we may translate the level set diagram from the faces to the discs
+%
+% DIAGRAM.
+%
+% Note the swirliness around the special points $α = β = e^{\iu b_0}$ and $α = β = e^{-\iu b_0}$. These points correspond to the intersection of the diagonal from the previous section and the exterior boundary of this section. In particular, the spirals that were observed in that other case are also present here, as they must be.
+%
+% TODO\todo{}
+% Argument about why two discs are sufficent.
+% Show that the limit of $Ψ,\tilde{Ψ}$ are well defined because the sign ambiguity cancels? It does for $Ψ$ it seems.

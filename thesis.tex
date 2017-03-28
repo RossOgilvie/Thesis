@@ -1,34 +1,46 @@
-\documentclass{report}
+\documentclass[twoside]{report}
 
 \usepackage{thesis_style}
 
 \begin{document}
 
+\pagenumbering{gobble}
 \include{titlepage}
-\setcounter{page}{1}
-\pagenumbering{roman}
 \include{frontmatter}
+% \cleardoublepage
+% \include{abstract}
+\cleardoublepage
 \tableofcontents
-\newpage
+\cleardoublepage
+
 \setcounter{page}{1}
 \pagenumbering{arabic}
-
 \setcounter{chapter}{-1}  % start chapter numbering at 0
 \include{preliminaries}
-\include{deform_lemma_redux}
+\cleardoublepage
+\include{deform_lemma}
+\cleardoublepage
 \include{genus_zero}
+\cleardoublepage
 \include{genus_one}
+\cleardoublepage
 \include{moduli_boundary}
 
 
 % APPENDICES
 \appendix
+\cleardoublepage
 \include{glossary}
+\cleardoublepage
 \include{elliptic_integral}
 % \include{misc}
 
-% \bibliography{library}
-\bibliography{library,manual_entered}
-\bibliographystyle{alpha}
+\pagenumbering{gobble}
+% \bibliographystyle{abbrv}
+\bibliographystyle{thesis_bibsty}
+% \bibliographystyle{alpha}
+% \bibliographystyle{wmaainf}
+% \bibliography{library,manual_entered}
+\bibliography{zotero}
 
 \end{document}
