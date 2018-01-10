@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikz}
+%\usetikzlibrary{...}
+\begin{document}
+\begin{tikzpicture}
+\clip (-4,-4) rectangle (4,4);
+
+\draw (-1,-1) circle [radius=2];
+\draw (1,-1) circle [radius=2];
+\draw (0,0.73) circle [radius=2];
+
+\node at (0,-0.135) {$F$};
+\node at (-1.2,0.2) {$F^1$};
+\node at (1.2,0.2) {$F^2$};
+\node at (0,-1.7) {$G$};
+
+\node at (0,3) {$P$};
+\node at (-2.8,-2.8) {$b^1$};
+\node at (2.8,-2.8) {$b^2$};
+\end{tikzpicture}
+\end{document}

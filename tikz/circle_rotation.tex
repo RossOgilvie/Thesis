@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+\clip (-2.3,-2.3) rectangle (7.6,2.3);
+
+\draw (0,0) circle [radius=2];
+\draw (5,0) circle [radius=2];
+
+\fill[color=black] (0,2) circle (0.05) node[below,color=black]{$\infty$};
+\fill[color=red] (2,0) circle (0.05) node[left,color=red]{$1$};
+\fill[color=violet] (0,-2) circle (0.05) node[above,color=violet]{$0$};
+\fill[color=blue] (-2,0) circle (0.05) node[right,color=blue]{$-1$};
+
+\fill[color=black] (5,2) circle (0.05) node[below,color=black]{$0$};
+\fill[color=red] (7,0) circle (0.05) node[left,color=red]{$-1$};
+\fill[color=violet] (5,-2) circle (0.05) node[above,color=violet]{$\infty$};
+\fill[color=blue] (3,0) circle (0.05) node[right,color=blue]{$1$};
+
+\end{tikzpicture}
+\end{document}

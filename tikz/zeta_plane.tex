@@ -1,0 +1,30 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+\clip (-3.6,-3.5) rectangle (3.6,3.5);
+
+\draw (0,0) circle [radius=3];
+\draw[color=red] (-6,6) circle [radius=7.7];
+
+\fill (0,0) circle (0.05) node[left,color=blue]{$0$} node[right,color=black]{$z_0$};
+\fill (3,0) circle (0.05) node[left,color=blue]{$1$};
+\fill (-3,0) circle (0.05) node[right,color=blue]{$-1$};
+
+% \fill (2.7,-3) circle (0.05) node[left, color=red]{$\infty$} node[right,color=black]{$-\bar{z}_0$};
+
+\fill (1.02,2.82) circle (0.05)
+    node[below=5pt, left, color=blue]{$\mu$}
+    node[above=4pt, right,color=black]{$0$};
+\fill (0.5,1.85) circle (0.05)
+    node[left, color=blue]{$\alpha$}
+    node[right,color=black]{$1$};
+\fill (-1.5,-0.25) circle (0.05)
+    node[above=1.5pt, left, color=blue]{$\beta$}
+    node[below=1.5pt, right,color=black]{$k^{-1}$};
+\fill (-2.82,-1.02) circle (0.05)
+    node[above=3pt,left, color=blue]{$\nu$}
+    node[below=3pt,right,color=black]{$\infty$};
+
+\end{tikzpicture}
+\end{document}

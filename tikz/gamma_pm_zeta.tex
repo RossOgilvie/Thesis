@@ -1,0 +1,47 @@
+\documentclass{standalone}
+\usepackage{fontspec}
+\usepackage[bold-style=ISO]{unicode-math}
+\setmathfont{Latin Modern Math}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+\clip (-3.5,-3.5) rectangle (3.5,3.5);
+% \draw[step=0.1,gray,very thin] (-6,-6) grid (6,6);
+
+% unit circle
+\draw (0,0) circle [radius=3];
+% branch point circle
+\draw[color=black] (-6,6) circle [radius=7.7];
+
+% γ_+ path, from 1
+\draw[color=red,dashed,>->] (2.9,0)
+    node[above right, color=red]{$\symbf{\gamma}_+$}
+    arc (0:72:2.9)
+    arc (-25:-35:7.6);
+\draw[color=red,->] (0.25,1.60)
+    arc (135:315:0.07)
+    arc (325:335:7.6)
+    arc (69:-2:2.8);
+
+% γ_- path, from -1
+\draw[color=blue,dashed,>->] (-2.9,0)
+    node[above right, color=blue]{$\symbf{\gamma}_-$}
+    arc (180:74:2.9)
+    arc (-25:-35:7.6)
+    arc (135:315:0.16);
+\draw[color=blue,->] (0.35,1.40)
+    arc (325:337:7.9)
+    arc (68:180:3.1);
+
+% points
+\fill (3,0) circle (0.05) node[below left, color=black]{$1$};
+\fill (-3,0) circle (0.05) node[left, color=black]{$-1$};
+\fill (1.02,2.82) circle (0.05) node[above right, color=black]{$\mu$};
+\fill (0.5,1.85) circle (0.05) node[left=5, color=black]{$\alpha$};
+\fill (1.43,4) circle (0.05) node[left, color=black]{$\overline{\alpha}^{-1}$};
+\fill (-1.5,-0.25) circle (0.05) node[left, color=black]{$\beta$};
+\fill (-2.82,-1.02) circle (0.05) node[left, color=black]{$\nu$};
+
+\end{tikzpicture}
+\end{document}
