@@ -3,14 +3,14 @@
 \chapter{Deformations of Harmonic Maps}
 \label{chp:Deformation}
 
-In this chapter we investigate the tangent space to the moduli space $\mathcal{M}$ of spectral data. We will prove there is an open set $U'$ such that $\mathcal{M}\cap U'$ is a two dimensional manifold. To show this, we fix the genus $g$ of the spectral curve and use \eqref{eqn:def P} and \eqref{eqn:def b} to consider $\mathcal{M}_g$ as a subset of an affine space $U$. Then by considering paths in $\mathcal{M}_g$ we develop equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} that characterise the tangent vectors to these paths. On an open subset $U' \subset U$, we find all solutions to these equations to demonstrate that $T_p\mathcal{M}_g$ is two dimensional (Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} and \ref{lem:tangent conformal}). Having established that the dimension is constant, it naturally follows that $\mathcal{M}_g\cap U'$ is a manifold (Theorem \ref{thm:moduli manifold}).
+In this chapter we investigate the tangent space to the moduli space $\mathcal{M}_g$ of spectral data with a spectral curve of genus $g$. We will prove there is an open set $\mathcal{U}'$ such that $\mathcal{M}_g \cap \mathcal{U}'$ is a two dimensional manifold. To show this, we use \eqref{eqn:def P} and \eqref{eqn:def b} to consider $\mathcal{M}_g$ as a subset of $\mathcal{U}$, where $\mathcal{U}$ is iteself an open subset of an affine space. Then by considering paths in $\mathcal{M}_g$ we develop equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} that characterise the tangent vectors to these paths. On an open subset $\mathcal{U}' \subset \mathcal{U}$, we find all solutions to these equations to demonstrate that $T_p\mathcal{M}_g$ is two-dimensional at these points (Lemmata \ref{lem:tangent generic}, \ref{lem:tangent G} and \ref{lem:tangent conformal}). Having established that the dimension is constant, it naturally follows that $\mathcal{M}_g\cap \mathcal{U}'$ is a manifold (Theorem \ref{thm:moduli manifold}).
 
 \emph{A comment about notation.} Throughout we will use diacritical marks to indicate the factors that a polynomial does or does not have. A polynomial with a circumflex (hat) will be shown to have a factor of $ζ^2-1$, and a tilde will indicate that any common factors have been removed, cf. \eqref{eqn:common factors}. We shall use a dash to denote differentiation with respect to $ζ$ and a dot for differentiation with respect to $t$ evaluated at $t=0$.
 
 When giving the solutions to equations, we will use bold to signify a particular solution, which may or may not be unique, whereas a solution without bold signifies any solution from the set of potential solutions. Given a tuple of polynomials, such as $(X,Y)$, we also give their degrees as a tuple, eg $(x,y)$ for $x=\deg X$ and $y=\deg Y$. Finally, we shall use $i$ and $j$ for indices ranging over $\{1,2\}$, with the understanding that they are not equal. For example, if $i=1$, then we take $j=2$ and vice versa.
 
 \section{Whitham Deformations}
-Let us consider infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$ within the space $\mathcal{M}_g$ of spectral data where the spectral curves have a fixed genus $g$. Recall that this triple consists of a marked curve $Σ$ and differentials $Θ^1, Θ^2$ satisfying the conditions \ref{P:real curve}--\ref{P:closing}.
+Let us consider infinitesimal deformations of the spectral data $(Σ,Θ^1,Θ^2)$ within the space $\mathcal{M}_g$ of spectral data where the spectral curves have a fixed genus $g$. Recall that this triple consists of a marked curve $Σ$ and differentials $Θ^1$ and $Θ^2$ satisfying the conditions \ref{P:real curve}--\ref{P:closing}.
 A deformation of spectral data is a path $\ell:(-ε,ε) \to \mathcal{M}$, parameterised by $t$. An infinitesimal deformation is the tangent vector of such a curve at $t=0$.
 There is an established methodology for finding the deformations that preserve the periods of differentials, the so called Whitham deformations. This method was first discovered for the Korteweg-de Vries equation \cite{Flaschka1980,Lax1983}, before being developed generally for other integrable systems \cite{Krichever1995}. The form of Whitham deformations we use here resemble their application in the theory of constant mean curvature surfaces \cite{Kilian2015a,Carberry2016}.
 
@@ -22,27 +22,27 @@ for $i=1,2$, where for each $t$ we have that $b^i(t,ζ)$ a member of $\mathcal{P
 
 Equivalently then, we may describe $\ell$ in terms of these polynomials, $\ell(t) = (P(t,ζ),b^1(t,ζ),b^2(t,ζ))$.
 We let $Σ = Σ(0)$ and likewise $b^i(ζ) = b^i(0,ζ)$.
-More generally, omission of the parameter $t$ will correspond to evaluation at the point $t=0$. We use this representation of the spectral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $U$.
+More generally, omission of the parameter $t$ will correspond to evaluation at the point $t=0$. We use this representation of the spectral data as polynomials to consider the moduli space of spectral data $\mathcal{M}_g$ as a subspace of the affine space of real polynomials $\R^{4g+11} = \R^{2g+3}\times\R^{g+4}\times\R^{g+4}$. Because of the conditions spectral data must satisfy, we can in fact be more precise. The moduli space $\mathcal{M}_g$ is a subset of the following open set $\mathcal{U}$.
 
 \begin{defn}
 \label{def:def U}
-Let $U$ be the open subset of $\mathcal{P}^{2g+2}_\R\times \mathcal{P}^{g+3}_\R\times\mathcal{P}^{g+3}_\R$ of triples of real polynomials $(P,b^1,b^2)$ where
+Let $\mathcal{U}$ be the open subset of $\mathcal{P}^{2g+2}_\R\times \mathcal{P}^{g+3}_\R\times\mathcal{P}^{g+3}_\R$ of triples of real polynomials $(P,b^1,b^2)$ where
 $P$ has only simple zeroes (cf. \ref{P:simple zeroes}) and no zeroes on the unit circle (cf. \ref{P:no real zeroes}), and the polynomials $b^i$ have at most a simple root at $ζ=0$ (cf. \ref{P:poles}).
 \end{defn}
 
-Recall from Section \ref{sec:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ,\tilde{μ}$ of the holonomy matrices $H, \tilde{H}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is an exact differential, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
+Recall from Section \ref{sec:construction} that the differentials of the spectral data are the derivatives of the logarithms of the eigenvalues $μ$ and $\tilde{μ}$ of the holonomy matrices $H$ and $\tilde{H}$. With this in mind, we introduce the notation $q^i$ for $q^1 = \log μ$ and $q^2 = \log \tilde{μ}$. Because the differential $Θ^i = dq^i$ has nonzero periods, it is only possible to define $q^i$ locally, and even then only up a constant. However, along $\ell$ a triple of spectral data satisfies \ref{P:periods}, the period integrality conditions. This forces the periods to take fixed values. In particular then, the derivative of $dq^i$ with respect to $t$ is an exact differential, and thus $\dot q^i$ is a well defined meromorphic function on $Σ$.
 
 The functions $\dot{q}^i$ are of interest because they encode infinitesimal deformations of the spectral data that preserve the integrality of the periods.
-If we could determine the location and order of the poles of $\dot{q}^i$, we could characterise it as the quotient of a polynomial and a fixed holomorphic function, analogously to the characterisation of $Θ^i$ by $b^i$. To this end, we derive now in generality how a function may acquire additional poles when it is differentiated with respect to $t$.
+If we could determine the location and order of the poles of $\dot{q}^i$, we could characterise it as the quotient of a polynomial and a fixed holomorphic function, analogously to the characterisation of $Θ^i$ by polynomials $b^i$. To this end, we derive now in generality how a function may acquire additional poles when it is differentiated with respect to $t$.
 
-Consider a function that varies smoothly with $t$ and is meromorphic on each curve $Σ(t)$. In a neighbourhood of a point of $Σ(0)$ that is not a ramification point, for small $t$, $(t, ζ - ζ_0)$ are local coordinates, for a fixed point $ζ_0 \in \CP^1$. Thus we may we may expand the function as $(ζ-ζ_0)^k f(t,ζ-ζ_0)$, for a function $f$ holomorphic in its second parameter and non-vanishing at $f(0,0)$. As $ζ-ζ_0$ is independent of $t$, the order $k$ of this function cannot decrease under differentiation by $t$. However, at a ramification point lying over a branch point $α$, local coordinates are $(t,ξ)$, for $ξ(t)^2 = ζ - α(t)$ where $α(t)$ a root of $P(t)$ and $α(0) = α$. Any meromorphic function may be written locally as $ξ(t)^k f(t,ξ(t))$. Differentiating with respect to $t$ yields
+Consider a function that varies smoothly with $t$ and is meromorphic on each curve $Σ(t)$. In a neighbourhood of a point of $Σ(0)$ that is not a ramification point, for small $t$, $(t, ζ - ζ_0)$ are local coordinates, for a fixed point $ζ_0 \in \CP^1$. Thus we may we may expand the function as $(ζ-ζ_0)^k f(t,ζ-ζ_0)$, for a function $f$ holomorphic in its second parameter and non-vanishing at $f(0,0)$. As $ζ-ζ_0$ is independent of $t$, the order $k$ of this function cannot decrease under differentiation by $t$. However, at a ramification point lying over a branch point $α$ we must instead take $(t,ξ)$ as local coordinates, for $ξ(t)^2 = ζ - α(t)$ where $α(t)$ a root of $P(t)$ and $α(0) = α$. Any meromorphic function may be written locally as $ξ(t)^k f(t,ξ(t))$. Differentiating with respect to $t$ yields
 \[
 \left . \frac{d}{dt} ξ^k f(t,ξ) \right|_{t=0} = -\frac{k}{2} ξ^{k-2} \dot{α}f - \frac{1}{2}ξ^{k-1}\dot{α}f' + ξ^k \dot{f}.
 \labelthis{eqn:pole order}
 \]
 If the function had a pole at a ramification point, then its derivative with respect to $t$ may have a pole up to two orders worse. If the function was holomorphic, then the derivative has at worst a simple pole.
 
-As $dq^i$ has double poles without residues over $ζ=0,\infty$, it follows that $q^i$ has simple poles at those same points and is holomorphic at all other points. Applying \eqref{eqn:pole order} to $q^i$, we see that $\dot{q}^i$ may have simple poles at the nonzero roots of $P$. If the curve $Σ$ is branched over $ζ=0,\infty$, then $\dot{q}^i$ may have a triple pole there. Otherwise $\dot{q}^i$ has at worst simple poles over $ζ=0,\infty$.
+As $dq^i$ has double poles without residues over $ζ=0$ and $\infty$, it follows that $q^i$ has simple poles at those same points and is holomorphic at all other points. Applying \eqref{eqn:pole order} to $q^i$, we see that $\dot{q}^i$ may have simple poles at the nonzero roots of $P$. If the curve $Σ$ is branched over $ζ=0$ and $\infty$, then $\dot{q}^i$ may have a triple pole there. Otherwise $\dot{q}^i$ has at worst simple poles over $ζ=0$ and $\infty$.
 
 The consequence of this is that $ζη\dot{q}^i$ is holomorphic. This expression is invariant under the hyperelliptic involution $σ$, so from \cite[Prop~III.1.10]{Miranda1995} we deduce that
 \[
@@ -60,7 +60,13 @@ After equating and simplifying, one produces an equation that ensures compatibil
 \[
 \dot{P} b^i - 2P\dot{b}^i = 2P\left( \hat{c}^i - ζ\hat{c}^{i\prime} \right) + P'ζ\hat{c}^i. \labelthis{eqn:EMPDi}
 \]
-These two equations provide a link between $\dot{b}^i$ and $\hat{c}^i$ for each $i=1,2$. Indeed, given a point $(P,b^1,b^2)$ of $\mathcal{M}_g$ for which there are deformations, the polynomials $\hat{c}^i$ are determined uniquely by a tangent vector $(\dot P, \dot b^1, \dot b^2)$ to $\mathcal{M}_g$. Since the equations \eqref{eqn:EMPDi} are linear in the components of the tangent vector, we need only demonstrate that the zero tangent vector uniquely corresponds to $\hat{c}^i = 0$. For the zero tangent vector,
+These two equations provide a link between $\dot{b}^i$ and $\hat{c}^i$ for each $i=1,2$. Indeed,
+
+\begin{lem}
+Given a point $(P,b^1,b^2)$ of $\mathcal{M}_g$ for which there are deformations, the polynomials $\hat{c}^i$ are determined uniquely by a tangent vector $(\dot P, \dot b^1, \dot b^2)$ to $\mathcal{M}_g$.
+
+\begin{proof}
+Since the equations \eqref{eqn:EMPDi} are linear in the components of the tangent vector, we need only demonstrate that the zero tangent vector uniquely corresponds to $\hat{c}^i = 0$. For the zero tangent vector,
 \[
 0 = 2P\left( \hat{c}^i - ζ\hat {c}^{i\prime}\right) + P' ζ\hat {c}^i.
 \labelthis{eqn:EMPDi zero vector}
@@ -68,11 +74,11 @@ These two equations provide a link between $\dot{b}^i$ and $\hat{c}^i$ for each 
 The polynomial $P$ is either of the form $L$ or $ζL$, where $L$ has only nonzero roots. $L$ has degree either $2g+2$ or $2g$ respectively.
 The assumption of a non-singular spectral curve requires that $P$ and $P'$ have no common factors, hence evaluation of \eqref{eqn:EMPDi zero vector} at any root $α$ of $L$ shows that $P'(α)α\hat{c}^i(α) = 0$, and hence $α$ is a root of $\hat{c}^i$. This shows that $L$ divides $\hat{c}^i$, and for $g\geq 4$ the inequality $\deg L \geq 2g \geq g+4$ is sufficient to show that $\hat{c}^i$ is the zero polynomial, as it is a degree $g+3$ polynomial that is divisible by a polynomial of greater degree. To handle the remaining cases, $g<4$, we substitute in this factorisation of $\hat{c}^i$ and then remove the factor of $L$,
 \begin{align*}
-0
-&= 2L\frac{P}{L}\bra{ L\frac{\hat{c}^i}{L} - ζ\left[ L' \frac{\hat {c}^i}{L} + L \bra{\frac{\hat {c}^i}{L}}' \right] }
-+ \left[L' \frac{P}{L} + L\bra{\frac{P}{L}}' \right] ζ L \frac{\hat{c}^i}{L}  \\
-0 &= L \left [ 2\frac{P}{L}\frac{\hat{c}^i}{L} - 2ζ\frac{P}{L}\bra{\frac{\hat {c}^i}{L}}' + ζ\bra{\frac{P}{L}}'\frac{\hat {c}^i}{L} \right]
--ζ L' \frac{P}{L} \frac{\hat {c}^i}{L}.
+    0
+    &= 2L\frac{P}{L}\bra{ L\frac{\hat{c}^i}{L} - ζ\left[ L' \frac{\hat {c}^i}{L} + L \bra{\frac{\hat {c}^i}{L}}' \right] }
+    + \left[L' \frac{P}{L} + L\bra{\frac{P}{L}}' \right] ζ L \frac{\hat{c}^i}{L}  \\
+    0 &= L \left [ 2\frac{P}{L}\frac{\hat{c}^i}{L} - 2ζ\frac{P}{L}\bra{\frac{\hat {c}^i}{L}}' + ζ\bra{\frac{P}{L}}'\frac{\hat {c}^i}{L} \right]
+    -ζ L' \frac{P}{L} \frac{\hat {c}^i}{L}.
 \end{align*}
 Again, this shows that $L$ divides $\hat{c}^i/L$. If $\deg L = 2g+2$, this shows that $\hat{c}^i$ is divisible by a polynomial of degree $4g+4$, and so must be zero for any $g$. If $\deg L = 2g$, then we have only shown that $\hat{c}^i$ vanishes for $g \geq 2$. We treat the two remaining cases, $\deg L = 2g$ and $g = 0$ or $1$, individually.
 
@@ -87,6 +93,8 @@ which forces $a = 0$. If $g=0$, then $P=ζ$ and $\hat{c}^i$ is a cubic polynomia
 = 3\hat{c}^i_0 + \hat{c}^i_1 ζ - \hat{c}^i_2 ζ^2 - 3\hat{c}^i_3 ζ^3,
 \]
 which again shows that $\hat{c}^i$ is zero. Hence, the polynomials $\hat{c}^i$ are uniquely determined by a tangent vector $(\dot P, \dot b^1, \dot b^2)$ to $\mathcal{M}_g$ as claimed.
+\end{proof}
+\end{lem}
 
 The converse result, that a pair $(\hat{c}^1,\hat{c}^2)$ determines an infinitesimal deformation $(\dot P, \dot b^1, \dot b^2)$, does not hold in general. In the next section we shall take up the task of describing this failure and the information, additional to $(\hat{c}^1,\hat{c}^2)$, that must be supplied in order to determine a unique tangent vector.
 
@@ -105,9 +113,9 @@ b^1 \hat{c}^2 - b^2 \hat{c}^1 = \hat{Q} P.
 \labelthis{eqn:Q hat}
 \]
 
-Thus far, we have only placed two conditions on the points along the deformation $\ell$. First, that it must preserve the integral periods of $Θ^1, Θ^2$, which allowed us to produce well-defined meromorphic functions $\dot{q}^i$. And second, that the differentials must have double poles over $ζ=0,\infty$ with no residues, which allowed us to write $\dot{q}^i$ as the quotient of a polynomial $\hat{c}^i$ by $ζη$. There two additional properties that the polynomials $\hat{c}^i$ must satisfy arising from \ref{P:reality} and \ref{P:closing}. The eigenvalues satisfy $ρ^* μ = \bar{μ}^{-1}$. Applying $\log$ and differentiating with respect to $t$ shows that the polynomials $\hat{c}^i$ are imaginary (that is, $\iu\hat{c}^i$ is a real polynomial with respect to the involution $ρ$).
+Thus far, we have only placed two conditions on the points along the deformation $\ell$. First, that it must preserve the integral periods of $Θ^1$ and $Θ^2$, which allowed us to produce well-defined meromorphic functions $\dot{q}^i$. And second, that the differentials must have double poles over $ζ=0$ and $\infty$ with no residues, which allowed us to write $\dot{q}^i$ as the quotient of a polynomial $\hat{c}^i$ by $ζη$. There two additional properties that the polynomials $\hat{c}^i$ must satisfy arising from \ref{P:reality} and \ref{P:closing}. From the former, the eigenvalues satisfy $ρ^* μ = \bar{μ}^{-1}$. Applying $\log$ and differentiating with respect to $t$ shows that the polynomials $\hat{c}^i$ are imaginary (that is, $\iu\hat{c}^i$ is a real polynomial with respect to the involution $ρ$).
 
-Next, consider the closing condition in its integral form \eqref{eqn:closing}. For some consistent choice of $q^i$ along $γ_+$
+Next, consider the closing condition \ref{P:closing} in its integral form \eqref{eqn:closing}. For some consistent choice of $q^i$ along $γ_+$
 \[
 \int_{γ_+} dq^i = q^i(σ(ξ_1)) - q^i(ξ_1) \in 2π\iu \Z,
 \]
@@ -124,7 +132,7 @@ b^1 c^2 - b^2 c^1 = Q P
 \]
 for some real quadratic polynomial $Q$. This equation is of central importance; we shall use it as our starting point for finding infinitesimal deformations, and we shall see that it ensures that the solutions to the two equations \eqref{eqn:EMPDi} are consistent with one another.
 
-The final condition on the spectral data that we are yet to satisfy is condition \ref{P:poles}: that the differentials $Θ^1,Θ^2$ are residue free. We shall require $P_1(t)b^i_0(t) - 2P_0(t)b^i_1(t) = 0$ to hold at every point of the deformation $\ell$ (from \eqref{eqn:residue condition}). Taking derivatives, we see that
+The final condition on the spectral data that we are yet to satisfy is condition \ref{P:poles}: that the differentials $Θ^1$ and $Θ^2$ are residue free. We shall require $P_1(t)b^i_0(t) - 2P_0(t)b^i_1(t) = 0$ to hold at every point of the deformation $\ell$ (from \eqref{eqn:residue condition}). Taking derivatives, we see that
 \[
 \dot{P}_1 b^i_0 + P_1 \dot{b}^i_0 - 2 \dot{P}_0 b^i_1 - 2 P_0 \dot{b}^i_1 = 0 \labelthis{eqn:residueTangent}
 \]
@@ -144,10 +152,10 @@ In summary, any infinitesimal deformation of the spectral data, in other words a
 
 
 
-\section{The Tangent Space to $\mathcal{M}_g$}
+\section{The Tangent Space to \texorpdfstring{$\mathcal{M}_g$}{Mg}}
 \label{sec:tangent space}
 
-In the preceding section, we elucidated several properties that a deformation of spectral data necessarily possesses. Now we turn our attention to the converse; under what conditions it is possible to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} to find an infinitesimal deformation. Firstly, we examine whether it is possible construct polynomials $c^i$ solving \eqref{eqn:Q} for a given $Q$, and whether this construction is unique. Then secondly, we shall insert the polynomials $c^i$ into the right hand side of \eqref{eqn:EMPDi} and solve it to recover $\dot{b}^i$ and $\dot{P}$.
+In the preceding section, we elucidated several properties that a deformation of spectral data necessarily possesses. Now we turn our attention to the converse; under what conditions is it possible to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} to find an infinitesimal deformation? Firstly, we examine whether it is possible construct polynomials $c^i$ solving \eqref{eqn:Q} for a given $Q$, and whether this construction is unique. Then secondly, we shall insert the polynomials $c^i$ into the right hand side of \eqref{eqn:EMPDi} and solve it to recover $\dot{b}^i$ and $\dot{P}$.
 
 For each equation, the main obstacle to the existence of a solution is common factors among the polynomials $(P,b^1,b^2)$. If there are too many common factors, then it will not be possible to deform the spectral data. Even when it is possible to deform, the form of the solution of the equations \eqref{eqn:EMPDi} and \eqref{eqn:Q} is dependent on those common factors. Thus we will need to divide our approach into several cases.
 
@@ -162,28 +170,28 @@ where we first find the common factor of all three polynomials, then remove any 
 \[
 P = F F^1 F^2 \tilde{P},\;\; b^1 = F F^1 G \tilde{b}^1,\;\; b^2 = F F^2 G \tilde{b}^2.
 \]
-Because the spectral curve is nonsingular, $P$ has no repeated factors, and so the polynomials $F,F^1,F^2,\tilde{P}, \tilde{b}^1$ and $\tilde{b^2}$ are pairwise coprime. Be aware that the polynomials $b^1$ and $b^2$ may have higher order roots, so it is not possible to say if $G$ is coprime to $F$, $F^1$ or $F^2$. The common factor of $b^1$ and $b^2$, and therefore any differential on $Σ$ satisfying conditions \ref{P:poles}--\ref{P:imaginary periods}, is the product $FG$. We denote the degrees of the polynomials $F, F^1, F^2$ and $G$ as $d_F,d_1,d_2$ and $d_G$ respectively.
+Because the spectral curve is nonsingular, $P$ has no repeated factors, and so the polynomials $F$, $F^1$, $F^2$, $\tilde{P}$, $\tilde{b}^1$ and $\tilde{b^2}$ are pairwise coprime. Be aware that the polynomials $b^1$ and $b^2$ may have higher order roots, so it is not possible to say if $G$ is coprime to $F$, $F^1$ or $F^2$. The common factor of $b^1$ and $b^2$, and therefore any differential on $Σ$ satisfying conditions \ref{P:poles}--\ref{P:imaginary periods}, is the product $FG$. We denote the degrees of the polynomials $F$, $F^1$, $F^2$ and $G$ as $d_F$, $d_1$, $d_2$ and $d_G$ respectively.
 
-% \makefigureleft{\label{fig:common factors}
+% \makefigure{\label{fig:common factors}
 % The common factors of $P$, $b^1$ and $b^2$ are represented as overlaps between the three circles.}
 % {thesis_graphics_temp/polynomial_common_factors.png}
-\maketikzfigureleft{\label{fig:common factors}
+\maketikzfigure{\label{fig:common factors}
 The common factors of $P$, $b^1$ and $b^2$ are represented as overlaps between the three circles.}
 {tikz/polynomial_common_factors}
 
-We may ask, given these common factors among $P, b^1$ and $b^2$, what, if any, factors do the polynomials $c^i$ and $Q$ possess? Inserting these factorisations into \eqref{eqn:EMPDi}, we observe that
+We may ask, given these common factors among $P$, $b^1$ and $b^2$, what, if any, factors do the polynomials $c^i$ and $Q$ possess? Inserting these factorisations into \eqref{eqn:EMPDi}, we observe that
 \[
 \dot{P} F F^i G \tilde{b}^i = 2 F F^1 F^2 \tilde{P} (\dot{b}^i + \hat{c}^i - ζ\hat{c}^{i\prime}) + ζ(ζ^2-1 ) P'c^i.
 \]
-Again, by the assumption of that the spectral curve is non-singular, $P'$ does not share any common factors with $P$ and $P$ has no roots on the unit circle. Hence we see that $FF^i$ divides $ζc^i$. Conversely, given an arbitrary $c^i$, it would not be possible to solve this equation for $(\dot{P},\dot{b}^i)$ unless $FF^i$ divides $ζc^i$, otherwise we would have a contradiction. We would like to say that $FF^i$ divides $c^i$ alone, but because $F$ may have a factor of $ζ$, we must treat the conformal and nonconformal cases separately.
+Again, by the assumption of that the spectral curve is non-singular, $P'$ does not share any common factors with $P$. Further $P$ has no roots on the unit circle. Hence we see that $FF^i$ divides $ζc^i$. Conversely, given an arbitrary $c^i$, it would not be possible to solve this equation for $(\dot{P},\dot{b}^i)$ unless $FF^i$ divides $ζc^i$, otherwise we would have a contradiction. We would like to say that $FF^i$ divides $c^i$ alone, but because $F$ may have a factor of $ζ$, we must treat the conformal and nonconformal cases separately.
 
-Assume first that $P(0)\neq 0$, which corresponds to a nonconformal harmonic map. Then $ζ$ is not a factor of $P$, and so cannot be a factor of $FF^i$, therefore $FF^i$ divides $c^i$. Applying this to \eqref{eqn:Q},
+Assume first that $P(0)\neq 0$, which corresponds to a nonconformal harmonic map. Then $ζ$ is not a factor of $P$ and so cannot be a factor of $FF^i$. Therefore $FF^i$ divides $c^i$. Applying this to \eqref{eqn:Q},
 \[
 FF^1G\tilde{b}^1 c^2 - FF^2G\tilde{b}^2 c^1 = Q FF^1F^2\tilde{P}.
 \]
-By definition, neither $F$ nor $G$ divide $\tilde{P}$, demonstrating that $FG$ divides $Q$. This provides a bound on the number of coincident roots that are allowed if a deformation is to exist; $Q$ is quadratic so $FG = \gcd(b^1,b^2)$ must be degree two or less. Moreover, because all of $P,b^1,b^2$ are real, and $P$ has no roots on the unit circle, any common roots of the three polynomials must come in conjugate inverse pairs and so the degree of $F$ will always be even.
+By definition, neither $F$ nor $G$ divide $\tilde{P}$, demonstrating that $FG$ divides $Q$. This provides a bound on the number of coincident roots that are allowed if a deformation is to exist; $Q$ is quadratic so $FG = \gcd(b^1,b^2)$ must be degree two or less. Moreover, because all of $P$, $b^1$, $b^2$ are real, and $P$ has no roots on the unit circle, any common roots of the three polynomials must come in conjugate inverse pairs and so the degree of $F$ will always be even.
 
-In the conformal case, where the spectral curve is branched over $ζ=0$, we know that $P_0(t), b^1_0(t)$ and $b^2_0(t)$ all vanish at $t=0$. Thus $F$ includes a factor of $ζ$. This time, we conclude that it is $ζ^{-1}FF^i$ that divides $c^i$ and so $ζ^{-1}FG$ divides $Q$, by \eqref{eqn:Q}. However, the residue condition \eqref{eqn:residueTangent} in this case simplifies in a way that forces another constraint on $Q$. At $t=0$, \eqref{eqn:residueTangent} becomes
+In the conformal case, where the spectral curve is branched over $ζ=0$, we know that $P_0(t)$, $b^1_0(t)$ and $b^2_0(t)$ all vanish at $t=0$. Thus $F$ includes a factor of $ζ$. This time, we conclude that it is $ζ^{-1}FF^i$ that divides $c^i$ and so $ζ^{-1}FG$ divides $Q$, by \eqref{eqn:Q}. However, the residue condition \eqref{eqn:residueTangent} in this case simplifies in a way that forces another constraint on $Q$. At $t=0$, \eqref{eqn:residueTangent} becomes
 \[
 P_1 \dot{b}_0 - 2 \dot{P}_0 b_1 = 0,
 \]
@@ -228,7 +236,7 @@ iv & The degree of $\gcd(b^1,b^2)$ is greater than two \\ \hline
 \end{tabular}
 \end{center}
 
-The five sets corresponding to these five cases are disjoint and cover the space $U$. We have seen that the spectral data in case (iv) do not admit any deformations.
+The five sets corresponding to these five cases are disjoint and cover the space $\mathcal{U}$. We have seen that the spectral data in case (iv) do not admit any deformations.
 With regards to case (v), by equation \eqref{eqn:residue condition}, if $P_0$ vanishes at a point of $\mathcal{M}_g$ then so too must $b^1_0$ and $b^2_0$. Thus the intersection of $\mathcal{M}_g$ and the points of case (v) is contained in the set the points where $ζ$ divides $\gcd(b^1,b^2)$. The discussion following \eqref{eqn:Q0 vanish conformal} shows that deformations are only possible at a point in case (v) if $\gcd(b^1,b^2) = ζ$ exactly, otherwise no deformations can exist.
 
 In general, points of $\mathcal{M}_g$ where case (iii) holds are singularities of a deformation \cite{Schmidt2016} and are not considered further in this thesis. We shall note only that there are no such points of $\mathcal{M}_g$ when the genus $g$ of the spectral curve is zero or one.
@@ -242,27 +250,28 @@ We shall now give a similar short proof to show that the differentials of a genu
 The coefficient of $c$ above, the bracketed expression, is never zero and so $c$ is determined by $d$. Hence $b^1$ is determined up to a real scalar. This demonstrates any two differentials with the same factor $F$ are real linearly dependent, which contradicts \ref{P:linear independence}.
 
 \begin{defn}
-Let $U'$ be the subset of points of the two cases (i) and (ii).
-We denote the points of case (i) as $U^{(i)}$ and the points of case (v) where $\gcd(b^1,b^2) = ζ$ as $U''$.
+\label{def:subsets U}
+Let $\mathcal{U}'$ be the subset of points of the two cases (i) and (ii).
+We denote the points of case (i) as $\mathcal{U}^{(i)}$ and the points of case (v) where $\gcd(b^1,b^2) = ζ$ as $\mathcal{U}''$.
 \end{defn}
 
-The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap U'$ is a manifold. We also show that the points of $\mathcal{M}_g\cap U''$ are smooth points of $\mathcal{M}_g$.
-We may characterise $U'$ as the set
+The remainder of the chapter seeks to prove that $\mathcal{M}_g \cap \mathcal{U}'$ is a manifold. We also show that the points of $\mathcal{M}_g\cap \mathcal{U}''$ are smooth points of $\mathcal{M}_g$.
+We may characterise $\mathcal{U}'$ as the set
 \[
-U' = \Set{ (P,b^1,b^2) \in U } { \gcd(P,b^1,b^2) = 1 \text{ and } \gcd(b^1,b^2) \in \mathcal{P}^l_\R \text{ for } l \leq 2 }.
+\mathcal{U}' = \Set{ (P,b^1,b^2) \in \mathcal{U} } { \gcd(P,b^1,b^2) = 1 \text{ and } \gcd(b^1,b^2) \in \mathcal{P}^l_\R \text{ for } l \leq 2 }.
 \labelthis{eqn:def U'}
 \]
-The set $U'$ is open because the points of cases (iii), (iv) and (v) form a closed subset of the space $U$, the space of triples of real polynomials satifying the conditions of Definition \ref{def:def U}. To see that this complement $U\setminus U'$ is closed, we write it as
+The set $\mathcal{U}'$ is open because together the points of cases (iii), (iv) and (v) form a closed subset of the space $\mathcal{U}$, the space of triples of real polynomials satifying the conditions of Definition \ref{def:def U}. To see that this complement $\mathcal{U}\setminus \mathcal{U}'$ is closed, we write it as
 \begin{align*}
-&\Set{(P,b^1,b^2) \in U}{ \gcd(b^1,b^2) \in\mathcal{P}^k_\R,\,k > 2 } \\
+&\Set{(P,b^1,b^2) \in \mathcal{U}}{ \gcd(b^1,b^2) \in\mathcal{P}^k_\R,\,k > 2 } \\
 &\qquad\cup
-\Set{(P,b^1,b^2) \in U}{ \gcd(P,b^1,b^2) \in\mathcal{P}^l_\R,\,l \geq 2 } \\
+\Set{(P,b^1,b^2) \in \mathcal{U}}{ \gcd(P,b^1,b^2) \in\mathcal{P}^l_\R,\,l \geq 2 } \\
 &\qquad\cup
-\Set{(P,b^1,b^2) \in U}{ P_0 = 0 },
+\Set{(P,b^1,b^2) \in \mathcal{U}}{ P_0 = 0 },
 \end{align*}
 which is the union of three closed sets.
 
-At each point of $U'$ and $U''$ that lies in $\mathcal{M}_g$, $F^i$ must divide $c^i$ and $G$ must divide $Q$. Let us therefore define
+At each point of $\mathcal{U}'$ and $\mathcal{U}''$ that lies in $\mathcal{M}_g$, $F^i$ must divide $c^i$ and $G$ must divide $Q$. Let us therefore define
 \[
 c^i = F^i \tilde{c}^i, \text{ and } Q = G\tilde{Q}.
 \labelthis{eqn:def c Q tilde}
@@ -280,11 +289,11 @@ FF^1G\tilde{b}^1 F^2\tilde{c}^2 - FF^2G\tilde{b}^2 F^1\tilde{c}^1 &= G\tilde{Q} 
 \end{align*}
 As commented on previously, these equations \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced} are necessary conditions to be able to solve \eqref{eqn:EMPDi} and \eqref{eqn:Q} respectively. If the polynomials $c^i$ or $Q$ did not have the factors indicated by \eqref{eqn:def c Q tilde}, then the there would be factors on the left hand sides of \eqref{eqn:EMPDi} and \eqref{eqn:Q} that did not appear on the right hand sides, and this contradiction would preclude the possibility of a solution.
 
-Both of these equations are in the form $AX - BY = C$, to which B\'ezout's identity for polynomials applies. B\'ezout's identity asserts that if $\gcd(A,B) = 1$, then there is a unique solution $(\mathbf{X},\mathbf{Y})$ of minimal degree, for $\deg \mathbf{X} < \deg B$ and $\deg \mathbf{Y} < \deg A$. Recall from the comment about notation at the start of the chapter that given a pair of polynomials $(X,Y)$, we also give their degrees as a pair $(x,y)$, for $x=\deg X$ and $y=\deg Y$.
+Both of these equations are in the form $AX - BY = C$, to which Bézout's identity for polynomials applies. Bézout's identity asserts that if $\gcd(A,B) = 1$, then there is a unique solution $(\mathbf{X},\mathbf{Y})$ of minimal degree, for $\deg \mathbf{X} < \deg B$ and $\deg \mathbf{Y} < \deg A$. Recall the notation introduced at the start of the chapter that given a pair of polynomials $(X,Y)$, we also give their degrees as a pair $(x,y)$, for $x=\deg X$ and $y=\deg Y$.
 
 One may prove the existence of these minimal solutions using the Euclidean algorithm \cite{Mora2003}. Because we will have need of the specific formula for the leading coefficients of $\mathbf{X}$ and $\mathbf{Y}$, we shall give an effective method to construct this minimal solution. We shall also prove some simple corollaries, about when real solutions exist, and given the unique minimal solution, how to generate all solutions less than a given degree.
 
-We shall construct the minimal solution by finding a linear system of equations that its coefficients must satisfy, and showing that there is a unique solution to this linear system. The solution to the linear system and the solution to B\'ezout's identity must therefore be the same. Assume that $\gcd(A,B)=1$, so that $A$ and $B$ are coprime, and let $(\mathbf{X},\mathbf{Y})$ be the solution of minimal degree. If $β$ is a root of $B$ of multiplicity $r$ and the degree of $B$ is $n+1$, then
+We shall construct the minimal solution by finding a linear system of equations that its coefficients must satisfy, and showing that there is a unique solution to this linear system. The solution to the linear system and the solution to Bézout's identity must therefore be the same. Assume that $A$ and $B$ are coprime and let $(\mathbf{X},\mathbf{Y})$ be the solution of minimal degree. If $β$ is a root of $B$ of multiplicity $r$ and the degree of $B$ is $n+1$, then
 \[
 X_0 + X_1 β + X_2 (β)^2 + \dots + X_n β^n = \frac{C(β)}{A(β)},
 \]
@@ -318,10 +327,12 @@ Differentiating repeatedly, we will obtain $r$ linearly independent equations at
   (C/A)(β_2) \\ \vdots \\ (C/A)^{(r_2-1)}(β_2) \\
   (C/A)(β_3) \\ \vdots \\ \vdots \\ (C/A)^{(r_k-1)}(β_k) \\
 \end{bmatrix},
-\labelthis{eqn:linear system}
 \end{longeqn}
+\[
+\text{     }\labelthis{eqn:linear system}
+\]
 
-The $(n+1)\times (n+1)$ coefficient matrix on the left is called the confluent Vandermonde matrix at the roots of $B$, and we shall denote it $V(B)$. The vector on the right does not have a standard name, but we shall denote it $h(B,C/A)$. A confluent Vandermonde matrix is always non-singular \cite{Kalman1984}, therefore there is a unique solution to this system. One can likewise consider the system of equations at the roots of $A$ to construct the solution $\mathbf{Y}$.
+The $(n+1)\times (n+1)$ coefficient matrix on the left is called the confluent Vandermonde matrix at the roots of $B$, and we shall denote it $V(B)$. We shall denote the vector on the right by $h(B,C/A)$. A confluent Vandermonde matrix is always non-singular \cite{Kalman1984}, therefore there is a unique solution to this system. One can likewise consider the system of equations at the roots of $A$ to construct the solution $\mathbf{Y}$.
 
 We have shown how to construct the minimal solution to the equation $AX - BY = C$. But in fact we will be interested in all solutions with degree less than a fixed value. To this end, consider the related equation $AX-BY = 0$. As we have assumed that $A$ and $B$ are coprime, it must be that $B$ divides $X$. Likewise $A$ divides $Y$. Return now to the equation $AX-BY=C$ and suppose then that $(\mathbf{X},\mathbf{Y})$ the minimal solution. If $(X,Y)$ is any other solution, then $A(\mathbf{X}-X) - B(\mathbf{Y}-Y) = 0$. Therefore $\mathbf{X}-X = r B$ and $\mathbf{Y}-Y = rA$ for some polynomial $r$. Conversely, given any solution $(X,Y)$, it is clear that $(X+rB,Y+rA)$ is again a solution for every polynomial $r$. Thus polynomials of this form are exactly the solutions to $AX-BY=C$.
 
@@ -370,20 +381,20 @@ But $c^2$ is degree $g+1$, and $c^2 = F^2\tilde{c}^2$. Therefore the degree of $
 \label{def:def R}
 Recall the confluent Vandermonde matrix $V(B)$ and vector $h(B,C/A)$ defined in \eqref{eqn:linear system}. We define the function $R$ to be
 \begin{align*}
-R : U^{(i)} \times \R^3 &\to \C \\
+R : \mathcal{U}^{(i)} \times \R^3 &\to \C \\
 ((P,b^1,b^2), Q) &\mapsto \text{ the last entry of } \left[V( \tilde{b}^2 )\right]^{-1}
 h\bra{\tilde{b}^2, \frac{Q\tilde{P}}{\tilde{b}^1} }.
 \end{align*}
-When the point of $U^{(i)}$ is understood, we shall abbreviate this to $R(Q)$.
+When the point of $\mathcal{U}^{(i)}$ is understood, we shall abbreviate this to $R(Q)$.
 \end{defn}
 
 This function $R$ is simply the function that gives the value of the degree $n$ coefficient of $\tilde{c}^2$; the condition that $R((P,b^1,b^2),Q) = 0$ is equivalent to the condition that there is a solution $\tilde{c}^2$ to \eqref{eqn:Q reduced} of degree $n-1$ or less.
 Likewise, evaluating \eqref{eqn:Q reduced} at the roots of $\tilde{b}^1$ leads to a solution $\tilde{c}^1$ of degree $g+2 - d_1$. From the highest order term of \eqref{eqn:Q reduced}, if $\tilde{c}^2$ is degree $n-1$ or lower, then $\tilde{c}^1$ will be degree $g + 1 - d_1$ or lower without any further restrictions on $Q$.
 
-It is important to note that $R$ is linear function in the coefficients of $Q$, so that the solutions of $R(Q)=0$ form a linear space. Intuitively, because $R$ is a complex valued function, we would expect this linear space of $Q$ to be real-codimension two. However, $R$ satisfies the following reality type condition, and thus $R(Q)=0$ puts only one real constraint on $Q$. In other words, at any point of $U^{(i)}$ there is a two real-dimensional plane of real quadratic polynomials $Q$ that satisfy $R(Q) = 0$.
+It is important to note that $R$ is linear function in the coefficients of $Q$, so that the solutions of $R(Q)=0$ form a linear space. Intuitively, because $R$ is a complex valued function, we would expect this linear space of $Q$ to be real-codimension two. However, $R$ satisfies the following reality type condition, and thus $R(Q)=0$ puts only one real constraint on $Q$. In other words, at any point of $\mathcal{U}^{(i)}$ there is a two real-dimensional plane of real quadratic polynomials $Q$ that satisfy $R(Q) = 0$.
 
 \begin{lem}
-At every point $(P,b^1,b^2)$ of $U^{(i)}$, $R((P,b^1,b^2), Q)$ satisfies the relation
+At every point $(P,b^1,b^2)$ of $\mathcal{U}^{(i)}$, $R((P,b^1,b^2), Q)$ satisfies the relation
 \[
 \bar{R} = (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i }  R,
 \labelthis{eqn:R reality}
@@ -427,7 +438,7 @@ so that the conjugate of $R$ is
 &= (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i }  R.
 \end{align*}
 
-To extend this argument to a point $p = (P,b^1,b^2)$ where the roots of $\tilde{b}^2$ are not distinct, we may construct a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ of $U^{(i)}$ that converge to the point $p$, but such that $b^2(p_k)(ζ)$ has distinct roots for every $k$. We will show that on this sequence $\lim_{k\to\infty} R(p_k,Q) = R(p,Q)$, and therefore
+To extend this argument to a point $p = (P,b^1,b^2)$ where the roots of $\tilde{b}^2$ are not distinct, we may construct a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ of $\mathcal{U}^{(i)}$ that converge to the point $p$, but such that $b^2(p_k)(ζ)$ has distinct roots for every $k$. We will show that on this sequence $\lim_{k\to\infty} R(p_k,Q) = R(p,Q)$, and therefore
 \begin{align*}
 \bar{R(p,Q)}
 = \lim_{k\to\infty} \bar{R(p_k,Q)}
@@ -435,7 +446,7 @@ To extend this argument to a point $p = (P,b^1,b^2)$ where the roots of $\tilde{
 &= (-1)^{n}\bra{ \prod_{i=1}^{n+1}  β_i } R(p,Q).
 \end{align*}
 
-Suppose that we are at a point $p = (P,b^1,b^2)$ of $U^{(i)}$ where $\tilde{b}^2$ has a double root $β$. Considering the subvariety of $U^{(i)}$ where $F^2 = \gcd(P,b^2)$ is fixed, we may find a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ converging to $p$ with the property that $\gcd(P(p_k),b^2(p_k)) = F^2$ and such that the roots of each polynomial $\tilde{b}^2(p_k)$ are distinct. Let us label the two simple roots of $\tilde{b}^2(p_k)$ that coalesce at $p$ to form the double root $β$ as $β_1(k),β_2(k)$.
+Suppose that we are at a point $p = (P,b^1,b^2)$ of $\mathcal{U}^{(i)}$ where $\tilde{b}^2$ has a double root $β$. Considering the subvariety of $\mathcal{U}^{(i)}$ where $F^2 = \gcd(P,b^2)$ is fixed, we may find a sequence of points $p_k = (P(p_k)(ζ), b^1(p_k)(ζ), b^2(p_k)(ζ))$ converging to $p$ with the property that $\gcd(P(p_k),b^2(p_k)) = F^2$ and such that the roots of each polynomial $\tilde{b}^2(p_k)$ are distinct. Let us label the two simple roots of $\tilde{b}^2(p_k)$ that coalesce at $p$ to form the double root $β$ as $β_1(k),β_2(k)$.
 In other words, these are the two roots of $\tilde{b}^2(p_k)$ such that $\lim_{k\to\infty} β_1(p_k) = \lim_{k\to\infty} β_2(p_k) = β$. The corresponding rows of the Vandermonde matrix $V(\tilde{b}^2(p_k))$ in the system \eqref{eqn:Q reduced linear} are
 \[
 \begin{bmatrix}
@@ -474,7 +485,7 @@ The limit of the above as $k \to \infty$ is precisely the confluent Vandermonde 
 
 Combining these row operations with the fact that inversion of a matrix is continuous and that the roots of a polynomial are continuous functions of coefficients \cite[Theorem V.4A]{Whitney1972}, this shows that limit of the solutions $\tilde{c}^2(p_k)$ is just the solution $\tilde{c}^2(p)$. In particular, the last component of $\tilde{c}^2(p)$ is $R(p,Q)$, and this is therefore the limit of $R(p_k,Q)$ as $k\to\infty$.
 
-Hence we have established \eqref{eqn:R reality} at all points of $U^{(i)}$.
+Hence we have established \eqref{eqn:R reality} at all points of $\mathcal{U}^{(i)}$.
 \end{proof}
 \end{lem}
 
@@ -501,8 +512,8 @@ Take a triple of spectral data $(P,b^1,b^2)\in\mathcal{M}_g$ associated with a n
 \begin{proof}
 In order to solve \eqref{eqn:EMPDi} or \eqref{eqn:Q}, one must first solve their reduced counterparts \eqref{eqn:EMPDi reduced} and \eqref{eqn:Q reduced}.
 
-We consider \eqref{eqn:Q reduced} as a linear system in the coefficients of $\tilde{c}^i$, using a confluent Vandermonde matrix as above. Thus there is a unique solution $({\bf \tilde{c}}^1, {\bf \tilde{c}}^2)$ of degree at most $(g+2-d_1, g+2-d_2)$, where $d_i = \deg F^i$. We note that ${\bf\tilde{c}}^2_{g+2-d_2}$ is $R(Q)$ by definition, which by assumption is zero.
-By consideration of the leading order of \eqref{eqn:Q reduced}, if ${\bf\tilde{c}}^2_{g+2-d_2}$ vanishes, so too must ${\bf\tilde{c}}^1_{g+2-d_1}$. Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i {\bf\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree at most $g+1$. We similarly define $\hat{c}^i = (ζ^2 -1)c^i$.
+We consider \eqref{eqn:Q reduced} as a linear system in the coefficients of $\tilde{c}^i$, using a confluent Vandermonde matrix as above. Thus there is a unique solution $(\symbf{\tilde{c}}^1, \symbf{\tilde{c}}^2)$ of degree at most $(g+2-d_1, g+2-d_2)$, where $d_i = \deg F^i$. We note that $\symbf{\tilde{c}}^2_{g+2-d_2}$ is $R(Q)$ by definition, which by assumption is zero.
+By consideration of the leading order of \eqref{eqn:Q reduced}, if $\symbf{\tilde{c}}^2_{g+2-d_2}$ vanishes, so too must $\symbf{\tilde{c}}^1_{g+2-d_1}$. Multiplying \eqref{eqn:Q reduced} through by $F^1F^2$, we arrive at unique solutions $c^i = F^i \symbf{\tilde{c}}^i$ for \eqref{eqn:Q}. Both of these polynomials are degree at most $g+1$. We similarly define $\hat{c}^i = (ζ^2 -1)c^i$.
 
 Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} was a necessary condition. It reads
 \[
@@ -511,14 +522,14 @@ Next we must solve \eqref{eqn:EMPDi reduced}, for which \eqref{eqn:Q reduced} wa
 \]
 This too can be solved using a (confluent) Vandermonde matrix, if $\tilde{b}^i$ is nonvanishing at the roots of $F^j \tilde{P}$ and vice versa. But by definition they are coprime. This was why it was necessary to force $c^i$ to have $F^i$ as a factor, so that the common factor $F^1$ of $b^i$ and $P$ could be removed from \eqref{eqn:EMPDi}.
 
-One should be concerned that the two equations for $i=1,2$ may give different solutions for $\dot P$, and indeed in general they do. However, neither of the equations have unique solutions, and we shall use the freedom in the choice of solution to find a common solution to both. Let a solution to each equation \eqref{eqn:EMPDi nc FG=1} be $({\bf \dot{P}}^1, {\bf \dot{b}}^1)$ and $({\bf \dot{P}}^2, {\bf \dot{b}}^2)$. The sets of solutions of degree $(2g+2,g+3)$ are
+One should be concerned that the two equations for $i=1,2$ may give different solutions for $\dot P$, and indeed in general they do. However, neither of the equations have unique solutions, and we shall use the freedom in the choice of solution to find a common solution to both. Let a solution to each equation \eqref{eqn:EMPDi nc FG=1} be $(\symbf{\dot{P}}^1, \symbf{\dot{b}}^1)$ and $(\symbf{\dot{P}}^2, \symbf{\dot{b}}^2)$. The sets of solutions of degree $(2g+2,g+3)$ are
 \[
-\Set { \bra{ {\bf \dot{P}}^1 + 2rF^2\tilde{P}, {\bf \dot{b}}^1 + r\tilde{b}^1 } }
+\Set { \bra{ \symbf{\dot{P}}^1 + 2rF^2\tilde{P}, \symbf{\dot{b}}^1 + r\tilde{b}^1 } }
 { r \text{ a real polynomial of degree } d_1 },
 \]
 and
 \[
-\Set { \bra{ {\bf \dot{P}}^2 + 2sF^1\tilde{P}, {\bf \dot{b}}^2 + s\tilde{b}^2 } }
+\Set { \bra{ \symbf{\dot{P}}^2 + 2sF^1\tilde{P}, \symbf{\dot{b}}^2 + s\tilde{b}^2 } }
 { s \text{ a real polynomial of degree } d_2 },
 \]
 respectively. First note that every element of both of these sets take the same value at any root $α$ of $\tilde{P}$. This follows from \eqref{eqn:EMPDi nc FG=1}, which reads
@@ -539,22 +550,22 @@ and thus
 At the $d_1$ roots of $F^1$, we see that every solution $\dot{P}^2$ takes the same value. Let $β$ be such a root, then
 \[
 \dot{P}^2(β)
-= {\bf \dot{P}}^2(β) + 2s(β)F^1(β)\tilde{P}(β)
-= {\bf \dot{P}}^2(β)
+= \symbf{\dot{P}}^2(β) + 2s(β)F^1(β)\tilde{P}(β)
+= \symbf{\dot{P}}^2(β)
 = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)},
 \]
 where we can be sure that $\tilde{b}^2(β) \neq 0$ because it cannot be a root of $b^2$ (if it were, $F\neq 1$). However, the other solutions have different values at $β$, and this provides the following constraint on the choice of $r$:
 \[
-{\bf \dot{P}}^1(β) + 2r(β)F^2(β)\tilde{P}(β) = {\bf \dot{P}}^2(β) = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)}.
+\symbf{\dot{P}}^1(β) + 2r(β)F^2(β)\tilde{P}(β) = \symbf{\dot{P}}^2(β) = β (β^2-1) P'(β) \frac{\tilde{c}^2(β)}{\tilde{b}^2(β)}.
 \]
 This constraint is nontrivial because $β$ is not a root of $\tilde{P}$ or $F^2$ by the assumption of the non-singularity of the spectral curve. As $F^1$ has $d_1$ distinct roots, there are $d_1$ constraints.
 
-Likewise, at the $d_2$ roots of $F^2$, we acquire constraints on the choice of $s$. It is always possible to meet these constraints (because, for example, the degree of $s$ is $d_2$ and there are only $d_2$ roots of $F^2$), so we see that there is a common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$ to \eqref{eqn:EMPDi reduced}. It is also a solution to \eqref{eqn:EMPDi}.
+Likewise, at the $d_2$ roots of $F^2$, we acquire constraints on the choice of $s$. It is always possible to meet these constraints (because, for example, the degree of $s$ is $d_2$ and there are only $d_2$ roots of $F^2$), so we see that there is a common solution $(\symbf{\dot{P}}, \symbf{\dot{b}}^1, \symbf{\dot{b}}^2)$ to \eqref{eqn:EMPDi reduced}. It is also a solution to \eqref{eqn:EMPDi}.
 
 This solution is still not unique; there remains one degree of freedom. For any real number $s$, we have solutions to \eqref{eqn:EMPDi} of the form
 \begin{align*}
-\dot P &= {\bf \dot{P}} + 2sP  \labelthis{eqn:P soln}\\
-\dot b^i &= {\bf \dot{b}}^i + sb^i
+\dot P &= \symbf{\dot{P}} + 2sP  \labelthis{eqn:P soln}\\
+\dot b^i &= \symbf{\dot{b}}^i + sb^i
 \end{align*}
 However, this freedom is simply the freedom to rescale $P$. We have chosen a preferred scaling of $P$, so our choice of $s$ is determined. Explicitly, if we were to allow other scalings, the formula for $P$ would be, (cf. \eqref{eqn:def P})
 \[
@@ -569,7 +580,7 @@ where $α_k$ are the roots inside the unit circle and $r(t)$ is some real functi
 \end{align*}
 Thus we know the values of $\dot{α}_k$, independent of choice of $s$ in our solution \eqref{eqn:P soln}, because any two solutions $\dot{P}$ differ by a multiple of $P$, which vanishes at every root $α_k$. Alternatively, if we take the lowest order of \eqref{eqn:rescale P},
 \[
-\dot{P}_0 = {\bf \dot{P}}_0 + 2sP_0 = \dot r P_0 + \sum_k (-\dot{α}_k)\prod_{m\neq k} (-α_m),
+\dot{P}_0 = \symbf{\dot{P}}_0 + 2sP_0 = \dot r P_0 + \sum_k (-\dot{α}_k)\prod_{m\neq k} (-α_m),
 \]
 so we may ensure that $r\equiv 1$ by choosing $s$ so that $\dot r = 0$. In short, if we fix a scaling of the spectral curve, then there is a unique solution to \eqref{eqn:EMPDi}.
 
@@ -606,9 +617,9 @@ This lemma, and the lemma to follow, are similar to the first proof. We proceed 
 \[
 \tilde{b}^1\tilde{c}^2 - \tilde{b}^2\tilde{c}^1 = \tilde{Q}\tilde{P}.
 \]
-There is a unique solution to this equation $({\bf \tilde{c}}^1,{\bf \tilde{c}}^2)$ of degree at most $(g+2-d_1-d_G,g+2-d_2-d_G)$. If we multiply these by $F^1$ and $F^2$ respectively, we have solutions to \eqref{eqn:Q} of degree at most $g+2-d_G$ each. If $G$ is linear therefore, this is the unique solution of degree at most $(g+1,g+1)$, but if $G$ is quadratic the space of solutions to \eqref{eqn:Q} is
+There is a unique solution to this equation $(\symbf{\tilde{c}}^1,\symbf{\tilde{c}}^2)$ of degree at most $(g+2-d_1-d_G,g+2-d_2-d_G)$. If we multiply these by $F^1$ and $F^2$ respectively, we have solutions to \eqref{eqn:Q} of degree at most $g+2-d_G$ each. If $G$ is linear therefore, this is the unique solution of degree at most $(g+1,g+1)$, but if $G$ is quadratic the space of solutions to \eqref{eqn:Q} is
 \[
-\Set { (F^1{\bf \tilde{c}}^1 + rF^1\tilde{b}^1, F^2{\bf \tilde{c}}^1 + rF^2\tilde{b}^2 }
+\Set { (F^1\symbf{\tilde{c}}^1 + rF^1\tilde{b}^1, F^2\symbf{\tilde{c}}^1 + rF^2\tilde{b}^2 }
 { r \text{ a real scalar} }.
 \]
 Hence for every $r\in\R$ there is a unique solution $(c^1, c^2)$ to equation \eqref{eqn:Q}. In either case, it was not necessary to have a condition similar to $R(Q)=0$, but conversely the choice of $Q$ was restricted by $Q = G\tilde{Q}$.
@@ -618,7 +629,7 @@ Next we must solve \eqref{eqn:EMPDi reduced}, but the proof above applies again,
 \dot{P} G \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + ζ(ζ^2-1)P' \tilde{c}^i.
 \labelthis{eqn:EMPDi nc G}
 \]
-This has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at the roots of $F^1F^2\tilde{P}$ shows that there is a common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$. Again, a choice of scaling of $P$ forces a unique solution. This solution also satisfies \eqref{eqn:residueTangent}. Hence it is a tangent vector to $\mathcal{M}_g$ at $(b^1,b^2,P)$.
+This has a solution because $\gcd(F^j\tilde{P},G\tilde{b}^i) = 1$. Analysis at the roots of $F^1F^2\tilde{P}$ shows that there is a common solution $(\symbf{\dot{P}}, \symbf{\dot{b}}^1, \symbf{\dot{b}}^2)$. Again, a choice of scaling of $P$ forces a unique solution. This solution also satisfies \eqref{eqn:residueTangent}. Hence it is a tangent vector to $\mathcal{M}_g$ at $(b^1,b^2,P)$.
 \end{proof}
 \end{lem}
 
@@ -640,22 +651,22 @@ We have already demonstrated in \eqref{eqn:Q0 vanish conformal} that $ζ$ necess
 \]
 This is similar to the above case where $G$ was quadratic. The space of solutions is
 \[
-\Set { ({\bf \tilde{c}}^1 + r \tilde{b}^1, {\bf \tilde{c}}^2 + r \tilde{b}^2) }{ r\in \R },
+\Set { (\symbf{\tilde{c}}^1 + r \tilde{b}^1, \symbf{\tilde{c}}^2 + r \tilde{b}^2) }{ r\in \R },
 \]
-where $({\bf \tilde{c}}^1,{\bf \tilde{c}}^2)$ is the unique solution of degree at most $(g+1-d_1, g+1-d_2)$. For every such solution, let $c^i = F^i\tilde{c}^i$ and consider the corresponding \eqref{eqn:EMPDi reduced}, namely
+where $(\symbf{\tilde{c}}^1,\symbf{\tilde{c}}^2)$ is the unique solution of degree at most $(g+1-d_1, g+1-d_2)$. For every such solution, let $c^i = F^i\tilde{c}^i$ and consider the corresponding \eqref{eqn:EMPDi reduced}, namely
 \[
 \dot{P} \tilde{b}^i - 2 F^j \tilde{P} \dot{b}^i = 2 F^j \tilde{P} (\hat{c}^i - ζ\hat{c}^{i\prime}) + (ζ^2-1)P' \tilde{c}^i.
 \labelthis{eqn:EMPDi conformal}
 \]
-In what is by now a familiar story, for the dotted quantities there is a common solution $({\bf \dot{P}}, {\bf \dot{b}}^1, {\bf \dot{b}}^2)$. The space of solutions is however
+In what is by now a familiar story, for the dotted quantities there is a common solution $(\symbf{\dot{P}}, \symbf{\dot{b}}^1, \symbf{\dot{b}}^2)$. The space of solutions is however
 \[
 \Set{
-({\bf \dot P} + 2s F^1F^2\tilde{P}, {\bf \dot b}^1 + s F^1\tilde{b}^1, {\bf \dot b}^2 + s F^2\tilde{b}^2)
+(\symbf{\dot P} + 2s F^1F^2\tilde{P}, \symbf{\dot b}^1 + s F^1\tilde{b}^1, \symbf{\dot b}^2 + s F^2\tilde{b}^2)
 }{ s \text{ a real quadratic polynomial} }.
 \]
 There appears not to be a unique tangent vector corresponding to each choice $(Q,r)$. However, unlike the previous two cases, condition \eqref{eqn:residueTangent} is not automatically satisfied. Let $s = s_0 + s_1ζ + \bar{s}_0 ζ^2$. For $i=1$, we see that the condition implies that
 \[
-2 {\bf\dot{P}}_0 b^1_1 - P_1 {\bf \dot{b}}^1_0 + 3 s_0 P_1 b^1_1 = 0,
+2 \symbf{\dot{P}}_0 b^1_1 - P_1 \symbf{\dot{b}}^1_0 + 3 s_0 P_1 b^1_1 = 0,
 \]
 which fully determines $s_0$. Can we therefore simultaneously satisfy the condition for $i=2$? Note that \eqref{eqn:EMPDi conformal} in the lowest degree reads
 \[
@@ -664,23 +675,23 @@ which fully determines $s_0$. Can we therefore simultaneously satisfy the condit
 and \eqref{eqn:Q conformal} in the lowest degree yields
 \begin{align*}
 b^1_1 c^2_0 &= b^2_1 c^1_0 \\
-b^1_1 \bra{{\bf\dot{P}_0} b^2_1 - 2P_1{\bf\dot{b}^2_0}} &= b^2_1 \bra{{\bf\dot{P}_0} b^1_1 - 2P_1{\bf\dot{b}^1_0}} \\
-2b^1_1 {\bf\dot{b}^2_0} &= 2 b^2_1 {\bf\dot{b}^1_0}.
+b^1_1 \bra{\symbf{\dot{P}_0} b^2_1 - 2P_1\symbf{\dot{b}^2_0}} &= b^2_1 \bra{\symbf{\dot{P}_0} b^1_1 - 2P_1\symbf{\dot{b}^1_0}} \\
+2b^1_1 \symbf{\dot{b}^2_0} &= 2 b^2_1 \symbf{\dot{b}^1_0}.
 \end{align*}
 Condition \eqref{eqn:residueTangent} for $i=2$ is therefore
 \begin{align*}
-b^1_1 \bra{2 {\bf\dot{P}_0} b^2_1 - P_1 {\bf \dot{b}^2_0} + 3 s_0 P_1 b^2_1}
-&= 2 {\bf\dot{P}_0} b^1_1b^2_1 - P_1 b^1_1{\bf \dot{b}^2_0} + 3 s_0 P_1 b^1_1b^2_1 \\
-&= 2 {\bf\dot{P}_0} b^1_1b^2_1 + P_1 b^2_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1b^2_1 \\
-&= b^2_1\bra{2 {\bf\dot{P}_0} b^1_1 - P_1 {\bf\dot{b}^1_0} + 3 s_0 P_1 b^1_1 } \\
+b^1_1 \bra{2 \symbf{\dot{P}_0} b^2_1 - P_1 \symbf{\dot{b}^2_0} + 3 s_0 P_1 b^2_1}
+&= 2 \symbf{\dot{P}_0} b^1_1b^2_1 - P_1 b^1_1\symbf{\dot{b}^2_0} + 3 s_0 P_1 b^1_1b^2_1 \\
+&= 2 \symbf{\dot{P}_0} b^1_1b^2_1 + P_1 b^2_1 \symbf{\dot{b}^1_0} + 3 s_0 P_1 b^1_1b^2_1 \\
+&= b^2_1\bra{2 \symbf{\dot{P}_0} b^1_1 - P_1 \symbf{\dot{b}^1_0} + 3 s_0 P_1 b^1_1 } \\
 &= 0.
 \end{align*}
 Hence we have demonstrated that the condition holds for $i=2$ also. Having cleared this hurdle, there is still one free parameter. For any $Q_1$ and $r$, the corresponding tangent vectors that solve \eqref{eqn:EMPDi} are
 \begin{align*}
 \Big\{
-\big(&{\bf \dot P} + 2(s_0+\bar{s}_0ζ^2) F^1F^2\tilde{P} + 2s_1ζ F^1F^2\tilde{P}, \\
-&\qquad{\bf \dot b^1} + (s_0+\bar{s}_0ζ^2) F^1\tilde{b}^1 + s_1ζ F^1\tilde{b}^1, \\
-&\qquad{\bf \dot b^2} + (s_0+\bar{s}_0ζ^2) F^2\tilde{b}^2 + s_1ζ F^2\tilde{b}^2 \,\big)
+\big(&\symbf{\dot P} + 2(s_0+\bar{s}_0ζ^2) F^1F^2\tilde{P} + 2s_1ζ F^1F^2\tilde{P}, \\
+&\qquad\symbf{\dot b^1} + (s_0+\bar{s}_0ζ^2) F^1\tilde{b}^1 + s_1ζ F^1\tilde{b}^1, \\
+&\qquad\symbf{\dot b^2} + (s_0+\bar{s}_0ζ^2) F^2\tilde{b}^2 + s_1ζ F^2\tilde{b}^2 \,\big)
 \qquad\Big\vert s_1 \in \R
 \Big\}.
 \end{align*}
@@ -688,16 +699,16 @@ But our free choice of $s_1\in\R$ is only adding multiples of $(2P,b^1,b^2)$, wh
 \end{proof}
 \end{lem}
 
-Though the details of the above three lemmata vary, we see that in every case they tell essentially the same story: starting with a polynomial $Q$ it is possible to recover a tangent vector to $\mathcal{M}_g$. It is also interesting to note that in each case there was a choice of two real parameters, and for each choice of those parameters there was a unique tangent vector. Conversely, given any tangent vector $(\dot P, \dot{b}^1, \dot{b}^2)$ to $\mathcal{M}_g$ there is a unique pair of polynomials $(\hat{c}^1,\hat{c}^2)$, as remarked in the paragraph following \eqref{eqn:EMPDi}, and thus a unique polynomial $Q$ from \eqref{eqn:Q}. Hence this pairing between parameters and tangent vectors is bijective, and we may identify the tangent space to $\mathcal{M}_g$ with these two real parameters. This suggests that $\mathcal{M}_g \cap U'$ itself is a surface.
+Though the details of the above three lemmata vary, we see that in every case they tell essentially the same story: starting with a polynomial $Q$ it is possible to recover a tangent vector to $\mathcal{M}_g$. It is also interesting to note that in each case there was a choice of two real parameters, and for each choice of those parameters there was a unique tangent vector. Conversely, given any tangent vector $(\dot P, \dot{b}^1, \dot{b}^2)$ to $\mathcal{M}_g$ there is a unique pair of polynomials $(\hat{c}^1,\hat{c}^2)$, as remarked in the paragraph following \eqref{eqn:EMPDi}, and thus a unique polynomial $Q$ from \eqref{eqn:Q}. Hence this pairing between parameters and tangent vectors is bijective, and we may identify the tangent space to $\mathcal{M}_g$ with these two real parameters. This suggests that $\mathcal{M}_g \cap \mathcal{U}'$ itself is a surface.
 
 \begin{thm}
 \label{thm:moduli manifold}
-The open subset $\mathcal{M}_g \cap U'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold. Further, the points of $\mathcal{M}_g \cap U''$ are also smooth points of $\mathcal{M}_g$.
+The open subset $\mathcal{M}_g \cap \mathcal{U}'$ of the space of spectral data $\mathcal{M}_g$ is a two dimensional manifold. Further, the points of $\mathcal{M}_g \cap \mathcal{U}''$ are also smooth points of $\mathcal{M}_g$.
 
 \begin{proof}
-Recall the defintion of $U'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i) or (ii). That is, $U'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is one and $\gcd(b^1,b^2)$ lies in $\mathcal{P}^k_\R$ for some $k \leq 2$.
+Recall the defintion of $\mathcal{U}'$, equation \eqref{eqn:def U'}, as the open set whose points correspond to cases (i) or (ii). That is, $\mathcal{U}'$ is the open set of points $(P,b^1,b^2)$ where $P$ has only simple roots, none of which are on the unit circle, the polynomials $b^i$ have at most a simple roots at $ζ=0$, $\gcd(P,b^1,b^2)$ is one and $\gcd(b^1,b^2)$ lies in $\mathcal{P}^k_\R$ for some $k \leq 2$.
 
-At any point $p\in \mathcal{M}_g \cap U'$, take a simply connected open neighbourhood $V\subset U$. On this neighbourhood, define the map $Ψ : V \to \R^{4g+9}$ by
+At any point $p\in \mathcal{M}_g \cap \mathcal{U}'$, take a simply connected open neighbourhood $\mathcal{V}\subset \mathcal{U}$. On this neighbourhood, define the map $Ψ : \mathcal{V} \to \R^{4g+9}$ by
 \begin{align*}
 Ψ(P,b^2,b^2) = \Big(
 & \int_{A_1} Θ^1, \dots, \int_{A_g} Θ^1, \int_{B_1} Θ^1, \dots, \int_{B_g} Θ^1, \\
@@ -706,21 +717,21 @@ At any point $p\in \mathcal{M}_g \cap U'$, take a simply connected open neighbou
 & P_1b^1_0 - 2P_0b^1_1,\, P_1b^2_0 - 2P_0b^2_1,\, (P_0)^{-1} \prod_{k}(-α_k)
 \Big)
 \end{align*}
-where $A_i, B_i$ are the real and imaginary periods of the curve $η^2 = P(ζ)$, $γ_+,γ_-$ are the paths in the curve between the points of $ζ=1$ and $ζ=-1$, and $α_k$ are the roots of $P$ inside the unit circle. Because $V$ is simply connected, the choice of paths $\{A_k\}, \{B_k\}, γ_+, γ_-$ may be made smoothly. The components of $Ψ$ are the conditions that spectral data must satisfy. In particular, the first $4g$ components of $Ψ$ are the periods of the differentials, the next four components are the integrals in the closing conditions \eqref{eqn:closing}, followed by the conditions to have no residues \eqref{eqn:residue condition} and the last component of $Ψ$ is our prefered scaling of the spectral curve.
+where $A_i, B_i$ are the real and imaginary periods of the curve $η^2 = P(ζ)$, $γ_+$ and $γ_-$ are the paths in the curve between the points over $ζ=1$ and $ζ=-1$, and $α_k$ are the roots of $P$ inside the unit circle. Because $V$ is simply connected, the choice of paths $\{A_k\}, \{B_k\}, γ_+, γ_-$ may be made smoothly. The components of $Ψ$ are the conditions that spectral data must satisfy. In particular, the first $4g$ components of $Ψ$ are the periods of the differentials, the next four components are the integrals in the closing conditions \eqref{eqn:closing}, followed by the conditions to have no residues \eqref{eqn:residue condition} and the last component of $Ψ$ is our prefered scaling of the spectral curve.
 
-Hence each connected components of $\mathcal{M}_g \cap V$ is contained in a level set of $Ψ$,
+Hence each connected components of $\mathcal{M}_g \cap \mathcal{V}$ is contained in a level set of $Ψ$,
 \begin{align*}
-\mathcal{M}_g \cap V
+\mathcal{M}_g \cap \mathcal{V}
 \subset Ψ^{-1}\big( &0,\dots,0,2π\iu\Z,\dots,2π\iu\Z,0,\dots,0,2π\iu\Z,\dots,2π\iu\Z, \\
 &\quad 2π\iu\Z,2π\iu\Z,2π\iu\Z,2π\iu\Z,0,0,1 \big).
 \end{align*}
-The point $p$ of $\mathcal{M}_g \cap V$ falls under either Lemma \ref{lem:tangent generic} or \ref{lem:tangent G}. In both cases we computed that the kernel of $dΨ_p$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point $p$. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap U'$ is a two dimensional manifold.
+The point $p$ of $\mathcal{M}_g \cap \mathcal{V}$ falls under either Lemma \ref{lem:tangent generic} or \ref{lem:tangent G}. In both cases we computed that the kernel of $dΨ_p$ is two dimensional. The differential of $Ψ$ is a map from $\R^{4g+11}$ to $\R^{4g+9} = \R^{4g+4+2+2+1}$, and so is full rank at every such point $p$. Therefore, by the implicit function theorem, $\mathcal{M}_g \cap \mathcal{U}'$ is a two dimensional manifold.
 
-The proof of the second part of the theorem is entirely similar. Recall that $U''$ is the subset of points of $U$ where $P(0) = 0$ and $\gcd(b^1,b^2)=ζ$. Take a point $p\in\mathcal{M}_g\cap U''$ and a simply connected open neighobourhood $V\subset U$ of $p$ as before. We may use the same definition of $Ψ$, and by the implicit function theorem and Lemma \ref{lem:tangent conformal} it follows that $p$ is also a smooth point of $\mathcal{M}_g$.
+The proof of the second part of the theorem is entirely similar. Recall that $\mathcal{U}''$ is the subset of points of $\mathcal{U}$ where $P(0) = 0$ and $\gcd(b^1,b^2)=ζ$. Take a point $p\in\mathcal{M}_g\cap \mathcal{U}''$ and a simply connected open neighobourhood $\mathcal{V}\subset \mathcal{U}$ of $p$ as before. We may use the same definition of $Ψ$, and by the implicit function theorem and Lemma \ref{lem:tangent conformal} it follows that $p$ is also a smooth point of $\mathcal{M}_g$.
 \end{proof}
 \end{thm}
 
-By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within $U^{(i)}$ and $U''$, while those with a genus one spectral curve may also be case (ii). Either way, $\mathcal{M}_0$ and $\mathcal{M}_1$ are smooth at every point and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
+By Lemma \ref{lem:no singularities}, spectral data with a spectral curve of genus zero fall entirely within $\mathcal{U}^{(i)}$ and $\mathcal{U}''$, while those with a genus one spectral curve may also be case (ii). Either way, $\mathcal{M}_0$ and $\mathcal{M}_1$ are smooth at every point and therefore are surfaces. The subsequent chapters of this thesis focus their investigation on these low genus cases.
 
 To close this chapter, let us give a geometric interpretation to the polynomial $Q$. Recall that the conformal type of the domain of a harmonic map is given by the ratios of the principal parts of the differentials of its spectral data. Let the conformal type be denoted $τ$. For a nonconformal harmonic map we have that $b^2_0 = τ b^1_0$. Consideration of the constant terms of \eqref{eqn:EMPDi} reveal that
 \[
